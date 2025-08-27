@@ -1,6 +1,6 @@
 <script lang="ts">
 	import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
-	import { cn, type WithElementRef, type WithoutChildren } from "$lib/utils.js";
+	import { cn, type WithElementRef, type WithoutChildren } from "$lib/utils/index.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	let {

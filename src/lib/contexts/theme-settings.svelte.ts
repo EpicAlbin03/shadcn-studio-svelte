@@ -1,7 +1,7 @@
 import type { ThemePreset } from '$lib/types/theme';
 import { defaultThemeState } from '$lib/config/theme';
 import { getLocalStorage, setLocalStorage } from '$lib/utils/local-storage';
-import { getPresetThemeStyles } from '@/utils/theme-presets';
+import { getPresetThemeStyles } from '$lib/utils/theme-presets';
 
 export type ThemeType = {
 	preset?: string | null;

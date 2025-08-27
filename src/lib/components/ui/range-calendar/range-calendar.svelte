@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 	import * as RangeCalendar from "./index.js";
-	import { cn, type WithoutChildrenOrChild } from "$lib/utils.js";
+	import { cn, type WithoutChildrenOrChild } from "$lib/utils/index.js";
 	import type { ButtonVariant } from "$lib/components/ui/button/index.js";
 	import type { Snippet } from "svelte";
 	import { isEqualMonth, type DateValue } from "@internationalized/date";
