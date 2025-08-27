@@ -23,6 +23,7 @@
 		"@sveltejs/vite-plugin-svelte": "^6.0.0",
 		"@tailwindcss/vite": "^4.0.0",
 		"@tanstack/table-core": "^8.21.3",
+		"@types/chroma-js": "^3.1.1",
 		"bits-ui": "^2.9.4",
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.6.0",
@@ -54,5 +55,8 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"chroma-js": "^3.1.2"
 	}
 }
