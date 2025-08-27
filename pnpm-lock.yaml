@@ -11,6 +11,12 @@ importers:
       chroma-js:
         specifier: ^3.1.2
         version: 3.1.2
+      shepherd.js:
+        specifier: ^14.5.1
+        version: 14.5.1
+      svelte-floating-ui:
+        specifier: ^1.6.2
+        version: 1.6.2
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -546,6 +552,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@scarf/scarf@1.4.0':
+    resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
+
   '@sideway/address@4.1.5':
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
 
@@ -1022,6 +1031,10 @@ packages:
 
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+
+  deepmerge-ts@7.1.5:
+    resolution: {integrity: sha512-HOJkrhaYsweh+W+e74Yn7YStZOilkoPb6fycpwNLKzSPtruFs48nYis0zy5yJz1+ktUhHxoRDJ27RQAWLIJVJw==}
+    engines: {node: '>=16.0.0'}
 
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
@@ -1700,6 +1713,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
+  shepherd.js@14.5.1:
+    resolution: {integrity: sha512-VuvPvLG1QjNOLP7AIm2HGyfmxEIz8QdskvWOHwUcxLDibYWjLRBmCWd8LSL5FlwhBW7D/GU+3gNVC/ASxAWdxg==}
+    engines: {node: 18.* || >= 20}
+
   sirv@3.0.1:
     resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
     engines: {node: '>=18'}
@@ -1746,6 +1763,9 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-floating-ui@1.6.2:
+    resolution: {integrity: sha512-EC+DZtBey50P6l3NSzNQWon3cip8a1bzwdpmCdc45kymqEWL4BKhPemAq7SQ9QLebDPaMECW6YodxFbs2d+O/w==}
 
   svelte-sonner@1.0.5:
     resolution: {integrity: sha512-9dpGPFqKb/QWudYqGnEz93vuY+NgCEvyNvxoCLMVGw6sDN/3oVeKV1xiEirW2E1N3vJEyj5imSBNOGltQHA7mg==}
@@ -2307,6 +2327,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.48.1':
     optional: true
 
+  '@scarf/scarf@1.4.0': {}
+
   '@sideway/address@4.1.5':
     dependencies:
       '@hapi/hoek': 9.3.0
@@ -2798,6 +2820,8 @@ snapshots:
       ms: 2.1.3
 
   deep-is@0.1.4: {}
+
+  deepmerge-ts@7.1.5: {}
 
   deepmerge@4.3.1: {}
 
@@ -3428,6 +3452,12 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
+  shepherd.js@14.5.1:
+    dependencies:
+      '@floating-ui/dom': 1.7.4
+      '@scarf/scarf': 1.4.0
+      deepmerge-ts: 7.1.5
+
   sirv@3.0.1:
     dependencies:
       '@polka/url': 1.0.0-next.29
@@ -3480,6 +3510,10 @@ snapshots:
       postcss-selector-parser: 7.1.0
     optionalDependencies:
       svelte: 5.38.3
+
+  svelte-floating-ui@1.6.2:
+    dependencies:
+      '@floating-ui/dom': 1.7.4
 
   svelte-sonner@1.0.5(svelte@5.38.3):
     dependencies:
