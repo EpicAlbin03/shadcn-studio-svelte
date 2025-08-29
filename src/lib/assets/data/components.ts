@@ -2386,7 +2386,7 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/data-table/data-table-11.svelte'
 			},
 			{
-				path: 'src/hooks/use-pagination.ts'
+				path: 'src/hooks/use-pagination.svelte.ts'
 			}
 		]
 	},
