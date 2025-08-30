@@ -1,11 +1,11 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { Hand, Trash2 } from '@lucide/svelte';
 	import type { ThemePreset, ThemeStyleProps } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import { toast } from '$lib/utils/toast.svelte';
-	import { presets } from '$lib/utils/theme-presets';
 	import SaveThemeDialog from './SaveThemeDialog.svelte';
 	import { themeSettings } from '$lib/contexts/theme-settings.svelte';
+	import { presetThemes } from '$lib/assets/data/preset-themes';
 
 	const settings = $derived(themeSettings.theme);
 	const updateSettings = $derived(themeSettings.updateSettings);
@@ -77,7 +77,7 @@
 		);
 
 		// Check for duplicate names in presets (normalized comparison)
-		const presetExists = Object.keys(presets).some(
+		const presetExists = Object.keys(presetThemes).some(
 			(presetName) => presetName.toLowerCase().replace(/\s+/g, '-') === normalizedInputName
 		);
 
@@ -182,7 +182,6 @@
 					onclick={() => handleApplyTheme(theme)}
 					class="group flex w-full cursor-pointer items-center gap-3 overflow-hidden rounded-lg border bg-card px-2 py-1 transition-colors hover:bg-accent/5 sm:max-w-[22rem]"
 				>
-					<!-- Theme Color Grid Icon -->
 					<div class="flex items-center">
 						<div class="relative size-[26px] rounded border bg-background p-1">
 							<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
@@ -235,4 +234,4 @@
 			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 		}
 	}
-</style>
+</style> -->

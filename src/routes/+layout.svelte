@@ -1,13 +1,26 @@
 <script lang="ts">
-	import { ModeWatcher, toggleMode } from 'mode-watcher';
+	import { ModeWatcher, setTheme } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
-	import { cn } from '$lib/utils';
 	import '../app.css';
 	// import favicon from '/favicon.svg';
-	import { MoonStar, Sun } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button/index.js';
+	import { UserConfig, UserConfigContext } from '$lib/config/user-config.svelte';
+	import { watch } from 'runed';
+	import { applyThemeStyles, getPresetThemeStyles } from '$lib/utils/theme';
 
-	let { children } = $props();
+	let { children, data } = $props();
+
+	const userConfig = UserConfigContext.set(new UserConfig(data.userConfig));
+
+	const themeColors = { light: '#ffffff', dark: '#09090b' };
+	const modeClasses = $derived([`theme-${userConfig.current.activeTheme}`]);
+
+	watch.pre(
+		() => userConfig.current.activeTheme,
+		() => {
+			setTheme(userConfig.current.activeTheme);
+			applyThemeStyles(getPresetThemeStyles(userConfig.current.activeTheme));
+		}
+	);
 </script>
 
 <svelte:head>
@@ -58,6 +71,14 @@
 	/>
 </svelte:head>
 
-<ModeWatcher />
+<ModeWatcher
+	defaultMode="system"
+	disableTransitions
+	defaultTheme={userConfig.current.activeTheme}
+	{themeColors}
+	darkClassNames={['dark', ...modeClasses]}
+	lightClassNames={['light', ...modeClasses]}
+/>
 <Toaster />
+
 {@render children?.()}

@@ -1,8 +1,8 @@
+import { defaultTheme } from '$lib/assets/data/preset-themes';
 import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { colorFormatter } from './color-converter';
 import type { ColorFormat } from './color-converter';
 import { getShadowMap } from './shadows';
-import { defaultLightThemeStyles } from '$lib/config/theme';
 
 type ThemeType = {
 	light: ThemeStyleProps;
@@ -90,10 +90,10 @@ export const generateThemeCode = (
   --radius: ${themeStyles.light.radius};
   ${generateShadowVariables(getShadowMap(themeStyles.light, colorFormat))}
   ${
-		themeStyles.light['letter-spacing'] !== defaultLightThemeStyles['letter-spacing']
+		themeStyles.light['letter-spacing'] !== defaultTheme.cssVars.light['letter-spacing']
 			? `\n  --tracking-normal: ${themeStyles.light['letter-spacing']};`
 			: ''
-	}${themeStyles.light.spacing !== defaultLightThemeStyles.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
+	}${themeStyles.light.spacing !== defaultTheme.cssVars.light.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
 }
 
 .dark {

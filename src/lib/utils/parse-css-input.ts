@@ -1,7 +1,8 @@
 import type { ThemeStyleProps } from '$lib/types/theme';
-import { COMMON_STYLES, defaultThemeState } from '$lib/config/theme';
+import { defaultTheme } from '$lib/assets/data/preset-themes';
+import { COMMON_STYLES } from './theme';
 
-export const variableNames = Object.keys(defaultThemeState.light);
+export const variableNames = Object.keys(defaultTheme.cssVars.light);
 const nonColorVariables = COMMON_STYLES;
 const VARIABLE_PREFIX = '--';
 

@@ -14,124 +14,131 @@
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
-	import { DEFAULT_FONT_SANS, DEFAULT_FONT_SERIF, DEFAULT_FONT_MONO } from '$lib/config/theme';
-	import { themeSettings, type ThemeSettings } from '$lib/contexts/theme-settings.svelte';
-	import { presets } from '$lib/utils/theme-presets';
+	import {
+		DEFAULT_FONT_SANS,
+		DEFAULT_FONT_SERIF,
+		DEFAULT_FONT_MONO
+	} from '$lib/assets/data/preset-themes';
+	import { presetThemes } from '$lib/assets/data/preset-themes';
 	import {
 		getAppliedThemeFont,
 		sansSerifFonts,
 		serifFonts,
 		monoFonts
 	} from '$lib/utils/theme-fonts';
-	import { setMode, mode as _mode } from 'mode-watcher';
+	import { mode as _mode } from 'mode-watcher';
 	import { onMount } from 'svelte';
+	import { setMode } from '$lib/utils/mode';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
 
-	type Mode = 'light' | 'dark';
+	// type Mode = 'light' | 'dark';
 
-	const mode = $derived(_mode.current);
-	const settings = $derived(themeSettings.theme);
-	const updateSettings = $derived(themeSettings.updateSettings);
-	const applyThemePreset = $derived(themeSettings.applyThemePreset);
-	const resetToDefault = $derived(themeSettings.resetToDefault);
+	const userConfig = UserConfigContext.get();
 
-	const handleModeChange = (value: string) => {
-		if (value) {
-			const newMode = value as Mode;
+	const mode = $derived(_mode.current ?? 'light');
+	// const settings = $derived(themeSettings.theme);
+	// const updateSettings = $derived(themeSettings.updateSettings);
+	// const applyThemePreset = $derived(themeSettings.applyThemePreset);
+	// const resetToDefault = $derived(themeSettings.resetToDefault);
 
-			// Ensure both themes exist before switching
-			const updatedSettings = {
-				...settings,
-				theme: {
-					...settings.theme,
-					styles: {
-						light: settings.theme.styles?.light || {},
-						dark: settings.theme.styles?.dark || {}
-					}
-				}
-			} as ThemeSettings;
+	// const handleModeChange = (value: string) => {
+	// 	if (value) {
+	// 		const newMode = value as Mode;
 
-			// Update settings first
-			updateSettings(updatedSettings);
+	// 		// Ensure both themes exist before switching
+	// 		const updatedSettings = {
+	// 			...settings,
+	// 			theme: {
+	// 				...settings.theme,
+	// 				styles: {
+	// 					light: settings.theme.styles?.light || {},
+	// 					dark: settings.theme.styles?.dark || {}
+	// 				}
+	// 			}
+	// 		} as ThemeSettings;
 
-			// Then update next-themes
-			setMode(newMode);
-		}
-	};
+	// 		// Update settings first
+	// 		updateSettings(updatedSettings);
 
-	// Helper function to ensure both themes are updated together
-	const updateBothThemes = (updates: Partial<ThemeStyleProps>) => {
-		const currentLight = settings.theme.styles?.light || {};
-		const currentDark = settings.theme.styles?.dark || {};
+	// 		// Then update next-themes
+	// 		setMode(newMode);
+	// 	}
+	// };
 
-		const updatedSettings = {
-			...settings,
-			theme: {
-				...settings.theme,
-				styles: {
-					light: { ...currentLight, ...updates },
-					dark: { ...currentDark, ...updates }
-				}
-			}
-		} as ThemeSettings;
+	// // Helper function to ensure both themes are updated together
+	// const updateBothThemes = (updates: Partial<ThemeStyleProps>) => {
+	// 	const currentLight = settings.theme.styles?.light || {};
+	// 	const currentDark = settings.theme.styles?.dark || {};
 
-		// Update settings and persist to storage
-		updateSettings(updatedSettings);
-	};
+	// 	const updatedSettings = {
+	// 		...settings,
+	// 		theme: {
+	// 			...settings.theme,
+	// 			styles: {
+	// 				light: { ...currentLight, ...updates },
+	// 				dark: { ...currentDark, ...updates }
+	// 			}
+	// 		}
+	// 	} as ThemeSettings;
 
-	// Update font change handlers to use the new helper
-	const handleFontChange = (fontType: 'font-sans' | 'font-serif' | 'font-mono', value: string) => {
-		updateBothThemes({ [fontType]: value });
-	};
+	// 	// Update settings and persist to storage
+	// 	updateSettings(updatedSettings);
+	// };
 
-	// Update radius change handler to use the new helper
-	const handleRadiusChange = (value: number) => {
-		updateBothThemes({ radius: `${value}rem` });
-	};
+	// // Update font change handlers to use the new helper
+	// const handleFontChange = (fontType: 'font-sans' | 'font-serif' | 'font-mono', value: string) => {
+	// 	updateBothThemes({ [fontType]: value });
+	// };
 
-	const handleStyleChange = (key: keyof ThemeStyleProps, value: string) => {
-		if (!mode) return;
+	// // Update radius change handler to use the new helper
+	// const handleRadiusChange = (value: number) => {
+	// 	updateBothThemes({ radius: `${value}rem` });
+	// };
 
-		updateSettings({
-			theme: {
-				...settings.theme,
-				styles: {
-					...settings.theme.styles,
-					[mode as Mode]: {
-						...settings.theme.styles?.[mode as Mode],
-						[key]: value
-					}
-				}
-			}
-		});
-	};
+	// const handleStyleChange = (key: keyof ThemeStyleProps, value: string) => {
+	// 	if (!mode) return;
 
-	const handleLetterSpacingChange = (value: number) => {
-		updateBothThemes({ 'letter-spacing': `${value}em` });
-	};
+	// 	updateSettings({
+	// 		theme: {
+	// 			...settings.theme,
+	// 			styles: {
+	// 				...settings.theme.styles,
+	// 				[mode as Mode]: {
+	// 					...settings.theme.styles?.[mode as Mode],
+	// 					[key]: value
+	// 				}
+	// 			}
+	// 		}
+	// 	});
+	// };
 
-	const handleSpacingChange = (value: number) => {
-		updateBothThemes({ spacing: `${value}rem` });
-	};
+	// const handleLetterSpacingChange = (value: number) => {
+	// 	updateBothThemes({ 'letter-spacing': `${value}em` });
+	// };
 
-	onMount(() => {
-		// Ensure theme styles exist when component mounts
-		if (!settings.theme.styles?.light || !settings.theme.styles?.dark) {
-			const updatedSettings = {
-				...settings,
-				theme: {
-					...settings.theme,
-					styles: {
-						light: settings.theme.styles?.light || {},
-						dark: settings.theme.styles?.dark || {}
-					}
-				}
-			} as ThemeSettings;
+	// const handleSpacingChange = (value: number) => {
+	// 	updateBothThemes({ spacing: `${value}rem` });
+	// };
 
-			updateSettings(updatedSettings);
-		}
-	});
+	// onMount(() => {
+	// 	// Ensure theme styles exist when component mounts
+	// 	if (!settings.theme.styles?.light || !settings.theme.styles?.dark) {
+	// 		const updatedSettings = {
+	// 			...settings,
+	// 			theme: {
+	// 				...settings.theme,
+	// 				styles: {
+	// 					light: settings.theme.styles?.light || {},
+	// 					dark: settings.theme.styles?.dark || {}
+	// 				}
+	// 			}
+	// 		} as ThemeSettings;
 
-	const currentStyles = $derived(settings.theme.styles?.[mode as Mode] || {});
+	// 		updateSettings(updatedSettings);
+	// 	}
+	// });
+
+	// const currentStyles = $derived(settings.theme.styles?.[mode as Mode] || {});
 </script>
 
 {#snippet CopyButton()}
@@ -144,7 +151,7 @@
 <ScrollArea class="h-[calc(100vh-6.3125rem)]">
 	<div class="flex flex-col gap-6 p-6">
 		<div class="flex gap-3">
-			<ThemeVariablesDialog
+			<!-- <ThemeVariablesDialog
 				lightTheme={settings.theme.styles?.light}
 				darkTheme={settings.theme.styles?.dark}
 				trigger={CopyButton}
@@ -158,13 +165,17 @@
 			>
 				<RotateCcw class="h-4 w-4" />
 				Reset
-			</Button>
+			</Button> -->
 		</div>
 
 		<!-- Mode Selection -->
 		<div class="flex flex-col gap-4">
 			<h3 class="text-lg font-medium">Mode</h3>
-			<ToggleGroup type="single" value={mode} onValueChange={handleModeChange} class="gap-4">
+			<ToggleGroup
+				type="single"
+				bind:value={() => mode, (v) => setMode(userConfig, v)}
+				class="gap-4"
+			>
 				<ToggleGroupItem
 					value="light"
 					aria-label="Toggle light"
@@ -185,11 +196,7 @@
 		</div>
 
 		<!-- Themes Selection -->
-		<ThemePresetSelect
-			{presets}
-			currentPreset={settings.theme.preset || null}
-			onPresetChange={applyThemePreset}
-		/>
+		<ThemePresetSelect />
 
 		<Tabs value="colors" class="h-full w-full">
 			<TabsList class="mb-3 grid w-full grid-cols-3">
@@ -204,7 +211,7 @@
 			</TabsContent>
 
 			<!-- Text Selection} -->
-			<TabsContent value="typography">
+			<!-- <TabsContent value="typography">
 				<div class="mb-4">
 					<Label for="font-sans" class="mb-1.5 block text-xs">Sans-Serif Font</Label>
 					<ThemeFontSelect
@@ -267,7 +274,7 @@
 			</TabsContent>
 
 			<TabsContent value="other">
-				<!-- Radius Selection -->
+				<!-- Radius Selection
 				<div class="flex flex-col gap-4">
 					<SliderWithInput
 						value={parseFloat(currentStyles.radius?.replace('rem', '') || '0')}
@@ -317,9 +324,9 @@
 						}}
 					/>
 				</div>
-			</TabsContent>
+			</TabsContent> -->
 		</Tabs>
 
-		<HoldToSaveTheme />
+		<!-- <HoldToSaveTheme /> -->
 	</div>
 </ScrollArea>

@@ -48,20 +48,28 @@ export type ThemeMetadata = {
 	badge?: string;
 };
 
+export type Theme = {
+	name: string;
+	label: string;
+	cssVars: {
+		light: ThemeStyleProps;
+		dark: Partial<ThemeStyleProps>;
+	};
+	meta?: ThemeMetadata;
+};
+
 export type ThemeStyles = {
-	light: ThemeStyleProps;
+	light: Partial<ThemeStyleProps>;
 	dark: Partial<ThemeStyleProps>;
-	css?: Record<string, Record<string, string>>;
-	meta?: ThemeMetadata;
 };
 
-export type ThemeEditorState = {
-	styles: ThemeStyles;
-};
+// export type ThemeEditorState = {
+// 	styles: ThemeStyles;
+// };
 
-export type ThemePreset = {
-	light?: Partial<ThemeStyleProps>;
-	dark?: Partial<ThemeStyleProps>;
-	css?: Record<string, Record<string, string>>;
-	meta?: ThemeMetadata;
-};
+// export type ThemePreset = {
+// 	light?: Partial<ThemeStyleProps>;
+// 	dark?: Partial<ThemeStyleProps>;
+// 	css?: Record<string, Record<string, string>>;
+// 	meta?: ThemeMetadata;
+// };
