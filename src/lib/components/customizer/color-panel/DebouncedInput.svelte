@@ -1,23 +1,22 @@
 <script lang="ts">
+	import { useDebounce } from 'runed';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = {
+		type: 'color' | 'text';
 		value: string;
 		onChange: (value: string) => void;
-		debounce?: number;
+		duration?: number;
 	} & Omit<HTMLAttributes<HTMLInputElement>, 'onchange'>;
 
-	let { value: initialValue = $bindable(), onChange, debounce = 300, ...props }: Props = $props();
+	let { type, value = $bindable(), onChange, duration = 300, ...props }: Props = $props();
 
-	let value = $state(initialValue);
-
-	$effect(() => {
-		const timeout = setTimeout(() => {
+	const debounce = useDebounce(
+		() => {
 			onChange(value);
-		}, debounce);
-
-		return () => clearTimeout(timeout);
-	});
+		},
+		() => duration
+	);
 </script>
 
-<input {...props} type="color" bind:value />
+<input {...props} {type} bind:value oninput={() => debounce()} />

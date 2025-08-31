@@ -20,6 +20,9 @@ export const COMMON_STYLES = [
 export function applyThemeStyles(themeStyles: ThemeStyles) {
 	const root = window.document.documentElement;
 
+	// Remove any existing styles
+	root.removeAttribute('style');
+
 	// Apply common styles (fonts, radius, etc.)
 	applyCommonStyles(root, themeStyles);
 

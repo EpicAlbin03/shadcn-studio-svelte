@@ -8,52 +8,49 @@
 	} from '$lib/components/ui/accordion';
 	import ColorSwatch from './ColorSwatch.svelte';
 	import { mode as _mode } from 'mode-watcher';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
 
-	// const settings = $derived(themeSettings.theme);
-	// const updateSettings = $derived(themeSettings.updateSettings);
-	// const mode = $derived(_mode.current ?? 'light');
-	// const currentTheme = $derived(settings.theme.styles?.[mode]) as
-	// 	| Partial<ThemeStyleProps>
-	// 	| undefined;
+	const userConfig = UserConfigContext.get();
+	const mode = $derived(_mode.current ?? 'light');
+	const currentTheme = $derived(userConfig.activeTheme.cssVars?.[mode]) as
+		| Partial<ThemeStyleProps>
+		| undefined;
 
-	// const updateColor = (key: keyof ThemeStyleProps, value: string) => {
-	// 	if (!currentTheme) return;
+	const updateColor = (key: keyof ThemeStyleProps, value: string) => {
+		console.log('updateColor', key, value);
+		if (!currentTheme) return;
 
-	// 	// apply common styles to both light and dark modes
-	// 	if (key === 'font-sans' || key === 'font-serif' || key === 'font-mono' || key === 'radius') {
-	// 		updateSettings({
-	// 			theme: {
-	// 				...settings.theme,
-	// 				styles: {
-	// 					...settings.theme.styles,
-	// 					light: { ...settings.theme.styles?.light, [key]: value },
-	// 					dark: { ...settings.theme.styles?.dark, [key]: value }
-	// 				}
-	// 			}
-	// 		});
+		// apply common styles to both light and dark modes
+		if (key === 'font-sans' || key === 'font-serif' || key === 'font-mono' || key === 'radius') {
+			userConfig.setActiveTheme({
+				...userConfig.activeTheme,
+				cssVars: {
+					...userConfig.activeTheme.cssVars,
+					light: { ...userConfig.activeTheme.cssVars?.light, [key]: value },
+					dark: { ...userConfig.activeTheme.cssVars?.dark, [key]: value }
+				}
+			});
 
-	// 		return;
-	// 	}
+			return;
+		}
 
-	// 	updateSettings({
-	// 		theme: {
-	// 			...settings.theme,
-	// 			styles: {
-	// 				...settings.theme.styles,
-	// 				[mode]: {
-	// 					...settings.theme.styles?.[mode as keyof ThemePreset],
-	// 					[key]: value
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// };
+		userConfig.setActiveTheme({
+			...userConfig.activeTheme,
+			cssVars: {
+				...userConfig.activeTheme.cssVars,
+				[mode]: {
+					...currentTheme,
+					[key]: value
+				}
+			}
+		});
+	};
 </script>
 
 <div class="space-y-6">
 	<Accordion type="multiple" value={['brand']} class="w-full space-y-4">
 		<!-- Brand Colors -->
-		<!-- <AccordionItem value="brand" class="rounded-lg border px-4">
+		<AccordionItem value="brand" class="rounded-lg border px-4">
 			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
 				>Brand Colors</AccordionTrigger
 			>
@@ -84,10 +81,10 @@
 					onChange={(value) => updateColor('destructive', value)}
 				/>
 			</AccordionContent>
-		</AccordionItem> -->
+		</AccordionItem>
 
 		<!-- Base Colors -->
-		<!-- <AccordionItem value="base" class="rounded-lg border px-4">
+		<AccordionItem value="base" class="rounded-lg border px-4">
 			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
 				>Base Colors</AccordionTrigger
 			>
@@ -123,10 +120,10 @@
 					onChange={(value) => updateColor('popover-foreground', value)}
 				/>
 			</AccordionContent>
-		</AccordionItem> -->
+		</AccordionItem>
 
 		<!-- Other Colors -->
-		<!-- <AccordionItem value="other" class="rounded-lg !border px-4">
+		<AccordionItem value="other" class="rounded-lg !border px-4">
 			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
 				>Other Colors</AccordionTrigger
 			>
@@ -167,10 +164,10 @@
 					onChange={(value) => updateColor('ring', value)}
 				/>
 			</AccordionContent>
-		</AccordionItem> -->
+		</AccordionItem>
 
 		<!-- Sidebar Colors -->
-		<!-- <AccordionItem value="sidebar" class="rounded-lg !border px-4">
+		<AccordionItem value="sidebar" class="rounded-lg !border px-4">
 			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
 				>Sidebar Colors</AccordionTrigger
 			>
@@ -216,10 +213,10 @@
 					onChange={(value) => updateColor('sidebar-ring', value)}
 				/>
 			</AccordionContent>
-		</AccordionItem> -->
+		</AccordionItem>
 
 		<!-- Chart Colors -->
-		<!-- <AccordionItem value="chart" class="rounded-lg !border px-4">
+		<AccordionItem value="chart" class="rounded-lg !border px-4">
 			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
 				>Chart Colors</AccordionTrigger
 			>
@@ -250,6 +247,6 @@
 					onChange={(value) => updateColor('chart-5', value)}
 				/>
 			</AccordionContent>
-		</AccordionItem> -->
+		</AccordionItem>
 	</Accordion>
 </div>

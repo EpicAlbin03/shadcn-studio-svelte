@@ -4,10 +4,19 @@
 	import '../app.css';
 	// import favicon from '/favicon.svg';
 	import { UserConfig, UserConfigContext } from '$lib/config/user-config.svelte';
+	import { watch } from 'runed';
+	import { applyThemeStyles } from '$lib/utils/theme';
 
 	let { children } = $props();
 
 	const userConfig = UserConfigContext.set(new UserConfig());
+
+	watch.pre(
+		() => userConfig.activeTheme,
+		() => {
+			applyThemeStyles(userConfig.activeTheme.cssVars);
+		}
+	);
 </script>
 
 <svelte:head>

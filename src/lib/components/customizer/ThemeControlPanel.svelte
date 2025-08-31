@@ -31,94 +31,60 @@
 	import { setMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 
-	// type Mode = 'light' | 'dark';
-
 	const userConfig = UserConfigContext.get();
 
 	const mode = $derived(_mode.current ?? 'light');
-	// const settings = $derived(themeSettings.theme);
-	// const updateSettings = $derived(themeSettings.updateSettings);
-	// const applyThemePreset = $derived(themeSettings.applyThemePreset);
-	// const resetToDefault = $derived(themeSettings.resetToDefault);
-
-	// const handleModeChange = (value: string) => {
-	// 	if (value) {
-	// 		const newMode = value as Mode;
-
-	// 		// Ensure both themes exist before switching
-	// 		const updatedSettings = {
-	// 			...settings,
-	// 			theme: {
-	// 				...settings.theme,
-	// 				styles: {
-	// 					light: settings.theme.styles?.light || {},
-	// 					dark: settings.theme.styles?.dark || {}
-	// 				}
-	// 			}
-	// 		} as ThemeSettings;
-
-	// 		// Update settings first
-	// 		updateSettings(updatedSettings);
-
-	// 		// Then update next-themes
-	// 		setMode(newMode);
-	// 	}
-	// };
+	const currentStyles = $derived(userConfig.activeTheme.cssVars?.[mode] || {});
 
 	// // Helper function to ensure both themes are updated together
-	// const updateBothThemes = (updates: Partial<ThemeStyleProps>) => {
-	// 	const currentLight = settings.theme.styles?.light || {};
-	// 	const currentDark = settings.theme.styles?.dark || {};
+	const updateBothThemes = (updates: Partial<ThemeStyleProps>) => {
+		const currentLight = userConfig.activeTheme.cssVars?.light || {};
+		const currentDark = userConfig.activeTheme.cssVars?.dark || {};
 
-	// 	const updatedSettings = {
-	// 		...settings,
-	// 		theme: {
-	// 			...settings.theme,
-	// 			styles: {
-	// 				light: { ...currentLight, ...updates },
-	// 				dark: { ...currentDark, ...updates }
-	// 			}
-	// 		}
-	// 	} as ThemeSettings;
+		const updatedTheme = {
+			...userConfig.activeTheme,
+			cssVars: {
+				light: { ...currentLight, ...updates },
+				dark: { ...currentDark, ...updates }
+			}
+		};
 
-	// 	// Update settings and persist to storage
-	// 	updateSettings(updatedSettings);
-	// };
+		userConfig.setActiveTheme(updatedTheme);
+	};
 
 	// // Update font change handlers to use the new helper
-	// const handleFontChange = (fontType: 'font-sans' | 'font-serif' | 'font-mono', value: string) => {
-	// 	updateBothThemes({ [fontType]: value });
-	// };
+	const handleFontChange = (fontType: 'font-sans' | 'font-serif' | 'font-mono', value: string) => {
+		console.log('font', fontType, value);
+		updateBothThemes({ [fontType]: value });
+	};
 
 	// // Update radius change handler to use the new helper
-	// const handleRadiusChange = (value: number) => {
-	// 	updateBothThemes({ radius: `${value}rem` });
-	// };
+	const handleRadiusChange = (value: number) => {
+		updateBothThemes({ radius: `${value}rem` });
+	};
 
-	// const handleStyleChange = (key: keyof ThemeStyleProps, value: string) => {
-	// 	if (!mode) return;
+	const handleStyleChange = (key: keyof ThemeStyleProps, value: string) => {
+		const updatedTheme = {
+			...userConfig.activeTheme,
+			cssVars: {
+				...userConfig.activeTheme.cssVars,
+				[mode]: {
+					...currentStyles,
+					[key]: value
+				}
+			}
+		};
 
-	// 	updateSettings({
-	// 		theme: {
-	// 			...settings.theme,
-	// 			styles: {
-	// 				...settings.theme.styles,
-	// 				[mode as Mode]: {
-	// 					...settings.theme.styles?.[mode as Mode],
-	// 					[key]: value
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// };
+		userConfig.setActiveTheme(updatedTheme);
+	};
 
-	// const handleLetterSpacingChange = (value: number) => {
-	// 	updateBothThemes({ 'letter-spacing': `${value}em` });
-	// };
+	const handleLetterSpacingChange = (value: number) => {
+		updateBothThemes({ 'letter-spacing': `${value}em` });
+	};
 
-	// const handleSpacingChange = (value: number) => {
-	// 	updateBothThemes({ spacing: `${value}rem` });
-	// };
+	const handleSpacingChange = (value: number) => {
+		updateBothThemes({ spacing: `${value}rem` });
+	};
 
 	// onMount(() => {
 	// 	// Ensure theme styles exist when component mounts
@@ -137,8 +103,6 @@
 	// 		updateSettings(updatedSettings);
 	// 	}
 	// });
-
-	// const currentStyles = $derived(settings.theme.styles?.[mode as Mode] || {});
 </script>
 
 {#snippet CopyButton()}
@@ -156,16 +120,16 @@
 				darkTheme={settings.theme.styles?.dark}
 				trigger={CopyButton}
 				activeTheme={settings.theme.preset ?? ''}
-			/>
+			/> -->
 			<Button
 				variant="outline"
 				class="flex-1 cursor-pointer gap-2"
 				size="lg"
-				onclick={resetToDefault}
+				onclick={() => userConfig.resetActiveTheme()}
 			>
 				<RotateCcw class="h-4 w-4" />
 				Reset
-			</Button> -->
+			</Button>
 		</div>
 
 		<!-- Mode Selection -->
@@ -211,13 +175,13 @@
 			</TabsContent>
 
 			<!-- Text Selection} -->
-			<!-- <TabsContent value="typography">
+			<TabsContent value="typography">
 				<div class="mb-4">
 					<Label for="font-sans" class="mb-1.5 block text-xs">Sans-Serif Font</Label>
 					<ThemeFontSelect
 						fonts={sansSerifFonts}
 						defaultValue={DEFAULT_FONT_SANS}
-						currentFont={getAppliedThemeFont(settings.theme.styles?.[mode as Mode], 'font-sans')}
+						currentFont={getAppliedThemeFont(currentStyles, 'font-sans')}
 						onFontChange={(value) => handleFontChange('font-sans', value)}
 					/>
 				</div>
@@ -227,7 +191,7 @@
 					<ThemeFontSelect
 						fonts={serifFonts}
 						defaultValue={DEFAULT_FONT_SERIF}
-						currentFont={getAppliedThemeFont(settings.theme.styles?.[mode as Mode], 'font-serif')}
+						currentFont={getAppliedThemeFont(currentStyles, 'font-serif')}
 						onFontChange={(value) => handleFontChange('font-serif', value)}
 					/>
 				</div>
@@ -237,7 +201,7 @@
 					<ThemeFontSelect
 						fonts={monoFonts}
 						defaultValue={DEFAULT_FONT_MONO}
-						currentFont={getAppliedThemeFont(settings.theme.styles?.[mode as Mode], 'font-mono')}
+						currentFont={getAppliedThemeFont(currentStyles, 'font-mono')}
 						onFontChange={(value) => handleFontChange('font-mono', value)}
 					/>
 				</div>
@@ -245,7 +209,7 @@
 				<div class="mt-6">
 					<SliderWithInput
 						value={parseFloat(
-							settings.theme.styles?.[mode as Mode]?.['letter-spacing']?.replace('em', '') || '0'
+							userConfig.activeTheme.cssVars?.[mode]?.['letter-spacing']?.replace('em', '') || '0'
 						)}
 						onChange={handleLetterSpacingChange}
 						min={-0.25}
@@ -274,7 +238,7 @@
 			</TabsContent>
 
 			<TabsContent value="other">
-				<!-- Radius Selection
+				<!-- Radius Selection -->
 				<div class="flex flex-col gap-4">
 					<SliderWithInput
 						value={parseFloat(currentStyles.radius?.replace('rem', '') || '0')}
@@ -289,9 +253,7 @@
 
 				<div class="mt-6">
 					<SliderWithInput
-						value={parseFloat(
-							settings.theme.styles?.[mode as Mode]?.spacing?.replace('rem', '') || '0.25'
-						)}
+						value={parseFloat(currentStyles?.spacing?.replace('rem', '') || '0.25')}
 						onChange={handleSpacingChange}
 						min={0.15}
 						max={0.35}
@@ -324,7 +286,7 @@
 						}}
 					/>
 				</div>
-			</TabsContent> -->
+			</TabsContent>
 		</Tabs>
 
 		<!-- <HoldToSaveTheme /> -->

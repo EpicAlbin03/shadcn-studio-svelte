@@ -10,22 +10,18 @@
 
 	let { fonts, defaultValue, currentFont, onFontChange }: Props = $props();
 
-	let value = $state(fonts[currentFont ?? defaultValue]);
-	const fontNames = $derived.by(() => ['System', ...Object.keys(fonts)]);
-
-	const onValueChange = (v: string) => {
-		onFontChange(v);
-	};
+	let value = $derived(currentFont || 'Select font theme');
+	const fontNames = $derived(Object.keys(fonts));
 </script>
 
-<Select type="single" bind:value {onValueChange}>
+<Select type="single" bind:value={() => value, (v) => onFontChange(v)}>
 	<SelectTrigger class="h-12 w-full cursor-pointer">
-		{value || 'Select theme font'}
+		{value}
 	</SelectTrigger>
 	<SelectContent>
 		{#each fontNames as fontName}
-			<SelectItem value={fonts[fontName] ?? defaultValue}>
-				<span style={`fontFamily: ${fonts[fontName] ?? defaultValue}`}>
+			<SelectItem value={fontName}>
+				<span style={`font-family: ${fonts[fontName] ?? defaultValue}`}>
 					{fontName}
 				</span>
 			</SelectItem>

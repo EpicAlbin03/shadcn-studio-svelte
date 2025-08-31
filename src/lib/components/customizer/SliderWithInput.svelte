@@ -15,7 +15,10 @@
 
 	let { value, onChange, min, max, step = 1, label, unit = 'px' }: Props = $props();
 
-	let localValue = $state(value);
+	const onValueChange = (value: number) => {
+		let clampedValue = Math.max(min, Math.min(max, value));
+		onChange(clampedValue);
+	};
 </script>
 
 <div class="mb-3">
@@ -27,8 +30,7 @@
 			<Input
 				id={`input-${label.replace(/\s+/g, '-').toLowerCase()}`}
 				type="number"
-				bind:value={localValue}
-				onchange={() => onChange(localValue)}
+				bind:value={() => value, (v) => onValueChange(v)}
 				{min}
 				{max}
 				{step}
@@ -38,12 +40,12 @@
 		</div>
 	</div>
 	<Slider
+		type="single"
 		id={`slider-${label.replace(/\s+/g, '-').toLowerCase()}`}
-		bind:value={localValue}
+		bind:value={() => value, (v) => onChange(v)}
 		{min}
 		{max}
 		{step}
-		onValueChange={(values: number[]) => onChange(values[0])}
 		class="py-1"
 	/>
 </div>

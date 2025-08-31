@@ -97,10 +97,10 @@ export const getAppliedThemeFont = (
 	if (!state) return null;
 	const fontSans = state[fontKey];
 
-	// find key of font in fonts object based on value
-	const key = Object.keys(fonts).find((key) =>
-		fonts[key as keyof typeof fonts].includes(fontSans as string)
-	);
+	const key = fontSans
+		?.split(',')[0]
+		?.trim()
+		.replace(/^['"]|['"]$/g, '');
 
 	return key ? key : null;
 };

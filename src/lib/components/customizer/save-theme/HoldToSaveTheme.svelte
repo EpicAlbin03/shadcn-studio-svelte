@@ -187,19 +187,19 @@
 							<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
 								<div
 									class="rounded-[2px]"
-									style={`backgroundColor: ${getThemeColor(theme, 'primary')}`}
+									style={`background-color: ${getThemeColor(theme, 'primary')}`}
 								></div>
 								<div
 									class="rounded-[2px]"
-									style={`backgroundColor: ${getThemeColor(theme, 'destructive')}`}
+									style={`background-color: ${getThemeColor(theme, 'destructive')}`}
 								></div>
 								<div
 									class="rounded-[2px]"
-									style={`backgroundColor: ${getThemeColor(theme, 'secondary')}`}
+									style={`background-color: ${getThemeColor(theme, 'secondary')}`}
 								></div>
 								<div
 									class="rounded-full"
-									style={`backgroundColor: ${getThemeColor(theme, 'accent')}`}
+									style={`background-color: ${getThemeColor(theme, 'accent')}`}
 								></div>
 							</div>
 						</div>

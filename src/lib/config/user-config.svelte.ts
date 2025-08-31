@@ -38,6 +38,10 @@ export class UserConfig {
 		applyThemeStyles(theme.cssVars);
 	}
 
+	resetActiveTheme(): void {
+		this.setActiveTheme(defaultTheme);
+	}
+
 	get savedThemes(): Theme[] {
 		return this.#savedThemes.current;
 	}
