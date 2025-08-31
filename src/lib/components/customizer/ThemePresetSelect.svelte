@@ -20,13 +20,19 @@
 		parseShadowVariables
 	} from '$lib/utils/parse-css-input';
 	import { setTheme } from 'mode-watcher';
-	import { type ActiveTheme, UserConfigContext } from '$lib/config/user-config.svelte';
-	import { defaultTheme, presetThemes, presetThemesMap } from '$lib/assets/data/preset-themes';
-	import { setPresetTheme } from '$lib/utils/theme';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import {
+		defaultTheme,
+		presetThemes,
+		presetThemesMap,
+		type PresetThemeName
+	} from '$lib/assets/data/preset-themes';
 
 	const userConfig = UserConfigContext.get();
 
-	const label = $derived(presetThemesMap[userConfig.current.activeTheme].label);
+	const label = $derived(
+		presetThemesMap[userConfig.activeTheme.name as PresetThemeName].label || 'Choose Theme'
+	);
 
 	const orderedPresets = $derived.by(() => {
 		// First get all preset entries
@@ -52,7 +58,7 @@
 		];
 	});
 
-	const getThemeColor = (name: string, color: keyof ThemeStyleProps) => {
+	const getThemeColor = (name: PresetThemeName, color: keyof ThemeStyleProps) => {
 		// If it's default theme, use the first preset as default
 		const theme = name === 'default' ? presetThemesMap['default'] : presetThemesMap[name];
 
@@ -62,8 +68,8 @@
 	// Randomize the preset
 	const randomize = () => {
 		const random = Math.floor(Math.random() * presetThemes.length);
-		const themeName = presetThemes[random].name as ActiveTheme;
-		setPresetTheme(userConfig, themeName);
+		const themeName = presetThemes[random].name as PresetThemeName;
+		userConfig.setActiveTheme(presetThemesMap[themeName]);
 	};
 
 	// const handleCssImport = (css: string) => {
@@ -124,36 +130,39 @@
 	</div>
 	<Select
 		type="single"
-		bind:value={() => userConfig.current.activeTheme, (v) => setPresetTheme(userConfig, v)}
+		bind:value={
+			() => label, (v) => userConfig.setActiveTheme(presetThemesMap[v as PresetThemeName])
+		}
 	>
 		<SelectTrigger class="h-12 w-full cursor-pointer">
-			{label || 'Choose Theme'}
+			{label}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Pre Built Themes</SelectLabel>
 				{#each orderedPresets as theme}
 					{@const badge = theme.meta?.badge}
-					<SelectItem value={theme.name} class="flex items-center gap-3">
+					{@const name = theme.name as PresetThemeName}
+					<SelectItem value={name} class="flex items-center gap-3">
 						<!-- Theme Color Grid Icon -->
 						<div class="flex items-center">
 							<div class="relative size-[26px] rounded border bg-background p-1">
 								<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
 									<div
 										class="rounded-[2px]"
-										style={`background-color: ${getThemeColor(theme.name, 'primary')}`}
+										style={`background-color: ${getThemeColor(name, 'primary')}`}
 									></div>
 									<div
 										class="rounded-[2px]"
-										style={`background-color: ${getThemeColor(theme.name, 'destructive')}`}
+										style={`background-color: ${getThemeColor(name, 'destructive')}`}
 									></div>
 									<div
 										class="rounded-[2px]"
-										style={`background-color: ${getThemeColor(theme.name, 'secondary')}`}
+										style={`background-color: ${getThemeColor(name, 'secondary')}`}
 									></div>
 									<div
 										class="rounded-full"
-										style={`background-color: ${getThemeColor(theme.name, 'accent')}`}
+										style={`background-color: ${getThemeColor(name, 'accent')}`}
 									></div>
 								</div>
 							</div>

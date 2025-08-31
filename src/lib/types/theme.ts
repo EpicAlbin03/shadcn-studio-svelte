@@ -44,6 +44,11 @@ export type ThemeStyleProps = {
 	spacing?: string;
 };
 
+export type ThemeStyles = {
+	light: Partial<ThemeStyleProps>;
+	dark: Partial<ThemeStyleProps>;
+};
+
 export type ThemeMetadata = {
 	badge?: string;
 };
@@ -51,25 +56,6 @@ export type ThemeMetadata = {
 export type Theme = {
 	name: string;
 	label: string;
-	cssVars: {
-		light: ThemeStyleProps;
-		dark: Partial<ThemeStyleProps>;
-	};
+	cssVars: ThemeStyles;
 	meta?: ThemeMetadata;
 };
-
-export type ThemeStyles = {
-	light: Partial<ThemeStyleProps>;
-	dark: Partial<ThemeStyleProps>;
-};
-
-// export type ThemeEditorState = {
-// 	styles: ThemeStyles;
-// };
-
-// export type ThemePreset = {
-// 	light?: Partial<ThemeStyleProps>;
-// 	dark?: Partial<ThemeStyleProps>;
-// 	css?: Record<string, Record<string, string>>;
-// 	meta?: ThemeMetadata;
-// };

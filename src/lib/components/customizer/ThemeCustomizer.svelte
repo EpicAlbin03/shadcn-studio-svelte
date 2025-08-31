@@ -16,6 +16,9 @@
 	import { onMount } from 'svelte';
 	import { getLocalStorage, setLocalStorage } from '$lib/utils/local-storage';
 	import ThemeControlPanel from './ThemeControlPanel.svelte';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+
+	const userConfig = UserConfigContext.get();
 
 	let open = $state(false);
 
@@ -60,12 +63,10 @@
 		});
 
 		// Start the tour if it hasn't been shown before
-		const hasSeenTour = getLocalStorage<boolean>('theme-customizer-tour-completed');
-
-		if (!hasSeenTour) {
+		if (!userConfig.themeCustomizerTourCompleted) {
 			tour.start();
 			tour.on('complete', () => {
-				setLocalStorage('theme-customizer-tour-completed', true);
+				userConfig.setThemeCustomizerTourCompleted(true);
 			});
 		}
 

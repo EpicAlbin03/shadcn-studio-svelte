@@ -1,7 +1,5 @@
-import { presetThemesMap } from '$lib/assets/data/preset-themes';
-import type { ActiveTheme, UserConfig } from '$lib/config/user-config.svelte';
 import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
-import { mode, setTheme } from 'mode-watcher';
+import { mode } from 'mode-watcher';
 import { colorFormatter } from './color-converter';
 import { setShadowVariables } from './shadows';
 
@@ -18,16 +16,6 @@ export const COMMON_STYLES = [
 	'letter-spacing',
 	'spacing'
 ];
-
-export function setPresetTheme(userConfig: UserConfig, name: ActiveTheme) {
-	userConfig.setConfig({ activeTheme: name });
-	setTheme(name);
-	applyThemeStyles(getPresetThemeStyles(name));
-}
-
-export function getPresetThemeStyles(name: string): ThemeStyles {
-	return presetThemesMap[name].cssVars;
-}
 
 export function applyThemeStyles(themeStyles: ThemeStyles) {
 	const root = window.document.documentElement;

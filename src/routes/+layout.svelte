@@ -1,26 +1,13 @@
 <script lang="ts">
-	import { ModeWatcher, setTheme } from 'mode-watcher';
+	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
 	import '../app.css';
 	// import favicon from '/favicon.svg';
 	import { UserConfig, UserConfigContext } from '$lib/config/user-config.svelte';
-	import { watch } from 'runed';
-	import { applyThemeStyles, getPresetThemeStyles } from '$lib/utils/theme';
 
-	let { children, data } = $props();
+	let { children } = $props();
 
-	const userConfig = UserConfigContext.set(new UserConfig(data.userConfig));
-
-	const themeColors = { light: '#ffffff', dark: '#09090b' };
-	const modeClasses = $derived([`theme-${userConfig.current.activeTheme}`]);
-
-	watch.pre(
-		() => userConfig.current.activeTheme,
-		() => {
-			setTheme(userConfig.current.activeTheme);
-			applyThemeStyles(getPresetThemeStyles(userConfig.current.activeTheme));
-		}
-	);
+	const userConfig = UserConfigContext.set(new UserConfig());
 </script>
 
 <svelte:head>
@@ -71,14 +58,7 @@
 	/>
 </svelte:head>
 
-<ModeWatcher
-	defaultMode="system"
-	disableTransitions
-	defaultTheme={userConfig.current.activeTheme}
-	{themeColors}
-	darkClassNames={['dark', ...modeClasses]}
-	lightClassNames={['light', ...modeClasses]}
-/>
+<ModeWatcher defaultMode="system" disableTransitions themeStorageKey={''} />
 <Toaster />
 
 {@render children?.()}

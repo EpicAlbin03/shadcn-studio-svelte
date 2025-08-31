@@ -9,7 +9,7 @@ export const DEFAULT_FONT_SERIF =
 export const DEFAULT_FONT_MONO =
 	'"Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 
-export const presetThemes: Theme[] = [
+export const presetThemes = [
 	{
 		name: 'default',
 		label: 'Default',
@@ -1931,12 +1931,12 @@ export const presetThemes: Theme[] = [
 			}
 		}
 	}
-];
+] as const satisfies Theme[];
 
-type ThemeName = (typeof presetThemes)[number]['name'];
+export type PresetThemeName = (typeof presetThemes)[number]['name'];
 
-export const presetThemesMap: Record<ThemeName, Theme> = Object.fromEntries(
+export const presetThemesMap: Record<PresetThemeName, Theme> = Object.fromEntries(
 	presetThemes.map((t) => [t.name, t])
-) as Record<ThemeName, Theme>;
+) as Record<PresetThemeName, Theme>;
 
 export const defaultTheme = presetThemesMap['default'];
