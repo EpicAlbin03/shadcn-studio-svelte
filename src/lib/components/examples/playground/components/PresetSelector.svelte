@@ -3,7 +3,7 @@
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { useId } from 'bits-ui';
-	import type { Preset } from '../(data)/presets.js';
+	import type { Preset } from '../data/presets.js';
 	import { cn } from '$lib/utils';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
 	import * as Command from '$lib/components/ui/command/index.js';

@@ -10,9 +10,9 @@
 		PresetShare,
 		TemperatureSelector,
 		TopPSelector
-	} from './(components)/index.js';
-	import { models, types } from './(data)/models.js';
-	import { presets } from './(data)/presets.js';
+	} from '$lib/components/examples/playground/components/index.js';
+	import { models, types } from '$lib/components/examples/playground/data/models.js';
+	import { presets } from '$lib/components/examples/playground/data/presets.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';

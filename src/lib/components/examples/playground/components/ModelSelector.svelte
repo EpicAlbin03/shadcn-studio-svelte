@@ -2,7 +2,7 @@
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { useId } from 'bits-ui';
-	import type { Model, ModelType } from '../(data)/models.js';
+	import type { Model, ModelType } from '../data/models.js';
 	import ModelItem from './ModelItem.svelte';
 	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';

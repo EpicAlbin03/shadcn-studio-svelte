@@ -1,12 +1,12 @@
 <script lang="ts">
 	// import Metadata from '$lib/components/metadata.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import AppSidebar from './components/AppSidebar.svelte';
-	import ChartAreaInteractive from './components/ChartAreaInteractive.svelte';
-	import DataTable from './components/DataTable.svelte';
-	import SectionCards from './components/SectionCards.svelte';
-	import SiteHeader from './components/SiteHeader.svelte';
-	import { data } from './data.js';
+	import AppSidebar from '$lib/components/examples/dashboard/components/AppSidebar.svelte';
+	import { data } from '$lib/components/examples/dashboard/data.js';
+	import SiteHeader from '$lib/components/examples/dashboard/components/SiteHeader.svelte';
+	import SectionCards from '$lib/components/examples/dashboard/components/SectionCards.svelte';
+	import ChartAreaInteractive from '$lib/components/examples/dashboard/components/ChartAreaInteractive.svelte';
+	import DataTable from '$lib/components/examples/dashboard/components/DataTable.svelte';
 
 	const title = 'Dashboard';
 	const description = 'A dashboard built using the components.';

@@ -46,6 +46,15 @@
 	--shadow-offset-y: 1px;
 	--letter-spacing: 0em;
 	--spacing: 0.25rem;
+
+	--surface: oklch(0.98 0 0);
+	--surface-foreground: var(--foreground);
+	--code: var(--surface);
+	--code-foreground: var(--surface-foreground);
+	--code-highlight: oklch(0.96 0 0);
+	--code-number: oklch(0.56 0 0);
+	--selection: oklch(0.145 0 0);
+	--selection-foreground: oklch(1 0 0);
 }
 
 .dark {
@@ -89,6 +98,15 @@
 	--letter-spacing: 0em;
 	--spacing: 0.25rem;
 
+	--surface: oklch(0.2 0 0);
+	--surface-foreground: oklch(0.708 0 0);
+	--code: var(--surface);
+	--code-foreground: var(--surface-foreground);
+	--code-highlight: oklch(0.27 0 0);
+	--code-number: oklch(0.72 0 0);
+	--selection: oklch(0.922 0 0);
+	--selection-foreground: oklch(0.205 0 0);
+
 	.shiki,
 	.shiki span {
 		color: var(--shiki-dark) !important;
@@ -102,6 +120,9 @@
 }
 
 @theme inline {
+	--breakpoint-3xl: 1600px;
+	--breakpoint-4xl: 2000px;
+
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
@@ -137,6 +158,15 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+
+	--color-surface: var(--surface);
+	--color-surface-foreground: var(--surface-foreground);
+	--color-code: var(--code);
+	--color-code-foreground: var(--code-foreground);
+	--color-code-highlight: var(--code-highlight);
+	--color-code-number: var(--code-number);
+	--color-selection: var(--selection);
+	--color-selection-foreground: var(--selection-foreground);
 
 	/* Computed Shadow Variants */
 	--shadow-2xs: var(--shadow-2xs);
@@ -208,4 +238,15 @@ body {
 		scrollbar-width: thin;
 		scrollbar-color: var(--border) transparent;
 	}
+}
+@utility section-soft {
+	@apply to-surface/40 bg-gradient-to-b from-background dark:bg-background;
+}
+
+@utility container-wrapper {
+	@apply mx-auto w-full px-2;
+}
+
+@utility container {
+	@apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-4 lg:px-8;
 }
