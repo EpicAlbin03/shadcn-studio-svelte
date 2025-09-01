@@ -1,26 +1,64 @@
 <script lang="ts">
-	import { AlertCircle } from '@lucide/svelte';
+	import { AlertCircle, FileCode } from '@lucide/svelte';
 	import {
 		Dialog,
 		DialogContent,
 		DialogDescription,
 		DialogFooter,
 		DialogHeader,
-		DialogTitle
+		DialogTitle,
+		DialogTrigger
 	} from '$lib/components/ui/dialog';
 	import { Button } from '$lib/components/ui/button';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
+	import { toast } from 'svelte-sonner';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import {
+		parseCssInput,
+		parseLetterSpacing,
+		parseShadowVariables
+	} from '$lib/utils/parse-css-input';
 
-	type Props = {
-		open: boolean;
-		onImport: (css: string) => void;
-	};
+	const userConfig = UserConfigContext.get();
 
-	let { open = $bindable(), onImport }: Props = $props();
-
+	let open = $state(false);
 	let cssText = $state('');
 	let error = $state<string | null>(null);
+
+	const onImport = (css: string) => {
+		const { lightColors, darkColors } = parseCssInput(css);
+		const { lightShadows, darkShadows } = parseShadowVariables(css);
+		const letterSpacing = parseLetterSpacing(css);
+
+		// Always preserve both themes and merge with new ones
+		const currentLightStyles = userConfig.activeTheme.cssVars?.light || {};
+		const currentDarkStyles = userConfig.activeTheme.cssVars?.dark || {};
+
+		const updatedSettings = {
+			...userConfig.activeTheme,
+			cssVars: {
+				light: {
+					...currentLightStyles,
+					...lightColors,
+					...lightShadows,
+					'letter-spacing': letterSpacing
+				},
+				dark: {
+					...currentDarkStyles,
+					...darkColors,
+					...darkShadows
+				}
+			}
+		};
+
+		userConfig.setActiveTheme(updatedSettings);
+
+		// Show success message with details
+		toast.success('Theme imported successfully', {
+			description: 'Both light and dark mode styles have been updated'
+		});
+	};
 
 	const handleImport = () => {
 		// Basic validation - check if the CSS contains some expected variables
@@ -57,6 +95,14 @@
 </script>
 
 <Dialog bind:open>
+	<DialogTrigger>
+		{#snippet child({ props })}
+			<Button {...props} variant="outline" class="cursor-pointer">
+				<FileCode class="size-4" />
+				Import
+			</Button>
+		{/snippet}
+	</DialogTrigger>
 	<DialogContent class="max-h-[90vh] sm:max-w-[600px]">
 		<DialogHeader>
 			<DialogTitle class="text-foreground">Import Custom CSS</DialogTitle>

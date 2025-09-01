@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Copy, RotateCcw, Sun, Moon, AlertCircle } from '@lucide/svelte';
+	import { RotateCcw, Sun, Moon, AlertCircle } from '@lucide/svelte';
 	import type { ThemeStyleProps } from '$lib/types/theme';
 	import ShadowControl from './ShadowControl.svelte';
 	import ThemeFontSelect from './ThemeFontSelect.svelte';
@@ -19,7 +19,6 @@
 		DEFAULT_FONT_SERIF,
 		DEFAULT_FONT_MONO
 	} from '$lib/assets/data/preset-themes';
-	import { presetThemes } from '$lib/assets/data/preset-themes';
 	import {
 		getAppliedThemeFont,
 		sansSerifFonts,
@@ -27,7 +26,6 @@
 		monoFonts
 	} from '$lib/utils/theme-fonts';
 	import { mode as _mode } from 'mode-watcher';
-	import { onMount } from 'svelte';
 	import { setMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 
@@ -85,24 +83,6 @@
 	const handleSpacingChange = (value: number) => {
 		updateBothThemes({ spacing: `${value}rem` });
 	};
-
-	// onMount(() => {
-	// 	// Ensure theme styles exist when component mounts
-	// 	if (!settings.theme.styles?.light || !settings.theme.styles?.dark) {
-	// 		const updatedSettings = {
-	// 			...settings,
-	// 			theme: {
-	// 				...settings.theme,
-	// 				styles: {
-	// 					light: settings.theme.styles?.light || {},
-	// 					dark: settings.theme.styles?.dark || {}
-	// 				}
-	// 			}
-	// 		} as ThemeSettings;
-
-	// 		updateSettings(updatedSettings);
-	// 	}
-	// });
 </script>
 
 <ScrollArea class="h-[calc(100vh-6.3125rem)]">

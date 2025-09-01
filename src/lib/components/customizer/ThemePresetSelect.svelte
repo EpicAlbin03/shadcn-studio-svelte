@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Dices, FileCode } from '@lucide/svelte';
-	import type { Theme, ThemeStyleProps } from '$lib/types/theme';
+	import { Dices } from '@lucide/svelte';
+	import type { ThemeStyleProps } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import {
 		Select,
@@ -13,12 +13,6 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import CssImportDialog from './CssImportDialog.svelte';
 	import { cn } from '$lib/utils';
-	import {
-		parseCssInput,
-		parseLetterSpacing,
-		parseShadowVariables
-	} from '$lib/utils/parse-css-input';
-	import { setTheme } from 'mode-watcher';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 	import {
 		defaultTheme,
@@ -70,57 +64,13 @@
 		const themeName = presetThemes[random].name as PresetThemeName;
 		userConfig.setActiveTheme(presetThemesMap[themeName]);
 	};
-
-	// const handleCssImport = (css: string) => {
-	// 	const { lightColors, darkColors } = parseCssInput(css);
-	// 	const { lightShadows, darkShadows } = parseShadowVariables(css);
-	// 	const letterSpacing = parseLetterSpacing(css);
-
-	// 	// Always preserve both themes and merge with new ones
-	// 	const currentLightStyles = settings.theme.styles?.light || {};
-	// 	const currentDarkStyles = settings.theme.styles?.dark || {};
-
-	// 	const updatedSettings = {
-	// 		...settings,
-	// 		theme: {
-	// 			...settings.theme,
-	// 			preset: null, // Reset preset as we're using custom theme
-	// 			styles: {
-	// 				light: {
-	// 					...currentLightStyles,
-	// 					...lightColors,
-	// 					...lightShadows,
-	// 					'letter-spacing': letterSpacing
-	// 				},
-	// 				dark: {
-	// 					...currentDarkStyles,
-	// 					...darkColors,
-	// 					...darkShadows
-	// 				}
-	// 			}
-	// 		}
-	// 	};
-
-	// 	// Update settings and persist to storage
-	// 	updateSettings(updatedSettings);
-
-	// 	// Show success message with details
-	// 	toast('success', 'Theme imported successfully', {
-	// 		description: 'Both light and dark mode styles have been updated',
-	// 		position: 'top-right'
-	// 	});
-	// };
 </script>
 
 <div class="flex flex-col gap-4">
 	<div class="flex items-center justify-between">
 		<h3 class="text-lg font-medium">Themes</h3>
 		<div class="flex items-center gap-2">
-			<!-- <Button variant="outline" onclick={() => (cssImportOpen = true)} class="cursor-pointer">
-				<FileCode class="size-4" />
-				Import
-			</Button>
-			<CssImportDialog open={cssImportOpen} onImport={handleCssImport} /> -->
+			<CssImportDialog />
 			<Button variant="outline" onclick={randomize} class="cursor-pointer">
 				<Dices class="size-4" />
 				Random
