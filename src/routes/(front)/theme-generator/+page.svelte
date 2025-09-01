@@ -1,15 +1,4 @@
 <script lang="ts">
-	import { PlusIcon, Sparkles } from '@lucide/svelte';
-	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
-	import { Badge } from '$lib/components/ui/badge';
-	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
-	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
-	import { cn } from '$lib/utils';
-	import { features } from '$lib/assets/data/features';
-	import { roadmap } from '$lib/assets/data/roadmap';
-	import { faqs } from '$lib/assets/data/faqs';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import PageNav from '$lib/components/examples/PageNav.svelte';
 	import ExamplesNav from '$lib/components/examples/ExamplesNav.svelte';

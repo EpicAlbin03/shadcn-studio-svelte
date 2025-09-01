@@ -8,25 +8,21 @@
 		{
 			name: 'Dashboard',
 			href: '/theme-generator/examples/dashboard',
-			code: 'https://github.com/shadcn/ui/tree/main/apps/v4/app/(app)/examples/dashboard',
 			hidden: false
 		},
 		{
 			name: 'Tasks',
 			href: '/theme-generator/examples/tasks',
-			code: 'https://github.com/shadcn/ui/tree/main/apps/v4/app/(app)/examples/tasks',
 			hidden: false
 		},
 		{
 			name: 'Playground',
 			href: '/theme-generator/examples/playground',
-			code: 'https://github.com/shadcn/ui/tree/main/apps/v4/app/(app)/examples/playground',
 			hidden: false
 		},
 		{
 			name: 'Authentication',
 			href: '/theme-generator/examples/authentication',
-			code: 'https://github.com/shadcn/ui/tree/main/apps/v4/app/(app)/examples/authentication',
 			hidden: false
 		}
 	];
@@ -38,7 +34,7 @@
 	<ScrollArea class="max-w-[96%] md:max-w-[600px] lg:max-w-none" orientation="both">
 		<div class="flex items-center">
 			{@render ExampleLink({
-				example: { name: 'Examples', href: '/theme-generator', code: '', hidden: false },
+				example: { name: 'Examples', href: '/theme-generator', hidden: false },
 				isActive: page.url.pathname === '/theme-generator'
 			})}
 			{#each examples as example (example.href)}
