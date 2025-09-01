@@ -24,7 +24,7 @@
 	const userConfig = UserConfigContext.get();
 
 	const label = $derived(
-		presetThemesMap[userConfig.activeTheme.name as PresetThemeName].label || 'Choose Theme'
+		userConfig.activeTheme.name in presetThemesMap ? userConfig.activeTheme.label : 'Choose Theme'
 	);
 
 	const orderedPresets = $derived.by(() => {

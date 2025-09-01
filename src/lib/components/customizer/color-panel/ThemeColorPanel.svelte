@@ -17,7 +17,6 @@
 		| undefined;
 
 	const updateColor = (key: keyof ThemeStyleProps, value: string) => {
-		console.log('updateColor', key, value);
 		if (!currentTheme) return;
 
 		// apply common styles to both light and dark modes

@@ -1,5 +1,6 @@
 import { defaultTheme } from '$lib/assets/data/preset-themes';
 import type { Theme } from '$lib/types/theme';
+import { deepEqual } from '$lib/utils/deep-equal';
 import { applyThemeStyles } from '$lib/utils/theme';
 import { Context, PersistedState } from 'runed';
 
@@ -40,6 +41,10 @@ export class UserConfig {
 
 	resetActiveTheme(): void {
 		this.setActiveTheme(defaultTheme);
+	}
+
+	hasThemeChanged(): boolean {
+		return !deepEqual(this.#activeTheme.current.cssVars, defaultTheme.cssVars);
 	}
 
 	get savedThemes(): Theme[] {

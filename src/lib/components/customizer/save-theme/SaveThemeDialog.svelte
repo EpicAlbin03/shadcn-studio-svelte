@@ -17,7 +17,7 @@
 		onSave: (name: string) => boolean;
 	};
 
-	let { isOpen, onClose, onSave }: Props = $props();
+	let { isOpen = $bindable(), onClose, onSave }: Props = $props();
 
 	let name = $state('');
 
@@ -37,7 +37,7 @@
 	};
 </script>
 
-<Dialog open={isOpen} onOpenChange={onClose}>
+<Dialog bind:open={isOpen} onOpenChange={onClose}>
 	<DialogContent>
 		<DialogHeader>
 			<DialogTitle>Save Theme</DialogTitle>
@@ -54,8 +54,8 @@
 			}}
 		/>
 		<DialogFooter class="mt-6">
-			<Button variant="outline" onClick={onClose}>Cancel</Button>
-			<Button onClick={handleSave}>Save Theme</Button>
+			<Button variant="outline" onclick={onClose}>Cancel</Button>
+			<Button onclick={handleSave}>Save Theme</Button>
 		</DialogFooter>
 	</DialogContent>
 </Dialog>

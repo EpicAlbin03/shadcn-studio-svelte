@@ -28,6 +28,7 @@
 	import { mode as _mode } from 'mode-watcher';
 	import { setMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import SavedThemes from './save-theme/SavedThemes.svelte';
 
 	const userConfig = UserConfigContext.get();
 
@@ -52,7 +53,6 @@
 
 	// // Update font change handlers to use the new helper
 	const handleFontChange = (fontType: 'font-sans' | 'font-serif' | 'font-mono', value: string) => {
-		console.log('font', fontType, value);
 		updateBothThemes({ [fontType]: value });
 	};
 
@@ -257,6 +257,7 @@
 			</TabsContent>
 		</Tabs>
 
-		<!-- <HoldToSaveTheme /> -->
+		<HoldToSaveTheme />
+		<SavedThemes />
 	</div>
 </ScrollArea>
