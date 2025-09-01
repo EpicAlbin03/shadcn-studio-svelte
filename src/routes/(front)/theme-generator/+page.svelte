@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PlusIcon, Sparkles } from '@lucide/svelte';
-	// import * as AccordionPrimitive from '@radix-ui/react-accordion'
+	import { Accordion as AccordionPrimitive } from 'bits-ui';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
 	import { Badge } from '$lib/components/ui/badge';
@@ -166,42 +166,46 @@
 			</p>
 		</div>
 		<div class="mx-auto grid w-full max-w-6xl gap-x-10 md:grid-cols-2">
-			<!-- <Accordion type='single' collapsible class='w-full'>
-						{#each faqs.slice(4) as { question, answer }, index (question)}
-              <AccordionItem value={`question-${index}`}>
-                <AccordionPrimitive.Header class='flex'>
-                  <AccordionPrimitive.Trigger
-                    class={cn(
-                      'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
-                      'text-start text-lg'
-                    )}
-                  >
-                    {question}
-                    <PlusIcon class='text-muted-foreground h-5 w-5 shrink-0 transition-transform duration-200' />
-                  </AccordionPrimitive.Trigger>
-                </AccordionPrimitive.Header>
-                <AccordionContent class='text-muted-foreground'>{answer}</AccordionContent>
-              </AccordionItem>
-							{/each}
-          </Accordion>
-          <Accordion type='single' collapsible class='w-full'>
-						{#each faqs.slice(4) as { question, answer }, index (question)}
-						<AccordionItem value={`question-${index + 5}`}>
-							<AccordionPrimitive.Header class='flex'>
-								<AccordionPrimitive.Trigger
-									class={cn(
-										'flex flex-1 items-center justify-between py-4 font-medium tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
-										'text-start text-lg'
-									)}
-								>
-									{question}
-									<PlusIcon class='text-muted-foreground h-5 w-5 shrink-0 transition-transform duration-200' />
-								</AccordionPrimitive.Trigger>
-							</AccordionPrimitive.Header>
-							<AccordionContent class='text-muted-foreground'>{answer}</AccordionContent>
-						</AccordionItem>
-						{/each}
-          </Accordion> -->
+			<Accordion type="single" class="w-full">
+				{#each faqs.slice(4) as { question, answer }, index (question)}
+					<AccordionItem value={`question-${index}`}>
+						<AccordionPrimitive.Header class="flex">
+							<AccordionPrimitive.Trigger
+								class={cn(
+									'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
+									'text-start text-lg'
+								)}
+							>
+								{question}
+								<PlusIcon
+									class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200"
+								/>
+							</AccordionPrimitive.Trigger>
+						</AccordionPrimitive.Header>
+						<AccordionContent class="text-muted-foreground">{answer}</AccordionContent>
+					</AccordionItem>
+				{/each}
+			</Accordion>
+			<Accordion type="single" class="w-full">
+				{#each faqs.slice(4) as { question, answer }, index (question)}
+					<AccordionItem value={`question-${index + 5}`}>
+						<AccordionPrimitive.Header class="flex">
+							<AccordionPrimitive.Trigger
+								class={cn(
+									'flex flex-1 items-center justify-between py-4 font-medium tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45',
+									'text-start text-lg'
+								)}
+							>
+								{question}
+								<PlusIcon
+									class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200"
+								/>
+							</AccordionPrimitive.Trigger>
+						</AccordionPrimitive.Header>
+						<AccordionContent class="text-muted-foreground">{answer}</AccordionContent>
+					</AccordionItem>
+				{/each}
+			</Accordion>
 		</div>
 	</section>
 </div>
