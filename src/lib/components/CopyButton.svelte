@@ -5,11 +5,11 @@
 	import { useCopy } from '$lib/hooks/use-copy.svelte';
 	import { cn } from '$lib/utils';
 
-	type Props = { source: string | null; class?: string; toast?: string };
+	type Props = { source: string | null; class?: string; toast?: string; onCopied?: () => void };
 
-	let { source, class: className, toast }: Props = $props();
+	let { source, class: className, toast, onCopied }: Props = $props();
 
-	const copyHook = useCopy(1500, toast);
+	const copyHook = useCopy(1500, toast, onCopied);
 	const copied = $derived(copyHook.copied);
 	const copy = $derived(copyHook.copy);
 </script>
@@ -22,7 +22,7 @@
 					{...props}
 					variant="ghost"
 					size="icon"
-					class="cursor-pointer text-muted-foreground transition-none hover:!bg-transparent hover:text-foreground disabled:opacity-100"
+					class="cursor-pointer text-muted-foreground transition-none hover:!bg-transparent hover:text-muted-foreground disabled:opacity-100"
 					onclick={() => copy(source || '')}
 					aria-label={copied ? 'Copied' : 'Copy component source'}
 					disabled={copied}

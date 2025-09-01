@@ -10,9 +10,9 @@
 	let highlightedCode = $state('');
 	let isLoading = $state(true);
 
-	const shiki = useShiki();
-	const highlightCode = $derived(shiki.highlightCode);
-	const isHighlighterReady = $derived(shiki.isHighlighterReady);
+	const shikiHook = useShiki();
+	const highlightCode = $derived(shikiHook.highlightCode);
+	const isHighlighterReady = $derived(shikiHook.isHighlighterReady);
 
 	$effect(() => {
 		if (!isHighlighterReady) return;

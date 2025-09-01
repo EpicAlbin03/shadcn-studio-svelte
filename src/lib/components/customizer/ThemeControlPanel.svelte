@@ -105,22 +105,10 @@
 	// });
 </script>
 
-{#snippet CopyButton()}
-	<Button variant="outline" class="flex-1 cursor-pointer gap-2" size="lg">
-		<Copy class="h-4 w-4" />
-		Copy
-	</Button>
-{/snippet}
-
 <ScrollArea class="h-[calc(100vh-6.3125rem)]">
 	<div class="flex flex-col gap-6 p-6">
 		<div class="flex gap-3">
-			<!-- <ThemeVariablesDialog
-				lightTheme={settings.theme.styles?.light}
-				darkTheme={settings.theme.styles?.dark}
-				trigger={CopyButton}
-				activeTheme={settings.theme.preset ?? ''}
-			/> -->
+			<ThemeVariablesDialog />
 			<Button
 				variant="outline"
 				class="flex-1 cursor-pointer gap-2"

@@ -12,7 +12,6 @@
 	} from '$lib/components/ui/select';
 	import { Badge } from '$lib/components/ui/badge';
 	import CssImportDialog from './CssImportDialog.svelte';
-	import { toast } from '$lib/utils/toast.svelte';
 	import { cn } from '$lib/utils';
 	import {
 		parseCssInput,

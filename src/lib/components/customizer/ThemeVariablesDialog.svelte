@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 	import type { ColorFormat } from '$lib/utils/color-converter';
 	import {
 		Dialog,
@@ -13,33 +12,25 @@
 	import CodeBlock from '$lib/components/code-block/CodeBlock.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { generateThemeCode } from '$lib/utils/theme-style-generator';
-	import type { Snippet } from 'svelte';
-	import { presetThemes } from '$lib/assets/data/preset-themes';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Copy } from '@lucide/svelte';
 
-	type Props = {
-		lightTheme?: Partial<ThemeStyleProps>;
-		darkTheme?: Partial<ThemeStyleProps>;
-		trigger?: Snippet;
-		activeTheme?: string | null;
-	};
+	const userConfig = UserConfigContext.get();
 
-	let { lightTheme, darkTheme, trigger, activeTheme }: Props = $props();
-
-	// let colorFormat = $state<ColorFormat>('oklch');
-
-	// const themeStyles: ThemeStyles = {
-	// 	light: { ...defaultLightThemeStyles, ...lightTheme },
-	// 	dark: { ...defaultDarkThemeStyles, ...darkTheme }
-	// };
-
-	// const themeCSS = $derived(generateThemeCode(themeStyles, colorFormat));
-
-	// // Check if the active theme exists in presets
-	// const isPresetTheme = activeTheme ? activeTheme in presetThemes : false;
+	let colorFormat = $derived<ColorFormat>(userConfig.colorFormat);
+	const themeCSS = $derived(generateThemeCode(userConfig.activeTheme.cssVars, colorFormat));
 </script>
 
 <Dialog>
-	<DialogTrigger>{@render trigger?.()}</DialogTrigger>
+	<DialogTrigger>
+		{#snippet child({ props })}
+			<Button {...props} variant="outline" class="flex-1 cursor-pointer gap-2" size="lg">
+				<Copy class="h-4 w-4" />
+				Copy
+			</Button>
+		{/snippet}
+	</DialogTrigger>
 	<DialogContent class="sm:max-w-[780px]">
 		<DialogHeader>
 			<DialogTitle>Theme Variables</DialogTitle>
@@ -62,14 +53,14 @@
 						class="hidden dark:block"
 					/>
 				</div>
-			{/if}
+			{/if} -->
 			<div class="relative overflow-hidden rounded-md border bg-sidebar">
 				<div class="sticky top-0 w-full p-2">
 					<Select type="single" bind:value={colorFormat}>
 						<SelectTrigger
 							class="w-fit cursor-pointer gap-1 border bg-card outline-hidden focus:border-border focus:ring-transparent focus-visible:border"
 						>
-							{colorFormat || 'Format'}
+							{colorFormat.toUpperCase() || 'Format'}
 						</SelectTrigger>
 						<SelectContent>
 							<SelectItem value="oklch">OKLCH</SelectItem>
@@ -80,8 +71,13 @@
 					</Select>
 				</div>
 				<CodeBlock code={themeCSS} lang="css" />
-				<CopyButton source={themeCSS} class="dark" toast="Theme variables" />
-			</div> -->
+				<CopyButton
+					source={themeCSS}
+					class="dark"
+					toast="Theme variables"
+					onCopied={() => userConfig.setColorFormat(colorFormat)}
+				/>
+			</div>
 		</div>
 	</DialogContent>
 </Dialog>

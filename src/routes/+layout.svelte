@@ -6,6 +6,7 @@
 	import { UserConfig, UserConfigContext } from '$lib/config/user-config.svelte';
 	import { watch } from 'runed';
 	import { applyThemeStyles } from '$lib/utils/theme';
+	import { TooltipProvider } from '$lib/components/ui/tooltip';
 
 	let { children } = $props();
 
@@ -68,6 +69,8 @@
 </svelte:head>
 
 <ModeWatcher defaultMode="system" disableTransitions themeStorageKey={''} />
-<Toaster />
+<Toaster duration={3000} position="top-right" closeButton />
 
-{@render children?.()}
+<TooltipProvider>
+	{@render children?.()}
+</TooltipProvider>

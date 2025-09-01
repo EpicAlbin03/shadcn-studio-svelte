@@ -9,7 +9,7 @@
 		DialogTitle
 	} from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
-	import { toast } from '$lib/utils/toast.svelte';
+	import { toast } from 'svelte-sonner';
 
 	type Props = {
 		isOpen: boolean;
@@ -23,10 +23,7 @@
 
 	const handleSave = () => {
 		if (!name.trim()) {
-			toast('error', 'Please enter a theme name', {
-				position: 'top-right'
-			});
-
+			toast.error('Please enter a theme name');
 			return;
 		}
 
