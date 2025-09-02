@@ -118,7 +118,7 @@
 					@Anand Patel
 				</a>
 				at{' '}
-				<a href="/" class="font-medium text-foreground">shadcn/studio</a>
+				<a href="https://shadcnstudio.com" class="font-medium text-foreground">shadcn/studio</a>
 				. Ported to Svelte by{' '}
 				<a
 					href="https://github.com/EpicAlbin03"

@@ -1,8 +1,10 @@
+import { env } from '$env/dynamic/public';
+
 export const siteConfig = {
 	name: 'shadcn/studio-svelte',
-	url: 'https://shadcn-studio-svelte.com',
+	url: env.PUBLIC_SITE_URL,
 	ogImage: {
-		url: 'https://shadcn-studio-svelte.com/opengraph.png',
+		url: `${env.PUBLIC_SITE_URL}/opengraph.png`,
 		width: '1200',
 		height: '630'
 	},
