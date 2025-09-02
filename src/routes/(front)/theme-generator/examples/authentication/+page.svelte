@@ -1,19 +1,7 @@
 <script lang="ts">
 	import UserAuthForm from '$lib/components/examples/authentication/components/UserAuthForm.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
-	// import Metadata from "$lib/components/metadata.svelte";
-
-	const title = 'Authentication';
-	const description = 'Authentication forms build using the components.';
 </script>
-
-<!-- <Metadata
-	{title}
-	{description}
-	ogImage={{
-		url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
-	}}
-/> -->
 
 <div class="md:hidden">
 	<img

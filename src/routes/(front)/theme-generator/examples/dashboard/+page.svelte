@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import Metadata from '$lib/components/metadata.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/examples/dashboard/components/AppSidebar.svelte';
 	import { data } from '$lib/components/examples/dashboard/data.js';
@@ -7,18 +6,7 @@
 	import SectionCards from '$lib/components/examples/dashboard/components/SectionCards.svelte';
 	import ChartAreaInteractive from '$lib/components/examples/dashboard/components/ChartAreaInteractive.svelte';
 	import DataTable from '$lib/components/examples/dashboard/components/DataTable.svelte';
-
-	const title = 'Dashboard';
-	const description = 'A dashboard built using the components.';
 </script>
-
-<!-- <Metadata
-	{title}
-	{description}
-	ogImage={{
-		url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
-	}}
-/> -->
 
 <div class="md:hidden">
 	<img

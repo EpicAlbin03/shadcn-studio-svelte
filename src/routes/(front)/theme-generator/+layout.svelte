@@ -9,9 +9,23 @@
 	import { features } from '$lib/assets/data/features';
 	import { roadmap } from '$lib/assets/data/roadmap';
 	import { faqs } from '$lib/assets/data/faqs';
+	import MetaData from '$lib/components/MetaData.svelte';
 
 	let { children } = $props();
+
+	const title = 'Shadcn Theme Generator';
+	const description = 'Preview your theme changes across different components and layouts.';
 </script>
+
+<MetaData
+	{title}
+	{description}
+	ogImage={{
+		url: '',
+		width: '1200',
+		height: '630'
+	}}
+/>
 
 <FrontLayout>
 	<div class="p-4 sm:p-8">
