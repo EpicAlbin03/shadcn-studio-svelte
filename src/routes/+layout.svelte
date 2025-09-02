@@ -42,15 +42,7 @@
 	/>
 </svelte:head>
 
-<MetaData
-	{title}
-	{description}
-	ogImage={{
-		url: '',
-		width: '1200',
-		height: '630'
-	}}
-/>
+<MetaData {title} {description} />
 
 <ModeWatcher defaultMode="system" disableTransitions themeStorageKey={''} />
 <Toaster duration={3000} position="top-right" closeButton />

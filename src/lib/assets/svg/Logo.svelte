@@ -12,7 +12,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	{...props}
 >
-	<rect x="0.5" width="323" height="323" rx="161.5" class="fill-inherit" />
+	<rect x="0.5" width="323" height="323" rx="161.5" fill="black" class="dark:invert" />
 	<rect
 		x="88.1023"
 		y="144.792"

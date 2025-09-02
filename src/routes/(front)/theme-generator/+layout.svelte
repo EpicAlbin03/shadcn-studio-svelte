@@ -17,15 +17,7 @@
 	const description = 'Preview your theme changes across different components and layouts.';
 </script>
 
-<MetaData
-	{title}
-	{description}
-	ogImage={{
-		url: '',
-		width: '1200',
-		height: '630'
-	}}
-/>
+<MetaData {title} {description} />
 
 <FrontLayout>
 	<div class="p-4 sm:p-8">

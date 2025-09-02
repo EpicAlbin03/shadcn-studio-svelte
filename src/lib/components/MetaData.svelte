@@ -41,8 +41,8 @@
 	<title>{trueTitle}</title>
 	<meta name="description" content={description} />
 	<meta name="keywords" content={keywords?.join(',')} />
-	<!-- <meta name="author" content="" />
-	<meta name="creator" content="" /> -->
+	<meta name="author" content="EpicAlbin03" />
+	<meta name="creator" content="EpicAlbin03" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content={siteConfig.url} />
 	<meta name="twitter:title" content={title} />

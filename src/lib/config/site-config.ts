@@ -2,7 +2,7 @@ export const siteConfig = {
 	name: 'shadcn/studio-svelte',
 	url: 'https://shadcn-studio-svelte.com',
 	ogImage: {
-		url: 'https://shadcn-studio-svelte.com/opengraph-image.png',
+		url: 'https://shadcn-studio-svelte.com/opengraph.png',
 		width: '1200',
 		height: '630'
 	},
