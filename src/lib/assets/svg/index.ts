@@ -42,5 +42,4 @@ export { default as TabsSVG } from './Tabs.svelte';
 export { default as TextareaSVG } from './Textarea.svelte';
 export { default as ThemeSelectionSVG } from './ThemeSelection.svelte';
 export { default as TooltipSVG } from './Tooltip.svelte';
-export { default as V0SVG } from './V0.svelte';
 export { default as XSVG } from './X.svelte';

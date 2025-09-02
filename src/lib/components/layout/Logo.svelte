@@ -10,6 +10,6 @@
 </script>
 
 <div class={cn('flex items-center', className)} aria-label="shadcn/studio-svelte">
-	<AppLogo class="size-8.5 dark:invert" />
+	<AppLogo class="size-8.5" />
 	<span class="ms-2.5 text-xl font-semibold">shadcn/studio-svelte</span>
 </div>
