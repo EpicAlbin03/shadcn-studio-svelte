@@ -6,28 +6,38 @@
 
 	type Props = {
 		components: ComponentProps[];
-		category: any;
+		slug: string;
 		validComponentsData: ProcessedComponentsData[];
-		xs?: number;
-		sm?: number;
-		md?: number;
-		lg?: number;
-		xl?: number;
+		breakpoints?: {
+			xs?: number;
+			sm?: number;
+			md?: number;
+			lg?: number;
+			xl?: number;
+		};
 	};
 
-	let { components, category, validComponentsData, sm, md, lg, xl, xs = 1 }: Props = $props();
+	let { components, slug, validComponentsData, breakpoints }: Props = $props();
 
-	let columns = $state<number>(xl ?? lg ?? md ?? sm ?? xs);
+	const bp = $derived({
+		xs: breakpoints?.xs ?? 1,
+		sm: breakpoints?.sm ?? 1,
+		md: breakpoints?.md ?? 1,
+		lg: breakpoints?.lg ?? 1,
+		xl: breakpoints?.xl ?? 1
+	});
+
+	let columns = $derived<number>(bp.xl ?? bp.lg ?? bp.md ?? bp.sm ?? bp.xs);
 	const length = $derived(components.length);
 
 	const handleResize = () => {
 		const width = window.innerWidth;
 
-		if (width >= 1280) columns = xl ?? lg ?? md ?? sm ?? xs;
-		else if (width >= 1024) columns = lg ?? md ?? sm ?? xs;
-		else if (width >= 768) columns = md ?? sm ?? xs;
-		else if (width >= 640) columns = sm ?? xs;
-		else columns = xs;
+		if (width >= 1280) columns = bp.xl ?? bp.lg ?? bp.md ?? bp.sm ?? bp.xs;
+		else if (width >= 1024) columns = bp.lg ?? bp.md ?? bp.sm ?? bp.xs;
+		else if (width >= 768) columns = bp.md ?? bp.sm ?? bp.xs;
+		else if (width >= 640) columns = bp.sm ?? bp.xs;
+		else columns = bp.xs;
 	};
 
 	onMount(() => {
@@ -55,7 +65,7 @@
 			)}
 		>
 			<ComponentCard componentName={component.name} class={component?.className}>
-				<ComponentLoader componentName={component.name} category={category.slug} />
+				<ComponentLoader componentName={component.name} category={slug} />
 				<ComponentDetails
 					componentsData={validComponentsData.find(
 						(comp) => comp.component.name === component.name
