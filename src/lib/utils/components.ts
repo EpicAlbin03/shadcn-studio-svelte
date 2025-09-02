@@ -1,4 +1,4 @@
-import { cache } from './svelte-cache';
+import { cache } from './cache';
 import { env } from '$env/dynamic/public';
 import type { ComponentProps, FileTree } from '$lib/types/components';
 import { components } from '$lib/assets/data/components';
