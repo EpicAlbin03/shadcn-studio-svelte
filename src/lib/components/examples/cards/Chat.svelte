@@ -15,27 +15,27 @@
 		{
 			name: 'Olivia Martin',
 			email: 'm@example.com',
-			avatar: '/avatars/01.png'
+			avatar: '/avatars/01.webp'
 		},
 		{
 			name: 'Isabella Nguyen',
 			email: 'isabella.nguyen@email.com',
-			avatar: '/avatars/03.png'
+			avatar: '/avatars/03.webp'
 		},
 		{
 			name: 'Emma Wilson',
 			email: 'emma@example.com',
-			avatar: '/avatars/05.png'
+			avatar: '/avatars/05.webp'
 		},
 		{
 			name: 'Jackson Lee',
 			email: 'lee@example.com',
-			avatar: '/avatars/02.png'
+			avatar: '/avatars/02.webp'
 		},
 		{
 			name: 'William Kim',
 			email: 'will@email.com',
-			avatar: '/avatars/04.png'
+			avatar: '/avatars/04.webp'
 		}
 	] as const;
 

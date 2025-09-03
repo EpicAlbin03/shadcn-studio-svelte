@@ -11,19 +11,19 @@
 			name: 'Sofia Davis',
 			email: 'm@example.com',
 			role: 'Owner',
-			avatar: '/avatars/01.png'
+			avatar: '/avatars/01.webp'
 		},
 		{
 			name: 'Jackson Lee',
 			email: 'p@example.com',
 			role: 'Member',
-			avatar: '/avatars/02.png'
+			avatar: '/avatars/02.webp'
 		},
 		{
 			name: 'Isabella Nguyen',
 			email: 'i@example.com',
 			role: 'Member',
-			avatar: '/avatars/03.png'
+			avatar: '/avatars/03.webp'
 		}
 	]);
 

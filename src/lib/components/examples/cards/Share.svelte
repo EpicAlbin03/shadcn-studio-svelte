@@ -56,7 +56,7 @@
 					<div class="flex items-center justify-between gap-4">
 						<div class="flex items-center gap-4">
 							<Avatar.Root>
-								<Avatar.Image src="/avatars/03.png" alt="Image" />
+								<Avatar.Image src="/avatars/03.webp" alt="Image" />
 								<Avatar.Fallback>
 									{person.name.charAt(0)}
 								</Avatar.Fallback>
