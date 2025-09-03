@@ -5,8 +5,8 @@
 
 <Button class="rounded-full ps-2">
 	<Avatar class="size-6">
-		<AvatarImage src="/avatars/05.png" alt="Hallie Richards" />
+		<AvatarImage src="/avatars/01.png" alt="Hallie Richards" />
 		<AvatarFallback class="text-xs text-foreground">HR</AvatarFallback>
 	</Avatar>
-	$libhallierichards
+	@hallierichards
 </Button>

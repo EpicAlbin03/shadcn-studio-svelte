@@ -21,10 +21,10 @@
 
 	const bp = $derived({
 		xs: breakpoints?.xs ?? 1,
-		sm: breakpoints?.sm ?? 1,
-		md: breakpoints?.md ?? 1,
-		lg: breakpoints?.lg ?? 1,
-		xl: breakpoints?.xl ?? 1
+		sm: breakpoints?.sm,
+		md: breakpoints?.md,
+		lg: breakpoints?.lg,
+		xl: breakpoints?.xl
 	});
 
 	let columns = $derived<number>(bp.xl ?? bp.lg ?? bp.md ?? bp.sm ?? bp.xs);
