@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SpinnerSVG } from '$lib/assets/svg';
 	import type { ComponentProps } from '$lib/types/components';
 	import type { Component as ComponentType } from 'svelte';
 
@@ -23,7 +24,7 @@
 </script>
 
 {#await loadComponent}
-	<div>Loading...</div>
+	<SpinnerSVG class="animate-spin" />
 {:then Component}
 	{#if Component}
 		<Component {...props} currentPage={1} totalPages={10} />

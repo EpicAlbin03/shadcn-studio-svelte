@@ -11,7 +11,7 @@ export const getComponentsByNames = (names: string[]): ComponentProps[] => {
 		.filter((comp): comp is ComponentProps => comp !== undefined);
 };
 
-async function getFileContent(file: ComponentProps['files'][number]) {
+async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number]) {
 	try {
 		const response = await fetch(
 			`${env.PUBLIC_APP_URL!}/api/get-file-content?path=${encodeURIComponent(file.path)}`
@@ -204,7 +204,7 @@ ${Object.entries(component.cssVars.theme)
 	};
 }
 
-export async function getComponentItem(name: string) {
+export async function getComponentItem(fetch: Fetch, name: string) {
 	const item = components.find((component) => component.name === name);
 
 	if (!item || !item.files) {
@@ -214,7 +214,7 @@ export async function getComponentItem(name: string) {
 	const files: ComponentProps['files'] = [];
 
 	for (const file of item.files ?? []) {
-		const content = await getFileContent(file);
+		const content = await getFileContent(fetch, file);
 		const relativePath = file.path.replace('src/', '');
 
 		files.push({
@@ -276,8 +276,8 @@ export function createFileTreeForComponentItemFiles(
 	return root;
 }
 
-export const getCachedComponentItem = cache(async (name: string) => {
-	return await getComponentItem(name);
+export const getCachedComponentItem = cache(async (fetch: Fetch, name: string) => {
+	return await getComponentItem(fetch, name);
 });
 
 export const getCachedFileTree = cache((files: Array<{ path: string; target?: string }>) => {
