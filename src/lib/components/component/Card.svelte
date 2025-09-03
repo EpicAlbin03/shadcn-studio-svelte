@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { ComponentProps } from '$lib/types/components';
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 
-	type Props = { children: Children; componentName: ComponentProps['name']; class?: string };
+	type Props = { children?: Snippet; componentName: ComponentProps['name']; class?: string };
 
 	let { children, componentName, class: className }: Props = $props();
 </script>

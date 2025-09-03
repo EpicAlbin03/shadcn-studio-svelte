@@ -18,6 +18,7 @@ async function getFileContent(file: ComponentProps['files'][number]) {
 		);
 
 		if (!response.ok) {
+			console.log(response);
 			const errorData = await response.json();
 
 			console.error('API error:', errorData.error || response.statusText);
@@ -243,7 +244,7 @@ export function createFileTreeForComponentItemFiles(
 	const root: FileTree[] = [];
 
 	for (const file of files) {
-		const path = file.target ?? file.path.replace('src/', '');
+		const path = file.target ?? file.path.replace('src/lib/', '');
 		const parts = path.split('/');
 		let currentLevel = root;
 

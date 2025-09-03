@@ -3,7 +3,7 @@
 	import Shepherd from 'shepherd.js';
 	import { offset } from 'svelte-floating-ui/dom';
 	import 'shepherd.js/dist/css/shepherd.css';
-	import { RainbowButton } from '$lib/components/ui/rainbow-button/index';
+	import RainbowButton from '$lib/components/ui/rainbow-button.svelte';
 	import {
 		Sheet,
 		SheetContent,
@@ -14,7 +14,6 @@
 	} from '$lib/components/ui/sheet';
 	import './shepherd.css';
 	import { onMount } from 'svelte';
-	import { getLocalStorage, setLocalStorage } from '$lib/utils/local-storage';
 	import ThemeControlPanel from './ThemeControlPanel.svelte';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 

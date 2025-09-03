@@ -1,5 +1,5 @@
-<!-- <script lang="ts">
-	import { BounceButton } from '$lib/components/ui/bounce-button';
+<script lang="ts">
+	import BounceButton from '$lib/components/ui/bounce-button.svelte';
 </script>
 
-<BounceButton>Bounce Button</BounceButton> -->
+<BounceButton>Bounce Button</BounceButton>

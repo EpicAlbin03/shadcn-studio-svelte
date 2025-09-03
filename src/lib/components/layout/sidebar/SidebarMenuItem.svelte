@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { SidebarMenuButton, SidebarMenuItem, useSidebar } from '$lib/components/ui/sidebar';
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 
 	const { setOpenMobile } = useSidebar();
 	let pathname = $derived(page.url.pathname);
@@ -9,7 +10,7 @@
 	type Props = {
 		href?: string;
 		openInNewTab?: boolean;
-		children: Children;
+		children?: Snippet;
 	};
 
 	let { href, openInNewTab, children }: Props = $props();

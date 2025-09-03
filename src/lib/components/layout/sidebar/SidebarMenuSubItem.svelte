@@ -7,10 +7,11 @@
 		SidebarMenuSubButton
 	} from '$lib/components/ui/sidebar';
 	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = HTMLAttributes<HTMLLIElement> & {
-		children: Children;
+		children?: Snippet;
 		isNew?: boolean;
 		isUpdated?: boolean;
 		href?: string;

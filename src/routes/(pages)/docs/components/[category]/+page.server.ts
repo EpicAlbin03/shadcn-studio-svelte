@@ -1,4 +1,4 @@
-import { categories, getCategory } from '$lib/config/components.svelte';
+import { categories, getCategory, type ComponentCategory } from '$lib/config/components.svelte';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
@@ -49,7 +49,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	return {
 		validComponentsData,
-		category,
+		category: category as ComponentCategory,
 		components
 	};
 };

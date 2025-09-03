@@ -1,0 +1,54 @@
+<script lang="ts" module>
+	import { Motion, type MotionProps } from 'motion-start';
+	import type { Snippet } from 'svelte';
+	import { cn, type WithElementRef } from '$lib/utils';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+
+	export interface ShimmerButtonProps
+		extends MotionProps,
+			Omit<WithElementRef<HTMLButtonAttributes>, 'style'> {
+		children?: Snippet;
+		class?: string;
+	}
+</script>
+
+<script lang="ts">
+	let { children, class: className, ref = $bindable(null) }: ShimmerButtonProps = $props();
+</script>
+
+<Motion.button
+	bind:el={ref}
+	class="relative inline-flex overflow-hidden rounded-lg bg-[linear-gradient(120deg,var(--primary)_calc(var(--shimmer-button-x)-25%),var(--primary-foreground)_var(--shimmer-button-x),var(--primary)_calc(var(--shimmer-button-x)+25%))] [--shimmer-button-x:0%]"
+	initial={{
+		scale: 1,
+		'--shimmer-button-x': '-100%'
+	}}
+	animate={{
+		'--shimmer-button-x': '200%'
+	}}
+	transition={{
+		stiffness: 500,
+		damping: 20,
+		type: 'spring',
+		'--shimmer-button-x': {
+			duration: 3,
+			repeat: Infinity,
+			ease: [0.445, 0.05, 0.55, 0.95]
+		}
+	}}
+	whileTap={{
+		scale: 0.95
+	}}
+	whileHover={{
+		scale: 1.05
+	}}
+>
+	<span
+		class={cn(
+			'm-0.5 rounded-md bg-destructive px-4 py-2 text-sm font-medium text-white backdrop-blur-sm',
+			className
+		)}
+	>
+		{@render children?.()}
+	</span>
+</Motion.button>

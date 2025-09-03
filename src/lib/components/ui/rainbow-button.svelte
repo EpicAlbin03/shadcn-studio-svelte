@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { cn, type WithElementRef } from '$lib/utils/index.js';
+	import { cn, type WithElementRef } from '$lib/utils';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	export type ButtonProps = WithElementRef<HTMLButtonAttributes>;
+	export type RainbowButtonProps = WithElementRef<HTMLButtonAttributes>;
 </script>
 
 <script lang="ts">
@@ -13,7 +13,7 @@
 		disabled,
 		children,
 		...restProps
-	}: ButtonProps = $props();
+	}: RainbowButtonProps = $props();
 </script>
 
 <button

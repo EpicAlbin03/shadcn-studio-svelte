@@ -1,11 +1,7 @@
 <script lang="ts">
 	import ScrollToTop from '$lib/components/layout/ScrollToTop.svelte';
 
-	type Props = {
-		children: Children;
-	};
-
-	let { children }: Props = $props();
+	let { children } = $props();
 </script>
 
 <main class="flex flex-1">
