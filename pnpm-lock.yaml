@@ -105,6 +105,9 @@ importers:
       layerchart:
         specifier: 2.0.0-next.27
         version: 2.0.0-next.27(svelte@5.38.3)
+      little-date:
+        specifier: ^1.0.0
+        version: 1.0.0
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.38.3)
@@ -1152,6 +1155,10 @@ packages:
     resolution: {integrity: sha512-HIRxHzHagPtUPNabjOlfcyismJYIsc+Xlq4mlsts4e8eAcwyq9Tgk/sYdyhlBpQ0MHwVquc/8j+e29YjXnmxeA==}
     engines: {node: '>=12'}
 
+  date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
@@ -1555,6 +1562,10 @@ packages:
 
   lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
+    engines: {node: '>=10'}
+
+  little-date@1.0.0:
+    resolution: {integrity: sha512-41T/ktcwPzxC0OJ8E3wmaK0E1DL/QNR3n30kB9Dw6Ni6Eud24It8LZm70jK8lvDd+Mg+961fzKDcF6SQRL25cQ==}
     engines: {node: '>=10'}
 
   locate-character@3.0.0:
@@ -2263,8 +2274,7 @@ snapshots:
   '@ark/util@0.46.0':
     optional: true
 
-  '@babel/runtime@7.28.3':
-    optional: true
+  '@babel/runtime@7.28.3': {}
 
   '@dagrejs/dagre@1.1.5':
     dependencies:
@@ -3174,6 +3184,10 @@ snapshots:
       d3-delaunay: 6.0.4
       d3-scale: 4.0.2
 
+  date-fns@2.30.0:
+    dependencies:
+      '@babel/runtime': 7.28.3
+
   dayjs@1.11.13:
     optional: true
 
@@ -3617,6 +3631,10 @@ snapshots:
       lightningcss-win32-x64-msvc: 1.30.1
 
   lilconfig@2.1.0: {}
+
+  little-date@1.0.0:
+    dependencies:
+      date-fns: 2.30.0
 
   locate-character@3.0.0: {}
 

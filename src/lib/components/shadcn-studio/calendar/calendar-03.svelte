@@ -1,13 +1,11 @@
 <script lang="ts">
 	import { RangeCalendar } from '$lib/components/ui/range-calendar';
-	import { getLocalTimeZone, today } from '@internationalized/date';
+	import { CalendarDate } from '@internationalized/date';
+	import type { DateRange } from 'bits-ui';
 
-	const start = today(getLocalTimeZone());
-	const end = start.add({ days: 7 });
-
-	let value = $state({
-		start,
-		end
+	let value = $state<DateRange>({
+		start: new CalendarDate(2025, 6, 4),
+		end: new CalendarDate(2025, 6, 17)
 	});
 </script>
 
