@@ -1634,60 +1634,60 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'calendar-15',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-15.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-15.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-16',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-16.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-16.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-17',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-17.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-17.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-18',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-18.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-18.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-19',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-19.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-19.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-20',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-20.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-20.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'calendar-15',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-15.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-15.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-16',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-16.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-16.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-17',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-17.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-17.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-18',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-18.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-18.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-19',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-19.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-19.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-20',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-20.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-20.svelte'
+			}
+		]
+	},
 	// {
 	// 	name: 'calendar-21',
 	// 	files: [
@@ -1697,42 +1697,42 @@ export const components: ComponentProps[] = [
 	// 		}
 	// 	]
 	// },
-	// {
-	// 	name: 'calendar-22',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-22.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-22.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-23',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-23.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-23.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-24',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-24.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-24.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'calendar-25',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-25.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-25.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'calendar-22',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-22.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-22.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-23',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-23.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-23.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-24',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-24.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-24.svelte'
+			}
+		]
+	},
+	{
+		name: 'calendar-25',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-25.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-25.svelte'
+			}
+		]
+	},
 	{
 		name: 'card-01',
 		files: [

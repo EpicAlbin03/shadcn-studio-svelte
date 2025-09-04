@@ -1,31 +1,8 @@
 <script lang="ts">
-
+	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
 </script>
 
-
-
-
-import { Calendar } from '$lib/components/ui/calendar';
-	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
-
-const CalendarWeekNumberDemo = () => {
-  let value = $state<CalendarDate | undefined>(today(getLocalTimeZone()));
-
-  return (
-    <div>
-      <Calendar
-        type="single"
-
-        bind:value
-
-        class='rounded-lg border shadow-sm'
-        showWeekNumber
-      />
-      <p class='text-muted-foreground mt-4 text-center text-xs' role='region'>
-        Week number calendar
-      </p>
-    </div>
-  )
-}
-
-
+<div>
+	<UnderConstruction />
+	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">Week number calendar</p>
+</div>

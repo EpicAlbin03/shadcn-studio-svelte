@@ -1,34 +1,26 @@
 <script lang="ts">
-
-</script>
-
-
-
-
-import { Calendar } from '$lib/components/ui/calendar';
+	import { Calendar } from '$lib/components/ui/calendar';
 	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 
-const CalendarRightYearMonthDemo = () => {
-  let value = $state<CalendarDate | undefined>(today(getLocalTimeZone()));
+	let value = $state<CalendarDate | undefined>(today(getLocalTimeZone()));
+</script>
 
-  return (
-    <div>
-      <Calendar
-        type="single"
-        bind:value
-
-
-        class='rounded-md border'
-        classs={{
-          month_caption: 'flex items-center h-8 justify-start',
-          nav: 'flex justify-end absolute w-full items-center'
-        }}
-      />
-      <p class='text-muted-foreground mt-4 text-center text-xs' role='region'>
-        Right side month year navigation calendar
-      </p>
-    </div>
-  )
-}
-
-
+<div>
+	<Calendar
+		type="single"
+		bind:value
+		class="rounded-md border
+  [&_[data-calendar-header]]:!flex
+  [&_[data-calendar-header]]:!w-full
+  [&_[data-calendar-header]]:!items-center
+  [&_[data-calendar-header]]:!justify-start
+  [&_nav]:!flex
+  [&_nav]:!h-8
+  [&_nav]:!items-center
+  [&_nav]:!justify-end
+  "
+	/>
+	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">
+		Right side month year navigation calendar
+	</p>
+</div>
