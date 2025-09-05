@@ -24,7 +24,7 @@
 </script>
 
 <div class="absolute end-2 top-2 flex items-center gap-2">
-	<CopyPrompt />
+	<!-- <CopyPrompt /> -->
 	<Dialog>
 		<Tooltip>
 			<TooltipTrigger>
@@ -47,12 +47,12 @@
 			<TooltipContent>View code</TooltipContent>
 		</Tooltip>
 		<DialogContent class="sm:max-w-[900px]">
-			<DialogHeader>
+			<!-- <DialogHeader>
 				<DialogTitle class="text-left">CLI Command</DialogTitle>
 				<DialogDescription class="sr-only"
 					>Use the CLI to add components to your project</DialogDescription
 				>
-			</DialogHeader>
+			</DialogHeader> -->
 			<div class="min-w-0 space-y-5">
 				<!-- <div class="overflow-hidden rounded-md border">
 					<img

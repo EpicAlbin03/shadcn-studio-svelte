@@ -8,7 +8,7 @@
 
 	let { componentName, category, ...props }: Props = $props();
 
-	const loadComponent: Promise<ComponentType | null> = $derived.by(async () => {
+	async function loadComponent(): Promise<ComponentType | null> {
 		if (!componentName) {
 			return null;
 		}
@@ -18,13 +18,14 @@
 				`$lib/components/shadcn-studio/${category}/${componentName}.svelte`
 			);
 			return module.default;
-		} catch (err) {
+		} catch (error) {
+			console.error(`Failed to load component ${componentName}: ${error}`);
 			throw new Error(`Failed to load component ${componentName}`);
 		}
-	});
+	}
 </script>
 
-{#await loadComponent}
+{#await loadComponent()}
 	<div class="flex h-full flex-col items-center justify-center">
 		<SpinnerSVG class="size-10 animate-spin" />
 	</div>

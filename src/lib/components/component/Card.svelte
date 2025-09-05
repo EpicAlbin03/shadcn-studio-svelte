@@ -10,7 +10,7 @@
 
 <div
 	class={cn(
-		'group/item relative flex min-h-[210px] items-center justify-center px-8 py-12 group-first/grid:border-t-0 max-sm:px-4',
+		'group/item relative flex min-h-[210px] w-full items-center justify-center px-8 py-12 group-first/grid:border-t-0 max-sm:px-4',
 		className
 	)}
 	data-slot={componentName}

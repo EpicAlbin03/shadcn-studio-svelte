@@ -10,22 +10,22 @@
 	const items = [
 		{
 			name: 'Richard Payne',
-			email: 'pwright$libyahoo.com',
-			avatarImage: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png',
+			email: 'pwright@yahoo.com',
+			avatarImage: '/avatars/01.webp',
 			content:
 				'Richard Payne is a remarkable individual known for his exceptional skills and expertise in various fields. With a strong background in technology and a passion for innovation, Richard has made significant contributions to the industry.'
 		},
 		{
 			name: 'Jordan Stevenson',
-			email: 'wramirez$liboutlook.com',
-			avatarImage: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-2.png',
+			email: 'wramirez@outlook.com',
+			avatarImage: '/avatars/02.webp',
 			content:
 				'Jordan Stevenson is a talented individual with a passion for technology and innovation. Jordan has made significant contributions to various projects and has a deep understanding of programming languages and frameworks.'
 		},
 		{
 			name: 'Nicholas Tanner',
-			email: 'snguyen$libicloud.com',
-			avatarImage: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png',
+			email: 'snguyen@icloud.com',
+			avatarImage: '/avatars/03.webp',
 			content:
 				'Nicholas Tanner is a highly skilled individual with a strong passion for technology and innovation. Nicholas has made significant contributions to numerous projects and possesses a deep understanding of various programming languages and frameworks.'
 		}

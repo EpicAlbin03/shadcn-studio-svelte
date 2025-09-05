@@ -19,7 +19,7 @@
 		type="single"
 		bind:value
 		minValue={todayDate}
-		class="rounded-lg border shadow-sm [--cell-size:--spacing(11)] md:[--cell-size:--spacing(13)]"
+		class="rounded-lg border [--cell-size:--spacing(12)]"
 	>
 		{#snippet day({ day, outsideMonth })}
 			{@const price = getPriceForDate(day)}

@@ -71,7 +71,7 @@
 	<Card.Header class="flex flex-row items-center">
 		<div class="flex items-center gap-4">
 			<Avatar.Root class="border">
-				<Avatar.Image src="/avatars/01.png" alt="Image" />
+				<Avatar.Image src="/avatars/01.webp" alt="Image" />
 				<Avatar.Fallback>OM</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col gap-0.5">
