@@ -2046,29 +2046,29 @@ export const components: ComponentProps[] = [
 		],
 		isAnimated: true
 	},
-	{
-		name: 'checkbox-18',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/checkbox/checkbox-18.svelte',
-				target: 'components/shadcn-studio/checkbox/checkbox-18.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-checkbox.svelte'
-			}
-		],
-		isAnimated: true
-	},
-	{
-		name: 'checkbox-19',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/checkbox/checkbox-19.svelte',
-				target: 'components/shadcn-studio/checkbox/checkbox-19.svelte'
-			}
-		],
-		isAnimated: true
-	},
+	// {
+	// 	name: 'checkbox-18',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/checkbox/checkbox-18.svelte',
+	// 			target: 'components/shadcn-studio/checkbox/checkbox-18.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-checkbox.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
+	// {
+	// 	name: 'checkbox-19',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/checkbox/checkbox-19.svelte',
+	// 			target: 'components/shadcn-studio/checkbox/checkbox-19.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
 	{
 		name: 'collapsible-01',
 		files: [

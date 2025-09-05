@@ -15,10 +15,10 @@
 	<Card class="w-fit py-4">
 		<CardHeader class="flex items-center justify-center gap-2 border-b px-3 !pb-3">
 			<div class="flex w-full flex-col gap-3">
-				<Label for={`${id}-time`} class="text-xs">Enter Time</Label>
+				<Label for={id} class="text-xs">Enter Time</Label>
 				<div class="relative grow">
 					<Input
-						id={`${id}-time`}
+						{id}
 						type="time"
 						step="1"
 						value="12:00:00"

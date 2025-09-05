@@ -22,12 +22,12 @@
 	<Card class="gap-5 py-5">
 		<CardHeader class="flex items-center gap-2 border-b px-3 !pb-3">
 			<div class="flex w-full flex-col gap-3">
-				<Label for={`${id}-date`} class="text-xs">Enter Date</Label>
+				<Label for={id} class="text-xs">Enter Date</Label>
 				<Popover bind:open>
 					<PopoverTrigger>
 						{#snippet child({ props })}
 							<Button
-								id={`${id}-date`}
+								{id}
 								variant="outline"
 								class={cn('justify-start text-left font-normal', !value && 'text-muted-foreground')}
 								{...props}
