@@ -60,7 +60,7 @@
 				{
 					title: 'How can I contact customer support?',
 					content:
-						'Our customer support team is available 24/7. You can reach us via live chat, email at support$libexample.com, or by phone at 1-800-123-4567. For faster service, please have your order number ready when contacting us.',
+						'Our customer support team is available 24/7. You can reach us via live chat, email at support@example.com, or by phone at 1-800-123-4567. For faster service, please have your order number ready when contacting us.',
 					open: true
 				},
 				{

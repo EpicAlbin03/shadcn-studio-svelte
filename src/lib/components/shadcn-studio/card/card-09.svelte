@@ -1,0 +1,13 @@
+<script lang="ts">
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+</script>
+
+<Card class="max-w-md gap-0 border-primary bg-transparent shadow-none">
+	<CardHeader>
+		<CardTitle>Creative Clash</CardTitle>
+	</CardHeader>
+	<CardContent>
+		Step into a space where design skills are tested, ideas come alive, and only the boldest
+		concepts win the spotlight.
+	</CardContent>
+</Card>

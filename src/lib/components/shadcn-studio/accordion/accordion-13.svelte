@@ -24,7 +24,7 @@
 			icon: HeadsetIcon,
 			title: 'How can I contact customer support?',
 			content:
-				'You can reach us via live chat, email at support$libexample.com, or by phone at 1-800-123-4567.',
+				'You can reach us via live chat, email at support@example.com, or by phone at 1-800-123-4567.',
 			media: '/components/accordion-03.webp'
 		}
 	];
