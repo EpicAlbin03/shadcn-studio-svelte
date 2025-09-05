@@ -7,6 +7,6 @@
 	<CircleAlertIcon />
 	<AlertTitle>Editing your profile</AlertTitle>
 	<AlertDescription class="text-primary-foreground/80">
-		Changes won&apos;t be saved until you click “Update.”
+		Changes won't be saved until you click “Update.”
 	</AlertDescription>
 </Alert>

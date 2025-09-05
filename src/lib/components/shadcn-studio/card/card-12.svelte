@@ -41,8 +41,8 @@
 		</CardHeader>
 		<CardContent>
 			<p>
-				Crossing hardwood comfort with off-court flair. &apos;80s-Inspired construction, bold
-				details and nothin&apos;-but-net style.
+				Crossing hardwood comfort with off-court flair. '80s-Inspired construction, bold details and
+				nothin'-but-net style.
 			</p>
 		</CardContent>
 		<CardFooter class="justify-between gap-3 max-sm:flex-col max-sm:items-stretch">

@@ -7,6 +7,6 @@
 	<CircleAlertIcon />
 	<AlertTitle>Verify your email to activate your account</AlertTitle>
 	<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
-		We&apos;ve sent a confirmation link to your inbox. Check your email to complete the sign-up.
+		We've sent a confirmation link to your inbox. Check your email to complete the sign-up.
 	</AlertDescription>
 </Alert>

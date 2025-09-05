@@ -5,7 +5,6 @@
 	import type { Snippet } from 'svelte';
 	import CollapsibleYear from './CollapsibleYear.svelte';
 	import { CalendarDate, endOfYear, getLocalTimeZone, startOfYear } from '@internationalized/date';
-	import type { DateRange } from 'bits-ui';
 
 	type Props = {
 		class?: string;
@@ -31,9 +30,9 @@
 		onMonthSelect
 	}: Props = $props();
 
-	let currentYearRef = $state<HTMLDivElement>();
-	let currentMonthButtonRef = $state<HTMLButtonElement>();
-	let scrollAreaRef = $state<HTMLDivElement>();
+	let currentYearRef = $state<HTMLDivElement | null>(null);
+	let currentMonthButtonRef = $state<HTMLButtonElement | null>(null);
+	let scrollAreaRef = $state<HTMLDivElement | null>(null);
 
 	watch(
 		() => isYearView,

@@ -12,7 +12,7 @@
 		<div class="flex flex-1 flex-col gap-1">
 			<AlertTitle>Verify your email to activate your account</AlertTitle>
 			<AlertDescription class="text-accent-foreground/60">
-				We&apos;ve sent a confirmation link to your inbox. Check your email to complete the sign-up.
+				We've sent a confirmation link to your inbox. Check your email to complete the sign-up.
 			</AlertDescription>
 		</div>
 		<button class="cursor-pointer" onclick={() => (isActive = false)}>

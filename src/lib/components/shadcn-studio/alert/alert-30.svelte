@@ -5,6 +5,6 @@
 
 <Alert class="border-none bg-destructive text-white dark:bg-destructive/60">
 	<TriangleAlertIcon />
-	<AlertTitle>Couldn&apos;t save changes</AlertTitle>
+	<AlertTitle>Couldn't save changes</AlertTitle>
 	<AlertDescription class="text-white/80">Please try again or reload the page.</AlertDescription>
 </Alert>

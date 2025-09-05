@@ -19,7 +19,7 @@
 	</Avatar>
 	<div class="flex flex-1 flex-col gap-2">
 		<div class="flex-1 flex-col justify-center gap-1">
-			<AlertTitle>$libRocky</AlertTitle>
+			<AlertTitle>@Rocky</AlertTitle>
 			<AlertDescription>this projects task is remaining, deadline is near.</AlertDescription>
 		</div>
 		<Progress

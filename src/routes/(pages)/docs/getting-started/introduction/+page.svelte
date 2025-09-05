@@ -24,14 +24,14 @@
 		<h2 class="text-xl font-bold">What is shadcn/studio?</h2>
 		<p class="text-foreground/80">
 			<strong class="font-semibold text-foreground">
-				This isn&apos;t a traditional component library or a replacement for Shadcn
+				This isn't a traditional component library or a replacement for Shadcn
 			</strong>
-			. Instead, it&apos;s a unique collection offers customizable variants of components, blocks, and
-			templates. Preview, customize, and copy-paste them into your apps with ease.
+			. Instead, it's a unique collection offers customizable variants of components, blocks, and templates.
+			Preview, customize, and copy-paste them into your apps with ease.
 		</p>
 		<p class="text-foreground/80">
-			Building on the solid foundation of the Shadcn components & blocks, we&apos;ve enhanced it
-			with custom-designed components & blocks to give you a head start. This allows you to craft,
+			Building on the solid foundation of the Shadcn components & blocks, we've enhanced it with
+			custom-designed components & blocks to give you a head start. This allows you to craft,
 			customize, and ship your projects faster and more efficiently.
 		</p>
 	</div>
@@ -39,8 +39,8 @@
 	<div class="flex flex-col items-start space-y-3">
 		<h2 class="text-xl font-bold">Not a Standard Library, but a Distribution of Components</h2>
 		<p class="text-foreground/80">
-			Following the philosophy of Shadcn, shadcn/studio isn&apos;t a conventional “install-from-NPM”
-			library. Rather, it&apos;s an open-source distribution of components designed for maximum
+			Following the philosophy of Shadcn, shadcn/studio isn't a conventional “install-from-NPM”
+			library. Rather, it's an open-source distribution of components designed for maximum
 			adaptability. You can copy the code, modify styles, adjust logic, or integrate it with other
 			tools—free from the limitations of typical libraries. This &quot;open code&quot; model
 			empowers you to customize with confidence and creativity.

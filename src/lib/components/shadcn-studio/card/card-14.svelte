@@ -22,7 +22,7 @@
 		</CardHeader>
 		<CardContent class="flex flex-col gap-4 text-center">
 			<p>
-				Let&apos;s discuss! Our Assistant team is excited to hear about your projects, ideas and
+				Let's discuss! Our Assistant team is excited to hear about your projects, ideas and
 				questions.
 			</p>
 			<Button>Contact Our Team</Button>

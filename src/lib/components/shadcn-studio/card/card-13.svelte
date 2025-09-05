@@ -27,7 +27,7 @@
 			</Avatar>
 			<div class="flex flex-col gap-0.5">
 				<CardTitle class="flex items-center gap-1 text-sm">Sam Green</CardTitle>
-				<CardDescription>$libSamG11</CardDescription>
+				<CardDescription>@SamG11</CardDescription>
 			</div>
 		</div>
 		<div class="flex items-center gap-1">

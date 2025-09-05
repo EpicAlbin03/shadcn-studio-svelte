@@ -40,7 +40,7 @@
 		<Button type="submit" class="w-full">Login</Button>
 		<Button variant="outline" class="w-full">Continue with Google</Button>
 		<div class="mt-4 text-center text-sm">
-			Don&apos;t have an account?{' '}
+			Don't have an account?{' '}
 			<a href="#" class="underline underline-offset-4"> Sign up </a>
 		</div>
 	</CardFooter>

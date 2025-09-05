@@ -7,6 +7,6 @@
 	<CircleAlertIcon />
 	<AlertTitle>File Should be PDF,DOCX,JPG, or PNG.</AlertTitle>
 	<AlertDescription
-		>If the file type is not one of this than we can&apos;t get your files</AlertDescription
+		>If the file type is not one of this than we can't get your files</AlertDescription
 	>
 </Alert>

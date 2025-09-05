@@ -19,7 +19,7 @@
 		<UploadIcon />
 		<div class="flex flex-1 flex-col gap-4">
 			<div class="flex-1 flex-col justify-center gap-1">
-				<AlertTitle>Uploading your &apos;Img-234.png&apos;</AlertTitle>
+				<AlertTitle>Uploading your 'Img-234.png'</AlertTitle>
 				<AlertDescription>Please wait While we upload your image.</AlertDescription>
 			</div>
 			<Progress

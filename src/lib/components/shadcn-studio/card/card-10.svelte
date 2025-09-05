@@ -7,7 +7,7 @@
 			name: 'Home',
 			value: 'home',
 			content:
-				'Welcome to the Home tab! Here, you can explore the latest updates, news, and highlights. Stay informed about what&apos;s happening and never miss out on important announcements.'
+				"Welcome to the Home tab! Here, you can explore the latest updates, news, and highlights. Stay informed about what's happening and never miss out on important announcements."
 		},
 		{
 			name: 'Profile',

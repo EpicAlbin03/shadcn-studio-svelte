@@ -71,11 +71,9 @@
 				<Sparkles class="size-4" />
 				Roadmap
 			</Badge>
-			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
-				What&apos;s Coming Next
-			</h2>
+			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">What's Coming Next</h2>
 			<p class="max-w-[800px] text-center text-muted-foreground">
-				Discover the latest updates and features we&apos;re working on to enhance your experience.
+				Discover the latest updates and features we're working on to enhance your experience.
 			</p>
 		</div>
 		<div class="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">

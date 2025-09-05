@@ -29,7 +29,7 @@
 		<Dialog.Header>
 			<Dialog.Title>Content filter preferences</Dialog.Title>
 			<Dialog.Description>
-				The content filter flags text that may violate our content policy. It&apos;s powered by our
+				The content filter flags text that may violate our content policy. It's powered by our
 				moderation endpoint which is free to use to moderate your OpenAI API traffic. Learn more.
 			</Dialog.Description>
 		</Dialog.Header>
@@ -56,7 +56,7 @@
 			<AlertDialog.Title>Are you sure absolutely sure?</AlertDialog.Title>
 			<AlertDialog.Description>
 				This action cannot be undone. This preset will no longer be accessible by you or others
-				you&apos;ve shared it with.
+				you've shared it with.
 			</AlertDialog.Description>
 		</AlertDialog.Header>
 		<AlertDialog.Footer>

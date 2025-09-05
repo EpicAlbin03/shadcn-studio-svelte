@@ -12,7 +12,7 @@
 	<div class="flex items-center justify-between gap-2">
 		<div class="flex flex-col gap-1">
 			<h2 class="text-2xl font-semibold tracking-tight">Welcome back!</h2>
-			<p class="text-muted-foreground">Here&apos;s a list of your tasks for this month.</p>
+			<p class="text-muted-foreground">Here's a list of your tasks for this month.</p>
 		</div>
 		<div class="flex items-center gap-2">
 			<UserNav />
