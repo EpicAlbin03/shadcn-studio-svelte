@@ -1688,15 +1688,15 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'calendar-21',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/calendar/calendar-21.svelte',
-	// 			target: 'components/shadcn-studio/calendar/calendar-21.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'calendar-21',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/calendar/calendar-21.svelte',
+				target: 'components/shadcn-studio/calendar/calendar-21.svelte'
+			}
+		]
+	},
 	{
 		name: 'calendar-22',
 		files: [
