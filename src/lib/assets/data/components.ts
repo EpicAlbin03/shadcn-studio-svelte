@@ -5520,31 +5520,31 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/tooltip/tooltip-15.svelte'
 			}
 		]
-	},
-	{
-		name: 'tooltip-16',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/tooltip/tooltip-16.svelte',
-				target: 'components/shadcn-studio/tooltip/tooltip-16.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-tooltip.svelte'
-			}
-		],
-		isAnimated: true
-	},
-	{
-		name: 'tooltip-17',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/tooltip/tooltip-17.svelte',
-				target: 'components/shadcn-studio/tooltip/tooltip-17.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/global-tooltip.svelte'
-			}
-		],
-		isAnimated: true
 	}
+	// {
+	// 	name: 'tooltip-16',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/tooltip/tooltip-16.svelte',
+	// 			target: 'components/shadcn-studio/tooltip/tooltip-16.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-tooltip.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
+	// {
+	// 	name: 'tooltip-17',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/tooltip/tooltip-17.svelte',
+	// 			target: 'components/shadcn-studio/tooltip/tooltip-17.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/global-tooltip.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// }
 ];
