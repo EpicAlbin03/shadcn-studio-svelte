@@ -1,0 +1,142 @@
+<script lang="ts">
+	import { ArchiveIcon, PencilIcon, Trash2Icon } from '@lucide/svelte';
+	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import { Button } from '$lib/components/ui/button';
+	import { Checkbox } from '$lib/components/ui/checkbox';
+	import {
+		Table,
+		TableBody,
+		TableCell,
+		TableHead,
+		TableHeader,
+		TableRow
+	} from '$lib/components/ui/table';
+
+	const items = [
+		{
+			id: '1',
+			productName: 'Chair',
+			model: 'Wooden Garden  Chair',
+			src: '/components/product-01.webp',
+			fallback: 'WGC',
+			color: 'Black',
+			category: 'Furniture',
+			price: '$269.09'
+		},
+		{
+			id: '2',
+			productName: 'Nike Shoes',
+			model: 'Jordan 1 Retro OG',
+			src: '/components/product-02.webp',
+			fallback: 'J1R',
+			color: 'Red',
+			category: 'Sneakers',
+			price: '$150.00'
+		},
+		{
+			id: '3',
+			productName: 'OnePluse',
+			model: 'OnePlus 7 Pro',
+			src: '/components/product-03.webp',
+			fallback: 'O7P',
+			color: 'Nebula Blue',
+			category: 'Smartphone',
+			price: '$869.00'
+		},
+		{
+			id: '4',
+			productName: 'Nintendo',
+			model: 'Nintendo Switch',
+			src: '/components/product-04.webp',
+			fallback: 'NS',
+			color: 'Neon Blue and Red',
+			category: 'Console Gaming',
+			price: '$499.00'
+		},
+		{
+			id: '5',
+			productName: 'Apple Magic Mouse',
+			model: 'Apple Magic Mouse',
+			src: '/components/product-05.webp',
+			fallback: 'AMM',
+			color: 'Black',
+			category: 'Electronics',
+			price: '$110.29'
+		}
+	];
+
+	const id = $props.id();
+</script>
+
+<div class="w-full">
+	<div class="[&>div]:rounded-sm [&>div]:border">
+		<Table>
+			<TableHeader>
+				<TableRow class="hover:bg-transparent">
+					<TableHead>
+						<Checkbox {id} aria-label="select-all" />
+					</TableHead>
+					<TableHead>Product</TableHead>
+					<TableHead>Color</TableHead>
+					<TableHead>Category</TableHead>
+					<TableHead>Price</TableHead>
+					<TableHead class="w-0">Actions</TableHead>
+				</TableRow>
+			</TableHeader>
+			<TableBody>
+				{#each items as item (item.id)}
+					<TableRow class="has-data-[state=checked]:bg-muted/50">
+						<TableCell>
+							<Checkbox
+								id={`table-checkbox-${item.id}`}
+								aria-label={`product-checkbox-${item.id}`}
+							/>
+						</TableCell>
+						<TableCell>
+							<div class="flex items-center gap-3">
+								<Avatar class="rounded-sm">
+									<AvatarImage src={item.src} alt={item.model} />
+									<AvatarFallback class="text-xs">{item.fallback}</AvatarFallback>
+								</Avatar>
+								<div>
+									<div class="font-medium">{item.productName}</div>
+									<span class="mt-0.5 text-xs text-muted-foreground">{item.model}</span>
+								</div>
+							</div>
+						</TableCell>
+						<TableCell>{item.color}</TableCell>
+						<TableCell>{item.category}</TableCell>
+						<TableCell>{item.price}</TableCell>
+						<TableCell class="flex items-center gap-1">
+							<Button
+								variant="ghost"
+								size="icon"
+								class="rounded-full"
+								aria-label={`product-${item.id}-edit`}
+							>
+								<PencilIcon />
+							</Button>
+							<Button
+								variant="ghost"
+								size="icon"
+								class="rounded-full"
+								aria-label={`product-${item.id}-remove`}
+							>
+								<Trash2Icon />
+							</Button>
+							<Button
+								variant="ghost"
+								size="icon"
+								class="rounded-full"
+								aria-label={`product-${item.id}-archive`}
+							>
+								<ArchiveIcon />
+							</Button>
+						</TableCell>
+					</TableRow>
+				{/each}
+			</TableBody>
+		</Table>
+	</div>
+	<p class="mt-4 text-center text-sm text-muted-foreground">Product Table</p>
+</div>
