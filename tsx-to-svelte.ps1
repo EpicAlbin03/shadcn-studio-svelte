@@ -24,6 +24,9 @@ Get-ChildItem -Path $Path -Filter *.svelte -File -Recurse | ForEach-Object {
     # Replace className with class
     $content = $content -replace 'className', 'class'
 
+    # Replace htmlFor with for
+    $content = $content -replace 'htmlFor', 'for'
+
     # Replace $lib/lib/utils with $lib/utils
     $content = $content -replace [Regex]::Escape('$lib/lib/utils'), '$lib/utils'
 

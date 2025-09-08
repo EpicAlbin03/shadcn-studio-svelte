@@ -4757,32 +4757,32 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	{
-		name: 'switch-19',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/switch/switch-19.svelte',
-				target: 'components/shadcn-studio/switch/switch-19.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-switch.svelte'
-			}
-		],
-		isAnimated: true
-	},
-	{
-		name: 'switch-20',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/switch/switch-20.svelte',
-				target: 'components/shadcn-studio/switch/switch-20.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-switch.svelte'
-			}
-		],
-		isAnimated: true
-	},
+	// {
+	// 	name: 'switch-19',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/switch/switch-19.svelte',
+	// 			target: 'components/shadcn-studio/switch/switch-19.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-switch.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
+	// {
+	// 	name: 'switch-20',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/switch/switch-20.svelte',
+	// 			target: 'components/shadcn-studio/switch/switch-20.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-switch.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
 	{
 		name: 'table-01',
 		files: [
