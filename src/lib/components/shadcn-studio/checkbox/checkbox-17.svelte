@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import MotionCheckbox from '$lib/components/ui/motion-checkbox.svelte';
 	import { Label } from '$lib/components/ui/label';
 
@@ -10,4 +10,4 @@
 <div class="flex items-center gap-2">
 	<MotionCheckbox />
 	<Label for={id}>Animated checkbox</Label>
-</div>
+</div> -->
