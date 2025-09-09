@@ -2321,93 +2321,97 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/data-table/data-table-04.svelte',
 				target: 'components/shadcn-studio/data-table/data-table-04.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-05',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-05.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-05.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-06',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-06.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-06.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-07',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-07.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-07.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-08',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-08.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-08.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-09',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-09.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-09.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-10',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-10.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-10.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-11',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-11.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-11.svelte'
 			},
 			{
-				path: 'src/hooks/use-pagination.svelte.ts'
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-04/Filter.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-04/Filter.svelte'
 			}
 		]
 	},
-	{
-		name: 'data-table-12',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-12.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-12.svelte'
-			}
-		]
-	},
-	{
-		name: 'data-table-13',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/data-table/data-table-13.svelte',
-				target: 'components/shadcn-studio/data-table/data-table-13.svelte'
-			}
-		]
-	},
+	// {
+	// 	name: 'data-table-05',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-05.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-05.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-06',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-06.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-06.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-07',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-07.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-07.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-08',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-08.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-08.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-09',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-09.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-09.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-10',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-10.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-10.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-11',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-11.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-11.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/hooks/use-pagination.svelte.ts'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-12',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-12.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-12.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'data-table-13',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-13.svelte',
+	// 			target: 'components/shadcn-studio/data-table/data-table-13.svelte'
+	// 		}
+	// 	]
+	// },
 	{
 		name: 'date-picker-01',
 		files: [
