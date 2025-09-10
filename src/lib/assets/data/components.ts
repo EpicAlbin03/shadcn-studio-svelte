@@ -2373,45 +2373,45 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'data-table-10',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-10.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-10.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-11',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-11.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-11.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/hooks/use-pagination.svelte.ts'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-12',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-12.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-12.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-13',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-13.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-13.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'data-table-10',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-10.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-10.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-11',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-11.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-11.svelte'
+			}
+			// {
+			// 	path: 'src/hooks/use-pagination.svelte.ts'
+			// }
+		]
+	},
+	{
+		name: 'data-table-12',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-12.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-12.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-13',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-13.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-13.svelte'
+			}
+		]
+	},
 	{
 		name: 'date-picker-01',
 		files: [
