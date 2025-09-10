@@ -2328,51 +2328,51 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'data-table-05',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-05.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-05.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-06',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-06.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-06.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-07',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-07.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-07.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-08',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-08.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-08.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'data-table-09',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/data-table/data-table-09.svelte',
-	// 			target: 'components/shadcn-studio/data-table/data-table-09.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'data-table-05',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-05.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-05.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-06',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-06.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-06.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-07',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-07.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-07.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-08',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-08.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-08.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-09',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-09.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-09.svelte'
+			}
+		]
+	},
 	// {
 	// 	name: 'data-table-10',
 	// 	files: [
