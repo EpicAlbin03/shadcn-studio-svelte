@@ -35,7 +35,7 @@
 <MetaData {title} {description} />
 
 <ModeWatcher defaultMode="system" disableTransitions themeStorageKey={''} />
-<Toaster duration={3000} position="top-right" closeButton />
+<Toaster duration={3000} />
 
 <TooltipProvider>
 	{@render children?.()}
