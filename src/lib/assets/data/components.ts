@@ -5165,42 +5165,42 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	{
-		name: 'tabs-27',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/tabs/tabs-27.svelte',
-				target: 'components/shadcn-studio/tabs/tabs-27.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-highlight.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-tabs.svelte'
-			}
-		],
-		isAnimated: true
-	},
-	{
-		name: 'tabs-28',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/tabs/tabs-28.svelte',
-				target: 'components/shadcn-studio/tabs/tabs-28.svelte'
-			}
-		],
-		isAnimated: true
-	},
-	{
-		name: 'tabs-29',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/tabs/tabs-29.svelte',
-				target: 'components/shadcn-studio/tabs/tabs-29.svelte'
-			}
-		],
-		isAnimated: true
-	},
+	// {
+	// 	name: 'tabs-27',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-27.svelte',
+	// 			target: 'components/shadcn-studio/tabs/tabs-27.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-highlight.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-tabs.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
+	// {
+	// 	name: 'tabs-28',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-28.svelte',
+	// 			target: 'components/shadcn-studio/tabs/tabs-28.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
+	// {
+	// 	name: 'tabs-29',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-29.svelte',
+	// 			target: 'components/shadcn-studio/tabs/tabs-29.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
 	{
 		name: 'textarea-01',
 		files: [
