@@ -16,7 +16,7 @@
 			<CollapsibleContent>
 				<p class="text-sm">
 					To track your order, simply log in to your account and navigate to the order history
-					section. You&apos;ll find detailed information about your order status and tracking number
+					section. You'll find detailed information about your order status and tracking number
 					there.
 				</p>
 			</CollapsibleContent>

@@ -43,7 +43,7 @@
 	</HoverCardTrigger>
 	<HoverCardContent class="w-72">
 		<div class="space-y-4">
-			<p class="text-lg font-semibold">Today&apos;s task completion</p>
+			<p class="text-lg font-semibold">Today's task completion</p>
 			<ul class="space-y-2.5">
 				{#each tasks as task (task.name)}
 					<li class="flex items-start gap-4">

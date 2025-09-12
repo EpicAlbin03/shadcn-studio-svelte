@@ -27,9 +27,7 @@
 		</div>
 		<CollapsibleContent>
 			<CardContent class="space-y-2 px-0">
-				<p class="px-6">
-					You&apos;ll receive tracking information via email once your order ships.
-				</p>
+				<p class="px-6">You'll receive tracking information via email once your order ships.</p>
 				<img
 					src="/components/accordion-01.webp"
 					alt="Banner"

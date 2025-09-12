@@ -25,7 +25,7 @@
 			name: 'Trending',
 			value: 'trending',
 			content: `Stay on top of what’s <span class='text-foreground font-semibold'>trending</span>. Discover what
-        everyone&apos;s talking about, from viral trends to the latest memes and conversations.`
+        everyone's talking about, from viral trends to the latest memes and conversations.`
 		},
 		{
 			name: 'Events',
@@ -55,7 +55,7 @@
 			name: 'Profile',
 			value: 'profile',
 			content: `View and edit your <span class='text-foreground font-semibold'>profile</span> information, track your
-        activity, and customize your experience. It&apos;s all about you here!`
+        activity, and customize your experience. It's all about you here!`
 		}
 	];
 </script>

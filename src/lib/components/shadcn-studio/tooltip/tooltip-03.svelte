@@ -10,6 +10,6 @@
 		{/snippet}
 	</TooltipTrigger>
 	<TooltipContent arrowClasses="invisible">
-		<p>This tooltip don&apos;t have arrow</p>
+		<p>This tooltip don't have arrow</p>
 	</TooltipContent>
 </Tooltip>

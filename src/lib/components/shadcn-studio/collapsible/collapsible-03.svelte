@@ -41,7 +41,7 @@
 </script>
 
 <Collapsible class="flex w-full max-w-[350px] flex-col items-start gap-4">
-	<div class="font-medium">Today&apos;s task completion</div>
+	<div class="font-medium">Today's task completion</div>
 	<ul class="flex w-full flex-col gap-2">
 		{#each tasks.slice(0, 2) as task (task.name)}
 			<li class="flex items-start gap-4">
