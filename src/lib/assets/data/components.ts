@@ -3952,19 +3952,19 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	{
-		name: 'radio-group-14',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/radio-group/radio-group-14.svelte',
-				target: 'components/shadcn-studio/radio-group/radio-group-14.svelte'
-			},
-			{
-				path: 'src/lib/components/ui/motion-radio-group.svelte'
-			}
-		],
-		isAnimated: true
-	},
+	// {
+	// 	name: 'radio-group-14',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/radio-group/radio-group-14.svelte',
+	// 			target: 'components/shadcn-studio/radio-group/radio-group-14.svelte'
+	// 		},
+	// 		{
+	// 			path: 'src/lib/components/ui/motion-radio-group.svelte'
+	// 		}
+	// 	],
+	// 	isAnimated: true
+	// },
 	{
 		name: 'radio-group-15',
 		files: [

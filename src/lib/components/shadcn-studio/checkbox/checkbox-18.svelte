@@ -8,7 +8,7 @@ import { Checkbox } from '$lib/components/ui/motion-checkbox'
 import { Label } from '$lib/components/ui/label'
 
 const CheckboxAnimatedTodoListDemo = () => {
-  const id = useId()
+  const id = $props.id()
 
   return (
     <div class='flex items-center gap-2'>

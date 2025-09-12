@@ -42,7 +42,7 @@ const ConfettiPiece = ({ index }: { index: number }) => {
 const CheckboxConfettiDemo = () => {
   const [showConfetti, setShowConfetti] = useState(false)
 
-  const id = useId()
+  const id = $props.id()
 
   const handleCheckedChange = (checked: boolean) => {
     if (checked) {
