@@ -1,0 +1,79 @@
+<script lang="ts">
+	import { BellIcon, CircleIcon } from '@lucide/svelte';
+	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import { Button } from '$lib/components/ui/button';
+	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import { Separator } from '$lib/components/ui/separator';
+
+	const notifications = [
+		{
+			id: 1,
+			image: '/avatars/03.webp',
+			message: 'Harry assigned you task of New API implementation',
+			fallback: 'HL',
+			time: '15 Minutes'
+		},
+		{
+			id: 2,
+			image: '/avatars/06.webp',
+			message: 'Jerry joined team',
+			fallback: 'OS',
+			time: '35 Minutes'
+		},
+		{
+			id: 3,
+			image: '/avatars/05.webp',
+			message: 'Congratulate ruby for married life',
+			fallback: 'HR',
+			time: '3 days'
+		}
+	];
+
+	let readMessages = $state([3]);
+</script>
+
+<Popover>
+	<PopoverTrigger>
+		{#snippet child({ props })}
+			<Button {...props} variant="outline" size="icon">
+				<BellIcon />
+				<span class="sr-only">Notifications</span>
+			</Button>
+		{/snippet}
+	</PopoverTrigger>
+	<PopoverContent class="w-80 p-0">
+		<div class="grid">
+			<div class="flex items-center justify-between gap-2 px-4 py-2.5">
+				<span class="font-medium">Notifications</span>
+				<Button
+					variant="secondary"
+					class="h-7 rounded-full px-2 py-1 text-xs"
+					onclick={() => (readMessages = notifications.map((item) => item.id))}
+				>
+					Mark as all read
+				</Button>
+			</div>
+			<Separator class="" />
+			<ul class="grid gap-4 p-2">
+				{#each notifications as item (item.id)}
+					<li
+						class="flex items-start gap-2 rounded-lg px-2 py-1.5 hover:bg-accent"
+						onclick={() => readMessages.push(item.id)}
+					>
+						<Avatar class="rounded-lg">
+							<AvatarImage src={item.image} alt={item.fallback} />
+							<AvatarFallback class="rounded-lg text-xs">{item.fallback}</AvatarFallback>
+						</Avatar>
+						<div class="flex-1 space-y-1">
+							<div class="text-sm font-medium">{item.message}</div>
+							<p class="text-xs text-muted-foreground">{`${item.time} ago`}</p>
+						</div>
+						{#if !readMessages.includes(item.id)}
+							<CircleIcon class="size-2 self-center fill-primary text-primary" />
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</PopoverContent>
+</Popover>
