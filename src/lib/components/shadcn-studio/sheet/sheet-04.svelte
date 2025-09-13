@@ -125,7 +125,7 @@
 					If you have any questions or concerns about these Terms and Conditions, please contact us
 					at:
 				</p>
-				<p>Email: support$libexample.com</p>
+				<p>Email: support@example.com</p>
 				<p>Phone: +1 (800) 123-4567</p>
 			</div>
 			<SheetFooter>
