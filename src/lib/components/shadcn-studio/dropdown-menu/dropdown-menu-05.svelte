@@ -48,7 +48,7 @@
 		{/snippet}
 	</DropdownMenuTrigger>
 	<DropdownMenuContent class="sm:w-124">
-		<DropdownMenuLabel>Today&apos;s meetings</DropdownMenuLabel>
+		<DropdownMenuLabel>Today's meetings</DropdownMenuLabel>
 		<DropdownMenuGroup>
 			<DropdownMenuItem
 				class="justify-between gap-3.5"
