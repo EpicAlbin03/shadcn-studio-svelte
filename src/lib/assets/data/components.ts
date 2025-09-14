@@ -3354,60 +3354,60 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	{
-		name: 'input-40',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-40.svelte',
-				target: 'components/shadcn-studio/input/input-40.svelte'
-			}
-		]
-	},
-	{
-		name: 'input-41',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-41.svelte',
-				target: 'components/shadcn-studio/input/input-41.svelte'
-			}
-		]
-	},
-	{
-		name: 'input-42',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-42.svelte',
-				target: 'components/shadcn-studio/input/input-42.svelte'
-			}
-		]
-	},
-	{
-		name: 'input-43',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-43.svelte',
-				target: 'components/shadcn-studio/input/input-43.svelte'
-			}
-		]
-	},
-	{
-		name: 'input-44',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-44.svelte',
-				target: 'components/shadcn-studio/input/input-44.svelte'
-			}
-		]
-	},
-	{
-		name: 'input-45',
-		files: [
-			{
-				path: 'src/lib/components/shadcn-studio/input/input-45.svelte',
-				target: 'components/shadcn-studio/input/input-45.svelte'
-			}
-		]
-	},
+	// {
+	// 	name: 'input-40',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-40.svelte',
+	// 			target: 'components/shadcn-studio/input/input-40.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'input-41',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-41.svelte',
+	// 			target: 'components/shadcn-studio/input/input-41.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'input-42',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-42.svelte',
+	// 			target: 'components/shadcn-studio/input/input-42.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'input-43',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-43.svelte',
+	// 			target: 'components/shadcn-studio/input/input-43.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'input-44',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-44.svelte',
+	// 			target: 'components/shadcn-studio/input/input-44.svelte'
+	// 		}
+	// 	]
+	// },
+	// {
+	// 	name: 'input-45',
+	// 	files: [
+	// 		{
+	// 			path: 'src/lib/components/shadcn-studio/input/input-45.svelte',
+	// 			target: 'components/shadcn-studio/input/input-45.svelte'
+	// 		}
+	// 	]
+	// },
 	{
 		name: 'input-46',
 		files: [
