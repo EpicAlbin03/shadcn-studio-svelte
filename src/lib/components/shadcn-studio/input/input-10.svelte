@@ -9,6 +9,6 @@
 	<Label for={id}>Input with end helper text</Label>
 	<Input {id} type="email" placeholder="Email address" />
 	<p class="text-end text-xs text-muted-foreground">
-		We&apos;ll never share your email with anyone else.
+		We'll never share your email with anyone else.
 	</p>
 </div>
