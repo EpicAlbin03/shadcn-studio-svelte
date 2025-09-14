@@ -1,43 +1,43 @@
 <script lang="ts">
+	import { Label } from '$lib/components/ui/label';
+	import {
+		Select,
+		SelectContent,
+		SelectGroup,
+		SelectItem,
+		SelectLabel,
+		SelectTrigger
+	} from '$lib/components/ui/select';
 
+	const fruits = [
+		{ value: 'apple', label: 'Apple' },
+		{ value: 'banana', label: 'Banana' },
+		{ value: 'blueberry', label: 'Blueberry' },
+		{ value: 'grapes', label: 'Grapes' },
+		{ value: 'pineapple', label: 'Pineapple' }
+	];
+
+	const id = $props.id();
+
+	let value = $state('apple');
+	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
 </script>
 
-
-
-import { Label } from '$lib/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '$lib/components/ui/select'
-
-const SelectMenuZoomInDemo = () => {
-  const id = $props.id()
-
-  return (
-    <div class='w-full max-w-xs space-y-2'>
-      <Label for={id}>Select menu zoom-in</Label>
-      <Select defaultValue='apple'>
-        <SelectTrigger id={id} class='w-full'>
-          <SelectValue placeholder='Select a fruit' />
-        </SelectTrigger>
-        <SelectContent class='data-[state=open]:!zoom-in-0 origin-center duration-400'>
-          <SelectGroup>
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value='apple'>Apple</SelectItem>
-            <SelectItem value='banana'>Banana</SelectItem>
-            <SelectItem value='blueberry'>Blueberry</SelectItem>
-            <SelectItem value='grapes'>Grapes</SelectItem>
-            <SelectItem value='pineapple'>Pineapple</SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
-  )
-}
-
-
+<div class="w-full max-w-xs space-y-2">
+	<Label for={id}>Default select</Label>
+	<Select type="single" bind:value>
+		<SelectTrigger {id} class="w-full">
+			{triggerContent}
+		</SelectTrigger>
+		<SelectContent class="origin-center duration-400 data-[state=open]:!zoom-in-0">
+			<SelectGroup>
+				<SelectLabel>Fruits</SelectLabel>
+				{#each fruits as fruit (fruit.value)}
+					<SelectItem value={fruit.value} label={fruit.label}>
+						{fruit.label}
+					</SelectItem>
+				{/each}
+			</SelectGroup>
+		</SelectContent>
+	</Select>
+</div>

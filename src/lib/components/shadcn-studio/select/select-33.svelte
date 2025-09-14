@@ -1,5 +1,5 @@
-<script lang="ts">
-  
+<!-- <script lang="ts">
+
 </script>
 
 import { Label } from '$lib/components/ui/label'
@@ -102,4 +102,4 @@ const MultipleSelectWithPlaceholderDemo = () => {
   )
 }
 
-
+ -->

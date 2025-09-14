@@ -4335,26 +4335,26 @@ export const components: ComponentProps[] = [
 	// 		}
 	// 	]
 	// },
-	// {
-	// 	name: 'select-37',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-37.svelte',
-	// 			target: 'components/shadcn-studio/select/select-37.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'select-38',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-38.svelte',
-	// 			target: 'components/shadcn-studio/select/select-38.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
+	{
+		name: 'select-37',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-37.svelte',
+				target: 'components/shadcn-studio/select/select-37.svelte'
+			}
+		],
+		isAnimated: true
+	},
+	{
+		name: 'select-38',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-38.svelte',
+				target: 'components/shadcn-studio/select/select-38.svelte'
+			}
+		],
+		isAnimated: true
+	},
 	{
 		name: 'sheet-01',
 		files: [
