@@ -199,7 +199,7 @@
 						<span class="flex items-center gap-2">
 							<Columns3Icon />
 							Columns
-						</span>{' '}
+						</span>
 						<ChevronDownIcon className="ml-3" />
 					</Button>
 				{/snippet}

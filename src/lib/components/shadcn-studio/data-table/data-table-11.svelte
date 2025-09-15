@@ -10,7 +10,7 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import * as Table from '$lib/components/ui/table';
 	import {
 		FlexRender,
@@ -298,7 +298,7 @@
 				</SelectTrigger>
 				<SelectContent>
 					{#each [5, 10, 25, 50] as pageSizeOption (pageSizeOption)}
-						<SelectItem value={pageSizeOption.toString()}>
+						<Select.Item value={pageSizeOption.toString()}>
 							{pageSizeOption} / page
 						</SelectItem>
 					{/each}

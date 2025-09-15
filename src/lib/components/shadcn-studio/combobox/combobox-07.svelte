@@ -1,16 +1,9 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
 
@@ -51,13 +44,13 @@
 			.sort((a, b) => a.numericOffset - b.numericOffset); // Sort by numeric offset
 	});
 
-	const selectedValue = $derived(formattedTimezones.find((f) => f.value === value)?.label);
+	const selectedLabel = $derived(formattedTimezones.find((f) => f.value === value)?.label);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Timezone combobox</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -68,8 +61,8 @@
 					class="w-full justify-between"
 				>
 					<span class={cn('truncate')}>
-						{#if selectedValue}
-							{selectedValue}
+						{#if selectedLabel}
+							{selectedLabel}
 						{:else}
 							<span class="text-muted-foreground">Select timezone</span>
 						{/if}
@@ -81,15 +74,15 @@
 					/>
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent class="w-(--radix-popper-anchor-width) p-0">
-			<Command>
-				<CommandInput placeholder="Search timezone" />
-				<CommandList>
-					<CommandEmpty>No timezone found.</CommandEmpty>
-					<CommandGroup>
+		</Popover.Trigger>
+		<Popover.Content class="w-(--radix-popper-anchor-width) p-0">
+			<Command.Root>
+				<Command.Input placeholder="Search timezone" />
+				<Command.List>
+					<Command.Empty>No timezone found.</Command.Empty>
+					<Command.Group>
 						{#each formattedTimezones as timezone (timezone.value)}
-							<CommandItem
+							<Command.Item
 								value={timezone.value}
 								onSelect={() => {
 									value = timezone.value;
@@ -100,11 +93,11 @@
 								{#if value === timezone.value}
 									<CheckIcon size={16} class="ml-auto" />
 								{/if}
-							</CommandItem>
+							</Command.Item>
 						{/each}
-					</CommandGroup>
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+					</Command.Group>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

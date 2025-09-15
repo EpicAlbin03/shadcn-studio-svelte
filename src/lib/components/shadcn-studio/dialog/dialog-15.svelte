@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { UserPlusIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import {
 		Dialog,
@@ -74,10 +74,10 @@
 			{#each friends as item}
 				<li class="flex items-center justify-between gap-3">
 					<div class="flex items-center gap-3 max-[420px]:w-50">
-						<Avatar class="size-10">
-							<AvatarImage src={item.src} alt={item.name} />
-							<AvatarFallback class="text-xs">{item.fallback}</AvatarFallback>
-						</Avatar>
+						<Avatar.Root class="size-10">
+							<Avatar.Image src={item.src} alt={item.name} />
+							<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
+						</Avatar.Root>
 						<div class="flex flex-1 flex-col overflow-hidden">
 							<span>{item.name}</span>
 							<span class="truncate text-sm text-muted-foreground">{item.mail}</span>

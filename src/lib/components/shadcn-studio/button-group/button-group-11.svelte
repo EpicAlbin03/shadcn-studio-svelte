@@ -1,13 +1,7 @@
 <script lang="ts">
 	import { ChevronDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuRadioGroup,
-		DropdownMenuRadioItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const options = [
 		{
@@ -33,26 +27,26 @@
 	<Button class="rounded-none rounded-s-md shadow-none focus-visible:z-10">
 		{options[Number(selectedIndex)].label}
 	</Button>
-	<DropdownMenu>
-		<DropdownMenuTrigger>
+	<DropdownMenu.Root>
+		<DropdownMenu.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} size="icon" class="rounded-none rounded-e-md focus-visible:z-10">
 					<ChevronDownIcon />
 					<span class="sr-only">Select option</span>
 				</Button>
 			{/snippet}
-		</DropdownMenuTrigger>
-		<DropdownMenuContent side="bottom" sideOffset={4} align="end" class="max-w-64 md:max-w-xs!">
-			<DropdownMenuRadioGroup bind:value={selectedIndex}>
+		</DropdownMenu.Trigger>
+		<DropdownMenu.Content side="bottom" sideOffset={4} align="end" class="max-w-64 md:max-w-xs!">
+			<DropdownMenu.RadioGroup bind:value={selectedIndex}>
 				{#each options as option, index (option.label)}
-					<DropdownMenuRadioItem value={String(index)} class="items-start [&>span]:pt-1.5">
+					<DropdownMenu.RadioItem value={String(index)} class="items-start [&>span]:pt-1.5">
 						<div class="flex flex-col gap-1">
 							<span class="text-sm font-medium">{option.label}</span>
 							<span class="text-xs text-muted-foreground">{option.description}</span>
 						</div>
-					</DropdownMenuRadioItem>
+					</DropdownMenu.RadioItem>
 				{/each}
-			</DropdownMenuRadioGroup>
-		</DropdownMenuContent>
-	</DropdownMenu>
+			</DropdownMenu.RadioGroup>
+		</DropdownMenu.Content>
+	</DropdownMenu.Root>
 </div>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 
 	const members = [
 		{
@@ -31,12 +31,12 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide-in from bottom</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent
+	</Popover.Trigger>
+	<Popover.Content
 		class="w-80 duration-400 data-[state=closed]:slide-out-to-bottom-20 data-[state=closed]:zoom-out-100 data-[state=open]:slide-in-from-bottom-20 data-[state=open]:zoom-in-100"
 	>
 		<div class="grid gap-4">
@@ -61,10 +61,10 @@
 							<Checkbox id={`member-${index + 1}`} />
 							<Label for={`member-${index + 1}`} class="flex flex-1 items-center gap-2">
 								<div class="flex flex-1 items-center gap-2">
-									<Avatar class="size-6">
-										<AvatarImage src={member.image} alt={member.name} />
-										<AvatarFallback class="text-xs">{member.fallback}</AvatarFallback>
-									</Avatar>
+									<Avatar.Root class="size-6">
+										<Avatar.Image src={member.image} alt={member.name} />
+										<Avatar.Fallback class="text-xs">{member.fallback}</Avatar.Fallback>
+									</Avatar.Root>
 									<span class="text-sm font-medium">{member.name}</span>
 								</div>
 								<span class="text-xs text-muted-foreground">{member.designation}</span>
@@ -74,5 +74,5 @@
 				</ul>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

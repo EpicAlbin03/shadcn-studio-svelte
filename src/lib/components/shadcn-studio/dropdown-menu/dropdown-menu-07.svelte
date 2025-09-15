@@ -34,23 +34,23 @@
 	];
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="secondary" size="icon" class="overflow-hidden rounded-full">
 				<img src="/avatars/05.webp" alt="Hallie Richards" />
 			</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>My Account</DropdownMenuLabel>
 		<DropdownMenuGroup>
 			{#each listItems as item}
-				<DropdownMenuItem>
+				<DropdownMenu.Item>
 					<item.icon />
 					<span class="text-popover-foreground">{item.property}</span>
-				</DropdownMenuItem>
+				</DropdownMenu.Item>
 			{/each}
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

@@ -11,28 +11,28 @@
 	} from '$lib/components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide Left Animation</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
+	</DropdownMenu.Trigger>
 	<DropdownMenuContent
 		align="start"
 		class="w-56 duration-400 data-[state=closed]:slide-out-to-left-20 data-[state=closed]:zoom-out-100 data-[state=open]:slide-in-from-left-20 data-[state=open]:zoom-in-100"
 	>
 		<DropdownMenuLabel>Settings</DropdownMenuLabel>
 		<DropdownMenuGroup>
-			<DropdownMenuItem>My Profile</DropdownMenuItem>
-			<DropdownMenuItem>Settings</DropdownMenuItem>
-			<DropdownMenuItem>Billing</DropdownMenuItem>
-			<DropdownMenuItem>FAQs</DropdownMenuItem>
+			<DropdownMenu.Item>My Profile</DropdownMenu.Item>
+			<DropdownMenu.Item>Settings</DropdownMenu.Item>
+			<DropdownMenu.Item>Billing</DropdownMenu.Item>
+			<DropdownMenu.Item>FAQs</DropdownMenu.Item>
 		</DropdownMenuGroup>
 		<DropdownMenuSeparator />
 		<DropdownMenuLabel>Contact</DropdownMenuLabel>
 		<DropdownMenuGroup>
-			<DropdownMenuItem>Call Support</DropdownMenuItem>
-			<DropdownMenuItem>Chat with us</DropdownMenuItem>
+			<DropdownMenu.Item>Call Support</DropdownMenu.Item>
+			<DropdownMenu.Item>Chat with us</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

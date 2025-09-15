@@ -1,10 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { ChevronDownIcon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
 
@@ -13,8 +9,8 @@
 	let { title, children, open }: Props = $props();
 </script>
 
-<Collapsible class="border-t px-2 py-1.5" bind:open>
-	<CollapsibleTrigger>
+<Collapsible.Root class="border-t px-2 py-1.5" bind:open>
+	<Collapsible.Trigger>
 		{#snippet child({ props })}
 			<Button
 				{...props}
@@ -30,10 +26,10 @@
 				{title}
 			</Button>
 		{/snippet}
-	</CollapsibleTrigger>
-	<CollapsibleContent
+	</Collapsible.Trigger>
+	<Collapsible.Content
 		class="overflow-hidden px-3 py-1 text-sm transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 	>
 		{@render children()}
-	</CollapsibleContent>
-</Collapsible>
+	</Collapsible.Content>
+</Collapsible.Root>

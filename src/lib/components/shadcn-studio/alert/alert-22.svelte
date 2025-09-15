@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
+<Alert.Root class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
 	<CircleAlertIcon />
-	<AlertTitle>Only certain file types are allowed</AlertTitle>
-	<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
+	<Alert.Title>Only certain file types are allowed</Alert.Title>
+	<Alert.Description class="text-sky-600/80 dark:text-sky-400/80">
 		You can upload PDF, DOCX, JPG, or PNG files up to 20MB.
-	</AlertDescription>
-</Alert>
+	</Alert.Description>
+</Alert.Root>

@@ -1,40 +1,33 @@
 <script lang="ts">
 	import { ChevronsRightIcon, FileIcon, FolderIcon, HomeIcon } from '@lucide/svelte';
-	import {
-		Breadcrumb,
-		BreadcrumbItem,
-		BreadcrumbLink,
-		BreadcrumbList,
-		BreadcrumbPage,
-		BreadcrumbSeparator
-	} from '$lib/components/ui/breadcrumb';
+	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 
-<Breadcrumb>
-	<BreadcrumbList>
-		<BreadcrumbItem>
-			<BreadcrumbLink href="#">
+<Breadcrumb.Root>
+	<Breadcrumb.List>
+		<Breadcrumb.Item>
+			<Breadcrumb.Link href="#!">
 				<HomeIcon class="size-4" />
 				<span class="sr-only">Home</span>
-			</BreadcrumbLink>
-		</BreadcrumbItem>
-		<BreadcrumbSeparator>
+			</Breadcrumb.Link>
+		</Breadcrumb.Item>
+		<Breadcrumb.Separator>
 			<ChevronsRightIcon />
-		</BreadcrumbSeparator>
-		<BreadcrumbItem>
-			<BreadcrumbLink href="#" class="flex items-center gap-2">
+		</Breadcrumb.Separator>
+		<Breadcrumb.Item>
+			<Breadcrumb.Link href="#!" class="flex items-center gap-2">
 				<FolderIcon class="size-4" />
 				Documents
-			</BreadcrumbLink>
-		</BreadcrumbItem>
-		<BreadcrumbSeparator>
+			</Breadcrumb.Link>
+		</Breadcrumb.Item>
+		<Breadcrumb.Separator>
 			<ChevronsRightIcon />
-		</BreadcrumbSeparator>
-		<BreadcrumbItem>
-			<BreadcrumbPage class="flex items-center gap-2">
+		</Breadcrumb.Separator>
+		<Breadcrumb.Item>
+			<Breadcrumb.Page class="flex items-center gap-2">
 				<FileIcon class="inline size-4" />
 				Add Document
-			</BreadcrumbPage>
-		</BreadcrumbItem>
-	</BreadcrumbList>
-</Breadcrumb>
+			</Breadcrumb.Page>
+		</Breadcrumb.Item>
+	</Breadcrumb.List>
+</Breadcrumb.Root>

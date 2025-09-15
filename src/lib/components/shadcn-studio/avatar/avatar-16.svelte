@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 
 	const avatars = [
 		{
@@ -28,19 +28,19 @@
 
 <div class="flex -space-x-2">
 	{#each avatars as avatar}
-		<Tooltip>
-			<TooltipTrigger>
+		<Tooltip.Root>
+			<Tooltip.Trigger>
 				{#snippet child({ props })}
-					<Avatar
+					<Avatar.Root
 						{...props}
 						class="ring-2 ring-background transition-all duration-300 ease-in-out hover:z-1 hover:-translate-y-1 hover:shadow-md"
 					>
-						<AvatarImage src={avatar.src} alt={avatar.name} />
-						<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-					</Avatar>
+						<Avatar.Image src={avatar.src} alt={avatar.name} />
+						<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+					</Avatar.Root>
 				{/snippet}
-			</TooltipTrigger>
-			<TooltipContent>{avatar.name}</TooltipContent>
-		</Tooltip>
+			</Tooltip.Trigger>
+			<Tooltip.Content>{avatar.name}</Tooltip.Content>
+		</Tooltip.Root>
 	{/each}
 </div>

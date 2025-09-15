@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { TriangleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert class="border-none bg-destructive/10 text-destructive">
+<Alert.Root class="border-none bg-destructive/10 text-destructive">
 	<TriangleAlertIcon />
-	<AlertTitle>Upload failed</AlertTitle>
-	<AlertDescription class="text-destructive/80">
+	<Alert.Title>Upload failed</Alert.Title>
+	<Alert.Description class="text-destructive/80">
 		Something went wrong. Please try again or use a different file format.
-	</AlertDescription>
-</Alert>
+	</Alert.Description>
+</Alert.Root>

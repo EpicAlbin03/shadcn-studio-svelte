@@ -9,9 +9,7 @@
 	<Button
 		size="icon"
 		class="rounded-none rounded-s-full shadow-none focus-visible:z-10"
-		onclick={() => {
-			value -= 1;
-		}}
+		onclick={() => value--}
 	>
 		<MinusIcon />
 		<span class="sr-only">Minus</span>
@@ -19,14 +17,12 @@
 	<span
 		class="inline-flex items-center bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
 	>
-		{`${value}px`}
+		{value}px
 	</span>
 	<Button
 		size="icon"
 		class="rounded-none rounded-e-full shadow-none focus-visible:z-10"
-		onclick={() => {
-			value += 1;
-		}}
+		onclick={() => value++}
 	>
 		<PlusIcon />
 		<span class="sr-only">Plus</span>

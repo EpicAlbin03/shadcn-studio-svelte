@@ -32,7 +32,7 @@
 	>
 		Select with inset label
 	</label>
-	<Select type="single" bind:value>
+	<Select.Root type="single" bind:value>
 		<SelectTrigger
 			{id}
 			class="w-full rounded-t-none border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 dark:group-hover:bg-input/50"
@@ -43,7 +43,7 @@
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

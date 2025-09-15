@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import { SearchIcon } from '@lucide/svelte';
 	import type { Column } from '@tanstack/table-core';
 
@@ -76,13 +76,13 @@
 				column.setFilterValue(value === 'all' ? undefined : value);
 			}}
 		>
-			<SelectTrigger id={`${id}-select`} class="w-full">
+			<Select.Trigger id={`${id}-select`} class="w-full">
 				{columnFilterValue?.toString() ?? 'All'}
 			</SelectTrigger>
 			<SelectContent>
-				<SelectItem value="all">All</SelectItem>
+				<Select.Item value="all">All</SelectItem>
 				{#each sortedUniqueValues as value (String(value))}
-					<SelectItem value={String(value)}>
+					<Select.Item value={String(value)}>
 						{String(value)}
 					</SelectItem>
 				{/each}

@@ -14,33 +14,33 @@
 	} from '$lib/components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Basic</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>My Account</DropdownMenuLabel>
 		<DropdownMenuSeparator />
 		<DropdownMenuGroup>
-			<DropdownMenuItem>Profile</DropdownMenuItem>
-			<DropdownMenuItem>Billing</DropdownMenuItem>
+			<DropdownMenu.Item>Profile</DropdownMenu.Item>
+			<DropdownMenu.Item>Billing</DropdownMenu.Item>
 		</DropdownMenuGroup>
 		<DropdownMenuSeparator />
 		<DropdownMenuGroup>
 			<DropdownMenuSub>
 				<DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
 				<DropdownMenuSubContent>
-					<DropdownMenuItem>Email</DropdownMenuItem>
-					<DropdownMenuItem>Message</DropdownMenuItem>
+					<DropdownMenu.Item>Email</DropdownMenu.Item>
+					<DropdownMenu.Item>Message</DropdownMenu.Item>
 					<DropdownMenuSeparator />
-					<DropdownMenuItem>More...</DropdownMenuItem>
+					<DropdownMenu.Item>More...</DropdownMenu.Item>
 				</DropdownMenuSubContent>
 			</DropdownMenuSub>
-			<DropdownMenuItem>GitHub</DropdownMenuItem>
-			<DropdownMenuItem>Support</DropdownMenuItem>
-			<DropdownMenuItem disabled>API</DropdownMenuItem>
+			<DropdownMenu.Item>GitHub</DropdownMenu.Item>
+			<DropdownMenu.Item>Support</DropdownMenu.Item>
+			<DropdownMenuItem disabled>API</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

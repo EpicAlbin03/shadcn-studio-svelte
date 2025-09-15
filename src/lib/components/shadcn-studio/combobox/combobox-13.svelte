@@ -1,16 +1,9 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
 
@@ -42,6 +35,9 @@
 	let open = $state(false);
 	let value = $state('');
 	let triggerRef = $state<HTMLButtonElement>(null!);
+	const triggerContent = $derived(
+		frameworks.find((framework) => framework.value === value)?.label ?? 'Select framework...'
+	);
 
 	function closeAndFocusTrigger() {
 		open = false;
@@ -53,8 +49,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Combobox menu slide-in from bottom</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -64,23 +60,21 @@
 					aria-expanded={open}
 					class="w-full max-w-xs justify-between"
 				>
-					{value
-						? frameworks.find((framework) => framework.value === value)?.label
-						: 'Select framework...'}
+					{triggerContent}
 					<ChevronsUpDownIcon class="opacity-50" />
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent
+		</Popover.Trigger>
+		<Popover.Content
 			class="p-0 duration-400 data-[state=open]:slide-in-from-bottom-10 data-[state=open]:zoom-in-100"
 		>
-			<Command>
-				<CommandInput placeholder="Search framework..." class="h-9" />
-				<CommandList>
-					<CommandEmpty>No framework found.</CommandEmpty>
-					<CommandGroup>
+			<Command.Root>
+				<Command.Input placeholder="Search framework..." class="h-9" />
+				<Command.List>
+					<Command.Empty>No framework found.</Command.Empty>
+					<Command.Group>
 						{#each frameworks as framework (framework.value)}
-							<CommandItem
+							<Command.Item
 								value={framework.value}
 								onSelect={() => {
 									value = framework.value;
@@ -91,11 +85,11 @@
 								<CheckIcon
 									class={cn('ml-auto', value === framework.value ? 'opacity-100' : 'opacity-0')}
 								/>
-							</CommandItem>
+							</Command.Item>
 						{/each}
-					</CommandGroup>
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+					</Command.Group>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

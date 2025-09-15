@@ -1,5 +1,5 @@
 <!-- <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from "$lib/components/ui/avatar/index.js";
 	import {
 		Tooltip,
 		TooltipContent,
@@ -35,22 +35,22 @@
 	<div class="flex -space-x-2">
 		<TooltipProvider>
 			{#each avatars as avatar}
-				<Tooltip>
-					<TooltipTrigger>
+				<Tooltip.Root>
+					<Tooltip.Trigger>
 						<Avatar
 							class="size-10 ring-2 ring-background transition-all duration-300 ease-in-out hover:z-1 hover:scale-105"
 						>
-							<AvatarImage src={avatar.src} alt={avatar.name} />
-							<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-						</Avatar>
-					</TooltipTrigger>
-					<TooltipContent>{avatar.name}</TooltipContent>
-				</Tooltip>
+							<Avatar.Image src={avatar.src} alt={avatar.name} />
+							<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+						</Avatar.Root>
+					</Tooltip.Trigger>
+					<Tooltip.Content>{avatar.name}</Tooltip.Content>
+				</Tooltip.Root>
 			{/each}
 		</TooltipProvider>
 	</div>
 	<p class="text-xs text-muted-foreground">
-		Inspired by{' '}
+		Inspired by
 		<a
 			class="underline hover:text-foreground"
 			href="https://animate-ui.com/docs/components/tooltip"

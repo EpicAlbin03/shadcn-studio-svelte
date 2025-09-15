@@ -49,7 +49,7 @@
 		<p class="text-sm whitespace-nowrap text-muted-foreground" aria-live="polite">
 			Showing <span class="text-foreground">{(page - 1) * perPage + 1}</span> to
 			<span class="text-foreground">{page * perPage}</span>
-			of{' '}
+			of
 			<span class="text-foreground">{count}</span> products
 		</p>
 	</div>

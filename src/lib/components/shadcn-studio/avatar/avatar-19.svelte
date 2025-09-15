@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const avatars = [
 		{
@@ -44,13 +39,13 @@
 
 <div class="flex -space-x-2">
 	{#each avatars.slice(0, 3) as avatar}
-		<Avatar class="ring-2 ring-background">
-			<AvatarImage src={avatar.src} alt={avatar.name} />
-			<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-		</Avatar>
+		<Avatar.Root class="ring-2 ring-background">
+			<Avatar.Image src={avatar.src} alt={avatar.name} />
+			<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+		</Avatar.Root>
 	{/each}
-	<DropdownMenu>
-		<DropdownMenuTrigger>
+	<DropdownMenu.Root>
+		<DropdownMenu.Trigger>
 			{#snippet child({ props })}
 				<button
 					{...props}
@@ -60,17 +55,17 @@
 					<span class="sr-only">Add</span>
 				</button>
 			{/snippet}
-		</DropdownMenuTrigger>
-		<DropdownMenuContent>
+		</DropdownMenu.Trigger>
+		<DropdownMenu.Content>
 			{#each avatars.slice(3) as avatar}
-				<DropdownMenuItem>
-					<Avatar>
-						<AvatarImage src={avatar.src} alt={avatar.name} />
-						<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-					</Avatar>
-					<span>{avatar.name}</span>
-				</DropdownMenuItem>
+				<DropdownMenu.Item>
+					<Avatar.Root>
+						<Avatar.Image src={avatar.src} alt={avatar.name} />
+						<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+					</Avatar.Root>
+					{avatar.name}
+				</DropdownMenu.Item>
 			{/each}
-		</DropdownMenuContent>
-	</DropdownMenu>
+		</DropdownMenu.Content>
+	</DropdownMenu.Root>
 </div>

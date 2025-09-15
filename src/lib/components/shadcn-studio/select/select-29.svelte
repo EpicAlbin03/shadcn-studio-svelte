@@ -43,7 +43,7 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Status select</Label>
-	<Select type="single" bind:value>
+	<Select.Root type="single" bind:value>
 		<SelectTrigger
 			{id}
 			class="w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0"
@@ -59,7 +59,7 @@
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each statuses as status (status.value)}
-					<SelectItem value={status.value} label={status.label}>
+					<Select.Item value={status.value} label={status.label}>
 						<span class="flex items-center gap-2">
 							<CircleIcon class={cn('size-2', status.className)} />
 							<span class="truncate">{status.label}</span>

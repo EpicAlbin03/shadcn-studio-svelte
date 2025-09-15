@@ -21,13 +21,13 @@
 		}
 	});
 
-	const handleCheckedChange = (checked: boolean) => {
+	function handleCheckedChange(checked: boolean) {
 		if (checked) {
 			selected = [...items];
 		} else {
 			selected = [];
 		}
-	};
+	}
 </script>
 
 <div class="flex flex-col gap-4">

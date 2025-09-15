@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ArchiveIcon, PencilIcon, Trash2Icon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
@@ -94,10 +94,10 @@
 						</TableCell>
 						<TableCell>
 							<div class="flex items-center gap-3">
-								<Avatar class="rounded-sm">
-									<AvatarImage src={item.src} alt={item.model} />
-									<AvatarFallback class="text-xs">{item.fallback}</AvatarFallback>
-								</Avatar>
+								<Avatar.Root class="rounded-sm">
+									<Avatar.Image src={item.src} alt={item.model} />
+									<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
+								</Avatar.Root>
 								<div>
 									<div class="font-medium">{item.productName}</div>
 									<span class="mt-0.5 text-xs text-muted-foreground">{item.model}</span>

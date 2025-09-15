@@ -1,11 +1,6 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 
 	const items = [
 		{
@@ -30,26 +25,30 @@
 				'Nicholas Tanner is a highly skilled individual with a strong passion for technology and innovation. Nicholas has made significant contributions to numerous projects and possesses a deep understanding of various programming languages and frameworks.'
 		}
 	];
+
+	function getInitials(name: string) {
+		return name.split(/\s/).reduce((response, word) => (response += word.slice(0, 1)), '');
+	}
 </script>
 
-<Accordion type="single" class="w-full" value="item-1">
+<Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<AccordionItem value={`item-${index + 1}`}>
-			<AccordionTrigger class="items-center hover:no-underline">
+		<Accordion.Item value={`item-${index + 1}`}>
+			<Accordion.Trigger class="items-center hover:no-underline">
 				<span class="flex items-center gap-4">
-					<Avatar class="size-10.5 rounded-sm">
-						<AvatarImage src={item.avatarImage} alt={item.name} class="rounded-sm" />
-						<AvatarFallback class="rounded-sm text-xs">
-							{item.name.split(/\s/).reduce((response, word) => (response += word.slice(0, 1)), '')}
-						</AvatarFallback>
-					</Avatar>
+					<Avatar.Root class="size-10.5 rounded-sm">
+						<Avatar.Image src={item.avatarImage} alt={item.name} class="rounded-sm" />
+						<Avatar.Fallback class="rounded-sm text-xs">
+							{getInitials(item.name)}
+						</Avatar.Fallback>
+					</Avatar.Root>
 					<span class="flex flex-col space-y-0.5">
 						<span>{item.name}</span>
 						<span class="font-normal text-muted-foreground">{item.email}</span>
 					</span>
 				</span>
-			</AccordionTrigger>
-			<AccordionContent class="text-muted-foreground">{item.content}</AccordionContent>
-		</AccordionItem>
+			</Accordion.Trigger>
+			<Accordion.Content class="text-muted-foreground">{item.content}</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

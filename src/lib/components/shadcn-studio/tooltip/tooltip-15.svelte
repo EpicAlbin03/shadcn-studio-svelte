@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 
@@ -47,10 +47,10 @@
 			<ul class="space-y-2.5">
 				{#each tasks as task (task.name)}
 					<li class="flex items-start gap-4">
-						<Avatar>
-							<AvatarImage src={task.image} alt={task.name} />
-							<AvatarFallback>{task.fallback}</AvatarFallback>
-						</Avatar>
+						<Avatar.Root>
+							<Avatar.Image src={task.image} alt={task.name} />
+							<Avatar.Fallback>{task.fallback}</Avatar.Fallback>
+						</Avatar.Root>
 						<div class="flex flex-1 flex-col">
 							<div class="text-sm font-medium">{task.name}</div>
 							<p class="text-xs text-muted-foreground">{task.designation}</p>

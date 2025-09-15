@@ -1,26 +1,26 @@
 <script lang="ts">
 	import { UploadIcon, XIcon } from '@lucide/svelte';
-	import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Progress } from '$lib/components/ui/progress';
+	import { onMount } from 'svelte';
 
 	let isActive = $state(true);
 	let progress = $state(0);
 
-	$effect(() => {
+	onMount(() => {
 		const timer = setTimeout(() => (progress = 50), 100);
-
 		return () => clearTimeout(timer);
 	});
 </script>
 
 {#if isActive}
-	<Alert class="flex justify-between">
+	<Alert.Root class="flex justify-between">
 		<UploadIcon />
 		<div class="flex flex-1 flex-col gap-4">
 			<div class="flex-1 flex-col justify-center gap-1">
-				<AlertTitle>Uploading your 'Img-234.png'</AlertTitle>
-				<AlertDescription>Please wait While we upload your image.</AlertDescription>
+				<Alert.Title>Uploading your 'Img-234.png'</Alert.Title>
+				<Alert.Description>Please wait While we upload your image.</Alert.Description>
 			</div>
 			<Progress
 				value={progress}
@@ -42,5 +42,5 @@
 			<XIcon class="size-5" />
 			<span class="sr-only">Close</span>
 		</button>
-	</Alert>
+	</Alert.Root>
 {/if}

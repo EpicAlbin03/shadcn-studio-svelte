@@ -1,24 +1,24 @@
 <script lang="ts">
 	import { ChevronRightIcon, MapPinIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<MapPinIcon />
 				<span class="sr-only">About Himalayas</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-85 p-0">
+	</Popover.Trigger>
+	<Popover.Content class="w-85 p-0">
 		<div class="flex">
 			<div class="space-y-2 p-4">
 				<p class="font-medium">About Himalayas</p>
 				<p class="text-xs text-muted-foreground">
-					The Great Himalayan mountain ranges in the Indian sub-continent region.{' '}
+					The Great Himalayan mountain ranges in the Indian sub-continent region.
 				</p>
 				<a
 					href="https://en.wikipedia.org/wiki/Himalayas"
@@ -36,5 +36,5 @@
 				class="h-34 w-2/5 rounded-e-md object-cover"
 			/>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

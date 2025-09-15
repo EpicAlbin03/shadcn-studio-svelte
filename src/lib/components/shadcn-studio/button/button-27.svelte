@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 </script>
 
 <Button class="rounded-full ps-2">
-	<Avatar class="size-6">
-		<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-		<AvatarFallback class="text-xs text-foreground">HR</AvatarFallback>
-	</Avatar>
+	<Avatar.Root class="size-6">
+		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+		<Avatar.Fallback class="text-xs text-foreground">HR</Avatar.Fallback>
+	</Avatar.Root>
 	@hallierichards
 </Button>

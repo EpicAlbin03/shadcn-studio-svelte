@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
 
 	const items = [
 		{
@@ -21,9 +21,9 @@
 	];
 </script>
 
-<Accordion type="single" class="w-full" value="item-1">
+<Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<AccordionItem
+		<Accordion.Item
 			value={`item-${index + 1}`}
 			class="rounded-md border border-transparent px-5 transition-colors duration-200 data-[state=open]:border data-[state=open]:border-border data-[state=open]:shadow-md"
 		>
@@ -38,7 +38,7 @@
 					/>
 				</AccordionPrimitive.Trigger>
 			</AccordionPrimitive.Header>
-			<AccordionContent class="text-muted-foreground">{item.content}</AccordionContent>
-		</AccordionItem>
+			<Accordion.Content class="text-muted-foreground">{item.content}</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

@@ -1,17 +1,9 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon, PlusIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList,
-		CommandSeparator
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
 
@@ -39,7 +31,7 @@
 	let open = $state(false);
 	let value = $state('harvard');
 	let triggerRef = $state<HTMLButtonElement>(null!);
-	const selectedValue = $derived(universities.find((f) => f.value === value)?.label);
+	const selectedLabel = $derived(universities.find((f) => f.value === value)?.label);
 
 	function closeAndFocusTrigger() {
 		open = false;
@@ -51,8 +43,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Combobox with search and add button</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -63,8 +55,8 @@
 					class="w-full justify-between border-input bg-background px-3 font-normal outline-offset-0 outline-none hover:bg-background focus-visible:outline-[3px]"
 				>
 					<span class={cn('truncate', !value && 'text-muted-foreground')}>
-						{#if selectedValue}
-							{selectedValue}
+						{#if selectedLabel}
+							{selectedLabel}
 						{:else}
 							<span class="text-muted-foreground">Select university</span>
 						{/if}
@@ -76,18 +68,18 @@
 					/>
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent
+		</Popover.Trigger>
+		<Popover.Content
 			class="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
 			align="start"
 		>
-			<Command>
-				<CommandInput placeholder="Find university" />
-				<CommandList>
-					<CommandEmpty>No university found.</CommandEmpty>
-					<CommandGroup>
+			<Command.Root>
+				<Command.Input placeholder="Find university" />
+				<Command.List>
+					<Command.Empty>No university found.</Command.Empty>
+					<Command.Group>
 						{#each universities as university (university.value)}
-							<CommandItem
+							<Command.Item
 								value={university.value}
 								onSelect={() => {
 									value = university.value;
@@ -98,18 +90,18 @@
 								{#if value === university.value}
 									<CheckIcon size={16} class="ml-auto" />
 								{/if}
-							</CommandItem>
+							</Command.Item>
 						{/each}
-					</CommandGroup>
-					<CommandSeparator />
-					<CommandGroup>
+					</Command.Group>
+					<Command.Separator />
+					<Command.Group>
 						<Button variant="ghost" class="w-full justify-start font-normal">
 							<PlusIcon size={16} class="-ms-2 opacity-60" aria-hidden="true" />
 							New university
 						</Button>
-					</CommandGroup>
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+					</Command.Group>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

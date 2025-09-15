@@ -16,12 +16,12 @@
 	let dribbbleSwitch = $state(false);
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide Up Animation</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
+	</DropdownMenu.Trigger>
 	<DropdownMenuContent
 		class="w-56 duration-400 data-[state=closed]:slide-out-to-bottom-20 data-[state=closed]:slide-out-to-left-0 data-[state=closed]:zoom-out-100 data-[state=open]:slide-in-from-bottom-20 data-[state=open]:slide-in-from-left-0"
 	>
@@ -45,7 +45,7 @@
 				>
 				<span class="flex-1">Google</span>
 				<Switch id="airplane-mode" bind:checked={googleSwitch} />
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 			<DropdownMenuItem class="justify-between" onSelect={(event) => event.preventDefault()}>
 				<svg xmlns="http://www.w3.org/2000/svg" width="251" height="256" viewBox="0 0 251 256"
 					><path
@@ -54,7 +54,7 @@
 				>
 				<span class="flex-1">Twitter</span>
 				<Switch id="airplane-mode" bind:checked={twitterSwitch} />
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 			<DropdownMenuItem class="justify-between" onSelect={(event) => event.preventDefault()}>
 				<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"
 					><path
@@ -64,7 +64,7 @@
 				>
 				<span class="flex-1">Linkedin</span>
 				<Switch id="airplane-mode" bind:checked={linkedinSwitch} />
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 			<DropdownMenuItem class="justify-between" onSelect={(event) => event.preventDefault()}>
 				<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"
 					><path
@@ -77,7 +77,7 @@
 				>
 				<span class="flex-1">Dribbble</span>
 				<Switch id="airplane-mode" bind:checked={dribbbleSwitch} />
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

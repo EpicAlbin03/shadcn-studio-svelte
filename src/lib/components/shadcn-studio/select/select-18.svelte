@@ -25,15 +25,15 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Ghost Select</Label>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="w-full border-none shadow-none hover:bg-accent dark:bg-transparent">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="w-full border-none shadow-none hover:bg-accent dark:bg-transparent">
 			{triggerContent}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

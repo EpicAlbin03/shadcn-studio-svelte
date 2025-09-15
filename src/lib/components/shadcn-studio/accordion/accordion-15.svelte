@@ -7,12 +7,8 @@
 		RefreshCwIcon
 	} from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	const items = [
 		{
@@ -80,9 +76,9 @@
 	];
 </script>
 
-<Accordion type="single" class="w-full rounded-md border" value="item-1">
+<Accordion.Root type="single" class="w-full rounded-md border" value="item-1">
 	{#each items as item, index}
-		<AccordionItem
+		<Accordion.Item
 			value={`item-${index + 1}`}
 			class="outline-none first:rounded-t-md last:rounded-b-md has-focus-visible:z-10 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
 		>
@@ -92,27 +88,27 @@
 			>
 				<span class="flex items-center gap-4">
 					<item.icon class="size-4 shrink-0" />
-					<span>{item.category}</span>
+					{item.category}
 				</span>
 				<PlusIcon
 					class="pointer-events-none size-4 shrink-0 text-muted-foreground transition-transform duration-200"
 				/>
 			</AccordionPrimitive.Trigger>
-			<AccordionContent class="pb-0">
+			<Accordion.Content class="pb-0">
 				{#each item.faqs as faq, i}
-					<Collapsible class="border-t bg-accent px-5" open={i === 0}>
-						<CollapsibleTrigger
+					<Collapsible.Root class="border-t bg-accent px-5" open={i === 0}>
+						<Collapsible.Trigger
 							class="flex w-full items-center gap-4 rounded-sm py-4 font-medium outline-none focus-visible:z-10 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&[data-state=open]>svg]:rotate-180"
 						>
 							<ChevronDownIcon class="pointer-events-none size-4 shrink-0 text-muted-foreground" />
 							{faq.title}
-						</CollapsibleTrigger>
-						<CollapsibleContent class="overflow-hidden pb-4 text-muted-foreground">
+						</Collapsible.Trigger>
+						<Collapsible.Content class="overflow-hidden pb-4 text-muted-foreground">
 							{faq.content}
-						</CollapsibleContent>
-					</Collapsible>
+						</Collapsible.Content>
+					</Collapsible.Root>
 				{/each}
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

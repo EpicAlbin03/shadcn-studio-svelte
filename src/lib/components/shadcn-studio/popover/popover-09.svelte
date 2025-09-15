@@ -3,7 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Slider } from '$lib/components/ui/slider';
 
 	const filters = ['Most liked', 'Highest reviewed', 'Newest', 'Most popular'];
@@ -13,15 +13,15 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<FunnelPlusIcon />
 				<span class="sr-only">Filter</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent>
+	</Popover.Trigger>
+	<Popover.Content>
 		<div class="grid gap-4">
 			<div class="flex items-center justify-between gap-2">
 				<span class="font-medium">Filter</span>
@@ -65,5 +65,5 @@
 				</div>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

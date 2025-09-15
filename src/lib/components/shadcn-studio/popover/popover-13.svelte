@@ -2,7 +2,7 @@
 	import { CheckIcon, CopyIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Separator } from '$lib/components/ui/separator';
 	import { cn } from '$lib/utils';
 
@@ -20,12 +20,12 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide-in from left</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent
+	</Popover.Trigger>
+	<Popover.Content
 		class="w-80 duration-400 data-[state=closed]:slide-out-to-left-20 data-[state=closed]:slide-out-to-top-0 data-[state=closed]:zoom-out-100 data-[state=open]:slide-in-from-left-20 data-[state=open]:slide-in-from-top-0 data-[state=open]:zoom-in-100"
 	>
 		<div class="flex flex-col items-center gap-4">
@@ -66,5 +66,5 @@
 				</Button>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

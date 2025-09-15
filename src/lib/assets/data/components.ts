@@ -1242,7 +1242,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/button/button-39.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/ripple-button.svelte'
+				path: 'src/lib/components/ui/ripple-button/ripple-button.svelte',
+				target: 'components/ui/ripple-button/ripple-button.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/ripple-button/index.ts',
+				target: 'components/ui/ripple-button/index.ts'
 			}
 		],
 		isAnimated: true
@@ -1285,7 +1290,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/button/button-43.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/shimmer-button.svelte'
+				path: 'src/lib/components/ui/shimmer-button/shimmer-button.svelte',
+				target: 'components/ui/shimmer-button/shimmer-button.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/shimmer-button/index.ts',
+				target: 'components/ui/shimmer-button/index.ts'
 			}
 		],
 		isAnimated: true
@@ -1298,7 +1308,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/button/button-44.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/bounce-button.svelte'
+				path: 'src/lib/components/ui/bounce-button/bounce-button.svelte',
+				target: 'components/ui/bounce-button/bounce-button.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/bounce-button/index.ts',
+				target: 'components/ui/bounce-button/index.ts'
 			}
 		],
 		isAnimated: true
@@ -1311,7 +1326,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/button/button-45.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/magnetic-button.svelte'
+				path: 'src/lib/components/ui/magnetic-button/magnetic-button.svelte',
+				target: 'components/ui/magnetic-button/magnetic-button.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/magnetic-button/index.ts',
+				target: 'components/ui/magnetic-button/index.ts'
 			}
 		],
 		isAnimated: true
@@ -1473,7 +1493,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/button-group/button-group-13.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/ripple-button.svelte'
+				path: 'src/lib/components/ui/ripple-button/ripple-button.svelte',
+				target: 'components/ui/ripple-button/ripple-button.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/ripple-button/index.ts',
+				target: 'components/ui/ripple-button/index.ts'
 			}
 		],
 		isAnimated: true

@@ -2,16 +2,9 @@
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 
 	const frameworks = [
 		{ value: 'react', label: 'React' },
@@ -31,15 +24,15 @@
 	let open = $state(false);
 	let values = $state(['react', 'nextjs', 'angular', 'vue', 'django', 'astro']);
 
-	const toggleSelection = (value: string) => {
+	function toggleSelection(value: string) {
 		values = values.includes(value) ? values.filter((v) => v !== value) : [...values, value];
-	};
+	}
 </script>
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Multiple Count badge</Label>
-	<Popover bind:open>
-		<PopoverTrigger>
+	<Popover.Root bind:open>
+		<Popover.Trigger>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -51,7 +44,8 @@
 				>
 					{#if values.length > 0}
 						<span>
-							<Badge variant="outline">{values.length}</Badge> frameworks selected
+							<Badge variant="outline">{values.length}</Badge>
+							frameworks selected
 						</span>
 					{:else}
 						<span class="text-muted-foreground">Select framework</span>
@@ -63,15 +57,15 @@
 					/>
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent class="w-(--radix-popper-anchor-width) p-0">
-			<Command>
-				<CommandInput placeholder="Search framework..." />
-				<CommandList>
-					<CommandEmpty>No framework found.</CommandEmpty>
-					<CommandGroup>
+		</Popover.Trigger>
+		<Popover.Content class="w-(--radix-popper-anchor-width) p-0">
+			<Command.Root>
+				<Command.Input placeholder="Search framework..." />
+				<Command.List>
+					<Command.Empty>No framework found.</Command.Empty>
+					<Command.Group>
 						{#each frameworks as framework (framework.value)}
-							<CommandItem
+							<Command.Item
 								value={framework.value}
 								onSelect={() => toggleSelection(framework.value)}
 							>
@@ -79,11 +73,11 @@
 								{#if values.includes(framework.value)}
 									<CheckIcon size={16} class="ml-auto" />
 								{/if}
-							</CommandItem>
+							</Command.Item>
 						{/each}
-					</CommandGroup>
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+					</Command.Group>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

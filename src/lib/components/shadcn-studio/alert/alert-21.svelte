@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert class="border-none bg-primary/10">
+<Alert.Root class="border-none bg-primary/10">
 	<CircleAlertIcon />
-	<AlertTitle>File Should be PDF,DOCX,JPG, or PNG.</AlertTitle>
-	<AlertDescription
-		>If the file type is not one of this than we can't get your files</AlertDescription
-	>
-</Alert>
+	<Alert.Title>File Should be PDF,DOCX,JPG, or PNG.</Alert.Title>
+	<Alert.Description>
+		If the file type is not one of this than we can't get your files
+	</Alert.Description>
+</Alert.Root>

@@ -11,30 +11,30 @@
 	} from '$lib/components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Align End</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent align="end" class="w-66">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content align="end" class="w-66">
 		<DropdownMenuGroup>
-			<DropdownMenuItem>
+			<DropdownMenu.Item>
 				New Tab<DropdownMenuShortcut>⌘ + T</DropdownMenuShortcut>
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				New Window <DropdownMenuShortcut>⌘ + N</DropdownMenuShortcut>
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 			<DropdownMenuSeparator />
-			<DropdownMenuItem>
+			<DropdownMenu.Item>
 				New Incognito Window <DropdownMenuShortcut>⌘ + ⇧ + N</DropdownMenuShortcut>
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				History <DropdownMenuShortcut>⌘ + Y</DropdownMenuShortcut>
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				Downloads <DropdownMenuShortcut>⌥ + ⇧ + L</DropdownMenuShortcut>
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

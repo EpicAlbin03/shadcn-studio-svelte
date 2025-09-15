@@ -54,8 +54,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with options groups</Label>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="w-full">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="w-full">
 			{triggerContent}
 		</SelectTrigger>
 		<SelectContent>
@@ -63,7 +63,7 @@
 				<SelectGroup>
 					<SelectLabel>{continent.label}</SelectLabel>
 					{#each countries[continent.value as keyof typeof countries] as country (country.value)}
-						<SelectItem value={country.value} label={country.label}>
+						<Select.Item value={country.value} label={country.label}>
 							{country.label}
 						</SelectItem>
 					{/each}

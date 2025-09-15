@@ -4,7 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
-	import { Card, CardContent, CardFooter } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 
 	const events = [
 		{
@@ -29,11 +29,11 @@
 </script>
 
 <div>
-	<Card class="w-2xs py-4">
-		<CardContent class="px-4">
+	<Card.Root class="w-2xs py-4">
+		<Card.Content class="px-4">
 			<Calendar type="single" bind:value preventDeselect class="w-full bg-transparent p-0" />
-		</CardContent>
-		<CardFooter class="flex flex-col items-start gap-3 border-t px-4 !pt-4">
+		</Card.Content>
+		<Card.Footer class="flex flex-col items-start gap-3 border-t px-4 !pt-4">
 			<div class="flex w-full items-center justify-between px-1">
 				<div class="text-sm font-medium">
 					{date?.toLocaleDateString('en-US', {
@@ -59,8 +59,8 @@
 					</div>
 				{/each}
 			</div>
-		</CardFooter>
-	</Card>
+		</Card.Footer>
+	</Card.Root>
 	<p class="mt-3 text-center text-xs text-muted-foreground" role="region">
 		Calendar with event list
 	</p>

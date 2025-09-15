@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Alert from '$lib/components/ui/alert/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 
-<Alert class="flex items-center justify-between">
-	<Avatar class="rounded-sm">
-		<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
-		<AvatarFallback class="text-xs">HR</AvatarFallback>
-	</Avatar>
+<Alert.Root class="flex items-center justify-between">
+	<Avatar.Root class="rounded-sm">
+		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
+		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+	</Avatar.Root>
 	<div class="flex-1 flex-col justify-center gap-1">
-		<AlertTitle class="flex-1">Sara has replied on the uploaded image.</AlertTitle>
-		<AlertDescription>12 unread messages. Tap to see.</AlertDescription>
+		<Alert.Title class="flex-1">Sara has replied on the uploaded image.</Alert.Title>
+		<Alert.Description>12 unread messages. Tap to see.</Alert.Description>
 	</div>
 	<CircleAlertIcon />
-</Alert>
+</Alert.Root>

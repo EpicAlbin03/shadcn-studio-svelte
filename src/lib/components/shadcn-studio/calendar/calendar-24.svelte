@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Calendar } from '$lib/components/ui/calendar';
-	import { Card, CardContent, CardFooter } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
 	import { CircleCheck } from '@lucide/svelte';
 
@@ -17,8 +17,8 @@
 	});
 </script>
 
-<Card class="gap-0 p-0">
-	<CardContent class="relative p-0 md:pr-48">
+<Card.Root class="gap-0 p-0">
+	<Card.Content class="relative p-0 md:pr-48">
 		<div class="p-6">
 			<Calendar
 				type="single"
@@ -43,8 +43,8 @@
 				{/each}
 			</div>
 		</div>
-	</CardContent>
-	<CardFooter class="flex flex-col gap-4 border-t px-6 !py-5 md:flex-row">
+	</Card.Content>
+	<Card.Footer class="flex flex-col gap-4 border-t px-6 !py-5 md:flex-row">
 		<div class="flex items-center gap-2 text-sm">
 			{#if value && selectedTime}
 				<CircleCheck class="size-5 stroke-green-600 dark:stroke-green-400" />
@@ -70,5 +70,5 @@
 		>
 			Continue
 		</Button>
-	</CardFooter>
-</Card>
+	</Card.Footer>
+</Card.Root>

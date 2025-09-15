@@ -3,7 +3,7 @@
 	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
-	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { ClockIcon } from '@lucide/svelte';
 
 	const id = $props.id();
@@ -12,8 +12,8 @@
 </script>
 
 <div>
-	<Card class="w-fit py-4">
-		<CardHeader class="flex items-center justify-center gap-2 border-b px-3 !pb-3">
+	<Card.Root class="w-fit py-4">
+		<Card.Header class="flex items-center justify-center gap-2 border-b px-3 !pb-3">
 			<div class="flex w-full flex-col gap-3">
 				<Label for={id} class="text-xs">Enter Time</Label>
 				<div class="relative grow">
@@ -31,11 +31,11 @@
 					</div>
 				</div>
 			</div>
-		</CardHeader>
-		<CardContent class="px-5">
+		</Card.Header>
+		<Card.Content class="px-5">
 			<Calendar type="single" bind:value class="bg-transparent p-0" />
-		</CardContent>
-	</Card>
+		</Card.Content>
+	</Card.Root>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">
 		Calendar with time input
 	</p>

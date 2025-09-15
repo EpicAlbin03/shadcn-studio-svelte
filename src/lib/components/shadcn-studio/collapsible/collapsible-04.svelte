@@ -1,12 +1,8 @@
 <script lang="ts">
 	import { ChevronRightIcon, PanelsTopLeftIcon, PlusIcon, UserIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	const users = [
 		{
@@ -39,20 +35,20 @@
 
 <ul class="flex w-full max-w-[350px] flex-col gap-4">
 	{#each users as user (user.name)}
-		<Collapsible>
+		<Collapsible.Root>
 			{#snippet child({ props })}
 				<li {...props} class="flex flex-col gap-2">
-					<CollapsibleTrigger class="flex w-full items-center justify-between gap-4">
+					<Collapsible.Trigger class="flex w-full items-center justify-between gap-4">
 						<div class="flex items-center gap-2">
-							<Avatar>
-								<AvatarImage src={user.image} alt={user.fallback} />
-								<AvatarFallback>{user.fallback}</AvatarFallback>
-							</Avatar>
+							<Avatar.Root>
+								<Avatar.Image src={user.image} alt={user.fallback} />
+								<Avatar.Fallback>{user.fallback}</Avatar.Fallback>
+							</Avatar.Root>
 							<span class="font-medium">{user.name}</span>
 						</div>
 						<ChevronRightIcon class="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
-					</CollapsibleTrigger>
-					<CollapsibleContent>
+					</Collapsible.Trigger>
+					<Collapsible.Content>
 						<div class="flex flex-col gap-2">
 							<p class="text-sm text-muted-foreground">{user.bio}</p>
 							<div class="flex items-center justify-between gap-2">
@@ -78,9 +74,9 @@
 								{/if}
 							</div>
 						</div>
-					</CollapsibleContent>
+					</Collapsible.Content>
 				</li>
 			{/snippet}
-		</Collapsible>
+		</Collapsible.Root>
 	{/each}
 </ul>

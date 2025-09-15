@@ -14,7 +14,7 @@
 	const startDate = new CalendarDate(1980, 6, 1);
 	const endDate = new CalendarDate(2030, 6, 30);
 
-	const eachYearOfInterval = ({ start, end }: { start: CalendarDate; end: CalendarDate }) => {
+	function eachYearOfInterval({ start, end }: { start: CalendarDate; end: CalendarDate }) {
 		let years: CalendarDate[] = [];
 		let current = start;
 
@@ -24,7 +24,7 @@
 		}
 
 		return years;
-	};
+	}
 
 	const years = eachYearOfInterval({
 		start: startOfYear(startDate),
@@ -50,7 +50,7 @@
   "
 	/>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">
-		Calendar with advance selection{' '}
+		Calendar with advance selection
 		<a
 			href="https://originui.com/calendar-date-picker"
 			class="underline hover:text-primary"

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { InfoIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<Tooltip>
-	<TooltipTrigger>
+<Tooltip.Root>
+	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">Content</Button>
 		{/snippet}
-	</TooltipTrigger>
-	<TooltipContent class="max-w-64 py-3 text-pretty">
+	</Tooltip.Trigger>
+	<Tooltip.Content class="max-w-64 py-3 text-pretty">
 		<div class="space-y-1">
 			<div class="flex items-center gap-2">
 				<InfoIcon class="size-4" />
@@ -21,5 +21,5 @@
 				content is visible without requiring tooltip interaction.
 			</p>
 		</div>
-	</TooltipContent>
-</Tooltip>
+	</Tooltip.Content>
+</Tooltip.Root>

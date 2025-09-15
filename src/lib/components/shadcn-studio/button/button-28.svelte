@@ -5,15 +5,15 @@
 
 	let copied = $state(false);
 
-	const handleCopy = async () => {
+	async function handleCopy() {
 		try {
-			await navigator.clipboard.writeText('Thank you for using Shadcn Studio!');
+			await navigator.clipboard.writeText('Thank you for using shadcn/studio-svelte!');
 			copied = true;
 			setTimeout(() => (copied = false), 1500);
-		} catch (err) {
-			console.error('Failed to copy text: ', err);
+		} catch (error) {
+			console.error('Failed to copy text: ', error);
 		}
-	};
+	}
 </script>
 
 <Button

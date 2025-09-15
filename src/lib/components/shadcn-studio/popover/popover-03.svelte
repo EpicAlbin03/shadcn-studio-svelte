@@ -2,19 +2,19 @@
 	import { DollarSignIcon } from '@lucide/svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<DollarSignIcon />
 				<span class="sr-only">Pricing details</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="grid gap-2.5">
 			<div class="flex items-center justify-between">
 				<span class="text-lg font-semibold">Enterprise Plan</span>
@@ -29,5 +29,5 @@
 				<span class="text-xs text-muted-foreground">20% discount on annual plan</span>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

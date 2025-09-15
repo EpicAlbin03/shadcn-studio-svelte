@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 
-<Avatar>
-	<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-	<AvatarFallback class="text-xs">HR</AvatarFallback>
-</Avatar>
+<Avatar.Root>
+	<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+	<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+</Avatar.Root>

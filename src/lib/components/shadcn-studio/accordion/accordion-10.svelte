@@ -1,10 +1,5 @@
 <script lang="ts">
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
 
 	const items = [
 		{
@@ -24,11 +19,11 @@
 	];
 </script>
 
-<Accordion type="single" class="w-full rounded-md border" value="item-1">
+<Accordion.Root type="single" class="w-full rounded-md border" value="item-1">
 	{#each items as item, index}
-		<AccordionItem value={`item-${index + 1}`}>
-			<AccordionTrigger class="px-5">{item.title}</AccordionTrigger>
-			<AccordionContent class="px-5 text-muted-foreground">{item.content}</AccordionContent>
-		</AccordionItem>
+		<Accordion.Item value={`item-${index + 1}`}>
+			<Accordion.Trigger class="px-5">{item.title}</Accordion.Trigger>
+			<Accordion.Content class="px-5 text-muted-foreground">{item.content}</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

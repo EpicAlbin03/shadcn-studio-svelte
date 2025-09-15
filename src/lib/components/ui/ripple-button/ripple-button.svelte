@@ -1,24 +1,21 @@
 <script lang="ts" module>
-	import { Motion, type MotionProps, type Transition } from 'motion-start';
-	import type { Snippet } from 'svelte';
-	import { cn } from '$lib/utils';
+	import { motion, type MotionProps, type Transition } from 'motion-start';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 
-	export interface RippleButtonProps extends MotionProps, Omit<ButtonProps, 'style'> {
-		children?: Snippet;
-		onclick?: (e: MouseEvent) => void;
-		class?: string;
-		scale?: number;
-		transition?: Transition;
-	}
+	export type RippleButtonProps = MotionProps &
+		Omit<ButtonProps, 'style'> & {
+			scale?: number;
+			transition?: Transition;
+		};
 </script>
 
 <script lang="ts">
-	interface Ripple {
+	type Ripple = {
 		id: number;
 		x: number;
 		y: number;
-	}
+	};
 
 	let {
 		children,
@@ -33,7 +30,7 @@
 
 	let ripples = $state<Ripple[]>([]);
 
-	const createRipple = (event: MouseEvent) => {
+	function createRipple(event: MouseEvent) {
 		if (!ref) return;
 
 		const rect = ref.getBoundingClientRect();
@@ -51,15 +48,16 @@
 		setTimeout(() => {
 			ripples = ripples.filter((r) => r.id !== newRipple.id);
 		}, 600);
-	};
+	}
 
-	const handleClick = (event: MouseEvent) => {
+	function handleClick(event: MouseEvent & { currentTarget: HTMLButtonElement }) {
 		createRipple(event);
 		onClick?.(event);
-	};
+	}
 </script>
 
-<Motion.button
+<!-- TODO: Spread props when motion-start is compatible -->
+<motion.button
 	bind:el={ref}
 	data-slot="ripple-button"
 	onclick={handleClick}
@@ -67,7 +65,7 @@
 >
 	{@render children?.()}
 	{#each ripples as ripple (ripple.id)}
-		<Motion.span
+		<motion.span
 			initial={{ scale: 0, opacity: 0.5 }}
 			animate={{ scale, opacity: 0 }}
 			{transition}
@@ -78,4 +76,4 @@
 			}}
 		/>
 	{/each}
-</Motion.button>
+</motion.button>

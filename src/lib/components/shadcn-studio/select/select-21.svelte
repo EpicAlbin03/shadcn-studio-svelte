@@ -27,15 +27,15 @@
 	<Label for={id}>
 		Required select <span class="text-destructive">*</span>
 	</Label>
-	<Select type="single" bind:value required>
-		<SelectTrigger {id} class="w-full">
+	<Select.Root type="single" bind:value required>
+		<Select.Trigger {id} class="w-full">
 			{triggerContent}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

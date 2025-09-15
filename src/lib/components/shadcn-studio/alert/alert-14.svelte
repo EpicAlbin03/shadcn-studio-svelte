@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { TriangleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert variant="destructive">
+<Alert.Root variant="destructive">
 	<TriangleAlertIcon />
-	<AlertTitle>Something went wrong!</AlertTitle>
-</Alert>
+	<Alert.Title>Something went wrong!</Alert.Title>
+</Alert.Root>

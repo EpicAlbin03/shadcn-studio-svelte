@@ -86,7 +86,7 @@ const ListBoxWithOptionGroupsDemo = () => {
         </ListBox>
       </div>
       <p class='text-muted-foreground text-xs' role='region' aria-live='polite'>
-        Built using{' '}
+        Built using
         <a
           href='https://react-spectrum.adobe.com/react-aria/ListBox.html'
           class='hover:text-primary underline'

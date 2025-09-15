@@ -1,17 +1,10 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { tick } from 'svelte';
 
 	const users = [
@@ -82,8 +75,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>User combobox</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -95,10 +88,10 @@
 				>
 					{#if selectedUser}
 						<span class="flex gap-2">
-							<Avatar class="size-6">
-								<AvatarImage src={selectedUser.avatar} alt={selectedUser.name} />
-								<AvatarFallback>{selectedUser.name[0]}</AvatarFallback>
-							</Avatar>
+							<Avatar.Root class="size-6">
+								<Avatar.Image src={selectedUser.avatar} alt={selectedUser.name} />
+								<Avatar.Fallback>{selectedUser.name[0]}</Avatar.Fallback>
+							</Avatar.Root>
 							<span class="font-medium">{selectedUser.name}</span>
 						</span>
 					{:else}
@@ -111,15 +104,15 @@
 					/>
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent class="w-[300px] p-0">
-			<Command>
-				<CommandInput placeholder="Search user..." />
-				<CommandList>
-					<CommandEmpty>No users found.</CommandEmpty>
-					<CommandGroup>
+		</Popover.Trigger>
+		<Popover.Content class="w-[300px] p-0">
+			<Command.Root>
+				<Command.Input placeholder="Search user..." />
+				<Command.List>
+					<Command.Empty>No users found.</Command.Empty>
+					<Command.Group>
 						{#each users as user (user.name)}
-							<CommandItem
+							<Command.Item
 								value={user.name}
 								onSelect={() => {
 									value = user.name;
@@ -127,10 +120,10 @@
 								}}
 							>
 								<span class="flex items-center gap-2">
-									<Avatar class="size-7">
-										<AvatarImage src={user.avatar} alt={user.name} />
-										<AvatarFallback>{user.name[0]}</AvatarFallback>
-									</Avatar>
+									<Avatar.Root class="size-7">
+										<Avatar.Image src={user.avatar} alt={user.name} />
+										<Avatar.Fallback>{user.name[0]}</Avatar.Fallback>
+									</Avatar.Root>
 									<span class="flex flex-col">
 										<span class="font-medium">{user.name}</span>
 										<span class="text-sm text-muted-foreground">{user.email}</span>
@@ -139,11 +132,11 @@
 								{#if value === user.name}
 									<CheckIcon size={16} class="ml-auto" />
 								{/if}
-							</CommandItem>
+							</Command.Item>
 						{/each}
-					</CommandGroup>
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+					</Command.Group>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

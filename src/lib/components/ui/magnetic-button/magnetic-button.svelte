@@ -1,20 +1,16 @@
 <script lang="ts" module>
 	import { Motion, type MotionProps } from 'motion-start';
-	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/utils';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
 
-	export interface MagneticButtonProps extends MotionProps, Omit<ButtonProps, 'style'> {
-		children?: Snippet;
-		class?: string;
-	}
+	export type MagneticButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
 </script>
 
 <script lang="ts">
-	interface Position {
+	type Position = {
 		x: number;
 		y: number;
-	}
+	};
 
 	let {
 		children,
@@ -27,7 +23,7 @@
 	let position = $state<Position>({ x: 0, y: 0 });
 	const { x, y } = $derived(position);
 
-	const handleMouse = (e: MouseEvent) => {
+	function handleMouse(e: MouseEvent & { currentTarget: HTMLButtonElement }) {
 		if (ref) {
 			const { clientX, clientY } = e;
 			const { height, width, left, top } = ref.getBoundingClientRect();
@@ -36,11 +32,11 @@
 
 			position = { x: middleX, y: middleY };
 		}
-	};
+	}
 
-	const reset = () => {
+	function reset() {
 		position = { x: 0, y: 0 };
-	};
+	}
 </script>
 
 <Motion.button

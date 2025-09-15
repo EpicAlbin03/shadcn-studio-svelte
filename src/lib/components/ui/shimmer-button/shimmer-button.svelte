@@ -1,21 +1,22 @@
 <script lang="ts" module>
 	import { Motion, type MotionProps } from 'motion-start';
-	import type { Snippet } from 'svelte';
-	import { cn, type WithElementRef } from '$lib/utils';
-	import type { HTMLButtonAttributes } from 'svelte/elements';
+	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 
-	export interface ShimmerButtonProps
-		extends MotionProps,
-			Omit<WithElementRef<HTMLButtonAttributes>, 'style'> {
-		children?: Snippet;
-		class?: string;
-	}
+	export type ShimmerButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
 </script>
 
 <script lang="ts">
-	let { children, class: className, ref = $bindable(null) }: ShimmerButtonProps = $props();
+	let {
+		children,
+		class: className,
+		variant = 'default',
+		size = 'default',
+		ref = $bindable(null)
+	}: ShimmerButtonProps = $props();
 </script>
 
+<!-- TODO: Spread props when motion-start is compatible -->
 <Motion.button
 	bind:el={ref}
 	class="relative inline-flex overflow-hidden rounded-lg bg-[linear-gradient(120deg,var(--primary)_calc(var(--shimmer-button-x)-25%),var(--primary-foreground)_var(--shimmer-button-x),var(--primary)_calc(var(--shimmer-button-x)+25%))] [--shimmer-button-x:0%]"

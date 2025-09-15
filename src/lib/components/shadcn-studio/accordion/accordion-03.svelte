@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { HeadsetIcon, PackageIcon, RefreshCwIcon } from '@lucide/svelte';
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
 
 	const items = [
 		{
@@ -28,16 +23,16 @@
 	];
 </script>
 
-<Accordion type="single" class="w-full" value="item-1">
+<Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<AccordionItem value={`item-${index + 1}`}>
-			<AccordionTrigger class="justify-start [&>svg]:order-first">
+		<Accordion.Item value={`item-${index + 1}`}>
+			<Accordion.Trigger class="justify-start [&>svg]:order-first">
 				<span class="flex items-center gap-4">
 					<item.icon class="size-4 shrink-0 text-muted-foreground" />
 					<span>{item.title}</span>
 				</span>
-			</AccordionTrigger>
-			<AccordionContent class="text-muted-foreground">{item.content}</AccordionContent>
-		</AccordionItem>
+			</Accordion.Trigger>
+			<Accordion.Content class="text-muted-foreground">{item.content}</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

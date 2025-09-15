@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<Tooltip>
-	<TooltipTrigger>
+<Tooltip.Root>
+	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">Avatar</Button>
 		{/snippet}
-	</TooltipTrigger>
-	<TooltipContent>
+	</Tooltip.Trigger>
+	<Tooltip.Content>
 		<div class="flex items-center gap-1.5">
-			<Avatar class="size-5">
-				<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-				<AvatarFallback class="text-xs">HR</AvatarFallback>
-			</Avatar>
+			<Avatar.Root class="size-5">
+				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+			</Avatar.Root>
 			<p class="font-medium">Hallie Richards</p>
 		</div>
-	</TooltipContent>
-</Tooltip>
+	</Tooltip.Content>
+</Tooltip.Root>

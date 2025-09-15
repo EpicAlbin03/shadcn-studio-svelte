@@ -9,7 +9,7 @@
 		today
 	} from '@internationalized/date';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import { Card, CardContent, CardFooter } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import type { DateRange } from 'bits-ui';
 
 	let todayDate = today(getLocalTimeZone());
@@ -35,7 +35,7 @@
 			start: startOfYear(todayDate.subtract({ years: 1 })),
 			end: endOfYear(todayDate.subtract({ years: 1 }))
 		}
-	} as const;
+	};
 
 	const presetOptions = [
 		{
@@ -88,11 +88,11 @@
 </script>
 
 <div>
-	<Card class="max-w-xs py-4">
-		<CardContent class="flex justify-center px-4">
+	<Card.Root class="max-w-xs py-4">
+		<Card.Content class="flex justify-center px-4">
 			<RangeCalendar bind:value class="bg-transparent p-0 [--cell-size:--spacing(10)]" />
-		</CardContent>
-		<CardFooter class="flex flex-wrap gap-2 border-t px-4 !pt-4">
+		</Card.Content>
+		<Card.Footer class="flex flex-wrap gap-2 border-t px-4 !pt-4">
 			{#each presetOptions as preset (preset.value)}
 				<Button
 					variant="outline"
@@ -105,7 +105,7 @@
 					{preset.label}
 				</Button>
 			{/each}
-		</CardFooter>
-	</Card>
+		</Card.Footer>
+	</Card.Root>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">Calendar with presets</p>
 </div>

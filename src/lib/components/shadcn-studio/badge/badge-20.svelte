@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { BanIcon } from '@lucide/svelte';
-
 	import { Badge } from '$lib/components/ui/badge';
 </script>
 

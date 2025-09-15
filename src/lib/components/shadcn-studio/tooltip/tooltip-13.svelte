@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CalendarIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 	import { Progress } from '$lib/components/ui/progress';
@@ -44,14 +44,14 @@
 			</div>
 			<div class="flex -space-x-2">
 				{#each avatars as avatar}
-					<Avatar class="ring-2 ring-background">
-						<AvatarImage src={avatar.src} alt={avatar.name} />
-						<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-					</Avatar>
+					<Avatar.Root class="ring-2 ring-background">
+						<Avatar.Image src={avatar.src} alt={avatar.name} />
+						<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+					</Avatar.Root>
 				{/each}
-				<Avatar class="ring-2 ring-background">
-					<AvatarFallback class="text-xs">+6</AvatarFallback>
-				</Avatar>
+				<Avatar.Root class="ring-2 ring-background">
+					<Avatar.Fallback class="text-xs">+6</Avatar.Fallback>
+				</Avatar.Root>
 			</div>
 		</div>
 	</HoverCardContent>

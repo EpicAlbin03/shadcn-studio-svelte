@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<Tooltip>
-	<TooltipTrigger>
+<Tooltip.Root>
+	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">No arrow</Button>
 		{/snippet}
-	</TooltipTrigger>
-	<TooltipContent arrowClasses="invisible">
+	</Tooltip.Trigger>
+	<Tooltip.Content arrowClasses="invisible">
 		<p>This tooltip don't have arrow</p>
-	</TooltipContent>
-</Tooltip>
+	</Tooltip.Content>
+</Tooltip.Root>

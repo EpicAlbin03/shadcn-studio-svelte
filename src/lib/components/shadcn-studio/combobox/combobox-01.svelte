@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Command from '$lib/components/ui/command/index.js';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
 
@@ -39,7 +32,9 @@
 	let open = $state(false);
 	let value = $state('');
 	let triggerRef = $state<HTMLButtonElement>(null!);
-	const selectedValue = $derived(frameworks.find((f) => f.value === value)?.label);
+	const triggerContent = $derived(
+		frameworks.find((f) => f.value === value)?.label ?? 'Select framework...'
+	);
 
 	function closeAndFocusTrigger() {
 		open = false;
@@ -49,8 +44,8 @@
 	}
 </script>
 
-<Popover bind:open>
-	<PopoverTrigger bind:ref={triggerRef}>
+<Popover.Root bind:open>
+	<Popover.Trigger bind:ref={triggerRef}>
 		{#snippet child({ props })}
 			<Button
 				{...props}
@@ -60,19 +55,19 @@
 				class="w-full max-w-xs justify-between"
 				aria-label="Framework combobox"
 			>
-				{selectedValue || 'Select framework...'}
+				{triggerContent}
 				<ChevronsUpDownIcon class="opacity-50" />
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="p-0">
-		<Command>
-			<CommandInput placeholder="Search framework..." class="h-9" />
-			<CommandList>
-				<CommandEmpty>No framework found.</CommandEmpty>
-				<CommandGroup>
+	</Popover.Trigger>
+	<Popover.Content class="p-0">
+		<Command.Root>
+			<Command.Input placeholder="Search framework..." class="h-9" />
+			<Command.List>
+				<Command.Empty>No framework found.</Command.Empty>
+				<Command.Group>
 					{#each frameworks as framework (framework.value)}
-						<CommandItem
+						<Command.Item
 							value={framework.value}
 							onSelect={() => {
 								value = framework.value;
@@ -83,10 +78,10 @@
 							<CheckIcon
 								class={cn('ml-auto', value === framework.value ? 'opacity-100' : 'opacity-0')}
 							/>
-						</CommandItem>
+						</Command.Item>
 					{/each}
-				</CommandGroup>
-			</CommandList>
-		</Command>
-	</PopoverContent>
-</Popover>
+				</Command.Group>
+			</Command.List>
+		</Command.Root>
+	</Popover.Content>
+</Popover.Root>

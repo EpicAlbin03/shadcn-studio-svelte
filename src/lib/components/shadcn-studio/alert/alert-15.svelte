@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { TriangleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert variant="destructive" class="border-destructive">
+<Alert.Root variant="destructive" class="border-destructive">
 	<TriangleAlertIcon />
-	<AlertTitle>Unable to process your payment.</AlertTitle>
-</Alert>
+	<Alert.Title>Unable to process your payment.</Alert.Title>
+</Alert.Root>

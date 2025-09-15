@@ -16,7 +16,7 @@
 			<div class="space-y-1">
 				<p class="text-sm font-medium">About Himalayas</p>
 				<p class="text-xs text-muted-foreground">
-					The Great Himalayan mountain ranges in the Indian sub-continent region.{' '}
+					The Great Himalayan mountain ranges in the Indian sub-continent region.
 					<a
 						href="https://en.wikipedia.org/wiki/Himalayas"
 						target="_blank"

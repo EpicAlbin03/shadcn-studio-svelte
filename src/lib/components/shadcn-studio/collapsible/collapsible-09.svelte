@@ -3,11 +3,7 @@
 	import { usePaymentInputs } from 'react-payment-inputs';
 	import images, { type CardImages } from 'react-payment-inputs/images';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from "$lib/components/ui/collapsible/index.js";
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group';
@@ -37,7 +33,7 @@
 
 <div class="w-full space-y-3">
 	<div class="w-full max-w-md space-y-3 rounded-md border py-4">
-		<Collapsible class="flex flex-col gap-2">
+		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Delivery Address</div>
 				<CollapsibleTrigger class="group">
@@ -49,9 +45,9 @@
 							<span class="sr-only">Toggle</span>
 						</Button>
 					{/snippet}
-				</CollapsibleTrigger>
+				</Collapsible.Trigger>
 			</div>
-			<CollapsibleContent class="flex flex-col gap-3 px-4 pt-3">
+			<Collapsible.Content class="flex flex-col gap-3 px-4 pt-3">
 				<div class="group relative w-full">
 					<label
 						for="full-name"
@@ -97,10 +93,10 @@
 					</label>
 					<Input id="landmark" type="text" placeholder=" " class="dark:bg-background" />
 				</div>
-			</CollapsibleContent>
-		</Collapsible>
+			</Collapsible.Content>
+		</Collapsible.Root>
 		<Separator />
-		<Collapsible class="flex flex-col gap-2">
+		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Delivery Options</div>
 				<CollapsibleTrigger class="group">
@@ -112,9 +108,9 @@
 							<span class="sr-only">Toggle</span>
 						</Button>
 					{/snippet}
-				</CollapsibleTrigger>
+				</Collapsible.Trigger>
 			</div>
-			<CollapsibleContent class="flex flex-col gap-2 px-4">
+			<Collapsible.Content class="flex flex-col gap-2 px-4">
 				<RadioGroup class="w-full gap-0 -space-y-px rounded-md pt-3 shadow-xs" value="2">
 					{#each items as item (`${id}-${item.value}`)}
 						<div
@@ -146,10 +142,10 @@
 						</div>
 					{/each}
 				</RadioGroup>
-			</CollapsibleContent>
-		</Collapsible>
+			</Collapsible.Content>
+		</Collapsible.Root>
 		<Separator />
-		<Collapsible class="flex flex-col gap-2">
+		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Payment</div>
 				<CollapsibleTrigger class="group">
@@ -161,9 +157,9 @@
 							<span class="sr-only">Toggle</span>
 						</Button>
 					{/snippet}
-				</CollapsibleTrigger>
+				</Collapsible.Trigger>
 			</div>
-			<CollapsibleContent class="flex flex-col gap-2">
+			<Collapsible.Content class="flex flex-col gap-2">
 				<div class="w-full space-y-2 px-4 pt-2">
 					<Label>Card details</Label>
 					<div>
@@ -207,11 +203,11 @@
 						</div>
 					</div>
 				</div>
-			</CollapsibleContent>
-		</Collapsible>
+			</Collapsible.Content>
+		</Collapsible.Root>
 	</div>
 	<p class="text-xs text-muted-foreground">
-		Built with{' '}
+		Built with
 		<a
 			class="underline hover:text-foreground"
 			href="https://github.com/medipass/react-payment-inputs"

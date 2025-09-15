@@ -8,108 +8,98 @@
 		UsersIcon
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuItem,
-		DropdownMenuGroup,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Dropdown with collapsible</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
-		<DropdownMenuItem>
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
+		<DropdownMenu.Item>
 			<UserIcon />
 			<span>Profile</span>
-		</DropdownMenuItem>
-		<Collapsible>
+		</DropdownMenu.Item>
+		<Collapsible.Root>
 			{#snippet child({ props })}
-				<DropdownMenuGroup {...props}>
-					<CollapsibleTrigger>
+				<DropdownMenu.Group {...props}>
+					<Collapsible.Trigger>
 						{#snippet child({ props })}
-							<DropdownMenuItem
+							<DropdownMenu.Item
 								{...props}
 								onSelect={(event) => event.preventDefault()}
 								class="justify-between"
 							>
 								<div class="flex items-center gap-2">
 									<SettingsIcon />
-									<span>Settings</span>
+									Settings
 								</div>
 								<ChevronRightIcon
 									class="shrink-0 transition-transform [[data-state='open']>&]:rotate-90"
 								/>
-							</DropdownMenuItem>
+							</DropdownMenu.Item>
 						{/snippet}
-					</CollapsibleTrigger>
-					<CollapsibleContent class="pl-4">
-						<DropdownMenuItem>
+					</Collapsible.Trigger>
+					<Collapsible.Content class="pl-4">
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Account</span>
-						</DropdownMenuItem>
-						<DropdownMenuItem>
+							Account
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Security</span>
-						</DropdownMenuItem>
-						<DropdownMenuItem>
+							Security
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Billing & plans</span>
-						</DropdownMenuItem>
-					</CollapsibleContent>
-				</DropdownMenuGroup>
+							Billing & plans
+						</DropdownMenu.Item>
+					</Collapsible.Content>
+				</DropdownMenu.Group>
 			{/snippet}
-		</Collapsible>
-		<Collapsible>
+		</Collapsible.Root>
+		<Collapsible.Root>
 			{#snippet child({ props })}
-				<DropdownMenuGroup {...props}>
-					<CollapsibleTrigger>
+				<DropdownMenu.Group {...props}>
+					<Collapsible.Trigger>
 						{#snippet child({ props })}
-							<DropdownMenuItem
+							<DropdownMenu.Item
 								{...props}
 								onSelect={(event) => event.preventDefault()}
 								class="justify-between"
 							>
 								<div class="flex items-center gap-2">
 									<UsersIcon />
-									<span>Users</span>
+									Users
 								</div>
 								<ChevronRightIcon
 									class="shrink-0 transition-transform [[data-state='open']>&]:rotate-90"
 								/>
-							</DropdownMenuItem>
+							</DropdownMenu.Item>
 						{/snippet}
-					</CollapsibleTrigger>
-					<CollapsibleContent class="pl-4">
-						<DropdownMenuItem>
+					</Collapsible.Trigger>
+					<Collapsible.Content class="pl-4">
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Teams</span>
-						</DropdownMenuItem>
-						<DropdownMenuItem>
+							Teams
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Projects</span>
-						</DropdownMenuItem>
-						<DropdownMenuItem>
+							Projects
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
 							<CircleSmallIcon />
-							<span>Connections</span>
-						</DropdownMenuItem>
-					</CollapsibleContent>
-				</DropdownMenuGroup>
+							Connections
+						</DropdownMenu.Item>
+					</Collapsible.Content>
+				</DropdownMenu.Group>
 			{/snippet}
-		</Collapsible>
-		<DropdownMenuItem>
+		</Collapsible.Root>
+		<DropdownMenu.Item>
 			<LogOutIcon />
-			<span>Log out</span>
-		</DropdownMenuItem>
-	</DropdownMenuContent>
-</DropdownMenu>
+			Log out
+		</DropdownMenu.Item>
+	</DropdownMenu.Content>
+</DropdownMenu.Root>

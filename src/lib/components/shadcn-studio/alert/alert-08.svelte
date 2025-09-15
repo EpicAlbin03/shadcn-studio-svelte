@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { CircleAlertIcon, XIcon } from '@lucide/svelte';
-	import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 	import { Button } from '$lib/components/ui/button';
 
 	let isActive = $state(true);
 </script>
 
 {#if isActive}
-	<Alert class="flex justify-between border-none bg-primary text-primary-foreground">
+	<Alert.Root class="flex justify-between border-none bg-primary text-primary-foreground">
 		<CircleAlertIcon />
 		<div class="flex flex-1 flex-col gap-4">
 			<div class="flex-1 flex-col justify-center gap-1">
-				<AlertTitle>A new update is available</AlertTitle>
-				<AlertDescription class="text-primary-foreground/80">
+				<Alert.Title>A new update is available</Alert.Title>
+				<Alert.Description class="text-primary-foreground/80">
 					Includes the at new dashboard View. Pages end exports will now load taster
-				</AlertDescription>
+				</Alert.Description>
 			</div>
 			<div class="flex items-center gap-4">
 				<Button
@@ -29,5 +29,5 @@
 			<XIcon class="size-5" />
 			<span class="sr-only">Close</span>
 		</button>
-	</Alert>
+	</Alert.Root>
 {/if}

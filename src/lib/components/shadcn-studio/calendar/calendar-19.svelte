@@ -2,9 +2,9 @@
 	import { CalendarIcon } from '@lucide/svelte';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import { CalendarDate, DateFormatter, getLocalTimeZone, today } from '@internationalized/date';
-	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { Button } from '$lib/components/ui/button';
 
@@ -19,12 +19,12 @@
 </script>
 
 <div>
-	<Card class="gap-5 py-5">
-		<CardHeader class="flex items-center gap-2 border-b px-3 !pb-3">
+	<Card.Root class="gap-5 py-5">
+		<Card.Header class="flex items-center gap-2 border-b px-3 !pb-3">
 			<div class="flex w-full flex-col gap-3">
 				<Label for={id} class="text-xs">Enter Date</Label>
-				<Popover bind:open>
-					<PopoverTrigger>
+				<Popover.Root bind:open>
+					<Popover.Trigger>
 						{#snippet child({ props })}
 							<Button
 								{id}
@@ -36,17 +36,17 @@
 								{value ? df.format(value.toDate(getLocalTimeZone())) : 'Select a date'}
 							</Button>
 						{/snippet}
-					</PopoverTrigger>
-					<PopoverContent class="w-auto p-0">
+					</Popover.Trigger>
+					<Popover.Content class="w-auto p-0">
 						<Calendar bind:value onValueChange={() => (open = false)} type="single" initialFocus />
-					</PopoverContent>
-				</Popover>
+					</Popover.Content>
+				</Popover.Root>
 			</div>
-		</CardHeader>
-		<CardContent class="px-5">
+		</Card.Header>
+		<Card.Content class="px-5">
 			<Calendar type="single" bind:value class="bg-transparent p-0" />
-		</CardContent>
-	</Card>
+		</Card.Content>
+	</Card.Root>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">
 		Calendar with date input
 	</p>

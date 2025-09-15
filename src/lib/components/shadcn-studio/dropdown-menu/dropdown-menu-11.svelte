@@ -39,21 +39,21 @@
 	];
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Bordered Menu</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56 shadow-none">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56 shadow-none">
 		<DropdownMenuLabel>Task priority</DropdownMenuLabel>
 		<DropdownMenuGroup>
 			{#each listItems as item}
-				<DropdownMenuItem>
+				<DropdownMenu.Item>
 					<item.icon class={item.color} />
 					{item.priority}
-				</DropdownMenuItem>
+				</DropdownMenu.Item>
 			{/each}
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

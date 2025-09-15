@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { BellIcon, CircleIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Separator } from '$lib/components/ui/separator';
 
 	const notifications = [
@@ -33,15 +33,15 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<BellIcon />
 				<span class="sr-only">Notifications</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80 p-0">
+	</Popover.Trigger>
+	<Popover.Content class="w-80 p-0">
 		<div class="grid">
 			<div class="flex items-center justify-between gap-2 px-4 py-2.5">
 				<span class="font-medium">Notifications</span>
@@ -60,10 +60,10 @@
 						class="flex items-start gap-2 rounded-lg px-2 py-1.5 hover:bg-accent"
 						onclick={() => readMessages.push(item.id)}
 					>
-						<Avatar class="rounded-lg">
-							<AvatarImage src={item.image} alt={item.fallback} />
-							<AvatarFallback class="rounded-lg text-xs">{item.fallback}</AvatarFallback>
-						</Avatar>
+						<Avatar.Root class="rounded-lg">
+							<Avatar.Image src={item.image} alt={item.fallback} />
+							<Avatar.Fallback class="rounded-lg text-xs">{item.fallback}</Avatar.Fallback>
+						</Avatar.Root>
 						<div class="flex-1 space-y-1">
 							<div class="text-sm font-medium">{item.message}</div>
 							<p class="text-xs text-muted-foreground">{`${item.time} ago`}</p>
@@ -75,5 +75,5 @@
 				{/each}
 			</ul>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

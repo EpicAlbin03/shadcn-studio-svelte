@@ -11,27 +11,27 @@
 	} from '$lib/components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Align Start</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent align="start" class="w-34">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content align="start" class="w-34">
 		<DropdownMenuGroup>
-			<DropdownMenuItem>
+			<DropdownMenu.Item>
 				<PencilLine />
 				Edit
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				<Upload />
 				Share
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 			<DropdownMenuSeparator />
 			<DropdownMenuItem variant="destructive">
 				<Trash2 />
 				<span>Delete</span>
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

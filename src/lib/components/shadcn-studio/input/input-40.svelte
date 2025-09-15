@@ -30,7 +30,7 @@ const InputWithPlusMinusButtonsDemo = () => {
         </Button>
       </Group>
       <p class='text-muted-foreground text-xs'>
-        Built with{' '}
+        Built with
         <a
           class='hover:text-foreground underline'
           href='https://react-spectrum.adobe.com/react-aria/NumberField.html'

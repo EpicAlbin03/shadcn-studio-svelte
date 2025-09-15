@@ -18,7 +18,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import * as Table from '$lib/components/ui/table';
 	import {
 		FlexRender,
@@ -238,14 +238,14 @@
 					}
 				}}
 			>
-				<SelectTrigger id={labelId} class="w-fit whitespace-nowrap">
+				<Select.Trigger id={labelId} class="w-fit whitespace-nowrap">
 					{table.getState().pagination.pageSize}
 				</SelectTrigger>
 				<SelectContent
 					class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2"
 				>
 					{#each [5, 10, 25, 50] as pageSize (pageSize)}
-						<SelectItem value={pageSize.toString()}>{pageSize}</SelectItem>
+						<Select.Item value={pageSize.toString()}>{pageSize}</SelectItem>
 					{/each}
 				</SelectContent>
 			</Select>

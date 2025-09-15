@@ -14,17 +14,17 @@
 	let showPanel = $state(false);
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">With checkbox</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>Appearance</DropdownMenuLabel>
 		<DropdownMenuSeparator />
 		<DropdownMenuCheckboxItem bind:checked={showStatusBar}>Status Bar</DropdownMenuCheckboxItem>
 		<DropdownMenuCheckboxItem bind:checked={showActivityBar} disabled>API</DropdownMenuCheckboxItem>
 		<DropdownMenuCheckboxItem bind:checked={showPanel}>Invite users</DropdownMenuCheckboxItem>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

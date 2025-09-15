@@ -34,7 +34,7 @@
 		<AnimatedTooltip items={avatars} />
 	</div>
 	<p class="text-xs text-muted-foreground">
-		Inspired by{' '}
+		Inspired by
 		<a
 			class="underline hover:text-foreground"
 			href="https://ui.aceternity.com/components/animated-tooltip"

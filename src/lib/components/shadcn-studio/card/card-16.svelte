@@ -4,12 +4,12 @@
 
 	let all = $state<NodeListOf<Element>>();
 
-	const handleMouseMove = (ev: MouseEvent) => {
+	const handleMouseMove = (event: MouseEvent) => {
 		if (!all) return;
 
-		all.forEach((e) => {
-			const blob = e.querySelector('.blob') as HTMLElement;
-			const fblob = e.querySelector('.fake-blob') as HTMLElement;
+		all.forEach((element) => {
+			const blob = element.querySelector('.blob') as HTMLElement;
+			const fblob = element.querySelector('.fake-blob') as HTMLElement;
 
 			if (!blob || !fblob) return;
 
@@ -21,8 +21,8 @@
 				[
 					{
 						transform: `translate(${
-							ev.clientX - rec.left - rec.width / 2
-						}px, ${ev.clientY - rec.top - rec.height / 2}px)`
+							event.clientX - rec.left - rec.width / 2
+						}px, ${event.clientY - rec.top - rec.height / 2}px)`
 					}
 				],
 				{

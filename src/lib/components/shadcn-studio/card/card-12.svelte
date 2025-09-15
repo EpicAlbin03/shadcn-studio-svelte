@@ -2,14 +2,7 @@
 	import { HeartIcon } from '@lucide/svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Card,
-		CardHeader,
-		CardDescription,
-		CardTitle,
-		CardFooter,
-		CardContent
-	} from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { cn } from '$lib/utils';
 
 	let liked = $state(false);
@@ -31,26 +24,26 @@
 		/>
 		<span class="sr-only">Like</span>
 	</Button>
-	<Card class="border-none">
-		<CardHeader>
-			<CardTitle>Nike Jordan Air Rev</CardTitle>
-			<CardDescription class="flex items-center gap-2">
+	<Card.Root class="border-none">
+		<Card.Header>
+			<Card.Title>Nike Jordan Air Rev</Card.Title>
+			<Card.Description class="flex items-center gap-2">
 				<Badge variant="outline">EU38</Badge>
 				<Badge variant="outline">Black and White</Badge>
-			</CardDescription>
-		</CardHeader>
-		<CardContent>
+			</Card.Description>
+		</Card.Header>
+		<Card.Content>
 			<p>
 				Crossing hardwood comfort with off-court flair. '80s-Inspired construction, bold details and
 				nothin'-but-net style.
 			</p>
-		</CardContent>
-		<CardFooter class="justify-between gap-3 max-sm:flex-col max-sm:items-stretch">
+		</Card.Content>
+		<Card.Footer class="justify-between gap-3 max-sm:flex-col max-sm:items-stretch">
 			<div class="flex flex-col">
 				<span class="text-sm font-medium uppercase">Price</span>
 				<span class="text-xl font-semibold">$69.99</span>
 			</div>
 			<Button size="lg">Add to cart</Button>
-		</CardFooter>
-	</Card>
+		</Card.Footer>
+	</Card.Root>
 </div>

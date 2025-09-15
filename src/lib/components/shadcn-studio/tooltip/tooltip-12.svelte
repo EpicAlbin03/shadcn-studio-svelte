@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 </script>
@@ -17,10 +17,10 @@
 				<div class="text-xl font-semibold">89,400</div>
 				<div class="text-xs text-muted-foreground">21% ↗︎ than last month</div>
 			</div>
-			<Avatar class="size-10">
-				<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-				<AvatarFallback class="text-xs">HR</AvatarFallback>
-			</Avatar>
+			<Avatar.Root class="size-10">
+				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+			</Avatar.Root>
 		</div>
 	</HoverCardContent>
 </HoverCard>

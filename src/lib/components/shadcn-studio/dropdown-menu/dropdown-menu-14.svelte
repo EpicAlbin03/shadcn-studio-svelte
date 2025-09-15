@@ -13,19 +13,19 @@
 	let position = $state('bottom');
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">With radio</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>Panel Position</DropdownMenuLabel>
 		<DropdownMenuSeparator />
-		<DropdownMenuRadioGroup bind:value={position}>
-			<DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-			<DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-			<DropdownMenuRadioItem value="right" disabled>Right</DropdownMenuRadioItem>
+		<DropdownMenu.RadioGroup bind:value={position}>
+			<DropdownMenu.RadioItem value="top">Top</DropdownMenuRadioItem>
+			<DropdownMenu.RadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+			<DropdownMenu.RadioItem value="right" disabled>Right</DropdownMenuRadioItem>
 		</DropdownMenuRadioGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

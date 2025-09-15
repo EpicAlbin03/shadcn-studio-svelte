@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, CardContent } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
 
 	const tabs = [
@@ -24,8 +24,8 @@
 	];
 </script>
 
-<Card class="w-max">
-	<CardContent>
+<Card.Root class="w-max">
+	<Card.Content>
 		<Tabs value={tabs[0].value} class="w-full max-w-sm">
 			<TabsList class="w-full justify-start rounded-none border-b bg-background p-0">
 				{#each tabs as tab (tab.value)}
@@ -43,5 +43,5 @@
 				</TabsContent>
 			{/each}
 		</Tabs>
-	</CardContent>
-</Card>
+	</Card.Content>
+</Card.Root>

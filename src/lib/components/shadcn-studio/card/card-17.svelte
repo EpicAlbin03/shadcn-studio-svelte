@@ -1,25 +1,23 @@
 <script lang="ts">
-	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { onDestroy } from 'svelte';
 
-	interface CardTransform {
+	type CardTransform = {
 		rotateX: number;
 		rotateY: number;
 		scale: number;
-	}
+	};
 
-	let cardRef = $state<HTMLDivElement | null>(null);
-	let imageRef = $state<HTMLImageElement | null>(null);
-	let animationFrameRef = $state<number | null>(null);
+	let cardRef = $state<HTMLDivElement>(null!);
+	let imageRef = $state<HTMLImageElement>(null!);
+	let animationFrameRef = $state<number>(null!);
 	let lastMousePosition = $state({ x: 0, y: 0 });
 
 	let rect: DOMRect;
 	let centerX: number;
 	let centerY: number;
 
-	const updateCardTransform = (mouseX: number, mouseY: number) => {
-		if (!cardRef || !imageRef) return;
-
+	function updateCardTransform(mouseX: number, mouseY: number) {
 		if (!rect) {
 			rect = cardRef.getBoundingClientRect();
 			centerX = rect.left + rect.width / 2;
@@ -42,11 +40,9 @@
 		};
 
 		return { cardTransform, imageTransform };
-	};
+	}
 
-	const animate = () => {
-		if (!cardRef || !imageRef) return;
-
+	function animate() {
 		const transforms = updateCardTransform(lastMousePosition.x, lastMousePosition.y);
 		if (!transforms) return;
 
@@ -58,22 +54,19 @@
 		imageRef.style.transform = `perspective(1000px) rotateX(${imageTransform.rotateX}deg) rotateY(${imageTransform.rotateY}deg) scale3d(${imageTransform.scale}, ${imageTransform.scale}, ${imageTransform.scale})`;
 
 		animationFrameRef = requestAnimationFrame(animate);
-	};
+	}
 
-	const handleMouseMove = (e: MouseEvent) => {
+	function handleMouseMove(e: MouseEvent) {
 		lastMousePosition = { x: e.clientX, y: e.clientY };
-	};
+	}
 
-	const handleMouseEnter = () => {
-		if (!cardRef || !imageRef) return;
+	function handleMouseEnter() {
 		cardRef.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
 		imageRef.style.transition = 'transform 0.2s ease';
 		animate();
-	};
+	}
 
-	const handleMouseLeave = () => {
-		if (!cardRef || !imageRef) return;
-
+	function handleMouseLeave() {
 		if (animationFrameRef) {
 			cancelAnimationFrame(animationFrameRef);
 		}
@@ -84,7 +77,7 @@
 
 		imageRef.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
 		imageRef.style.transition = 'transform 0.5s ease';
-	};
+	}
 
 	onDestroy(() => {
 		if (animationFrameRef) {
@@ -93,17 +86,17 @@
 	});
 </script>
 
-<Card
+<Card.Root
 	bind:ref={cardRef}
 	class="max-w-md"
 	onmouseenter={handleMouseEnter}
 	onmousemove={handleMouseMove}
 	onmouseleave={handleMouseLeave}
 >
-	<CardHeader>
-		<CardTitle>Dynamic 3D Hover Card</CardTitle>
-	</CardHeader>
-	<CardContent class="space-y-6 text-sm">
+	<Card.Header>
+		<Card.Title>Dynamic 3D Hover Card</Card.Title>
+	</Card.Header>
+	<Card.Content class="space-y-6 text-sm">
 		<img
 			bind:this={imageRef}
 			src="/components/card-10.webp"
@@ -116,5 +109,5 @@
 			Experience interactive depth and motion with this sleek 3D hover effect. Move your cursor to
 			see it come alive!
 		</p>
-	</CardContent>
-</Card>
+	</Card.Content>
+</Card.Root>

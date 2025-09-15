@@ -1,13 +1,6 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
-	import {
-		Card,
-		CardContent,
-		CardDescription,
-		CardFooter,
-		CardHeader,
-		CardTitle
-	} from '$lib/components/ui/card';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
 
 	const avatars = [
 		{
@@ -33,12 +26,12 @@
 	];
 </script>
 
-<Card class="max-w-md">
-	<CardHeader>
-		<CardTitle>Meeting Notes</CardTitle>
-		<CardDescription>Transcript from the meeting with the client.</CardDescription>
-	</CardHeader>
-	<CardContent class="text-sm">
+<Card.Root class="max-w-md">
+	<Card.Header>
+		<Card.Title>Meeting Notes</Card.Title>
+		<Card.Description>Transcript from the meeting with the client.</Card.Description>
+	</Card.Header>
+	<Card.Content class="text-sm">
 		<p>Client requested dashboard redesign with focus on mobile responsiveness.</p>
 		<ol class="mt-4 flex list-decimal flex-col gap-2 pl-6">
 			<li>New analytics widgets for daily/weekly metrics</li>
@@ -47,15 +40,15 @@
 			<li>Timeline: 6 weeks</li>
 			<li>Follow-up meeting scheduled for next Tuesday</li>
 		</ol>
-	</CardContent>
-	<CardFooter>
+	</Card.Content>
+	<Card.Footer>
 		<div class="flex -space-x-2 hover:space-x-1">
 			{#each avatars as avatar}
-				<Avatar class="ring-2 ring-background transition-all duration-300 ease-in-out">
-					<AvatarImage src={avatar.src} alt={avatar.name} />
-					<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-				</Avatar>
+				<Avatar.Root class="ring-2 ring-background transition-all duration-300 ease-in-out">
+					<Avatar.Image src={avatar.src} alt={avatar.name} />
+					<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+				</Avatar.Root>
 			{/each}
 		</div>
-	</CardFooter>
-</Card>
+	</Card.Footer>
+</Card.Root>

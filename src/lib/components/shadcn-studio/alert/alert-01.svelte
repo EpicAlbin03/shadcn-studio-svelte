@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert>
+<Alert.Root>
 	<CircleAlertIcon />
-	<AlertTitle>New message!</AlertTitle>
-</Alert>
+	<Alert.Title>New message!</Alert.Title>
+</Alert.Root>

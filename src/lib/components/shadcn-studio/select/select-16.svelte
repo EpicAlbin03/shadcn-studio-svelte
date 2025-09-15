@@ -25,7 +25,7 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with colored border and ring</Label>
-	<Select type="single" bind:value>
+	<Select.Root type="single" bind:value>
 		<SelectTrigger
 			{id}
 			class="w-full focus-visible:border-indigo-500 focus-visible:ring-indigo-500/20 dark:focus-visible:ring-indigo-500/40"
@@ -36,7 +36,7 @@
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

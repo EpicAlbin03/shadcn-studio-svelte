@@ -2,7 +2,7 @@
 	import { StarIcon } from '@lucide/svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Progress } from '$lib/components/ui/progress';
 	import { Separator } from '$lib/components/ui/separator';
 
@@ -23,15 +23,15 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<StarIcon />
 				<span class="sr-only">Ratings & reviews</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="grid gap-4">
 			<div class="space-y-1">
 				<div class="flex items-center gap-1">
@@ -46,7 +46,7 @@
 			<div class="grid">
 				<div class="flex items-center justify-between">
 					<Badge variant="secondary">+6 this week</Badge>
-					<a href="#" class="text-sm hover:underline"> See all </a>
+					<a href="#!" class="text-sm hover:underline"> See all </a>
 				</div>
 				<Separator class="my-2" />
 				<ul class="space-y-2">
@@ -60,5 +60,5 @@
 				</ul>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

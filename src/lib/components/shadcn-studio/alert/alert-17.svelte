@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert>
+<Alert.Root>
 	<CircleAlertIcon />
-	<AlertTitle>Creating your account</AlertTitle>
-	<AlertDescription>Fill in your details to get started.</AlertDescription>
-</Alert>
+	<Alert.Title>Creating your account</Alert.Title>
+	<Alert.Description>Fill in your details to get started.</Alert.Description>
+</Alert.Root>

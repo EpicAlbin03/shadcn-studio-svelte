@@ -1,30 +1,23 @@
 <script lang="ts">
 	import { HomeIcon } from '@lucide/svelte';
-	import {
-		Breadcrumb,
-		BreadcrumbItem,
-		BreadcrumbLink,
-		BreadcrumbList,
-		BreadcrumbPage,
-		BreadcrumbSeparator
-	} from '$lib/components/ui/breadcrumb';
+	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 
-<Breadcrumb>
-	<BreadcrumbList>
-		<BreadcrumbItem>
-			<BreadcrumbLink href="#" class="flex items-center gap-2">
+<Breadcrumb.Root>
+	<Breadcrumb.List>
+		<Breadcrumb.Item>
+			<Breadcrumb.Link href="#!" class="flex items-center gap-2">
 				<HomeIcon class="size-4" />
 				Home
-			</BreadcrumbLink>
-		</BreadcrumbItem>
-		<BreadcrumbSeparator>/</BreadcrumbSeparator>
-		<BreadcrumbItem>
-			<BreadcrumbLink href="#">Documents</BreadcrumbLink>
-		</BreadcrumbItem>
-		<BreadcrumbSeparator>/</BreadcrumbSeparator>
-		<BreadcrumbItem>
-			<BreadcrumbPage>Add Document</BreadcrumbPage>
-		</BreadcrumbItem>
-	</BreadcrumbList>
-</Breadcrumb>
+			</Breadcrumb.Link>
+		</Breadcrumb.Item>
+		<Breadcrumb.Separator>/</Breadcrumb.Separator>
+		<Breadcrumb.Item>
+			<Breadcrumb.Link href="#!">Documents</Breadcrumb.Link>
+		</Breadcrumb.Item>
+		<Breadcrumb.Separator>/</Breadcrumb.Separator>
+		<Breadcrumb.Item>
+			<Breadcrumb.Page>Add Document</Breadcrumb.Page>
+		</Breadcrumb.Item>
+	</Breadcrumb.List>
+</Breadcrumb.Root>

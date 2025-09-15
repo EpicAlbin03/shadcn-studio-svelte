@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { PlusCircleIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 
 <div class="relative w-fit">
-	<Avatar class="size-10">
-		<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-		<AvatarFallback class="text-xs">HR</AvatarFallback>
-	</Avatar>
+	<Avatar.Root class="size-10">
+		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+	</Avatar.Root>
 	<button
 		class="absolute -end-1 -bottom-1 inline-flex cursor-pointer items-center justify-center rounded-full focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
 	>

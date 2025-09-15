@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { LoaderCircleIcon, SearchIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Debounced } from 'runed';
 
 	const users = [
@@ -53,15 +53,15 @@
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<SearchIcon />
 				<span class="sr-only">Search users</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="grid gap-4">
 			<div class="relative">
 				<div
@@ -89,10 +89,10 @@
 				{#if filteredUsers.length > 0}
 					{#each filteredUsers as user}
 						<li class="flex items-center gap-2">
-							<Avatar class="size-6">
-								<AvatarImage src={user.image} alt={user.name} />
-								<AvatarFallback class="text-xs">{user.fallback}</AvatarFallback>
-							</Avatar>
+							<Avatar.Root class="size-6">
+								<Avatar.Image src={user.image} alt={user.name} />
+								<Avatar.Fallback class="text-xs">{user.fallback}</Avatar.Fallback>
+							</Avatar.Root>
 							<div class="flex-1 text-sm font-medium">{user.name}</div>
 							{#if user.notifications}
 								<span class="text-xs text-muted-foreground"
@@ -106,5 +106,5 @@
 				{/if}
 			</ul>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

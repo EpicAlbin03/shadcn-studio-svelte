@@ -54,7 +54,7 @@
 		}
 	);
 
-	const eachMonthOfInterval = ({ start, end }: { start: CalendarDate; end: CalendarDate }) => {
+	function eachMonthOfInterval({ start, end }: { start: CalendarDate; end: CalendarDate }) {
 		let months = [];
 		let current = start;
 
@@ -64,7 +64,7 @@
 		}
 
 		return months;
-	};
+	}
 </script>
 
 <div class="relative">

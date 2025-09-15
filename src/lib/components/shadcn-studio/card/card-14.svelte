@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { XIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 
 	let isActive = $state(true);
 </script>
 
 {#if isActive}
-	<Card class="relative max-w-lg shadow-none">
+	<Card.Root class="relative max-w-lg shadow-none">
 		<Button
 			variant="ghost"
 			size="icon"
@@ -17,15 +17,15 @@
 			<XIcon />
 			<span class="sr-only">Close</span>
 		</Button>
-		<CardHeader>
-			<CardTitle class="text-center">Have a project in mind</CardTitle>
-		</CardHeader>
-		<CardContent class="flex flex-col gap-4 text-center">
+		<Card.Header>
+			<Card.Title class="text-center">Have a project in mind</Card.Title>
+		</Card.Header>
+		<Card.Content class="flex flex-col gap-4 text-center">
 			<p>
 				Let's discuss! Our Assistant team is excited to hear about your projects, ideas and
 				questions.
 			</p>
 			<Button>Contact Our Team</Button>
-		</CardContent>
-	</Card>
+		</Card.Content>
+	</Card.Root>
 {/if}

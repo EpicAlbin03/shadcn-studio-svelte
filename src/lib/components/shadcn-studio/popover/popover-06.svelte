@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { DownloadIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Progress } from '$lib/components/ui/progress';
 	import { cn } from '$lib/utils';
 	import { untrack } from 'svelte';
@@ -43,16 +43,16 @@
 	};
 </script>
 
-<Popover bind:open>
-	<PopoverTrigger>
+<Popover.Root bind:open>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<DownloadIcon />
 				<span class="sr-only">Download File</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="grid gap-4">
 			<div class="flex items-center gap-2">
 				<div class="relative flex size-6 items-center justify-center">
@@ -93,5 +93,5 @@
 				</Button>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

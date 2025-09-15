@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { tabs } from './data';
 </script>
 
@@ -8,8 +8,8 @@
 	<Tabs value="explore" class="gap-4">
 		<TabsList class="h-full">
 			{#each tabs as { icon: Icon, name, value } (value)}
-				<Tooltip>
-					<TooltipTrigger>
+				<Tooltip.Root>
+					<Tooltip.Trigger>
 						{#snippet child({ props })}
 							<TabsTrigger
 								{...props}
@@ -20,9 +20,9 @@
 								<Icon />
 							</TabsTrigger>
 						{/snippet}
-					</TooltipTrigger>
-					<TooltipContent class="px-2 py-1 text-xs">{name}</TooltipContent>
-				</Tooltip>
+					</Tooltip.Trigger>
+					<Tooltip.Content class="px-2 py-1 text-xs">{name}</Tooltip.Content>
+				</Tooltip.Root>
 			{/each}
 		</TabsList>
 

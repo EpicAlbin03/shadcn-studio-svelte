@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert class="border-none bg-sky-600 text-white dark:bg-sky-400">
+<Alert.Root class="border-none bg-sky-600 text-white dark:bg-sky-400">
 	<CircleAlertIcon />
-	<AlertTitle>Your profile is visible</AlertTitle>
-	<AlertDescription class="text-white/80">Anyone can view your basic information.</AlertDescription>
-</Alert>
+	<Alert.Title>Your profile is visible</Alert.Title>
+	<Alert.Description class="text-white/80">
+		Anyone can view your basic information.
+	</Alert.Description>
+</Alert.Root>

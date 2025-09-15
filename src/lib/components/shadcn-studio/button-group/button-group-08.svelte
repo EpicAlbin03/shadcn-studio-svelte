@@ -7,7 +7,7 @@
 	<Button
 		variant="outline"
 		class="rounded-none rounded-s-md shadow-none focus-visible:z-10"
-		href="#"
+		href="#!"
 	>
 		Live preview
 	</Button>
@@ -15,7 +15,7 @@
 		variant="outline"
 		size="icon"
 		class="rounded-none rounded-e-md shadow-none focus-visible:z-10"
-		href="#"
+		href="#!"
 		target="_blank"
 		rel="noopener noreferrer"
 	>

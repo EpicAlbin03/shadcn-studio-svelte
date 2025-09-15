@@ -24,45 +24,45 @@
 </script>
 
 <div class="w-full max-w-xs space-y-2">
-	<Select type="single" bind:value>
-		<SelectTrigger {id} size="sm" class="w-full">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} size="sm" class="w-full">
 			{triggerContent ?? 'Small select'}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}
 			</SelectGroup>
 		</SelectContent>
 	</Select>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="w-full">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="w-full">
 			{triggerContent ?? 'Default select'}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}
 			</SelectGroup>
 		</SelectContent>
 	</Select>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="!h-10 w-full">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="!h-10 w-full">
 			{triggerContent ?? 'Large select'}
 		</SelectTrigger>
 		<SelectContent>
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

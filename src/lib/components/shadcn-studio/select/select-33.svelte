@@ -89,7 +89,7 @@ const MultipleSelectWithPlaceholderDemo = () => {
         class='w-full'
       />
       <p class='text-muted-foreground text-xs' role='region' aria-live='polite'>
-        Inspired by{' '}
+        Inspired by
         <a
           href='hhttps://shadcnui-expansions.typeart.cc/docs/multiple-selector'
           class='hover:text-primary underline'

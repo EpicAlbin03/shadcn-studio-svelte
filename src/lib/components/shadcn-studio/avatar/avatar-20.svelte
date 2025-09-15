@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 
 	const avatars = [
 		{
@@ -28,10 +28,10 @@
 <div class="flex items-center rounded-full border bg-background p-1 shadow-sm">
 	<div class="flex -space-x-2">
 		{#each avatars as avatar}
-			<Avatar class="ring-2 ring-background">
-				<AvatarImage src={avatar.src} alt={avatar.name} />
-				<AvatarFallback class="text-xs">{avatar.fallback}</AvatarFallback>
-			</Avatar>
+			<Avatar.Root class="ring-2 ring-background">
+				<Avatar.Image src={avatar.src} alt={avatar.name} />
+				<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
+			</Avatar.Root>
 		{/each}
 	</div>
 	<span

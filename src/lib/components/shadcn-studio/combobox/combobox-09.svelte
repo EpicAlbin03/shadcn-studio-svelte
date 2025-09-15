@@ -1,15 +1,9 @@
 <script lang="ts">
 	import { CheckIcon, ChevronDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { tick } from 'svelte';
 
 	const countries = [
@@ -42,8 +36,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Options with flag and search</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -64,32 +58,32 @@
 					<ChevronDownIcon size={16} class="shrink-0 text-muted-foreground/80" aria-hidden="true" />
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent
+		</Popover.Trigger>
+		<Popover.Content
 			class="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
 			align="start"
 		>
-			<Command>
-				<CommandInput placeholder="Search country..." />
-				<CommandList>
-					<CommandEmpty>No country found.</CommandEmpty>
+			<Command.Root>
+				<Command.Input placeholder="Search country..." />
+				<Command.List>
+					<Command.Empty>No country found.</Command.Empty>
 					{#each countries as country (country.value)}
-						<CommandItem
+						<Command.Item
 							value={country.label}
 							onSelect={() => {
 								value = country.label;
 								closeAndFocusTrigger();
 							}}
 						>
-							<img src={country.flag} alt={`${country.label} flag`} class="h-4 w-5" />
+							<img src={country.flag} alt="{country.label} flag" class="h-4 w-5" />
 							{country.label}
 							{#if value === country.value}
 								<CheckIcon size={16} class="ml-auto" />
 							{/if}
-						</CommandItem>
+						</Command.Item>
 					{/each}
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

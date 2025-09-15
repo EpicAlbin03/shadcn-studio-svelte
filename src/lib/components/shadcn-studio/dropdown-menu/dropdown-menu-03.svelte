@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import {
@@ -55,21 +55,21 @@
 	];
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Menu item with avatar</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-91">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-91">
 		<DropdownMenuLabel>Chat List</DropdownMenuLabel>
 		<DropdownMenuGroup>
 			{#each listItems as item}
 				<DropdownMenuItem class="justify-between">
-					<Avatar>
-						<AvatarImage src={item.src} alt={item.name} />
-						<AvatarFallback class="text-xs">{item.fallback}</AvatarFallback>
-					</Avatar>
+					<Avatar.Root>
+						<Avatar.Image src={item.src} alt={item.name} />
+						<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
+					</Avatar.Root>
 					<div class="flex flex-1 flex-col">
 						<span class="text-popover-foreground">{item.name}</span>
 						<span class="text-xs text-muted-foreground">{item.message}</span>
@@ -84,8 +84,8 @@
 					{:else}
 						<span class="text-xs text-muted-foreground">{item.time}</span>
 					{/if}
-				</DropdownMenuItem>
+				</DropdownMenu.Item>
 			{/each}
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

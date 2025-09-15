@@ -84,16 +84,16 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Timezone Select</Label>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="w-full">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="w-full">
 			{triggerContent}
 		</SelectTrigger>
-		<SelectContent class="max-h-100">
+		<Select.Content class="max-h-100">
 			{#each regions as region (region.value)}
 				<SelectGroup>
 					<SelectLabel>{region.label}</SelectLabel>
 					{#each timeZones[region.value as keyof typeof timeZones] as timeZone (timeZone.value)}
-						<SelectItem value={timeZone.value} label={timeZone.label}>
+						<Select.Item value={timeZone.value} label={timeZone.label}>
 							{timeZone.label}
 						</SelectItem>
 					{/each}

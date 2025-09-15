@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<Tooltip>
-	<TooltipTrigger>
+<Tooltip.Root>
+	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">Rounded</Button>
 		{/snippet}
-	</TooltipTrigger>
-	<TooltipContent class="rounded-full">
+	</Tooltip.Trigger>
+	<Tooltip.Content class="rounded-full">
 		<p>This tooltip is rounded</p>
-	</TooltipContent>
-</Tooltip>
+	</Tooltip.Content>
+</Tooltip.Root>

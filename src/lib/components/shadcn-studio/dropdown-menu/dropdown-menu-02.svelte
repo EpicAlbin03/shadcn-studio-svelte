@@ -36,27 +36,27 @@
 	let selectUser = $state(users[0]);
 </script>
 
-<DropdownMenu>
+<DropdownMenu.Root>
 	<DropdownMenuTrigger class="flex items-center gap-2 rounded-lg bg-secondary px-3 py-2.5">
-		<Avatar>
-			<AvatarImage src={selectUser.src} alt={selectUser.name} />
-			<AvatarFallback class="text-xs">{selectUser.fallback}</AvatarFallback>
-		</Avatar>
+		<Avatar.Root>
+			<Avatar.Image src={selectUser.src} alt={selectUser.name} />
+			<Avatar.Fallback class="text-xs">{selectUser.fallback}</Avatar.Fallback>
+		</Avatar.Root>
 		<div class="flex flex-col gap-1 text-start leading-none">
 			<span class="max-w-[17ch] truncate text-sm leading-none font-semibold">{selectUser.name}</span
 			>
 			<span class="max-w-[20ch] truncate text-xs text-muted-foreground">{selectUser.mail}</span>
 		</div>
-	</DropdownMenuTrigger>
-	<DropdownMenuContent align="start" class="w-66">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content align="start" class="w-66">
 		<DropdownMenuLabel>Task Assignment</DropdownMenuLabel>
 		{#each users as user (user.id)}
 			<DropdownMenuItem onclick={() => (selectUser = user)}>
 				<div class="flex items-center gap-2">
-					<Avatar>
-						<AvatarImage src={user.src} alt={user.name} />
-						<AvatarFallback class="text-xs">{user.fallback}</AvatarFallback>
-					</Avatar>
+					<Avatar.Root>
+						<Avatar.Image src={user.src} alt={user.name} />
+						<Avatar.Fallback class="text-xs">{user.fallback}</Avatar.Fallback>
+					</Avatar.Root>
 					<div class="flex flex-col gap-1 text-start leading-none">
 						<span class="max-w-[17ch] truncate text-sm leading-none font-semibold">{user.name}</span
 						>
@@ -66,7 +66,7 @@
 				{#if selectUser.id === user.id}
 					<Check class="ml-auto" />
 				{/if}
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 		{/each}
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

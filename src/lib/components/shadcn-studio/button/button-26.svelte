@@ -6,21 +6,19 @@
 	let isLoading = $state(false);
 	let status = $state<undefined | string>(undefined);
 
-	const handleClick = async () => {
+	async function handleClick() {
 		isLoading = true;
 		status = undefined;
 
 		try {
 			await new Promise((resolve) => setTimeout(resolve, 1000));
-
 			status = Math.random() > 0.5 ? 'Submitted!' : 'Rejected!';
 		} catch (error) {
 			status = 'Rejected!';
-			console.error(error);
 		} finally {
 			isLoading = false;
 		}
-	};
+	}
 </script>
 
 <Button

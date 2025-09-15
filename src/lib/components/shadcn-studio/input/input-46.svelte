@@ -111,7 +111,7 @@
 	</ul>
 
 	<p class="text-xs text-muted-foreground">
-		Inspired by{' '}
+		Inspired by
 		<a
 			class="underline hover:text-foreground"
 			href="https://flyonui.com/docs/advanced-forms/strong-password/#indicator-and-hints"

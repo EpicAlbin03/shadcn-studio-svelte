@@ -3,6 +3,6 @@
 	import { badgeVariants } from '$lib/components/ui/badge';
 </script>
 
-<a href="#" class={badgeVariants({ variant: 'default' })}>
+<a href="#!" class={badgeVariants({ variant: 'default' })}>
 	Link <ArrowRightIcon class="size-3" />
 </a>

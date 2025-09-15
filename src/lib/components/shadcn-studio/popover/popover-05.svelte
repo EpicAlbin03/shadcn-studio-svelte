@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { InfoIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<InfoIcon />
 				<span class="sr-only">About Shadcn Studio</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="grid gap-4">
 			<div class="space-y-1.5 text-center">
 				<div class="text-lg font-semibold">About Shadcn Studio</div>
@@ -31,5 +31,5 @@
 				Learn More
 			</Button>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

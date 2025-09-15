@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { FileWarningIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
 <Popover>
-	<PopoverTrigger>
+	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
 				<FileWarningIcon />
 				<span class="sr-only">Delete File</span>
 			</Button>
 		{/snippet}
-	</PopoverTrigger>
-	<PopoverContent class="w-80">
+	</Popover.Trigger>
+	<Popover.Content class="w-80">
 		<div class="flex flex-col items-center gap-4">
 			<div
 				class="flex aspect-square size-12 items-center justify-center rounded-full bg-red-500/10"
@@ -32,5 +32,5 @@
 				<Button variant="destructive" size="sm">Delete File</Button>
 			</div>
 		</div>
-	</PopoverContent>
-</Popover>
+	</Popover.Content>
+</Popover.Root>

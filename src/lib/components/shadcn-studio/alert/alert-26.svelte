@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { CircleAlertIcon } from '@lucide/svelte';
-	import { Alert, AlertTitle, AlertDescription } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert class="border-none bg-primary text-primary-foreground">
+<Alert.Root class="border-none bg-primary text-primary-foreground">
 	<CircleAlertIcon />
-	<AlertTitle>Editing your profile</AlertTitle>
-	<AlertDescription class="text-primary-foreground/80">
+	<Alert.Title>Editing your profile</Alert.Title>
+	<Alert.Description class="text-primary-foreground/80">
 		Changes won't be saved until you click “Update.”
-	</AlertDescription>
-</Alert>
+	</Alert.Description>
+</Alert.Root>

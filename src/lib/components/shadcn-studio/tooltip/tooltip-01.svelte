@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<Tooltip>
-	<TooltipTrigger>
+<Tooltip.Root>
+	<Tooltip.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">Default</Button>
 		{/snippet}
-	</TooltipTrigger>
-	<TooltipContent>
+	</Tooltip.Trigger>
+	<Tooltip.Content>
 		<p>This is a simple tooltip</p>
-	</TooltipContent>
-</Tooltip>
+	</Tooltip.Content>
+</Tooltip.Root>

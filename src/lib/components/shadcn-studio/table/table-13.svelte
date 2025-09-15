@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import {
 		Table,
 		TableBody,
@@ -70,10 +70,10 @@
 					<TableRow>
 						<TableCell>
 							<div class="flex items-center gap-3">
-								<Avatar>
-									<AvatarImage src={item.src} alt={item.fallback} />
-									<AvatarFallback class="text-xs">{item.fallback}</AvatarFallback>
-								</Avatar>
+								<Avatar.Root>
+									<Avatar.Image src={item.src} alt={item.fallback} />
+									<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
+								</Avatar.Root>
 								<div class="font-medium">{item.name}</div>
 							</div>
 						</TableCell>

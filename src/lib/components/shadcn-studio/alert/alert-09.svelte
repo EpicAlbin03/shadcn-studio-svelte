@@ -1,26 +1,26 @@
 <script lang="ts">
-	import { Alert, AlertDescription, AlertTitle } from '$lib/components/ui/alert';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Alert from '$lib/components/ui/alert/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Progress } from '$lib/components/ui/progress';
+	import { onMount } from 'svelte';
 
 	let progress = $state(0);
 
-	$effect(() => {
+	onMount(() => {
 		const timer = setTimeout(() => (progress = 50), 100);
-
 		return () => clearTimeout(timer);
 	});
 </script>
 
-<Alert class="flex gap-3">
-	<Avatar class="rounded-sm">
-		<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
-		<AvatarFallback class="text-xs">HR</AvatarFallback>
-	</Avatar>
+<Alert.Root class="flex gap-3">
+	<Avatar.Root class="rounded-sm">
+		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
+		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+	</Avatar.Root>
 	<div class="flex flex-1 flex-col gap-2">
 		<div class="flex-1 flex-col justify-center gap-1">
-			<AlertTitle>@Rocky</AlertTitle>
-			<AlertDescription>this projects task is remaining, deadline is near.</AlertDescription>
+			<Alert.Title>@Rocky</Alert.Title>
+			<Alert.Description>this projects task is remaining, deadline is near.</Alert.Description>
 		</div>
 		<Progress
 			value={progress}
@@ -28,4 +28,4 @@
 			aria-label="Task progress"
 		/>
 	</div>
-</Alert>
+</Alert.Root>

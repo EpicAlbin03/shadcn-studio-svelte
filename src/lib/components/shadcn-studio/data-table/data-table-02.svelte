@@ -252,7 +252,7 @@
 		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">
-		Density data table{' '}
+		Density data table
 		<a
 			href="https://www.shadcnui-blocks.com/components/table"
 			class="underline hover:text-primary"

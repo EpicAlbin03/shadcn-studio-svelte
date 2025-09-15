@@ -1,16 +1,7 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	const items = [
 		{
@@ -78,30 +69,30 @@
 	];
 </script>
 
-<Accordion type="single" class="w-full rounded-md border" value="item-1">
+<Accordion.Root type="single" class="w-full rounded-md border" value="item-1">
 	{#each items as item, index}
-		<AccordionItem
+		<Accordion.Item
 			value={`item-${index + 1}`}
 			class="outline-none first:rounded-t-md last:rounded-b-md has-focus-visible:z-10 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
 		>
-			<AccordionTrigger class="px-5 outline-none focus-visible:ring-0">
+			<Accordion.Trigger class="px-5 outline-none focus-visible:ring-0">
 				{item.category}
-			</AccordionTrigger>
-			<AccordionContent class="pb-0">
+			</Accordion.Trigger>
+			<Accordion.Content class="pb-0">
 				{#each item.faqs as faq}
-					<Collapsible class="border-t bg-muted px-8" open={faq.open}>
-						<CollapsibleTrigger
+					<Collapsible.Root class="border-t bg-muted px-8" open={faq.open}>
+						<Collapsible.Trigger
 							class="flex w-full items-center gap-4 rounded-sm py-4 font-medium outline-none focus-visible:z-10 focus-visible:ring-[3px] focus-visible:ring-ring/50 [&>svg>path:last-child]:origin-center [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0"
 						>
 							<PlusIcon class="pointer-events-none size-4 shrink-0 text-muted-foreground" />
 							{faq.title}
-						</CollapsibleTrigger>
-						<CollapsibleContent class="overflow-hidden pb-4 text-muted-foreground">
+						</Collapsible.Trigger>
+						<Collapsible.Content class="overflow-hidden pb-4 text-muted-foreground">
 							{faq.content}
-						</CollapsibleContent>
-					</Collapsible>
+						</Collapsible.Content>
+					</Collapsible.Root>
 				{/each}
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 	{/each}
-</Accordion>
+</Accordion.Root>

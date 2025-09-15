@@ -26,8 +26,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with icon</Label>
-	<Select type="single" bind:value>
-		<SelectTrigger {id} class="relative w-full ps-9">
+	<Select.Root type="single" bind:value>
+		<Select.Trigger {id} class="relative w-full ps-9">
 			<div
 				class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50"
 			>
@@ -39,7 +39,7 @@
 			<SelectGroup>
 				<SelectLabel>Fruits</SelectLabel>
 				{#each fruits as fruit (fruit.value)}
-					<SelectItem value={fruit.value} label={fruit.label}>
+					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
 					</SelectItem>
 				{/each}

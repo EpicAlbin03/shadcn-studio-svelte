@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import {
 		Select,
@@ -38,16 +38,16 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Options with flag</Label>
-	<Select type="single" bind:value>
+	<Select.Root type="single" bind:value>
 		<SelectTrigger
 			{id}
 			class="w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80"
 		>
 			<span class="flex items-center gap-2">
-				<Avatar class="size-5">
-					<AvatarImage src={selectedUser.src} alt={selectedUser.name} class="rounded-full" />
-					<AvatarFallback class="text-xs">{selectedUser.fallback}</AvatarFallback>
-				</Avatar>
+				<Avatar.Root class="size-5">
+					<Avatar.Image src={selectedUser.src} alt={selectedUser.name} class="rounded-full" />
+					<Avatar.Fallback class="text-xs">{selectedUser.fallback}</Avatar.Fallback>
+				</Avatar.Root>
 				<span class="truncate">{selectedUser.name}</span>
 			</span>
 		</SelectTrigger>
@@ -56,11 +56,11 @@
 		>
 			<SelectGroup>
 				{#each users as user (user.id)}
-					<SelectItem value={user.id} label={user.name}>
-						<Avatar class="size-5">
-							<AvatarImage src={user.src} alt={user.name} class="rounded-full" />
-							<AvatarFallback class="text-xs">{user.fallback}</AvatarFallback>
-						</Avatar>
+					<Select.Item value={user.id} label={user.name}>
+						<Avatar.Root class="size-5">
+							<Avatar.Image src={user.src} alt={user.name} class="rounded-full" />
+							<Avatar.Fallback class="text-xs">{user.fallback}</Avatar.Fallback>
+						</Avatar.Root>
 						<span class="truncate">{user.name}</span>
 					</SelectItem>
 				{/each}

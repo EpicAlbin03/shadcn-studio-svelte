@@ -1,12 +1,8 @@
 <script lang="ts">
 	import { ChevronUpIcon } from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	const tasks = [
 		{
@@ -40,15 +36,15 @@
 	];
 </script>
 
-<Collapsible class="flex w-full max-w-[350px] flex-col items-start gap-4">
+<Collapsible.Root class="flex w-full max-w-[350px] flex-col items-start gap-4">
 	<div class="font-medium">Today's task completion</div>
 	<ul class="flex w-full flex-col gap-2">
 		{#each tasks.slice(0, 2) as task (task.name)}
 			<li class="flex items-start gap-4">
-				<Avatar>
-					<AvatarImage src={task.image} alt={task.name} />
-					<AvatarFallback>{task.fallback}</AvatarFallback>
-				</Avatar>
+				<Avatar.Root>
+					<Avatar.Image src={task.image} alt={task.name} />
+					<Avatar.Fallback>{task.fallback}</Avatar.Fallback>
+				</Avatar.Root>
 				<div class="flex flex-1 flex-col">
 					<div class="text-sm font-medium">{task.name}</div>
 					<p class="text-xs text-muted-foreground">{task.designation}</p>
@@ -56,13 +52,13 @@
 				<span class="text-sm text-muted-foreground">{`${task.percentage}%`}</span>
 			</li>
 		{/each}
-		<CollapsibleContent class="flex flex-col gap-2">
+		<Collapsible.Content class="flex flex-col gap-2">
 			{#each tasks.slice(0, 2) as task (task.name)}
 				<li class="flex items-start gap-4">
-					<Avatar>
-						<AvatarImage src={task.image} alt={task.name} />
-						<AvatarFallback>{task.fallback}</AvatarFallback>
-					</Avatar>
+					<Avatar.Root>
+						<Avatar.Image src={task.image} alt={task.name} />
+						<Avatar.Fallback>{task.fallback}</Avatar.Fallback>
+					</Avatar.Root>
 					<div class="flex flex-1 flex-col">
 						<div class="text-sm font-medium">{task.name}</div>
 						<p class="text-xs text-muted-foreground">{task.designation}</p>
@@ -70,9 +66,9 @@
 					<span class="text-sm text-muted-foreground">{`${task.percentage}%`}</span>
 				</li>
 			{/each}
-		</CollapsibleContent>
+		</Collapsible.Content>
 	</ul>
-	<CollapsibleTrigger>
+	<Collapsible.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="sm">
 				<span class="[[data-state=open]>&]:hidden">Show more</span>
@@ -80,5 +76,5 @@
 				<ChevronUpIcon class="[[data-state=closed]>&]:rotate-180" />
 			</Button>
 		{/snippet}
-	</CollapsibleTrigger>
-</Collapsible>
+	</Collapsible.Trigger>
+</Collapsible.Root>

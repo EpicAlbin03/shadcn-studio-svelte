@@ -29,7 +29,7 @@
 	</Tabs>
 
 	<p class="mt-4 text-center text-xs text-muted-foreground">
-		Inspired by{' '}
+		Inspired by
 		<a
 			class="underline hover:text-foreground"
 			href="https://animate-ui.com/docs/components/tabs"

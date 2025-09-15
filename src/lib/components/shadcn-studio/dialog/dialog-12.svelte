@@ -128,7 +128,7 @@
 				{/if}
 
 				<p class="text-center text-sm">
-					Didn't get a code?{' '}
+					Didn't get a code?
 					<button
 						class="cursor-pointer border-none bg-transparent p-0 text-sky-600 hover:underline dark:text-sky-400"
 					>

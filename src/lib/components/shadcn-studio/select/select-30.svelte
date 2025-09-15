@@ -29,7 +29,7 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Options with flag</Label>
-	<Select type="single" bind:value>
+	<Select.Root type="single" bind:value>
 		<SelectTrigger
 			{id}
 			class="w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80"
@@ -44,7 +44,7 @@
 		>
 			<SelectGroup>
 				{#each countries as country (country.value)}
-					<SelectItem value={country.value} label={country.label}>
+					<Select.Item value={country.value} label={country.label}>
 						<img src={country.flag} alt={`${country.label} flag`} class="h-4 w-5" />
 						<span class="truncate">{country.label}</span>
 					</SelectItem>

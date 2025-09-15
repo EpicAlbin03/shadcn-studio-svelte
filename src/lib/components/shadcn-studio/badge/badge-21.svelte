@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { CheckCircleIcon } from '@lucide/svelte';
-
 	import { Badge } from '$lib/components/ui/badge';
 </script>
 

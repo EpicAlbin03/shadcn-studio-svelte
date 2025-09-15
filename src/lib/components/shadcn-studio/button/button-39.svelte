@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RippleButton from '$lib/components/ui/ripple-button.svelte';
+	import { RippleButton } from '$lib/components/ui/ripple-button';
 </script>
 
 <RippleButton>Ripple Effect</RippleButton>

@@ -4,17 +4,17 @@
 
 	let zoom = $state(95);
 
-	const handleZoomIn = () => {
+	function handleZoomIn() {
 		if (zoom < 100) {
 			zoom += 5;
 		}
-	};
+	}
 
-	const handleZoomOut = () => {
+	function handleZoomOut() {
 		if (zoom > 0) {
 			zoom -= 5;
 		}
-	};
+	}
 </script>
 
 <div class="inline-flex w-fit -space-x-px rounded-md shadow-xs rtl:space-x-reverse">
@@ -31,7 +31,7 @@
 	<span
 		class="flex items-center border bg-background px-3 text-sm font-medium dark:border-input dark:bg-input/30"
 	>
-		{`${zoom}%`}
+		{zoom}%
 	</span>
 	<Button
 		variant="outline"

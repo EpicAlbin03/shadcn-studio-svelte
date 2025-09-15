@@ -1,24 +1,19 @@
 <script lang="ts">
-	import {
-		Card,
-		CardContent,
-		CardHeader,
-		CardDescription,
-		CardTitle
-	} from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 </script>
 
-<Card class="max-w-md pb-0">
-	<CardHeader>
-		<CardTitle>Fluid Gradient Flow</CardTitle>
-		<CardDescription>A vibrant and abstract background with smooth gradient curves.</CardDescription
-		>
-	</CardHeader>
-	<CardContent class="px-0">
+<Card.Root class="max-w-md pb-0">
+	<Card.Header>
+		<Card.Title>Fluid Gradient Flow</Card.Title>
+		<Card.Description>
+			A vibrant and abstract background with smooth gradient curves.
+		</Card.Description>
+	</Card.Header>
+	<Card.Content class="px-0">
 		<img
 			src="/components/card-01.webp"
 			alt="Banner"
 			class="aspect-video h-70 rounded-b-xl object-cover"
 		/>
-	</CardContent>
-</Card>
+	</Card.Content>
+</Card.Root>

@@ -1,16 +1,9 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Command,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import { Popover, PopoverContent, PopoverTrigger } from '$lib/components/ui/popover';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
 	import { tick } from 'svelte';
 
@@ -45,8 +38,8 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Combobox disabled option</Label>
-	<Popover bind:open>
-		<PopoverTrigger bind:ref={triggerRef}>
+	<Popover.Root bind:open>
+		<Popover.Trigger bind:ref={triggerRef}>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -70,19 +63,19 @@
 					/>
 				</Button>
 			{/snippet}
-		</PopoverTrigger>
-		<PopoverContent
+		</Popover.Trigger>
+		<Popover.Content
 			class="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
 			align="start"
 		>
-			<Command>
-				<CommandInput placeholder="Search item..." />
-				<CommandList>
-					<CommandEmpty>No item found.</CommandEmpty>
+			<Command.Root>
+				<Command.Input placeholder="Search item..." />
+				<Command.List>
+					<Command.Empty>No item found.</Command.Empty>
 					{#each items as group (group.category)}
-						<CommandGroup heading={group.category}>
+						<Command.Group heading={group.category}>
 							{#each group.items as item (item.value)}
-								<CommandItem
+								<Command.Item
 									value={item.value}
 									onSelect={() => {
 										value = item.value;
@@ -95,12 +88,12 @@
 									{#if value === item.value}
 										<CheckIcon size={16} class="ml-auto" />
 									{/if}
-								</CommandItem>
+								</Command.Item>
 							{/each}
-						</CommandGroup>
+						</Command.Group>
 					{/each}
-				</CommandList>
-			</Command>
-		</PopoverContent>
-	</Popover>
+				</Command.List>
+			</Command.Root>
+		</Popover.Content>
+	</Popover.Root>
 </div>

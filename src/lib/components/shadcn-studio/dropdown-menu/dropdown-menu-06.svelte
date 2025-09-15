@@ -34,20 +34,20 @@
 	];
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="ghost" size="icon" class="rounded-full">
 				<Pencil />
 				<span class="sr-only">Edit menu</span>
 			</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>Edit text</DropdownMenuLabel>
 		<DropdownMenuGroup>
 			{#each listItems as item}
-				<DropdownMenuItem>
+				<DropdownMenu.Item>
 					<span class="flex items-center justify-center rounded-md border p-2">
 						<item.icon />
 					</span>
@@ -55,8 +55,8 @@
 						<span class="text-popover-foreground">{item.property}</span>
 						<span class="text-xs text-muted-foreground">{item.description}</span>
 					</div>
-				</DropdownMenuItem>
+				</DropdownMenu.Item>
 			{/each}
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>

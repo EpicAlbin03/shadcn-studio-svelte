@@ -44,7 +44,7 @@
 			Resend available in {formatTime(timeLeft)}
 		{:else}
 			<a
-				href="#"
+				href="#!"
 				onclick={(e) => {
 					e.preventDefault();
 					handleResend();

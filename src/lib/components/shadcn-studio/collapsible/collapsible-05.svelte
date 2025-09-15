@@ -2,21 +2,17 @@
 	import { ChevronDownIcon, StarIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
 	import { Separator } from '$lib/components/ui/separator';
 </script>
 
 <div class="w-full max-w-[350px] space-y-3">
-	<Collapsible class="flex flex-col gap-2">
+	<Collapsible.Root class="flex flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Price Range</div>
-			<CollapsibleTrigger class="group">
+			<Collapsible.Trigger class="group">
 				{#snippet child({ props })}
 					<Button {...props} variant="ghost" size="icon" class="size-8">
 						<ChevronDownIcon
@@ -25,9 +21,9 @@
 						<span class="sr-only">Toggle</span>
 					</Button>
 				{/snippet}
-			</CollapsibleTrigger>
+			</Collapsible.Trigger>
 		</div>
-		<CollapsibleContent class="flex flex-col gap-2">
+		<Collapsible.Content class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<Label for="min-price" class="shrink-0 text-sm font-medium">Min Price</Label>
 				<Input id="min-price" type="number" placeholder="0" class="max-w-58" />
@@ -36,13 +32,13 @@
 				<Label for="max-price" class="shrink-0 text-sm font-medium">Max Price</Label>
 				<Input id="max-price" type="number" placeholder="1000" class="max-w-58" />
 			</div>
-		</CollapsibleContent>
-	</Collapsible>
+		</Collapsible.Content>
+	</Collapsible.Root>
 	<Separator />
-	<Collapsible class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Customer Ratings</div>
-			<CollapsibleTrigger class="group">
+			<Collapsible.Trigger class="group">
 				{#snippet child({ props })}
 					<Button {...props} variant="ghost" size="icon" class="size-8">
 						<ChevronDownIcon
@@ -51,9 +47,9 @@
 						<span class="sr-only">Toggle</span>
 					</Button>
 				{/snippet}
-			</CollapsibleTrigger>
+			</Collapsible.Trigger>
 		</div>
-		<CollapsibleContent class="flex flex-col gap-2">
+		<Collapsible.Content class="flex flex-col gap-2">
 			<div class="flex items-center gap-2 px-4">
 				<Checkbox id="rating-4" />
 				<Label for="rating-4" class="flex shrink-0 items-center gap-1 text-sm font-medium">
@@ -90,13 +86,13 @@
 					& Up
 				</Label>
 			</div>
-		</CollapsibleContent>
-	</Collapsible>
+		</Collapsible.Content>
+	</Collapsible.Root>
 	<Separator />
-	<Collapsible class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Brand</div>
-			<CollapsibleTrigger class="group">
+			<Collapsible.Trigger class="group">
 				{#snippet child({ props })}
 					<Button {...props} variant="ghost" size="icon" class="size-8">
 						<ChevronDownIcon
@@ -105,9 +101,9 @@
 						<span class="sr-only">Toggle</span>
 					</Button>
 				{/snippet}
-			</CollapsibleTrigger>
+			</Collapsible.Trigger>
 		</div>
-		<CollapsibleContent class="flex flex-col gap-2">
+		<Collapsible.Content class="flex flex-col gap-2">
 			<div class="flex items-center gap-2 px-4">
 				<Checkbox id="brand-apple" />
 				<Label for="brand-apple" class="shrink-0 text-sm font-medium">Apple</Label>
@@ -128,13 +124,13 @@
 				<Checkbox id="brand-xiaomi" />
 				<Label for="brand-xiaomi" class="shrink-0 text-sm font-medium">Xiaomi</Label>
 			</div>
-		</CollapsibleContent>
-	</Collapsible>
+		</Collapsible.Content>
+	</Collapsible.Root>
 	<Separator />
-	<Collapsible class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Battery</div>
-			<CollapsibleTrigger class="group">
+			<Collapsible.Trigger class="group">
 				{#snippet child({ props })}
 					<Button {...props} variant="ghost" size="icon" class="size-8">
 						<ChevronDownIcon
@@ -143,9 +139,9 @@
 						<span class="sr-only">Toggle</span>
 					</Button>
 				{/snippet}
-			</CollapsibleTrigger>
+			</Collapsible.Trigger>
 		</div>
-		<CollapsibleContent class="flex flex-col gap-2">
+		<Collapsible.Content class="flex flex-col gap-2">
 			<div class="flex items-center gap-2 px-4">
 				<Checkbox id="battery-3500" />
 				<Label for="battery-3500" class="shrink-0 text-sm font-medium">3500mAh</Label>
@@ -162,6 +158,6 @@
 				<Checkbox id="battery-6000" />
 				<Label for="battery-6000" class="shrink-0 text-sm font-medium">6000mAh</Label>
 			</div>
-		</CollapsibleContent>
-	</Collapsible>
+		</Collapsible.Content>
+	</Collapsible.Root>
 </div>

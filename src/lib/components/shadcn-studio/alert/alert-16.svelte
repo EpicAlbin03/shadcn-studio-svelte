@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Alert, AlertTitle } from '$lib/components/ui/alert';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 
-<Alert>
-	<AlertTitle>New message!</AlertTitle>
-</Alert>
+<Alert.Root>
+	<Alert.Title>New message!</Alert.Title>
+</Alert.Root>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ArchiveIcon, InboxIcon, SendHorizontal } from '@lucide/svelte';
-	import RippleButton from '$lib/components/ui/ripple-button.svelte';
+	import { RippleButton } from '$lib/components/ui/ripple-button';
 </script>
 
 <div class="inline-flex w-fit -space-x-px rounded-md shadow-xs rtl:space-x-reverse">

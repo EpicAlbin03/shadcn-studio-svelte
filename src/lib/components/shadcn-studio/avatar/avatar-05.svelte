@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 
-<Avatar>
-	<AvatarFallback class="text-xs">HR</AvatarFallback>
-</Avatar>
+<Avatar.Root>
+	<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
+</Avatar.Root>

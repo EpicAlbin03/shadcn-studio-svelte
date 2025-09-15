@@ -8,35 +8,27 @@
 		SendIcon,
 		UserPlusIcon
 	} from '@lucide/svelte';
-	import { Avatar, AvatarFallback, AvatarImage } from '$lib/components/ui/avatar';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Card,
-		CardContent,
-		CardDescription,
-		CardFooter,
-		CardHeader,
-		CardTitle
-	} from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { cn } from '$lib/utils';
 
 	let liked = $state(true);
 </script>
 
-<Card class="max-w-md">
-	<CardHeader class="flex items-center justify-between gap-3">
+<Card.Root class="max-w-md">
+	<Card.Header class="flex items-center justify-between gap-3">
 		<div class="flex items-center gap-3">
-			<Avatar class="ring-2 ring-ring">
-				<AvatarImage src="/avatars/05.webp" alt="Hallie Richards" />
-				<AvatarFallback class="text-xs">PG</AvatarFallback>
-			</Avatar>
+			<Avatar.Root class="ring-2 ring-ring">
+				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Fallback class="text-xs">PG</Avatar.Fallback>
+			</Avatar.Root>
 			<div class="flex flex-col gap-0.5">
-				<CardTitle class="flex items-center gap-1 text-sm">
-					Philip George <BadgeCheckIcon
-						class="size-4 fill-sky-600 stroke-white dark:fill-sky-400"
-					/>
-				</CardTitle>
-				<CardDescription>@philip20</CardDescription>
+				<Card.Title class="flex items-center gap-1 text-sm">
+					Philip George
+					<BadgeCheckIcon class="size-4 fill-sky-600 stroke-white dark:fill-sky-400" />
+				</Card.Title>
+				<Card.Description>@philip20</Card.Description>
 			</div>
 		</div>
 		<div class="flex items-center gap-2">
@@ -48,21 +40,21 @@
 				<EllipsisIcon class="size-4" />
 			</Button>
 		</div>
-	</CardHeader>
-	<CardContent class="space-y-6 text-sm">
+	</Card.Header>
+	<Card.Content class="space-y-6 text-sm">
 		<img
 			src="/components/card-06.webp"
 			alt="Banner"
 			class="aspect-video w-full rounded-md object-cover"
 		/>
 		<p>
-			Lost in the colors of the night 🌌✨ Sometimes the blur reveals more than clarity.{' '}
-			<a href="#" class="text-sky-600 dark:text-sky-400"> #AbstractVibes </a>{' '}
-			<a href="#" class="text-sky-600 dark:text-sky-400"> #Dreamscape </a>{' '}
-			<a href="#" class="text-sky-600 dark:text-sky-400"> #VisualPoetry </a>
+			Lost in the colors of the night 🌌✨ Sometimes the blur reveals more than clarity.
+			<a href="#!" class="text-sky-600 dark:text-sky-400">#AbstractVibes</a>
+			<a href="#!" class="text-sky-600 dark:text-sky-400">#Dreamscape</a>
+			<a href="#!" class="text-sky-600 dark:text-sky-400">#VisualPoetry</a>
 		</p>
-	</CardContent>
-	<CardFooter class="flex items-center gap-1">
+	</Card.Content>
+	<Card.Footer class="flex items-center gap-1">
 		<Button variant="ghost" size="sm" onclick={() => (liked = !liked)}>
 			<HeartIcon class={cn('size-4', liked && 'fill-destructive stroke-destructive')} />
 			2.1K
@@ -79,5 +71,5 @@
 			<SendIcon class="size-4" />
 			1.1K
 		</Button>
-	</CardFooter>
-</Card>
+	</Card.Footer>
+</Card.Root>

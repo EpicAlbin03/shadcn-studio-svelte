@@ -16,11 +16,7 @@
 
 <script lang="ts">
 	import { ChevronRightIcon, CircleSmallIcon } from '@lucide/svelte';
-	import {
-		Collapsible,
-		CollapsibleContent,
-		CollapsibleTrigger
-	} from '$lib/components/ui/collapsible';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import NavigationMenu from './NavigationMenu.svelte';
 
 	type Props = { level: number; item: NavigationItem };
@@ -41,7 +37,7 @@
 		<span class="text-sm">{item.name}</span>
 	</div>
 {:else}
-	<Collapsible class="flex flex-col gap-1.5" style={`padding-left: ${level === 0 ? 0 : 1.5}rem`}>
+	<Collapsible.Root class="flex flex-col gap-1.5" style={`padding-left: ${level === 0 ? 0 : 1.5}rem`}>
 		<CollapsibleTrigger
 			class="flex items-center gap-2 rounded-md p-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
 		>
@@ -54,13 +50,13 @@
 			<ChevronRightIcon
 				class="size-4 shrink-0 transition-transform [[data-state='open']>&]:rotate-90"
 			/>
-		</CollapsibleTrigger>
+		</Collapsible.Trigger>
 		<CollapsibleContent
 			class="flex flex-col gap-1.5 overflow-hidden transition-all duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 		>
 			{#each item.children as child (child.name)}
 				<NavigationMenu item={child} level={level + 1} />
 			{/each}
-		</CollapsibleContent>
-	</Collapsible>
+		</Collapsible.Content>
+	</Collapsible.Root>
 {/if}

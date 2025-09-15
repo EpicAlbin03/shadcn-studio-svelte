@@ -11,35 +11,35 @@
 	} from '$lib/components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu>
-	<DropdownMenuTrigger>
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Menu item with icon</Button>
 		{/snippet}
-	</DropdownMenuTrigger>
-	<DropdownMenuContent class="w-56">
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content class="w-56">
 		<DropdownMenuLabel>User Profile</DropdownMenuLabel>
 		<DropdownMenuGroup>
-			<DropdownMenuItem>
+			<DropdownMenu.Item>
 				<User />
 				Profile
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				<Settings />
 				Settings
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				<Receipt />
 				Billing Plans
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				<DollarSign />
 				Pricing
-			</DropdownMenuItem>
-			<DropdownMenuItem>
+			</DropdownMenu.Item>
+			<DropdownMenu.Item>
 				<CircleHelp />
 				FAQ
-			</DropdownMenuItem>
+			</DropdownMenu.Item>
 		</DropdownMenuGroup>
 	</DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu.Root>
