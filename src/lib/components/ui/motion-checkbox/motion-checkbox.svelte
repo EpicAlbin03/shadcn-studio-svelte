@@ -1,12 +1,12 @@
 <script lang="ts" module>
-	import { motion } from 'motion-start';
+	import { motion, type MotionProps } from 'motion-start';
 	import type { Snippet } from 'svelte';
 	import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 	import { CheckIcon, MinusIcon } from '@lucide/svelte';
 
-	// export type MotionCheckboxProps = Omit<MotionProps, 'style'> &
-	// 	WithoutChildrenOrChild<CheckboxPrimitive.RootProps>;
+	export type MotionCheckboxProps = Omit<MotionProps, 'style'> &
+		WithoutChildrenOrChild<CheckboxPrimitive.RootProps>;
 </script>
 
 <script lang="ts">

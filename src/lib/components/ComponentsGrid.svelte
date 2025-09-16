@@ -30,7 +30,7 @@
 	let columns = $derived<number>(bp.xl ?? bp.lg ?? bp.md ?? bp.sm ?? bp.xs);
 	const length = $derived(components.length);
 
-	const handleResize = () => {
+	function handleResize() {
 		const width = window.innerWidth;
 
 		if (width >= 1280) columns = bp.xl ?? bp.lg ?? bp.md ?? bp.sm ?? bp.xs;
@@ -38,7 +38,7 @@
 		else if (width >= 768) columns = bp.md ?? bp.sm ?? bp.xs;
 		else if (width >= 640) columns = bp.sm ?? bp.xs;
 		else columns = bp.xs;
-	};
+	}
 
 	onMount(() => {
 		handleResize();
