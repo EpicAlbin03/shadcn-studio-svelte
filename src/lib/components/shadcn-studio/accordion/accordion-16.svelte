@@ -72,7 +72,7 @@
 <Accordion.Root type="single" class="w-full rounded-md border" value="item-1">
 	{#each items as item, index}
 		<Accordion.Item
-			value={`item-${index + 1}`}
+			value="item-{index + 1}"
 			class="outline-none first:rounded-t-md last:rounded-b-md has-focus-visible:z-10 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
 		>
 			<Accordion.Trigger class="px-5 outline-none focus-visible:ring-0">

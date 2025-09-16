@@ -67,5 +67,5 @@
 			/>
 		</Card.Content>
 	</Card.Root>
-	<p class="mt-3 text-center text-xs text-muted-foreground" role="region">Localize calendar</p>
+	<p class="mt-3 text-center text-xs text-muted-foreground" role="region">Localized calendar</p>
 </div>

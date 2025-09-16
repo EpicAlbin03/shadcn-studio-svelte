@@ -40,7 +40,7 @@
 				{#each filters as label, index}
 					<div class="flex items-center gap-2">
 						<Checkbox
-							id={`filter-${index + 1}`}
+							id="filter-{index + 1}"
 							checked={selected.includes(label)}
 							onCheckedChange={(checked) =>
 								(selected = checked

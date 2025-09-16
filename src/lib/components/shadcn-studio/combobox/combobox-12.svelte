@@ -30,7 +30,7 @@
 </script>
 
 <div class="w-full max-w-xs space-y-2">
-	<Label for={id}>Multiple Count badge</Label>
+	<Label for={id}>Multiple count badge</Label>
 	<Popover.Root bind:open>
 		<Popover.Trigger>
 			{#snippet child({ props })}

@@ -199,7 +199,7 @@ ${Object.entries(component.cssVars.theme)
 	}
 
 	return {
-		path: 'styles/app.css',
+		path: 'app.css',
 		content: styles
 	};
 }

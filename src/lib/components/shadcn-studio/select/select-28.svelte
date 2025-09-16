@@ -2,32 +2,30 @@
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const movies = [
+		{ value: 'inception', label: 'Inception' },
+		{ value: 'interstellar', label: 'Interstellar' },
+		{ value: 'the-dark-knight', label: 'The Dark Knight' },
+		{ value: 'pulp-fiction', label: 'Pulp Fiction' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('inception');
+	const triggerContent = $derived(movies.find((f) => f.value === value)?.label ?? 'Select a movie');
 </script>
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with leading text</Label>
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
-			Favorite fruit: {triggerContent}
+			Favorite movie: {triggerContent}
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
-					<Select.Item value={fruit.value} label={fruit.label}>
-						{fruit.label}
+				{#each movies as movie (movie.value)}
+					<Select.Item value={movie.value} label={movie.label}>
+						{movie.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

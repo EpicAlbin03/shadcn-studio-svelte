@@ -67,7 +67,7 @@
 
 	const id = $props.id();
 
-	let value = $state('est');
+	let value = $state('');
 	const triggerContent = $derived(
 		Object.values(timeZones)
 			.flat()
@@ -76,7 +76,7 @@
 </script>
 
 <div class="w-full max-w-xs space-y-2">
-	<Label for={id}>Timezone Select</Label>
+	<Label for={id}>Timezone select</Label>
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
 			{triggerContent}

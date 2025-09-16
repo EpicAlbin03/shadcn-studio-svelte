@@ -21,7 +21,7 @@
 
 <Accordion.Root type="single" class="w-full rounded-md border" value="item-1">
 	{#each items as item, index}
-		<Accordion.Item value={`item-${index + 1}`}>
+		<Accordion.Item value="item-{index + 1}">
 			<Accordion.Trigger class="px-5">{item.title}</Accordion.Trigger>
 			<Accordion.Content class="px-5 text-muted-foreground">{item.content}</Accordion.Content>
 		</Accordion.Item>

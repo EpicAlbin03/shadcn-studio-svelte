@@ -2,18 +2,19 @@
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const categories = [
+		{ value: 'electronics', label: 'Electronics' },
+		{ value: 'clothing', label: 'Clothing' },
+		{ value: 'home-appliances', label: 'Home Appliances' },
+		{ value: 'books', label: 'Books' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('electronics');
+	const triggerContent = $derived(
+		categories.find((f) => f.value === value)?.label ?? 'Select a category'
+	);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -27,10 +28,9 @@
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
-					<Select.Item value={fruit.value} label={fruit.label}>
-						{fruit.label}
+				{#each categories as category (category.value)}
+					<Select.Item value={category.value} label={category.label}>
+						{category.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

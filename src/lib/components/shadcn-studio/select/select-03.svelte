@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { FilmIcon } from '@lucide/svelte';
 	import { Label } from '$lib/components/ui/label';
-	import SelectNative from '$lib/components/ui/select-native.svelte';
+	import { SelectNative } from '$lib/components/ui/select-native';
 
 	const id = $props.id();
 </script>

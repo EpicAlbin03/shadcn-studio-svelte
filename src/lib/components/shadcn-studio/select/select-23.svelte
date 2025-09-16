@@ -4,19 +4,19 @@
 
 	const countries = {
 		northAmerica: [
-			{ value: 'united-states', label: 'United States' },
-			{ value: 'canada', label: 'Canada' },
-			{ value: 'mexico', label: 'Mexico' }
+			{ value: 'us', label: 'United States' },
+			{ value: 'ca', label: 'Canada' },
+			{ value: 'mx', label: 'Mexico' }
 		],
 		europe: [
-			{ value: 'united-kingdom', label: 'United Kingdom' },
-			{ value: 'germany', label: 'Germany' },
-			{ value: 'france', label: 'France' }
+			{ value: 'gb', label: 'United Kingdom' },
+			{ value: 'de', label: 'Germany' },
+			{ value: 'fr', label: 'France' }
 		],
 		asia: [
-			{ value: 'india', label: 'India' },
-			{ value: 'japan', label: 'Japan' },
-			{ value: 'china', label: 'China' }
+			{ value: 'in', label: 'India' },
+			{ value: 'jp', label: 'Japan' },
+			{ value: 'cn', label: 'China' }
 		]
 	};
 
@@ -37,11 +37,11 @@
 
 	const id = $props.id();
 
-	let value = $state('united-states');
+	let value = $state('in');
 	const triggerContent = $derived(
 		Object.values(countries)
 			.flat()
-			.find((f) => f.value === value)?.label ?? 'Select a fruit'
+			.find((f) => f.value === value)?.label ?? 'Select a country'
 	);
 </script>
 

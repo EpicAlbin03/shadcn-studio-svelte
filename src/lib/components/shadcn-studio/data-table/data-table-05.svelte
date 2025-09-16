@@ -242,5 +242,5 @@
 			</Table.Body>
 		</Table.Root>
 	</div>
-	<p class="mt-4 text-center text-sm text-muted-foreground">Data table with sortable column</p>
+	<p class="mt-4 text-center text-sm text-muted-foreground">Data table with sortable columns</p>
 </div>

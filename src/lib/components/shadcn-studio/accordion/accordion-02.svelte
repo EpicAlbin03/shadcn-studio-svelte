@@ -22,7 +22,7 @@
 <Accordion.Root type="single" class="w-full space-y-2" value="item-1">
 	{#each items as item, index}
 		<Accordion.Item
-			value={`item-${index + 1}`}
+			value="item-{index + 1}"
 			class="rounded-md border-b-0 bg-card shadow-md data-[state=open]:shadow-lg"
 		>
 			<Accordion.Trigger class="px-5 [&>svg]:rotate-90 [&[data-state=open]>svg]:rotate-0">

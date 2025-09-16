@@ -22,7 +22,7 @@
 <Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
 		<Accordion.Item
-			value={`item-${index + 1}`}
+			value="item-{index + 1}"
 			class="data-[state=open]:border-amber-600 not-last:data-[state=open]:border-b-2 dark:data-[state=open]:border-amber-400"
 		>
 			<Accordion.Trigger

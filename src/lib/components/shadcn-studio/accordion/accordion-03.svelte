@@ -25,7 +25,7 @@
 
 <Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<Accordion.Item value={`item-${index + 1}`}>
+		<Accordion.Item value="item-{index + 1}">
 			<Accordion.Trigger class="justify-start [&>svg]:order-first">
 				<span class="flex items-center gap-4">
 					<item.icon class="size-4 shrink-0 text-muted-foreground" />

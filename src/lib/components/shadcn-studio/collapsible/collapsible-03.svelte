@@ -49,7 +49,7 @@
 					<div class="text-sm font-medium">{task.name}</div>
 					<p class="text-xs text-muted-foreground">{task.designation}</p>
 				</div>
-				<span class="text-sm text-muted-foreground">{`${task.percentage}%`}</span>
+				<span class="text-sm text-muted-foreground">{task.percentage}%</span>
 			</li>
 		{/each}
 		<Collapsible.Content class="flex flex-col gap-2">
@@ -63,7 +63,7 @@
 						<div class="text-sm font-medium">{task.name}</div>
 						<p class="text-xs text-muted-foreground">{task.designation}</p>
 					</div>
-					<span class="text-sm text-muted-foreground">{`${task.percentage}%`}</span>
+					<span class="text-sm text-muted-foreground">{task.percentage}%</span>
 				</li>
 			{/each}
 		</Collapsible.Content>

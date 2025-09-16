@@ -23,7 +23,7 @@
 
 <Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<Accordion.Item value={`item-${index + 1}`}>
+		<Accordion.Item value="item-{index + 1}">
 			<AccordionPrimitive.Header class="flex">
 				<AccordionPrimitive.Trigger
 					data-slot="accordion-trigger"

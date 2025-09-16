@@ -7,5 +7,5 @@
 
 <div>
 	<Calendar type="single" bind:value class="rounded-lg border" />
-	<p class="mt-3 text-center text-xs text-muted-foreground" role="region">Default Month</p>
+	<p class="mt-3 text-center text-xs text-muted-foreground" role="region">Default month</p>
 </div>

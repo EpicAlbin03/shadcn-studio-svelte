@@ -80,10 +80,7 @@
 				{#each items as item (item.id)}
 					<Table.Row class="has-data-[state=checked]:bg-muted/50">
 						<Table.Cell>
-							<Checkbox
-								id={`table-checkbox-${item.id}`}
-								aria-label={`product-checkbox-${item.id}`}
-							/>
+							<Checkbox id="table-checkbox-{item.id}" aria-label="product-checkbox-{item.id}" />
 						</Table.Cell>
 						<Table.Cell>
 							<div class="flex items-center gap-3">

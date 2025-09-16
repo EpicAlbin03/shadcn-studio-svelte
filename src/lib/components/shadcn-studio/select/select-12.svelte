@@ -3,18 +3,17 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { FilmIcon } from '@lucide/svelte';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const movies = [
+		{ value: 'god of wars', label: 'God of Wars' },
+		{ value: 'ghost rider', label: 'Ghost Rider' },
+		{ value: 'the cloth', label: 'The Cloth' },
+		{ value: 'the possession', label: 'The Possession' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('god of wars');
+	const triggerContent = $derived(movies.find((f) => f.value === value)?.label ?? 'Select a movie');
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -30,10 +29,9 @@
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
-					<Select.Item value={fruit.value} label={fruit.label}>
-						{fruit.label}
+				{#each movies as movie (movie.value)}
+					<Select.Item value={movie.value} label={movie.label}>
+						{movie.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

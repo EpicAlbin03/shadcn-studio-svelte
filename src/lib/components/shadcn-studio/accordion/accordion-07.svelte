@@ -33,7 +33,7 @@
 
 <Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
-		<Accordion.Item value={`item-${index + 1}`}>
+		<Accordion.Item value="item-{index + 1}">
 			<Accordion.Trigger class="items-center hover:no-underline">
 				<span class="flex items-center gap-4">
 					<Avatar.Root class="size-10.5 rounded-sm">

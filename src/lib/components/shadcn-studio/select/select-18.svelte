@@ -17,7 +17,7 @@
 </script>
 
 <div class="w-full max-w-xs space-y-2">
-	<Label for={id}>Ghost Select</Label>
+	<Label for={id}>Ghost select</Label>
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full border-none shadow-none hover:bg-accent dark:bg-transparent">
 			{triggerContent}

@@ -24,7 +24,7 @@
 <Accordion.Root type="single" class="w-full" value="item-1">
 	{#each items as item, index}
 		<Accordion.Item
-			value={`item-${index + 1}`}
+			value="item-{index + 1}"
 			class="rounded-md border border-transparent px-5 transition-colors duration-200 data-[state=open]:border data-[state=open]:border-border data-[state=open]:shadow-md"
 		>
 			<AccordionPrimitive.Header class="flex">

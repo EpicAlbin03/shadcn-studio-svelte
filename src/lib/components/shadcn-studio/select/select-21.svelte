@@ -2,18 +2,19 @@
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const countries = [
+		{ value: 'us', label: 'United States' },
+		{ value: 'jp', label: 'Japan' },
+		{ value: 'au', label: 'Australia' },
+		{ value: 'br', label: 'Brazil' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('jp');
+	const triggerContent = $derived(
+		countries.find((f) => f.value === value)?.label ?? 'Select a country'
+	);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -27,10 +28,9 @@
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
-					<Select.Item value={fruit.value} label={fruit.label}>
-						{fruit.label}
+				{#each countries as country (country.value)}
+					<Select.Item value={country.value} label={country.label}>
+						{country.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

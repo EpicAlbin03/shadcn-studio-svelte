@@ -272,5 +272,5 @@
 			</Table.Body>
 		</Table.Root>
 	</div>
-	<p class="mt-4 text-center text-sm text-muted-foreground">Data table column visibility</p>
+	<p class="mt-4 text-center text-sm text-muted-foreground">Data table with column visibility</p>
 </div>

@@ -4017,7 +4017,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-01.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4029,7 +4034,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-02.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4041,7 +4051,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-03.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4053,7 +4068,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-04.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4065,7 +4085,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-05.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4077,7 +4102,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-06.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4089,7 +4119,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-07.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4101,7 +4136,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-08.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},
@@ -4113,7 +4153,12 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/select/select-09.svelte'
 			},
 			{
-				path: 'src/lib/components/ui/select-native.svelte'
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
 			}
 		]
 	},

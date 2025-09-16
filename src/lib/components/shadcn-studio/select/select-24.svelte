@@ -1,19 +1,17 @@
 <script lang="ts">
-	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const cities = [
+		{ value: 'new-york', label: 'New York' },
+		{ value: 'london', label: 'London' },
+		{ value: 'tokyo', label: 'Tokyo' },
+		{ value: 'paris', label: 'Paris' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('');
+	const triggerContent = $derived(cities.find((f) => f.value === value)?.label ?? 'Select a city');
 </script>
 
 <div class="group relative w-full max-w-xs">
@@ -29,10 +27,9 @@
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
-					<Select.Item value={fruit.value} label={fruit.label}>
-						{fruit.label}
+				{#each cities as city (city.value)}
+					<Select.Item value={city.value} label={city.label}>
+						{city.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

@@ -68,7 +68,7 @@
 							</Avatar.Root>
 							<div class="flex-1 space-y-1">
 								<div class="text-sm font-medium">{notification.message}</div>
-								<p class="text-xs text-muted-foreground">{`${notification.time} ago`}</p>
+								<p class="text-xs text-muted-foreground">{notification.time} ago</p>
 							</div>
 							{#if !readMessages.includes(notification.id)}
 								<CircleIcon class="size-2 self-center fill-primary text-primary" />

@@ -2,18 +2,20 @@
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 
-	const fruits = [
-		{ value: 'apple', label: 'Apple' },
-		{ value: 'banana', label: 'Banana' },
-		{ value: 'blueberry', label: 'Blueberry' },
-		{ value: 'grapes', label: 'Grapes' },
-		{ value: 'pineapple', label: 'Pineapple' }
+	const languages = [
+		{ value: 'hi', label: 'Hindi' },
+		{ value: 'en', label: 'English' },
+		{ value: 'es', label: 'Spanish' },
+		{ value: 'zh', label: 'Mandarin' },
+		{ value: 'fr', label: 'French' }
 	];
 
 	const id = $props.id();
 
-	let value = $state('apple');
-	const triggerContent = $derived(fruits.find((f) => f.value === value)?.label ?? 'Select a fruit');
+	let value = $state('hi');
+	const triggerContent = $derived(
+		languages.find((f) => f.value === value)?.label ?? 'Select a language'
+	);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -29,14 +31,14 @@
 			<Select.Group
 				class="[&_div:focus]:bg-sky-600/20 [&_div:focus]:text-sky-600 dark:[&_div:focus]:bg-sky-400/20 dark:[&_div:focus]:text-sky-400"
 			>
-				<Select.Label>Fruits</Select.Label>
-				{#each fruits as fruit (fruit.value)}
+				<Select.Label>Languages</Select.Label>
+				{#each languages as language (language.value)}
 					<Select.Item
-						value={fruit.value}
-						label={fruit.label}
+						value={language.value}
+						label={language.label}
 						class="focus:[&_svg]:!text-sky-600 dark:focus:[&_svg]:!text-sky-400"
 					>
-						{fruit.label}
+						{language.label}
 					</Select.Item>
 				{/each}
 			</Select.Group>

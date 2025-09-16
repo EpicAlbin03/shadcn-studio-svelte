@@ -1,12 +1,14 @@
+<script lang="ts" module>
+	export type SelectNativeProps = WithElementRef<HTMLSelectAttributes> & {
+		type: 'single' | 'multiple';
+	};
+</script>
+
 <script lang="ts">
 	import { ChevronDownIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils';
 	import type { HTMLSelectAttributes } from 'svelte/elements';
 	import { type WithElementRef } from '$lib/utils';
-
-	type Props = WithElementRef<HTMLSelectAttributes> & {
-		type: 'single' | 'multiple';
-	};
 
 	let {
 		ref = $bindable(null),
@@ -15,7 +17,7 @@
 		type,
 		value = $bindable(),
 		...props
-	}: Props = $props();
+	}: SelectNativeProps = $props();
 </script>
 
 <div class="relative flex">
