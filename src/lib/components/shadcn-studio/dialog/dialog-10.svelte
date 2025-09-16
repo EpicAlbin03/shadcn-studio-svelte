@@ -2,16 +2,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 
@@ -34,21 +25,21 @@
 	];
 </script>
 
-<Dialog>
+<Dialog.Root>
 	<form>
-		<DialogTrigger>
+		<Dialog.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Refer & Earn</Button>
 			{/snippet}
-		</DialogTrigger>
-		<DialogContent class="sm:max-w-xl">
-			<DialogHeader>
-				<DialogTitle class="text-xl">Refers & Earn AI Credits</DialogTitle>
-				<DialogDescription class="text-base">
+		</Dialog.Trigger>
+		<Dialog.Content class="sm:max-w-xl">
+			<Dialog.Header>
+				<Dialog.Title class="text-xl">Refers & Earn AI Credits</Dialog.Title>
+				<Dialog.Description class="text-base">
 					Get 5 AI credits per successful referral sign up. Use AI credits to get AskFred insights,
 					custom meetings notes, automated soundbites etc.
-				</DialogDescription>
-			</DialogHeader>
+				</Dialog.Description>
+			</Dialog.Header>
 			<form class="flex flex-col gap-4 pt-4">
 				<div class="grid grow-1 gap-3">
 					<Label for="email">Refer by email</Label>
@@ -75,15 +66,15 @@
 						<Avatar.Fallback class="text-xs">+10</Avatar.Fallback>
 					</Avatar.Root>
 				</div>
-				<DialogFooter class="sm:justify-end">
-					<DialogClose>
+				<Dialog.Footer class="sm:justify-end">
+					<Dialog.Close>
 						{#snippet child({ props })}
 							<Button {...props} variant="outline">Cancel</Button>
 						{/snippet}
-					</DialogClose>
+					</Dialog.Close>
 					<Button type="submit">Refer</Button>
-				</DialogFooter>
+				</Dialog.Footer>
 			</form>
-		</DialogContent>
+		</Dialog.Content>
 	</form>
-</Dialog>
+</Dialog.Root>

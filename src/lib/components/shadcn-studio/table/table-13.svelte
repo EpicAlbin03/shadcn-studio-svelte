@@ -1,13 +1,6 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
-	import {
-		Table,
-		TableBody,
-		TableCell,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const items = [
 		{
@@ -55,20 +48,20 @@
 
 <div class="w-full">
 	<div class="[&>div]:rounded-sm [&>div]:border">
-		<Table>
-			<TableHeader>
-				<TableRow class="hover:bg-transparent">
-					<TableHead>Name</TableHead>
-					<TableHead>Email</TableHead>
-					<TableHead>Location</TableHead>
-					<TableHead>Status</TableHead>
-					<TableHead class="text-right">Balance</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
+		<Table.Root>
+			<Table.Header>
+				<Table.Row class="hover:bg-transparent">
+					<Table.Head>Name</Table.Head>
+					<Table.Head>Email</Table.Head>
+					<Table.Head>Location</Table.Head>
+					<Table.Head>Status</Table.Head>
+					<Table.Head class="text-right">Balance</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each items as item (item.id)}
-					<TableRow>
-						<TableCell>
+					<Table.Row>
+						<Table.Cell>
 							<div class="flex items-center gap-3">
 								<Avatar.Root>
 									<Avatar.Image src={item.src} alt={item.fallback} />
@@ -76,15 +69,15 @@
 								</Avatar.Root>
 								<div class="font-medium">{item.name}</div>
 							</div>
-						</TableCell>
-						<TableCell>{item.email}</TableCell>
-						<TableCell>{item.location}</TableCell>
-						<TableCell>{item.status}</TableCell>
-						<TableCell class="text-right">{item.balance}</TableCell>
-					</TableRow>
+						</Table.Cell>
+						<Table.Cell>{item.email}</Table.Cell>
+						<Table.Cell>{item.location}</Table.Cell>
+						<Table.Cell>{item.status}</Table.Cell>
+						<Table.Cell class="text-right">{item.balance}</Table.Cell>
+					</Table.Row>
 				{/each}
-			</TableBody>
-		</Table>
+			</Table.Body>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">Table with avatar</p>
 </div>

@@ -9,7 +9,7 @@
 
 <div class="group inline-flex items-center gap-2" data-state={checked ? 'checked' : 'unchecked'}>
 	<button
-		id={`${id}-light`}
+		id="{id}-light"
 		class="cursor-pointer text-left text-sm font-medium group-data-[state=checked]:text-muted-foreground/70"
 		aria-controls={id}
 		onclick={() => (checked = false)}
@@ -19,11 +19,11 @@
 	<Switch
 		{id}
 		bind:checked
-		aria-labelledby={`${id}-dark ${id}-light`}
+		aria-labelledby="{id}-dark {id}-light"
 		aria-label="Toggle between dark and light mode"
 	/>
 	<button
-		id={`${id}-dark`}
+		id="{id}-dark"
 		class="cursor-pointer text-right text-sm font-medium group-data-[state=unchecked]:text-muted-foreground/70"
 		aria-controls={id}
 		onclick={() => (checked = true)}

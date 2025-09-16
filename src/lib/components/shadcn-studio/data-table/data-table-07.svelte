@@ -3,16 +3,13 @@
 		type Column,
 		type ColumnDef,
 		type ColumnPinningState,
-		type SortingState,
-		getCoreRowModel,
-		getSortedRowModel
+		getCoreRowModel
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import {
 		FlexRender,
 		createSvelteTable,
-		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
 	import { Button } from '$lib/components/ui/button';
@@ -46,7 +43,7 @@
 		},
 		{
 			productId: 2,
-			productName: 'Metal frame table',
+			productName: 'Metal Frame Table',
 			category: 'Furniture',
 			stockQuantity: 150,
 			price: 540,
@@ -55,8 +52,8 @@
 		},
 		{
 			productId: 3,
-			productName: 'Xiaomi A series',
-			category: 'electronics',
+			productName: 'Xiaomi A Series',
+			category: 'Electronics',
 			stockQuantity: 1500,
 			price: 2200,
 			supplier: 'Xiaomi Electronics',
@@ -91,7 +88,7 @@
 		}
 	];
 
-	const getPinningStyles = (column: Column<Product>) => {
+	function getPinningStyles(column: Column<Product>) {
 		const isPinned = column.getIsPinned();
 		const styles: Record<string, string | number | undefined> = {};
 
@@ -105,15 +102,15 @@
 		styles['z-index'] = isPinned ? 1 : 0;
 
 		return styles;
-	};
+	}
 
-	const getPinningStyleString = (column: Column<Product>) => {
+	function getPinningStyleString(column: Column<Product>) {
 		const styles = getPinningStyles(column);
 		return Object.entries(styles)
 			.filter(([, value]) => value !== undefined)
 			.map(([key, value]) => `${key}: ${value}`)
 			.join('; ');
-	};
+	}
 
 	const columns: ColumnDef<Product>[] = [
 		{
@@ -202,7 +199,6 @@
 		}
 	];
 
-	let sorting = $state<SortingState>([]);
 	let columnPinning = $state<ColumnPinningState>({ left: [], right: [] });
 
 	const table = createSvelteTable({
@@ -211,31 +207,20 @@
 		},
 		columns,
 		enableColumnPinning: true,
-		getCoreRowModel: getCoreRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		onSortingChange: (updater) => {
-			if (typeof updater === 'function') {
-				sorting = updater(sorting);
-			} else {
-				sorting = updater;
+		enableSortingRemoval: false,
+		state: {
+			get columnPinning() {
+				return columnPinning;
 			}
 		},
+		getCoreRowModel: getCoreRowModel(),
 		onColumnPinningChange: (updater) => {
 			if (typeof updater === 'function') {
 				columnPinning = updater(columnPinning);
 			} else {
 				columnPinning = updater;
 			}
-		},
-		state: {
-			get sorting() {
-				return sorting;
-			},
-			get columnPinning() {
-				return columnPinning;
-			}
-		},
-		enableSortingRemoval: false
+		}
 	});
 </script>
 
@@ -276,8 +261,8 @@
 												variant="ghost"
 												class="-mr-1 size-7 shadow-none"
 												onclick={() => header.column.pin(false)}
-												aria-label={`Unpin ${header.column.columnDef.header} column`}
-												title={`Unpin ${header.column.columnDef.header} column`}
+												aria-label="Unpin {header.column.columnDef.header} column"
+												title="Unpin {header.column.columnDef.header} column"
 											>
 												<PinOffIcon class="opacity-60" size={16} aria-hidden="true" />
 											</Button>
@@ -290,8 +275,8 @@
 															size="icon"
 															variant="ghost"
 															class="-mr-1 size-7 shadow-none"
-															aria-label={`Pin options for ${header.column.columnDef.header} column`}
-															title={`Pin options for ${header.column.columnDef.header} column`}
+															aria-label="Pin options for {header.column.columnDef.header} column"
+															title="Pin options for {header.column.columnDef.header} column"
 														>
 															<EllipsisIcon class="opacity-60" size={16} aria-hidden="true" />
 														</Button>

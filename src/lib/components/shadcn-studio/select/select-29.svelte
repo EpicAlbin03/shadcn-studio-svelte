@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import { cn } from '$lib/utils';
 	import { CircleIcon } from '@lucide/svelte';
 
@@ -44,7 +37,7 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Status select</Label>
 	<Select.Root type="single" bind:value>
-		<SelectTrigger
+		<Select.Trigger
 			{id}
 			class="w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0"
 		>
@@ -52,21 +45,21 @@
 				<CircleIcon class={cn('size-2', selectedStatus.className)} />
 				<span class="truncate">{selectedStatus.label ?? 'Select status'}</span>
 			</span>
-		</SelectTrigger>
-		<SelectContent
+		</Select.Trigger>
+		<Select.Content
 			class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]>span>svg]:shrink-0 [&_*[role=option]>span>svg]:text-muted-foreground/80"
 		>
-			<SelectGroup>
-				<SelectLabel>Fruits</SelectLabel>
+			<Select.Group>
+				<Select.Label>Fruits</Select.Label>
 				{#each statuses as status (status.value)}
 					<Select.Item value={status.value} label={status.label}>
 						<span class="flex items-center gap-2">
 							<CircleIcon class={cn('size-2', status.className)} />
 							<span class="truncate">{status.label}</span>
 						</span>
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

@@ -7,5 +7,5 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Textarea with label</Label>
-	<Textarea placeholder="Type your feedback here" {id} />
+	<Textarea {id} placeholder="Type your feedback here" />
 </div>

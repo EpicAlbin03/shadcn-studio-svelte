@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronDown, ChevronUp } from '@lucide/svelte';
+	import { ChevronDownIcon, ChevronUpIcon } from '@lucide/svelte';
 	import {
 		type ColumnDef,
 		type ExpandedState,
@@ -247,9 +247,9 @@
 		variant="ghost"
 	>
 		{#if row.getIsExpanded()}
-			<ChevronUp class="opacity-60" size={16} aria-hidden="true" />
+			<ChevronUpIcon class="opacity-60" size={16} aria-hidden="true" />
 		{:else}
-			<ChevronDown class="opacity-60" size={16} aria-hidden="true" />
+			<ChevronDownIcon class="opacity-60" size={16} aria-hidden="true" />
 		{/if}
 	</Button>
 {/snippet}

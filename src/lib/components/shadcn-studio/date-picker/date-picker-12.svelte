@@ -5,15 +5,14 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import { getLocalTimeZone } from '@internationalized/date';
-	import type { CalendarDate } from '@internationalized/date';
+	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
 
 	const id = $props.id();
 
 	let openFrom = $state(false);
 	let openTo = $state(false);
-	let valueFrom = $state<CalendarDate | undefined>();
-	let valueTo = $state<CalendarDate | undefined>();
+	let valueFrom = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 18));
+	let valueTo = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 25));
 </script>
 
 <div class="flex w-full max-w-64 min-w-0 flex-col gap-6">

@@ -12,15 +12,15 @@
 	>
 		<RadioGroupItem
 			value="1"
-			id={`${id}-1`}
+			id="{id}-1"
 			class="order-1 size-5 after:absolute after:inset-0 [&_svg]:size-3"
-			aria-describedby={`${id}-1-description`}
+			aria-describedby="{id}-1-description"
 			aria-label="plan-radio-basic"
 		/>
 		<div class="grid grow justify-items-center gap-2">
 			<UserIcon />
-			<Label for={`${id}-1`} class="justify-center">Basic</Label>
-			<p id={`${id}-1-description`} class="text-center text-xs text-muted-foreground">
+			<Label for="{id}-1" class="justify-center">Basic</Label>
+			<p id="{id}-1-description" class="text-center text-xs text-muted-foreground">
 				Get 1 project with 1 teams members.
 			</p>
 		</div>
@@ -30,15 +30,15 @@
 	>
 		<RadioGroupItem
 			value="2"
-			id={`${id}-2`}
+			id="{id}-2"
 			class="order-1 size-5 after:absolute after:inset-0 [&_svg]:size-3"
-			aria-describedby={`${id}-2-description`}
+			aria-describedby="{id}-2-description"
 			aria-label="plan-radio-premium"
 		/>
 		<div class="grid grow justify-items-center gap-2">
 			<CrownIcon />
-			<Label for={`${id}-2`} class="justify-center">Premium</Label>
-			<p id={`${id}-2-description`} class="text-center text-xs text-muted-foreground">
+			<Label for="{id}-2" class="justify-center">Premium</Label>
+			<p id="{id}-2-description" class="text-center text-xs text-muted-foreground">
 				Get 5 projects with 5 team members.
 			</p>
 		</div>

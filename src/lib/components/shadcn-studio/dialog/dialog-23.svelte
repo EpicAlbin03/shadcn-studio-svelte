@@ -1,35 +1,26 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 </script>
 
-<Dialog>
+<Dialog.Root>
 	<form>
-		<DialogTrigger>
+		<Dialog.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Bottom right align</Button>
 			{/snippet}
-		</DialogTrigger>
-		<DialogContent
+		</Dialog.Trigger>
+		<Dialog.Content
 			class="sm:end-0 sm:top-auto sm:bottom-0 sm:left-auto sm:m-6 sm:max-w-[425px] sm:translate-x-0 sm:translate-y-0"
 		>
-			<DialogHeader>
-				<DialogTitle>Edit profile</DialogTitle>
-				<DialogDescription
-					>Make changes to your profile here. Click save when you're done.</DialogDescription
-				>
-			</DialogHeader>
+			<Dialog.Header>
+				<Dialog.Title>Edit profile</Dialog.Title>
+				<Dialog.Description>
+					Make changes to your profile here. Click save when you're done.
+				</Dialog.Description>
+			</Dialog.Header>
 			<div class="grid gap-4">
 				<div class="grid gap-3">
 					<Label for="name-1">Name</Label>
@@ -40,14 +31,14 @@
 					<Input id="username-1" name="username" defaultValue="@peduarte" />
 				</div>
 			</div>
-			<DialogFooter>
-				<DialogClose>
+			<Dialog.Footer>
+				<Dialog.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Cancel</Button>
 					{/snippet}
-				</DialogClose>
+				</Dialog.Close>
 				<Button type="submit">Save changes</Button>
-			</DialogFooter>
-		</DialogContent>
+			</Dialog.Footer>
+		</Dialog.Content>
 	</form>
-</Dialog>
+</Dialog.Root>

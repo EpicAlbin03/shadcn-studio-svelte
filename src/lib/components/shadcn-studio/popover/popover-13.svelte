@@ -8,7 +8,7 @@
 
 	let copied = $state(false);
 
-	const handleCopy = async () => {
+	async function handleCopy() {
 		try {
 			await navigator.clipboard.writeText('SUMMER25OFF');
 			copied = true;
@@ -16,10 +16,10 @@
 		} catch (err) {
 			console.error('Failed to copy text: ', err);
 		}
-	};
+	}
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide-in from left</Button>

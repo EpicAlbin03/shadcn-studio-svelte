@@ -3,14 +3,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import {
-		Table,
-		TableBody,
-		TableCell,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const items = [
 		{
@@ -70,29 +63,29 @@
 
 <div class="w-full">
 	<div class="[&>div]:rounded-sm [&>div]:border">
-		<Table>
-			<TableHeader>
-				<TableRow class="hover:bg-transparent">
-					<TableHead>
+		<Table.Root>
+			<Table.Header>
+				<Table.Row class="hover:bg-transparent">
+					<Table.Head>
 						<Checkbox {id} aria-label="select-all" />
-					</TableHead>
-					<TableHead>Product</TableHead>
-					<TableHead>Color</TableHead>
-					<TableHead>Category</TableHead>
-					<TableHead>Price</TableHead>
-					<TableHead class="w-0">Actions</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
+					</Table.Head>
+					<Table.Head>Product</Table.Head>
+					<Table.Head>Color</Table.Head>
+					<Table.Head>Category</Table.Head>
+					<Table.Head>Price</Table.Head>
+					<Table.Head class="w-0">Actions</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each items as item (item.id)}
-					<TableRow class="has-data-[state=checked]:bg-muted/50">
-						<TableCell>
+					<Table.Row class="has-data-[state=checked]:bg-muted/50">
+						<Table.Cell>
 							<Checkbox
 								id={`table-checkbox-${item.id}`}
 								aria-label={`product-checkbox-${item.id}`}
 							/>
-						</TableCell>
-						<TableCell>
+						</Table.Cell>
+						<Table.Cell>
 							<div class="flex items-center gap-3">
 								<Avatar.Root class="rounded-sm">
 									<Avatar.Image src={item.src} alt={item.model} />
@@ -103,16 +96,16 @@
 									<span class="mt-0.5 text-xs text-muted-foreground">{item.model}</span>
 								</div>
 							</div>
-						</TableCell>
-						<TableCell>{item.color}</TableCell>
-						<TableCell>{item.category}</TableCell>
-						<TableCell>{item.price}</TableCell>
-						<TableCell class="flex items-center gap-1">
+						</Table.Cell>
+						<Table.Cell>{item.color}</Table.Cell>
+						<Table.Cell>{item.category}</Table.Cell>
+						<Table.Cell>{item.price}</Table.Cell>
+						<Table.Cell class="flex items-center gap-1">
 							<Button
 								variant="ghost"
 								size="icon"
 								class="rounded-full"
-								aria-label={`product-${item.id}-edit`}
+								aria-label="product-{item.id}-edit"
 							>
 								<PencilIcon />
 							</Button>
@@ -120,7 +113,7 @@
 								variant="ghost"
 								size="icon"
 								class="rounded-full"
-								aria-label={`product-${item.id}-remove`}
+								aria-label="product-{item.id}-remove"
 							>
 								<Trash2Icon />
 							</Button>
@@ -128,15 +121,15 @@
 								variant="ghost"
 								size="icon"
 								class="rounded-full"
-								aria-label={`product-${item.id}-archive`}
+								aria-label="product-{item.id}-archive"
 							>
 								<ArchiveIcon />
 							</Button>
-						</TableCell>
-					</TableRow>
+						</Table.Cell>
+					</Table.Row>
 				{/each}
-			</TableBody>
-		</Table>
+			</Table.Body>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">Product Table</p>
 </div>

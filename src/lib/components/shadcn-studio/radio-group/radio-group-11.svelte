@@ -11,16 +11,16 @@
 	>
 		<RadioGroupItem
 			value="1"
-			id={`${id}-1`}
+			id="{id}-1"
 			aria-label="plan-radio-basic"
-			aria-describedby={`${id}-1-description`}
+			aria-describedby="{id}-1-description"
 			class="size-5 after:absolute after:inset-0 [&_svg]:size-3"
 		/>
 		<div class="grid grow gap-2">
-			<Label for={`${id}-1`} class="justify-between">
+			<Label for="{id}-1" class="justify-between">
 				Basic <span class="text-xs leading-[inherit] font-normal text-muted-foreground">Free</span>
 			</Label>
-			<p id={`${id}-1-description`} class="text-xs text-muted-foreground">
+			<p id="{id}-1-description" class="text-xs text-muted-foreground">
 				Get 1 project with 1 teams members.
 			</p>
 		</div>
@@ -31,17 +31,16 @@
 	>
 		<RadioGroupItem
 			value="2"
-			id={`${id}-2`}
-			aria-describedby={`${id}-2-description`}
+			id="{id}-2"
+			aria-describedby="{id}-2-description"
 			class="size-5 after:absolute after:inset-0 [&_svg]:size-3"
 		/>
 		<div class="grid grow gap-2">
-			<Label for={`${id}-2`} class="justify-between">
-				Premium <span class="text-xs leading-[inherit] font-normal text-muted-foreground"
-					>$5.00</span
-				>
+			<Label for="{id}-2" class="justify-between">
+				Premium
+				<span class="text-xs leading-[inherit] font-normal text-muted-foreground">$5.00</span>
 			</Label>
-			<p id={`${id}-2-description`} class="text-xs text-muted-foreground">
+			<p id="{id}-2-description" class="text-xs text-muted-foreground">
 				Get 5 projects with 5 team members.
 			</p>
 		</div>

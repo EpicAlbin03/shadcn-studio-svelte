@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import { FilmIcon } from '@lucide/svelte';
 
 	const fruits = [
@@ -34,16 +27,16 @@
 				<FilmIcon size={16} aria-hidden="true" />
 			</div>
 			{triggerContent}
-		</SelectTrigger>
-		<SelectContent>
-			<SelectGroup>
-				<SelectLabel>Fruits</SelectLabel>
+		</Select.Trigger>
+		<Select.Content>
+			<Select.Group>
+				<Select.Label>Fruits</Select.Label>
 				{#each fruits as fruit (fruit.value)}
 					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

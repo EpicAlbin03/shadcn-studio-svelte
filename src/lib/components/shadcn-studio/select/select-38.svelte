@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const fruits = [
 		{ value: 'apple', label: 'Apple' },
@@ -28,16 +21,16 @@
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
 			{triggerContent}
-		</SelectTrigger>
+		</Select.Trigger>
 		<Select.Content class="origin-center duration-400 data-[state=open]:!zoom-in-0">
-			<SelectGroup>
-				<SelectLabel>Fruits</SelectLabel>
+			<Select.Group>
+				<Select.Label>Fruits</Select.Label>
 				{#each fruits as fruit (fruit.value)}
 					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

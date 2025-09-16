@@ -21,8 +21,6 @@
 
 	const id = $props.id();
 
-	const toggleVisibility = () => (isVisible = !isVisible);
-
 	const strength = $derived(
 		requirements.map((req) => ({
 			met: req.regex.test(password),
@@ -31,7 +29,7 @@
 	);
 	const strengthScore = $derived(strength.filter((req) => req.met).length);
 
-	const getColor = (score: number) => {
+	function getColor(score: number) {
 		if (score === 0) return 'bg-border';
 		if (score <= 1) return 'bg-destructive';
 		if (score <= 2) return 'bg-orange-500 ';
@@ -39,16 +37,16 @@
 		if (score === 4) return 'bg-yellow-400';
 
 		return 'bg-green-500';
-	};
+	}
 
-	const getText = (score: number) => {
+	function getText(score: number) {
 		if (score === 0) return 'Enter a password';
 		if (score <= 2) return 'Weak password';
 		if (score <= 3) return 'Medium password';
 		if (score === 4) return 'Strong password';
 
 		return 'Very strong password';
-	};
+	}
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -64,7 +62,7 @@
 		<Button
 			variant="ghost"
 			size="icon"
-			onclick={toggleVisibility}
+			onclick={() => (isVisible = !isVisible)}
 			class="absolute inset-y-0 end-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
 		>
 			{#if isVisible}

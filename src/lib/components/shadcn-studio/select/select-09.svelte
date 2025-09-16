@@ -16,7 +16,7 @@
 		value=""
 		class="border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
 	>
-		<option value="" disabled> Pick your favorite movie </option>
+		<option value="" disabled>Pick your favorite movie</option>
 		<option value="1">Interstellar</option>
 		<option value="2">Dune</option>
 		<option value="3">The Matrix</option>

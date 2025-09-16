@@ -1,35 +1,25 @@
 <script lang="ts">
-	import {
-		AlertDialog,
-		AlertDialogAction,
-		AlertDialogCancel,
-		AlertDialogContent,
-		AlertDialogDescription,
-		AlertDialogFooter,
-		AlertDialogHeader,
-		AlertDialogTitle,
-		AlertDialogTrigger
-	} from '$lib/components/ui/alert-dialog';
+	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<AlertDialog>
-	<AlertDialogTrigger>
+<AlertDialog.Root>
+	<AlertDialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Alert Dialog</Button>
 		{/snippet}
-	</AlertDialogTrigger>
-	<AlertDialogContent>
-		<AlertDialogHeader>
-			<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-			<AlertDialogDescription>
+	</AlertDialog.Trigger>
+	<AlertDialog.Content>
+		<AlertDialog.Header>
+			<AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
+			<AlertDialog.Description>
 				This action cannot be undone. This will permanently delete your account and remove your data
 				from our servers.
-			</AlertDialogDescription>
-		</AlertDialogHeader>
-		<AlertDialogFooter>
-			<AlertDialogCancel>Cancel</AlertDialogCancel>
-			<AlertDialogAction>Continue</AlertDialogAction>
-		</AlertDialogFooter>
-	</AlertDialogContent>
-</AlertDialog>
+			</AlertDialog.Description>
+		</AlertDialog.Header>
+		<AlertDialog.Footer>
+			<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+			<AlertDialog.Action>Continue</AlertDialog.Action>
+		</AlertDialog.Footer>
+	</AlertDialog.Content>
+</AlertDialog.Root>

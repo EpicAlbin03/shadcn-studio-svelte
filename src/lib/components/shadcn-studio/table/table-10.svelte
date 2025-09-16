@@ -1,13 +1,5 @@
 <script lang="ts">
-	import {
-		Table,
-		TableBody,
-		TableCell,
-		TableFooter,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const invoices = [
 		{
@@ -75,32 +67,32 @@
 
 <div class="w-full">
 	<div class="[&>div]:max-h-70 [&>div]:rounded-sm [&>div]:border">
-		<Table>
-			<TableHeader>
-				<TableRow class="sticky top-0 bg-background">
-					<TableHead class="w-25">Invoice</TableHead>
-					<TableHead>Status</TableHead>
-					<TableHead>Method</TableHead>
-					<TableHead class="text-right">Amount</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
+		<Table.Root>
+			<Table.Header>
+				<Table.Row class="sticky top-0 bg-background">
+					<Table.Head class="w-25">Invoice</Table.Head>
+					<Table.Head>Status</Table.Head>
+					<Table.Head>Method</Table.Head>
+					<Table.Head class="text-right">Amount</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each invoices as invoice (invoice.invoice)}
-					<TableRow>
-						<TableCell class="font-medium">{invoice.invoice}</TableCell>
-						<TableCell>{invoice.paymentStatus}</TableCell>
-						<TableCell>{invoice.paymentMethod}</TableCell>
-						<TableCell class="text-right">{invoice.totalAmount}</TableCell>
-					</TableRow>
+					<Table.Row>
+						<Table.Cell class="font-medium">{invoice.invoice}</Table.Cell>
+						<Table.Cell>{invoice.paymentStatus}</Table.Cell>
+						<Table.Cell>{invoice.paymentMethod}</Table.Cell>
+						<Table.Cell class="text-right">{invoice.totalAmount}</Table.Cell>
+					</Table.Row>
 				{/each}
-			</TableBody>
-			<TableFooter>
-				<TableRow>
-					<TableCell colspan={3}>Total</TableCell>
-					<TableCell class="text-right">$2,500.00</TableCell>
-				</TableRow>
-			</TableFooter>
-		</Table>
+			</Table.Body>
+			<Table.Footer>
+				<Table.Row>
+					<Table.Cell colspan={3}>Total</Table.Cell>
+					<Table.Cell class="text-right">$2,500.00</Table.Cell>
+				</Table.Row>
+			</Table.Footer>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">Sticky header table</p>
 </div>

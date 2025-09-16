@@ -5,16 +5,7 @@
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
-	import {
-		Sheet,
-		SheetClose,
-		SheetContent,
-		SheetDescription,
-		SheetFooter,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import {
 		type ColumnDef,
@@ -161,9 +152,7 @@
 
 	let tableData = $state(data);
 	let globalFilter = $state('');
-	let sorting = $state<SortingState>([]);
 	let columnFilters = $state<ColumnFiltersState>([]);
-	let columnVisibility = $state<VisibilityState>({});
 	let rowSelection = $state<RowSelectionState>({});
 	let isSheetOpen = $state(false);
 
@@ -176,7 +165,7 @@
 	});
 
 	// Function to handle form submission
-	const handleAddUser = () => {
+	function handleAddUser() {
 		if (!newUser.name || !newUser.email || !newUser.amount) {
 			return; // Basic validation
 		}
@@ -200,22 +189,18 @@
 		};
 
 		isSheetOpen = false;
-	};
+	}
 
 	const table = createSvelteTable({
 		get data() {
 			return tableData;
 		},
 		columns,
+		globalFilterFn: 'includesString',
+		enableSortingRemoval: false,
 		state: {
-			get sorting() {
-				return sorting;
-			},
 			get columnFilters() {
 				return columnFilters;
-			},
-			get columnVisibility() {
-				return columnVisibility;
 			},
 			get rowSelection() {
 				return rowSelection;
@@ -225,29 +210,13 @@
 			}
 		},
 		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		getSortedRowModel: getSortedRowModel(),
 		getFilteredRowModel: getFilteredRowModel(),
 		getFacetedUniqueValues: getFacetedUniqueValues(),
-		onSortingChange: (updater) => {
-			if (typeof updater === 'function') {
-				sorting = updater(sorting);
-			} else {
-				sorting = updater;
-			}
-		},
 		onColumnFiltersChange: (updater) => {
 			if (typeof updater === 'function') {
 				columnFilters = updater(columnFilters);
 			} else {
 				columnFilters = updater;
-			}
-		},
-		onColumnVisibilityChange: (updater) => {
-			if (typeof updater === 'function') {
-				columnVisibility = updater(columnVisibility);
-			} else {
-				columnVisibility = updater;
 			}
 		},
 		onRowSelectionChange: (updater) => {
@@ -256,31 +225,29 @@
 			} else {
 				rowSelection = updater;
 			}
-		},
-		globalFilterFn: 'includesString',
-		enableSortingRemoval: false
+		}
 	});
 </script>
 
 <div class="w-full">
 	<div class="flex justify-between gap-2 py-4 max-sm:flex-col sm:items-center">
 		<Input placeholder="Search all columns..." bind:value={globalFilter} class="max-w-2xs" />
-		<Sheet bind:open={isSheetOpen}>
-			<SheetTrigger>
+		<Sheet.Root bind:open={isSheetOpen}>
+			<Sheet.Trigger>
 				{#snippet child({ props })}
 					<Button {...props} variant="outline">
 						<PlusIcon />
 						Add Users
 					</Button>
 				{/snippet}
-			</SheetTrigger>
-			<SheetContent>
-				<SheetHeader>
-					<SheetTitle>Add New User</SheetTitle>
-					<SheetDescription
-						>Add a new user to the table. Fill in all the required information.</SheetDescription
-					>
-				</SheetHeader>
+			</Sheet.Trigger>
+			<Sheet.Content>
+				<Sheet.Header>
+					<Sheet.Title>Add New User</Sheet.Title>
+					<Sheet.Description>
+						Add a new user to the table. Fill in all the required information.
+					</Sheet.Description>
+				</Sheet.Header>
 				<div class="grid flex-1 auto-rows-min gap-6 px-4">
 					<div class="grid gap-3">
 						<Label for="user-name">Name</Label>
@@ -321,16 +288,16 @@
 						</Select.Root>
 					</div>
 				</div>
-				<SheetFooter>
-					<Button type="button" onclick={handleAddUser}>Add User</Button>
-					<SheetClose>
+				<Sheet.Footer>
+					<Button onclick={handleAddUser}>Add User</Button>
+					<Sheet.Close>
 						{#snippet child({ props })}
 							<Button {...props} variant="outline">Cancel</Button>
 						{/snippet}
-					</SheetClose>
-				</SheetFooter>
-			</SheetContent>
-		</Sheet>
+					</Sheet.Close>
+				</Sheet.Footer>
+			</Sheet.Content>
+		</Sheet.Root>
 	</div>
 	<div class="rounded-md border">
 		<Table.Root>

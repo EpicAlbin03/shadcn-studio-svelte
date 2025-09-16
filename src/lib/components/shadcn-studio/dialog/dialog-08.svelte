@@ -1,25 +1,17 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 </script>
 
-<Dialog>
-	<DialogTrigger>
+<Dialog.Root>
+	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Terms & Condition</Button>
 		{/snippet}
-	</DialogTrigger>
-	<DialogContent class="gap-0 p-0 sm:max-h-[min(600px,80vh)] sm:max-w-md">
-		<DialogHeader class="contents space-y-0 text-left">
-			<DialogTitle class="border-b px-6 py-4">Terms and Condition</DialogTitle>
+	</Dialog.Trigger>
+	<Dialog.Content class="gap-0 p-0 sm:max-h-[min(600px,80vh)] sm:max-w-md">
+		<Dialog.Header class="contents space-y-0 text-left">
+			<Dialog.Title class="border-b px-6 py-4">Terms and Condition</Dialog.Title>
 			<div class="px-6 py-4 text-sm text-muted-foreground">
 				<ol class="flex list-decimal flex-col gap-2 pl-4">
 					<li>
@@ -54,18 +46,18 @@
 					</a>
 				</p>
 			</div>
-			<DialogFooter class="px-6 pb-4 sm:justify-end">
-				<DialogClose>
+			<Dialog.Footer class="px-6 pb-4 sm:justify-end">
+				<Dialog.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Cancel</Button>
 					{/snippet}
-				</DialogClose>
-				<DialogClose>
+				</Dialog.Close>
+				<Dialog.Close>
 					{#snippet child({ props })}
 						<Button {...props} type="button">I Agree</Button>
 					{/snippet}
-				</DialogClose>
-			</DialogFooter>
-		</DialogHeader>
-	</DialogContent>
-</Dialog>
+				</Dialog.Close>
+			</Dialog.Footer>
+		</Dialog.Header>
+	</Dialog.Content>
+</Dialog.Root>

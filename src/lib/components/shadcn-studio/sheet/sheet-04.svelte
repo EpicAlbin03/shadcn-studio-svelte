@@ -1,32 +1,23 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import {
-		Sheet,
-		SheetClose,
-		SheetContent,
-		SheetDescription,
-		SheetFooter,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 </script>
 
-<Sheet>
-	<SheetTrigger>
+<Sheet.Root>
+	<Sheet.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Scrollable Content</Button>
 		{/snippet}
-	</SheetTrigger>
-	<SheetContent>
-		<ScrollArea class="h-full">
-			<SheetHeader>
-				<SheetTitle>Terms & Condition</SheetTitle>
-				<SheetDescription
-					>Make sure read the terms and conditions before proceeding.</SheetDescription
-				>
-			</SheetHeader>
+	</Sheet.Trigger>
+	<Sheet.Content>
+		<ScrollArea class="h-full" tabindex={0}>
+			<Sheet.Header>
+				<Sheet.Title>Terms & Condition</Sheet.Title>
+				<Sheet.Description>
+					Make sure read the terms and conditions before proceeding.
+				</Sheet.Description>
+			</Sheet.Header>
 			<div class="space-y-1 p-4 pt-0 text-sm">
 				<p class="mb-2 font-medium">Last Updated: June 1, 2025</p>
 
@@ -128,18 +119,18 @@
 				<p>Email: support@example.com</p>
 				<p>Phone: +1 (800) 123-4567</p>
 			</div>
-			<SheetFooter>
-				<SheetClose>
+			<Sheet.Footer>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} type="submit">Accept</Button>
 					{/snippet}
-				</SheetClose>
-				<SheetClose>
+				</Sheet.Close>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Cancel</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
+				</Sheet.Close>
+			</Sheet.Footer>
 		</ScrollArea>
-	</SheetContent>
-</Sheet>
+	</Sheet.Content>
+</Sheet.Root>

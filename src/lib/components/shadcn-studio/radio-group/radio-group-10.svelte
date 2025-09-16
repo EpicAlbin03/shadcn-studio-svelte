@@ -20,13 +20,13 @@
 			<div class="group flex items-center justify-between">
 				<div class="flex items-center gap-2">
 					<RadioGroupItem
-						id={`${id}-${item.value}`}
+						id="{id}-{item.value}"
 						value={item.value}
-						aria-label={`plan-radio-${item.value}`}
+						aria-label="plan-radio-{item.value}"
 						class="bg-accent text-primary after:absolute after:inset-0 data-[state=checked]:border-primary-foreground data-[state=checked]:bg-primary-foreground! data-[state=checked]:[&_svg]:fill-primary"
-						aria-describedby={`${`${id}-${item.value}`}-price`}
+						aria-describedby="{id}-{item.value}-price"
 					/>
-					<Label class="inline-flex items-center" for={`${id}-${item.value}`}>
+					<Label class="inline-flex items-center" for="{id}-{item.value}">
 						{item.label}
 						{#if item.value === '2'}
 							<Badge
@@ -39,7 +39,7 @@
 					</Label>
 				</div>
 				<div
-					id={`${`${id}-${item.value}`}-price`}
+					id="{id}-{item.value}-price"
 					class="text-xs leading-[inherit] group-has-checked:text-primary-foreground"
 				>
 					{item.price}

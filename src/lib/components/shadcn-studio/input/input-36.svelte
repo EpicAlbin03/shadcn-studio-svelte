@@ -9,12 +9,12 @@
 
 	const id = $props.id();
 
-	const handleClearInput = () => {
+	function handleClearInput() {
 		value = '';
 		if (inputRef) {
 			inputRef.focus();
 		}
-	};
+	}
 </script>
 
 <div class="w-full max-w-xs space-y-2">

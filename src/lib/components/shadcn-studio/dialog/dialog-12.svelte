@@ -2,15 +2,7 @@
 	import { CheckIcon, MailIcon } from '@lucide/svelte';
 	import * as InputOTP from '$lib/components/ui/input-otp/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { cn } from '$lib/utils';
 	import { untrack } from 'svelte';
 
@@ -47,13 +39,13 @@
 	}
 </script>
 
-<Dialog>
-	<DialogTrigger>
+<Dialog.Root>
+	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">OTP code</Button>
 		{/snippet}
-	</DialogTrigger>
-	<DialogContent class="sm:max-w-md">
+	</Dialog.Trigger>
+	<Dialog.Content class="sm:max-w-md">
 		<div class="flex flex-col items-center gap-2">
 			<div
 				class={cn(
@@ -68,11 +60,11 @@
 					<MailIcon class="text-sky-600 dark:text-sky-400" strokeWidth={1} />
 				{/if}
 			</div>
-			<DialogHeader>
-				<DialogTitle class="sm:text-center">
+			<Dialog.Header>
+				<Dialog.Title class="sm:text-center">
 					{hasGuessed ? 'Account verified!' : 'Check Your Email'}
-				</DialogTitle>
-				<DialogDescription class="sm:text-center">
+				</Dialog.Title>
+				<Dialog.Description class="sm:text-center">
 					{#if hasGuessed}
 						<span>
 							Congratulations! your email account <strong>exa**le@gmail.com</strong> has been verified
@@ -83,17 +75,17 @@
 							your inbox and input the code below to activate your account. Try {CORRECT_CODE}
 						</span>
 					{/if}
-				</DialogDescription>
-			</DialogHeader>
+				</Dialog.Description>
+			</Dialog.Header>
 		</div>
 
 		{#if hasGuessed}
 			<div class="text-center">
-				<DialogClose>
+				<Dialog.Close>
 					{#snippet child({ props })}
 						<Button {...props} type="button" bind:ref={closeButtonRef}>Continue</Button>
 					{/snippet}
-				</DialogClose>
+				</Dialog.Close>
 			</div>
 		{:else}
 			<div class="space-y-4">
@@ -137,5 +129,5 @@
 				</p>
 			</div>
 		{/if}
-	</DialogContent>
-</Dialog>
+	</Dialog.Content>
+</Dialog.Root>

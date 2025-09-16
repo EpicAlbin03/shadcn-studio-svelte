@@ -1,14 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuLabel,
-		DropdownMenuRadioGroup,
-		DropdownMenuRadioItem,
-		DropdownMenuSeparator,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	let position = $state('bottom');
 </script>
@@ -20,12 +12,12 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-		<DropdownMenuSeparator />
+		<DropdownMenu.Label>Panel Position</DropdownMenu.Label>
+		<DropdownMenu.Separator />
 		<DropdownMenu.RadioGroup bind:value={position}>
-			<DropdownMenu.RadioItem value="top">Top</DropdownMenuRadioItem>
-			<DropdownMenu.RadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-			<DropdownMenu.RadioItem value="right" disabled>Right</DropdownMenuRadioItem>
-		</DropdownMenuRadioGroup>
-	</DropdownMenuContent>
+			<DropdownMenu.RadioItem value="top">Top</DropdownMenu.RadioItem>
+			<DropdownMenu.RadioItem value="bottom">Bottom</DropdownMenu.RadioItem>
+			<DropdownMenu.RadioItem value="right" disabled>Right</DropdownMenu.RadioItem>
+		</DropdownMenu.RadioGroup>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

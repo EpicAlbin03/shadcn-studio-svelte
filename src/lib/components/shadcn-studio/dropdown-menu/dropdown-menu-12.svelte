@@ -1,14 +1,7 @@
 <script lang="ts">
 	import { CircleHelp, DollarSign, Receipt, Settings, User } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
 
 <DropdownMenu.Root>
@@ -18,8 +11,8 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenuLabel>User Profile</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>User Profile</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			<DropdownMenu.Item>
 				<User />
 				Profile
@@ -40,6 +33,6 @@
 				<CircleHelp />
 				FAQ
 			</DropdownMenu.Item>
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

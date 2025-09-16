@@ -12,7 +12,7 @@
 	let price = $state(450);
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
@@ -47,7 +47,7 @@
 									? [...selected, label]
 									: selected.filter((item) => item !== label))}
 						/>
-						<Label for={`filter-${index + 1}`}>{label}</Label>
+						<Label for="filter-{index + 1}">{label}</Label>
 					</div>
 				{/each}
 			</div>

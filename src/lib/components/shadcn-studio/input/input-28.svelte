@@ -16,15 +16,15 @@
 		<Select.Root type="single" bind:value>
 			<Select.Trigger {id} class="rounded-e-none shadow-none focus-visible:z-1">
 				{value}
-			</SelectTrigger>
-			<SelectContent>
+			</Select.Trigger>
+			<Select.Content>
 				{#each protocols as protocol (protocol)}
 					<Select.Item value={protocol} class="pr-2 [&_svg]:hidden">
 						{protocol}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectContent>
-		</Select>
+			</Select.Content>
+		</Select.Root>
 		<Input
 			{id}
 			type="text"

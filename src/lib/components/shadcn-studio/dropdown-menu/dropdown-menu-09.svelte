@@ -1,14 +1,7 @@
 <script lang="ts">
 	import { PencilLine, Upload, Trash2 } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuSeparator,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
 
 <DropdownMenu.Root>
@@ -18,7 +11,7 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="start" class="w-34">
-		<DropdownMenuGroup>
+		<DropdownMenu.Group>
 			<DropdownMenu.Item>
 				<PencilLine />
 				Edit
@@ -27,11 +20,11 @@
 				<Upload />
 				Share
 			</DropdownMenu.Item>
-			<DropdownMenuSeparator />
-			<DropdownMenuItem variant="destructive">
+			<DropdownMenu.Separator />
+			<DropdownMenu.Item variant="destructive">
 				<Trash2 />
 				<span>Delete</span>
 			</DropdownMenu.Item>
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

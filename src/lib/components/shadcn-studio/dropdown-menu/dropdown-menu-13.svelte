@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuCheckboxItem,
-		DropdownMenuContent,
-		DropdownMenuLabel,
-		DropdownMenuSeparator,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	let showStatusBar = $state(true);
 	let showActivityBar = $state(false);
@@ -21,10 +14,12 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenuLabel>Appearance</DropdownMenuLabel>
-		<DropdownMenuSeparator />
-		<DropdownMenuCheckboxItem bind:checked={showStatusBar}>Status Bar</DropdownMenuCheckboxItem>
-		<DropdownMenuCheckboxItem bind:checked={showActivityBar} disabled>API</DropdownMenuCheckboxItem>
-		<DropdownMenuCheckboxItem bind:checked={showPanel}>Invite users</DropdownMenuCheckboxItem>
-	</DropdownMenuContent>
+		<DropdownMenu.Label>Appearance</DropdownMenu.Label>
+		<DropdownMenu.Separator />
+		<DropdownMenu.CheckboxItem bind:checked={showStatusBar}>Status Bar</DropdownMenu.CheckboxItem>
+		<DropdownMenu.CheckboxItem bind:checked={showActivityBar} disabled>
+			API
+		</DropdownMenu.CheckboxItem>
+		<DropdownMenu.CheckboxItem bind:checked={showPanel}>Invite users</DropdownMenu.CheckboxItem>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

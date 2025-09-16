@@ -5,7 +5,7 @@
 	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">

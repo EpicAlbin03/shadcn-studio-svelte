@@ -33,14 +33,13 @@
 	<HoverCardContent>
 		<div class="space-y-3">
 			<div class="flex items-center justify-between gap-2 text-sm font-semibold">
-				<span>Resume project completion</span>
-				<span>25%</span>
+				Resume project completion 25%
 			</div>
 			<Progress value={25} />
 			<p class="text-sm">Developing platform where ai will generate resume automatically Ai</p>
 			<div class="flex items-center gap-2 text-xs text-muted-foreground">
 				<CalendarIcon class="size-4" />
-				<span>Started in December 2024</span>
+				Started in December 2024
 			</div>
 			<div class="flex -space-x-2">
 				{#each avatars as avatar}

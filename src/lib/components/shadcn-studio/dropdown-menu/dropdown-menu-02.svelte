@@ -1,13 +1,7 @@
 <script lang="ts">
 	import { Check } from '@lucide/svelte';
-	import { Avatar, AvatarImage, AvatarFallback } from '$lib/components/ui/avatar';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const users = [
 		{
@@ -33,25 +27,26 @@
 		}
 	];
 
-	let selectUser = $state(users[0]);
+	let selectedUser = $state(users[0]);
 </script>
 
 <DropdownMenu.Root>
-	<DropdownMenuTrigger class="flex items-center gap-2 rounded-lg bg-secondary px-3 py-2.5">
+	<DropdownMenu.Trigger class="flex items-center gap-2 rounded-lg bg-secondary px-3 py-2.5">
 		<Avatar.Root>
-			<Avatar.Image src={selectUser.src} alt={selectUser.name} />
-			<Avatar.Fallback class="text-xs">{selectUser.fallback}</Avatar.Fallback>
+			<Avatar.Image src={selectedUser.src} alt={selectedUser.name} />
+			<Avatar.Fallback class="text-xs">{selectedUser.fallback}</Avatar.Fallback>
 		</Avatar.Root>
 		<div class="flex flex-col gap-1 text-start leading-none">
-			<span class="max-w-[17ch] truncate text-sm leading-none font-semibold">{selectUser.name}</span
+			<span class="max-w-[17ch] truncate text-sm leading-none font-semibold"
+				>{selectedUser.name}</span
 			>
-			<span class="max-w-[20ch] truncate text-xs text-muted-foreground">{selectUser.mail}</span>
+			<span class="max-w-[20ch] truncate text-xs text-muted-foreground">{selectedUser.mail}</span>
 		</div>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="start" class="w-66">
-		<DropdownMenuLabel>Task Assignment</DropdownMenuLabel>
+		<DropdownMenu.Label>Task Assignment</DropdownMenu.Label>
 		{#each users as user (user.id)}
-			<DropdownMenuItem onclick={() => (selectUser = user)}>
+			<DropdownMenu.Item onclick={() => (selectedUser = user)}>
 				<div class="flex items-center gap-2">
 					<Avatar.Root>
 						<Avatar.Image src={user.src} alt={user.name} />
@@ -63,10 +58,10 @@
 						<span class="max-w-[20ch] truncate text-xs text-muted-foreground">{user.mail}</span>
 					</div>
 				</div>
-				{#if selectUser.id === user.id}
+				{#if selectedUser.id === user.id}
 					<Check class="ml-auto" />
 				{/if}
 			</DropdownMenu.Item>
 		{/each}
-	</DropdownMenuContent>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

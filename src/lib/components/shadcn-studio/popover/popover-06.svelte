@@ -4,7 +4,6 @@
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Progress } from '$lib/components/ui/progress';
 	import { cn } from '$lib/utils';
-	import { untrack } from 'svelte';
 
 	let isPaused = $state(false);
 	let isCanceled = $state(false);
@@ -34,13 +33,13 @@
 		};
 	});
 
-	const getText = () => {
+	function getText() {
 		if (isCanceled) return 'Download Canceled';
 		if (isPaused) return 'Download Paused';
 		if (value === 100) return 'Download Complete';
 
 		return 'Downloading File';
-	};
+	}
 </script>
 
 <Popover.Root bind:open>
@@ -65,7 +64,7 @@
 				</div>
 				<span class="flex-1 text-sm font-medium">{getText()}</span>
 				{#if !isCanceled}
-					<span class="text-sm font-semibold">{`${value}%`}</span>
+					<span class="text-sm font-semibold">{value}%</span>
 				{/if}
 			</div>
 			<Progress {value} class="w-full" />

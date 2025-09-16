@@ -22,7 +22,7 @@
 	const averageRating = Number((totalRating / totalReviews || 0).toFixed(2));
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">

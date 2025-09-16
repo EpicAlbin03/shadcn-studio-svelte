@@ -1,32 +1,23 @@
 <script lang="ts">
 	import { ChevronLeftIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 </script>
 
-<Dialog>
-	<DialogTrigger>
+<Dialog.Root>
+	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Fullscreen Dialog</Button>
 		{/snippet}
-	</DialogTrigger>
-	<DialogContent
+	</Dialog.Trigger>
+	<Dialog.Content
 		class="mb-8 flex h-[calc(100vh-2rem)] min-w-[calc(100vw-2rem)] flex-col justify-between gap-0 p-0"
 	>
 		<ScrollArea class="flex flex-col justify-between overflow-hidden">
-			<DialogHeader class="contents space-y-0 text-left">
-				<DialogTitle class="px-6 pt-6">Product Information</DialogTitle>
-				<DialogDescription>
+			<Dialog.Header class="contents space-y-0 text-left">
+				<Dialog.Title class="px-6 pt-6">Product Information</Dialog.Title>
+				<Dialog.Description>
 					<div class="p-6">
 						<div class="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
 							<div class="space-y-1">
@@ -106,19 +97,19 @@
 							</div>
 						</div>
 					</div>
-				</DialogDescription>
-			</DialogHeader>
+				</Dialog.Description>
+			</Dialog.Header>
 		</ScrollArea>
-		<DialogFooter class="px-6 pb-6 sm:justify-end">
-			<DialogClose>
+		<Dialog.Footer class="px-6 pb-6 sm:justify-end">
+			<Dialog.Close>
 				{#snippet child({ props })}
 					<Button {...props} variant="outline">
 						<ChevronLeftIcon />
 						Back
 					</Button>
 				{/snippet}
-			</DialogClose>
-			<Button type="button">Read More</Button>
-		</DialogFooter>
-	</DialogContent>
-</Dialog>
+			</Dialog.Close>
+			<Button>Read More</Button>
+		</Dialog.Footer>
+	</Dialog.Content>
+</Dialog.Root>

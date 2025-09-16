@@ -1,14 +1,7 @@
 <script lang="ts">
 	import { AlignJustify, Heading1, Heading2, Pencil, TextSearch } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
@@ -28,7 +21,7 @@
 		},
 		{
 			icon: TextSearch,
-			property: 'text search',
+			property: 'Text search',
 			description: 'find any text'
 		}
 	];
@@ -44,8 +37,8 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenuLabel>Edit text</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>Edit text</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			{#each listItems as item}
 				<DropdownMenu.Item>
 					<span class="flex items-center justify-center rounded-md border p-2">
@@ -57,6 +50,6 @@
 					</div>
 				</DropdownMenu.Item>
 			{/each}
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

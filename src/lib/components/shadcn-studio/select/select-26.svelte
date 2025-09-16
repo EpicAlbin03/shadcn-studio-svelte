@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const timeZones = {
 		northAmerica: [
@@ -87,18 +80,18 @@
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
 			{triggerContent}
-		</SelectTrigger>
+		</Select.Trigger>
 		<Select.Content class="max-h-100">
 			{#each regions as region (region.value)}
-				<SelectGroup>
-					<SelectLabel>{region.label}</SelectLabel>
+				<Select.Group>
+					<Select.Label>{region.label}</Select.Label>
 					{#each timeZones[region.value as keyof typeof timeZones] as timeZone (timeZone.value)}
 						<Select.Item value={timeZone.value} label={timeZone.label}>
 							{timeZone.label}
-						</SelectItem>
+						</Select.Item>
 					{/each}
-				</SelectGroup>
+				</Select.Group>
 			{/each}
-		</SelectContent>
-	</Select>
+		</Select.Content>
+	</Select.Root>
 </div>

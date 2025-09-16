@@ -9,5 +9,5 @@
 	<Label for={id}>
 		Required textarea <span class="text-destructive">*</span>
 	</Label>
-	<Textarea placeholder="Type your feedback here" {id} required />
+	<Textarea {id} placeholder="Type your feedback here" required />
 </div>

@@ -1,15 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import {
-		Dialog,
-		DialogClose,
-		DialogContent,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group';
 	import { Textarea } from '$lib/components/ui/textarea';
@@ -25,17 +17,17 @@
 	];
 </script>
 
-<Dialog>
+<Dialog.Root>
 	<form>
-		<DialogTrigger>
+		<Dialog.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Rating</Button>
 			{/snippet}
-		</DialogTrigger>
-		<DialogContent class="sm:max-w-md">
-			<DialogHeader>
-				<DialogTitle class="text-xl">Help us improve our product for you</DialogTitle>
-			</DialogHeader>
+		</Dialog.Trigger>
+		<Dialog.Content class="sm:max-w-md">
+			<Dialog.Header>
+				<Dialog.Title class="text-xl">Help us improve our product for you</Dialog.Title>
+			</Dialog.Header>
 			<form class="flex flex-col gap-4 pt-4">
 				<fieldset class="space-y-4">
 					<legend class="text-sm leading-none font-medium text-foreground">
@@ -65,15 +57,15 @@
 					<Label for="terms">I consent to Shadcn Studio contacting me based on my feedback</Label>
 				</div>
 
-				<DialogFooter class="sm:justify-end">
-					<DialogClose>
+				<Dialog.Footer class="sm:justify-end">
+					<Dialog.Close>
 						{#snippet child({ props })}
 							<Button {...props} variant="outline">Cancel</Button>
 						{/snippet}
-					</DialogClose>
+					</Dialog.Close>
 					<Button type="submit">Submit</Button>
-				</DialogFooter>
+				</Dialog.Footer>
 			</form>
-		</DialogContent>
+		</Dialog.Content>
 	</form>
-</Dialog>
+</Dialog.Root>

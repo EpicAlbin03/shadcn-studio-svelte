@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from '@lucide/svelte';
+	import {
+		ChevronDownIcon,
+		ChevronLeftIcon,
+		ChevronRightIcon,
+		ChevronUpIcon
+	} from '@lucide/svelte';
 	import type {
 		ColumnDef,
 		PaginationState,
@@ -73,26 +78,7 @@
 			header: 'Availability',
 			accessorKey: 'availability',
 			cell: ({ row }) => {
-				const availability = row.getValue('availability') as string;
-
-				const styles = {
-					'In Stock':
-						'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
-					'Out of Stock':
-						'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
-					Limited:
-						'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
-				}[availability];
-
-				const badgeSnippet = createRawSnippet<[string]>((getAvailability) => {
-					const availability = getAvailability();
-					return {
-						render: () =>
-							`<span class="${cn('inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-none focus-visible:outline-none', styles)}">${availability}</span>`
-					};
-				});
-
-				return renderSnippet(badgeSnippet, availability);
+				return renderSnippet(AvailabilitySnippet, row.getValue('availability'));
 			}
 		}
 	];
@@ -116,6 +102,7 @@
 			return data;
 		},
 		columns,
+		enableSortingRemoval: false,
 		state: {
 			get rowSelection() {
 				return rowSelection;
@@ -129,6 +116,7 @@
 		},
 		getCoreRowModel: getCoreRowModel(),
 		getSortedRowModel: getSortedRowModel(),
+		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: (updater) => {
 			if (typeof updater === 'function') {
 				sorting = updater(sorting);
@@ -136,8 +124,6 @@
 				sorting = updater;
 			}
 		},
-		enableSortingRemoval: false,
-		getPaginationRowModel: getPaginationRowModel(),
 		onPaginationChange: (updater) => {
 			if (typeof updater === 'function') {
 				pagination = updater(pagination);
@@ -162,6 +148,20 @@
 		})
 	);
 </script>
+
+{#snippet AvailabilitySnippet(availability: string)}
+	{@const styles = {
+		'In Stock':
+			'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+		'Out of Stock':
+			'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+		Limited:
+			'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
+	}[availability]}
+	<Badge class={cn('rounded-full border-none focus-visible:outline-none', styles)}>
+		{availability}
+	</Badge>
+{/snippet}
 
 <div class="w-full space-y-4">
 	<div class="rounded-md border">
@@ -192,9 +192,9 @@
 												context={header.getContext()}
 											/>
 											{#if header.column.getIsSorted() === 'asc'}
-												<ChevronUp class="shrink-0 opacity-60" size={16} aria-hidden="true" />
+												<ChevronUpIcon class="shrink-0 opacity-60" size={16} aria-hidden="true" />
 											{:else if header.column.getIsSorted() === 'desc'}
-												<ChevronDown class="shrink-0 opacity-60" size={16} aria-hidden="true" />
+												<ChevronDownIcon class="shrink-0 opacity-60" size={16} aria-hidden="true" />
 											{/if}
 										</div>
 									{:else}
@@ -243,7 +243,7 @@
 					disabled={!table.getCanPreviousPage()}
 					aria-label="Go to previous page"
 				>
-					<ChevronLeft size={16} aria-hidden="true" />
+					<ChevronLeftIcon size={16} aria-hidden="true" />
 				</Button>
 
 				{#if showLeftEllipsis}
@@ -274,13 +274,13 @@
 					disabled={!table.getCanNextPage()}
 					aria-label="Go to next page"
 				>
-					<ChevronRight size={16} aria-hidden="true" />
+					<ChevronRightIcon size={16} aria-hidden="true" />
 				</Button>
 			</div>
 		</div>
 
 		<div class="flex flex-1 justify-end">
-			<Select
+			<Select.Root
 				type="single"
 				value={table.getState().pagination.pageSize.toString()}
 				onValueChange={(value) => {
@@ -289,21 +289,21 @@
 					}
 				}}
 			>
-				<SelectTrigger
+				<Select.Trigger
 					id="results-per-page"
 					class="w-fit whitespace-nowrap"
 					aria-label="Results per page"
 				>
 					{table.getState().pagination.pageSize} / page
-				</SelectTrigger>
-				<SelectContent>
+				</Select.Trigger>
+				<Select.Content>
 					{#each [5, 10, 25, 50] as pageSizeOption (pageSizeOption)}
 						<Select.Item value={pageSizeOption.toString()}>
 							{pageSizeOption} / page
-						</SelectItem>
+						</Select.Item>
 					{/each}
-				</SelectContent>
-			</Select>
+				</Select.Content>
+			</Select.Root>
 		</div>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">

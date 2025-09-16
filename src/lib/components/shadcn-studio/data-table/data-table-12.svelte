@@ -1,20 +1,9 @@
 <script lang="ts">
-	import { Download, FileText, FileSpreadsheet } from '@lucide/svelte';
+	import { DownloadIcon, FileTextIcon, FileSpreadsheetIcon } from '@lucide/svelte';
 	import Papa from 'papaparse';
 	import * as XLSX from 'xlsx';
-	import type {
-		ColumnDef,
-		ColumnFiltersState,
-		SortingState,
-		VisibilityState,
-		RowSelectionState
-	} from '@tanstack/table-core';
-	import {
-		getCoreRowModel,
-		getFilteredRowModel,
-		getPaginationRowModel,
-		getSortedRowModel
-	} from '@tanstack/table-core';
+	import type { ColumnDef, ColumnFiltersState, RowSelectionState } from '@tanstack/table-core';
+	import { getCoreRowModel, getFilteredRowModel, getSortedRowModel } from '@tanstack/table-core';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
@@ -133,26 +122,7 @@
 			accessorKey: 'status',
 			header: 'Status',
 			cell: ({ row }) => {
-				const status = row.getValue('status') as string;
-
-				const styles = {
-					success:
-						'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
-					failed:
-						'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
-					processing:
-						'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
-				}[status];
-
-				const badgeSnippet = createRawSnippet<[string]>((getStatus) => {
-					const status = getStatus();
-					return {
-						render: () =>
-							`<span class="${cn('inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-none focus-visible:outline-none', styles)}">${status}</span>`
-					};
-				});
-
-				return renderSnippet(badgeSnippet, status);
+				return renderSnippet(StatusSnippet, row.getValue('status'));
 			}
 		},
 		{
@@ -195,9 +165,7 @@
 		}
 	];
 
-	let sorting: SortingState = $state([]);
 	let columnFilters: ColumnFiltersState = $state([]);
-	let columnVisibility: VisibilityState = $state({});
 	let rowSelection: RowSelectionState = $state({});
 	let globalFilter: string = $state('');
 
@@ -206,35 +174,10 @@
 			return data;
 		},
 		columns,
-		onSortingChange: (updater) => {
-			sorting = typeof updater === 'function' ? updater(sorting) : updater;
-		},
-		onColumnFiltersChange: (updater) => {
-			columnFilters = typeof updater === 'function' ? updater(columnFilters) : updater;
-		},
-		onColumnVisibilityChange: (updater) => {
-			columnVisibility = typeof updater === 'function' ? updater(columnVisibility) : updater;
-		},
-		onRowSelectionChange: (updater) => {
-			rowSelection = typeof updater === 'function' ? updater(rowSelection) : updater;
-		},
-		onGlobalFilterChange: (updater) => {
-			globalFilter = typeof updater === 'function' ? updater(globalFilter) : updater;
-		},
-		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		getFilteredRowModel: getFilteredRowModel(),
 		globalFilterFn: 'includesString',
 		state: {
-			get sorting() {
-				return sorting;
-			},
 			get columnFilters() {
 				return columnFilters;
-			},
-			get columnVisibility() {
-				return columnVisibility;
 			},
 			get rowSelection() {
 				return rowSelection;
@@ -242,10 +185,22 @@
 			get globalFilter() {
 				return globalFilter;
 			}
+		},
+		getCoreRowModel: getCoreRowModel(),
+		getSortedRowModel: getSortedRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
+		onColumnFiltersChange: (updater) => {
+			columnFilters = typeof updater === 'function' ? updater(columnFilters) : updater;
+		},
+		onRowSelectionChange: (updater) => {
+			rowSelection = typeof updater === 'function' ? updater(rowSelection) : updater;
+		},
+		onGlobalFilterChange: (updater) => {
+			globalFilter = typeof updater === 'function' ? updater(globalFilter) : updater;
 		}
 	});
 
-	const exportToCSV = () => {
+	function exportToCSV() {
 		const selectedRows = table.getSelectedRowModel().rows;
 
 		const dataToExport =
@@ -267,9 +222,9 @@
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
-	};
+	}
 
-	const exportToExcel = () => {
+	function exportToExcel() {
 		const selectedRows = table.getSelectedRowModel().rows;
 
 		const dataToExport =
@@ -287,9 +242,9 @@
 		worksheet['!cols'] = cols;
 
 		XLSX.writeFile(workbook, `payments-export-${new Date().toISOString().split('T')[0]}.xlsx`);
-	};
+	}
 
-	const exportToJSON = () => {
+	function exportToJSON() {
 		const selectedRows = table.getSelectedRowModel().rows;
 
 		const dataToExport =
@@ -308,8 +263,22 @@
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
-	};
+	}
 </script>
+
+{#snippet StatusSnippet(status: string)}
+	{@const styles = {
+		success:
+			'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+		failed:
+			'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+		processing:
+			'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
+	}[status]}
+	<Badge class={cn('rounded-full border-none focus-visible:outline-none', styles)}>
+		{status}
+	</Badge>
+{/snippet}
 
 <div class="w-full">
 	<div class="flex justify-between gap-2 pb-4 max-sm:flex-col sm:items-center">
@@ -329,23 +298,23 @@
 				<DropdownMenu.Trigger>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline" size="sm">
-							<Download class="mr-2 h-4 w-4" />
+							<DownloadIcon class="mr-2 h-4 w-4" />
 							Export
 						</Button>
 					{/snippet}
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content align="end">
 					<DropdownMenu.Item onclick={exportToCSV}>
-						<FileText class="mr-2 h-4 w-4" />
+						<FileTextIcon class="mr-2 h-4 w-4" />
 						Export as CSV
 					</DropdownMenu.Item>
 					<DropdownMenu.Item onclick={exportToExcel}>
-						<FileSpreadsheet class="mr-2 h-4 w-4" />
+						<FileSpreadsheetIcon class="mr-2 h-4 w-4" />
 						Export as Excel
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator />
 					<DropdownMenu.Item onclick={exportToJSON}>
-						<FileText class="mr-2 h-4 w-4" />
+						<FileTextIcon class="mr-2 h-4 w-4" />
 						Export as JSON
 					</DropdownMenu.Item>
 				</DropdownMenu.Content>

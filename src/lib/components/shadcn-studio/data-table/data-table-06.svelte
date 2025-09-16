@@ -1,12 +1,5 @@
 <script lang="ts">
-	import {
-		type ColumnDef,
-		type ColumnFiltersState,
-		type ColumnSizingState,
-		type RowSelectionState,
-		type SortingState,
-		getCoreRowModel
-	} from '@tanstack/table-core';
+	import { type ColumnDef, type ColumnSizingState, getCoreRowModel } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import {
@@ -166,9 +159,6 @@
 		}
 	];
 
-	let sorting = $state<SortingState>([]);
-	let columnFilters = $state<ColumnFiltersState>([]);
-	let rowSelection = $state<RowSelectionState>({});
 	let columnSizing = $state<ColumnSizingState>({});
 
 	const table = createSvelteTable({
@@ -178,47 +168,17 @@
 		columns,
 		columnResizeMode: 'onChange',
 		enableColumnResizing: true,
-		onSortingChange: (updater) => {
-			if (typeof updater === 'function') {
-				sorting = updater(sorting);
-			} else {
-				sorting = updater;
+		state: {
+			get columnSizing() {
+				return columnSizing;
 			}
 		},
-		onColumnFiltersChange: (updater) => {
-			if (typeof updater === 'function') {
-				columnFilters = updater(columnFilters);
-			} else {
-				columnFilters = updater;
-			}
-		},
+		getCoreRowModel: getCoreRowModel(),
 		onColumnSizingChange: (updater) => {
 			if (typeof updater === 'function') {
 				columnSizing = updater(columnSizing);
 			} else {
 				columnSizing = updater;
-			}
-		},
-		getCoreRowModel: getCoreRowModel(),
-		onRowSelectionChange: (updater) => {
-			if (typeof updater === 'function') {
-				rowSelection = updater(rowSelection);
-			} else {
-				rowSelection = updater;
-			}
-		},
-		state: {
-			get sorting() {
-				return sorting;
-			},
-			get columnFilters() {
-				return columnFilters;
-			},
-			get rowSelection() {
-				return rowSelection;
-			},
-			get columnSizing() {
-				return columnSizing;
 			}
 		}
 	});

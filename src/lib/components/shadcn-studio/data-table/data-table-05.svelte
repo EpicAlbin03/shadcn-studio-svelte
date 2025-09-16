@@ -1,12 +1,9 @@
 <script lang="ts">
 	import {
 		type ColumnDef,
-		type ColumnFiltersState,
 		type RowSelectionState,
 		type SortingState,
 		getCoreRowModel,
-		getFilteredRowModel,
-		getPaginationRowModel,
 		getSortedRowModel
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
@@ -147,8 +144,6 @@
 	];
 
 	let sorting = $state<SortingState>([]);
-	let columnFilters = $state<ColumnFiltersState>([]);
-	let columnVisibility = $state({});
 	let rowSelection = $state<RowSelectionState>({});
 
 	const table = createSvelteTable({
@@ -156,6 +151,16 @@
 			return data;
 		},
 		columns,
+		state: {
+			get sorting() {
+				return sorting;
+			},
+			get rowSelection() {
+				return rowSelection;
+			}
+		},
+		getCoreRowModel: getCoreRowModel(),
+		getSortedRowModel: getSortedRowModel(),
 		onSortingChange: (updater) => {
 			if (typeof updater === 'function') {
 				sorting = updater(sorting);
@@ -163,43 +168,11 @@
 				sorting = updater;
 			}
 		},
-		onColumnFiltersChange: (updater) => {
-			if (typeof updater === 'function') {
-				columnFilters = updater(columnFilters);
-			} else {
-				columnFilters = updater;
-			}
-		},
-		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		getFilteredRowModel: getFilteredRowModel(),
-		onColumnVisibilityChange: (updater) => {
-			if (typeof updater === 'function') {
-				columnVisibility = updater(columnVisibility);
-			} else {
-				columnVisibility = updater;
-			}
-		},
 		onRowSelectionChange: (updater) => {
 			if (typeof updater === 'function') {
 				rowSelection = updater(rowSelection);
 			} else {
 				rowSelection = updater;
-			}
-		},
-		state: {
-			get sorting() {
-				return sorting;
-			},
-			get columnFilters() {
-				return columnFilters;
-			},
-			get columnVisibility() {
-				return columnVisibility;
-			},
-			get rowSelection() {
-				return rowSelection;
 			}
 		}
 	});

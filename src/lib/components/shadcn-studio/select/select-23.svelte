@@ -1,14 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectSeparator,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const countries = {
 		northAmerica: [
@@ -58,21 +50,21 @@
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
 			{triggerContent}
-		</SelectTrigger>
-		<SelectContent>
+		</Select.Trigger>
+		<Select.Content>
 			{#each continents as continent, index (continent.value)}
-				<SelectGroup>
-					<SelectLabel>{continent.label}</SelectLabel>
+				<Select.Group>
+					<Select.Label>{continent.label}</Select.Label>
 					{#each countries[continent.value as keyof typeof countries] as country (country.value)}
 						<Select.Item value={country.value} label={country.label}>
 							{country.label}
-						</SelectItem>
+						</Select.Item>
 					{/each}
-				</SelectGroup>
+				</Select.Group>
 				{#if index !== continents.length - 1}
-					<SelectSeparator />
+					<Select.Separator />
 				{/if}
 			{/each}
-		</SelectContent>
-	</Select>
+		</Select.Content>
+	</Select.Root>
 </div>

@@ -2,8 +2,8 @@
 	import { toast } from 'svelte-sonner';
 	import { Button } from '$lib/components/ui/button';
 
-	const promise = () =>
-		new Promise((resolve, reject) =>
+	function promise() {
+		return new Promise((resolve, reject) =>
 			setTimeout(() => {
 				if (Math.random() < 0.5) {
 					resolve('foo');
@@ -12,6 +12,7 @@
 				}
 			}, 2000)
 		);
+	}
 </script>
 
 <Button

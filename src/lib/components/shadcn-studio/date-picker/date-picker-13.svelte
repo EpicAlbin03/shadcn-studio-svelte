@@ -130,7 +130,7 @@
 					},
 					xAxis: {
 						format: (d) => new Date(d).toLocaleDateString('en-US', { day: 'numeric' }),
-						ticks: 2
+						ticks: 2 // every other day
 					}
 				}}
 			>

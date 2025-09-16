@@ -11,11 +11,10 @@
 
 	const id = $props.id();
 
-	const columnFilterValue = column.getFilterValue();
+	const columnFilterValue = $derived(column.getFilterValue());
+	// @ts-ignore
 	const { filterVariant } = column.columnDef.meta ?? {};
 	const columnHeader = typeof column.columnDef.header === 'string' ? column.columnDef.header : '';
-
-	let selectValue = $state();
 
 	const sortedUniqueValues = $derived.by(() => {
 		if (filterVariant === 'range') return [];
@@ -39,7 +38,7 @@
 		<Label>{columnHeader}</Label>
 		<div class="flex">
 			<Input
-				id={`${id}-range-1`}
+				id="{id}-range-1"
 				class="flex-1 rounded-e-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
 				value={(columnFilterValue as [number, number])?.[0] ?? ''}
 				oninput={(e) =>
@@ -49,10 +48,10 @@
 					])}
 				placeholder="Min"
 				type="number"
-				aria-label={`${columnHeader} min`}
+				aria-label="{columnHeader} min"
 			/>
 			<Input
-				id={`${id}-range-2`}
+				id="{id}-range-2"
 				class="-ms-px flex-1 rounded-s-none [-moz-appearance:_textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
 				value={(columnFilterValue as [number, number])?.[1] ?? ''}
 				oninput={(e) =>
@@ -62,43 +61,43 @@
 					])}
 				placeholder="Max"
 				type="number"
-				aria-label={`${columnHeader} max`}
+				aria-label="{columnHeader} max"
 			/>
 		</div>
 	</div>
 {:else if filterVariant === 'select'}
 	<div class="*:not-first:mt-2">
-		<Label for={`${id}-select`}>{columnHeader}</Label>
-		<Select
+		<Label for="{id}-select">{columnHeader}</Label>
+		<Select.Root
 			type="single"
-			value={columnFilterValue?.toString() ?? 'all'}
+			value={(columnFilterValue ?? 'all') as string}
 			onValueChange={(value) => {
 				column.setFilterValue(value === 'all' ? undefined : value);
 			}}
 		>
-			<Select.Trigger id={`${id}-select`} class="w-full">
-				{columnFilterValue?.toString() ?? 'All'}
-			</SelectTrigger>
-			<SelectContent>
-				<Select.Item value="all">All</SelectItem>
+			<Select.Trigger id="{id}-select" class="w-full">
+				{(columnFilterValue ?? 'All') as string}
+			</Select.Trigger>
+			<Select.Content>
+				<Select.Item value="all">All</Select.Item>
 				{#each sortedUniqueValues as value (String(value))}
 					<Select.Item value={String(value)}>
 						{String(value)}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectContent>
-		</Select>
+			</Select.Content>
+		</Select.Root>
 	</div>
 {:else}
 	<div class="*:not-first:mt-2">
-		<Label for={`${id}-input`}>{columnHeader}</Label>
+		<Label for="{id}-input">{columnHeader}</Label>
 		<div class="relative">
 			<Input
-				id={`${id}-input`}
+				id="{id}-input"
 				class="peer ps-9"
 				value={(columnFilterValue ?? '') as string}
 				oninput={(e) => column.setFilterValue(e.currentTarget.value)}
-				placeholder={`Search ${columnHeader.toLowerCase()}`}
+				placeholder="Search {columnHeader.toLowerCase()}"
 				type="text"
 			/>
 			<div

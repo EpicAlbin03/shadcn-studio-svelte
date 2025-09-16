@@ -5,7 +5,7 @@
 	import { Textarea } from '$lib/components/ui/textarea';
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">

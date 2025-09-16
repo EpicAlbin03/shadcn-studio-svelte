@@ -1,14 +1,5 @@
 <script lang="ts">
-	import {
-		Table,
-		TableBody,
-		TableCaption,
-		TableCell,
-		TableFooter,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const invoices = [
 		{
@@ -56,32 +47,32 @@
 	];
 </script>
 
-<Table>
-	<TableCaption>Highlight row table.</TableCaption>
-	<TableHeader>
-		<TableRow>
-			<TableHead class="w-25">Invoice</TableHead>
-			<TableHead>Status</TableHead>
-			<TableHead>Method</TableHead>
-			<TableHead class="text-right">Amount</TableHead>
-		</TableRow>
-	</TableHeader>
-	<TableBody>
+<Table.Root>
+	<Table.Caption>Highlight row table</Table.Caption>
+	<Table.Header>
+		<Table.Row>
+			<Table.Head class="w-25">Invoice</Table.Head>
+			<Table.Head>Status</Table.Head>
+			<Table.Head>Method</Table.Head>
+			<Table.Head class="text-right">Amount</Table.Head>
+		</Table.Row>
+	</Table.Header>
+	<Table.Body>
 		{#each invoices as invoice (invoice.invoice)}
-			<TableRow
+			<Table.Row
 				class="nth-3:bg-sky-600/10 nth-3:hover:bg-sky-600/20 nth-3:dark:bg-sky-400/10 nth-3:dark:hover:bg-sky-400/20"
 			>
-				<TableCell class="font-medium">{invoice.invoice}</TableCell>
-				<TableCell>{invoice.paymentStatus}</TableCell>
-				<TableCell>{invoice.paymentMethod}</TableCell>
-				<TableCell class="text-right">{invoice.totalAmount}</TableCell>
-			</TableRow>
+				<Table.Cell class="font-medium">{invoice.invoice}</Table.Cell>
+				<Table.Cell>{invoice.paymentStatus}</Table.Cell>
+				<Table.Cell>{invoice.paymentMethod}</Table.Cell>
+				<Table.Cell class="text-right">{invoice.totalAmount}</Table.Cell>
+			</Table.Row>
 		{/each}
-	</TableBody>
-	<TableFooter>
-		<TableRow>
-			<TableCell colspan={3}>Total</TableCell>
-			<TableCell class="text-right">$2,500.00</TableCell>
-		</TableRow>
-	</TableFooter>
-</Table>
+	</Table.Body>
+	<Table.Footer>
+		<Table.Row>
+			<Table.Cell colspan={3}>Total</Table.Cell>
+			<Table.Cell class="text-right">$2,500.00</Table.Cell>
+		</Table.Row>
+	</Table.Footer>
+</Table.Root>

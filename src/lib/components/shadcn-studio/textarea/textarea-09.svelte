@@ -8,8 +8,8 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Filled Textarea</Label>
 	<Textarea
+		{id}
 		class="border-transparent bg-muted shadow-none"
 		placeholder="Type your feedback here"
-		{id}
 	/>
 </div>

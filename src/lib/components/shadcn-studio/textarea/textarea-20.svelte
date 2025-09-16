@@ -8,10 +8,10 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Read only textarea</Label>
 	<Textarea
+		{id}
 		class="read-only:bg-muted"
 		defaultValue="Read only text"
 		placeholder="Type your feedback here"
-		{id}
 		readonly
 	/>
 </div>

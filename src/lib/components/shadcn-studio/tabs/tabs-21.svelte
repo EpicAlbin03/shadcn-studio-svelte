@@ -1,7 +1,31 @@
 <script lang="ts">
+	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
 	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { tabs } from './data';
+
+	const tabs = [
+		{
+			name: 'Explore',
+			value: 'explore',
+			icon: BookIcon,
+			content: `Discover <span class='text-foreground font-semibold'>fresh ideas</span>, trending topics, and hidden gems
+				curated just for you. Start exploring and let your curiosity lead the way!`
+		},
+		{
+			name: 'Favorites',
+			value: 'favorites',
+			icon: HeartIcon,
+			content: `All your <span class='text-foreground font-semibold'>favorites</span> are saved here. Revisit articles,
+        collections, and moments you love, any time you want a little inspiration.`
+		},
+		{
+			name: 'Surprise Me',
+			value: 'surprise',
+			icon: GiftIcon,
+			content: `<span class='text-foreground font-semibold'>Surprise!</span> Here's something unexpected—a fun fact, a
+        quirky tip, or a daily challenge. Come back for a new surprise every day!`
+		}
+	];
 </script>
 
 <div class="w-full max-w-md">

@@ -1,14 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuSeparator,
-		DropdownMenuShortcut,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
 
 <DropdownMenu.Root>
@@ -18,23 +10,28 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content align="end" class="w-66">
-		<DropdownMenuGroup>
+		<DropdownMenu.Group>
 			<DropdownMenu.Item>
-				New Tab<DropdownMenuShortcut>⌘ + T</DropdownMenuShortcut>
+				New Tab
+				<DropdownMenu.Shortcut>⌘ + T</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				New Window <DropdownMenuShortcut>⌘ + N</DropdownMenuShortcut>
+				New Window
+				<DropdownMenu.Shortcut>⌘ + N</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
-			<DropdownMenuSeparator />
+			<DropdownMenu.Separator />
 			<DropdownMenu.Item>
-				New Incognito Window <DropdownMenuShortcut>⌘ + ⇧ + N</DropdownMenuShortcut>
+				New Incognito Window
+				<DropdownMenu.Shortcut>⌘ + ⇧ + N</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				History <DropdownMenuShortcut>⌘ + Y</DropdownMenuShortcut>
+				History
+				<DropdownMenu.Shortcut>⌘ + Y</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				Downloads <DropdownMenuShortcut>⌥ + ⇧ + L</DropdownMenuShortcut>
+				Downloads
+				<DropdownMenu.Shortcut>⌥ + ⇧ + L</DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

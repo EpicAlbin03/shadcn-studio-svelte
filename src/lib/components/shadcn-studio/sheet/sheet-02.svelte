@@ -2,32 +2,23 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Sheet,
-		SheetClose,
-		SheetContent,
-		SheetDescription,
-		SheetFooter,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 </script>
 
 <div class="flex flex-wrap gap-2">
-	<Sheet>
-		<SheetTrigger>
+	<Sheet.Root>
+		<Sheet.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Top</Button>
 			{/snippet}
-		</SheetTrigger>
-		<SheetContent side="top">
-			<SheetHeader>
-				<SheetTitle>Edit profile</SheetTitle>
-				<SheetDescription
-					>Make changes to your profile here. Click save when you're done.</SheetDescription
-				>
-			</SheetHeader>
+		</Sheet.Trigger>
+		<Sheet.Content side="top">
+			<Sheet.Header>
+				<Sheet.Title>Edit profile</Sheet.Title>
+				<Sheet.Description>
+					Make changes to your profile here. Click save when you're done.
+				</Sheet.Description>
+			</Sheet.Header>
 			<div class="grid flex-1 auto-rows-min gap-6 px-4">
 				<div class="grid gap-3">
 					<Label for="sheet-demo-name">Name</Label>
@@ -38,29 +29,29 @@
 					<Input id="sheet-demo-username" defaultValue="@peduarte" />
 				</div>
 			</div>
-			<SheetFooter>
+			<Sheet.Footer>
 				<Button type="submit">Save changes</Button>
-				<SheetClose>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Close</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
-		</SheetContent>
-	</Sheet>
-	<Sheet>
-		<SheetTrigger>
+				</Sheet.Close>
+			</Sheet.Footer>
+		</Sheet.Content>
+	</Sheet.Root>
+	<Sheet.Root>
+		<Sheet.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Right</Button>
 			{/snippet}
-		</SheetTrigger>
-		<SheetContent side="right">
-			<SheetHeader>
-				<SheetTitle>Edit profile</SheetTitle>
-				<SheetDescription
-					>Make changes to your profile here. Click save when you're done.</SheetDescription
-				>
-			</SheetHeader>
+		</Sheet.Trigger>
+		<Sheet.Content side="right">
+			<Sheet.Header>
+				<Sheet.Title>Edit profile</Sheet.Title>
+				<Sheet.Description>
+					Make changes to your profile here. Click save when you're done.
+				</Sheet.Description>
+			</Sheet.Header>
 			<div class="grid flex-1 auto-rows-min gap-6 px-4">
 				<div class="grid gap-3">
 					<Label for="sheet-demo-name">Name</Label>
@@ -71,29 +62,29 @@
 					<Input id="sheet-demo-username" defaultValue="@peduarte" />
 				</div>
 			</div>
-			<SheetFooter>
+			<Sheet.Footer>
 				<Button type="submit">Save changes</Button>
-				<SheetClose>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Close</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
-		</SheetContent>
-	</Sheet>
-	<Sheet>
-		<SheetTrigger>
+				</Sheet.Close>
+			</Sheet.Footer>
+		</Sheet.Content>
+	</Sheet.Root>
+	<Sheet.Root>
+		<Sheet.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Bottom</Button>
 			{/snippet}
-		</SheetTrigger>
-		<SheetContent side="bottom">
-			<SheetHeader>
-				<SheetTitle>Edit profile</SheetTitle>
-				<SheetDescription
-					>Make changes to your profile here. Click save when you're done.</SheetDescription
-				>
-			</SheetHeader>
+		</Sheet.Trigger>
+		<Sheet.Content side="bottom">
+			<Sheet.Header>
+				<Sheet.Title>Edit profile</Sheet.Title>
+				<Sheet.Description>
+					Make changes to your profile here. Click save when you're done.
+				</Sheet.Description>
+			</Sheet.Header>
 			<div class="grid flex-1 auto-rows-min gap-6 px-4">
 				<div class="grid gap-3">
 					<Label for="sheet-demo-name">Name</Label>
@@ -104,29 +95,29 @@
 					<Input id="sheet-demo-username" defaultValue="@peduarte" />
 				</div>
 			</div>
-			<SheetFooter>
+			<Sheet.Footer>
 				<Button type="submit">Save changes</Button>
-				<SheetClose>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Close</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
-		</SheetContent>
-	</Sheet>
-	<Sheet>
-		<SheetTrigger>
+				</Sheet.Close>
+			</Sheet.Footer>
+		</Sheet.Content>
+	</Sheet.Root>
+	<Sheet.Root>
+		<Sheet.Trigger>
 			{#snippet child({ props })}
 				<Button {...props} variant="outline">Left</Button>
 			{/snippet}
-		</SheetTrigger>
-		<SheetContent side="left">
-			<SheetHeader>
-				<SheetTitle>Edit profile</SheetTitle>
-				<SheetDescription
-					>Make changes to your profile here. Click save when you're done.</SheetDescription
-				>
-			</SheetHeader>
+		</Sheet.Trigger>
+		<Sheet.Content side="left">
+			<Sheet.Header>
+				<Sheet.Title>Edit profile</Sheet.Title>
+				<Sheet.Description>
+					Make changes to your profile here. Click save when you're done.
+				</Sheet.Description>
+			</Sheet.Header>
 			<div class="grid flex-1 auto-rows-min gap-6 px-4">
 				<div class="grid gap-3">
 					<Label for="sheet-demo-name">Name</Label>
@@ -137,14 +128,14 @@
 					<Input id="sheet-demo-username" defaultValue="@peduarte" />
 				</div>
 			</div>
-			<SheetFooter>
+			<Sheet.Footer>
 				<Button type="submit">Save changes</Button>
-				<SheetClose>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Close</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
-		</SheetContent>
-	</Sheet>
+				</Sheet.Close>
+			</Sheet.Footer>
+		</Sheet.Content>
+	</Sheet.Root>
 </div>

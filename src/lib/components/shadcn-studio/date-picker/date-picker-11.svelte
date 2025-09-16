@@ -21,7 +21,7 @@
 			<Popover.Trigger id="{id}-date">
 				{#snippet child({ props })}
 					<Button {...props} variant="outline" class="w-full justify-between font-normal">
-						{value ? value.toDate(getLocalTimeZone()).toLocaleDateString() : 'Select date'}
+						{value ? value.toDate(getLocalTimeZone()).toLocaleDateString() : 'Pick a date'}
 						<ChevronDownIcon />
 					</Button>
 				{/snippet}

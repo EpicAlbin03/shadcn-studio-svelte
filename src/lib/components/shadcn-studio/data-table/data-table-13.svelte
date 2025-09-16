@@ -1,13 +1,6 @@
 <script lang="ts">
-	import type {
-		ColumnDef,
-		ColumnFiltersState,
-		SortingState,
-		VisibilityState,
-		RowSelectionState,
-		CellContext
-	} from '@tanstack/table-core';
-	import { getCoreRowModel, getFilteredRowModel, getSortedRowModel } from '@tanstack/table-core';
+	import type { ColumnDef, RowSelectionState } from '@tanstack/table-core';
+	import { getCoreRowModel } from '@tanstack/table-core';
 	import {
 		FlexRender,
 		createSvelteTable,
@@ -19,7 +12,6 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import { createRawSnippet } from 'svelte';
 
 	type Person = {
 		id: string;
@@ -71,6 +63,12 @@
 			status: 'active',
 			progress: 80
 		}
+	];
+
+	const statuses = [
+		{ value: 'active', label: 'Active' },
+		{ value: 'inactive', label: 'Inactive' },
+		{ value: 'pending', label: 'Pending' }
 	];
 
 	const columns: ColumnDef<Person>[] = [
@@ -160,16 +158,13 @@
 	];
 
 	let data: Person[] = $state([...initialData]);
-	let sorting: SortingState = $state([]);
-	let columnFilters: ColumnFiltersState = $state([]);
-	let columnVisibility: VisibilityState = $state({});
 	let rowSelection: RowSelectionState = $state({});
 
-	const refreshData = () => {
+	function refreshData() {
 		data = [...initialData];
-	};
+	}
 
-	const updateData = (rowIndex: number, columnId: string, value: string | number) => {
+	function updateData(rowIndex: number, columnId: string, value: string | number) {
 		data = data.map((row, index) => {
 			if (index === rowIndex) {
 				return {
@@ -179,41 +174,21 @@
 			}
 			return row;
 		});
-	};
+	}
 
 	const table = createSvelteTable({
 		get data() {
 			return data;
 		},
 		columns,
-		onSortingChange: (updater) => {
-			sorting = typeof updater === 'function' ? updater(sorting) : updater;
-		},
-		onColumnFiltersChange: (updater) => {
-			columnFilters = typeof updater === 'function' ? updater(columnFilters) : updater;
-		},
-		onColumnVisibilityChange: (updater) => {
-			columnVisibility = typeof updater === 'function' ? updater(columnVisibility) : updater;
-		},
-		onRowSelectionChange: (updater) => {
-			rowSelection = typeof updater === 'function' ? updater(rowSelection) : updater;
-		},
-		getCoreRowModel: getCoreRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		getFilteredRowModel: getFilteredRowModel(),
 		state: {
-			get sorting() {
-				return sorting;
-			},
-			get columnFilters() {
-				return columnFilters;
-			},
-			get columnVisibility() {
-				return columnVisibility;
-			},
 			get rowSelection() {
 				return rowSelection;
 			}
+		},
+		getCoreRowModel: getCoreRowModel(),
+		onRowSelectionChange: (updater) => {
+			rowSelection = typeof updater === 'function' ? updater(rowSelection) : updater;
 		}
 	});
 </script>
@@ -240,12 +215,14 @@
 			class="h-8 w-full border-0 bg-transparent p-1 focus:ring-1 focus:ring-ring"
 			aria-label="select-status-{columnId}"
 		>
-			{value}
+			{statuses.find((s) => s.value === value)?.label ?? 'Select status'}
 		</Select.Trigger>
 		<Select.Content>
-			<Select.Item value="active">Active</Select.Item>
-			<Select.Item value="inactive">Inactive</Select.Item>
-			<Select.Item value="pending">Pending</Select.Item>
+			{#each statuses as status (status.value)}
+				<Select.Item value={status.value} label={status.label}>
+					{status.label}
+				</Select.Item>
+			{/each}
 		</Select.Content>
 	</Select.Root>
 {/snippet}

@@ -13,21 +13,15 @@
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 	import { Button } from '$lib/components/ui/button';
-	import { FormControl, FormField, FormFieldErrors, FormLabel } from '$lib/components/ui/form';
+	import * as Form from '$lib/components/ui/form/index.js';
 	import { Input } from '$lib/components/ui/input';
-	import {
-		Sheet,
-		SheetClose,
-		SheetContent,
-		SheetFooter,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import { defaults, superForm } from 'sveltekit-superforms';
 	import { zod4 } from 'sveltekit-superforms/adapters';
 
+	// @ts-ignore
 	const form = superForm(defaults(zod4(formSchema)), {
+		// @ts-ignore
 		validators: zod4(formSchema),
 		SPA: true,
 		onUpdate: ({ form: f }) => {
@@ -40,49 +34,49 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<Sheet>
-	<SheetTrigger>
+<Sheet.Root>
+	<Sheet.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Sign Up</Button>
 		{/snippet}
-	</SheetTrigger>
-	<SheetContent>
-		<SheetHeader>
-			<SheetTitle class="text-center text-xl font-bold">Sign Up</SheetTitle>
-		</SheetHeader>
+	</Sheet.Trigger>
+	<Sheet.Content>
+		<Sheet.Header>
+			<Sheet.Title class="text-center text-xl font-bold">Sign Up</Sheet.Title>
+		</Sheet.Header>
 		<form method="POST" class="w-full" use:enhance>
 			<div class="space-y-4 p-4 pt-0">
-				<FormField {form} name="firstName">
-					<FormControl>
+				<Form.Field {form} name="firstName">
+					<Form.Control>
 						{#snippet children({ props })}
-							<FormLabel>First Name</FormLabel>
+							<Form.Label>First Name</Form.Label>
 							<Input {...props} bind:value={$formData.firstName} placeholder="First name" />
 						{/snippet}
-					</FormControl>
-					<FormFieldErrors />
-				</FormField>
-				<FormField {form} name="lastName">
-					<FormControl>
+					</Form.Control>
+					<Form.FieldErrors />
+				</Form.Field>
+				<Form.Field {form} name="lastName">
+					<Form.Control>
 						{#snippet children({ props })}
-							<FormLabel>Last Name</FormLabel>
+							<Form.Label>Last Name</Form.Label>
 							<Input {...props} bind:value={$formData.lastName} placeholder="Last name" />
 						{/snippet}
-					</FormControl>
-					<FormFieldErrors />
-				</FormField>
-				<FormField {form} name="email">
-					<FormControl>
+					</Form.Control>
+					<Form.FieldErrors />
+				</Form.Field>
+				<Form.Field {form} name="email">
+					<Form.Control>
 						{#snippet children({ props })}
-							<FormLabel>Email Adress</FormLabel>
+							<Form.Label>Email Adress</Form.Label>
 							<Input {...props} bind:value={$formData.email} placeholder="Email address" />
 						{/snippet}
-					</FormControl>
-					<FormFieldErrors />
-				</FormField>
-				<FormField {form} name="phoneNumber">
-					<FormControl>
+					</Form.Control>
+					<Form.FieldErrors />
+				</Form.Field>
+				<Form.Field {form} name="phoneNumber">
+					<Form.Control>
 						{#snippet children({ props })}
-							<FormLabel>Phone Number</FormLabel>
+							<Form.Label>Phone Number</Form.Label>
 							<Input
 								{...props}
 								bind:value={$formData.phoneNumber}
@@ -90,13 +84,13 @@
 								placeholder="8585858585"
 							/>
 						{/snippet}
-					</FormControl>
-					<FormFieldErrors />
-				</FormField>
-				<FormField {form} name="password">
-					<FormControl>
+					</Form.Control>
+					<Form.FieldErrors />
+				</Form.Field>
+				<Form.Field {form} name="password">
+					<Form.Control>
 						{#snippet children({ props })}
-							<FormLabel>Password</FormLabel>
+							<Form.Label>Password</Form.Label>
 							<Input
 								{...props}
 								bind:value={$formData.password}
@@ -104,19 +98,19 @@
 								placeholder="Password"
 							/>
 						{/snippet}
-					</FormControl>
-					<FormFieldErrors />
-				</FormField>
+					</Form.Control>
+					<Form.FieldErrors />
+				</Form.Field>
 			</div>
-			<SheetFooter>
+			<Sheet.Footer>
 				<Button type="submit">Create Account</Button>
 
-				<SheetClose>
+				<Sheet.Close>
 					{#snippet child({ props })}
 						<Button {...props} variant="outline">Close</Button>
 					{/snippet}
-				</SheetClose>
-			</SheetFooter>
+				</Sheet.Close>
+			</Sheet.Footer>
 		</form>
-	</SheetContent>
-</Sheet>
+	</Sheet.Content>
+</Sheet.Root>

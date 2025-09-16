@@ -2,13 +2,7 @@
 	import { UserPlusIcon } from '@lucide/svelte';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogContent,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 
@@ -52,16 +46,16 @@
 	];
 </script>
 
-<Dialog>
-	<DialogTrigger>
+<Dialog.Root>
+	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Invite</Button>
 		{/snippet}
-	</DialogTrigger>
-	<DialogContent class="sm:max-w-lg">
-		<DialogHeader class="text-center">
-			<DialogTitle class="text-xl">Invite new members</DialogTitle>
-		</DialogHeader>
+	</Dialog.Trigger>
+	<Dialog.Content class="sm:max-w-lg">
+		<Dialog.Header class="text-center">
+			<Dialog.Title class="text-xl">Invite new members</Dialog.Title>
+		</Dialog.Header>
 		<form class="flex gap-4 max-sm:flex-col">
 			<div class="grid gap-3">
 				<Label for="email">Email</Label>
@@ -71,16 +65,16 @@
 		</form>
 		<p class="mt-2">Invite Friends</p>
 		<ul class="space-y-4">
-			{#each friends as item}
+			{#each friends as friend}
 				<li class="flex items-center justify-between gap-3">
 					<div class="flex items-center gap-3 max-[420px]:w-50">
 						<Avatar.Root class="size-10">
-							<Avatar.Image src={item.src} alt={item.name} />
-							<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
+							<Avatar.Image src={friend.src} alt={friend.name} />
+							<Avatar.Fallback class="text-xs">{friend.fallback}</Avatar.Fallback>
 						</Avatar.Root>
 						<div class="flex flex-1 flex-col overflow-hidden">
-							<span>{item.name}</span>
-							<span class="truncate text-sm text-muted-foreground">{item.mail}</span>
+							<span>{friend.name}</span>
+							<span class="truncate text-sm text-muted-foreground">{friend.mail}</span>
 						</div>
 					</div>
 					<Button
@@ -93,5 +87,5 @@
 				</li>
 			{/each}
 		</ul>
-	</DialogContent>
-</Dialog>
+	</Dialog.Content>
+</Dialog.Root>

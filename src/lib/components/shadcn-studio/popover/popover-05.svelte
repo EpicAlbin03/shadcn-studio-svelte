@@ -4,7 +4,7 @@
 	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
@@ -24,7 +24,7 @@
 			</div>
 			<Button
 				size="sm"
-				href="https://shadcnstudio.com/docs/getting-started/introduction"
+				href="/docs/getting-started/introduction"
 				target="_blank"
 				rel="noopener noreferrer"
 			>

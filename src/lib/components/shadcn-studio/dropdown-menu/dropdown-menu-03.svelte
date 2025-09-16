@@ -2,14 +2,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
@@ -62,10 +55,10 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-91">
-		<DropdownMenuLabel>Chat List</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>Chat List</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			{#each listItems as item}
-				<DropdownMenuItem class="justify-between">
+				<DropdownMenu.Item class="justify-between">
 					<Avatar.Root>
 						<Avatar.Image src={item.src} alt={item.name} />
 						<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
@@ -86,6 +79,6 @@
 					{/if}
 				</DropdownMenu.Item>
 			{/each}
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

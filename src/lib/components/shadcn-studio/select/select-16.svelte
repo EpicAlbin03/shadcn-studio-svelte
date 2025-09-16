@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const fruits = [
 		{ value: 'apple', label: 'Apple' },
@@ -26,21 +19,21 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with colored border and ring</Label>
 	<Select.Root type="single" bind:value>
-		<SelectTrigger
+		<Select.Trigger
 			{id}
 			class="w-full focus-visible:border-indigo-500 focus-visible:ring-indigo-500/20 dark:focus-visible:ring-indigo-500/40"
 		>
 			{triggerContent}
-		</SelectTrigger>
-		<SelectContent>
-			<SelectGroup>
-				<SelectLabel>Fruits</SelectLabel>
+		</Select.Trigger>
+		<Select.Content>
+			<Select.Group>
+				<Select.Label>Fruits</Select.Label>
 				{#each fruits as fruit (fruit.value)}
 					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

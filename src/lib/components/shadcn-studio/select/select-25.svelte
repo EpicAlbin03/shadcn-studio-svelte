@@ -1,13 +1,5 @@
 <script lang="ts">
-	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectLabel,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const fruits = [
 		{ value: 'apple', label: 'Apple' },
@@ -33,21 +25,21 @@
 		Select with inset label
 	</label>
 	<Select.Root type="single" bind:value>
-		<SelectTrigger
+		<Select.Trigger
 			{id}
 			class="w-full rounded-t-none border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 dark:group-hover:bg-input/50"
 		>
 			{triggerContent}
-		</SelectTrigger>
-		<SelectContent>
-			<SelectGroup>
-				<SelectLabel>Fruits</SelectLabel>
+		</Select.Trigger>
+		<Select.Content>
+			<Select.Group>
+				<Select.Label>Fruits</Select.Label>
 				{#each fruits as fruit (fruit.value)}
 					<Select.Item value={fruit.value} label={fruit.label}>
 						{fruit.label}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

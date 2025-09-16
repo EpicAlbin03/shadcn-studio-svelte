@@ -7,5 +7,5 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Disabled textarea</Label>
-	<Textarea placeholder="Type your feedback here" disabled {id} />
+	<Textarea {id} placeholder="Type your feedback here" disabled />
 </div>

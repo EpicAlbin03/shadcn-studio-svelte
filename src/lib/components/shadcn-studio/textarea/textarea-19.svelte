@@ -5,27 +5,25 @@
 	const id = $props.id();
 
 	const maxLength = 200;
-	const initialValue = '';
-
-	let value = $state(initialValue);
-	let characterCount = $derived(initialValue.length);
-
-	const handleChange = (e: any) => {
-		if (e.target.value.length <= maxLength) {
-			value = e.target.value;
-		}
-	};
+	let value = $state('');
+	const charsLeft = $derived(maxLength - value.length);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Textarea with characters left</Label>
 	<Textarea
 		placeholder="Type your feedback here"
-		{value}
 		maxlength={maxLength}
-		onchange={handleChange}
+		bind:value={
+			() => value,
+			(v) => {
+				if (v.length <= maxLength) {
+					value = v;
+				}
+			}
+		}
 	/>
 	<p class="text-xs text-muted-foreground">
-		<span class="tabular-nums">{maxLength - characterCount}</span> characters left
+		<span class="tabular-nums">{charsLeft}</span> characters left
 	</p>
 </div>

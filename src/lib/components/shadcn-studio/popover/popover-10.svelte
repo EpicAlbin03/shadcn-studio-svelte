@@ -52,7 +52,7 @@
 	});
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
@@ -95,9 +95,9 @@
 							</Avatar.Root>
 							<div class="flex-1 text-sm font-medium">{user.name}</div>
 							{#if user.notifications}
-								<span class="text-xs text-muted-foreground"
-									>{`${user.notifications} Notification${user.notifications > 1 ? 's' : ''}`}</span
-								>
+								<span class="text-xs text-muted-foreground">
+									{user.notifications} Notification{user.notifications > 1 ? 's' : ''}
+								</span>
 							{/if}
 						</li>
 					{/each}

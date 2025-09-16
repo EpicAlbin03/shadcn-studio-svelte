@@ -1,14 +1,7 @@
 <script lang="ts">
 	import { ChevronDown, ChevronsDown, ChevronUp, ChevronsUp, Equal } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
@@ -46,14 +39,14 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56 shadow-none">
-		<DropdownMenuLabel>Task priority</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>Task priority</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			{#each listItems as item}
 				<DropdownMenu.Item>
 					<item.icon class={item.color} />
 					{item.priority}
 				</DropdownMenu.Item>
 			{/each}
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

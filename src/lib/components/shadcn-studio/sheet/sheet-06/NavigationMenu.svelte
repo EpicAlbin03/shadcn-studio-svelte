@@ -27,7 +27,7 @@
 {#if item.type === 'page'}
 	<div
 		class="flex items-center gap-2 rounded-md p-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-		style={`padding-left: ${level === 0 ? 0 : 1.5}rem`}
+		style="padding-left: {level === 0 ? 0 : 1.5}rem"
 	>
 		{#if level === 0}
 			<item.icon class="size-4 shrink-0" />
@@ -37,8 +37,8 @@
 		<span class="text-sm">{item.name}</span>
 	</div>
 {:else}
-	<Collapsible.Root class="flex flex-col gap-1.5" style={`padding-left: ${level === 0 ? 0 : 1.5}rem`}>
-		<CollapsibleTrigger
+	<Collapsible.Root class="flex flex-col gap-1.5" style="padding-left: {level === 0 ? 0 : 1.5}rem">
+		<Collapsible.Trigger
 			class="flex items-center gap-2 rounded-md p-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
 		>
 			{#if level === 0}
@@ -51,7 +51,7 @@
 				class="size-4 shrink-0 transition-transform [[data-state='open']>&]:rotate-90"
 			/>
 		</Collapsible.Trigger>
-		<CollapsibleContent
+		<Collapsible.Content
 			class="flex flex-col gap-1.5 overflow-hidden transition-all duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 		>
 			{#each item.children as child (child.name)}

@@ -1,14 +1,7 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Switch } from '$lib/components/ui/switch';
 
 	const avatars = [
@@ -48,9 +41,9 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="sm:w-124">
-		<DropdownMenuLabel>Today's meetings</DropdownMenuLabel>
-		<DropdownMenuGroup>
-			<DropdownMenuItem
+		<DropdownMenu.Label>Today's meetings</DropdownMenu.Label>
+		<DropdownMenu.Group>
+			<DropdownMenu.Item
 				class="justify-between gap-3.5"
 				onSelect={(event) => event.preventDefault()}
 			>
@@ -68,7 +61,7 @@
 					<Switch id="airplane-mode" bind:checked={firstMeeting} />
 				</div>
 			</DropdownMenu.Item>
-			<DropdownMenuItem
+			<DropdownMenu.Item
 				class="justify-between gap-3.5"
 				onSelect={(event) => event.preventDefault()}
 			>
@@ -90,7 +83,7 @@
 					<Switch id="airplane-mode" bind:checked={secondMeeting} />
 				</div>
 			</DropdownMenu.Item>
-			<DropdownMenuItem
+			<DropdownMenu.Item
 				class="justify-between gap-3.5"
 				onSelect={(event) => event.preventDefault()}
 			>
@@ -108,7 +101,7 @@
 					<Switch id="airplane-mode" bind:checked={thirdMeeting} />
 				</div>
 			</DropdownMenu.Item>
-			<DropdownMenuItem
+			<DropdownMenu.Item
 				class="justify-between gap-3.5"
 				onSelect={(event) => event.preventDefault()}
 			>
@@ -130,7 +123,7 @@
 					<Switch id="airplane-mode" bind:checked={forthMeeting} />
 				</div>
 			</DropdownMenu.Item>
-			<DropdownMenuItem
+			<DropdownMenu.Item
 				class="justify-between gap-3.5"
 				onSelect={(event) => event.preventDefault()}
 			>
@@ -148,6 +141,6 @@
 					<Switch id="airplane-mode" bind:checked={fifthMeeting} />
 				</div>
 			</DropdownMenu.Item>
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

@@ -71,7 +71,7 @@
 		},
 		{
 			id: '5',
-			product: 'Apple magic mouse',
+			product: 'Apple Magic Mouse',
 			productImage: '/components/product-05.webp',
 			fallback: 'AMM',
 			price: 970,
@@ -80,7 +80,7 @@
 		},
 		{
 			id: '6',
-			product: 'Apple watch',
+			product: 'Apple Watch',
 			productImage: '/components/product-06.webp',
 			fallback: 'AW',
 			price: 1500,

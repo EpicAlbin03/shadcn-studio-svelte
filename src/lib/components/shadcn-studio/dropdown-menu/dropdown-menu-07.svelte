@@ -1,14 +1,7 @@
 <script lang="ts">
 	import { User, Settings, Bell, LogOut, CreditCard } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
@@ -43,14 +36,14 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenuLabel>My Account</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>My Account</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			{#each listItems as item}
 				<DropdownMenu.Item>
 					<item.icon />
 					<span class="text-popover-foreground">{item.property}</span>
 				</DropdownMenu.Item>
 			{/each}
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

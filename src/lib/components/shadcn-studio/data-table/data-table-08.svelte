@@ -1,12 +1,5 @@
 <script lang="ts">
-	import {
-		type Cell,
-		type ColumnDef,
-		type Header,
-		type SortingState,
-		getCoreRowModel,
-		getSortedRowModel
-	} from '@tanstack/table-core';
+	import { type ColumnDef, getCoreRowModel } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import {
@@ -180,7 +173,6 @@
 		}
 	];
 
-	let sorting = $state<SortingState>([]);
 	let columnOrder = $state<string[]>(columns.map((column) => column.id as string));
 
 	const table = createSvelteTable({
@@ -188,32 +180,19 @@
 			return data;
 		},
 		columns,
-		columnResizeMode: 'onChange',
-		getCoreRowModel: getCoreRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		onSortingChange: (updater) => {
-			if (typeof updater === 'function') {
-				sorting = updater(sorting);
-			} else {
-				sorting = updater;
-			}
-		},
 		state: {
-			get sorting() {
-				return sorting;
-			},
 			get columnOrder() {
 				return columnOrder;
 			}
 		},
+		getCoreRowModel: getCoreRowModel(),
 		onColumnOrderChange: (updater) => {
 			if (typeof updater === 'function') {
 				columnOrder = updater(columnOrder);
 			} else {
 				columnOrder = updater;
 			}
-		},
-		enableSortingRemoval: false
+		}
 	});
 
 	// Simplified drag and drop functionality without dnd-kit

@@ -1,12 +1,5 @@
 <script lang="ts">
-	import {
-		Table,
-		TableBody,
-		TableCell,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const invoices = [
 		{
@@ -84,34 +77,34 @@
 
 <div class="w-full">
 	<div class="mx-auto max-w-2xl [&>div]:rounded-sm [&>div]:border">
-		<Table>
-			<TableHeader>
-				<TableRow class="hover:bg-transparent">
-					<TableHead class="sticky left-0 bg-background">ID</TableHead>
-					<TableHead class="sticky left-7.5 bg-background">Name</TableHead>
-					<TableHead>Occupation</TableHead>
-					<TableHead>Employer</TableHead>
-					<TableHead>Email</TableHead>
-					<TableHead>Location</TableHead>
-					<TableHead>Last Access</TableHead>
-					<TableHead>Salary</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
+		<Table.Root>
+			<Table.Header>
+				<Table.Row class="hover:bg-transparent">
+					<Table.Head class="sticky left-0 bg-background">ID</Table.Head>
+					<Table.Head class="sticky left-7.5 bg-background">Name</Table.Head>
+					<Table.Head>Occupation</Table.Head>
+					<Table.Head>Employer</Table.Head>
+					<Table.Head>Email</Table.Head>
+					<Table.Head>Location</Table.Head>
+					<Table.Head>Last Access</Table.Head>
+					<Table.Head>Salary</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each invoices as invoice (invoice.id)}
-					<TableRow class="hover:bg-transparent">
-						<TableCell class="sticky left-0 bg-background font-medium">{invoice.id}</TableCell>
-						<TableCell class="sticky left-7.5 bg-background">{invoice.name}</TableCell>
-						<TableCell>{invoice.occupation}</TableCell>
-						<TableCell>{invoice.employer}</TableCell>
-						<TableCell>{invoice.email}</TableCell>
-						<TableCell>{invoice.location}</TableCell>
-						<TableCell>{invoice.lastaccess}</TableCell>
-						<TableCell>{invoice.salary}</TableCell>
-					</TableRow>
+					<Table.Row class="hover:bg-transparent">
+						<Table.Cell class="sticky left-0 bg-background font-medium">{invoice.id}</Table.Cell>
+						<Table.Cell class="sticky left-7.5 bg-background">{invoice.name}</Table.Cell>
+						<Table.Cell>{invoice.occupation}</Table.Cell>
+						<Table.Cell>{invoice.employer}</Table.Cell>
+						<Table.Cell>{invoice.email}</Table.Cell>
+						<Table.Cell>{invoice.location}</Table.Cell>
+						<Table.Cell>{invoice.lastaccess}</Table.Cell>
+						<Table.Cell>{invoice.salary}</Table.Cell>
+					</Table.Row>
 				{/each}
-			</TableBody>
-		</Table>
+			</Table.Body>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">Sticky column table</p>
 </div>

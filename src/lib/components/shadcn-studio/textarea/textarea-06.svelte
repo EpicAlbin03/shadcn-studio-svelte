@@ -10,5 +10,5 @@
 		<Label for={id}>Input with hint text</Label>
 		<span class="text-xs text-muted-foreground">Optional field</span>
 	</div>
-	<Textarea placeholder="Type your feedback here" {id} />
+	<Textarea {id} placeholder="Type your feedback here" />
 </div>

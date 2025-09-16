@@ -1,13 +1,7 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Select,
-		SelectContent,
-		SelectGroup,
-		SelectItem,
-		SelectTrigger
-	} from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const users = [
 		{
@@ -39,7 +33,7 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Options with flag</Label>
 	<Select.Root type="single" bind:value>
-		<SelectTrigger
+		<Select.Trigger
 			{id}
 			class="w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2 [&>span_svg]:shrink-0 [&>span_svg]:text-muted-foreground/80"
 		>
@@ -50,11 +44,11 @@
 				</Avatar.Root>
 				<span class="truncate">{selectedUser.name}</span>
 			</span>
-		</SelectTrigger>
-		<SelectContent
+		</Select.Trigger>
+		<Select.Content
 			class="max-h-100 [&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2 [&_*[role=option]>span]:flex [&_*[role=option]>span]:items-center [&_*[role=option]>span]:gap-2 [&_*[role=option]>span>svg]:shrink-0 [&_*[role=option]>span>svg]:text-muted-foreground/80"
 		>
-			<SelectGroup>
+			<Select.Group>
 				{#each users as user (user.id)}
 					<Select.Item value={user.id} label={user.name}>
 						<Avatar.Root class="size-5">
@@ -62,9 +56,9 @@
 							<Avatar.Fallback class="text-xs">{user.fallback}</Avatar.Fallback>
 						</Avatar.Root>
 						<span class="truncate">{user.name}</span>
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectGroup>
-		</SelectContent>
-	</Select>
+			</Select.Group>
+		</Select.Content>
+	</Select.Root>
 </div>

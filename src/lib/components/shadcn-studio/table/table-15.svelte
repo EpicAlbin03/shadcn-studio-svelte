@@ -1,14 +1,6 @@
 <script lang="ts">
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import {
-		Table,
-		TableBody,
-		TableCell,
-		TableFooter,
-		TableHead,
-		TableHeader,
-		TableRow
-	} from '$lib/components/ui/table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const items = [
 		{
@@ -58,40 +50,40 @@
 
 <div class="w-full">
 	<div class="overflow-hidden rounded-md border">
-		<Table>
-			<TableHeader>
-				<TableRow class="hover:bg-transparent">
-					<TableHead>
+		<Table.Root>
+			<Table.Header>
+				<Table.Row class="hover:bg-transparent">
+					<Table.Head>
 						<Checkbox {id} aria-label="select-all" />
-					</TableHead>
-					<TableHead>Name</TableHead>
-					<TableHead>Email</TableHead>
-					<TableHead>Location</TableHead>
-					<TableHead>Status</TableHead>
-					<TableHead class="text-right">Balance</TableHead>
-				</TableRow>
-			</TableHeader>
-			<TableBody>
+					</Table.Head>
+					<Table.Head>Name</Table.Head>
+					<Table.Head>Email</Table.Head>
+					<Table.Head>Location</Table.Head>
+					<Table.Head>Status</Table.Head>
+					<Table.Head class="text-right">Balance</Table.Head>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
 				{#each items as item (item.id)}
-					<TableRow class="has-data-[state=checked]:bg-muted/50">
-						<TableCell>
-							<Checkbox id={`table-checkbox-${item.id}`} aria-label={`user-checkbox-${item.id}`} />
-						</TableCell>
-						<TableCell class="font-medium">{item.name}</TableCell>
-						<TableCell>{item.email}</TableCell>
-						<TableCell>{item.location}</TableCell>
-						<TableCell>{item.status}</TableCell>
-						<TableCell class="text-right">{item.balance}</TableCell>
-					</TableRow>
+					<Table.Row class="has-data-[state=checked]:bg-muted/50">
+						<Table.Cell>
+							<Checkbox id="table-checkbox-{item.id}" aria-label="user-checkbox-{item.id}" />
+						</Table.Cell>
+						<Table.Cell class="font-medium">{item.name}</Table.Cell>
+						<Table.Cell>{item.email}</Table.Cell>
+						<Table.Cell>{item.location}</Table.Cell>
+						<Table.Cell>{item.status}</Table.Cell>
+						<Table.Cell class="text-right">{item.balance}</Table.Cell>
+					</Table.Row>
 				{/each}
-			</TableBody>
-			<TableFooter class="bg-transparent">
-				<TableRow class="hover:bg-transparent">
-					<TableCell colspan={5}>Total</TableCell>
-					<TableCell class="text-right">$2,500.00</TableCell>
-				</TableRow>
-			</TableFooter>
-		</Table>
+			</Table.Body>
+			<Table.Footer class="bg-transparent">
+				<Table.Row class="hover:bg-transparent">
+					<Table.Cell colspan={5}>Total</Table.Cell>
+					<Table.Cell class="text-right">$2,500.00</Table.Cell>
+				</Table.Row>
+			</Table.Footer>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">Table with row selection</p>
 </div>

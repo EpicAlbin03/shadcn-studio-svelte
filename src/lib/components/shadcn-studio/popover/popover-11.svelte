@@ -32,7 +32,7 @@
 	let readMessages = $state([3]);
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" size="icon">
@@ -48,29 +48,32 @@
 				<Button
 					variant="secondary"
 					class="h-7 rounded-full px-2 py-1 text-xs"
-					onclick={() => (readMessages = notifications.map((item) => item.id))}
+					onclick={() => (readMessages = notifications.map((notification) => notification.id))}
 				>
-					Mark as all read
+					Mark all as read
 				</Button>
 			</div>
 			<Separator class="" />
 			<ul class="grid gap-4 p-2">
-				{#each notifications as item (item.id)}
-					<li
-						class="flex items-start gap-2 rounded-lg px-2 py-1.5 hover:bg-accent"
-						onclick={() => readMessages.push(item.id)}
-					>
-						<Avatar.Root class="rounded-lg">
-							<Avatar.Image src={item.image} alt={item.fallback} />
-							<Avatar.Fallback class="rounded-lg text-xs">{item.fallback}</Avatar.Fallback>
-						</Avatar.Root>
-						<div class="flex-1 space-y-1">
-							<div class="text-sm font-medium">{item.message}</div>
-							<p class="text-xs text-muted-foreground">{`${item.time} ago`}</p>
-						</div>
-						{#if !readMessages.includes(item.id)}
-							<CircleIcon class="size-2 self-center fill-primary text-primary" />
-						{/if}
+				{#each notifications as notification (notification.id)}
+					<li>
+						<button
+							class={'flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-accent'}
+							onclick={() => readMessages.push(notification.id)}
+						>
+							<Avatar.Root class="rounded-lg">
+								<Avatar.Image src={notification.image} alt={notification.fallback} />
+								<Avatar.Fallback class="rounded-lg text-xs">{notification.fallback}</Avatar.Fallback
+								>
+							</Avatar.Root>
+							<div class="flex-1 space-y-1">
+								<div class="text-sm font-medium">{notification.message}</div>
+								<p class="text-xs text-muted-foreground">{`${notification.time} ago`}</p>
+							</div>
+							{#if !readMessages.includes(notification.id)}
+								<CircleIcon class="size-2 self-center fill-primary text-primary" />
+							{/if}
+						</button>
 					</li>
 				{/each}
 			</ul>

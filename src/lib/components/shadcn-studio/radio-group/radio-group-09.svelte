@@ -20,23 +20,20 @@
 			<div class="flex items-center justify-between">
 				<div class="flex items-center gap-2">
 					<RadioGroupItem
-						id={`${id}-${item.value}`}
+						id="{id}-{item.value}"
 						value={item.value}
 						class="after:absolute after:inset-0"
-						aria-label={`plan-radio-${item.value}`}
-						aria-describedby={`${`${id}-${item.value}`}-price`}
+						aria-label="plan-radio-{item.value}"
+						aria-describedby="{id}-{item.value}-price"
 					/>
-					<Label class="inline-flex items-center" for={`${id}-${item.value}`}>
+					<Label class="inline-flex items-center" for="{id}-{item.value}">
 						{item.label}
 						{#if item.value === '2'}
 							<Badge class="px-1.5 py-px text-xs">Best Seller</Badge>
 						{/if}
 					</Label>
 				</div>
-				<div
-					id={`${`${id}-${item.value}`}-price`}
-					class="text-xs leading-[inherit] text-muted-foreground"
-				>
+				<div id="{id}-{item.value}-price" class="text-xs leading-[inherit] text-muted-foreground">
 					{item.price}
 				</div>
 			</div>

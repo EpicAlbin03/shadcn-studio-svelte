@@ -22,14 +22,14 @@
 		<Select.Root type="single" bind:value>
 			<Select.Trigger {id} class="rounded-s-none shadow-none">
 				{value}
-			</SelectTrigger>
-			<SelectContent>
+			</Select.Trigger>
+			<Select.Content>
 				{#each domains as domain (domain)}
 					<Select.Item value={domain} class="pr-2 [&_svg]:hidden">
 						{domain}
-					</SelectItem>
+					</Select.Item>
 				{/each}
-			</SelectContent>
-		</Select>
+			</Select.Content>
+		</Select.Root>
 	</div>
 </div>

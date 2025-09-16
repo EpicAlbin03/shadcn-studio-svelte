@@ -30,7 +30,7 @@
 	const id = $props.id();
 </script>
 
-<Popover>
+<Popover.Root>
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Slide-in from bottom</Button>
@@ -58,8 +58,8 @@
 				<ul class="grid gap-2">
 					{#each members as member, index}
 						<li class="flex items-center gap-3">
-							<Checkbox id={`member-${index + 1}`} />
-							<Label for={`member-${index + 1}`} class="flex flex-1 items-center gap-2">
+							<Checkbox id="member-{index + 1}" />
+							<Label for="member-{index + 1}" class="flex flex-1 items-center gap-2">
 								<div class="flex flex-1 items-center gap-2">
 									<Avatar.Root class="size-6">
 										<Avatar.Image src={member.image} alt={member.name} />

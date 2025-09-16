@@ -13,13 +13,7 @@
 		ShoppingCartIcon
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Sheet,
-		SheetContent,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import type { NavigationItem } from './sheet-06/NavigationMenu.svelte';
 	import NavigationMenu from './sheet-06/NavigationMenu.svelte';
 
@@ -138,20 +132,20 @@
 	];
 </script>
 
-<Sheet>
-	<SheetTrigger>
+<Sheet.Root>
+	<Sheet.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Navigation Menu</Button>
 		{/snippet}
-	</SheetTrigger>
-	<SheetContent side="left" class="w-75">
-		<SheetHeader>
-			<SheetTitle>Menu</SheetTitle>
-		</SheetHeader>
+	</Sheet.Trigger>
+	<Sheet.Content side="left" class="w-75">
+		<Sheet.Header>
+			<Sheet.Title>Menu</Sheet.Title>
+		</Sheet.Header>
 		<div class="flex flex-col gap-2.5 p-4 pt-0">
 			{#each navigationMenu as item (item.name)}
 				<NavigationMenu {item} level={0} />
 			{/each}
 		</div>
-	</SheetContent>
-</Sheet>
+	</Sheet.Content>
+</Sheet.Root>

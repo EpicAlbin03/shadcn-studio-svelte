@@ -2,31 +2,22 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import {
-		Sheet,
-		SheetClose,
-		SheetContent,
-		SheetDescription,
-		SheetFooter,
-		SheetHeader,
-		SheetTitle,
-		SheetTrigger
-	} from '$lib/components/ui/sheet';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 </script>
 
-<Sheet>
-	<SheetTrigger>
+<Sheet.Root>
+	<Sheet.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline">Default</Button>
 		{/snippet}
-	</SheetTrigger>
-	<SheetContent>
-		<SheetHeader>
-			<SheetTitle>Edit profile</SheetTitle>
-			<SheetDescription
-				>Make changes to your profile here. Click save when you're done.</SheetDescription
-			>
-		</SheetHeader>
+	</Sheet.Trigger>
+	<Sheet.Content>
+		<Sheet.Header>
+			<Sheet.Title>Edit profile</Sheet.Title>
+			<Sheet.Description>
+				Make changes to your profile here. Click save when you're done.
+			</Sheet.Description>
+		</Sheet.Header>
 		<div class="grid flex-1 auto-rows-min gap-6 px-4">
 			<div class="grid gap-3">
 				<Label for="sheet-demo-name">Name</Label>
@@ -37,13 +28,13 @@
 				<Input id="sheet-demo-username" defaultValue="@peduarte" />
 			</div>
 		</div>
-		<SheetFooter>
+		<Sheet.Footer>
 			<Button type="submit">Save changes</Button>
-			<SheetClose>
+			<Sheet.Close>
 				{#snippet child({ props })}
 					<Button {...props} variant="outline">Close</Button>
 				{/snippet}
-			</SheetClose>
-		</SheetFooter>
-	</SheetContent>
-</Sheet>
+			</Sheet.Close>
+		</Sheet.Footer>
+	</Sheet.Content>
+</Sheet.Root>

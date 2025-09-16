@@ -1,14 +1,7 @@
 <script lang="ts">
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuLabel,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
@@ -51,10 +44,10 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-91">
-		<DropdownMenuLabel>Contact List</DropdownMenuLabel>
-		<DropdownMenuGroup>
+		<DropdownMenu.Label>Contact List</DropdownMenu.Label>
+		<DropdownMenu.Group>
 			{#each listItems as item}
-				<DropdownMenuItem class="justify-between">
+				<DropdownMenu.Item class="justify-between">
 					<Avatar.Root>
 						<Avatar.Image src={item.src} alt={item.name} />
 						<Avatar.Fallback class="text-xs">{item.fallback}</Avatar.Fallback>
@@ -69,6 +62,6 @@
 			<DropdownMenu.Item>
 				<Button class="grow">Add Contact</Button>
 			</DropdownMenu.Item>
-		</DropdownMenuGroup>
-	</DropdownMenuContent>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>

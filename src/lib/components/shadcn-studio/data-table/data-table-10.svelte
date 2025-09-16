@@ -1,11 +1,11 @@
 <script lang="ts">
 	import {
-		ChevronDown,
-		ChevronFirst,
-		ChevronLast,
-		ChevronLeft,
-		ChevronRight,
-		ChevronUp
+		ChevronDownIcon,
+		ChevronFirstIcon,
+		ChevronLastIcon,
+		ChevronLeftIcon,
+		ChevronRightIcon,
+		ChevronUpIcon
 	} from '@lucide/svelte';
 	import type {
 		ColumnDef,
@@ -80,26 +80,7 @@
 			header: 'Availability',
 			accessorKey: 'availability',
 			cell: ({ row }) => {
-				const availability = row.getValue('availability') as string;
-
-				const styles = {
-					'In Stock':
-						'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
-					'Out of Stock':
-						'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
-					Limited:
-						'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
-				}[availability];
-
-				const badgeSnippet = createRawSnippet<[string]>((getAvailability) => {
-					const availability = getAvailability();
-					return {
-						render: () =>
-							`<span class="${cn('inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-none focus-visible:outline-none', styles)}">${availability}</span>`
-					};
-				});
-
-				return renderSnippet(badgeSnippet, availability);
+				return renderSnippet(AvailabilitySnippet, row.getValue('availability'));
 			}
 		}
 	];
@@ -121,6 +102,7 @@
 			return data;
 		},
 		columns,
+		enableSortingRemoval: false,
 		state: {
 			get rowSelection() {
 				return rowSelection;
@@ -134,6 +116,7 @@
 		},
 		getCoreRowModel: getCoreRowModel(),
 		getSortedRowModel: getSortedRowModel(),
+		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: (updater) => {
 			if (typeof updater === 'function') {
 				sorting = updater(sorting);
@@ -141,8 +124,6 @@
 				sorting = updater;
 			}
 		},
-		enableSortingRemoval: false,
-		getPaginationRowModel: getPaginationRowModel(),
 		onPaginationChange: (updater) => {
 			if (typeof updater === 'function') {
 				pagination = updater(pagination);
@@ -161,6 +142,20 @@
 
 	let labelId = Math.random().toString(36).substring(7);
 </script>
+
+{#snippet AvailabilitySnippet(availability: string)}
+	{@const styles = {
+		'In Stock':
+			'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+		'Out of Stock':
+			'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+		Limited:
+			'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
+	}[availability]}
+	<Badge class={cn('rounded-full border-none focus-visible:outline-none', styles)}>
+		{availability}
+	</Badge>
+{/snippet}
 
 <div class="space-y-4 md:w-full">
 	<div class="rounded-md border">
@@ -191,9 +186,9 @@
 												context={header.getContext()}
 											/>
 											{#if header.column.getIsSorted() === 'asc'}
-												<ChevronUp class="shrink-0 opacity-60" size={16} aria-hidden="true" />
+												<ChevronUpIcon class="shrink-0 opacity-60" size={16} aria-hidden="true" />
 											{:else if header.column.getIsSorted() === 'desc'}
-												<ChevronDown class="shrink-0 opacity-60" size={16} aria-hidden="true" />
+												<ChevronDownIcon class="shrink-0 opacity-60" size={16} aria-hidden="true" />
 											{/if}
 										</div>
 									{:else}
@@ -229,7 +224,7 @@
 	<div class="flex items-center justify-between gap-8">
 		<div class="flex items-center gap-3">
 			<Label for={labelId} class="max-sm:sr-only">Rows per page</Label>
-			<Select
+			<Select.Root
 				type="single"
 				value={table.getState().pagination.pageSize.toString()}
 				onValueChange={(value: string) => {
@@ -240,15 +235,15 @@
 			>
 				<Select.Trigger id={labelId} class="w-fit whitespace-nowrap">
 					{table.getState().pagination.pageSize}
-				</SelectTrigger>
-				<SelectContent
+				</Select.Trigger>
+				<Select.Content
 					class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2"
 				>
 					{#each [5, 10, 25, 50] as pageSize (pageSize)}
-						<Select.Item value={pageSize.toString()}>{pageSize}</SelectItem>
+						<Select.Item value={pageSize.toString()}>{pageSize}</Select.Item>
 					{/each}
-				</SelectContent>
-			</Select>
+				</Select.Content>
+			</Select.Root>
 		</div>
 
 		<div class="flex grow justify-end text-sm whitespace-nowrap text-muted-foreground">
@@ -277,7 +272,7 @@
 				disabled={!table.getCanPreviousPage()}
 				aria-label="Go to first page"
 			>
-				<ChevronFirst size={16} aria-hidden="true" />
+				<ChevronFirstIcon size={16} aria-hidden="true" />
 			</Button>
 
 			<Button
@@ -288,7 +283,7 @@
 				disabled={!table.getCanPreviousPage()}
 				aria-label="Go to previous page"
 			>
-				<ChevronLeft size={16} aria-hidden="true" />
+				<ChevronLeftIcon size={16} aria-hidden="true" />
 			</Button>
 
 			<Button
@@ -299,7 +294,7 @@
 				disabled={!table.getCanNextPage()}
 				aria-label="Go to next page"
 			>
-				<ChevronRight size={16} aria-hidden="true" />
+				<ChevronRightIcon size={16} aria-hidden="true" />
 			</Button>
 
 			<Button
@@ -310,7 +305,7 @@
 				disabled={!table.getCanNextPage()}
 				aria-label="Go to last page"
 			>
-				<ChevronLast size={16} aria-hidden="true" />
+				<ChevronLastIcon size={16} aria-hidden="true" />
 			</Button>
 		</div>
 	</div>

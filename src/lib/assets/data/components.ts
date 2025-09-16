@@ -2404,6 +2404,10 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/data-table/data-table-10.svelte',
 				target: 'components/shadcn-studio/data-table/data-table-10.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/product-data.ts',
+				target: 'components/shadcn-studio/data-table/product-data.ts'
 			}
 		]
 	},
@@ -2413,10 +2417,15 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/data-table/data-table-11.svelte',
 				target: 'components/shadcn-studio/data-table/data-table-11.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/product-data.ts',
+				target: 'components/shadcn-studio/data-table/product-data.ts'
+			},
+			{
+				path: 'src/lib/hooks/use-pagination.svelte.ts',
+				target: 'hooks/use-pagination.svelte.ts'
 			}
-			// {
-			// 	path: 'src/hooks/use-pagination.svelte.ts'
-			// }
 		]
 	},
 	{
@@ -4431,6 +4440,10 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/sheet/sheet-06.svelte',
 				target: 'components/shadcn-studio/sheet/sheet-06.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/sheet/sheet-06/NavigationMenu.svelte',
+				target: 'components/shadcn-studio/sheet/sheet-06/NavigationMenu.svelte'
 			}
 		]
 	},
@@ -4468,6 +4481,10 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/sonner/sonner-03.svelte',
 				target: 'components/shadcn-studio/sonner/sonner-03.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/sonner/sonner-03/CustomToast.svelte',
+				target: 'components/shadcn-studio/sonner/sonner-03/CustomToast.svelte'
 			}
 		]
 	},
@@ -4477,6 +4494,10 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/sonner/sonner-04.svelte',
 				target: 'components/shadcn-studio/sonner/sonner-04.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/sonner/sonner-04/CustomToast.svelte',
+				target: 'components/shadcn-studio/sonner/sonner-04/CustomToast.svelte'
 			}
 		]
 	},
