@@ -1,14 +1,6 @@
 <script lang="ts">
 	import { AlertCircle, FileCode } from '@lucide/svelte';
-	import {
-		Dialog,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import { Button } from '$lib/components/ui/button';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
@@ -26,7 +18,7 @@
 	let cssText = $state('');
 	let error = $state<string | null>(null);
 
-	const onImport = (css: string) => {
+	function onImport(css: string) {
 		const { lightColors, darkColors } = parseCssInput(css);
 		const { lightShadows, darkShadows } = parseShadowVariables(css);
 		const letterSpacing = parseLetterSpacing(css);
@@ -58,13 +50,12 @@
 		toast.success('Theme imported successfully', {
 			description: 'Both light and dark mode styles have been updated'
 		});
-	};
+	}
 
-	const handleImport = () => {
+	function handleImport() {
 		// Basic validation - check if the CSS contains some expected variables
 		if (!cssText.trim()) {
 			error = 'Please enter CSS content';
-
 			return;
 		}
 
@@ -74,7 +65,6 @@
 			if (!cssText.includes('--') || !cssText.includes(':')) {
 				error =
 					'Invalid CSS format. CSS should contain variable definitions like --primary: #color';
-
 				return;
 			}
 
@@ -85,32 +75,32 @@
 		} catch (err) {
 			error = 'Failed to parse CSS. Please check your syntax.';
 		}
-	};
+	}
 
-	const handleClose = () => {
+	function handleClose() {
 		cssText = '';
 		error = null;
 		open = false;
-	};
+	}
 </script>
 
-<Dialog bind:open>
-	<DialogTrigger>
+<Dialog.Root bind:open>
+	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" class="cursor-pointer">
 				<FileCode class="size-4" />
 				Import
 			</Button>
 		{/snippet}
-	</DialogTrigger>
-	<DialogContent class="max-h-[90vh] sm:max-w-[600px]">
-		<DialogHeader>
-			<DialogTitle class="text-foreground">Import Custom CSS</DialogTitle>
-			<DialogDescription>
+	</Dialog.Trigger>
+	<Dialog.Content class="max-h-[90vh] sm:max-w-[600px]">
+		<Dialog.Header>
+			<Dialog.Title class="text-foreground">Import Custom CSS</Dialog.Title>
+			<Dialog.Description>
 				Paste your CSS file below to customize the theme colors. Make sure to include variables like
 				--primary, --background, etc.
-			</DialogDescription>
-		</DialogHeader>
+			</Dialog.Description>
+		</Dialog.Header>
 
 		{#if error}
 			<Alert variant="destructive" class="mb-4">
@@ -141,11 +131,11 @@
 				}}
 			/>
 		</div>
-		<DialogFooter>
+		<Dialog.Footer>
 			<Button variant="outline" onclick={handleClose} class="cursor-pointer text-foreground"
 				>Cancel</Button
 			>
 			<Button onclick={handleImport} class="cursor-pointer">Import</Button>
-		</DialogFooter>
-	</DialogContent>
-</Dialog>
+		</Dialog.Footer>
+	</Dialog.Content>
+</Dialog.Root>

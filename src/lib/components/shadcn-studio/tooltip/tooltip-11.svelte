@@ -12,7 +12,7 @@
 	</HoverCardTrigger>
 	<HoverCardContent>
 		<div class="space-y-2">
-			<img src="/components/tooltip-01.jpg" alt="Content" class="w-full rounded" />
+			<img src="/components/himalaya.jpg" alt="Content" class="w-full rounded" />
 			<div class="space-y-1">
 				<p class="text-sm font-medium">About Himalayas</p>
 				<p class="text-xs text-muted-foreground">

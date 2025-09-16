@@ -10,10 +10,10 @@
 	const userConfig = UserConfigContext.get();
 
 	let isHolding = $state(false);
-	let holdTimeout = $state<number | null>(null);
+	let holdTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
 	let isDialogOpen = $state(false);
 
-	const handleHoldStart = () => {
+	function handleHoldStart() {
 		// Check for theme changes first
 		if (!userConfig.hasThemeChanged()) {
 			toast.info('No theme changes to save. Make some changes first!');
@@ -28,17 +28,17 @@
 		}, 1000);
 
 		holdTimeout = timeout;
-	};
+	}
 
-	const handleHoldEnd = () => {
+	function handleHoldEnd() {
 		isHolding = false;
 
 		if (holdTimeout) {
 			clearTimeout(holdTimeout);
 		}
-	};
+	}
 
-	const handleSaveTheme = (name: string): boolean => {
+	function handleSaveTheme(name: string): boolean {
 		// Ensure we have styles to save and they're different from default
 		if (!userConfig.activeTheme.cssVars) {
 			toast.error('No theme styles to save');
@@ -87,7 +87,7 @@
 		toast.success(`Your theme "${name.trim()}" has been saved.`);
 
 		return true;
-	};
+	}
 </script>
 
 <Button

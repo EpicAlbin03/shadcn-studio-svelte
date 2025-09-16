@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Select, SelectContent, SelectItem, SelectTrigger } from '$lib/components/ui/select';
+	import * as Select from '$lib/components/ui/select';
 
 	type Props = {
 		fonts: Record<string, string>;
@@ -14,17 +14,17 @@
 	const fontNames = $derived(Object.keys(fonts));
 </script>
 
-<Select type="single" bind:value={() => value, (v) => onFontChange(v)}>
-	<SelectTrigger class="h-12 w-full cursor-pointer">
+<Select.Root type="single" bind:value={() => value, (v) => onFontChange(v)}>
+	<Select.Trigger class="h-12 w-full cursor-pointer">
 		{value}
-	</SelectTrigger>
-	<SelectContent>
+	</Select.Trigger>
+	<Select.Content>
 		{#each fontNames as fontName}
-			<SelectItem value={fontName}>
+			<Select.Item value={fontName}>
 				<span style={`font-family: ${fonts[fontName] ?? defaultValue}`}>
 					{fontName}
 				</span>
-			</SelectItem>
+			</Select.Item>
 		{/each}
-	</SelectContent>
-</Select>
+	</Select.Content>
+</Select.Root>

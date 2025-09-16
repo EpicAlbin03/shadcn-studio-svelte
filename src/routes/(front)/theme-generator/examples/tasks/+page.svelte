@@ -5,8 +5,8 @@
 </script>
 
 <div class="md:hidden">
-	<img src="/img/examples/tasks-light.png" alt="Tasks" class="block dark:hidden" />
-	<img src="/img/examples/tasks-dark.png" alt="Tasks" class="hidden dark:block" />
+	<img src="/examples/tasks-light.png" alt="Tasks" class="block dark:hidden" />
+	<img src="/examples/tasks-dark.png" alt="Tasks" class="hidden dark:block" />
 </div>
 <div class="hidden h-full flex-1 flex-col gap-8 p-8 md:flex">
 	<div class="flex items-center justify-between gap-2">

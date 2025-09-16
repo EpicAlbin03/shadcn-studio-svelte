@@ -1,12 +1,7 @@
 <script lang="ts">
 	import SliderWithInput from './SliderWithInput.svelte';
 	import ColorSwatch from './color-panel/ColorSwatch.svelte';
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion';
 
 	type Props = {
 		shadowColor: string;
@@ -29,10 +24,10 @@
 	}: Props = $props();
 </script>
 
-<Accordion type="single" value="shadow">
-	<AccordionItem value="shadow" class="rounded-lg !border px-4">
-		<AccordionTrigger class="cursor-pointer py-3 text-base font-medium">Shadow</AccordionTrigger>
-		<AccordionContent class="space-y-3 pt-2 pb-4">
+<Accordion.Root type="single" value="shadow">
+	<Accordion.Item value="shadow" class="rounded-lg !border px-4">
+		<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">Shadow</Accordion.Trigger>
+		<Accordion.Content class="space-y-3 pt-2 pb-4">
 			<div class="space-y-4">
 				<div>
 					<ColorSwatch
@@ -102,6 +97,6 @@
 					/>
 				</div>
 			</div>
-		</AccordionContent>
-	</AccordionItem>
-</Accordion>
+		</Accordion.Content>
+	</Accordion.Item>
+</Accordion.Root>

@@ -1,11 +1,6 @@
 <script lang="ts">
 	import type { ThemeStyleProps } from '$lib/types/theme';
-	import {
-		Accordion,
-		AccordionContent,
-		AccordionItem,
-		AccordionTrigger
-	} from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion';
 	import ColorSwatch from './ColorSwatch.svelte';
 	import { mode as _mode } from 'mode-watcher';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
@@ -16,7 +11,7 @@
 		| Partial<ThemeStyleProps>
 		| undefined;
 
-	const updateColor = (key: keyof ThemeStyleProps, value: string) => {
+	function updateColor(key: keyof ThemeStyleProps, value: string) {
 		if (!currentTheme) return;
 
 		// apply common styles to both light and dark modes
@@ -43,17 +38,17 @@
 				}
 			}
 		});
-	};
+	}
 </script>
 
 <div class="space-y-6">
-	<Accordion type="multiple" value={['brand']} class="w-full space-y-4">
+	<Accordion.Root type="multiple" value={['brand']} class="w-full space-y-4">
 		<!-- Brand Colors -->
-		<AccordionItem value="brand" class="rounded-lg border px-4">
-			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
-				>Brand Colors</AccordionTrigger
-			>
-			<AccordionContent class="space-y-3 pt-2 pb-4">
+		<Accordion.Item value="brand" class="rounded-lg border px-4">
+			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
+				Brand Colors
+			</Accordion.Trigger>
+			<Accordion.Content class="space-y-3 pt-2 pb-4">
 				<ColorSwatch
 					label="Primary"
 					value={currentTheme?.primary || ''}
@@ -79,15 +74,15 @@
 					value={currentTheme?.destructive || ''}
 					onChange={(value) => updateColor('destructive', value)}
 				/>
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 
 		<!-- Base Colors -->
-		<AccordionItem value="base" class="rounded-lg border px-4">
-			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
-				>Base Colors</AccordionTrigger
-			>
-			<AccordionContent class="space-y-3 pt-2 pb-4">
+		<Accordion.Item value="base" class="rounded-lg border px-4">
+			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
+				Base Colors
+			</Accordion.Trigger>
+			<Accordion.Content class="space-y-3 pt-2 pb-4">
 				<ColorSwatch
 					label="Background"
 					value={currentTheme?.background || ''}
@@ -118,15 +113,15 @@
 					value={currentTheme?.['popover-foreground'] || ''}
 					onChange={(value) => updateColor('popover-foreground', value)}
 				/>
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 
 		<!-- Other Colors -->
-		<AccordionItem value="other" class="rounded-lg !border px-4">
-			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
-				>Other Colors</AccordionTrigger
-			>
-			<AccordionContent class="space-y-3 pt-2 pb-4">
+		<Accordion.Item value="other" class="rounded-lg !border px-4">
+			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
+				Other Colors
+			</Accordion.Trigger>
+			<Accordion.Content class="space-y-3 pt-2 pb-4">
 				<ColorSwatch
 					label="Muted"
 					value={currentTheme?.muted || ''}
@@ -162,15 +157,15 @@
 					value={currentTheme?.ring || ''}
 					onChange={(value) => updateColor('ring', value)}
 				/>
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 
 		<!-- Sidebar Colors -->
-		<AccordionItem value="sidebar" class="rounded-lg !border px-4">
-			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
-				>Sidebar Colors</AccordionTrigger
-			>
-			<AccordionContent class="space-y-3 pt-2 pb-4">
+		<Accordion.Item value="sidebar" class="rounded-lg !border px-4">
+			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
+				Sidebar Colors
+			</Accordion.Trigger>
+			<Accordion.Content class="space-y-3 pt-2 pb-4">
 				<ColorSwatch
 					label="Sidebar"
 					value={currentTheme?.sidebar || ''}
@@ -211,15 +206,15 @@
 					value={currentTheme?.['sidebar-ring'] || ''}
 					onChange={(value) => updateColor('sidebar-ring', value)}
 				/>
-			</AccordionContent>
-		</AccordionItem>
+			</Accordion.Content>
+		</Accordion.Item>
 
 		<!-- Chart Colors -->
-		<AccordionItem value="chart" class="rounded-lg !border px-4">
-			<AccordionTrigger class="cursor-pointer py-3 text-base font-medium"
-				>Chart Colors</AccordionTrigger
-			>
-			<AccordionContent class="space-y-3 pt-2 pb-4">
+		<Accordion.Item value="chart" class="rounded-lg !border px-4">
+			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
+				Chart Colors
+			</Accordion.Trigger>
+			<Accordion.Content class="space-y-3 pt-2 pb-4">
 				<ColorSwatch
 					label="Chart 1"
 					value={currentTheme?.['chart-1'] || ''}
@@ -245,7 +240,7 @@
 					value={currentTheme?.['chart-5'] || ''}
 					onChange={(value) => updateColor('chart-5', value)}
 				/>
-			</AccordionContent>
-		</AccordionItem>
-	</Accordion>
+			</Accordion.Content>
+		</Accordion.Item>
+	</Accordion.Root>
 </div>

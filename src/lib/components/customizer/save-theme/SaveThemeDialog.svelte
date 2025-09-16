@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogContent,
-		DialogDescription,
-		DialogFooter,
-		DialogHeader,
-		DialogTitle
-	} from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
 	import { toast } from 'svelte-sonner';
 
@@ -21,7 +14,7 @@
 
 	let name = $state('');
 
-	const handleSave = () => {
+	function handleSave() {
 		if (!name.trim()) {
 			toast.error('Please enter a theme name');
 			return;
@@ -34,15 +27,15 @@
 			name = '';
 			onClose();
 		}
-	};
+	}
 </script>
 
-<Dialog bind:open={isOpen} onOpenChange={onClose}>
-	<DialogContent>
-		<DialogHeader>
-			<DialogTitle>Save Theme</DialogTitle>
-			<DialogDescription>Give your theme a name to save it for later use.</DialogDescription>
-		</DialogHeader>
+<Dialog.Root bind:open={isOpen} onOpenChange={onClose}>
+	<Dialog.Content>
+		<Dialog.Header>
+			<Dialog.Title>Save Theme</Dialog.Title>
+			<Dialog.Description>Give your theme a name to save it for later use.</Dialog.Description>
+		</Dialog.Header>
 		<Input
 			bind:value={name}
 			placeholder="Enter theme name"
@@ -53,9 +46,9 @@
 				}
 			}}
 		/>
-		<DialogFooter class="mt-6">
+		<Dialog.Footer class="mt-6">
 			<Button variant="outline" onclick={onClose}>Cancel</Button>
 			<Button onclick={handleSave}>Save Theme</Button>
-		</DialogFooter>
-	</DialogContent>
-</Dialog>
+		</Dialog.Footer>
+	</Dialog.Content>
+</Dialog.Root>

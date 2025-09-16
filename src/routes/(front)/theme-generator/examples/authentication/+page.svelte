@@ -4,12 +4,8 @@
 </script>
 
 <div class="md:hidden">
-	<img
-		src="/img/examples/authentication-light.png"
-		alt="Authentication"
-		class="block dark:hidden"
-	/>
-	<img src="/img/examples/authentication-dark.png" alt="Authentication" class="hidden dark:block" />
+	<img src="/examples/authentication-light.png" alt="Authentication" class="block dark:hidden" />
+	<img src="/examples/authentication-dark.png" alt="Authentication" class="hidden dark:block" />
 </div>
 
 <div

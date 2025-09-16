@@ -3,15 +3,8 @@
 	import type { BundledLanguage } from 'shiki/bundle/web';
 	import type { ProcessedComponentsData } from '$lib/types/components';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		Dialog,
-		DialogContent,
-		DialogDescription,
-		DialogHeader,
-		DialogTitle,
-		DialogTrigger
-	} from '$lib/components/ui/dialog';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { CodeBlock, CodeBlockMultipleView } from '$lib/components/code-block/index';
@@ -25,11 +18,11 @@
 
 <div class="absolute end-2 top-2 flex items-center gap-2">
 	<!-- <CopyPrompt /> -->
-	<Dialog>
-		<Tooltip>
-			<TooltipTrigger>
+	<Dialog.Root>
+		<Tooltip.Root>
+			<Tooltip.Trigger>
 				{#snippet child({ props })}
-					<DialogTrigger {...props}>
+					<Dialog.Trigger {...props}>
 						{#snippet child({ props })}
 							<Button
 								{...props}
@@ -41,12 +34,12 @@
 								<span class="sr-only">View code</span>
 							</Button>
 						{/snippet}
-					</DialogTrigger>
+					</Dialog.Trigger>
 				{/snippet}
-			</TooltipTrigger>
-			<TooltipContent>View code</TooltipContent>
-		</Tooltip>
-		<DialogContent class="sm:max-w-[900px]">
+			</Tooltip.Trigger>
+			<Tooltip.Content>View code</Tooltip.Content>
+		</Tooltip.Root>
+		<Dialog.Content class="sm:max-w-[900px]">
 			<!-- <DialogHeader>
 				<DialogTitle class="text-left">CLI Command</DialogTitle>
 				<DialogDescription class="sr-only"
@@ -102,6 +95,6 @@
 					</div>
 				</div>
 			</div>
-		</DialogContent>
-	</Dialog>
+		</Dialog.Content>
+	</Dialog.Root>
 </div>

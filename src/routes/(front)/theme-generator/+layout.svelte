@@ -113,7 +113,7 @@
 		<div class="mx-auto grid w-full max-w-6xl gap-x-10 md:grid-cols-2">
 			<Accordion type="single" class="w-full">
 				{#each faqs.slice(4) as { question, answer }, index (question)}
-					<AccordionItem value={`question-${index}`}>
+					<AccordionItem value="question-{index}">
 						<AccordionPrimitive.Header class="flex">
 							<AccordionPrimitive.Trigger
 								class={cn(
@@ -133,7 +133,7 @@
 			</Accordion>
 			<Accordion type="single" class="w-full">
 				{#each faqs.slice(4) as { question, answer }, index (question)}
-					<AccordionItem value={`question-${index + 5}`}>
+					<AccordionItem value="question-{index + 5}">
 						<AccordionPrimitive.Header class="flex">
 							<AccordionPrimitive.Trigger
 								class={cn(

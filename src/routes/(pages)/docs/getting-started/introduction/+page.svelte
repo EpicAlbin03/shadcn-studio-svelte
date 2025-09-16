@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
+	import * as Accordion from '$lib/components/ui/accordion';
 	import { introFaqs } from '$lib/assets/data/faqs';
 	import MetaData from '$lib/components/MetaData.svelte';
 
@@ -93,9 +93,9 @@
 
 	<div class="flex flex-col items-start space-y-3">
 		<h2 class="text-xl font-bold">Frequently Asked Questions</h2>
-		<Accordion type="single" class="w-full">
+		<Accordion.Root type="single" class="w-full">
 			{#each introFaqs as { question, answer }, index (question)}
-				<AccordionItem value={`question-${index}`}>
+				<Accordion.Item value="question-{index}">
 					<AccordionPrimitive.Header class="flex">
 						<AccordionPrimitive.Trigger
 							class="flex flex-1 items-center justify-between py-3 text-start font-medium text-foreground/80 transition-all hover:underline [&[data-state=open]>svg]:rotate-45"
@@ -106,9 +106,9 @@
 							/>
 						</AccordionPrimitive.Trigger>
 					</AccordionPrimitive.Header>
-					<AccordionContent class="text-muted-foreground">{answer}</AccordionContent>
-				</AccordionItem>
+					<Accordion.Content class="text-muted-foreground">{answer}</Accordion.Content>
+				</Accordion.Item>
 			{/each}
-		</Accordion>
+		</Accordion.Root>
 	</div>
 </div>

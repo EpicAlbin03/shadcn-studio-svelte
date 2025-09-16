@@ -15,10 +15,10 @@
 
 	let { value, onChange, min, max, step = 1, label, unit = 'px' }: Props = $props();
 
-	const onValueChange = (value: number) => {
+	function onValueChange(value: number) {
 		let clampedValue = Math.max(min, Math.min(max, value));
 		onChange(clampedValue);
-	};
+	}
 </script>
 
 <div class="mb-3">

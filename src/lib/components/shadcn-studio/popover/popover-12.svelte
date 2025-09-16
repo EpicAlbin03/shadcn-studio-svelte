@@ -31,7 +31,7 @@
 				</a>
 			</div>
 			<img
-				src="/components/tooltip-01.jpg"
+				src="/components/himalaya.jpg"
 				alt="the himalayas"
 				class="h-34 w-2/5 rounded-e-md object-cover"
 			/>

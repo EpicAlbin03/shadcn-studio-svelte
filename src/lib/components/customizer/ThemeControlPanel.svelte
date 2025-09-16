@@ -11,9 +11,9 @@
 	import { Label } from '$lib/components/ui/label';
 	import { Button } from '$lib/components/ui/button';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import { Alert, AlertDescription } from '$lib/components/ui/alert';
-	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
-	import { Tabs, TabsContent, TabsList, TabsTrigger } from '$lib/components/ui/tabs';
+	import * as Alert from '$lib/components/ui/alert';
+	import * as ToggleGroup from '$lib/components/ui/toggle-group';
+	import * as Tabs from '$lib/components/ui/tabs';
 	import {
 		DEFAULT_FONT_SANS,
 		DEFAULT_FONT_SERIF,
@@ -103,47 +103,47 @@
 		<!-- Mode Selection -->
 		<div class="flex flex-col gap-4">
 			<h3 class="text-lg font-medium">Mode</h3>
-			<ToggleGroup
+			<ToggleGroup.Root
 				type="single"
 				bind:value={() => mode, (v) => setMode(userConfig, v)}
 				class="gap-4"
 			>
-				<ToggleGroupItem
+				<ToggleGroup.Item
 					value="light"
 					aria-label="Toggle light"
 					class="cursor-pointer rounded-md border px-4 py-2 hover:text-foreground"
 				>
 					<Sun class="size-4" />
 					<span>Light</span>
-				</ToggleGroupItem>
-				<ToggleGroupItem
+				</ToggleGroup.Item>
+				<ToggleGroup.Item
 					value="dark"
 					aria-label="Toggle dark"
 					class="cursor-pointer rounded-md border px-4 py-2 hover:text-foreground"
 				>
 					<Moon class="size-4" />
 					<span>Dark</span>
-				</ToggleGroupItem>
-			</ToggleGroup>
+				</ToggleGroup.Item>
+			</ToggleGroup.Root>
 		</div>
 
 		<!-- Themes Selection -->
 		<ThemePresetSelect />
 
-		<Tabs value="colors" class="h-full w-full">
-			<TabsList class="mb-3 grid w-full grid-cols-3">
-				<TabsTrigger value="colors" class="cursor-pointer">Colors</TabsTrigger>
-				<TabsTrigger value="typography" class="cursor-pointer">Typography</TabsTrigger>
-				<TabsTrigger value="other" class="cursor-pointer">Other</TabsTrigger>
-			</TabsList>
+		<Tabs.Root value="colors" class="h-full w-full">
+			<Tabs.List class="mb-3 grid w-full grid-cols-3">
+				<Tabs.Trigger value="colors" class="cursor-pointer">Colors</Tabs.Trigger>
+				<Tabs.Trigger value="typography" class="cursor-pointer">Typography</Tabs.Trigger>
+				<Tabs.Trigger value="other" class="cursor-pointer">Other</Tabs.Trigger>
+			</Tabs.List>
 
-			<TabsContent value="colors">
+			<Tabs.Content value="colors">
 				<!-- CSS Variables Section -->
 				<ThemeColorPanel />
-			</TabsContent>
+			</Tabs.Content>
 
 			<!-- Text Selection} -->
-			<TabsContent value="typography">
+			<Tabs.Content value="typography">
 				<div class="mb-4">
 					<Label for="font-sans" class="mb-1.5 block text-xs">Sans-Serif Font</Label>
 					<ThemeFontSelect
@@ -188,9 +188,9 @@
 					/>
 				</div>
 
-				<Alert class="mt-6">
+				<Alert.Root class="mt-6">
 					<AlertCircle class="size-4" />
-					<AlertDescription class="block">
+					<Alert.Description class="block">
 						To use custom fonts, embed them in your project. See{' '}
 						<a
 							href="https://tailwindcss.com/docs/font-family"
@@ -201,11 +201,11 @@
 							Tailwind docs
 						</a>{' '}
 						for details.
-					</AlertDescription>
-				</Alert>
-			</TabsContent>
+					</Alert.Description>
+				</Alert.Root>
+			</Tabs.Content>
 
-			<TabsContent value="other">
+			<Tabs.Content value="other">
 				<!-- Radius Selection -->
 				<div class="flex flex-col gap-4">
 					<SliderWithInput
@@ -254,8 +254,8 @@
 						}}
 					/>
 				</div>
-			</TabsContent>
-		</Tabs>
+			</Tabs.Content>
+		</Tabs.Root>
 
 		<HoldToSaveTheme />
 		<SavedThemes />

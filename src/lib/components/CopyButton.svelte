@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Check, Copy } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { useCopy } from '$lib/hooks/use-copy.svelte';
 	import { cn } from '$lib/utils';
 
@@ -15,8 +15,8 @@
 </script>
 
 <div class={cn('absolute end-2 top-2', className)}>
-	<Tooltip>
-		<TooltipTrigger>
+	<Tooltip.Root>
+		<Tooltip.Trigger>
 			{#snippet child({ props })}
 				<Button
 					{...props}
@@ -40,7 +40,7 @@
 					</div>
 				</Button>
 			{/snippet}
-		</TooltipTrigger>
-		<TooltipContent>Copy</TooltipContent>
-	</Tooltip>
+		</Tooltip.Trigger>
+		<Tooltip.Content>Copy</Tooltip.Content>
+	</Tooltip.Root>
 </div>

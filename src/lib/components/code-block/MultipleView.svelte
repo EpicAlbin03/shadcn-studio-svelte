@@ -2,14 +2,7 @@
 	import { FileIcon } from '@lucide/svelte';
 	import type { BundledLanguage } from 'shiki/bundle/web';
 	import type { FileTree, ProcessedComponentsData } from '$lib/types/components';
-	import {
-		Sidebar,
-		SidebarGroup,
-		SidebarGroupContent,
-		SidebarGroupLabel,
-		SidebarMenu,
-		SidebarProvider
-	} from '$lib/components/ui/sidebar';
+	import * as Sidebar from '$lib/components/ui/sidebar';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import CodeBlock from './CodeBlock.svelte';
 	import Tree from './Tree.svelte';
@@ -49,7 +42,6 @@
 
 			if (firstPath) {
 				activeFileName = firstPath;
-
 				return;
 			}
 		}
@@ -65,22 +57,22 @@
 {#if tree}
 	<div class="flex bg-sidebar">
 		<div class="w-65 border-e">
-			<SidebarProvider class="flex !min-h-full flex-col">
-				<Sidebar collapsible="none" class="w-full flex-1">
-					<SidebarGroupLabel class="h-12 rounded-none border-b px-4 text-sm"
-						>Files</SidebarGroupLabel
+			<Sidebar.Provider class="flex !min-h-full flex-col">
+				<Sidebar.Root collapsible="none" class="w-full flex-1">
+					<Sidebar.GroupLabel class="h-12 rounded-none border-b px-4 text-sm"
+						>Files</Sidebar.GroupLabel
 					>
-					<SidebarGroup class="p-0">
-						<SidebarGroupContent>
-							<SidebarMenu class="translate-x-0 gap-1.5 py-2">
+					<Sidebar.Group class="p-0">
+						<Sidebar.GroupContent>
+							<Sidebar.Menu class="translate-x-0 gap-1.5 py-2">
 								{#each tree as treeItem}
 									<Tree {treeItem} index={1} {activeFileName} />
 								{/each}
-							</SidebarMenu>
-						</SidebarGroupContent>
-					</SidebarGroup>
-				</Sidebar>
-			</SidebarProvider>
+							</Sidebar.Menu>
+						</Sidebar.GroupContent>
+					</Sidebar.Group>
+				</Sidebar.Root>
+			</Sidebar.Provider>
 		</div>
 		<div class="relative flex-1 overflow-auto">
 			<div class="flex h-full flex-1 flex-col p-0">

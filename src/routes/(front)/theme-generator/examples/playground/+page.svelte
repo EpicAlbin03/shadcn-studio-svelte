@@ -22,8 +22,8 @@
 </script>
 
 <div class="md:hidden">
-	<img src="/img/examples/playground-light.png" alt="Playground" class="block dark:hidden" />
-	<img src="/img/examples/playground-dark.png" alt="Playground" class="hidden dark:block" />
+	<img src="/examples/playground-light.png" alt="Playground" class="block dark:hidden" />
+	<img src="/examples/playground-dark.png" alt="Playground" class="hidden dark:block" />
 </div>
 <div class="hidden h-full flex-col md:flex">
 	<div

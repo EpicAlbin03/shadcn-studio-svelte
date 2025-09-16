@@ -7,7 +7,7 @@
 
 	const userConfig = UserConfigContext.get();
 
-	const handleApplyTheme = (theme: { name: string; cssVars: ThemeStyles }) => {
+	function handleApplyTheme(theme: { name: string; cssVars: ThemeStyles }) {
 		userConfig.setActiveTheme({
 			name: theme.name,
 			label: theme.name,
@@ -15,17 +15,17 @@
 		});
 
 		toast.success(`Theme "${theme.name}" has been applied.`);
-	};
+	}
 
-	const handleDeleteTheme = (e: MouseEvent, name: string) => {
-		e.stopPropagation(); // Prevent theme application when deleting
+	function handleDeleteTheme(event: MouseEvent, name: string) {
+		event.stopPropagation(); // Prevent theme application when deleting
 		userConfig.removeSavedTheme(name);
 		toast.success(`Theme "${name}" has been removed.`);
-	};
+	}
 
-	const getThemeColor = (theme: { cssVars: ThemeStyles }, color: keyof ThemeStyleProps) => {
+	function getThemeColor(theme: { cssVars: ThemeStyles }, color: keyof ThemeStyleProps) {
 		return theme.cssVars?.light?.[color] || theme.cssVars?.dark?.[color] || '#000000';
-	};
+	}
 </script>
 
 {#if userConfig.savedThemes && userConfig.savedThemes.length > 0}
@@ -42,19 +42,19 @@
 							<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
 								<div
 									class="rounded-[2px]"
-									style={`background-color: ${getThemeColor(theme, 'primary')}`}
+									style="background-color: {getThemeColor(theme, 'primary')}"
 								></div>
 								<div
 									class="rounded-[2px]"
-									style={`background-color: ${getThemeColor(theme, 'destructive')}`}
+									style="background-color: {getThemeColor(theme, 'destructive')}"
 								></div>
 								<div
 									class="rounded-[2px]"
-									style={`background-color: ${getThemeColor(theme, 'secondary')}`}
+									style="background-color: {getThemeColor(theme, 'secondary')}"
 								></div>
 								<div
 									class="rounded-full"
-									style={`background-color: ${getThemeColor(theme, 'accent')}`}
+									style="background-color: {getThemeColor(theme, 'accent')}"
 								></div>
 							</div>
 						</div>

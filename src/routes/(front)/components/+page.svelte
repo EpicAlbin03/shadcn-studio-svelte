@@ -22,7 +22,7 @@
 		{#each categories.filter((category) => !category.isComingSoon) as category (category.slug)}
 			{@const Icon = category.svg}
 			<div class="group overflow-hidden rounded-xl border">
-				<a href={`/docs/components/${category.slug}`}>
+				<a href="/docs/components/{category.slug}">
 					<div
 						class="relative flex h-52 items-center justify-center border-b bg-primary/[0.045] dark:bg-transparent"
 					>

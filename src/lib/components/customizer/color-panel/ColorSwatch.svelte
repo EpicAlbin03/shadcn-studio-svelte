@@ -23,10 +23,10 @@
 	<div class="flex items-center gap-2">
 		<div
 			class="relative flex size-9.5 cursor-pointer items-center justify-center overflow-hidden rounded border"
-			style={`background-color: ${value}`}
+			style="background-color: {value}"
 		>
 			<DebouncedInput
-				id={`color-${label.replace(/\s+/g, '-').toLowerCase()}`}
+				id="color-{label.replace(/\s+/g, '-').toLowerCase()}"
 				type="color"
 				bind:value
 				onChange={() => onChange(value)}
