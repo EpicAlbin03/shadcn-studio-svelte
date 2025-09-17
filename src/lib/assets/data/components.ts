@@ -4377,30 +4377,48 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'select-32',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-32.svelte',
-	// 			target: 'components/shadcn-studio/select/select-32.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/multi-select.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'select-33',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-33.svelte',
-	// 			target: 'components/shadcn-studio/select/select-33.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/multi-select.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'select-32',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-32.svelte',
+				target: 'components/shadcn-studio/select/select-32.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/multi-select.svelte',
+				target: 'components/ui/multi-select/multi-select.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/index.ts',
+				target: 'components/ui/multi-select/index.ts'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/types.ts',
+				target: 'components/ui/multi-select/types.ts'
+			}
+		]
+	},
+	{
+		name: 'select-33',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-33.svelte',
+				target: 'components/shadcn-studio/select/select-33.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/multi-select.svelte',
+				target: 'components/ui/multi-select/multi-select.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/index.ts',
+				target: 'components/ui/multi-select/index.ts'
+			},
+			{
+				path: 'src/lib/components/ui/multi-select/types.ts',
+				target: 'components/ui/multi-select/types.ts'
+			}
+		]
+	},
 	// {
 	// 	name: 'select-34',
 	// 	files: [
