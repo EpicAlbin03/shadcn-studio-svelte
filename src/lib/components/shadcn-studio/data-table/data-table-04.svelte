@@ -1,3 +1,15 @@
+<script lang="ts" module>
+	export type Item = {
+		id: string;
+		product: string;
+		productImage: string;
+		fallback: string;
+		price: number;
+		availability: 'In Stock' | 'Out of Stock' | 'Limited';
+		rating: number;
+	};
+</script>
+
 <script lang="ts">
 	import {
 		type ColumnDef,
@@ -21,16 +33,6 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { cn } from '$lib/utils';
 	import Filter from './data-table-04/Filter.svelte';
-
-	type Item = {
-		id: string;
-		product: string;
-		productImage: string;
-		fallback: string;
-		price: number;
-		availability: 'In Stock' | 'Out of Stock' | 'Limited';
-		rating: number;
-	};
 
 	const items: Item[] = [
 		{

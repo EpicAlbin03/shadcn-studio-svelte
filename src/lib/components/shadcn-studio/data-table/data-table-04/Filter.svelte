@@ -4,8 +4,9 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { SearchIcon } from '@lucide/svelte';
 	import type { Column } from '@tanstack/table-core';
+	import type { Item } from '$lib/components/shadcn-studio/data-table/data-table-04.svelte';
 
-	type Props = { column: Column<any, unknown> };
+	type Props = { column: Column<Item, unknown> };
 
 	let { column }: Props = $props();
 

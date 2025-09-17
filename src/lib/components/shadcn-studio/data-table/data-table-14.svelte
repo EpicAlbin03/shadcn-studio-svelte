@@ -1,5 +1,16 @@
-<script lang="ts" module>
-	export type Employee = {
+<script lang="ts">
+	import { type ColumnDef, getCoreRowModel } from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
+	import * as Table from '$lib/components/ui/table/index.js';
+	import {
+		FlexRender,
+		createSvelteTable,
+		renderSnippet
+	} from '$lib/components/ui/data-table/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import { GripVerticalIcon } from '@lucide/svelte';
+
+	type Employee = {
 		employeeId: number;
 		firstName: string;
 		lastName: string;
@@ -9,36 +20,6 @@
 		hireDate: string;
 		salary: number;
 	};
-</script>
-
-<script lang="ts">
-	import {
-		type ColumnDef,
-		getCoreRowModel,
-		getSortedRowModel,
-		type SortingState
-	} from '@tanstack/table-core';
-	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import { createSvelteTable, renderSnippet } from '$lib/components/ui/data-table/index.js';
-	import {
-		closestCenter,
-		DndContext,
-		KeyboardSensor,
-		MouseSensor,
-		TouchSensor,
-		useSensor,
-		useSensors,
-		type DragEndEvent
-	} from '@dnd-kit-svelte/core';
-	import {
-		arrayMove,
-		horizontalListSortingStrategy,
-		SortableContext
-	} from '@dnd-kit-svelte/sortable';
-	import DragAlongCell from './data-table-08/DragAlongCell.svelte';
-	import DraggableTableHeader from './data-table-08/DraggableTableHeader.svelte';
-	import { restrictToHorizontalAxis } from '@dnd-kit-svelte/modifiers';
 
 	const data: Employee[] = [
 		{
@@ -96,7 +77,9 @@
 					};
 				});
 				return renderSnippet(firstNameSnippet, row.getValue('firstName'));
-			}
+			},
+			sortUndefined: 'last',
+			sortDescFirst: false
 		},
 		{
 			id: 'lastName',
@@ -190,7 +173,6 @@
 		}
 	];
 
-	let sorting = $state<SortingState>([]);
 	let columnOrder = $state<string[]>(columns.map((column) => column.id as string));
 
 	const table = createSvelteTable({
@@ -199,22 +181,11 @@
 		},
 		columns,
 		state: {
-			get sorting() {
-				return sorting;
-			},
 			get columnOrder() {
 				return columnOrder;
 			}
 		},
 		getCoreRowModel: getCoreRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		onSortingChange: (updater) => {
-			if (typeof updater === 'function') {
-				sorting = updater(sorting);
-			} else {
-				sorting = updater;
-			}
-		},
 		onColumnOrderChange: (updater) => {
 			if (typeof updater === 'function') {
 				columnOrder = updater(columnOrder);
@@ -224,73 +195,123 @@
 		}
 	});
 
-	const sortableId = $props.id();
+	// Simplified drag and drop functionality without dnd-kit
+	let draggedColumnId = $state<string | null>(null);
+	let dragOverColumnId = $state<string | null>(null);
 
-	const sensors = useSensors(
-		useSensor(MouseSensor, {}),
-		useSensor(TouchSensor, {}),
-		useSensor(KeyboardSensor, {})
-	);
-
-	function handleDragEnd(event: DragEndEvent) {
-		const { active, over } = event;
-		if (active && over && active.id !== over.id) {
-			const oldIndex = columnOrder.indexOf(active.id as string);
-			const newIndex = columnOrder.indexOf(over.id as string);
-			columnOrder = arrayMove(columnOrder, oldIndex, newIndex);
+	function handleDragStart(event: DragEvent, columnId: string) {
+		draggedColumnId = columnId;
+		if (event.dataTransfer) {
+			event.dataTransfer.effectAllowed = 'move';
+			event.dataTransfer.setData('text/html', columnId);
 		}
+	}
+
+	function handleDragOver(event: DragEvent, columnId: string) {
+		event.preventDefault();
+		if (event.dataTransfer) {
+			event.dataTransfer.dropEffect = 'move';
+		}
+		dragOverColumnId = columnId;
+	}
+
+	function handleDragLeave() {
+		dragOverColumnId = null;
+	}
+
+	function handleDrop(event: DragEvent, targetColumnId: string) {
+		event.preventDefault();
+
+		if (draggedColumnId && draggedColumnId !== targetColumnId) {
+			const oldIndex = columnOrder.indexOf(draggedColumnId);
+			const newIndex = columnOrder.indexOf(targetColumnId);
+
+			if (oldIndex !== -1 && newIndex !== -1) {
+				const newOrder = [...columnOrder];
+				const [movedItem] = newOrder.splice(oldIndex, 1);
+				newOrder.splice(newIndex, 0, movedItem);
+				columnOrder = newOrder;
+			}
+		}
+
+		draggedColumnId = null;
+		dragOverColumnId = null;
+	}
+
+	function handleDragEnd() {
+		draggedColumnId = null;
+		dragOverColumnId = null;
 	}
 </script>
 
 <div class="w-full">
 	<div class="rounded-md border">
-		<DndContext
-			id={sortableId}
-			collisionDetection={closestCenter}
-			modifiers={[restrictToHorizontalAxis]}
-			onDragEnd={handleDragEnd}
-			{sensors}
-		>
-			<Table.Root>
-				<Table.Header>
-					{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
-						<Table.Row class="bg-muted/50 [&>th]:border-t-0">
-							<SortableContext items={columnOrder} strategy={horizontalListSortingStrategy}>
-								{#each headerGroup.headers as header (header.id)}
-									<DraggableTableHeader {header} />
-								{/each}
-							</SortableContext>
-						</Table.Row>
-					{/each}
-				</Table.Header>
-				<Table.Body>
-					{#if table.getRowModel().rows?.length}
-						{#each table.getRowModel().rows as row (row.id)}
-							<Table.Row data-state={row.getIsSelected() && 'selected'}>
-								<SortableContext items={columnOrder} strategy={horizontalListSortingStrategy}>
-									{#each row.getVisibleCells() as cell (cell.id)}
-										<DragAlongCell {cell} />
-									{/each}
-								</SortableContext>
-							</Table.Row>
+		<Table.Root>
+			<Table.Header>
+				{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
+					<Table.Row class="bg-muted/50 [&>th]:border-t-0">
+						{#each headerGroup.headers as header (header.id)}
+							<Table.Head
+								class="relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent {dragOverColumnId ===
+								header.column.id
+									? 'bg-muted'
+									: ''}"
+								draggable="true"
+								ondragstart={(e) => handleDragStart(e, header.column.id)}
+								ondragover={(e) => handleDragOver(e, header.column.id)}
+								ondragleave={handleDragLeave}
+								ondrop={(e) => handleDrop(e, header.column.id)}
+								ondragend={handleDragEnd}
+								style="width: {header.column.getSize()}px; {draggedColumnId === header.column.id
+									? 'opacity: 0.5;'
+									: ''}"
+							>
+								<div class="flex items-center justify-start gap-0.5">
+									<Button
+										size="icon"
+										variant="ghost"
+										class="-ml-2 size-7 cursor-grab shadow-none"
+										aria-label="Drag to reorder"
+									>
+										<GripVerticalIcon class="opacity-60" size={16} aria-hidden="true" />
+									</Button>
+									<span class="grow truncate">
+										{#if !header.isPlaceholder}
+											<FlexRender
+												content={header.column.columnDef.header}
+												context={header.getContext()}
+											/>
+										{/if}
+									</span>
+								</div>
+							</Table.Head>
 						{/each}
-					{:else}
-						<Table.Row>
-							<Table.Cell colspan={columns.length} class="h-24 text-center">No results.</Table.Cell>
-						</Table.Row>
-					{/if}
-				</Table.Body>
-			</Table.Root>
-		</DndContext>
+					</Table.Row>
+				{/each}
+			</Table.Header>
+			<Table.Body>
+				{#each table.getRowModel().rows as row (row.id)}
+					<Table.Row data-state={row.getIsSelected() && 'selected'}>
+						{#each row.getVisibleCells() as cell (cell.id)}
+							<Table.Cell
+								class="truncate {dragOverColumnId === cell.column.id ? 'bg-muted/50' : ''}"
+								style="width: {cell.column.getSize()}px; {draggedColumnId === cell.column.id
+									? 'opacity: 0.5;'
+									: ''}"
+							>
+								<FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />
+							</Table.Cell>
+						{/each}
+					</Table.Row>
+				{:else}
+					<Table.Row>
+						<Table.Cell colspan={columns.length} class="h-24 text-center">No results.</Table.Cell>
+					</Table.Row>
+				{/each}
+			</Table.Body>
+		</Table.Root>
 	</div>
 	<p class="mt-4 text-center text-sm text-muted-foreground">
-		Data table with draggable columns using
-		<a
-			href="https://github.com/HanielU/dnd-kit-svelte"
-			class="underline hover:text-primary"
-			target="_blank"
-		>
-			dnd-kit-svelte
-		</a>
+		Data table with simple draggable columns
 	</p>
 </div>

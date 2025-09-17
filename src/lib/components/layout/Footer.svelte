@@ -48,17 +48,17 @@
 							<a href="/components">Shadcn Components</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#!">
 								Shadcn Figma UI Kit <span class="font-normal text-muted-foreground">(Soon)</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#!">
 								Shadcn Blocks <span class="font-normal text-muted-foreground">(Soon)</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#!">
 								Shadcn Templates <span class="font-normal text-muted-foreground">(Soon)</span>
 							</a>
 						</li>
@@ -94,10 +94,10 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">Privacy policy</a>
+							<a href="#!">Privacy policy</a>
 						</li>
 						<li>
-							<a href="#">Terms & Condition</a>
+							<a href="#!">Terms & Condition</a>
 						</li>
 					</ul>
 				</div>

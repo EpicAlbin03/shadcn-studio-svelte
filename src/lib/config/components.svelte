@@ -519,6 +519,7 @@
 				{ name: 'data-table-06' },
 				{ name: 'data-table-07' },
 				{ name: 'data-table-08' },
+				{ name: 'data-table-14' },
 				{ name: 'data-table-09' },
 				{ name: 'data-table-10' },
 				{ name: 'data-table-11' },

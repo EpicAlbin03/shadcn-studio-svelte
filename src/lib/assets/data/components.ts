@@ -2386,6 +2386,14 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/data-table/data-table-08.svelte',
 				target: 'components/shadcn-studio/data-table/data-table-08.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-08/DragAlongCell.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-08/DragAlongCell.svelte'
+			},
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-08/DraggableTableHeader.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-08/DraggableTableHeader.svelte'
 			}
 		]
 	},
@@ -2443,6 +2451,15 @@ export const components: ComponentProps[] = [
 			{
 				path: 'src/lib/components/shadcn-studio/data-table/data-table-13.svelte',
 				target: 'components/shadcn-studio/data-table/data-table-13.svelte'
+			}
+		]
+	},
+	{
+		name: 'data-table-14',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/data-table/data-table-14.svelte',
+				target: 'components/shadcn-studio/data-table/data-table-14.svelte'
 			}
 		]
 	},
