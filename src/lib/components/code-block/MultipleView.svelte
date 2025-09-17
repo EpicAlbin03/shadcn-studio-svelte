@@ -33,7 +33,7 @@
 	};
 
 	let activeFileName = $state('');
-	let language = $state<BundledLanguage>('tsx');
+	let language = $state<BundledLanguage>('svelte');
 	let code = $state('');
 
 	$effect(() => {
@@ -46,7 +46,7 @@
 			}
 		}
 
-		language = (activeFileName?.split('.').pop() as BundledLanguage) || 'tsx';
+		language = (activeFileName?.split('.').pop() as BundledLanguage) || 'svelte';
 		code =
 			files.find((file) => {
 				return file.target ? file.target === activeFileName : file.path === activeFileName;
@@ -59,14 +59,14 @@
 		<div class="w-65 border-e">
 			<Sidebar.Provider class="flex !min-h-full flex-col">
 				<Sidebar.Root collapsible="none" class="w-full flex-1">
-					<Sidebar.GroupLabel class="h-12 rounded-none border-b px-4 text-sm"
-						>Files</Sidebar.GroupLabel
-					>
+					<Sidebar.GroupLabel class="h-12 rounded-none border-b px-4 text-sm">
+						Files
+					</Sidebar.GroupLabel>
 					<Sidebar.Group class="p-0">
 						<Sidebar.GroupContent>
 							<Sidebar.Menu class="translate-x-0 gap-1.5 py-2">
 								{#each tree as treeItem}
-									<Tree {treeItem} index={1} {activeFileName} />
+									<Tree {treeItem} index={1} bind:activeFileName />
 								{/each}
 							</Sidebar.Menu>
 						</Sidebar.GroupContent>

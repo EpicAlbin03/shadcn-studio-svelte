@@ -15,7 +15,7 @@
 </script>
 
 <div class={cn('absolute end-2 top-2', className)}>
-	<Tooltip.Root>
+	<Tooltip.Root ignoreNonKeyboardFocus>
 		<Tooltip.Trigger>
 			{#snippet child({ props })}
 				<Button
@@ -26,6 +26,7 @@
 					onclick={() => copy(source || '')}
 					aria-label={copied ? 'Copied' : 'Copy component source'}
 					disabled={copied}
+					tabindex={1}
 				>
 					<div class={cn('transition-all', copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0')}>
 						<Check aria-hidden={true} class="size-4 text-green-500" />

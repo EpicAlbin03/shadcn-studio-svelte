@@ -50,7 +50,7 @@
 			<Collapsible.Content>
 				<Sidebar.MenuSub class="m-0 w-full translate-x-0 border-none p-0">
 					{#each treeItem.children as treeSubItem}
-						<Self treeItem={treeSubItem} index={index + 1} {activeFileName} />
+						<Self treeItem={treeSubItem} index={index + 1} bind:activeFileName />
 					{/each}
 				</Sidebar.MenuSub>
 			</Collapsible.Content>

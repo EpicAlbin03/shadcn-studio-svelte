@@ -41,7 +41,7 @@
 	</div>
 {:else if isHighlighterReady && highlightedCode}
 	<div
-		class="h-full *:outline-none! [&_code]:font-mono [&_code]:text-[13px] [&_pre]:h-full [&_pre]:max-h-[350px] [&_pre]:overflow-auto [&_pre]:bg-sidebar! [&_pre]:p-4 [&_pre]:leading-snug"
+		class="h-full *:outline-none! [&_code]:font-mono [&_code]:text-[13px] [&_pre]:h-full [&_pre]:max-h-[500px] [&_pre]:overflow-auto [&_pre]:bg-sidebar! [&_pre]:p-4 [&_pre]:leading-snug"
 	>
 		{@html highlightedCode}
 	</div>
