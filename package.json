@@ -55,6 +55,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"runed": "^0.31.1",
 		"shiki": "^3.12.0",
+		"super-sitemap": "^1.0.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"svelte-sonner": "^1.0.5",

@@ -1,3 +1,6 @@
-# allow crawling everything by default
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+Disallow: /private/
+Disallow: /*?*
+
+Sitemap: http://localhost:5173

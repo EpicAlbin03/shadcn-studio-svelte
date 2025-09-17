@@ -36,7 +36,7 @@
 		{@render children()}
 	</section>
 
-	<section class="py-12 sm:py-20">
+	<section id="features" class="py-12 sm:py-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
 				<Sparkles class="size-4" />
@@ -97,7 +97,7 @@
 		</div>
 	</section>
 
-	<section class="py-12 sm:py-20">
+	<section id="faq" class="py-12 sm:py-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
 				<Sparkles class="size-4" />

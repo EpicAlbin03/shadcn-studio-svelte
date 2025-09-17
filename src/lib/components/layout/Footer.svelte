@@ -68,7 +68,13 @@
 					<div class="text-lg font-semibold">Resources</div>
 					<ul class="space-y-3">
 						<li>
-							<a href="/#roadmap">Roadmap</a>
+							<a href="/theme-generator/#roadmap">Roadmap</a>
+						</li>
+						<li>
+							<a href="/theme-generator/#faq">FAQ</a>
+						</li>
+						<li>
+							<a href="/sitemap.xml">Sitemap</a>
 						</li>
 						<!-- <li>
               <a

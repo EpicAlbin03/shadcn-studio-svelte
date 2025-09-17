@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		DropdownMenu,
-		DropdownMenuContent,
-		DropdownMenuGroup,
-		DropdownMenuItem,
-		DropdownMenuTrigger
-	} from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import CommandMenu from '$lib/components/layout/CommandMenu.svelte';
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import ModeToggle from '$lib/components/layout/ModeToggle.svelte';
@@ -37,18 +31,16 @@
 				<a href="/">
 					<Logo class="max-[425px]:[&_span]:hidden" />
 				</a>
-				<DropdownMenu>
-					<DropdownMenuTrigger
+				<DropdownMenu.Root>
+					<DropdownMenu.Trigger
 						class="cursor-pointer text-sm font-medium text-muted-foreground hover:text-foreground max-sm:hidden"
 					>
 						v1.0.0-beta.3
-					</DropdownMenuTrigger>
-					<DropdownMenuContent align="start">
-						<DropdownMenuGroup>
-							<!-- <DropdownMenuItem>
-                {#snippet child({ props })}
+					</DropdownMenu.Trigger>
+					<DropdownMenu.Content align="start">
+						<DropdownMenu.Group>
+							<!-- <DropdownMenu.Item>
                   <a
-                    {...props}
                     href="https://github.com/themeselection/shadcn-studio/blob/main/CHANGELOG.md"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -56,16 +48,13 @@
                   >
                     Changelog
                   </a>
-                {/snippet}
-              </DropdownMenuItem> -->
-							<DropdownMenuItem>
-								{#snippet child({ props })}
-									<a {...props} href="/#roadmap" class="cursor-pointer">Roadmap</a>
-								{/snippet}
-							</DropdownMenuItem>
-						</DropdownMenuGroup>
-					</DropdownMenuContent>
-				</DropdownMenu>
+              </DropdownMenu.Item> -->
+							<DropdownMenu.Item>
+								<a href="/theme-generator/#roadmap" class="cursor-pointer">Roadmap</a>
+							</DropdownMenu.Item>
+						</DropdownMenu.Group>
+					</DropdownMenu.Content>
+				</DropdownMenu.Root>
 			</div>
 			<nav
 				class="flex flex-1 items-center justify-end gap-1.5 pe-4 sm:gap-4 sm:pe-8 lg:justify-between lg:ps-8"
