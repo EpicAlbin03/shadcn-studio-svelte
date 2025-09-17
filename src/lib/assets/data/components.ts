@@ -4419,36 +4419,41 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'select-34',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-34.svelte',
-	// 			target: 'components/shadcn-studio/select/select-34.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/select-native.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'select-35',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-35.svelte',
-	// 			target: 'components/shadcn-studio/select/select-35.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'select-36',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/select/select-36.svelte',
-	// 			target: 'components/shadcn-studio/select/select-36.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'select-34',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-34.svelte',
+				target: 'components/shadcn-studio/select/select-34.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/select-native.svelte',
+				target: 'components/ui/select-native/select-native.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/select-native/index.ts',
+				target: 'components/ui/select-native/index.ts'
+			}
+		]
+	},
+	{
+		name: 'select-35',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-35.svelte',
+				target: 'components/shadcn-studio/select/select-35.svelte'
+			}
+		]
+	},
+	{
+		name: 'select-36',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/select/select-36.svelte',
+				target: 'components/shadcn-studio/select/select-36.svelte'
+			}
+		]
+	},
 	{
 		name: 'select-37',
 		files: [
