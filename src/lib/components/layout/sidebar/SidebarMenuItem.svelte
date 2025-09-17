@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { SidebarMenuButton, SidebarMenuItem, useSidebar } from '$lib/components/ui/sidebar';
+	import * as Sidebar from '$lib/components/ui/sidebar';
 	import { cn } from '$lib/utils';
 	import type { Snippet } from 'svelte';
 
-	const { setOpenMobile } = useSidebar();
+	const { setOpenMobile } = Sidebar.useSidebar();
 	let pathname = $derived(page.url.pathname);
 
 	type Props = {
@@ -18,9 +18,9 @@
 	const active = $derived(href && pathname.startsWith(href));
 </script>
 
-<SidebarMenuItem>
+<Sidebar.MenuItem>
 	{#if href}
-		<SidebarMenuButton
+		<Sidebar.MenuButton
 			class={cn(
 				'h-8.5 cursor-pointer rounded-sm px-3 font-medium text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50',
 				{
@@ -39,14 +39,14 @@
 					{@render children?.()}
 				</a>
 			{/snippet}
-		</SidebarMenuButton>
+		</Sidebar.MenuButton>
 	{:else}
-		<SidebarMenuButton
+		<Sidebar.MenuButton
 			class={cn(
 				'h-8.5 cursor-pointer rounded-sm px-3 font-medium text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50'
 			)}
 		>
 			{@render children?.()}
-		</SidebarMenuButton>
+		</Sidebar.MenuButton>
 	{/if}
-</SidebarMenuItem>
+</Sidebar.MenuItem>

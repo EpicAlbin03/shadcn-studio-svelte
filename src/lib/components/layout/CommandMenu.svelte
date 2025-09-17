@@ -3,16 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { Search, Palette, Component, Sparkles } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import {
-		CommandDialog,
-		CommandEmpty,
-		CommandGroup,
-		CommandInput,
-		CommandItem,
-		CommandList,
-		CommandSeparator,
-		CommandShortcut
-	} from '$lib/components/ui/command';
+	import * as Command from '$lib/components/ui/command';
 	import { searchData } from '$lib/assets/data/search';
 
 	let open = $state(false);
@@ -60,42 +51,42 @@
 		<span class="text-sm">⌘</span>K
 	</kbd>
 </Button>
-<CommandDialog bind:open>
-	<CommandInput placeholder="Type a command or search..." bind:value={search} />
-	<CommandList>
-		<CommandEmpty>No results found.</CommandEmpty>
+<Command.Dialog bind:open>
+	<Command.Input placeholder="Type a command or search..." bind:value={search} />
+	<Command.List>
+		<Command.Empty>No results found.</Command.Empty>
 		{#if search}
 			{#each searchData as searchGroup, index}
-				<CommandGroup heading={searchGroup.title}>
+				<Command.Group heading={searchGroup.title}>
 					{#each searchGroup.data as item, i}
-						<CommandItem onselect={() => runCommand(() => goto(item.href))}>
+						<Command.Item onselect={() => runCommand(() => goto(item.href))}>
 							<item.icon />
 							<span>{item.name}</span>
 							{#if item.shortcut}
-								<CommandShortcut>{item.shortcut}</CommandShortcut>
+								<Command.Shortcut>{item.shortcut}</Command.Shortcut>
 							{/if}
-						</CommandItem>
+						</Command.Item>
 					{/each}
-				</CommandGroup>
+				</Command.Group>
 				{#if index !== searchData.length - 1}
-					<CommandSeparator />
+					<Command.Separator />
 				{/if}
 			{/each}
 		{:else}
-			<CommandGroup heading="Suggestions">
-				<CommandItem onselect={() => runCommand(() => goto('/theme-generator'))}>
+			<Command.Group heading="Suggestions">
+				<Command.Item onselect={() => runCommand(() => goto('/theme-generator'))}>
 					<Palette />
 					<span>Theme Generator</span>
-				</CommandItem>
-				<CommandItem onselect={() => runCommand(() => goto('/components'))}>
+				</Command.Item>
+				<Command.Item onselect={() => runCommand(() => goto('/components'))}>
 					<Component />
 					<span>Components</span>
-				</CommandItem>
-				<CommandItem onselect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
+				</Command.Item>
+				<Command.Item onselect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
 					<Sparkles />
 					<span>Introduction</span>
-				</CommandItem>
-			</CommandGroup>
+				</Command.Item>
+			</Command.Group>
 		{/if}
-	</CommandList>
-</CommandDialog>
+	</Command.List>
+</Command.Dialog>

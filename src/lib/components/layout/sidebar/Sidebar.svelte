@@ -17,18 +17,7 @@
 		CollapsibleTrigger
 	} from '$lib/components/ui/collapsible';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import {
-		Sidebar,
-		SidebarContent,
-		SidebarGroup,
-		SidebarMenuSub,
-		SidebarMenuBadge,
-		SidebarHeader,
-		SidebarMenuItem,
-		SidebarMenuButton,
-		SidebarMenu,
-		useSidebar
-	} from '$lib/components/ui/sidebar';
+	import * as Sidebar from '$lib/components/ui/sidebar';
 	import { CustomSidebarMenuItem, CustomSidebarMenuSubItem } from '.';
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import { cn } from '$lib/utils';
@@ -36,15 +25,15 @@
 
 	const breakpoint = new MediaQuery('(max-width: 1023px)', false);
 	let isBreakpointReached = $derived(breakpoint.current);
-	const { setOpenMobile } = useSidebar();
+	const { setOpenMobile } = Sidebar.useSidebar();
 </script>
 
-<Sidebar
+<Sidebar.Root
 	collapsible={isBreakpointReached ? 'offcanvas' : 'none'}
 	class="border-r border-dashed bg-background"
 >
 	{#if isBreakpointReached}
-		<SidebarHeader
+		<Sidebar.Header
 			class="min-h-(--header-height) flex-row items-center justify-between px-6 py-3.5"
 		>
 			<a href="/">
@@ -59,22 +48,22 @@
 				<X class="size-5" />
 				<span class="sr-only">Close</span>
 			</Button>
-		</SidebarHeader>
+		</Sidebar.Header>
 	{/if}
 	<ScrollArea class="max-h-[calc(100vh-var(--header-height))] lg:!sticky lg:top-(--header-height)">
-		<SidebarContent>
-			<SidebarGroup
+		<Sidebar.Content>
+			<Sidebar.Group
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-5', { 'first:pt-8': !isBreakpointReached })}
 			>
-				<SidebarMenu class="gap-2.5">
+				<Sidebar.Menu class="gap-2.5">
 					<CustomSidebarMenuItem href="/theme-generator">
 						<PaintbrushVertical class="!size-5" />
 						Theme Generator
-						<SidebarMenuBadge
+						<Sidebar.MenuBadge
 							class="static gap-0.5 rounded-full bg-destructive/10 px-2 py-0.5 font-normal text-destructive"
 						>
 							<Flame class="size-4" /> Hot
-						</SidebarMenuBadge>
+						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/components">
 						<Component class="!size-5" />
@@ -83,41 +72,41 @@
 					<CustomSidebarMenuItem>
 						<Figma class="!size-5" />
 						Figma UI Kit
-						<SidebarMenuBadge
+						<Sidebar.MenuBadge
 							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 						>
 							Coming Soon
-						</SidebarMenuBadge>
+						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem>
 						<LayoutPanelTop class="!size-5" />
 						Blocks
-						<SidebarMenuBadge
+						<Sidebar.MenuBadge
 							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 						>
 							Coming Soon
-						</SidebarMenuBadge>
+						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem>
 						<File class="!size-5" />
 						Templates
-						<SidebarMenuBadge
+						<Sidebar.MenuBadge
 							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 						>
 							Coming Soon
-						</SidebarMenuBadge>
+						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
-				</SidebarMenu>
-			</SidebarGroup>
-			<SidebarGroup
+				</Sidebar.Menu>
+			</Sidebar.Group>
+			<Sidebar.Group
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-4', { 'first:pt-8': !isBreakpointReached })}
 			>
-				<SidebarMenu class="gap-2.5">
+				<Sidebar.Menu class="gap-2.5">
 					<Collapsible class="group/collapsible" open>
-						<SidebarMenuItem>
+						<Sidebar.MenuItem>
 							<CollapsibleTrigger>
 								{#snippet child({ props })}
-									<SidebarMenuButton
+									<Sidebar.MenuButton
 										{...props}
 										class="h-8.5 cursor-pointer rounded-sm px-3 font-semibold text-sidebar-foreground/70 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 lg:px-4"
 									>
@@ -125,29 +114,29 @@
 										<ChevronRightIcon
 											class="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
 										/>
-									</SidebarMenuButton>
+									</Sidebar.MenuButton>
 								{/snippet}
 							</CollapsibleTrigger>
 							<CollapsibleContent>
-								<SidebarMenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
+								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
 									<CustomSidebarMenuSubItem href="/docs/getting-started/introduction">
 										Introduction
 									</CustomSidebarMenuSubItem>
-								</SidebarMenuSub>
+								</Sidebar.MenuSub>
 							</CollapsibleContent>
-						</SidebarMenuItem>
+						</Sidebar.MenuItem>
 					</Collapsible>
-				</SidebarMenu>
-			</SidebarGroup>
-			<SidebarGroup
+				</Sidebar.Menu>
+			</Sidebar.Group>
+			<Sidebar.Group
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-4', { 'first:pt-8': !isBreakpointReached })}
 			>
-				<SidebarMenu class="gap-2.5">
+				<Sidebar.Menu class="gap-2.5">
 					<Collapsible class="group/collapsible" open>
-						<SidebarMenuItem>
+						<Sidebar.MenuItem>
 							<CollapsibleTrigger>
 								{#snippet child({ props })}
-									<SidebarMenuButton
+									<Sidebar.MenuButton
 										{...props}
 										class="h-8.5 cursor-pointer rounded-sm px-3 font-semibold text-sidebar-foreground/70 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 lg:px-4"
 									>
@@ -155,11 +144,11 @@
 										<ChevronRightIcon
 											class="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
 										/>
-									</SidebarMenuButton>
+									</Sidebar.MenuButton>
 								{/snippet}
 							</CollapsibleTrigger>
 							<CollapsibleContent>
-								<SidebarMenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
+								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
 									{#each categories.filter((category) => category.hasAnimation) as category (category.slug)}
 										<CustomSidebarMenuSubItem
 											{...category.isComingSoon
@@ -170,14 +159,14 @@
 										>
 											{category.name}
 											{#if category.isComingSoon}
-												<SidebarMenuBadge
+												<Sidebar.MenuBadge
 													class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 												>
 													Coming Soon
-												</SidebarMenuBadge>
+												</Sidebar.MenuBadge>
 											{/if}
 											{#if category.animation?.badge}
-												<SidebarMenuBadge
+												<Sidebar.MenuBadge
 													class={cn({
 														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground':
 															category.animation.badge === 'New',
@@ -186,25 +175,25 @@
 													})}
 												>
 													{category.animation.badge}
-												</SidebarMenuBadge>
+												</Sidebar.MenuBadge>
 											{/if}
 										</CustomSidebarMenuSubItem>
 									{/each}
-								</SidebarMenuSub>
+								</Sidebar.MenuSub>
 							</CollapsibleContent>
-						</SidebarMenuItem>
+						</Sidebar.MenuItem>
 					</Collapsible>
-				</SidebarMenu>
-			</SidebarGroup>
-			<SidebarGroup
+				</Sidebar.Menu>
+			</Sidebar.Group>
+			<Sidebar.Group
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-4', { 'first:pt-8': !isBreakpointReached })}
 			>
-				<SidebarMenu class="gap-2.5">
+				<Sidebar.Menu class="gap-2.5">
 					<Collapsible class="group/collapsible" open>
-						<SidebarMenuItem>
+						<Sidebar.MenuItem>
 							<CollapsibleTrigger>
 								{#snippet child({ props })}
-									<SidebarMenuButton
+									<Sidebar.MenuButton
 										{...props}
 										class="h-8.5 cursor-pointer rounded-sm px-3 font-semibold text-sidebar-foreground/70 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 lg:px-4"
 									>
@@ -212,11 +201,11 @@
 										<ChevronRightIcon
 											class="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
 										/>
-									</SidebarMenuButton>
+									</Sidebar.MenuButton>
 								{/snippet}
 							</CollapsibleTrigger>
 							<CollapsibleContent>
-								<SidebarMenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
+								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
 									{#each categories as category (category.slug)}
 										<CustomSidebarMenuSubItem
 											{...category.isComingSoon
@@ -225,14 +214,14 @@
 										>
 											{category.name}
 											{#if category.isComingSoon}
-												<SidebarMenuBadge
+												<Sidebar.MenuBadge
 													class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 												>
 													Coming Soon
-												</SidebarMenuBadge>
+												</Sidebar.MenuBadge>
 											{/if}
 											{#if category.badge}
-												<SidebarMenuBadge
+												<Sidebar.MenuBadge
 													class={cn({
 														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground':
 															category.badge === 'New',
@@ -241,16 +230,16 @@
 													})}
 												>
 													{category.badge}
-												</SidebarMenuBadge>
+												</Sidebar.MenuBadge>
 											{/if}
 										</CustomSidebarMenuSubItem>
 									{/each}
-								</SidebarMenuSub>
+								</Sidebar.MenuSub>
 							</CollapsibleContent>
-						</SidebarMenuItem>
+						</Sidebar.MenuItem>
 					</Collapsible>
-				</SidebarMenu>
-			</SidebarGroup>
-		</SidebarContent>
+				</Sidebar.Menu>
+			</Sidebar.Group>
+		</Sidebar.Content>
 	</ScrollArea>
-</Sidebar>
+</Sidebar.Root>
