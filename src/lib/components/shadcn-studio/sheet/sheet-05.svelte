@@ -19,14 +19,12 @@
 	import { defaults, superForm } from 'sveltekit-superforms';
 	import { zod4 } from 'sveltekit-superforms/adapters';
 
-	// @ts-ignore
 	const form = superForm(defaults(zod4(formSchema)), {
-		// @ts-ignore
 		validators: zod4(formSchema),
 		SPA: true,
 		onUpdate: ({ form: f }) => {
 			if (f.valid) {
-				toast.success('Account created successfully!');
+				toast.success('Account created successfully!', { richColors: true });
 			}
 		}
 	});

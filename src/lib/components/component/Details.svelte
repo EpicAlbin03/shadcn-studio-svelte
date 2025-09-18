@@ -80,7 +80,7 @@
 							{/if}
 						{:else}
 							<p class="text-sm text-muted-foreground">
-								No code available. If you think this is an error, please{' '}
+								No code available. If you think this is an error, please
 								<a
 									href="https://github.com/EpicAlbin03/shadcn-studio-svelte/issues"
 									target="_blank"

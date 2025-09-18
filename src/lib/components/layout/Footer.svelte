@@ -115,17 +115,17 @@
 			class="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-5 border-dashed px-8 py-6 text-center text-muted-foreground max-lg:flex-col min-[1400px]:border-x min-[1800px]:max-w-[1536px]"
 		>
 			<p>
-				Built by{' '}
+				Built by
 				<a href="https://x.com/ajaypatel_aj" target="_blank" class="font-medium text-foreground">
 					@Ajay Patel
 				</a>
-				&{' '}
+				&
 				<a href="https://x.com/imananddesigner" target="_blank" class="font-medium text-foreground">
 					@Anand Patel
 				</a>
-				at{' '}
+				at
 				<a href="https://shadcnstudio.com" class="font-medium text-foreground">shadcn/studio</a>
-				. Ported to Svelte by{' '}
+				. Ported to Svelte by
 				<a
 					href="https://github.com/EpicAlbin03"
 					target="_blank"

@@ -1201,7 +1201,7 @@
 		<CircleAlertIcon />
 		<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
 			<span>
-				Built using TanStack Table. For detailed instructions, please refer to this{' '}
+				Built using TanStack Table. For detailed instructions, please refer to this
 				<a
 					href="https://tanstack.com/table/v8/docs/introduction"
 					target="_blank"
@@ -1217,23 +1217,47 @@
 {/snippet}
 
 {#snippet formNote()}
-	<Alert class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
-		<CircleAlertIcon />
-		<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
-			<span>
-				To enable the toast notifications, you need to include the{' '}
-				<code class="rounded bg-muted-foreground/10 px-1 py-0.25 font-mono">&lt;Toaster /&gt;</code>
-				component in your layout. For detailed instructions, please refer to this{' '}
-				<a
-					href="https://ui.shadcn.com/docs/components/sonner#installation"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="underline hover:text-sky-600 dark:hover:text-sky-400"
-				>
-					documentation
-				</a>
-				.
-			</span>
-		</AlertDescription>
-	</Alert>
+	<div class="flex flex-col gap-2">
+		<Alert class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
+			<CircleAlertIcon />
+			<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
+				<span>
+					To enable the toast notifications, you need to include the
+					<code class="rounded bg-muted-foreground/10 px-1 py-0.25 font-mono"
+						>&lt;Toaster /&gt;</code
+					>
+					component in your layout. For detailed instructions, please refer to this
+					<a
+						href="https://shadcn-svelte.com/docs/components/sonner#installation"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="underline hover:text-sky-600 dark:hover:text-sky-400"
+					>
+						documentation
+					</a>
+					.
+				</span>
+			</AlertDescription>
+		</Alert>
+
+		<Alert
+			class="border-none bg-amber-600/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400"
+		>
+			<CircleAlertIcon />
+			<AlertDescription class="text-amber-600/80 dark:text-amber-400/80">
+				<span>
+					If you are getting type errors, try changing your Zod version to "4.0.10"
+					<a
+						href="https://github.com/ciscoheat/sveltekit-superforms/issues/630"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="underline hover:text-amber-600 dark:hover:text-amber-400"
+					>
+						(see issue)
+					</a>
+					.
+				</span>
+			</AlertDescription>
+		</Alert>
+	</div>
 {/snippet}

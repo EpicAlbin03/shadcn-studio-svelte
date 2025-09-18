@@ -191,7 +191,7 @@
 				<Alert.Root class="mt-6">
 					<AlertCircle class="size-4" />
 					<Alert.Description class="block">
-						To use custom fonts, embed them in your project. See{' '}
+						To use custom fonts, embed them in your project. See
 						<a
 							href="https://tailwindcss.com/docs/font-family"
 							target="_blank"
@@ -199,7 +199,7 @@
 							class="underline underline-offset-2 hover:text-muted-foreground/90"
 						>
 							Tailwind docs
-						</a>{' '}
+						</a>
 						for details.
 					</Alert.Description>
 				</Alert.Root>
