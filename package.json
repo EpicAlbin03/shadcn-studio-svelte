@@ -73,7 +73,7 @@
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "^7.0.4",
 		"xlsx": "^0.18.5",
-		"zod": "^4.1.5"
+		"zod": "4.0.10"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
