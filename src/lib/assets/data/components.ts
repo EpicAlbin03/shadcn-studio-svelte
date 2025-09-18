@@ -3468,24 +3468,24 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'input-mask-01',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-01.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-01.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'input-mask-02',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-02.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-02.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'input-mask-01',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-01.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-01.svelte'
+			}
+		]
+	},
+	{
+		name: 'input-mask-02',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-02.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-02.svelte'
+			}
+		]
+	},
 	// {
 	// 	name: 'input-mask-03',
 	// 	files: [
