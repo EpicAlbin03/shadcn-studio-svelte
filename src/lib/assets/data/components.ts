@@ -2166,15 +2166,15 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'collapsible-09',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/collapsible/collapsible-09.svelte',
-	// 			target: 'components/shadcn-studio/collapsible/collapsible-09.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'collapsible-09',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/collapsible/collapsible-09.svelte',
+				target: 'components/shadcn-studio/collapsible/collapsible-09.svelte'
+			}
+		]
+	},
 	{
 		name: 'collapsible-10',
 		files: [
@@ -3486,42 +3486,42 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'input-mask-03',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-03.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-03.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'input-mask-04',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-04.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-04.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'input-mask-05',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-05.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-05.svelte'
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'input-mask-06',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/input-mask/input-mask-06.svelte',
-	// 			target: 'components/shadcn-studio/input-mask/input-mask-06.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'input-mask-03',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-03.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-03.svelte'
+			}
+		]
+	},
+	{
+		name: 'input-mask-04',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-04.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-04.svelte'
+			}
+		]
+	},
+	{
+		name: 'input-mask-05',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-05.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-05.svelte'
+			}
+		]
+	},
+	{
+		name: 'input-mask-06',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/input-mask/input-mask-06.svelte',
+				target: 'components/shadcn-studio/input-mask/input-mask-06.svelte'
+			}
+		]
+	},
 	{
 		name: 'input-otp-01',
 		files: [

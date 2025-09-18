@@ -1,18 +1,15 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import { ChevronDownIcon, CreditCardIcon } from '@lucide/svelte';
-	import { usePaymentInputs } from 'react-payment-inputs';
-	import images, { type CardImages } from 'react-payment-inputs/images';
 	import { Button } from '$lib/components/ui/button';
-	import * as Collapsible from "$lib/components/ui/collapsible/index.js";
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group';
+	import * as RadioGroup from '$lib/components/ui/radio-group';
 	import { Separator } from '$lib/components/ui/separator';
 	import { Textarea } from '$lib/components/ui/textarea';
+	import Cleave from 'cleave.js';
 
 	const id = $props.id();
-	const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps, getCardImageProps } =
-		usePaymentInputs();
 
 	const items = [
 		{
@@ -29,6 +26,32 @@
 		},
 		{ value: '3', label: 'Overnight', description: 'Tomorrow', price: '$10.00' }
 	];
+
+	let cardNumberRef = $state<HTMLInputElement>(null!);
+	let expiryDateRef = $state<HTMLInputElement>(null!);
+	let cvcRef = $state<HTMLInputElement>(null!);
+
+	$effect(() => {
+		if (!cardNumberRef || !expiryDateRef || !cvcRef) return;
+
+		const cardNumberCleave = new Cleave(cardNumberRef, {
+			creditCard: true
+		});
+		const expiryDateCleave = new Cleave(expiryDateRef, {
+			date: true,
+			datePattern: ['m', 'y']
+		});
+		const cvcCleave = new Cleave(cvcRef, {
+			blocks: [4],
+			numericOnly: true
+		});
+
+		return () => {
+			cardNumberCleave.destroy();
+			expiryDateCleave.destroy();
+			cvcCleave.destroy();
+		};
+	});
 </script>
 
 <div class="w-full space-y-3">
@@ -36,7 +59,7 @@
 		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Delivery Address</div>
-				<CollapsibleTrigger class="group">
+				<Collapsible.Trigger class="group">
 					{#snippet child({ props })}
 						<Button {...props} variant="ghost" size="icon" class="size-8">
 							<ChevronDownIcon
@@ -99,7 +122,7 @@
 		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Delivery Options</div>
-				<CollapsibleTrigger class="group">
+				<Collapsible.Trigger class="group">
 					{#snippet child({ props })}
 						<Button {...props} variant="ghost" size="icon" class="size-8">
 							<ChevronDownIcon
@@ -111,29 +134,29 @@
 				</Collapsible.Trigger>
 			</div>
 			<Collapsible.Content class="flex flex-col gap-2 px-4">
-				<RadioGroup class="w-full gap-0 -space-y-px rounded-md pt-3 shadow-xs" value="2">
+				<RadioGroup.Root class="w-full gap-0 -space-y-px rounded-md pt-3 shadow-xs" value="2">
 					{#each items as item (`${id}-${item.value}`)}
 						<div
 							class="relative flex flex-col gap-4 border border-input p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent"
 						>
 							<div class="flex items-center justify-between gap-1.5">
 								<div class="flex items-center gap-2">
-									<RadioGroupItem
-										id={`${id}-${item.value}`}
+									<RadioGroup.Item
+										id="{id}-{item.value}"
 										value={item.value}
 										class="after:absolute after:inset-0"
-										aria-label={`plan-radio-${item.value}`}
-										aria-describedby={`${`${id}-${item.value}`}-price`}
+										aria-label="plan-radio-{item.value}"
+										aria-describedby="{id}-{item.value}-price"
 									/>
 									<div class="space-y-1">
-										<Label class="inline-flex items-center" for={`${id}-${item.value}`}>
+										<Label class="inline-flex items-center" for="{id}-{item.value}">
 											{item.label}
 										</Label>
 										<p class="text-sm text-muted-foreground">{item.description}</p>
 									</div>
 								</div>
 								<div
-									id={`${`${id}-${item.value}`}-price`}
+									id="{id}-{item.value}-price"
 									class="text-xs leading-[inherit] text-muted-foreground"
 								>
 									{item.price}
@@ -141,14 +164,14 @@
 							</div>
 						</div>
 					{/each}
-				</RadioGroup>
+				</RadioGroup.Root>
 			</Collapsible.Content>
 		</Collapsible.Root>
 		<Separator />
 		<Collapsible.Root class="flex flex-col gap-2">
 			<div class="flex items-center justify-between gap-4 px-4">
 				<div class="text-sm font-semibold">Payment</div>
-				<CollapsibleTrigger class="group">
+				<Collapsible.Trigger class="group">
 					{#snippet child({ props })}
 						<Button {...props} variant="ghost" size="icon" class="size-8">
 							<ChevronDownIcon
@@ -165,38 +188,38 @@
 					<div>
 						<div class="relative focus-within:z-1">
 							<Input
-								{...getCardNumberProps()}
-								id={`number-${id}`}
+								id="number-{id}"
+								bind:ref={cardNumberRef}
+								type="text"
+								placeholder="Card number"
+								autocomplete="cc-number"
 								class="peer rounded-b-none pe-9 shadow-none"
 							/>
 							<div
 								class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
 							>
-								{#if meta.cardType}
-									<svg
-										class="w-6 overflow-hidden"
-										{...getCardImageProps({
-											images: images as unknown as CardImages
-										})}
-									/>
-								{:else}
-									<CreditCardIcon class="size-4" />
-								{/if}
+								<CreditCardIcon class="size-4" />
 								<span class="sr-only">Card Provider</span>
 							</div>
 						</div>
 						<div class="-mt-px flex">
 							<div class="min-w-0 flex-1 focus-within:z-1">
 								<Input
-									{...getExpiryDateProps()}
-									id={`expiry-${id}`}
+									id="expiry-{id}"
+									bind:ref={expiryDateRef}
+									type="text"
+									placeholder="MM/YY"
+									autocomplete="cc-exp"
 									class="rounded-e-none rounded-t-none shadow-none"
 								/>
 							</div>
 							<div class="-ms-px min-w-0 flex-1 focus-within:z-1">
 								<Input
-									{...getCVCProps()}
-									id={`cvc-${id}`}
+									id="cvc-{id}"
+									bind:ref={cvcRef}
+									type="text"
+									placeholder="CVC"
+									autocomplete="cc-csc"
 									class="rounded-s-none rounded-t-none shadow-none"
 								/>
 							</div>
@@ -210,11 +233,11 @@
 		Built with
 		<a
 			class="underline hover:text-foreground"
-			href="https://github.com/medipass/react-payment-inputs"
+			href="https://github.com/nosir/cleave.js"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			React Payment Inputs
+			cleave.js
 		</a>
 	</p>
-</div> -->
+</div>
