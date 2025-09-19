@@ -4492,15 +4492,19 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'sheet-03',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/sheet/sheet-03.svelte',
-	// 			target: 'components/shadcn-studio/sheet/sheet-03.svelte'
-	// 		}
-	// 	]
-	// },
+	{
+		name: 'sheet-03',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/sheet/sheet-03.svelte',
+				target: 'components/shadcn-studio/sheet/sheet-03.svelte'
+			},
+			{
+				path: 'src/lib/components/ui/sheet/sheet-content.svelte',
+				target: 'components/ui/sheet/sheet-content.svelte'
+			}
+		]
+	},
 	{
 		name: 'sheet-04',
 		files: [
