@@ -49,7 +49,7 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={ogUrl} />
 	<meta name="twitter:image:alt" content={title} />
-	<!-- <meta name="twitter:creator" content="@" /> -->
+	<meta name="twitter:creator" content="@EpicAlbin03" />
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content={ogType} />
 	<meta property="og:url" content={siteConfig.url + page.url.pathname} />

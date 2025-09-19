@@ -126,12 +126,8 @@
 				at
 				<a href="https://shadcnstudio.com" class="font-medium text-foreground">shadcn/studio</a>
 				. Ported to Svelte by
-				<a
-					href="https://github.com/EpicAlbin03"
-					target="_blank"
-					class="font-medium text-foreground"
-				>
-					@Albin
+				<a href="https://x.com/EpicAlbin03" target="_blank" class="font-medium text-foreground">
+					@EpicAlbin03
 				</a>
 			</p>
 		</div>

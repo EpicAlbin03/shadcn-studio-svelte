@@ -8,6 +8,7 @@
 	import ThemeCustomizer from '$lib/components/customizer/ThemeCustomizer.svelte';
 	import Github from '$lib/assets/svg/Github.svelte';
 	import Discord from '$lib/assets/svg/Discord.svelte';
+	import X from '$lib/assets/svg/X.svelte';
 	import type { Component } from 'svelte';
 
 	type Props = {
@@ -73,6 +74,12 @@
 							>
 								<Github class="size-5" />
 								<span class="sr-only">Github</span>
+							</a>
+						</Button>
+						<Button variant="ghost" size="icon" class="cursor-pointer">
+							<a href="https://x.com/EpicAlbin03" target="_blank" rel="noopener noreferrer">
+								<X class="size-5" />
+								<span class="sr-only">X</span>
 							</a>
 						</Button>
 						<Button variant="ghost" size="icon" class="cursor-pointer">
