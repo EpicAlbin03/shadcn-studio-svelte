@@ -82,7 +82,7 @@
 								<span class="sr-only">X</span>
 							</a>
 						</Button>
-						<Button variant="ghost" size="icon" class="cursor-pointer">
+						<!-- <Button variant="ghost" size="icon" class="cursor-pointer">
 							<a
 								href="https://discord.com/invite/kBHkY7DekX"
 								target="_blank"
@@ -91,7 +91,7 @@
 								<Discord class="size-5" />
 								<span class="sr-only">Discord</span>
 							</a>
-						</Button>
+						</Button> -->
 					</div>
 				</div>
 			</nav>

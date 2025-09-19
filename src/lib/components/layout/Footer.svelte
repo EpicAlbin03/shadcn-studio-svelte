@@ -2,6 +2,7 @@
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import Github from '$lib/assets/svg/Github.svelte';
 	import Discord from '$lib/assets/svg/Discord.svelte';
+	import X from '$lib/assets/svg/X.svelte';
 </script>
 
 <footer class="flex w-full flex-col">
@@ -26,9 +27,13 @@
 						<Github class="size-6" />
 						<span class="sr-only">Github</span>
 					</a>
-					<a href="https://discord.com/invite/kBHkY7DekX" target="_blank" rel="noopener noreferrer">
+					<!-- <a href="https://discord.com/invite/kBHkY7DekX" target="_blank" rel="noopener noreferrer">
 						<Discord class="size-6" />
 						<span class="sr-only">Discord</span>
+					</a> -->
+					<a href="https://x.com/EpicAlbin03" target="_blank" rel="noopener noreferrer">
+						<X class="size-6" />
+						<span class="sr-only">X</span>
 					</a>
 				</div>
 				<p class="text-sm text-muted-foreground">
