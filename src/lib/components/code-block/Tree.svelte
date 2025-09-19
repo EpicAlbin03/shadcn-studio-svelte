@@ -12,6 +12,24 @@
 	};
 
 	let { treeItem, index, activeFileName = $bindable() }: Props = $props();
+
+	function getCollapsedPath(
+		item: FileTree,
+		depth: number = 1
+	): { name: string; children: FileTree[] } {
+		if (!item.children || item.children.length !== 1 || item.children[0].path || depth >= 2) {
+			return { name: item.name, children: item.children || [] };
+		}
+
+		const childResult = getCollapsedPath(item.children[0], depth + 1);
+
+		return {
+			name: `${item.name}/${childResult.name}`,
+			children: childResult.children
+		};
+	}
+
+	const collapsedPaths = $derived(getCollapsedPath(treeItem));
 </script>
 
 {#if !treeItem.children}
@@ -43,13 +61,13 @@
 					>
 						<FolderIcon class="[[data-state=open]>&]:hidden" />
 						<FolderOpenIcon class="[[data-state=closed]>&]:hidden" />
-						{treeItem.name}
+						{collapsedPaths.name}
 					</Sidebar.MenuButton>
 				{/snippet}
 			</Collapsible.Trigger>
 			<Collapsible.Content>
 				<Sidebar.MenuSub class="m-0 w-full translate-x-0 border-none p-0">
-					{#each treeItem.children as treeSubItem}
+					{#each collapsedPaths.children as treeSubItem}
 						<Self treeItem={treeSubItem} index={index + 1} bind:activeFileName />
 					{/each}
 				</Sidebar.MenuSub>
