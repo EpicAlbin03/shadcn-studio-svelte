@@ -1,6 +1,8 @@
 <script lang="ts">
 	import ComponentsGrid from '$lib/components/ComponentsGrid.svelte';
 	import MetaData from '$lib/components/MetaData.svelte';
+	import { Badge } from '$lib/components/ui/badge';
+	import { ExternalLinkIcon } from '@lucide/svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,6 +25,14 @@
 		<p class="text-muted-foreground">
 			{`Elevate your UI with a growing collection of ${components.filter((component) => !component?.isAnimated).length} Shadcn ${category.name.toLowerCase()} components, built using Svelte and Tailwind CSS.`}
 		</p>
+	</div>
+	<div class="flex items-center space-x-2">
+		{#each category.links || [] as link}
+			<Badge href={link.href} variant="secondary" target="_blank" rel="noreferrer">
+				{link.label}
+				<ExternalLinkIcon />
+			</Badge>
+		{/each}
 	</div>
 	{@render category.note?.()}
 	<ComponentsGrid

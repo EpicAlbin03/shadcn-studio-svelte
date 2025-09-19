@@ -39,5 +39,5 @@
 			</Sheet.Footer>
 		</Sheet.Content>
 	</Sheet.Root>
-	<p class="text-xs text-muted-foreground">Requires editing of sheet-content</p>
+	<p class="text-xs text-muted-foreground">*Requires editing of sheet-content</p>
 </div>

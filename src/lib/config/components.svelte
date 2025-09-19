@@ -39,6 +39,7 @@
 	export type ComponentCategory = {
 		slug: string;
 		name: string;
+		links?: { label: string; href: string }[];
 	} & (
 		| {
 				components: { name: string }[];
@@ -101,6 +102,10 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/accordion' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/accordion' }
+			],
 			components: [
 				{ name: 'accordion-01' },
 				{ name: 'accordion-02' },
@@ -127,6 +132,7 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/alert' }],
 			components: [
 				{ name: 'alert-01' },
 				{ name: 'alert-02' },
@@ -168,6 +174,10 @@
 				sm: 2,
 				lg: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/avatar' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/avatar' }
+			],
 			components: [
 				{ name: 'avatar-01' },
 				{ name: 'avatar-02' },
@@ -200,6 +210,7 @@
 				sm: 2,
 				lg: 3
 			},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/badge' }],
 			components: [
 				{ name: 'badge-01' },
 				{ name: 'badge-02' },
@@ -234,6 +245,9 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/breadcrumb' }
+			],
 			components: [
 				{ name: 'breadcrumb-01' },
 				{ name: 'breadcrumb-02' },
@@ -253,6 +267,10 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/button' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/button' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -317,6 +335,10 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/button' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/button' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -349,6 +371,10 @@
 			breakpoints: {
 				xl: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/calendar' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/calendar' }
+			],
 			components: [
 				{ name: 'calendar-01' },
 				{ name: 'calendar-02' },
@@ -384,6 +410,7 @@
 			breakpoints: {
 				xl: 2
 			},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/card' }],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -418,6 +445,10 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/checkbox' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/checkbox' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -454,6 +485,10 @@
 			breakpoints: {
 				xl: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/collapsible' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/collapsible' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -481,6 +516,9 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/combobox' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -510,6 +548,13 @@
 			name: 'Data Table',
 			svg: DataTableSVG,
 			breakpoints: {},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/data-table' },
+				{
+					label: 'tanstack-table',
+					href: 'https://bits-ui.com/docs/components/https://tanstack.com/table/v8/docs/introduction'
+				}
+			],
 			components: [
 				{ name: 'data-table-01' },
 				{ name: 'data-table-02' },
@@ -525,8 +570,7 @@
 				{ name: 'data-table-11' },
 				{ name: 'data-table-12' },
 				{ name: 'data-table-13' }
-			],
-			note: dataTableNote
+			]
 		},
 		{
 			slug: 'date-picker',
@@ -536,6 +580,9 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/data-table' }
+			],
 			components: [
 				{ name: 'date-picker-01' },
 				{ name: 'date-picker-02' },
@@ -559,6 +606,10 @@
 			breakpoints: {
 				md: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/dialog' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/dialog' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -602,6 +653,10 @@
 				sm: 2,
 				md: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/dropdown-menu' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/dropdown-menu' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -635,6 +690,11 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/form' },
+				{ label: 'formsnap', href: 'https://formsnap.dev/docs' },
+				{ label: 'superforms', href: 'https://superforms.rocks/get-started' }
+			],
 			components: [
 				{ name: 'form-01' },
 				{ name: 'form-02' },
@@ -657,6 +717,7 @@
 				md: 2,
 				xl: 3
 			},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/input' }],
 			components: [
 				{ name: 'input-01' },
 				{ name: 'input-02' },
@@ -715,6 +776,7 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/input' }],
 			components: [
 				{ name: 'input-mask-01' },
 				{ name: 'input-mask-02' },
@@ -731,6 +793,10 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/input-otp' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/pin-input' }
+			],
 			components: [
 				{ name: 'input-otp-01' },
 				{ name: 'input-otp-02' },
@@ -752,6 +818,10 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/pagination' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/pagination' }
+			],
 			components: [
 				{ name: 'pagination-01' },
 				{ name: 'pagination-02' },
@@ -778,6 +848,10 @@
 				sm: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/popover' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/popover' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -810,6 +884,10 @@
 			breakpoints: {
 				md: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/radio-group' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/radio-group' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -842,6 +920,10 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/select' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/select' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -899,7 +981,10 @@
 				sm: 2,
 				md: 3
 			},
-
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/sheet' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/sheet' }
+			],
 			components: [
 				{ name: 'sheet-01' },
 				{ name: 'sheet-02' },
@@ -919,6 +1004,10 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/sonner' },
+				{ label: 'svelte-sonner', href: 'https://svelte-sonner.vercel.app/' }
+			],
 			components: [
 				{ name: 'sonner-01' },
 				{ name: 'sonner-02' },
@@ -950,6 +1039,10 @@
 				sm: 2,
 				md: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/switch' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/switch' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -985,6 +1078,7 @@
 			name: 'Table',
 			svg: TableSVG,
 			breakpoints: {},
+			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/table' }],
 			components: [
 				{ name: 'table-01' },
 				{ name: 'table-02' },
@@ -1012,6 +1106,10 @@
 			breakpoints: {
 				xl: 2
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/tabs' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/tabs' }
+			],
 			hasAnimation: true,
 			animation: {
 				badge: 'New',
@@ -1059,6 +1157,9 @@
 				md: 2,
 				xl: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/textarea' }
+			],
 			components: [
 				{ name: 'textarea-01' },
 				{ name: 'textarea-02' },
@@ -1091,6 +1192,10 @@
 				sm: 2,
 				lg: 3
 			},
+			links: [
+				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/tooltip' },
+				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/tooltip' }
+			],
 			hasAnimation: true,
 			animation: {
 				breakpoints: {
@@ -1196,68 +1301,22 @@
 	}
 </script>
 
-{#snippet dataTableNote()}
-	<Alert class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
+{#snippet formNote()}
+	<Alert
+		class="border-none bg-amber-600/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400"
+	>
 		<CircleAlertIcon />
-		<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
+		<AlertDescription class="text-amber-600/80 dark:text-amber-400/80">
 			<span>
-				Built using TanStack Table. For detailed instructions, please refer to this
-				<a
-					href="https://tanstack.com/table/v8/docs/introduction"
+				If you are getting type errors, try changing your Zod version to "4.0.10" (<a
+					href="https://github.com/ciscoheat/sveltekit-superforms/issues/630"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="underline hover:text-sky-600 dark:hover:text-sky-400"
+					class="underline hover:text-amber-600 dark:hover:text-amber-400"
 				>
-					documentation
-				</a>
-				.
+					see issue
+				</a>).
 			</span>
 		</AlertDescription>
 	</Alert>
-{/snippet}
-
-{#snippet formNote()}
-	<div class="flex flex-col gap-2">
-		<Alert class="border-none bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
-			<CircleAlertIcon />
-			<AlertDescription class="text-sky-600/80 dark:text-sky-400/80">
-				<span>
-					To enable the toast notifications, you need to include the
-					<code class="rounded bg-muted-foreground/10 px-1 py-0.25 font-mono"
-						>&lt;Toaster /&gt;</code
-					>
-					component in your layout. For detailed instructions, please refer to this
-					<a
-						href="https://shadcn-svelte.com/docs/components/sonner#installation"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="underline hover:text-sky-600 dark:hover:text-sky-400"
-					>
-						documentation
-					</a>
-					.
-				</span>
-			</AlertDescription>
-		</Alert>
-
-		<Alert
-			class="border-none bg-amber-600/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400"
-		>
-			<CircleAlertIcon />
-			<AlertDescription class="text-amber-600/80 dark:text-amber-400/80">
-				<span>
-					If you are getting type errors, try changing your Zod version to "4.0.10"
-					<a
-						href="https://github.com/ciscoheat/sveltekit-superforms/issues/630"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="underline hover:text-amber-600 dark:hover:text-amber-400"
-					>
-						(see issue)
-					</a>
-					.
-				</span>
-			</AlertDescription>
-		</Alert>
-	</div>
 {/snippet}
