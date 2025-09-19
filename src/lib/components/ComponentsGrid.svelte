@@ -67,11 +67,13 @@
 		>
 			<ComponentCard componentName={component.name} class={component?.className}>
 				<ComponentLoader componentName={component.name} category={slug} />
-				<ComponentDetails
-					componentsData={validComponentsData.find(
-						(comp) => comp.component.name === component.name
-					) as ProcessedComponentsData}
-				/>
+				{#if !component.underConstruction}
+					<ComponentDetails
+						componentsData={validComponentsData.find(
+							(comp) => comp.component.name === component.name
+						) as ProcessedComponentsData}
+					/>
+				{/if}
 				{#if component?.badge}
 					<span class="absolute start-4.5 top-3 font-['Gamja_Flower'] text-lg">
 						{component?.badge}

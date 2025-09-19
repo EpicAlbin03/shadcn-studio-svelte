@@ -1,3 +1,12 @@
+<script lang="ts">
+	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
+
+	const message =
+		'Motion components will be available soon. There is currently a bug with motion-start preventing props to be spread on motion elements.';
+</script>
+
+<UnderConstruction {message} />
+
 <!-- <script lang="ts">
 	import MotionCheckbox from '$lib/components/ui/motion-checkbox.svelte';
 	import { Label } from '$lib/components/ui/label';

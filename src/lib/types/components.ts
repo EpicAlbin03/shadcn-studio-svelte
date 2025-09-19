@@ -22,6 +22,7 @@ export type ComponentProps = {
 	isAnimated?: boolean;
 	badge?: 'New' | 'Updated';
 	className?: string;
+	underConstruction?: boolean;
 };
 
 export type ProcessedComponentsData = {

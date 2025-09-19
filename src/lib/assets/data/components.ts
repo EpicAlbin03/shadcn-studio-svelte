@@ -1684,7 +1684,8 @@ export const components: ComponentProps[] = [
 				path: 'src/lib/components/shadcn-studio/calendar/calendar-17.svelte',
 				target: 'components/shadcn-studio/calendar/calendar-17.svelte'
 			}
-		]
+		],
+		underConstruction: true
 	},
 	{
 		name: 'calendar-18',
@@ -1720,7 +1721,8 @@ export const components: ComponentProps[] = [
 				path: 'src/lib/components/shadcn-studio/calendar/calendar-21.svelte',
 				target: 'components/shadcn-studio/calendar/calendar-21.svelte'
 			}
-		]
+		],
+		underConstruction: true
 	},
 	{
 		name: 'calendar-22',
@@ -2058,42 +2060,45 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'checkbox-17',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/checkbox/checkbox-17.svelte',
-	// 			target: 'components/shadcn-studio/checkbox/checkbox-17.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-checkbox.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'checkbox-18',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/checkbox/checkbox-18.svelte',
-	// 			target: 'components/shadcn-studio/checkbox/checkbox-18.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-checkbox.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'checkbox-19',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/checkbox/checkbox-19.svelte',
-	// 			target: 'components/shadcn-studio/checkbox/checkbox-19.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
+	{
+		name: 'checkbox-17',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/checkbox/checkbox-17.svelte',
+				target: 'components/shadcn-studio/checkbox/checkbox-17.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-checkbox.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'checkbox-18',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/checkbox/checkbox-18.svelte',
+				target: 'components/shadcn-studio/checkbox/checkbox-18.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-checkbox.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'checkbox-19',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/checkbox/checkbox-19.svelte',
+				target: 'components/shadcn-studio/checkbox/checkbox-19.svelte'
+			}
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
 	{
 		name: 'collapsible-01',
 		files: [
@@ -4003,19 +4008,20 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'radio-group-14',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/radio-group/radio-group-14.svelte',
-	// 			target: 'components/shadcn-studio/radio-group/radio-group-14.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-radio-group.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
+	{
+		name: 'radio-group-14',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/radio-group/radio-group-14.svelte',
+				target: 'components/shadcn-studio/radio-group/radio-group-14.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-radio-group.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
 	{
 		name: 'radio-group-15',
 		files: [
@@ -4443,7 +4449,8 @@ export const components: ComponentProps[] = [
 				path: 'src/lib/components/shadcn-studio/select/select-35.svelte',
 				target: 'components/shadcn-studio/select/select-35.svelte'
 			}
-		]
+		],
+		underConstruction: true
 	},
 	{
 		name: 'select-36',
@@ -4452,7 +4459,8 @@ export const components: ComponentProps[] = [
 				path: 'src/lib/components/shadcn-studio/select/select-36.svelte',
 				target: 'components/shadcn-studio/select/select-36.svelte'
 			}
-		]
+		],
+		underConstruction: true
 	},
 	{
 		name: 'select-37',
@@ -4896,32 +4904,34 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'switch-19',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/switch/switch-19.svelte',
-	// 			target: 'components/shadcn-studio/switch/switch-19.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-switch.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'switch-20',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/switch/switch-20.svelte',
-	// 			target: 'components/shadcn-studio/switch/switch-20.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-switch.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
+	{
+		name: 'switch-19',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/switch/switch-19.svelte',
+				target: 'components/shadcn-studio/switch/switch-19.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-switch.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'switch-20',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/switch/switch-20.svelte',
+				target: 'components/shadcn-studio/switch/switch-20.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-switch.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
 	{
 		name: 'table-01',
 		files: [
@@ -5300,42 +5310,45 @@ export const components: ComponentProps[] = [
 			}
 		]
 	},
-	// {
-	// 	name: 'tabs-27',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-27.svelte',
-	// 			target: 'components/shadcn-studio/tabs/tabs-27.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-highlight.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-tabs.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'tabs-28',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-28.svelte',
-	// 			target: 'components/shadcn-studio/tabs/tabs-28.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'tabs-29',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/tabs/tabs-29.svelte',
-	// 			target: 'components/shadcn-studio/tabs/tabs-29.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
+	{
+		name: 'tabs-27',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/tabs/tabs-27.svelte',
+				target: 'components/shadcn-studio/tabs/tabs-27.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-highlight.svelte'
+			// },
+			// {
+			// 	path: 'src/lib/components/ui/motion-tabs.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'tabs-28',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/tabs/tabs-28.svelte',
+				target: 'components/shadcn-studio/tabs/tabs-28.svelte'
+			}
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'tabs-29',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/tabs/tabs-29.svelte',
+				target: 'components/shadcn-studio/tabs/tabs-29.svelte'
+			}
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
 	{
 		name: 'textarea-01',
 		files: [
@@ -5659,31 +5672,33 @@ export const components: ComponentProps[] = [
 				target: 'components/shadcn-studio/tooltip/tooltip-15.svelte'
 			}
 		]
+	},
+	{
+		name: 'tooltip-16',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/tooltip/tooltip-16.svelte',
+				target: 'components/shadcn-studio/tooltip/tooltip-16.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/motion-tooltip.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
+	},
+	{
+		name: 'tooltip-17',
+		files: [
+			{
+				path: 'src/lib/components/shadcn-studio/tooltip/tooltip-17.svelte',
+				target: 'components/shadcn-studio/tooltip/tooltip-17.svelte'
+			}
+			// {
+			// 	path: 'src/lib/components/ui/global-tooltip.svelte'
+			// }
+		],
+		isAnimated: true,
+		underConstruction: true
 	}
-	// {
-	// 	name: 'tooltip-16',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/tooltip/tooltip-16.svelte',
-	// 			target: 'components/shadcn-studio/tooltip/tooltip-16.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/motion-tooltip.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// },
-	// {
-	// 	name: 'tooltip-17',
-	// 	files: [
-	// 		{
-	// 			path: 'src/lib/components/shadcn-studio/tooltip/tooltip-17.svelte',
-	// 			target: 'components/shadcn-studio/tooltip/tooltip-17.svelte'
-	// 		},
-	// 		{
-	// 			path: 'src/lib/components/ui/global-tooltip.svelte'
-	// 		}
-	// 	],
-	// 	isAnimated: true
-	// }
 ];

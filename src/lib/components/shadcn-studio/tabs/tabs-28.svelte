@@ -1,3 +1,12 @@
+<script lang="ts">
+	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
+
+	const message =
+		'Motion components will be available soon. There is currently a bug with motion-start preventing props to be spread on motion elements.';
+</script>
+
+<UnderConstruction {message} />
+
 <!-- <script lang="ts">
 	import { motion, AnimatePresence } from 'motion/react';
 	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
