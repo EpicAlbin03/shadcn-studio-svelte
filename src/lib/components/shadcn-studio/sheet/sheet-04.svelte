@@ -71,7 +71,7 @@
 
 				<h3>7. Privacy and Data Protection</h3>
 				<p>
-					Your privacy is important to us. Please refer to our <a href="#!">Privacy Policy</a> to understand
+					Your privacy is important to us. Please refer to our <a href="#">Privacy Policy</a> to understand
 					how we collect, use, and protect your personal data.
 				</p>
 

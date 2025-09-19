@@ -46,7 +46,7 @@
 			<div class="grid">
 				<div class="flex items-center justify-between">
 					<Badge variant="secondary">+6 this week</Badge>
-					<a href="#!" class="text-sm hover:underline"> See all </a>
+					<a href="#" class="text-sm hover:underline"> See all </a>
 				</div>
 				<Separator class="my-2" />
 				<ul class="space-y-2">

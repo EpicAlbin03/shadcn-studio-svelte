@@ -12,7 +12,7 @@
 	class="relative container hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0"
 >
 	<Button
-		href="/examples/authentication"
+		href="/theme-generator/examples/authentication"
 		variant="ghost"
 		class="absolute top-4 right-4 md:top-8 md:right-8"
 	>
@@ -54,13 +54,9 @@
 			<UserAuthForm />
 			<p class="px-8 text-center text-sm text-muted-foreground">
 				By clicking continue, you agree to our
-				<a href="/terms" class="underline underline-offset-4 hover:text-primary">
-					Terms of Service
-				</a>
+				<a href="#" class="underline underline-offset-4 hover:text-primary"> Terms of Service </a>
 				and
-				<a href="/privacy" class="underline underline-offset-4 hover:text-primary">
-					Privacy Policy
-				</a>.
+				<a href="#" class="underline underline-offset-4 hover:text-primary"> Privacy Policy </a>.
 			</p>
 		</div>
 	</div>

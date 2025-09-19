@@ -6,13 +6,13 @@
 <Breadcrumb.Root>
 	<Breadcrumb.List>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">Home</Breadcrumb.Link>
+			<Breadcrumb.Link href="#">Home</Breadcrumb.Link>
 		</Breadcrumb.Item>
 		<Breadcrumb.Separator>
 			<DotIcon class="size-4" />
 		</Breadcrumb.Separator>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">Documents</Breadcrumb.Link>
+			<Breadcrumb.Link href="#">Documents</Breadcrumb.Link>
 		</Breadcrumb.Item>
 		<Breadcrumb.Separator>
 			<DotIcon class="size-4" />

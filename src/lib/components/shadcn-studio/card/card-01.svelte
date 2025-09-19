@@ -20,7 +20,7 @@
 				<div class="grid gap-2">
 					<div class="flex items-center">
 						<Label for="password">Password</Label>
-						<a href="#!" class="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+						<a href="#" class="ml-auto inline-block text-sm underline-offset-4 hover:underline">
 							Forgot your password?
 						</a>
 					</div>
@@ -34,7 +34,7 @@
 		<Button variant="outline" class="w-full">Continue with Google</Button>
 		<div class="mt-4 text-center text-sm">
 			Don't have an account?
-			<a href="#!" class="underline underline-offset-4">Sign up</a>
+			<a href="#" class="underline underline-offset-4">Sign up</a>
 		</div>
 	</Card.Footer>
 </Card.Root>

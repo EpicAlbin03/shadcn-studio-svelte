@@ -41,7 +41,7 @@
 				</ol>
 				<p class="mt-3">
 					For full details, please read our complete
-					<a href="#!" class="text-sky-600 hover:underline dark:text-sky-400">
+					<a href="#" class="text-sky-600 hover:underline dark:text-sky-400">
 						Terms & Conditions
 					</a>
 				</p>

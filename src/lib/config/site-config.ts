@@ -1,10 +1,8 @@
-import { env } from '$env/dynamic/public';
-
 export const siteConfig = {
 	name: 'shadcn/studio-svelte',
-	url: env.PUBLIC_SITE_URL,
+	url: 'http://localhost:5173',
 	ogImage: {
-		url: `${env.PUBLIC_SITE_URL}/opengraph.png`,
+		url: 'http://localhost:5173/opengraph.png',
 		width: '1200',
 		height: '630'
 	},
@@ -45,6 +43,7 @@ export const siteConfig = {
 		'dashboard components'
 	],
 	links: {
+		x: 'https://x.com/EpicAlbin03',
 		github: 'https://github.com/EpicAlbin03/shadcn-studio-svelte'
 	}
 };

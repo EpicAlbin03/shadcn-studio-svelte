@@ -9,7 +9,7 @@
 <Breadcrumb.Root>
 	<Breadcrumb.List>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">
+			<Breadcrumb.Link href="#">
 				<HomeIcon class="size-4" />
 				<span class="sr-only">Home</span>
 			</Breadcrumb.Link>

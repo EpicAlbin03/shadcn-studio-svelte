@@ -8,7 +8,7 @@
 <Breadcrumb.Root>
 	<Breadcrumb.List>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">
+			<Breadcrumb.Link href="#">
 				<Badge variant="outline" class="rounded-full text-muted-foreground hover:text-foreground">
 					<HomeIcon class="size-3" />
 					Home
@@ -17,7 +17,7 @@
 		</Breadcrumb.Item>
 		<Breadcrumb.Separator>/</Breadcrumb.Separator>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">
+			<Breadcrumb.Link href="#">
 				<Badge variant="outline" class="rounded-full text-muted-foreground hover:text-foreground">
 					Documents
 				</Badge>

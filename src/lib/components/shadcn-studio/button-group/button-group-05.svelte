@@ -7,7 +7,7 @@
 	<Button
 		variant="outline"
 		class="rounded-none rounded-s-md shadow-none hover:!bg-[#9146ff]/10 focus-visible:z-10"
-		href="#!"
+		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -17,7 +17,7 @@
 	<Button
 		variant="outline"
 		class="rounded-none shadow-none hover:!bg-[#EA4C89]/10 focus-visible:z-10"
-		href="#!"
+		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -27,7 +27,7 @@
 	<Button
 		variant="outline"
 		class="rounded-none shadow-none hover:!bg-[#fb169a]/10 focus-visible:z-10"
-		href="#!"
+		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -37,7 +37,7 @@
 	<Button
 		variant="outline"
 		class="rounded-none rounded-e-md shadow-none hover:!bg-[#0866ff]/10 focus-visible:z-10"
-		href="#!"
+		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
 	>

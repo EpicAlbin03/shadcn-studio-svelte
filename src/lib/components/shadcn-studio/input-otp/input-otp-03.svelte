@@ -18,6 +18,6 @@
 	</InputOTP.Root>
 	<p class="text-xs text-muted-foreground">
 		Didn't get the code?
-		<a href="#!" class="text-primary hover:underline">Resend code</a>
+		<a href="#" class="text-primary hover:underline">Resend code</a>
 	</p>
 </div>

@@ -49,9 +49,9 @@
 		/>
 		<p>
 			Lost in the colors of the night 🌌✨ Sometimes the blur reveals more than clarity.
-			<a href="#!" class="text-sky-600 dark:text-sky-400">#AbstractVibes</a>
-			<a href="#!" class="text-sky-600 dark:text-sky-400">#Dreamscape</a>
-			<a href="#!" class="text-sky-600 dark:text-sky-400">#VisualPoetry</a>
+			<a href="#" class="text-sky-600 dark:text-sky-400">#AbstractVibes</a>
+			<a href="#" class="text-sky-600 dark:text-sky-400">#Dreamscape</a>
+			<a href="#" class="text-sky-600 dark:text-sky-400">#VisualPoetry</a>
 		</p>
 	</Card.Content>
 	<Card.Footer class="flex items-center gap-1">

@@ -49,9 +49,9 @@
 					/>
 					<Label for={id} class="gap-1">
 						I agree with
-						<a href="#!" class="underline hover:no-underline"> condition </a>
+						<a href="#" class="underline hover:no-underline"> condition </a>
 						and
-						<a href="#!" class="underline hover:no-underline"> privacy policy </a>
+						<a href="#" class="underline hover:no-underline"> privacy policy </a>
 					</Label>
 				</div>
 			</form>

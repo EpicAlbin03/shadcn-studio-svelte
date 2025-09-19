@@ -6,7 +6,7 @@
 <Breadcrumb.Root>
 	<Breadcrumb.List>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!">
+			<Breadcrumb.Link href="#">
 				<HomeIcon class="size-4" />
 				<span class="sr-only">Home</span>
 			</Breadcrumb.Link>
@@ -15,7 +15,7 @@
 			<ChevronsRightIcon />
 		</Breadcrumb.Separator>
 		<Breadcrumb.Item>
-			<Breadcrumb.Link href="#!" class="flex items-center gap-2">
+			<Breadcrumb.Link href="#" class="flex items-center gap-2">
 				<FolderIcon class="size-4" />
 				Documents
 			</Breadcrumb.Link>

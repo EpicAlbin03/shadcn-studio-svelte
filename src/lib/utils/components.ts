@@ -1,5 +1,4 @@
 import { cache } from './cache';
-import { env } from '$env/dynamic/public';
 import type { ComponentProps, FileTree } from '$lib/types/components';
 import { components } from '$lib/assets/data/components';
 
@@ -13,9 +12,7 @@ export const getComponentsByNames = (names: string[]): ComponentProps[] => {
 
 async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number]) {
 	try {
-		const response = await fetch(
-			`${env.PUBLIC_APP_URL!}/api/get-file-content?path=${encodeURIComponent(file.path)}`
-		);
+		const response = await fetch(`/api/get-file-content?path=${encodeURIComponent(file.path)}`);
 
 		if (!response.ok) {
 			console.log(response);
