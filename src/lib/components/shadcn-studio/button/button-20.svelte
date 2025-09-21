@@ -5,7 +5,7 @@
 
 <div class="flex h-11.5 items-center overflow-hidden rounded-full border px-1">
 	<p class="max-w-56 truncate overflow-hidden px-2.5 text-sm text-muted-foreground">
-		http:/localhost:5173/docs/components/button
+		https://shadcnstudio-svelte.netlify.app/docs/components/button
 	</p>
 	<Button
 		size="icon"

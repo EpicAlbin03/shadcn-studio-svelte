@@ -5,17 +5,17 @@
  </h1>
 </p>
 
-[shadcn/studio-svelte](http://localhost:5173) is an unofficial community-led [Svelte](https://svelte.dev) port of [shadcn/studio](https://shadcnstudio.com).
+[shadcn/studio-svelte](https://shadcnstudio-svelte.netlify.app) is an unofficial community-led [Svelte](https://svelte.dev) port of [shadcn/studio](https://shadcnstudio.com).
 
 > **Note** <br> **This project is not affiliated with shadcn/studio** <br>
 
 ![hero](./static/opengraph.png)
 
-[shadcn/studio-svelte](http://localhost:5173) is an open-source collection of copy-and-paste shadcn components, blocks, and templates - paired with a powerful theme generator to craft, customize, and ship faster. 🚀
+[shadcn/studio-svelte](https://shadcnstudio-svelte.netlify.app) is an open-source collection of copy-and-paste shadcn components, blocks, and templates - paired with a powerful theme generator to craft, customize, and ship faster. 🚀
 
 ## Documentation
 
-Visit http://localhost:5173 to view the documentation.
+Visit https://shadcnstudio-svelte.netlify.app to view the documentation.
 
 ## Credits
 

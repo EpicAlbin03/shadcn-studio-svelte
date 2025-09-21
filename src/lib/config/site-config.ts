@@ -1,8 +1,8 @@
 export const siteConfig = {
 	name: 'shadcn/studio-svelte',
-	url: 'http://localhost:5173',
+	url: 'https://shadcnstudio-svelte.netlify.app',
 	ogImage: {
-		url: 'http://localhost:5173/opengraph.png',
+		url: 'https://shadcnstudio-svelte.netlify.app/opengraph.png',
 		width: '1200',
 		height: '630'
 	},
