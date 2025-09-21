@@ -59,7 +59,7 @@
 			{#each searchData as searchGroup, index}
 				<Command.Group heading={searchGroup.title}>
 					{#each searchGroup.data as item, i}
-						<Command.Item onselect={() => runCommand(() => goto(item.href))}>
+						<Command.Item onSelect={() => runCommand(() => goto(item.href))}>
 							<item.icon />
 							<span>{item.name}</span>
 							{#if item.shortcut}
@@ -74,15 +74,15 @@
 			{/each}
 		{:else}
 			<Command.Group heading="Suggestions">
-				<Command.Item onselect={() => runCommand(() => goto('/theme-generator'))}>
+				<Command.Item onSelect={() => runCommand(() => goto('/theme-generator'))}>
 					<Palette />
 					<span>Theme Generator</span>
 				</Command.Item>
-				<Command.Item onselect={() => runCommand(() => goto('/components'))}>
+				<Command.Item onSelect={() => runCommand(() => goto('/components'))}>
 					<Component />
 					<span>Components</span>
 				</Command.Item>
-				<Command.Item onselect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
+				<Command.Item onSelect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
 					<Sparkles />
 					<span>Introduction</span>
 				</Command.Item>
