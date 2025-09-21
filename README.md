@@ -21,6 +21,7 @@ Visit http://localhost:5173 to view the documentation.
 
 We are grateful for the contributions of the open-source community, particularly:
 
+- [shadcn/studio](https://shadcnstudio.com)
 - [shadcn-svelte](https://shadcn-svelte.com)
 - [bits-ui](https://bits-ui.com)
 - [tweakcn](https://tweakcn.com/) (Our Theme Generator is heavily inspired by tweakcn)
