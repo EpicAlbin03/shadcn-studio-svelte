@@ -3,4 +3,4 @@ Allow: /
 Disallow: /private/
 Disallow: /*?*
 
-Sitemap: http://localhost:5173
+Sitemap: https://shadcnstudio-svelte.netlify.app/sitemap.xml
