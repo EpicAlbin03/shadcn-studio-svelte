@@ -1,5 +1,6 @@
 import type { ComponentProps, FileTree } from '$lib/types/components';
 import { components } from '$lib/assets/data/components';
+import { browser } from '$app/environment';
 
 export const getComponentsByNames = (names: string[]): ComponentProps[] => {
 	const componentsMap = new Map(components.map((comp) => [comp.name, comp]));
@@ -11,6 +12,17 @@ export const getComponentsByNames = (names: string[]): ComponentProps[] => {
 
 async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number]) {
 	try {
+		// During SSR/prerendering, read files directly from the filesystem
+		if (!browser) {
+			const { promises: fs } = await import('fs');
+			const path = await import('path');
+
+			const fullPath = path.join(process.cwd(), file.path);
+			const content = await fs.readFile(fullPath, 'utf-8');
+			return content;
+		}
+
+		// In the browser, use the API endpoint
 		const response = await fetch(`/api/get-file-content?path=${encodeURIComponent(file.path)}`);
 
 		if (!response.ok) {
@@ -21,7 +33,7 @@ async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number
 		const data = await response.json();
 
 		return data.content;
-	} catch (error: any) {
+	} catch (error: unknown) {
 		console.error('Error fetching file content:', error);
 		throw error;
 	}
