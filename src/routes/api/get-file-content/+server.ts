@@ -20,5 +20,3 @@ export const GET: RequestHandler = async (event) => {
 		throw error(404, 'File not found');
 	}
 };
-
-export const prerender = true;
