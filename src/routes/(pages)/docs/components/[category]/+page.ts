@@ -3,8 +3,7 @@ import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
 import type { ProcessedComponentsData } from '$lib/types/components';
-import { getCachedComponentItem } from '$lib/utils/components';
-import { getCachedFileTree } from '$lib/utils/components';
+import { getComponentItem, createFileTreeForComponentItemFiles } from '$lib/utils/components';
 
 export const entries: EntryGenerator = () =>
 	categories
@@ -25,13 +24,13 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	// Prepare components data for the client component
 	const componentsData: (ProcessedComponentsData | null)[] = await Promise.all(
 		components.map(async (comp) => {
-			const item = await getCachedComponentItem(fetch, comp.name);
+			const item = await getComponentItem(fetch, comp.name);
 
 			if (!item?.files) {
 				return null;
 			}
 
-			const tree = await getCachedFileTree(item.files);
+			const tree = createFileTreeForComponentItemFiles(item.files);
 
 			return {
 				component: {

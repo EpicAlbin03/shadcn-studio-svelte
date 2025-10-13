@@ -1,4 +1,3 @@
-import { cache } from './cache';
 import type { ComponentProps, FileTree } from '$lib/types/components';
 import { components } from '$lib/assets/data/components';
 
@@ -272,15 +271,3 @@ export function createFileTreeForComponentItemFiles(
 
 	return root;
 }
-
-export const getCachedComponentItem = cache(async (fetch: Fetch, name: string) => {
-	return await getComponentItem(fetch, name);
-});
-
-export const getCachedFileTree = cache((files: Array<{ path: string; target?: string }>) => {
-	if (!files) {
-		return null;
-	}
-
-	return createFileTreeForComponentItemFiles(files);
-});
