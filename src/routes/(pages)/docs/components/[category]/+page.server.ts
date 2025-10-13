@@ -1,6 +1,6 @@
 import { categories, getCategory, type ComponentCategory } from '$lib/config/components.svelte';
 import { error } from '@sveltejs/kit';
-import type { EntryGenerator, PageLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
 import type { ProcessedComponentsData } from '$lib/types/components';
 import { getComponentItem, createFileTreeForComponentItemFiles } from '$lib/utils/components';
@@ -12,7 +12,7 @@ export const entries: EntryGenerator = () =>
 			category: category.slug
 		}));
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageServerLoad = async ({ params, fetch }) => {
 	const category = getCategory(params.category);
 
 	if (!category || category.isComingSoon) {

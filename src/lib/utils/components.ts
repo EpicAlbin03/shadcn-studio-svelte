@@ -18,22 +18,18 @@ async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number
 			const path = await import('path');
 
 			const fullPath = path.join(process.cwd(), file.path);
-
-			try {
-				const content = await fs.readFile(fullPath, 'utf-8');
-				return content;
-			} catch (fsError) {
-				console.error(`Failed to read file from filesystem: ${fullPath}`, fsError);
-				return '';
-			}
+			const content = await fs.readFile(fullPath, 'utf-8');
+			return content;
 		}
 
 		// In the browser, use the API endpoint
 		const response = await fetch(`/api/get-file-content?path=${encodeURIComponent(file.path)}`);
 
 		if (!response.ok) {
-			console.error('API error:', response.statusText);
-			return '';
+			console.log(response);
+			const errorData = await response.json();
+			console.error('API error:', errorData.error || response.statusText);
+			throw new Error(`Failed to fetch file: ${response.statusText}`);
 		}
 
 		const data = await response.json();
@@ -41,7 +37,7 @@ async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number
 		return data.content;
 	} catch (error: unknown) {
 		console.error('Error fetching file content:', error);
-		return '';
+		throw error;
 	}
 }
 
