@@ -14,10 +14,8 @@ async function getFileContent(fetch: Fetch, file: ComponentProps['files'][number
 		const response = await fetch(`/api/get-file-content?path=${encodeURIComponent(file.path)}`);
 
 		if (!response.ok) {
-			console.log(response);
-			const errorData = await response.json();
-
-			console.error('API error:', errorData.error || response.statusText);
+			console.error('API error:', response.statusText);
+			throw new Error(`Failed to fetch file: ${response.statusText}`);
 		}
 
 		const data = await response.json();
