@@ -27,9 +27,9 @@
 	<Dialog.Content class="sm:max-w-[780px]">
 		<Dialog.Header>
 			<Dialog.Title>Theme Variables</Dialog.Title>
-			<Dialog.Description
-				>Copy these CSS variables to use your theme in other projects.</Dialog.Description
-			>
+			<Dialog.Description>
+				Copy these CSS variables to use your theme in other projects.
+			</Dialog.Description>
 		</Dialog.Header>
 		<div class="flex min-w-0 flex-col gap-6">
 			<!-- Theme Installation Command - Only show for preset themes -->

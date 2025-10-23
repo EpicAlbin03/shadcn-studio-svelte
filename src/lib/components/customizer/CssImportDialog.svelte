@@ -11,6 +11,7 @@
 		parseLetterSpacing,
 		parseShadowVariables
 	} from '$lib/utils/parse-css-input';
+	import { carryCommon } from '$lib/utils/theme';
 
 	const userConfig = UserConfigContext.get();
 
@@ -43,6 +44,8 @@
 				}
 			}
 		};
+
+		carryCommon(updatedSettings.cssVars.light, updatedSettings.cssVars.dark);
 
 		userConfig.setActiveTheme(updatedSettings);
 
@@ -132,9 +135,9 @@
 			/>
 		</div>
 		<Dialog.Footer>
-			<Button variant="outline" onclick={handleClose} class="cursor-pointer text-foreground"
-				>Cancel</Button
-			>
+			<Button variant="outline" onclick={handleClose} class="cursor-pointer text-foreground">
+				Cancel
+			</Button>
 			<Button onclick={handleImport} class="cursor-pointer">Import</Button>
 		</Dialog.Footer>
 	</Dialog.Content>

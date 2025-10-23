@@ -36,15 +36,17 @@ export function applyThemeStyles(themeStyles: ThemeStyles) {
 }
 
 const applyCommonStyles = (root: HTMLElement, themeStyles: ThemeStyles) => {
-	if (mode.current) {
-		Object.entries(themeStyles[mode.current])
-			.filter(([key]) => COMMON_STYLES.includes(key as (typeof COMMON_STYLES)[number]))
-			.forEach(([key, value]) => {
-				if (typeof value === 'string') {
-					root.style.setProperty(`--${key}`, value);
-				}
-			});
-	}
+	const currentMode = mode.current ?? 'light';
+	const base = themeStyles.light ?? {};
+	const override = themeStyles[currentMode] ?? {};
+	const merged = { ...base, ...override };
+
+	COMMON_STYLES.forEach((key) => {
+		const value = merged[key as keyof ThemeStyleProps];
+		if (typeof value === 'string') {
+			root.style.setProperty(`--${key}`, value);
+		}
+	});
 };
 
 const applyThemeColors = (root: HTMLElement, themeStyles: ThemeStyles) => {
@@ -59,4 +61,12 @@ const applyThemeColors = (root: HTMLElement, themeStyles: ThemeStyles) => {
 			}
 		});
 	}
+};
+
+export const carryCommon = (light: Partial<ThemeStyleProps>, dark: Partial<ThemeStyleProps>) => {
+	COMMON_STYLES.forEach((k) => {
+		if (light[k as keyof ThemeStyleProps] && !dark[k as keyof ThemeStyleProps]) {
+			dark[k as keyof ThemeStyleProps] = light[k as keyof ThemeStyleProps]!;
+		}
+	});
 };
