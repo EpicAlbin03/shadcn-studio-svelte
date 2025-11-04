@@ -24,7 +24,7 @@ const generateShadowVariables = (shadowMap: Record<string, string>): string => {
 const generateTrackingVariables = (themeStyles: ThemeStyles): string => {
 	const styles = themeStyles['light'];
 
-	if (styles['letter-spacing'] === '0em') {
+	if (styles['letter-spacing'] === '0em' || !styles['letter-spacing']) {
 		return '';
 	}
 
@@ -50,7 +50,7 @@ export const generateThemeCode = (
 
 	const themeStyles = styles as ThemeType;
 
-	return `:root {
+	const rootVars = `:root {
   --background: ${formatColor(themeStyles.light.background)};
   --foreground: ${formatColor(themeStyles.light.foreground)};
   --card: ${formatColor(themeStyles.light.card)};
@@ -90,13 +90,14 @@ export const generateThemeCode = (
   --radius: ${themeStyles.light.radius};
   ${generateShadowVariables(getShadowMap(themeStyles.light, colorFormat))}
   ${
+		themeStyles.light['letter-spacing'] &&
 		themeStyles.light['letter-spacing'] !== defaultTheme.cssVars.light['letter-spacing']
 			? `\n  --tracking-normal: ${themeStyles.light['letter-spacing']};`
 			: ''
-	}${themeStyles.light.spacing !== defaultTheme.cssVars.light.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
-}
+	}${themeStyles.light.spacing && themeStyles.light.spacing !== defaultTheme.cssVars.light.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
+}`.replace(/\n\s*\n?}$/m, '\n}');
 
-.dark {
+	const darkVars = `.dark {
   --background: ${formatColor(themeStyles.dark.background)};
   --foreground: ${formatColor(themeStyles.dark.foreground)};
   --card: ${formatColor(themeStyles.dark.card)};
@@ -129,9 +130,9 @@ export const generateThemeCode = (
   --sidebar-border: ${formatColor(themeStyles.dark['sidebar-border'])};
   --sidebar-ring: ${formatColor(themeStyles.dark['sidebar-ring'])};
   ${generateShadowVariables(getShadowMap(themeStyles.dark, colorFormat))}
-}
+}`;
 
-@theme inline {
+	const inlineVars = `@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -181,5 +182,7 @@ export const generateThemeCode = (
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);${generateTrackingVariables(themeStyles)}
-}${themeStyles['light']['letter-spacing'] != '0em' ? '\n\nbody {\n  letter-spacing: var(--tracking-normal);\n}' : ''}`;
+}${themeStyles['light']['letter-spacing'] && themeStyles['light']['letter-spacing'] != '0em' ? '\n\nbody {\n  letter-spacing: var(--tracking-normal);\n}' : ''}`;
+
+	return [rootVars, darkVars, inlineVars].join('\n\n');
 };

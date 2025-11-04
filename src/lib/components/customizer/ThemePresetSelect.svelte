@@ -101,7 +101,7 @@
 			}
 		}
 	>
-		<Select.Trigger class="h-12 w-full cursor-pointer">
+		<Select.Trigger class="h-12 w-full cursor-pointer capitalize">
 			{label}
 		</Select.Trigger>
 		<Select.Content>
@@ -134,7 +134,7 @@
 								</div>
 							</div>
 							<div class="flex w-full items-center justify-between gap-2">
-								<span>{theme.label}</span>
+								<span class="capitalize">{theme.label}</span>
 								<div>
 									<CopyButton
 										source={generateThemeCode(theme.cssVars, colorFormat)}
