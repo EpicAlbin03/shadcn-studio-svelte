@@ -36,6 +36,7 @@
 		"@types/node": "^24.3.0",
 		"@types/papaparse": "^5.3.16",
 		"bits-ui": "^2.9.4",
+		"chroma-js": "^3.1.2",
 		"chrono-node": "^2.8.4",
 		"cleave.js": "^1.6.0",
 		"clsx": "^2.1.1",
@@ -58,10 +59,12 @@
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"runed": "^0.31.1",
+		"shepherd.js": "^14.5.1",
 		"shiki": "^3.12.0",
 		"super-sitemap": "^1.0.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"svelte-floating-ui": "^1.6.2",
 		"svelte-sonner": "^1.0.5",
 		"sveltekit-superforms": "^2.27.1",
 		"tailwind-merge": "^3.3.1",
@@ -79,10 +82,5 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
-	},
-	"dependencies": {
-		"chroma-js": "^3.1.2",
-		"shepherd.js": "^14.5.1",
-		"svelte-floating-ui": "^1.6.2"
 	}
 }
