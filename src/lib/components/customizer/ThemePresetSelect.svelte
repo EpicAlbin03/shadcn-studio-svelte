@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Dices } from '@lucide/svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme';
+	import { Copy, Dices, Trash2 } from '@lucide/svelte';
+	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
 	import { Badge } from '$lib/components/ui/badge';
@@ -13,12 +13,25 @@
 		presetThemesMap,
 		type PresetThemeName
 	} from '$lib/assets/data/preset-themes';
+	import { toast } from 'svelte-sonner';
+	import CopyButton from '../CopyButton.svelte';
+	import { generateThemeCode } from '$lib/utils/theme-style-generator';
+	import type { ColorFormat } from '$lib/utils/color-converter';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	const userConfig = UserConfigContext.get();
 
-	const label = $derived(
-		userConfig.activeTheme.name in presetThemesMap ? userConfig.activeTheme.label : 'Choose Theme'
-	);
+	let colorFormat = $derived<ColorFormat>(userConfig.colorFormat);
+
+	const label = $derived.by(() => {
+		if (userConfig.activeTheme.name in presetThemesMap) {
+			return userConfig.activeTheme.label;
+		} else if (userConfig.savedThemes.length > 0) {
+			return userConfig.savedThemes.find((t) => t.name === userConfig.activeTheme.name)?.label;
+		} else {
+			return 'Choose Theme';
+		}
+	});
 
 	const orderedPresets = $derived.by(() => {
 		// First get all preset entries
@@ -44,10 +57,10 @@
 		];
 	});
 
-	function getThemeColor(name: PresetThemeName, color: keyof ThemeStyleProps) {
-		// If it's default theme, use the first preset as default
-		const theme = name === 'default' ? presetThemesMap['default'] : presetThemesMap[name];
-
+	function getThemeColor(
+		theme: { cssVars: ThemeStyles } = presetThemesMap['default'],
+		color: keyof ThemeStyleProps
+	) {
 		return theme?.cssVars.light?.[color] || theme?.cssVars.dark?.[color] || '#000000';
 	}
 
@@ -56,6 +69,12 @@
 		const random = Math.floor(Math.random() * presetThemes.length);
 		const themeName = presetThemes[random].name as PresetThemeName;
 		userConfig.setActiveTheme(presetThemesMap[themeName]);
+	}
+
+	function handleDeleteTheme(event: MouseEvent, name: string) {
+		event.stopPropagation(); // Prevent theme application when deleting
+		userConfig.removeSavedTheme(name);
+		toast.success(`Theme "${name}" has been removed.`);
 	}
 </script>
 
@@ -73,38 +92,104 @@
 	<Select.Root
 		type="single"
 		bind:value={
-			() => label, (v) => userConfig.setActiveTheme(presetThemesMap[v as PresetThemeName])
+			() => label,
+			(v) => {
+				const theme =
+					presetThemesMap[v as PresetThemeName] ?? userConfig.savedThemes.find((t) => t.name === v);
+				userConfig.setActiveTheme(theme);
+				toast.success(`Theme "${theme.name}" has been applied.`);
+			}
 		}
 	>
 		<Select.Trigger class="h-12 w-full cursor-pointer">
 			{label}
 		</Select.Trigger>
 		<Select.Content>
+			{#if userConfig.savedThemes.length > 0}
+				<Select.Group>
+					<Select.Label>My Themes</Select.Label>
+					{#each userConfig.savedThemes as theme (theme.name)}
+						<Select.Item value={theme.name} class="flex items-center gap-3">
+							<!-- Theme Color Grid Icon -->
+							<div class="flex items-center">
+								<div class="relative size-[26px] rounded border bg-background p-1">
+									<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'primary')}"
+										></div>
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'destructive')}"
+										></div>
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'secondary')}"
+										></div>
+										<div
+											class="rounded-full"
+											style="background-color: {getThemeColor(theme, 'accent')}"
+										></div>
+									</div>
+								</div>
+							</div>
+							<div class="flex w-full items-center justify-between gap-2">
+								<span>{theme.label}</span>
+								<div>
+									<CopyButton
+										source={generateThemeCode(theme.cssVars, colorFormat)}
+										class="h-6 w-6 hover:[&_*]:text-foreground"
+										toast="Theme variables"
+										onCopied={() => userConfig.setColorFormat(colorFormat)}
+										ignoreNonKeyboardFocus={false}
+										code={false}
+									/>
+									<Tooltip.Root>
+										<Tooltip.Trigger>
+											{#snippet child({ props })}
+												<Button
+													{...props}
+													variant="ghost"
+													size="icon"
+													class="h-6 w-6 hover:[&>svg]:text-destructive"
+													onclick={(e: MouseEvent) => handleDeleteTheme(e, theme.name)}
+												>
+													<Trash2 class="h-2 w-2" />
+												</Button>
+											{/snippet}
+										</Tooltip.Trigger>
+										<Tooltip.Content>Delete</Tooltip.Content>
+									</Tooltip.Root>
+								</div>
+							</div>
+						</Select.Item>
+					{/each}
+				</Select.Group>
+			{/if}
 			<Select.Group>
-				<Select.Label>Pre Built Themes</Select.Label>
+				<Select.Label>Pre-built Themes</Select.Label>
 				{#each orderedPresets as theme}
 					{@const badge = theme.meta?.badge}
-					{@const name = theme.name as PresetThemeName}
-					<Select.Item value={name} class="flex items-center gap-3">
+					<Select.Item value={theme.name} class="flex items-center gap-3">
 						<!-- Theme Color Grid Icon -->
 						<div class="flex items-center">
 							<div class="relative size-[26px] rounded border bg-background p-1">
 								<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'primary')}"
+										style="background-color: {getThemeColor(theme, 'primary')}"
 									></div>
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'destructive')}"
+										style="background-color: {getThemeColor(theme, 'destructive')}"
 									></div>
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'secondary')}"
+										style="background-color: {getThemeColor(theme, 'secondary')}"
 									></div>
 									<div
 										class="rounded-full"
-										style="background-color: {getThemeColor(name, 'accent')}"
+										style="background-color: {getThemeColor(theme, 'accent')}"
 									></div>
 								</div>
 							</div>

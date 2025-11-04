@@ -28,7 +28,6 @@
 	import { mode as _mode } from 'mode-watcher';
 	import { setMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import SavedThemes from './save-theme/SavedThemes.svelte';
 
 	const userConfig = UserConfigContext.get();
 
@@ -129,6 +128,8 @@
 
 		<!-- Themes Selection -->
 		<ThemePresetSelect />
+
+		<HoldToSaveTheme />
 
 		<Tabs.Root value="colors" class="h-full w-full">
 			<Tabs.List class="mb-3 grid w-full grid-cols-3">
@@ -256,8 +257,5 @@
 				</div>
 			</Tabs.Content>
 		</Tabs.Root>
-
-		<HoldToSaveTheme />
-		<SavedThemes />
 	</div>
 </ScrollArea>

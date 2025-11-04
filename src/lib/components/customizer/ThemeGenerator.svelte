@@ -28,11 +28,11 @@
 
 		// Add steps to the tour
 		tour.addStep({
-			id: 'theme-customizer-intro',
+			id: 'theme-generator-intro',
 			title: 'shadcn/ui Theme Generator 🤩',
 			text: 'Transform your shadcn components in real time—customize, save, and ship stunning interfaces faster than ever.',
 			attachTo: {
-				element: '[data-tour="theme-customizer"]',
+				element: '[data-tour="theme-generator"]',
 				on: 'bottom'
 			},
 			floatingUIOptions: {
@@ -74,8 +74,8 @@
 			<RainbowButton
 				{...props}
 				class="cursor-pointer"
-				aria-label="Theme customizer"
-				data-tour="theme-customizer"
+				aria-label="Theme generator"
+				data-tour="theme-generator"
 			>
 				<Palette class="h-4 w-4" />
 			</RainbowButton>
@@ -85,7 +85,7 @@
 		<Sheet.Header
 			class="min-h-(--header-height) flex-row items-center justify-between border-b border-dashed px-6"
 		>
-			<Sheet.Title>Theme Customizer</Sheet.Title>
+			<Sheet.Title>Theme Generator</Sheet.Title>
 			<Sheet.Close
 				class="flex size-7 cursor-pointer items-center justify-center rounded transition-colors hover:bg-muted"
 			>

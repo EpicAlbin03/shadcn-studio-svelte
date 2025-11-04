@@ -196,9 +196,6 @@ export const presetThemes = [
 				'shadow-offset-x': '0px',
 				'shadow-offset-y': '1px'
 			}
-		},
-		meta: {
-			badge: 'New'
 		}
 	},
 	{
@@ -292,9 +289,6 @@ export const presetThemes = [
 				'shadow-offset-x': '0px',
 				'shadow-offset-y': '1px'
 			}
-		},
-		meta: {
-			badge: 'New'
 		}
 	},
 	{

@@ -5,9 +5,8 @@
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import ModeToggle from '$lib/components/layout/ModeToggle.svelte';
 	import NavMenu from '$lib/components/layout/NavMenu.svelte';
-	import ThemeCustomizer from '$lib/components/customizer/ThemeCustomizer.svelte';
+	import ThemeGenerator from '$lib/components/customizer/ThemeGenerator.svelte';
 	import Github from '$lib/assets/svg/Github.svelte';
-	import Discord from '$lib/assets/svg/Discord.svelte';
 	import X from '$lib/assets/svg/X.svelte';
 	import type { Component } from 'svelte';
 
@@ -63,7 +62,7 @@
 				<NavMenu />
 				<div class="flex items-center gap-2 md:gap-4">
 					<CommandMenu />
-					<ThemeCustomizer />
+					<ThemeGenerator />
 					<ModeToggle />
 					<div class="flex items-center gap-1.5 max-md:hidden">
 						<Button variant="ghost" size="icon" class="cursor-pointer">
