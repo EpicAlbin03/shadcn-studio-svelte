@@ -8,7 +8,7 @@
 <UnderConstruction {message} />
 
 <!-- <script lang="ts">
-	import MotionCheckbox from '$lib/components/ui/motion-checkbox.svelte';
+	import MotionCheckbox from '$lib/registry/ui/motion-checkbox.svelte';
 	import { Label } from '$lib/components/ui/label';
 
 	const id = $props.id();

@@ -13,7 +13,7 @@
 
 
 
-import { Checkbox } from '$lib/components/ui/motion-checkbox'
+import { Checkbox } from '$lib/registry/ui/motion-checkbox'
 import { Label } from '$lib/components/ui/label'
 
 const CheckboxAnimatedTodoListDemo = () => {
