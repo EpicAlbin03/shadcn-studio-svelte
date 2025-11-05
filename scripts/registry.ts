@@ -8,7 +8,29 @@ import { registryItemSchema, type Registry } from '@shadcn-svelte/registry';
 
 const REGISTRY_DEPENDENCY = '$lib/registry';
 const UTILS_PATH = '$lib/utils';
-const PACKAGE_DEPENDENCIES: string[] = ['@lucide/svelte', 'bits-ui', 'runed'];
+const PACKAGE_DEPENDENCIES: string[] = [
+	'@lucide/svelte',
+	'bits-ui',
+	'@internationalized/date',
+	'@tanstack/table-core',
+	'@dnd-kit-svelte/core',
+	'@dnd-kit-svelte/modifiers',
+	'@dnd-kit-svelte/sortable',
+	'@dnd-kit-svelte/utilities',
+	'@types/cleave.js',
+	'@types/inputmask',
+	'@types/papaparse',
+	'chrono-node',
+	'inputmask',
+	'layerchart',
+	'little-date',
+	'motion-start',
+	'papaparse',
+	'runed',
+	'svelte-sonner',
+	'sveltekit-superforms',
+	'zod'
+];
 const DYNAMIC_IMPORTS: string[] = [];
 
 const tsParser = acorn.Parser.extend(tsPlugin());
@@ -345,6 +367,21 @@ async function crawlHooks(rootPath: string): Promise<RegistryItems> {
 	return items;
 }
 
+function extractComponentName(importPath: string): string {
+	const parts = importPath.split('/');
+	const lastPart = parts.at(-1)!;
+
+	if (lastPart === 'index.js') {
+		return parts.at(-2)!;
+	}
+
+	if (lastPart.endsWith('.svelte')) {
+		return parts.at(-2)!;
+	}
+
+	return lastPart;
+}
+
 async function getFileDependencies(
 	filename: string,
 	content: string
@@ -372,7 +409,7 @@ async function getFileDependencies(
 
 			if (source.startsWith(REGISTRY_DEPENDENCY)) {
 				if (source.includes('ui')) {
-					const component = source.split('/').at(-1)!;
+					const component = extractComponentName(source);
 					registryDependencies.add(`local:${component}`);
 				} else if (source.includes('hook')) {
 					const hook = source.split('/').at(-1)!.split('.')[0];
@@ -380,7 +417,7 @@ async function getFileDependencies(
 				}
 			} else if (source.startsWith('$lib/')) {
 				if (source.includes('ui')) {
-					const component = source.split('/').at(-1)!;
+					const component = extractComponentName(source);
 					registryDependencies.add(component);
 				} else if (source.includes('hook')) {
 					const hook = source.split('/').at(-1)!.split('.')[0];

@@ -11,10 +11,90 @@
 	},
 	"items": [
 		{
+			"name": "bounce-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-start"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\bounce-button\\bounce-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\bounce-button\\index.ts"
+				}
+			]
+		},
+		{
+			"name": "magnetic-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-start"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\magnetic-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\magnetic-button\\magnetic-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "motion-checkbox",
+			"type": "registry:ui",
+			"dependencies": ["motion-start", "bits-ui", "@lucide/svelte"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-checkbox\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-checkbox\\motion-checkbox.svelte"
+				}
+			]
+		},
+		{
+			"name": "ripple-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-start"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\ripple-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\ripple-button\\ripple-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "shimmer-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-start"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\shimmer-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\shimmer-button\\shimmer-button.svelte"
+				}
+			]
+		},
+		{
 			"name": "accordion-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -26,7 +106,7 @@
 			"name": "accordion-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -38,7 +118,7 @@
 			"name": "accordion-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -50,7 +130,7 @@
 			"name": "accordion-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "bits-ui"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -62,7 +142,7 @@
 			"name": "accordion-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -74,7 +154,7 @@
 			"name": "accordion-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "bits-ui"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -86,7 +166,7 @@
 			"name": "accordion-07",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion", "avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -98,7 +178,7 @@
 			"name": "accordion-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "bits-ui"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -110,7 +190,7 @@
 			"name": "accordion-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -122,7 +202,7 @@
 			"name": "accordion-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -134,7 +214,7 @@
 			"name": "accordion-11",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -146,7 +226,7 @@
 			"name": "accordion-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "bits-ui"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -158,7 +238,7 @@
 			"name": "accordion-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -170,7 +250,7 @@
 			"name": "accordion-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -182,7 +262,7 @@
 			"name": "accordion-15",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "bits-ui"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -194,7 +274,7 @@
 			"name": "accordion-16",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["accordion", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -206,7 +286,7 @@
 			"name": "alert-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -218,7 +298,7 @@
 			"name": "alert-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert", "avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -230,7 +310,7 @@
 			"name": "alert-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -242,7 +322,7 @@
 			"name": "alert-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["alert", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -254,7 +334,7 @@
 			"name": "alert-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -266,7 +346,7 @@
 			"name": "alert-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert", "avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -278,7 +358,7 @@
 			"name": "alert-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "progress"],
+			"registryDependencies": ["alert", "button", "progress"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -290,7 +370,7 @@
 			"name": "alert-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["alert", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -302,7 +382,7 @@
 			"name": "alert-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "progress"],
+			"registryDependencies": ["alert", "avatar", "progress"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -314,7 +394,7 @@
 			"name": "alert-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -326,7 +406,7 @@
 			"name": "alert-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -338,7 +418,7 @@
 			"name": "alert-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -350,7 +430,7 @@
 			"name": "alert-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["alert", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -362,7 +442,7 @@
 			"name": "alert-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -374,7 +454,7 @@
 			"name": "alert-15",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -386,7 +466,7 @@
 			"name": "alert-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -398,7 +478,7 @@
 			"name": "alert-17",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -410,7 +490,7 @@
 			"name": "alert-18",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -422,7 +502,7 @@
 			"name": "alert-19",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -434,7 +514,7 @@
 			"name": "alert-20",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -446,7 +526,7 @@
 			"name": "alert-21",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -458,7 +538,7 @@
 			"name": "alert-22",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -470,7 +550,7 @@
 			"name": "alert-23",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -482,7 +562,7 @@
 			"name": "alert-24",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -494,7 +574,7 @@
 			"name": "alert-25",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -506,7 +586,7 @@
 			"name": "alert-26",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -518,7 +598,7 @@
 			"name": "alert-27",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -530,7 +610,7 @@
 			"name": "alert-28",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -542,7 +622,7 @@
 			"name": "alert-29",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -554,7 +634,7 @@
 			"name": "alert-30",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["alert"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -566,7 +646,7 @@
 			"name": "avatar-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -578,7 +658,7 @@
 			"name": "avatar-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -590,7 +670,7 @@
 			"name": "avatar-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -602,7 +682,7 @@
 			"name": "avatar-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -614,7 +694,7 @@
 			"name": "avatar-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -626,7 +706,7 @@
 			"name": "avatar-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -638,7 +718,7 @@
 			"name": "avatar-07",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -650,7 +730,7 @@
 			"name": "avatar-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -662,7 +742,7 @@
 			"name": "avatar-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -674,7 +754,7 @@
 			"name": "avatar-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -686,7 +766,7 @@
 			"name": "avatar-11",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "badge"],
+			"registryDependencies": ["avatar", "badge"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -698,7 +778,7 @@
 			"name": "avatar-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -710,7 +790,7 @@
 			"name": "avatar-13",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -722,7 +802,7 @@
 			"name": "avatar-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -734,7 +814,7 @@
 			"name": "avatar-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -746,7 +826,7 @@
 			"name": "avatar-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -758,7 +838,7 @@
 			"name": "avatar-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -770,7 +850,7 @@
 			"name": "avatar-18",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -782,7 +862,7 @@
 			"name": "avatar-19",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -794,7 +874,7 @@
 			"name": "avatar-20",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -806,7 +886,7 @@
 			"name": "avatar-21",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1082,7 +1162,7 @@
 			"name": "badge-23",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "badge"],
+			"registryDependencies": ["avatar", "badge"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1094,7 +1174,7 @@
 			"name": "badge-24",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1106,7 +1186,7 @@
 			"name": "breadcrumb-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1118,7 +1198,7 @@
 			"name": "breadcrumb-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1130,7 +1210,7 @@
 			"name": "breadcrumb-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1142,7 +1222,7 @@
 			"name": "breadcrumb-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1154,7 +1234,7 @@
 			"name": "breadcrumb-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["badge", "index.js"],
+			"registryDependencies": ["badge", "breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1166,7 +1246,7 @@
 			"name": "breadcrumb-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "index.js"],
+			"registryDependencies": ["badge", "breadcrumb", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1178,7 +1258,7 @@
 			"name": "breadcrumb-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1190,7 +1270,7 @@
 			"name": "breadcrumb-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["breadcrumb"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1514,7 +1594,7 @@
 			"name": "button-27",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1574,7 +1654,7 @@
 			"name": "button-32",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1658,7 +1738,7 @@
 			"name": "button-39",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["ripple-button"],
+			"registryDependencies": ["local:ripple-button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1693,7 +1773,7 @@
 		{
 			"name": "button-42",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["motion-start"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -1706,7 +1786,7 @@
 			"name": "button-43",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["shimmer-button"],
+			"registryDependencies": ["local:shimmer-button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1718,7 +1798,7 @@
 			"name": "button-44",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["bounce-button"],
+			"registryDependencies": ["local:bounce-button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1730,7 +1810,7 @@
 			"name": "button-45",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["magnetic-button"],
+			"registryDependencies": ["local:magnetic-button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1790,7 +1870,7 @@
 			"name": "button-group-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1802,7 +1882,7 @@
 			"name": "button-group-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1886,7 +1966,7 @@
 			"name": "button-group-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1910,7 +1990,7 @@
 			"name": "button-group-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["ripple-button"],
+			"registryDependencies": ["local:ripple-button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1933,7 +2013,7 @@
 		{
 			"name": "button-group-15",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["motion-start", "@lucide/svelte"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -1957,7 +2037,7 @@
 		{
 			"name": "calendar-01",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -1969,7 +2049,7 @@
 		{
 			"name": "calendar-02",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -1981,7 +2061,7 @@
 		{
 			"name": "calendar-03",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
 			"registryDependencies": ["range-calendar"],
 			"files": [
 				{
@@ -1993,7 +2073,7 @@
 		{
 			"name": "calendar-04",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
 			"registryDependencies": ["range-calendar"],
 			"files": [
 				{
@@ -2005,7 +2085,7 @@
 		{
 			"name": "calendar-05",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
 			"registryDependencies": ["range-calendar"],
 			"files": [
 				{
@@ -2017,7 +2097,7 @@
 		{
 			"name": "calendar-06",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2029,7 +2109,7 @@
 		{
 			"name": "calendar-07",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
 			"registryDependencies": ["range-calendar"],
 			"files": [
 				{
@@ -2041,8 +2121,8 @@
 		{
 			"name": "calendar-08",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["range-calendar", "index.js"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
+			"registryDependencies": ["range-calendar", "card", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2053,7 +2133,7 @@
 		{
 			"name": "calendar-09",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2065,7 +2145,7 @@
 		{
 			"name": "calendar-10",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2077,8 +2157,8 @@
 		{
 			"name": "calendar-11",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "calendar", "index.js"],
+			"dependencies": ["little-date", "@lucide/svelte", "@internationalized/date"],
+			"registryDependencies": ["button", "calendar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2089,7 +2169,7 @@
 		{
 			"name": "calendar-12",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2101,8 +2181,8 @@
 		{
 			"name": "calendar-13",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar", "calendar-day.svelte"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2113,8 +2193,8 @@
 		{
 			"name": "calendar-14",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["range-calendar", "range-calendar-day.svelte"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
+			"registryDependencies": ["range-calendar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2125,7 +2205,7 @@
 		{
 			"name": "calendar-15",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2137,7 +2217,7 @@
 		{
 			"name": "calendar-16",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["@internationalized/date"],
 			"registryDependencies": ["calendar"],
 			"files": [
 				{
@@ -2161,8 +2241,8 @@
 		{
 			"name": "calendar-18",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["button", "calendar", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["button", "calendar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2173,8 +2253,8 @@
 		{
 			"name": "calendar-19",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["calendar", "index.js", "label", "button"],
+			"dependencies": ["@lucide/svelte", "@internationalized/date"],
+			"registryDependencies": ["calendar", "card", "label", "popover", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2185,8 +2265,8 @@
 		{
 			"name": "calendar-20",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["calendar", "index.js"],
+			"dependencies": ["@internationalized/date", "@lucide/svelte"],
+			"registryDependencies": ["calendar", "label", "input", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2197,8 +2277,8 @@
 		{
 			"name": "calendar-21",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte", "runed"],
-			"registryDependencies": ["calendar", "button", "index.js", "scroll-area"],
+			"dependencies": ["@internationalized/date", "@lucide/svelte", "runed"],
+			"registryDependencies": ["calendar", "button", "collapsible", "scroll-area"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -2233,8 +2313,8 @@
 		{
 			"name": "calendar-22",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2245,8 +2325,8 @@
 		{
 			"name": "calendar-23",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["range-calendar", "index.js"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
+			"registryDependencies": ["range-calendar", "button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2257,8 +2337,8 @@
 		{
 			"name": "calendar-24",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "calendar"],
+			"dependencies": ["@internationalized/date", "@lucide/svelte"],
+			"registryDependencies": ["button", "calendar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2269,8 +2349,8 @@
 		{
 			"name": "calendar-25",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar", "calendar-day.svelte"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2282,7 +2362,7 @@
 			"name": "card-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "card", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2294,7 +2374,7 @@
 			"name": "card-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2306,7 +2386,7 @@
 			"name": "card-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2318,7 +2398,7 @@
 			"name": "card-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2330,7 +2410,7 @@
 			"name": "card-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2342,7 +2422,7 @@
 			"name": "card-06",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["card", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2354,7 +2434,7 @@
 			"name": "card-07",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2366,7 +2446,7 @@
 			"name": "card-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2378,7 +2458,7 @@
 			"name": "card-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2390,7 +2470,7 @@
 			"name": "card-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "tabs"],
+			"registryDependencies": ["card", "tabs"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2402,7 +2482,7 @@
 			"name": "card-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2414,7 +2494,7 @@
 			"name": "card-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js"],
+			"registryDependencies": ["badge", "button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2426,7 +2506,7 @@
 			"name": "card-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2438,7 +2518,7 @@
 			"name": "card-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2450,7 +2530,7 @@
 			"name": "card-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["card", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2474,7 +2554,7 @@
 			"name": "card-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2714,7 +2794,7 @@
 			"name": "collapsible-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2726,7 +2806,7 @@
 			"name": "collapsible-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2738,7 +2818,7 @@
 			"name": "collapsible-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2750,7 +2830,7 @@
 			"name": "collapsible-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2762,7 +2842,7 @@
 			"name": "collapsible-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "checkbox", "index.js", "label", "input", "separator"],
+			"registryDependencies": ["button", "checkbox", "collapsible", "label", "input", "separator"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2774,7 +2854,7 @@
 			"name": "collapsible-06",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2786,7 +2866,7 @@
 			"name": "collapsible-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "card", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2798,7 +2878,7 @@
 			"name": "collapsible-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "collapsible", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2812,7 +2892,7 @@
 			"dependencies": ["@lucide/svelte"],
 			"registryDependencies": [
 				"button",
-				"index.js",
+				"collapsible",
 				"input",
 				"label",
 				"radio-group",
@@ -2830,7 +2910,7 @@
 			"name": "collapsible-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "collapsible"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2842,7 +2922,7 @@
 			"name": "combobox-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "command", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2854,7 +2934,7 @@
 			"name": "combobox-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2866,7 +2946,7 @@
 			"name": "combobox-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2878,7 +2958,7 @@
 			"name": "combobox-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2890,7 +2970,7 @@
 			"name": "combobox-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2902,7 +2982,7 @@
 			"name": "combobox-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2914,7 +2994,7 @@
 			"name": "combobox-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2926,7 +3006,7 @@
 			"name": "combobox-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "label"],
+			"registryDependencies": ["avatar", "button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2938,7 +3018,7 @@
 			"name": "combobox-09",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2950,7 +3030,7 @@
 			"name": "combobox-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js", "label"],
+			"registryDependencies": ["badge", "button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2962,7 +3042,7 @@
 			"name": "combobox-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js", "label"],
+			"registryDependencies": ["badge", "button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2974,7 +3054,7 @@
 			"name": "combobox-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js", "label"],
+			"registryDependencies": ["badge", "button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2986,7 +3066,7 @@
 			"name": "combobox-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2998,7 +3078,7 @@
 			"name": "combobox-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "label"],
+			"registryDependencies": ["button", "command", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3009,8 +3089,8 @@
 		{
 			"name": "data-table-01",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "checkbox"],
+			"dependencies": ["@tanstack/table-core"],
+			"registryDependencies": ["table", "data-table", "checkbox"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3021,8 +3101,8 @@
 		{
 			"name": "data-table-02",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "checkbox", "select"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": ["table", "data-table", "checkbox", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3033,8 +3113,15 @@
 		{
 			"name": "data-table-03",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "checkbox", "dropdown-menu", "button", "input"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": [
+				"table",
+				"data-table",
+				"checkbox",
+				"dropdown-menu",
+				"button",
+				"input"
+			],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3045,8 +3132,8 @@
 		{
 			"name": "data-table-04",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["input", "label", "index.js"],
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
+			"registryDependencies": ["input", "label", "select"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -3057,8 +3144,8 @@
 		{
 			"name": "data-table-04",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "checkbox", "badge"],
+			"dependencies": ["@tanstack/table-core"],
+			"registryDependencies": ["table", "data-table", "checkbox", "avatar", "badge"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3069,8 +3156,8 @@
 		{
 			"name": "data-table-05",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "checkbox"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": ["table", "data-table", "checkbox"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3081,8 +3168,8 @@
 		{
 			"name": "data-table-06",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["@tanstack/table-core"],
+			"registryDependencies": ["table", "data-table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3093,8 +3180,8 @@
 		{
 			"name": "data-table-07",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": ["table", "data-table", "button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3105,8 +3192,13 @@
 		{
 			"name": "data-table-08",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "data-table", "button"],
+			"dependencies": [
+				"@tanstack/table-core",
+				"@dnd-kit-svelte/sortable",
+				"@dnd-kit-svelte/utilities",
+				"@lucide/svelte"
+			],
+			"registryDependencies": ["table", "data-table", "button"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -3121,8 +3213,13 @@
 		{
 			"name": "data-table-08",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": [
+				"@tanstack/table-core",
+				"@dnd-kit-svelte/core",
+				"@dnd-kit-svelte/sortable",
+				"@dnd-kit-svelte/modifiers"
+			],
+			"registryDependencies": ["table", "data-table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3133,8 +3230,8 @@
 		{
 			"name": "data-table-09",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "checkbox"],
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
+			"registryDependencies": ["table", "data-table", "button", "checkbox"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3145,13 +3242,13 @@
 		{
 			"name": "data-table-10",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
 			"registryDependencies": [
 				"badge",
 				"button",
 				"checkbox",
 				"label",
-				"index.js",
+				"select",
 				"table",
 				"data-table"
 			],
@@ -3165,12 +3262,12 @@
 		{
 			"name": "data-table-11",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
 			"registryDependencies": [
 				"badge",
 				"button",
 				"checkbox",
-				"index.js",
+				"select",
 				"table",
 				"data-table",
 				"use-pagination"
@@ -3185,7 +3282,7 @@
 		{
 			"name": "data-table-12",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "papaparse", "@tanstack/table-core"],
 			"registryDependencies": [
 				"badge",
 				"button",
@@ -3205,8 +3302,8 @@
 		{
 			"name": "data-table-13",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["@tanstack/table-core"],
+			"registryDependencies": ["data-table", "button", "checkbox", "input", "select", "table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3217,8 +3314,8 @@
 		{
 			"name": "data-table-14",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": ["table", "data-table", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3229,8 +3326,8 @@
 		{
 			"name": "date-picker-01",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "popover", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3241,8 +3338,8 @@
 		{
 			"name": "date-picker-02",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["range-calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date", "bits-ui"],
+			"registryDependencies": ["range-calendar", "popover", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3253,8 +3350,8 @@
 		{
 			"name": "date-picker-03",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date", "@lucide/svelte"],
+			"registryDependencies": ["calendar", "popover", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3265,8 +3362,8 @@
 		{
 			"name": "date-picker-04",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "input", "label", "popover", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3277,8 +3374,8 @@
 		{
 			"name": "date-picker-05",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["chrono-node", "@internationalized/date"],
+			"registryDependencies": ["label", "popover", "button", "calendar", "input"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3289,8 +3386,8 @@
 		{
 			"name": "date-picker-06",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["index.js", "range-calendar.svelte"],
+			"dependencies": ["bits-ui", "@internationalized/date", "little-date"],
+			"registryDependencies": ["popover", "button", "range-calendar", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3301,8 +3398,8 @@
 		{
 			"name": "date-picker-07",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "popover", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3337,8 +3434,8 @@
 		{
 			"name": "date-picker-10",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "popover", "button", "label", "input"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3349,8 +3446,8 @@
 		{
 			"name": "date-picker-11",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "popover", "button", "label", "input"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3361,8 +3458,8 @@
 		{
 			"name": "date-picker-12",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["calendar.svelte", "index.js"],
+			"dependencies": ["@internationalized/date"],
+			"registryDependencies": ["calendar", "popover", "button", "label", "input"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3373,8 +3470,8 @@
 		{
 			"name": "date-picker-13",
 			"type": "registry:component",
-			"dependencies": ["bits-ui"],
-			"registryDependencies": ["index.js", "range-calendar.svelte"],
+			"dependencies": ["layerchart", "bits-ui", "@internationalized/date"],
+			"registryDependencies": ["chart", "card", "popover", "button", "range-calendar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3386,7 +3483,7 @@
 			"name": "dialog-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["alert-dialog", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3398,7 +3495,7 @@
 			"name": "dialog-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["alert-dialog", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3410,7 +3507,7 @@
 			"name": "dialog-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "checkbox", "label"],
+			"registryDependencies": ["alert-dialog", "button", "checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3422,7 +3519,7 @@
 			"name": "dialog-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "scroll-area"],
+			"registryDependencies": ["button", "dialog", "scroll-area"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3434,7 +3531,7 @@
 			"name": "dialog-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "scroll-area"],
+			"registryDependencies": ["button", "dialog", "scroll-area"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3446,7 +3543,7 @@
 			"name": "dialog-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "scroll-area"],
+			"registryDependencies": ["button", "dialog", "scroll-area"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3458,7 +3555,7 @@
 			"name": "dialog-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "scroll-area"],
+			"registryDependencies": ["button", "dialog", "scroll-area"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3470,7 +3567,7 @@
 			"name": "dialog-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dialog"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3482,7 +3579,7 @@
 			"name": "dialog-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3494,7 +3591,7 @@
 			"name": "dialog-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button", "checkbox", "input", "label"],
+			"registryDependencies": ["avatar", "button", "checkbox", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3506,14 +3603,7 @@
 			"name": "dialog-11",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [
-				"button",
-				"checkbox",
-				"index.js",
-				"label",
-				"radio-group",
-				"textarea"
-			],
+			"registryDependencies": ["button", "checkbox", "dialog", "label", "radio-group", "textarea"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3525,7 +3615,7 @@
 			"name": "dialog-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["input-otp", "button", "dialog"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3537,7 +3627,7 @@
 			"name": "dialog-13",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "checkbox", "index.js", "input", "label"],
+			"registryDependencies": ["button", "checkbox", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3549,7 +3639,7 @@
 			"name": "dialog-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3561,7 +3651,7 @@
 			"name": "dialog-15",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "input", "label"],
+			"registryDependencies": ["avatar", "button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3573,7 +3663,7 @@
 			"name": "dialog-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3585,7 +3675,7 @@
 			"name": "dialog-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3597,7 +3687,7 @@
 			"name": "dialog-18",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3609,7 +3699,7 @@
 			"name": "dialog-19",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3621,7 +3711,7 @@
 			"name": "dialog-20",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3633,7 +3723,7 @@
 			"name": "dialog-21",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3645,7 +3735,7 @@
 			"name": "dialog-22",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3657,7 +3747,7 @@
 			"name": "dialog-23",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3669,7 +3759,7 @@
 			"name": "dialog-24",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3681,7 +3771,7 @@
 			"name": "dialog-25",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3693,7 +3783,7 @@
 			"name": "dialog-26",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input", "label"],
+			"registryDependencies": ["button", "dialog", "input", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3705,7 +3795,7 @@
 			"name": "dropdown-menu-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3717,7 +3807,7 @@
 			"name": "dropdown-menu-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3729,7 +3819,7 @@
 			"name": "dropdown-menu-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "badge", "button"],
+			"registryDependencies": ["avatar", "badge", "button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3741,7 +3831,7 @@
 			"name": "dropdown-menu-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3753,7 +3843,7 @@
 			"name": "dropdown-menu-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button", "switch"],
+			"registryDependencies": ["avatar", "button", "dropdown-menu", "switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3765,7 +3855,7 @@
 			"name": "dropdown-menu-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3777,7 +3867,7 @@
 			"name": "dropdown-menu-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3789,7 +3879,7 @@
 			"name": "dropdown-menu-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3801,7 +3891,7 @@
 			"name": "dropdown-menu-09",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3813,7 +3903,7 @@
 			"name": "dropdown-menu-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3825,7 +3915,7 @@
 			"name": "dropdown-menu-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3837,7 +3927,7 @@
 			"name": "dropdown-menu-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3849,7 +3939,7 @@
 			"name": "dropdown-menu-13",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3861,7 +3951,7 @@
 			"name": "dropdown-menu-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3873,7 +3963,7 @@
 			"name": "dropdown-menu-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "dropdown-menu"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3885,7 +3975,7 @@
 			"name": "dropdown-menu-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "switch"],
+			"registryDependencies": ["button", "dropdown-menu", "switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3896,8 +3986,8 @@
 		{
 			"name": "form-01",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "radio-group"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3908,8 +3998,8 @@
 		{
 			"name": "form-02",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "checkbox"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3920,8 +4010,8 @@
 		{
 			"name": "form-03",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "switch"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3932,8 +4022,8 @@
 		{
 			"name": "form-04",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "input"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "input"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3944,8 +4034,8 @@
 		{
 			"name": "form-05",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "input-otp"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3956,8 +4046,8 @@
 		{
 			"name": "form-06",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "textarea"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "textarea"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3968,8 +4058,8 @@
 		{
 			"name": "form-07",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3980,8 +4070,8 @@
 		{
 			"name": "form-08",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner", "@lucide/svelte"],
+			"registryDependencies": ["form", "command", "popover", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3992,8 +4082,13 @@
 		{
 			"name": "form-09",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"dependencies": [
+				"sveltekit-superforms",
+				"svelte-sonner",
+				"@internationalized/date",
+				"@lucide/svelte"
+			],
+			"registryDependencies": ["form", "button", "popover", "calendar"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4004,8 +4099,8 @@
 		{
 			"name": "form-10",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["index.js", "input", "card", "select", "radio-group", "textarea"],
+			"dependencies": ["sveltekit-superforms", "svelte-sonner"],
+			"registryDependencies": ["form", "input", "card", "select", "radio-group", "textarea"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4341,7 +4436,7 @@
 			"name": "input-28",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["input", "label", "index.js"],
+			"registryDependencies": ["input", "label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4353,7 +4448,7 @@
 			"name": "input-29",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["input", "label", "index.js"],
+			"registryDependencies": ["input", "label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4568,7 +4663,7 @@
 		{
 			"name": "input-mask-01",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["inputmask"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{
@@ -4580,7 +4675,7 @@
 		{
 			"name": "input-mask-02",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["inputmask"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{
@@ -4641,7 +4736,7 @@
 			"name": "input-otp-01",
 			"type": "registry:component",
 			"dependencies": ["bits-ui"],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4653,7 +4748,7 @@
 			"name": "input-otp-02",
 			"type": "registry:component",
 			"dependencies": ["bits-ui"],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4665,7 +4760,7 @@
 			"name": "input-otp-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4677,7 +4772,7 @@
 			"name": "input-otp-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4689,7 +4784,7 @@
 			"name": "input-otp-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4701,7 +4796,7 @@
 			"name": "input-otp-06",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4713,7 +4808,7 @@
 			"name": "input-otp-07",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4725,7 +4820,7 @@
 			"name": "input-otp-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4737,7 +4832,7 @@
 			"name": "input-otp-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4749,7 +4844,7 @@
 			"name": "input-otp-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "label.svelte"],
+			"registryDependencies": ["input-otp", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4761,7 +4856,7 @@
 			"name": "pagination-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4773,7 +4868,7 @@
 			"name": "pagination-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4785,7 +4880,7 @@
 			"name": "pagination-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4797,7 +4892,7 @@
 			"name": "pagination-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4809,7 +4904,7 @@
 			"name": "pagination-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4821,7 +4916,7 @@
 			"name": "pagination-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4833,7 +4928,7 @@
 			"name": "pagination-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4845,7 +4940,7 @@
 			"name": "pagination-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4857,7 +4952,7 @@
 			"name": "pagination-09",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4869,7 +4964,7 @@
 			"name": "pagination-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4881,7 +4976,7 @@
 			"name": "pagination-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4893,7 +4988,7 @@
 			"name": "pagination-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4905,7 +5000,7 @@
 			"name": "pagination-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4917,7 +5012,7 @@
 			"name": "pagination-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["pagination", "select", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4929,7 +5024,7 @@
 			"name": "pagination-15",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "label"],
+			"registryDependencies": ["pagination", "select", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4941,7 +5036,7 @@
 			"name": "popover-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js", "progress", "separator"],
+			"registryDependencies": ["badge", "button", "popover", "progress", "separator"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4953,7 +5048,7 @@
 			"name": "popover-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "input", "label", "index.js"],
+			"registryDependencies": ["button", "input", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4965,7 +5060,7 @@
 			"name": "popover-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "index.js"],
+			"registryDependencies": ["badge", "button", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4977,7 +5072,7 @@
 			"name": "popover-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "label", "index.js", "slider"],
+			"registryDependencies": ["button", "label", "popover", "slider"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4989,7 +5084,7 @@
 			"name": "popover-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5001,7 +5096,7 @@
 			"name": "popover-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "progress"],
+			"registryDependencies": ["button", "popover", "progress"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5013,7 +5108,7 @@
 			"name": "popover-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5025,7 +5120,7 @@
 			"name": "popover-08",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js", "textarea"],
+			"registryDependencies": ["button", "popover", "textarea"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5037,7 +5132,7 @@
 			"name": "popover-09",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "checkbox", "label", "index.js", "slider"],
+			"registryDependencies": ["button", "checkbox", "label", "popover", "slider"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5049,7 +5144,7 @@
 			"name": "popover-10",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "runed"],
-			"registryDependencies": ["index.js", "button", "input"],
+			"registryDependencies": ["avatar", "button", "input", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5061,7 +5156,7 @@
 			"name": "popover-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "separator"],
+			"registryDependencies": ["avatar", "button", "popover", "separator"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5073,7 +5168,7 @@
 			"name": "popover-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5085,7 +5180,7 @@
 			"name": "popover-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "input", "index.js", "separator"],
+			"registryDependencies": ["button", "input", "popover", "separator"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5097,7 +5192,7 @@
 			"name": "popover-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button", "checkbox", "input", "label"],
+			"registryDependencies": ["avatar", "button", "checkbox", "input", "label", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5109,7 +5204,7 @@
 			"name": "popover-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "popover"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5409,7 +5504,7 @@
 			"name": "select-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5421,7 +5516,7 @@
 			"name": "select-11",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5433,7 +5528,7 @@
 			"name": "select-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5445,7 +5540,7 @@
 			"name": "select-13",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5457,7 +5552,7 @@
 			"name": "select-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5469,7 +5564,7 @@
 			"name": "select-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5481,7 +5576,7 @@
 			"name": "select-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5493,7 +5588,7 @@
 			"name": "select-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5505,7 +5600,7 @@
 			"name": "select-18",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5517,7 +5612,7 @@
 			"name": "select-19",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5529,7 +5624,7 @@
 			"name": "select-20",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5541,7 +5636,7 @@
 			"name": "select-21",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5553,7 +5648,7 @@
 			"name": "select-22",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5565,7 +5660,7 @@
 			"name": "select-23",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5577,7 +5672,7 @@
 			"name": "select-24",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5589,7 +5684,7 @@
 			"name": "select-25",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5601,7 +5696,7 @@
 			"name": "select-26",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5613,7 +5708,7 @@
 			"name": "select-27",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5625,7 +5720,7 @@
 			"name": "select-28",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5637,7 +5732,7 @@
 			"name": "select-29",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5649,7 +5744,7 @@
 			"name": "select-30",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5661,7 +5756,7 @@
 			"name": "select-31",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "label"],
+			"registryDependencies": ["avatar", "label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5733,7 +5828,7 @@
 			"name": "select-37",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5745,7 +5840,7 @@
 			"name": "select-38",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["label", "index.js"],
+			"registryDependencies": ["label", "select"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5757,7 +5852,7 @@
 			"name": "sheet-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "input", "label", "index.js"],
+			"registryDependencies": ["button", "input", "label", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5769,7 +5864,7 @@
 			"name": "sheet-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "input", "label", "index.js"],
+			"registryDependencies": ["button", "input", "label", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5781,7 +5876,7 @@
 			"name": "sheet-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "input", "label", "index.js"],
+			"registryDependencies": ["button", "input", "label", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5793,7 +5888,7 @@
 			"name": "sheet-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "scroll-area", "index.js"],
+			"registryDependencies": ["button", "scroll-area", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5804,8 +5899,8 @@
 		{
 			"name": "sheet-05",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["button", "index.js", "input"],
+			"dependencies": ["svelte-sonner", "sveltekit-superforms"],
+			"registryDependencies": ["button", "form", "input", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5817,7 +5912,7 @@
 			"name": "sheet-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["collapsible"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -5829,7 +5924,7 @@
 			"name": "sheet-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "sheet"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5840,8 +5935,17 @@
 		{
 			"name": "sheet-07",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "checkbox", "input", "label", "index.js"],
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
+			"registryDependencies": [
+				"button",
+				"checkbox",
+				"input",
+				"label",
+				"select",
+				"sheet",
+				"table",
+				"data-table"
+			],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5852,7 +5956,7 @@
 		{
 			"name": "sonner-01",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5864,7 +5968,7 @@
 		{
 			"name": "sonner-02",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5888,7 +5992,7 @@
 		{
 			"name": "sonner-03",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5901,7 +6005,7 @@
 			"name": "sonner-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -5912,7 +6016,7 @@
 		{
 			"name": "sonner-04",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5924,7 +6028,7 @@
 		{
 			"name": "sonner-05",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5936,7 +6040,7 @@
 		{
 			"name": "sonner-06",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5948,7 +6052,7 @@
 		{
 			"name": "sonner-07",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5960,7 +6064,7 @@
 		{
 			"name": "sonner-08",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5972,7 +6076,7 @@
 		{
 			"name": "sonner-09",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5984,7 +6088,7 @@
 		{
 			"name": "sonner-10",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -5996,7 +6100,7 @@
 		{
 			"name": "sonner-11",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6008,7 +6112,7 @@
 		{
 			"name": "sonner-12",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6020,7 +6124,7 @@
 		{
 			"name": "sonner-13",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6032,7 +6136,7 @@
 		{
 			"name": "sonner-14",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6044,7 +6148,7 @@
 		{
 			"name": "sonner-15",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6056,7 +6160,7 @@
 		{
 			"name": "sonner-16",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6068,7 +6172,7 @@
 		{
 			"name": "sonner-17",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6080,7 +6184,7 @@
 		{
 			"name": "sonner-18",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6092,7 +6196,7 @@
 		{
 			"name": "sonner-19",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6104,7 +6208,7 @@
 		{
 			"name": "sonner-20",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["svelte-sonner"],
 			"registryDependencies": ["button"],
 			"files": [
 				{
@@ -6357,7 +6461,7 @@
 			"name": "table-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6369,7 +6473,7 @@
 			"name": "table-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6381,7 +6485,7 @@
 			"name": "table-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6393,7 +6497,7 @@
 			"name": "table-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6405,7 +6509,7 @@
 			"name": "table-05",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6417,7 +6521,7 @@
 			"name": "table-06",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6429,7 +6533,7 @@
 			"name": "table-07",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6441,7 +6545,7 @@
 			"name": "table-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6453,7 +6557,7 @@
 			"name": "table-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6465,7 +6569,7 @@
 			"name": "table-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6477,7 +6581,7 @@
 			"name": "table-11",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6489,7 +6593,7 @@
 			"name": "table-12",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6501,7 +6605,7 @@
 			"name": "table-13",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["avatar", "table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6513,7 +6617,7 @@
 			"name": "table-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js"],
+			"registryDependencies": ["pagination", "table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6525,7 +6629,7 @@
 			"name": "table-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["checkbox", "index.js"],
+			"registryDependencies": ["checkbox", "table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6537,7 +6641,7 @@
 			"name": "table-16",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "checkbox"],
+			"registryDependencies": ["avatar", "button", "checkbox", "table"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6621,7 +6725,7 @@
 			"name": "tabs-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["tabs", "index.js"],
+			"registryDependencies": ["tabs", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6789,7 +6893,7 @@
 			"name": "tabs-21",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["tabs", "index.js"],
+			"registryDependencies": ["tabs", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7149,7 +7253,7 @@
 			"name": "tooltip-01",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7161,7 +7265,7 @@
 			"name": "tooltip-02",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7173,7 +7277,7 @@
 			"name": "tooltip-03",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7185,7 +7289,7 @@
 			"name": "tooltip-04",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7197,7 +7301,7 @@
 			"name": "tooltip-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7209,7 +7313,7 @@
 			"name": "tooltip-06",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7221,7 +7325,7 @@
 			"name": "tooltip-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7233,7 +7337,7 @@
 			"name": "tooltip-08",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button"],
+			"registryDependencies": ["avatar", "button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7245,7 +7349,7 @@
 			"name": "tooltip-09",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["badge", "button", "index.js"],
+			"registryDependencies": ["badge", "button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7257,7 +7361,7 @@
 			"name": "tooltip-10",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["button", "index.js"],
+			"registryDependencies": ["button", "tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7281,7 +7385,7 @@
 			"name": "tooltip-12",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button", "hover-card"],
+			"registryDependencies": ["avatar", "button", "hover-card"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7293,7 +7397,7 @@
 			"name": "tooltip-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["index.js", "button", "hover-card", "progress"],
+			"registryDependencies": ["avatar", "button", "hover-card", "progress"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7317,7 +7421,7 @@
 			"name": "tooltip-15",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": ["index.js", "button", "hover-card"],
+			"registryDependencies": ["avatar", "button", "hover-card"],
 			"files": [
 				{
 					"type": "registry:component",
