@@ -14,9 +14,7 @@
 		}
 
 		try {
-			const module = await import(
-				`$lib/components/shadcn-studio/${category}/${componentName}.svelte`
-			);
+			const module = await import(`$lib/registry/components/${componentName}.svelte`);
 			return module.default;
 		} catch (error) {
 			console.error(`Failed to load component ${componentName}: ${error}`);
