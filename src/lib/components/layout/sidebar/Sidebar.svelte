@@ -56,6 +56,10 @@
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-5', { 'first:pt-8': !isBreakpointReached })}
 			>
 				<Sidebar.Menu class="gap-2.5">
+					<CustomSidebarMenuItem href="/components">
+						<Component class="!size-5" />
+						Components
+					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/theme-generator">
 						<PaintbrushVertical class="!size-5" />
 						Theme Generator
@@ -65,36 +69,9 @@
 							<Flame class="size-4" /> Hot
 						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem href="/components">
-						<Component class="!size-5" />
-						Components
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
-						<Figma class="!size-5" />
-						Figma UI Kit
-						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
-						>
-							Coming Soon
-						</Sidebar.MenuBadge>
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
+					<CustomSidebarMenuItem href="/blocks">
 						<LayoutPanelTop class="!size-5" />
 						Blocks
-						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
-						>
-							Coming Soon
-						</Sidebar.MenuBadge>
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
-						<File class="!size-5" />
-						Templates
-						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
-						>
-							Coming Soon
-						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 				</Sidebar.Menu>
 			</Sidebar.Group>
