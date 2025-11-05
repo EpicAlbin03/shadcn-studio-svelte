@@ -14,8 +14,8 @@
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
-	import type { NavigationItem } from './sheet-06/NavigationMenu.svelte';
-	import NavigationMenu from './sheet-06/NavigationMenu.svelte';
+	import type { NavigationItem } from './NavigationMenu.svelte';
+	import NavigationMenu from './NavigationMenu.svelte';
 
 	const navigationMenu: NavigationItem[] = [
 		{

@@ -3132,24 +3132,25 @@
 		{
 			"name": "data-table-04",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
-			"registryDependencies": ["input", "label", "select"],
+			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
+			"registryDependencies": [
+				"table",
+				"data-table",
+				"checkbox",
+				"avatar",
+				"badge",
+				"input",
+				"label",
+				"select"
+			],
 			"files": [
 				{
 					"type": "registry:file",
-					"path": "src\\lib\\registry\\components\\data-table-04\\Filter.svelte"
-				}
-			]
-		},
-		{
-			"name": "data-table-04",
-			"type": "registry:component",
-			"dependencies": ["@tanstack/table-core"],
-			"registryDependencies": ["table", "data-table", "checkbox", "avatar", "badge"],
-			"files": [
+					"path": "src\\lib\\registry\\components\\data-table-04\\data-table-04.svelte"
+				},
 				{
-					"type": "registry:component",
-					"path": "src\\lib\\registry\\components\\data-table-04.svelte"
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\components\\data-table-04\\Filter.svelte"
 				}
 			]
 		},
@@ -3194,7 +3195,9 @@
 			"type": "registry:component",
 			"dependencies": [
 				"@tanstack/table-core",
+				"@dnd-kit-svelte/core",
 				"@dnd-kit-svelte/sortable",
+				"@dnd-kit-svelte/modifiers",
 				"@dnd-kit-svelte/utilities",
 				"@lucide/svelte"
 			],
@@ -3202,28 +3205,15 @@
 			"files": [
 				{
 					"type": "registry:file",
+					"path": "src\\lib\\registry\\components\\data-table-08\\data-table-08.svelte"
+				},
+				{
+					"type": "registry:file",
 					"path": "src\\lib\\registry\\components\\data-table-08\\DragAlongCell.svelte"
 				},
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\components\\data-table-08\\DraggableTableHeader.svelte"
-				}
-			]
-		},
-		{
-			"name": "data-table-08",
-			"type": "registry:component",
-			"dependencies": [
-				"@tanstack/table-core",
-				"@dnd-kit-svelte/core",
-				"@dnd-kit-svelte/sortable",
-				"@dnd-kit-svelte/modifiers"
-			],
-			"registryDependencies": ["table", "data-table"],
-			"files": [
-				{
-					"type": "registry:component",
-					"path": "src\\lib\\registry\\components\\data-table-08.svelte"
 				}
 			]
 		},
@@ -5912,23 +5902,15 @@
 			"name": "sheet-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["collapsible"],
+			"registryDependencies": ["collapsible", "button", "sheet"],
 			"files": [
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\components\\sheet-06\\NavigationMenu.svelte"
-				}
-			]
-		},
-		{
-			"name": "sheet-06",
-			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "sheet"],
-			"files": [
+				},
 				{
-					"type": "registry:component",
-					"path": "src\\lib\\registry\\components\\sheet-06.svelte"
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\components\\sheet-06\\sheet-06.svelte"
 				}
 			]
 		},
@@ -5980,48 +5962,32 @@
 		{
 			"name": "sonner-03",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": [],
+			"dependencies": ["@lucide/svelte", "svelte-sonner"],
+			"registryDependencies": ["button"],
 			"files": [
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\components\\sonner-03\\CustomToast.svelte"
-				}
-			]
-		},
-		{
-			"name": "sonner-03",
-			"type": "registry:component",
-			"dependencies": ["svelte-sonner"],
-			"registryDependencies": ["button"],
-			"files": [
+				},
 				{
-					"type": "registry:component",
-					"path": "src\\lib\\registry\\components\\sonner-03.svelte"
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\components\\sonner-03\\sonner-03.svelte"
 				}
 			]
 		},
 		{
 			"name": "sonner-04",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": ["avatar"],
+			"dependencies": ["svelte-sonner"],
+			"registryDependencies": ["avatar", "button"],
 			"files": [
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\components\\sonner-04\\CustomToast.svelte"
-				}
-			]
-		},
-		{
-			"name": "sonner-04",
-			"type": "registry:component",
-			"dependencies": ["svelte-sonner"],
-			"registryDependencies": ["button"],
-			"files": [
+				},
 				{
-					"type": "registry:component",
-					"path": "src\\lib\\registry\\components\\sonner-04.svelte"
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\components\\sonner-04\\sonner-04.svelte"
 				}
 			]
 		},

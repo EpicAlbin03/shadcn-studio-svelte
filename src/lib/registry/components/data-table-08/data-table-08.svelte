@@ -36,8 +36,8 @@
 		horizontalListSortingStrategy,
 		SortableContext
 	} from '@dnd-kit-svelte/sortable';
-	import DragAlongCell from './data-table-08/DragAlongCell.svelte';
-	import DraggableTableHeader from './data-table-08/DraggableTableHeader.svelte';
+	import DragAlongCell from './DragAlongCell.svelte';
+	import DraggableTableHeader from './DraggableTableHeader.svelte';
 	import { restrictToHorizontalAxis } from '@dnd-kit-svelte/modifiers';
 
 	const data: Employee[] = [

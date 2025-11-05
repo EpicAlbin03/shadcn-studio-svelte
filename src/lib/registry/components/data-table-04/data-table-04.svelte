@@ -32,7 +32,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Badge } from '$lib/components/ui/badge';
 	import { cn } from '$lib/utils';
-	import Filter from './data-table-04/Filter.svelte';
+	import Filter from './Filter.svelte';
 
 	const items: Item[] = [
 		{
