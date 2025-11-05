@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ComponentProps, ProcessedComponentsData } from '$lib/types/components';
+	import type { ComponentProps } from '$lib/types/components';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import { ComponentCard, ComponentDetails, ComponentLoader } from './component';
@@ -7,7 +7,7 @@
 	type Props = {
 		components: ComponentProps[];
 		slug: string;
-		validComponentsData: ProcessedComponentsData[];
+		validComponentsData: ComponentProps[];
 		breakpoints?: {
 			xs?: number;
 			sm?: number;
@@ -70,8 +70,8 @@
 				{#if !component.underConstruction}
 					<ComponentDetails
 						componentsData={validComponentsData.find(
-							(comp) => comp.component.name === component.name
-						) as ProcessedComponentsData}
+							(comp) => comp.name === component.name
+						) as ComponentProps}
 					/>
 				{/if}
 				{#if component?.badge}

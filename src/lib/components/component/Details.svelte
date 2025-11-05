@@ -1,100 +1,21 @@
 <script lang="ts">
-	import { Code } from '@lucide/svelte';
-	import type { BundledLanguage } from 'shiki/bundle/web';
-	import type { ProcessedComponentsData } from '$lib/types/components';
-	import { Button } from '$lib/components/ui/button';
-	import * as Dialog from '$lib/components/ui/dialog';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
-	import CopyButton from '$lib/components/CopyButton.svelte';
-	import { CodeBlock, CodeBlockMultipleView } from '$lib/components/code-block/index';
+	import type { ComponentProps } from '$lib/types/components';
+	import ComponentCodeViewer from '$lib/components/component-code-viewer/component-code-viewer.svelte';
+	import { page } from '$app/state';
+	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server';
 
-	type Props = { componentsData: ProcessedComponentsData };
+	type Props = { componentsData: ComponentProps };
 
 	let { componentsData }: Props = $props();
 
-	const { component, tree } = componentsData;
+	// Component has all the HighlightedBlock fields merged in from +page.ts
+	const source = $derived(componentsData as HighlightedBlock);
 </script>
 
 <div class="absolute end-2 top-2 flex items-center gap-2">
-	<!-- <CopyPrompt /> -->
-	<Dialog.Root>
-		<Tooltip.Root>
-			<Tooltip.Trigger>
-				{#snippet child({ props })}
-					<Dialog.Trigger {...props}>
-						{#snippet child({ props })}
-							<Button
-								{...props}
-								variant="ghost"
-								size="icon"
-								class="cursor-pointer text-muted-foreground opacity-0 transition-none group-focus-within/item:opacity-100 group-hover/item:opacity-100 hover:!bg-transparent hover:text-foreground disabled:opacity-100"
-							>
-								<Code />
-								<span class="sr-only">View code</span>
-							</Button>
-						{/snippet}
-					</Dialog.Trigger>
-				{/snippet}
-			</Tooltip.Trigger>
-			<Tooltip.Content>View code</Tooltip.Content>
-		</Tooltip.Root>
-		<Dialog.Content class="sm:max-w-[900px]">
-			<!-- <DialogHeader>
-				<DialogTitle class="text-left">CLI Command</DialogTitle>
-				<DialogDescription class="sr-only"
-					>Use the CLI to add components to your project</DialogDescription
-				>
-			</DialogHeader> -->
-			<div class="min-w-0 space-y-5">
-				<!-- <div class="overflow-hidden rounded-md border">
-					<img
-						src="https://cdn.shadcnstudio.com/ss-assets/cli/cli-light.png"
-						alt="CLI Light"
-						class="dark:hidden"
-					/>
-					<img
-						src="https://cdn.shadcnstudio.com/ss-assets/cli/cli-dark.png"
-						alt="CLI Dark"
-						class="hidden dark:block"
-					/>
-				</div> -->
-				<div class="space-y-4">
-					<h2 class="text-left text-lg leading-none font-semibold">Manual Code</h2>
-					<div class="overflow-hidden rounded-md border">
-						{#if component.files && component.files.length > 0}
-							{#if component.files.length === 1}
-								<div class="relative">
-									<CodeBlock
-										code={component.files[0].content || ''}
-										lang={(component.files[0]?.path?.split('.').pop() || 'tsx') as BundledLanguage}
-									/>
-									<CopyButton
-										source={component.files[0].content || ''}
-										class="end-1 top-1"
-										toast="Code"
-									/>
-								</div>
-							{:else}
-								<CodeBlockMultipleView files={component.files} {tree} />
-							{/if}
-						{:else}
-							<p class="text-sm text-muted-foreground">
-								No code available. If you think this is an error, please
-								<a
-									href="https://github.com/EpicAlbin03/shadcn-studio-svelte/issues"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="font-medium text-foreground underline hover:no-underline"
-								>
-									open an issue
-								</a>
-								.
-							</p>
-						{/if}
-					</div>
-				</div>
-			</div>
-		</Dialog.Content>
-	</Dialog.Root>
+	{#if source}
+		{#key page.url.pathname}
+			<ComponentCodeViewer item={source} />
+		{/key}
+	{/if}
 </div>
