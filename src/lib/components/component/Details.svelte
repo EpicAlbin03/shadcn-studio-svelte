@@ -8,7 +8,6 @@
 
 	let { componentsData }: Props = $props();
 
-	// Component has all the HighlightedBlock fields merged in from +page.ts
 	const source = $derived(componentsData as HighlightedBlock);
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import ComponentCodeViewerCodeTitle from "./component-code-viewer-code-title.svelte";
-	import ComponentCodeViewerFileTree from "./component-code-viewer-file-tree.svelte";
-	import { ComponentCodeViewerContext } from "./component-code-viewer.svelte";
+	import ComponentCodeViewerCodeTitle from './component-code-viewer-code-title.svelte';
+	import ComponentCodeViewerFileTree from './component-code-viewer-file-tree.svelte';
+	import { ComponentCodeViewerContext } from './component-code-viewer.svelte';
 
 	const ctx = ComponentCodeViewerContext.get();
 	const file = $derived(ctx.highlightedFiles.find((f) => f.target === ctx.activeFile));
@@ -9,7 +9,7 @@
 
 	function handleKeydown(event: KeyboardEvent) {
 		if (!codeContainer) return;
-		if (event.key === "a" && (event.metaKey || event.ctrlKey)) {
+		if (event.key === 'a' && (event.metaKey || event.ctrlKey)) {
 			event.preventDefault();
 			const range = document.createRange();
 			range.selectNodeContents(codeContainer);
@@ -26,7 +26,7 @@
 
 {#if file}
 	<div
-		class="bg-code text-code-foreground h-(--height) flex overflow-hidden rounded-xl border group-data-[view=preview]/block-view-wrapper:hidden"
+		class="flex h-(--height) overflow-hidden rounded-xl border bg-code text-code-foreground group-data-[view=preview]/block-view-wrapper:hidden"
 	>
 		<div class="hidden w-72 md:block">
 			<ComponentCodeViewerFileTree />
@@ -41,7 +41,7 @@
 				class="no-scrollbar overflow-y-auto"
 				{@attach (node) => {
 					if (file.highlightedContent) {
-						ctx.activeFileCodeToCopy = node.innerText;
+						ctx.activeFileCodeToCopy = file.content ?? node.innerText;
 					}
 				}}
 			>

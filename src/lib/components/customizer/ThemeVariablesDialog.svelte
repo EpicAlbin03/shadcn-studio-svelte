@@ -2,7 +2,7 @@
 	import type { ColorFormat } from '$lib/utils/color-converter';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Select from '$lib/components/ui/select';
-	import CodeBlock from '$lib/components/code-block/CodeBlock.svelte';
+	import CodeBlock from '$lib/components/CodeBlock.svelte';
 	import CopyButton from '$lib/components/CopyButton.svelte';
 	import { generateThemeCode } from '$lib/utils/theme-style-generator';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';

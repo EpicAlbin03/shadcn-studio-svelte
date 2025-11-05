@@ -1,32 +1,30 @@
 import { toast } from 'svelte-sonner';
+import { UseClipboard } from './use-clipboard.svelte';
 
 export const useCopy = (duration = 1500, toastMessage?: string, onCopied?: () => void) => {
-	let copied = $state(false);
+	const clipboard = new UseClipboard({ delay: duration, reset: true });
 
 	const copy = async (text: string) => {
-		try {
-			await navigator.clipboard.writeText(text);
-			copied = true;
-			setTimeout(() => (copied = false), duration);
+		const result = await clipboard.copy(text);
+
+		if (result === 'success') {
 			if (toastMessage) {
 				toast.success(`${toastMessage} copied to clipboard`);
 				onCopied?.();
 			}
-
 			return true;
-		} catch (err) {
-			console.error(`${toastMessage} failed to copy to clipboard`, err);
+		} else {
+			console.error(`${toastMessage} failed to copy to clipboard`);
 			if (toastMessage) {
 				toast.error(`${toastMessage} failed to copy to clipboard`);
 			}
-
 			return false;
 		}
 	};
 
 	return {
 		get copied() {
-			return copied;
+			return clipboard.copied;
 		},
 		copy
 	};

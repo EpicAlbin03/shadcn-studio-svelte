@@ -49,7 +49,6 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		}
 	}
 
-	// Create a map for quick lookup
 	const blocksMap = new Map(highlightedBlocks.map((block) => [block.name, block]));
 
 	// Prepare components data for the client component
@@ -62,7 +61,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 
 		return {
 			...comp,
-			...block // Merge the HighlightedBlock directly into component
+			...block
 		};
 	});
 
