@@ -215,9 +215,6 @@
 	}
 }
 
-body {
-	letter-spacing: var(--letter-spacing);
-}
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
@@ -232,6 +229,8 @@ body {
 	}
 
 	body {
+		@apply bg-background text-foreground;
+		letter-spacing: var(--letter-spacing);
 		font-synthesis-weight: none;
 		text-rendering: optimizeLegibility;
 	}

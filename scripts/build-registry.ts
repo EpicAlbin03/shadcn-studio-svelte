@@ -65,7 +65,8 @@ export async function build(): Promise<void> {
 		'registry:hook',
 		'registry:component',
 		'registry:lib',
-		'registry:block'
+		'registry:block',
+		'registry:style'
 	];
 	const filteredItems = result.items.filter((item) => ITEM_TYPES.includes(item.type));
 	const registryJsonPath = path.resolve('registry.json');
