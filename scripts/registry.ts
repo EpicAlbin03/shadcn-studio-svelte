@@ -50,37 +50,7 @@ export async function buildRegistry(): Promise<RegistryItems> {
 	]);
 
 	resolvedItems.forEach((i) => items.push(...i));
-
-	for (const item of items) {
-		const description = readComponentDescriptionFromContent(item.name);
-		if (description) {
-			(item as unknown as { description?: string }).description = description;
-		}
-	}
-
 	return items;
-}
-
-function readComponentDescriptionFromContent(componentName: string): string | undefined {
-	const mdPath = path.resolve('content', 'components', `${componentName}.md`);
-	if (!fs.existsSync(mdPath)) return undefined;
-
-	const raw = fs.readFileSync(mdPath, { encoding: 'utf8' });
-	const fmMatch = raw.match(/^---[\s\S]*?---/);
-	if (!fmMatch) return undefined;
-
-	const fm = fmMatch[0];
-	const descMatch = fm.match(/^description:\s*(.+)$/im);
-	if (!descMatch) return undefined;
-
-	let desc = descMatch[1].trim();
-	if (
-		(desc.startsWith('"') && desc.endsWith('"')) ||
-		(desc.startsWith("'") && desc.endsWith("'"))
-	) {
-		desc = desc.slice(1, -1);
-	}
-	return desc;
 }
 
 async function crawlUI(rootPath: string): Promise<RegistryItems> {

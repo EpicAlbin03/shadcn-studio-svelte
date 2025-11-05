@@ -1,0 +1,38 @@
+{
+	"$schema": "./static/schema/registry.json",
+	"name": "shadcn-studio-svelte",
+	"homepage": "https://shadcnstudio-svelte.netlify.app",
+	"aliases": {
+		"lib": "$lib/registry/lib",
+		"ui": "$lib/registry/ui",
+		"components": "$lib/registry/components",
+		"utils": "$lib/utils",
+		"hooks": "$lib/registry/hooks"
+	},
+	"items": [
+		{
+			"name": "button-01",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-02",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-02.svelte"
+				}
+			]
+		}
+	]
+}

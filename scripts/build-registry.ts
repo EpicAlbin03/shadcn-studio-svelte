@@ -45,8 +45,8 @@ export async function build(): Promise<void> {
 	const result = registrySchema.parse(
 		{
 			$schema: './static/schema/registry.json',
-			name: 'wds-shadcn-registry-svelte',
-			homepage: 'https://wds-shadcn-registry-svelte.netlify.app',
+			name: 'shadcn-studio-svelte',
+			homepage: 'https://shadcnstudio-svelte.netlify.app',
 			aliases: {
 				lib: '$lib/registry/lib',
 				ui: '$lib/registry/ui',

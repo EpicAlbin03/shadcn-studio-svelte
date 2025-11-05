@@ -164,6 +164,9 @@ importers:
       runed:
         specifier: ^0.31.1
         version: 0.31.1(svelte@5.38.10)
+      shadcn-svelte:
+        specifier: ^1.0.10
+        version: 1.0.10
       shepherd.js:
         specifier: ^14.5.1
         version: 14.5.1
@@ -1177,6 +1180,10 @@ packages:
     resolution: {integrity: sha512-sH5ZSPr+7UStsloltmDh7Ce5fb8XPlHyoPzTpyyMuYCtervL65+ubVZ6Q61cFtFl62UyJlc8/JwERRbAFPUqgw==}
     engines: {node: '>=8.0.0'}
 
+  commander@14.0.2:
+    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+    engines: {node: '>=20'}
+
   commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
@@ -1920,6 +1927,9 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  node-fetch-native@1.6.7:
+    resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
+
   normalize-url@8.1.0:
     resolution: {integrity: sha512-X06Mfd/5aKsRHc0O0J5CUedwnPmnDtLF2+nq+KN9KSDlJHkPuh0JUviWjEWMe0SW/9TDdSLVPuk7L5gGTIA1/w==}
     engines: {node: '>=14.16'}
@@ -2214,6 +2224,10 @@ packages:
 
   set-cookie-parser@2.7.1:
     resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
+
+  shadcn-svelte@1.0.10:
+    resolution: {integrity: sha512-gwDMBIhTwl/eEfP3e4fMjEkQU+dOLnAH961HhoqVF5bY6mj9g4wJq76aYHpwpVb5Ux1Gt9E1KMy3slp/YD/rSA==}
+    hasBin: true
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -3550,6 +3564,8 @@ snapshots:
       table-layout: 1.0.2
       typical: 5.2.0
 
+  commander@14.0.2: {}
+
   commander@7.2.0: {}
 
   concat-map@0.0.1: {}
@@ -4293,6 +4309,8 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  node-fetch-native@1.6.7: {}
+
   normalize-url@8.1.0:
     optional: true
 
@@ -4521,6 +4539,12 @@ snapshots:
   semver@7.7.2: {}
 
   set-cookie-parser@2.7.1: {}
+
+  shadcn-svelte@1.0.10:
+    dependencies:
+      commander: 14.0.2
+      node-fetch-native: 1.6.7
+      postcss: 8.5.6
 
   shebang-command@2.0.0:
     dependencies:
