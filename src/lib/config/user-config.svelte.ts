@@ -77,7 +77,7 @@ export class UserConfig {
 		this.#settings = { ...this.#settings, ...settings };
 		document.cookie = `${USER_SETTINGS_COOKIE_NAME}=${JSON.stringify(this.#settings)}; path=/; max-age=31536000; SameSite=Lax;`;
 
-		if (settings.activeTheme && this.hasThemeChanged()) {
+		if (settings.activeTheme) {
 			applyThemeStyles(settings.activeTheme.cssVars);
 		}
 	}
