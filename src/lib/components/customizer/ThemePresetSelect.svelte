@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dices, Trash2 } from '@lucide/svelte';
+	import { Dices } from '@lucide/svelte';
 	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
@@ -14,9 +14,6 @@
 		type PresetThemeName
 	} from '$lib/assets/data/preset-themes';
 	import { toast } from 'svelte-sonner';
-	import CopyButton from '../CopyButton.svelte';
-	import { generateThemeCode } from '$lib/utils/theme-style-generator';
-	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);
@@ -69,12 +66,6 @@
 		const random = Math.floor(Math.random() * presetThemes.length);
 		const themeName = presetThemes[random].name as PresetThemeName;
 		userConfig.setSettings({ activeTheme: presetThemesMap[themeName] });
-	}
-
-	function handleDeleteTheme(event: MouseEvent, name: string) {
-		event.stopPropagation(); // Prevent theme application when deleting
-		userConfig.removeSavedTheme(name);
-		toast.success(`Theme "${name}" has been removed.`);
 	}
 </script>
 
@@ -133,35 +124,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="flex w-full items-center justify-between gap-2">
-								<span class="capitalize">{theme.label}</span>
-								<div>
-									<CopyButton
-										source={generateThemeCode(theme.cssVars, colorFormat)}
-										class="h-6 w-6 hover:[&_*]:text-foreground"
-										toast="Theme variables"
-										onCopied={() => userConfig.setSettings({ colorFormat })}
-										ignoreNonKeyboardFocus={false}
-										code={false}
-									/>
-									<Tooltip.Root>
-										<Tooltip.Trigger>
-											{#snippet child({ props })}
-												<Button
-													{...props}
-													variant="ghost"
-													size="icon"
-													class="h-6 w-6 hover:[&>svg]:text-destructive"
-													onclick={(e: MouseEvent) => handleDeleteTheme(e, theme.name)}
-												>
-													<Trash2 class="h-2 w-2" />
-												</Button>
-											{/snippet}
-										</Tooltip.Trigger>
-										<Tooltip.Content>Delete</Tooltip.Content>
-									</Tooltip.Root>
-								</div>
-							</div>
+							<span class="capitalize">{theme.label}</span>
 						</Select.Item>
 					{/each}
 				</Select.Group>

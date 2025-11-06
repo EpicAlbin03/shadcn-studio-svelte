@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RotateCcw, Sun, Moon, AlertCircle } from '@lucide/svelte';
+	import { RotateCcw, Sun, Moon, AlertCircle, Trash2, TriangleAlert } from '@lucide/svelte';
 	import type { ThemeStyleProps } from '$lib/types/theme';
 	import ShadowControl from './ShadowControl.svelte';
 	import ThemeFontSelect from './ThemeFontSelect.svelte';
@@ -17,7 +17,8 @@
 	import {
 		DEFAULT_FONT_SANS,
 		DEFAULT_FONT_SERIF,
-		DEFAULT_FONT_MONO
+		DEFAULT_FONT_MONO,
+		presetThemesMap
 	} from '$lib/assets/data/preset-themes';
 	import {
 		getAppliedThemeFont,
@@ -28,6 +29,7 @@
 	import { mode as _mode } from 'mode-watcher';
 	import { setMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);
@@ -83,6 +85,8 @@
 	const handleSpacingChange = (value: number) => {
 		updateBothThemes({ spacing: `${value}rem` });
 	};
+
+	let isDeleteDialogOpen = $state(false);
 </script>
 
 <ScrollArea class="h-[calc(100vh-6.3125rem)]">
@@ -130,7 +134,53 @@
 		<!-- Themes Selection -->
 		<ThemePresetSelect />
 
-		<HoldToSaveTheme />
+		<div class="flex items-center gap-3">
+			<HoldToSaveTheme />
+
+			<AlertDialog.Root bind:open={isDeleteDialogOpen}>
+				<AlertDialog.Trigger>
+					{#snippet child({ props })}
+						<Button
+							{...props}
+							variant="outline"
+							class="flex-1 cursor-pointer gap-2"
+							disabled={activeTheme.name in presetThemesMap}
+						>
+							<Trash2 class="h-2 w-2" />
+							Delete
+						</Button>
+					{/snippet}
+				</AlertDialog.Trigger>
+				<AlertDialog.Content>
+					<AlertDialog.Header>
+						<div class="flex items-center gap-2 text-center">
+							<TriangleAlert class="text-destructive" />
+							<AlertDialog.Title>Confirm Theme Deletion</AlertDialog.Title>
+						</div>
+						<AlertDialog.Description>
+							Are you sure you want to delete the theme "{activeTheme.name}"? This action cannot be
+							undone.
+						</AlertDialog.Description>
+					</AlertDialog.Header>
+					<AlertDialog.Footer>
+						<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+						<AlertDialog.Action
+							onclick={() => {
+								isDeleteDialogOpen = false;
+								if (activeTheme.name in presetThemesMap) {
+									return;
+								}
+								const name = activeTheme.name;
+								userConfig.resetActiveTheme();
+								userConfig.removeSavedTheme(name);
+							}}
+						>
+							Delete Theme
+						</AlertDialog.Action>
+					</AlertDialog.Footer>
+				</AlertDialog.Content>
+			</AlertDialog.Root>
+		</div>
 
 		<Tabs.Root value="colors" class="h-full w-full">
 			<Tabs.List class="mb-3 grid w-full grid-cols-3">

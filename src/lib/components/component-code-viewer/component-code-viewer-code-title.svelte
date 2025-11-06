@@ -2,7 +2,7 @@
 	import { ComponentCodeViewerContext } from './component-code-viewer.svelte';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { getIconForLanguageExtension } from '../icons/icons.js';
-	import ComponentCodeViewerCopyCodeButton from './component-code-viewer-copy-code-button.svelte';
+	import CopyButton from '../CopyButton.svelte';
 
 	const ctx = ComponentCodeViewerContext.get();
 	const file = $derived(ctx.highlightedFiles?.find((f) => f.target === ctx.activeFile));
@@ -19,7 +19,9 @@
 		<Icon />
 		{file.target.split('/').pop()}
 		<div class="ml-auto flex items-center gap-2">
-			<ComponentCodeViewerCopyCodeButton />
+			{#if ctx.activeFileCodeToCopy}
+				<CopyButton text={ctx.activeFileCodeToCopy} class="mr-2" />
+			{/if}
 		</div>
 	</figcaption>
 
@@ -45,7 +47,9 @@
 			</Select.Content>
 		</Select.Root>
 		<div class="ml-auto flex items-center gap-2">
-			<ComponentCodeViewerCopyCodeButton class="mr-0" />
+			{#if ctx.activeFileCodeToCopy}
+				<CopyButton text={ctx.activeFileCodeToCopy} class="mr-0" />
+			{/if}
 		</div>
 	</div>
 {/if}

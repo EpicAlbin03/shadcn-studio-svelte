@@ -2,63 +2,48 @@
 	import { Check, Copy } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip';
-	import { useCopy } from '$lib/hooks/use-copy.svelte';
+	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils';
 
 	type Props = {
-		source: string | null;
+		text: string;
 		class?: string;
-		toast?: string;
-		onCopied?: () => void;
-		code?: boolean;
-		ignoreNonKeyboardFocus?: boolean;
+		onCopied?: (e: MouseEvent) => void;
 	};
 
-	let {
-		source,
-		class: className,
-		toast,
-		onCopied,
-		code = true,
-		ignoreNonKeyboardFocus = true
-	}: Props = $props();
+	let { text, class: className, onCopied }: Props = $props();
 
-	const copyHook = useCopy(1500, toast, onCopied);
-	const copied = $derived(copyHook.copied);
-	const copy = $derived(copyHook.copy);
+	const clipboard = new UseClipboard();
+
+	function handleCopy(e: MouseEvent) {
+		clipboard.copy(text);
+		onCopied?.(e);
+	}
 </script>
 
-<Tooltip.Root {ignoreNonKeyboardFocus}>
-	<Tooltip.Trigger>
+<Tooltip.Root disableCloseOnTriggerClick>
+	<Tooltip.Trigger onclick={handleCopy}>
 		{#snippet child({ props })}
 			<Button
 				{...props}
-				variant="ghost"
+				data-slot="copy-button"
 				size="icon"
+				variant="ghost"
 				class={cn(
-					' transition-none hover:!bg-transparent disabled:opacity-100',
-					code &&
-						'absolute end-2 top-2 cursor-pointer text-muted-foreground hover:text-muted-foreground',
+					'z-10 size-7 shrink-0 rounded-md p-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 [&>svg]:size-3',
 					className
 				)}
-				onclick={() => copy(source || '')}
-				aria-label={copied ? 'Copied' : 'Copy component source'}
-				disabled={copied}
-				tabindex={1}
 			>
-				<div class={cn('transition-all', copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0')}>
-					<Check aria-hidden={true} class="size-4 text-green-500" />
-				</div>
-				<div
-					class={cn(
-						'absolute transition-all',
-						copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
-					)}
-				>
-					<Copy aria-hidden={true} class="size-4" />
-				</div>
+				<span class="sr-only" data-llm-ignore>Copy</span>
+				{#if clipboard.copied}
+					<Check />
+				{:else}
+					<Copy />
+				{/if}
 			</Button>
 		{/snippet}
 	</Tooltip.Trigger>
-	<Tooltip.Content>Copy</Tooltip.Content>
+	<Tooltip.Content>
+		{clipboard.copied ? 'Copied' : 'Copy to Clipboard'}
+	</Tooltip.Content>
 </Tooltip.Root>

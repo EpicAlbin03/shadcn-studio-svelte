@@ -26,14 +26,14 @@
 
 {#if file}
 	<div
-		class="flex h-(--height) overflow-hidden rounded-xl border bg-code text-code-foreground group-data-[view=preview]/block-view-wrapper:hidden"
+		class="flex h-(--height) overflow-hidden rounded-lg border bg-code text-code-foreground group-data-[view=preview]/block-view-wrapper:hidden"
 	>
 		<div class="hidden w-72 md:block">
 			<ComponentCodeViewerFileTree />
 		</div>
 		<figure
 			data-rehype-pretty-code-figure
-			class="mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none"
+			class="mt-0 flex min-w-0 flex-1 flex-col rounded-xl rounded-l-none border-none"
 		>
 			<ComponentCodeViewerCodeTitle />
 			<div

@@ -93,7 +93,7 @@
 
 <Button
 	variant="outline"
-	class={`relative w-full cursor-pointer gap-2 overflow-hidden bg-muted/50 hover:bg-muted/80 ${
+	class={`relative flex-2 cursor-pointer gap-2 overflow-hidden bg-muted/50 hover:bg-muted/80 ${
 		isHolding ? 'bg-primary/10' : ''
 	}`}
 	onmousedown={handleHoldStart}

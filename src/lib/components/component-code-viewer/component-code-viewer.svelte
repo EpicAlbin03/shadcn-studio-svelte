@@ -6,9 +6,10 @@
 	import CodeIcon from '@lucide/svelte/icons/code';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { MediaQuery } from 'svelte/reactivity';
 	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import PmAddComp from '$lib/components/pm-add-comp.svelte';
 
 	type ComponentCodeViewerContextType = {
 		item: HighlightedBlock;
@@ -79,8 +80,8 @@
 		}
 	});
 
-	const isMobile = new MediaQuery('(max-width: 768px)');
-	const height = $derived(isMobile.current ? '75dvh' : 'calc(100svh - (var(--header-height) * 2))');
+	const isMobile = new IsMobile();
+	const height = $derived(isMobile.current ? '75dvh' : 'calc(100svh - (var(--header-height) * 6))');
 	let contentRef = $state<HTMLElement | null>(null);
 
 	const hasFiles = $derived(item?.files && item.files.length > 0);
@@ -109,8 +110,7 @@
 	</Tooltip.Root>
 	<Dialog.Content
 		bind:ref={contentRef}
-		class="rounded-xl p-0 sm:max-w-[90%]"
-		showCloseButton={false}
+		class="flex min-w-0 flex-col gap-6 sm:max-w-[90%]"
 		onOpenAutoFocus={(e) => {
 			if (!contentRef || !hasFiles) return;
 			const activeItem = contentRef.querySelector('button[data-active=true]') as HTMLElement | null;
@@ -120,14 +120,19 @@
 			}
 		}}
 	>
-		<Dialog.Header class="sr-only">
-			<Dialog.Title>
-				{item.name} Code
-			</Dialog.Title>
-			<Dialog.Description>
-				View the code for the {item.name} component
+		<Dialog.Header>
+			<Dialog.Title class="text-left">CLI Command</Dialog.Title>
+			<Dialog.Description class="sr-only">
+				Use the CLI to add components to your project
 			</Dialog.Description>
 		</Dialog.Header>
+
+		<PmAddComp name={item.name} />
+
+		<Dialog.Title class="text-left">Manual Code</Dialog.Title>
+		<Dialog.Description class="sr-only">
+			View the code for the {item.name} component
+		</Dialog.Description>
 		{#if hasFiles}
 			<div
 				id={item.name}
@@ -137,25 +142,18 @@
 				<ComponentCodeViewerCode />
 			</div>
 		{:else}
-			<div class="min-w-0 space-y-5 p-6">
-				<div class="space-y-4">
-					<h2 class="text-left text-lg leading-none font-semibold">Manual Code</h2>
-					<div class="overflow-hidden rounded-md border p-4">
-						<p class="text-sm text-muted-foreground">
-							No code available. If you think this is an error, please
-							<a
-								href="https://github.com/EpicAlbin03/shadcn-studio-svelte/issues"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="font-medium text-foreground underline hover:no-underline"
-							>
-								open an issue
-							</a>
-							.
-						</p>
-					</div>
-				</div>
-			</div>
+			<p class="text-sm text-muted-foreground">
+				No code available. If you think this is an error, please
+				<a
+					href="https://github.com/EpicAlbin03/shadcn-studio-svelte/issues"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-medium text-foreground underline hover:no-underline"
+				>
+					open an issue
+				</a>
+				.
+			</p>
 		{/if}
 		<Dialog.Close class="sr-only">Close</Dialog.Close>
 	</Dialog.Content>

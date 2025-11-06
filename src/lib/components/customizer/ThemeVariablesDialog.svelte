@@ -66,9 +66,8 @@
 				</div>
 				<CodeBlock code={themeCSS} lang="css" />
 				<CopyButton
-					source={themeCSS}
+					text={themeCSS}
 					class="dark"
-					toast="Theme variables"
 					onCopied={() => userConfig.setSettings({ colorFormat })}
 				/>
 			</div>
