@@ -1,54 +1,93 @@
 import { defaultTheme } from '$lib/assets/data/preset-themes';
-import type { Theme } from '$lib/types/theme';
+import { themeSchema, type Theme } from '$lib/types/theme';
 import { deepEqual } from '$lib/utils/deep-equal';
 import { applyThemeStyles } from '$lib/utils/theme';
 import { Context, PersistedState } from 'runed';
+import { z } from 'zod/v4';
 
-export type ColorFormat = 'hex' | 'rgb' | 'hsl' | 'oklch';
+export const USER_SETTINGS_COOKIE_NAME = 'scnstudio_user_config';
+
+const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('pnpm');
+const colorFormatSchema = z.enum(['hex', 'rgb', 'hsl', 'oklch']).default('oklch');
+const themeCustomizerTourCompletedSchema = z.boolean().default(false);
+
+export type PackageManager = z.infer<typeof packageManagerSchema>;
+export type ColorFormat = z.infer<typeof colorFormatSchema>;
+export type ThemeCustomizerTourCompleted = z.infer<typeof themeCustomizerTourCompletedSchema>;
+
+export const userSettingsSchema = z
+	.object({
+		packageManager: packageManagerSchema,
+		colorFormat: colorFormatSchema,
+		activeTheme: themeSchema,
+		themeCustomizerTourCompleted: themeCustomizerTourCompletedSchema
+	})
+	.default({
+		packageManager: 'pnpm',
+		colorFormat: 'oklch',
+		activeTheme: defaultTheme,
+		themeCustomizerTourCompleted: false
+	});
+
+export type UserSettingsType = z.infer<typeof userSettingsSchema>;
+export type UserConfigType = { settings: UserSettingsType; savedThemes: Theme[] };
+
+function parseCookie(cookie: string): Record<string, string> {
+	const cookies = cookie.split(';');
+	const cookieMap: Record<string, string> = {};
+	for (const cookie of cookies) {
+		const [key, value] = cookie.split('=');
+		cookieMap[key] = value;
+	}
+	return cookieMap;
+}
+
+export function parseUserSettings(cookie: string): UserSettingsType {
+	const cookieMap = parseCookie(cookie);
+	const userSettings = cookieMap[USER_SETTINGS_COOKIE_NAME];
+	if (!userSettings) return userSettingsSchema.parse(undefined);
+	return userSettingsSchema.parse(JSON.parse(userSettings));
+}
 
 export class UserConfig {
-	#colorFormat: PersistedState<ColorFormat>;
-	#activeTheme: PersistedState<Theme>;
+	#settings: UserSettingsType;
 	#savedThemes: PersistedState<Theme[]>;
-	#themeCustomizerTourCompleted: PersistedState<boolean>;
 
-	constructor() {
-		this.#colorFormat = new PersistedState<ColorFormat>('color-format', 'oklch');
-		this.#activeTheme = new PersistedState<Theme>('active-theme', defaultTheme);
+	constructor(settings: UserSettingsType) {
+		this.#settings = $state.raw(settings);
 		this.#savedThemes = new PersistedState<Theme[]>('saved-themes', []);
-		this.#themeCustomizerTourCompleted = new PersistedState<boolean>(
-			'theme-customizer-tour-completed',
-			false
-		);
 	}
 
-	get colorFormat(): ColorFormat {
-		return this.#colorFormat.current;
+	get current(): UserConfigType {
+		return {
+			settings: this.settings,
+			savedThemes: this.savedThemes
+		};
 	}
 
-	setColorFormat(colorFormat: ColorFormat): void {
-		this.#colorFormat.current = colorFormat;
-	}
-
-	get activeTheme(): Theme {
-		return this.#activeTheme.current;
-	}
-
-	setActiveTheme(theme: Theme): void {
-		this.#activeTheme.current = theme;
-		applyThemeStyles(theme.cssVars);
-	}
-
-	resetActiveTheme(): void {
-		this.setActiveTheme(defaultTheme);
-	}
-
-	hasThemeChanged(): boolean {
-		return !deepEqual(this.#activeTheme.current.cssVars, defaultTheme.cssVars);
+	get settings(): UserSettingsType {
+		return this.#settings;
 	}
 
 	get savedThemes(): Theme[] {
 		return this.#savedThemes.current;
+	}
+
+	setSettings(settings: Partial<UserSettingsType>): void {
+		this.#settings = { ...this.#settings, ...settings };
+		document.cookie = `${USER_SETTINGS_COOKIE_NAME}=${JSON.stringify(this.#settings)}; path=/; max-age=31536000; SameSite=Lax;`;
+
+		if (settings.activeTheme && this.hasThemeChanged()) {
+			applyThemeStyles(settings.activeTheme.cssVars);
+		}
+	}
+
+	resetActiveTheme(): void {
+		this.setSettings({ activeTheme: defaultTheme });
+	}
+
+	hasThemeChanged(): boolean {
+		return !deepEqual(this.#settings.activeTheme.cssVars, defaultTheme.cssVars);
 	}
 
 	addSavedTheme(theme: Theme): void {
@@ -57,14 +96,6 @@ export class UserConfig {
 
 	removeSavedTheme(name: string): void {
 		this.#savedThemes.current = this.#savedThemes.current.filter((theme) => theme.name !== name);
-	}
-
-	get themeCustomizerTourCompleted(): boolean {
-		return this.#themeCustomizerTourCompleted.current;
-	}
-
-	setThemeCustomizerTourCompleted(completed: boolean): void {
-		this.#themeCustomizerTourCompleted.current = completed;
 	}
 }
 

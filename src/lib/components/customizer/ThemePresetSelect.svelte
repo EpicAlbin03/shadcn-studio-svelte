@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Copy, Dices, Trash2 } from '@lucide/svelte';
+	import { Dices, Trash2 } from '@lucide/svelte';
 	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
@@ -16,18 +16,18 @@
 	import { toast } from 'svelte-sonner';
 	import CopyButton from '../CopyButton.svelte';
 	import { generateThemeCode } from '$lib/utils/theme-style-generator';
-	import type { ColorFormat } from '$lib/utils/color-converter';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	const userConfig = UserConfigContext.get();
-
-	let colorFormat = $derived<ColorFormat>(userConfig.colorFormat);
+	const activeTheme = $derived(userConfig.settings.activeTheme);
+	const colorFormat = $derived(userConfig.settings.colorFormat);
+	const savedThemes = $derived(userConfig.savedThemes);
 
 	const label = $derived.by(() => {
-		if (userConfig.activeTheme.name in presetThemesMap) {
-			return userConfig.activeTheme.label;
-		} else if (userConfig.savedThemes.length > 0) {
-			return userConfig.savedThemes.find((t) => t.name === userConfig.activeTheme.name)?.label;
+		if (activeTheme.name in presetThemesMap) {
+			return activeTheme.label;
+		} else if (savedThemes.length > 0) {
+			return savedThemes.find((t) => t.name === activeTheme.name)?.label;
 		} else {
 			return 'Choose Theme';
 		}
@@ -68,7 +68,7 @@
 	function randomize() {
 		const random = Math.floor(Math.random() * presetThemes.length);
 		const themeName = presetThemes[random].name as PresetThemeName;
-		userConfig.setActiveTheme(presetThemesMap[themeName]);
+		userConfig.setSettings({ activeTheme: presetThemesMap[themeName] });
 	}
 
 	function handleDeleteTheme(event: MouseEvent, name: string) {
@@ -95,8 +95,8 @@
 			() => label,
 			(v) => {
 				const theme =
-					presetThemesMap[v as PresetThemeName] ?? userConfig.savedThemes.find((t) => t.name === v);
-				userConfig.setActiveTheme(theme);
+					presetThemesMap[v as PresetThemeName] ?? savedThemes.find((t) => t.name === v);
+				userConfig.setSettings({ activeTheme: theme });
 				toast.success(`Theme "${theme.name}" has been applied.`);
 			}
 		}
@@ -105,10 +105,10 @@
 			{label}
 		</Select.Trigger>
 		<Select.Content>
-			{#if userConfig.savedThemes.length > 0}
+			{#if savedThemes.length > 0}
 				<Select.Group>
 					<Select.Label>My Themes</Select.Label>
-					{#each userConfig.savedThemes as theme (theme.name)}
+					{#each savedThemes as theme (theme.name)}
 						<Select.Item value={theme.name} class="flex items-center gap-3">
 							<!-- Theme Color Grid Icon -->
 							<div class="flex items-center">
@@ -140,7 +140,7 @@
 										source={generateThemeCode(theme.cssVars, colorFormat)}
 										class="h-6 w-6 hover:[&_*]:text-foreground"
 										toast="Theme variables"
-										onCopied={() => userConfig.setColorFormat(colorFormat)}
+										onCopied={() => userConfig.setSettings({ colorFormat })}
 										ignoreNonKeyboardFocus={false}
 										code={false}
 									/>

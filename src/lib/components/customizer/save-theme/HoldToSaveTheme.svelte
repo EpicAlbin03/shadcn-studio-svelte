@@ -8,6 +8,7 @@
 	import type { ThemeStyles } from '$lib/types/theme';
 
 	const userConfig = UserConfigContext.get();
+	const activeTheme = $derived(userConfig.settings.activeTheme);
 
 	let isHolding = $state(false);
 	let holdTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
@@ -40,7 +41,7 @@
 
 	function handleSaveTheme(name: string): boolean {
 		// Ensure we have styles to save and they're different from default
-		if (!userConfig.activeTheme.cssVars) {
+		if (!activeTheme.cssVars) {
 			toast.error('No theme styles to save');
 			return false;
 		}
@@ -56,7 +57,7 @@
 		const newTheme = {
 			name: name.trim(), // Keep the original name for display
 			label: name.trim(),
-			cssVars: userConfig.activeTheme.cssVars as ThemeStyles
+			cssVars: activeTheme.cssVars as ThemeStyles
 		};
 
 		// Get existing saved themes
@@ -81,7 +82,7 @@
 		}
 
 		// Add new theme and update settings
-		userConfig.setActiveTheme(newTheme);
+		userConfig.setSettings({ activeTheme: newTheme });
 		userConfig.addSavedTheme(newTheme);
 
 		toast.success(`Your theme "${name.trim()}" has been saved.`);

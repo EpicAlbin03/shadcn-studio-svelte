@@ -14,6 +14,7 @@
 	import { carryCommon } from '$lib/utils/theme';
 
 	const userConfig = UserConfigContext.get();
+	const activeTheme = $derived(userConfig.settings.activeTheme);
 
 	let open = $state(false);
 	let cssText = $state('');
@@ -25,11 +26,11 @@
 		const letterSpacing = parseLetterSpacing(css);
 
 		// Always preserve both themes and merge with new ones
-		const currentLightStyles = userConfig.activeTheme.cssVars?.light || {};
-		const currentDarkStyles = userConfig.activeTheme.cssVars?.dark || {};
+		const currentLightStyles = activeTheme.cssVars?.light || {};
+		const currentDarkStyles = activeTheme.cssVars?.dark || {};
 
 		const updatedSettings = {
-			...userConfig.activeTheme,
+			...activeTheme,
 			cssVars: {
 				light: {
 					...currentLightStyles,
@@ -47,7 +48,7 @@
 
 		carryCommon(updatedSettings.cssVars.light, updatedSettings.cssVars.dark);
 
-		userConfig.setActiveTheme(updatedSettings);
+		userConfig.setSettings({ activeTheme: updatedSettings });
 
 		// Show success message with details
 		toast.success('Theme imported successfully', {

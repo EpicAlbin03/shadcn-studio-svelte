@@ -55,10 +55,10 @@
 		});
 
 		// Start the tour if it hasn't been shown before
-		if (!userConfig.themeCustomizerTourCompleted) {
+		if (!userConfig.settings.themeCustomizerTourCompleted) {
 			tour.start();
 			tour.on('complete', () => {
-				userConfig.setThemeCustomizerTourCompleted(true);
+				userConfig.setSettings({ themeCustomizerTourCompleted: true });
 			});
 		}
 

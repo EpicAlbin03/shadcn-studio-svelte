@@ -30,24 +30,25 @@
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 
 	const userConfig = UserConfigContext.get();
+	const activeTheme = $derived(userConfig.settings.activeTheme);
 
 	const mode = $derived(_mode.current ?? 'light');
-	const currentStyles = $derived(userConfig.activeTheme.cssVars?.[mode] || {});
+	const currentStyles = $derived(activeTheme.cssVars?.[mode] || {});
 
 	// // Helper function to ensure both themes are updated together
 	const updateBothThemes = (updates: Partial<ThemeStyleProps>) => {
-		const currentLight = userConfig.activeTheme.cssVars?.light || {};
-		const currentDark = userConfig.activeTheme.cssVars?.dark || {};
+		const currentLight = activeTheme.cssVars?.light || {};
+		const currentDark = activeTheme.cssVars?.dark || {};
 
 		const updatedTheme = {
-			...userConfig.activeTheme,
+			...activeTheme,
 			cssVars: {
 				light: { ...currentLight, ...updates },
 				dark: { ...currentDark, ...updates }
 			}
 		};
 
-		userConfig.setActiveTheme(updatedTheme);
+		userConfig.setSettings({ activeTheme: updatedTheme });
 	};
 
 	// // Update font change handlers to use the new helper
@@ -62,9 +63,9 @@
 
 	const handleStyleChange = (key: keyof ThemeStyleProps, value: string) => {
 		const updatedTheme = {
-			...userConfig.activeTheme,
+			...activeTheme,
 			cssVars: {
-				...userConfig.activeTheme.cssVars,
+				...activeTheme.cssVars,
 				[mode]: {
 					...currentStyles,
 					[key]: value
@@ -72,7 +73,7 @@
 			}
 		};
 
-		userConfig.setActiveTheme(updatedTheme);
+		userConfig.setSettings({ activeTheme: updatedTheme });
 	};
 
 	const handleLetterSpacingChange = (value: number) => {
@@ -178,7 +179,7 @@
 				<div class="mt-6">
 					<SliderWithInput
 						value={parseFloat(
-							userConfig.activeTheme.cssVars?.[mode]?.['letter-spacing']?.replace('em', '') || '0'
+							activeTheme.cssVars?.[mode]?.['letter-spacing']?.replace('em', '') || '0'
 						)}
 						onChange={handleLetterSpacingChange}
 						min={-0.25}

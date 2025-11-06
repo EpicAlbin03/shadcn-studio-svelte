@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { ColorFormat } from '$lib/utils/color-converter';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Select from '$lib/components/ui/select';
 	import CodeBlock from '$lib/components/CodeBlock.svelte';
@@ -11,8 +10,10 @@
 
 	const userConfig = UserConfigContext.get();
 
-	let colorFormat = $derived<ColorFormat>(userConfig.colorFormat);
-	const themeCSS = $derived(generateThemeCode(userConfig.activeTheme.cssVars, colorFormat));
+	let colorFormat = $derived(userConfig.settings.colorFormat);
+	const themeCSS = $derived(
+		generateThemeCode(userConfig.settings.activeTheme.cssVars, colorFormat)
+	);
 </script>
 
 <Dialog.Root>
@@ -68,7 +69,7 @@
 					source={themeCSS}
 					class="dark"
 					toast="Theme variables"
-					onCopied={() => userConfig.setColorFormat(colorFormat)}
+					onCopied={() => userConfig.setSettings({ colorFormat })}
 				/>
 			</div>
 		</div>
