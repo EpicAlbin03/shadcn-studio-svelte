@@ -18,6 +18,7 @@
 		tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
 		highlightedFiles: HighlightedBlock['files'];
 		activeFileCodeToCopy: string;
+		showTree?: boolean;
 	};
 
 	export const ComponentCodeViewerContext = new Context<ComponentCodeViewerContextType>(
@@ -77,7 +78,8 @@
 		},
 		set activeFileCodeToCopy(value) {
 			activeFileCodeToCopy = value;
-		}
+		},
+		showTree: true
 	});
 
 	const isMobile = new IsMobile();
@@ -121,18 +123,14 @@
 		}}
 	>
 		<Dialog.Header>
-			<Dialog.Title class="text-left">CLI Command</Dialog.Title>
-			<Dialog.Description class="sr-only">
-				Use the CLI to add components to your project
+			<Dialog.Title class="text-left">{item.name}</Dialog.Title>
+			<Dialog.Description>
+				Copy the code for the {item.name} component or use the CLI to add it to your project.
 			</Dialog.Description>
 		</Dialog.Header>
 
 		<PmAddComp name={item.name} />
 
-		<Dialog.Title class="text-left">Manual Code</Dialog.Title>
-		<Dialog.Description class="sr-only">
-			View the code for the {item.name} component
-		</Dialog.Description>
 		{#if hasFiles}
 			<div
 				id={item.name}

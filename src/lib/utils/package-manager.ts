@@ -4,7 +4,7 @@ import type { Agent, Command, ResolvedCommand } from 'package-manager-detector';
 export const PACKAGE_MANAGERS: Agent[] = ['pnpm', 'npm', 'bun', 'yarn'] as const;
 export type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
-export type PackageManagerCommand = Command | 'create';
+export type PackageManagerCommand = Command | 'create' | undefined;
 
 export function getCommand(
 	pm: Agent,
@@ -17,6 +17,8 @@ export function getCommand(
 	} else {
 		args = command;
 	}
+
+	if (!type) return { command: pm, args };
 
 	// special handling for create
 	if (type === 'create') return { command: pm, args: ['create', ...args] };

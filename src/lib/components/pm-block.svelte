@@ -11,7 +11,7 @@
 		type,
 		command
 	}: {
-		type: Command | 'create';
+		type?: Command | 'create';
 		command: string | string[];
 	} = $props();
 
@@ -20,13 +20,16 @@
 
 	function getCommandText(agent: PackageManager) {
 		const cmd = getCommand(agent, type, command);
+		if (!type) {
+			return `${cmd.args.join(' ')}`.trim();
+		}
 		return `${cmd.command} ${cmd.args.join(' ')}`.trim();
 	}
 
 	const commandText = $derived(getCommandText(packageManager));
 </script>
 
-<figure data-rehype-pretty-code-figure class="m-0 rounded-lg border bg-code">
+<figure data-rehype-pretty-code-figure class="m-0 rounded-lg border bg-code text-code-foreground">
 	<div class="overflow-x-auto">
 		<Tabs.Root
 			bind:value={
