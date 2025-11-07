@@ -187,9 +187,11 @@ async function buildBlockRegistry(
 
 		const type = isPage || isFile ? 'registry:page' : 'registry:component';
 
-		// TODO: fix
+		// Build the relative path from blockPath to the file
 		const compPath =
-			isPage || isFile ? dirent.name : path.join(path.basename(dirent.parentPath), dirent.name);
+			isPage || isFile
+				? dirent.name
+				: path.relative(blockPath, path.join(dirent.parentPath, dirent.name));
 		const filepath = path.join(blockPath, compPath);
 		const relativePath = path.relative(process.cwd(), filepath);
 		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
@@ -560,9 +562,9 @@ async function getFileDependencies(
 				} else if (source.includes('hook')) {
 					const hook = source.split('/').at(-1)!.split('.')[0];
 					registryDependencies.add(hook);
+				} else if (source.includes(UTILS_PATH)) {
+					registryDependencies.add('utils');
 				}
-			} else if (source.includes(UTILS_PATH)) {
-				registryDependencies.add('utils');
 			}
 
 			PACKAGE_DEPENDENCIES.forEach((dep) => {

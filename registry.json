@@ -14,7 +14,7 @@
 			"name": "bounce-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-start"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -30,7 +30,7 @@
 			"name": "magnetic-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-start"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -46,7 +46,7 @@
 			"name": "motion-checkbox",
 			"type": "registry:ui",
 			"dependencies": ["motion-start", "bits-ui", "@lucide/svelte"],
-			"registryDependencies": [],
+			"registryDependencies": ["utils"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -62,7 +62,7 @@
 			"name": "ripple-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-start"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -78,7 +78,7 @@
 			"name": "shimmer-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-start"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:file",
@@ -87,6 +87,34 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\shimmer-button\\shimmer-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "hero-section-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button", "dropdown-menu", "navigation-menu", "utils", "badge"],
+			"files": [
+				{
+					"type": "registry:page",
+					"path": "src\\lib\\registry\\blocks\\hero-section-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\header.svelte"
+				},
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\hero-section-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\logo.svelte"
+				},
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\blocks\\hero-section-01\\assets\\svg\\logo.svelte"
 				}
 			]
 		},
@@ -1582,7 +1610,7 @@
 			"name": "button-26",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1606,7 +1634,7 @@
 			"name": "button-28",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1678,7 +1706,7 @@
 			"name": "button-34",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1774,7 +1802,7 @@
 			"name": "button-42",
 			"type": "registry:component",
 			"dependencies": ["motion-start"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -1858,7 +1886,7 @@
 			"name": "button-group-02",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2014,7 +2042,7 @@
 			"name": "button-group-15",
 			"type": "registry:component",
 			"dependencies": ["motion-start", "@lucide/svelte"],
-			"registryDependencies": ["button"],
+			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2254,7 +2282,7 @@
 			"name": "calendar-19",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte", "@internationalized/date"],
-			"registryDependencies": ["calendar", "card", "label", "popover", "button"],
+			"registryDependencies": ["calendar", "card", "label", "popover", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2482,7 +2510,7 @@
 			"name": "card-11",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["avatar", "button", "card"],
+			"registryDependencies": ["avatar", "button", "card", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2494,7 +2522,7 @@
 			"name": "card-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["badge", "button", "card"],
+			"registryDependencies": ["badge", "button", "card", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2922,7 +2950,7 @@
 			"name": "combobox-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "popover"],
+			"registryDependencies": ["button", "command", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2946,7 +2974,7 @@
 			"name": "combobox-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2970,7 +2998,7 @@
 			"name": "combobox-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2982,7 +3010,7 @@
 			"name": "combobox-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -2994,7 +3022,7 @@
 			"name": "combobox-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3066,7 +3094,7 @@
 			"name": "combobox-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3078,7 +3106,7 @@
 			"name": "combobox-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "command", "label", "popover"],
+			"registryDependencies": ["button", "command", "label", "popover", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3102,7 +3130,7 @@
 			"name": "data-table-02",
 			"type": "registry:component",
 			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
-			"registryDependencies": ["table", "data-table", "checkbox", "select"],
+			"registryDependencies": ["table", "data-table", "checkbox", "select", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3139,6 +3167,7 @@
 				"checkbox",
 				"avatar",
 				"badge",
+				"utils",
 				"input",
 				"label",
 				"select"
@@ -3158,7 +3187,7 @@
 			"name": "data-table-05",
 			"type": "registry:component",
 			"dependencies": ["@tanstack/table-core", "@lucide/svelte"],
-			"registryDependencies": ["table", "data-table", "checkbox"],
+			"registryDependencies": ["table", "data-table", "checkbox", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3240,7 +3269,8 @@
 				"label",
 				"select",
 				"table",
-				"data-table"
+				"data-table",
+				"utils"
 			],
 			"files": [
 				{
@@ -3260,7 +3290,8 @@
 				"select",
 				"table",
 				"data-table",
-				"use-pagination"
+				"use-pagination",
+				"utils"
 			],
 			"files": [
 				{
@@ -3280,7 +3311,8 @@
 				"dropdown-menu",
 				"input",
 				"table",
-				"data-table"
+				"data-table",
+				"utils"
 			],
 			"files": [
 				{
@@ -3605,7 +3637,7 @@
 			"name": "dialog-12",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["input-otp", "button", "dialog"],
+			"registryDependencies": ["input-otp", "button", "dialog", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4061,7 +4093,7 @@
 			"name": "form-08",
 			"type": "registry:component",
 			"dependencies": ["sveltekit-superforms", "svelte-sonner", "@lucide/svelte"],
-			"registryDependencies": ["form", "command", "popover", "button"],
+			"registryDependencies": ["form", "command", "popover", "button", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4078,7 +4110,7 @@
 				"@internationalized/date",
 				"@lucide/svelte"
 			],
-			"registryDependencies": ["form", "button", "popover", "calendar"],
+			"registryDependencies": ["form", "button", "popover", "calendar", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4642,7 +4674,7 @@
 			"name": "input-46",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "input", "label"],
+			"registryDependencies": ["button", "input", "label", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4870,7 +4902,7 @@
 			"name": "pagination-03",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "button"],
+			"registryDependencies": ["pagination", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4882,7 +4914,7 @@
 			"name": "pagination-04",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "button"],
+			"registryDependencies": ["pagination", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4894,7 +4926,7 @@
 			"name": "pagination-05",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "button"],
+			"registryDependencies": ["pagination", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -4918,7 +4950,7 @@
 			"name": "pagination-07",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "button"],
+			"registryDependencies": ["pagination", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5002,7 +5034,7 @@
 			"name": "pagination-14",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "select", "button"],
+			"registryDependencies": ["pagination", "select", "utils", "button"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5014,7 +5046,7 @@
 			"name": "pagination-15",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["pagination", "select", "button", "label"],
+			"registryDependencies": ["pagination", "select", "utils", "button", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5086,7 +5118,7 @@
 			"name": "popover-06",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "popover", "progress"],
+			"registryDependencies": ["button", "popover", "progress", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5170,7 +5202,7 @@
 			"name": "popover-13",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "input", "popover", "separator"],
+			"registryDependencies": ["button", "input", "popover", "separator", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -5722,7 +5754,7 @@
 			"name": "select-29",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["label", "select"],
+			"registryDependencies": ["label", "select", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
