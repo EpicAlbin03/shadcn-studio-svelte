@@ -22,7 +22,40 @@ const highlightedBlockSchema = registryItemSchema
 		)
 	});
 
-async function loadItem(block: string): Promise<HighlightedBlock> {
+type HighlightedFile = z.infer<typeof registryItemFileSchema> & { highlightedContent: string };
+
+async function loadRegistryDependencies(
+	dependencies: string[],
+	visited: Set<string>
+): Promise<HighlightedFile[]> {
+	const dependencyFiles = await Promise.all(
+		dependencies.map(async (dep) => {
+			// Handle both "local:component-name" and "./component-name.json" formats
+			const depName = dep
+				.replace(/^local:/, '')
+				.replace(/^\.\//, '')
+				.replace(/\.json$/, '');
+
+			try {
+				const depItem = await loadItem(depName, new Set(visited));
+				return depItem.files;
+			} catch (error) {
+				console.error(`Failed to load dependency: ${depName}`, error);
+				return [];
+			}
+		})
+	);
+
+	return dependencyFiles.flat();
+}
+
+async function loadItem(block: string, visited = new Set<string>()): Promise<HighlightedBlock> {
+	// Prevent infinite loops
+	if (visited.has(block)) {
+		throw new Error(`Circular dependency detected: ${block}`);
+	}
+	visited.add(block);
+
 	const { default: mod } = await import(`../../../../__registry__/json/${block}.json`);
 	const item = registryItemSchema.parse(mod);
 	// const meta = blockMeta[item.name as keyof typeof blockMeta];
@@ -40,9 +73,17 @@ async function loadItem(block: string): Promise<HighlightedBlock> {
 		return { ...file, highlightedContent, target };
 	});
 
+	let allFiles = await Promise.all(files);
+
+	// Load registry dependencies and include their files
+	if (item.registryDependencies && item.registryDependencies.length > 0) {
+		const dependencyFiles = await loadRegistryDependencies(item.registryDependencies, visited);
+		allFiles = [...allFiles, ...dependencyFiles];
+	}
+
 	return highlightedBlockSchema.parse({
 		...item,
-		files: await Promise.all(files)
+		files: allFiles
 		// description: meta?.description,
 		// meta
 	});
