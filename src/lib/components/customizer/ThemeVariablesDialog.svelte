@@ -11,12 +11,13 @@
 	import PmAddComp from '../pm-add-comp.svelte';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
 	import PmBlock from '../pm-block.svelte';
+	import * as Select from '$lib/components/ui/select';
 
 	const userConfig = UserConfigContext.get();
 
 	const FILE_NAME = 'app.css';
 
-	const colorFormat = $derived(userConfig.settings.colorFormat);
+	let colorFormat = $derived(userConfig.settings.colorFormat);
 	const activeTheme = $derived(userConfig.settings.activeTheme);
 	const themeCSS = $derived(generateThemeCode(activeTheme.cssVars, colorFormat));
 
@@ -93,7 +94,7 @@
 	</Dialog.Trigger>
 	<Dialog.Content
 		bind:ref={contentRef}
-		class="flex min-w-0 flex-col gap-6 sm:max-w-[90%]"
+		class="flex min-w-0 flex-col gap-4 sm:max-w-[90%]"
 		onOpenAutoFocus={(e) => {
 			if (!contentRef) return;
 			const activeItem = contentRef.querySelector('button[data-active=true]') as HTMLElement | null;
@@ -115,6 +116,23 @@
 		{:else}
 			<PmBlock command="CLI is only available for pre-built themes" />
 		{/if}
+
+		<Select.Root
+			type="single"
+			bind:value={() => colorFormat, (v) => userConfig.setSettings({ colorFormat: v })}
+		>
+			<Select.Trigger
+				class="ml-auto w-fit cursor-pointer gap-1 border bg-card outline-hidden focus:border-border focus:ring-transparent focus-visible:border"
+			>
+				{colorFormat.toUpperCase() || 'Format'}
+			</Select.Trigger>
+			<Select.Content>
+				<Select.Item value="oklch">OKLCH</Select.Item>
+				<Select.Item value="hsl">HSL</Select.Item>
+				<Select.Item value="rgb">RGB</Select.Item>
+				<Select.Item value="hex">HEX</Select.Item>
+			</Select.Content>
+		</Select.Root>
 
 		<div
 			class="group/block-view-wrapper flex w-full min-w-0 flex-col-reverse items-stretch gap-4 overflow-hidden md:flex-col [&_pre]:!px-4"
