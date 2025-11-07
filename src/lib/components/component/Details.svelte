@@ -16,9 +16,11 @@
 	const source = $derived(componentsData as HighlightedBlock);
 	const clipboard = new UseClipboard();
 
+	export const copyPromptText = `I’m looking at this shadcn-studio-svelte documentation: ${PUBLIC_URL}/docs/components/${componentsData.name}.
+Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`;
+
 	function handleCopyPrompt(e: MouseEvent) {
-		clipboard.copy(`I’m looking at this shadcn-studio-svelte documentation: ${PUBLIC_URL}/docs/components/${componentsData.name}.
-Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`);
+		clipboard.copy(copyPromptText);
 	}
 </script>
 

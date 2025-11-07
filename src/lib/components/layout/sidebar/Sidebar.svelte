@@ -22,6 +22,7 @@
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import { cn } from '$lib/utils';
 	import { categories } from '$lib/config/components.svelte';
+	import { gettingStartedPages } from '$lib/utils/pages';
 
 	const breakpoint = new MediaQuery('(max-width: 1023px)', false);
 	let isBreakpointReached = $derived(breakpoint.current);
@@ -96,9 +97,11 @@
 							</CollapsibleTrigger>
 							<CollapsibleContent>
 								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
-									<CustomSidebarMenuSubItem href="/docs/getting-started/introduction">
-										Introduction
-									</CustomSidebarMenuSubItem>
+									{#each gettingStartedPages as page (page.slug)}
+										<CustomSidebarMenuSubItem href={page.href}>
+											{page.title}
+										</CustomSidebarMenuSubItem>
+									{/each}
 								</Sidebar.MenuSub>
 							</CollapsibleContent>
 						</Sidebar.MenuItem>

@@ -1,5 +1,6 @@
 import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
+import { cn } from '$lib/utils';
 
 const highlightCodeCache = new Map<string, string>();
 const jsEngine = createJavaScriptRegexEngine();
@@ -8,12 +9,17 @@ const highlighterPromise = createHighlighterCore({
 	langs: [
 		import('@shikijs/langs/typescript'),
 		import('@shikijs/langs/svelte'),
-		import('@shikijs/langs/css')
+		import('@shikijs/langs/css'),
+		import('@shikijs/langs/bash')
 	],
 	engine: jsEngine
 });
 
-export async function highlightCode(code: string, language: string = 'svelte'): Promise<string> {
+export async function highlightCode(
+	code: string,
+	language: string = 'svelte',
+	standalone = false
+): Promise<string> {
 	const cachedCode = highlightCodeCache.get(code);
 	if (cachedCode) return cachedCode;
 
@@ -28,8 +34,10 @@ export async function highlightCode(code: string, language: string = 'svelte'): 
 		transformers: [
 			{
 				pre(node) {
-					node.properties['class'] =
-						'no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0 !bg-transparent';
+					node.properties['class'] = cn(
+						'no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0 !bg-transparent',
+						standalone && 'rounded-lg'
+					);
 				},
 				code(node) {
 					node.properties['data-line-numbers'] = '';

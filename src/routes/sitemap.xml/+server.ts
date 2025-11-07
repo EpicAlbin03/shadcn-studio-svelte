@@ -1,6 +1,7 @@
 import * as sitemap from 'super-sitemap';
 import type { RequestHandler } from '@sveltejs/kit';
 import { categories } from '$lib/config/components.svelte';
+import { PUBLIC_URL } from '$lib/config/site-config';
 
 export const GET: RequestHandler = async () => {
 	const categorySlugs = categories
@@ -8,7 +9,7 @@ export const GET: RequestHandler = async () => {
 		.map((category) => category.slug);
 
 	return await sitemap.response({
-		origin: 'https://shadcnstudio-svelte.netlify.app',
+		origin: PUBLIC_URL,
 		paramValues: {
 			'/docs/components/[category]': categorySlugs
 		},
