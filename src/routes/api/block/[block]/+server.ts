@@ -40,6 +40,11 @@ async function loadRegistryDependencies(
 				const depItem = await loadItem(depName, new Set(visited));
 				return depItem.files;
 			} catch (error) {
+				// Skip dependencies that don't exist in the registry
+				// (e.g., base UI components like "button" that are part of shadcn-svelte)
+				if (error instanceof Error && error.message.includes('Unknown variable dynamic import')) {
+					return [];
+				}
 				console.error(`Failed to load dependency: ${depName}`, error);
 				return [];
 			}
