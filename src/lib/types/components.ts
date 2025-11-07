@@ -1,11 +1,5 @@
 import type { HighlightedBlock } from '../../routes/api/block/[block]/+server';
 
-export type FileTree = {
-	name: string;
-	path?: string;
-	children?: FileTree[];
-};
-
 export type ComponentProps = {
 	name: string;
 	title?: string;
