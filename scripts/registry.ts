@@ -196,7 +196,10 @@ async function buildBlockRegistry(
 		const relativePath = path.relative(process.cwd(), filepath);
 		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
 
-		files.push({ path: relativePath, type });
+		// Create target path preserving directory structure from block root
+		const target = `${blockName}/${compPath.replace(/\\/g, '/')}`;
+
+		files.push({ path: relativePath, type, target } as RegistryItemFiles[number]);
 
 		const deps = await getFileDependencies(filepath, source);
 		if (!deps) continue;

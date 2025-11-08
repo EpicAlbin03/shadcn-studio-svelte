@@ -6,7 +6,8 @@ import { highlightCode } from '$lib/utils/highlight-code.js';
 import {
 	transformUIPath,
 	transformComponentPath,
-	transformImportPaths
+	transformImportPaths,
+	transformBlockPath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 
@@ -72,6 +73,8 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		let target;
 		if (item.type === 'registry:component') {
 			target = transformComponentPath(file.target);
+		} else if (item.type === 'registry:block') {
+			target = transformBlockPath(file.target);
 		} else {
 			target = transformUIPath(file.target);
 		}

@@ -32,4 +32,12 @@
 	>
 		Components
 	</a>
+	<a
+		href="/blocks"
+		class={cn('flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground', {
+			'font-medium text-primary hover:text-primary/80': pathname.startsWith('/blocks')
+		})}
+	>
+		Blocks
+	</a>
 </div>

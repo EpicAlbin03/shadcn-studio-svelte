@@ -98,22 +98,27 @@
 			"files": [
 				{
 					"type": "registry:page",
+					"target": "hero-section-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-section-01\\+page.svelte"
 				},
 				{
 					"type": "registry:component",
+					"target": "hero-section-01/components/header.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\header.svelte"
 				},
 				{
 					"type": "registry:component",
+					"target": "hero-section-01/components/hero-section-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\hero-section-01.svelte"
 				},
 				{
 					"type": "registry:component",
+					"target": "hero-section-01/components/logo.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\logo.svelte"
 				},
 				{
 					"type": "registry:component",
+					"target": "hero-section-01/assets/svg/logo.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-section-01\\assets\\svg\\logo.svelte"
 				}
 			]
