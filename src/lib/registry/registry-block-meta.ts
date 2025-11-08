@@ -9,19 +9,15 @@ type BlockMeta = {
 
 export const blockMeta = {
 	'hero-01': {
-		description:
-			'A striking hero section with a navigation header, showcasing effortless summer recipes for parties with an AI-powered badge and a call-to-action button, complemented by a vibrant display of dish images below.'
+		description: 'Hero 1'
 	},
 	'features-01': {
-		description:
-			'A three-column grid with a header, description, "See all features" button, and feature cards containing avatar icons, titles, and descriptions.'
+		description: 'Features 1'
 	},
 	'pricing-01': {
-		description:
-			'Interactive pricing cards with a toggle switch for monthly/annual options and plan comparison features for an intuitive pricing display.'
+		description: 'Pricing 1'
 	},
 	'testimonials-01': {
-		description:
-			'A carousel with customer feedback, star ratings, and avatars, along with side content for a dynamic and engaging display of testimonials.'
+		description: 'Testimonials 1'
 	}
 } as Record<BlockName, BlockMeta>;

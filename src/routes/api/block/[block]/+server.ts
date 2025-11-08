@@ -10,6 +10,7 @@ import {
 	transformBlockPath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
+import { blockMeta } from '$lib/registry/registry-block-meta.js';
 
 export type HighlightedBlock = z.output<typeof highlightedBlockSchema>;
 
@@ -64,7 +65,7 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 
 	const { default: mod } = await import(`../../../../__registry__/json/${block}.json`);
 	const item = registryItemSchema.parse(mod);
-	// const meta = blockMeta[item.name as keyof typeof blockMeta];
+	const meta = blockMeta[item.name as keyof typeof blockMeta];
 	const files = item.files.map(async (file) => {
 		const lang = path.extname(file.target).slice(1);
 
@@ -91,9 +92,9 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 
 	return highlightedBlockSchema.parse({
 		...item,
-		files: allFiles
-		// description: meta?.description,
-		// meta
+		files: allFiles,
+		description: meta?.description,
+		meta
 	});
 }
 
