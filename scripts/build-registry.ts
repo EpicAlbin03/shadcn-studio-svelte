@@ -51,6 +51,7 @@ export async function build(): Promise<void> {
 				lib: '$lib/registry/lib',
 				ui: '$lib/registry/ui',
 				components: '$lib/registry/components',
+				blocks: '$lib/registry/blocks',
 				hooks: '$lib/registry/hooks',
 				utils: '$lib/utils'
 			},

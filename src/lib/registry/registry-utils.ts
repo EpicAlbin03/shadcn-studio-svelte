@@ -14,10 +14,6 @@ export function transformComponentPath(target: string): string {
 	return `components/${target}`;
 }
 
-export function transformBlockPath(target: string): string {
-	return `blocks/${target}`;
-}
-
 export function createFileTreeForRegistryItemFiles(
 	files: Array<{ target: string; type: RegistryItemFile['type'] }>
 ): FileTree[] {

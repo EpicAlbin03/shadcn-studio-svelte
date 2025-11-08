@@ -74,7 +74,7 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		if (item.type === 'registry:component') {
 			target = transformComponentPath(file.target);
 		} else if (item.type === 'registry:block') {
-			target = transformBlockPath(file.target);
+			target = file.target;
 		} else {
 			target = transformUIPath(file.target);
 		}

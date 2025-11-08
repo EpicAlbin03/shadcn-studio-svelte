@@ -22,7 +22,7 @@
 		data-language={language}
 	>
 		<Icon class="opacity-70" />
-		{file.target.split('/').pop()}
+		{file.target}
 		<div class="ml-auto flex items-center gap-2">
 			{#if ctx.activeFileCodeToCopy}
 				<CopyButton text={ctx.activeFileCodeToCopy} class="mr-2" />
@@ -36,7 +36,7 @@
 		<Select.Root type="single" bind:value={() => ctx.activeFile ?? '', (v) => (ctx.activeFile = v)}>
 			<Select.Trigger class="w-64 justify-start [&>svg]:ml-auto">
 				<Icon class="!ml-0 opacity-70" />
-				{file.target.split('/').pop()}
+				{file.target}
 			</Select.Trigger>
 			<Select.Content>
 				{#if ctx.tree}
