@@ -30,7 +30,7 @@
 				size="icon"
 				variant="ghost"
 				class={cn(
-					'z-10 size-7 shrink-0 rounded-md p-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 [&>svg]:size-3',
+					'z-10 size-7 shrink-0 rounded-md p-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 [&>.lucide-check]:text-green-600 dark:[&>.lucide-check]:text-green-400 [&>svg]:size-3',
 					className
 				)}
 			>
