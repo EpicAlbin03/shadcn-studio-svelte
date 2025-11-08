@@ -1,5 +1,6 @@
 import { File, Circle } from '@lucide/svelte';
 import { categories } from '$lib/config/components.svelte';
+import { registryCategories } from '$lib/registry/registry-categories';
 
 type SearchData = {
 	title: string;
@@ -29,6 +30,11 @@ export const searchData: SearchData[] = [
 				icon: File,
 				name: 'Components',
 				href: '/components'
+			},
+			{
+				icon: File,
+				name: 'Blocks',
+				href: '/blocks'
 			}
 		]
 	},
@@ -45,13 +51,33 @@ export const searchData: SearchData[] = [
 	{
 		title: 'Components',
 		data: [
-			...categories
-				.filter((category) => !category.isComingSoon)
-				.map((category) => ({
+			...categories.map((category) => ({
+				icon: Circle,
+				name: category.name,
+				href: `/docs/components/${category.slug}`
+			}))
+		]
+	},
+	{
+		title: 'Block Categories',
+		data: [
+			...registryCategories.map((category) => ({
+				icon: Circle,
+				name: category.name,
+				href: `/blocks/${category.slug}`
+			}))
+		]
+	},
+	{
+		title: 'Blocks',
+		data: [
+			...registryCategories.flatMap((category) =>
+				category.blocks.map((block) => ({
 					icon: Circle,
-					name: category.name,
-					href: `/docs/components/${category.slug}`
+					name: block,
+					href: `/blocks/${category.slug}`
 				}))
+			)
 		]
 	}
 ];
