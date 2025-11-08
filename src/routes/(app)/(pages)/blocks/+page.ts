@@ -1,9 +1,8 @@
 import type { PageLoad } from './$types.js';
 import type { HighlightedBlock } from '../../../api/block/[block]/+server.js';
+import { FEATURED_BLOCKS } from '$lib/utils/blocks.js';
 
 export const prerender = true;
-
-const FEATURED_BLOCKS = ['hero-section-01'];
 
 export const load: PageLoad = async ({ fetch }) => {
 	const loadItems = FEATURED_BLOCKS.map(async (block) => {

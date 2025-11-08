@@ -3,6 +3,8 @@ import { blocks } from '../../__registry__/blocks.js';
 
 export type BlockName = (typeof blocks)[number];
 
+export const FEATURED_BLOCKS = ['hero-section-01'];
+
 export function isBlock(name: unknown): name is BlockName {
 	return blocks.includes(name as BlockName);
 }
