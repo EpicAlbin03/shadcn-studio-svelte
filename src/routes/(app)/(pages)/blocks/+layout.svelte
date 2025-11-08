@@ -11,9 +11,9 @@
 
 	let { children } = $props();
 
-	const title = 'Building Blocks for the Web';
+	const title = 'Shadcn Blocks';
 	const description =
-		'Clean, modern building blocks. Works with all Svelte projects. Copy and paste into your apps. Open Source. Free forever.';
+		'Explore free Shadcn UI blocks to speed up your development. Fully customizable, easy to use, and dark mode ready.';
 </script>
 
 <MetaData {title} {description} />
@@ -22,23 +22,23 @@
 	<PageHeader>
 		<PageHeaderHeading>{title}</PageHeaderHeading>
 		<PageHeaderDescription>{description}</PageHeaderDescription>
-		<PageActions>
+		<!-- <PageActions>
 			<Button href="#blocks" size="sm">Browse Blocks</Button>
-			<!-- <Button href="/docs/blocks" variant="ghost" size="sm">Add a block</Button> -->
-		</PageActions>
+			<Button href="/docs/blocks" variant="ghost" size="sm">Add a block</Button>
+		</PageActions> -->
 	</PageHeader>
 	<PageNav>
 		<BlocksNav />
-		<Button
+		<!-- <Button
 			size="sm"
 			variant="secondary"
-			href="/blocks/sidebar"
+			href="/blocks/marketing"
 			class="mr-7 hidden shadow-none lg:flex"
 		>
 			Browse all blocks
-		</Button>
+		</Button> -->
 	</PageNav>
 	<div class="container-wrapper flex-1 section-soft md:py-12">
-		<div class="container">{@render children?.()}</div>
+		<div class="container pb-24">{@render children?.()}</div>
 	</div>
 </FrontLayout>

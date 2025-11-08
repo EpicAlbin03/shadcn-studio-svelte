@@ -18,9 +18,9 @@
 			/>
 		</BlockViewer>
 	{/each}
-	<div class="container-wrapper">
+	<!-- <div class="container-wrapper">
 		<div class="container flex justify-center py-6">
-			<Button href="/blocks/sidebar" variant="outline">Browse more blocks</Button>
+			<Button href="/blocks/marketing" variant="outline">Browse more blocks</Button>
 		</div>
-	</div>
+	</div> -->
 </div>
