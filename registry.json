@@ -59,6 +59,26 @@
 			]
 		},
 		{
+			"name": "rating",
+			"type": "registry:ui",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\rating\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\rating\\rating-item.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\rating\\rating.svelte"
+				}
+			]
+		},
+		{
 			"name": "ripple-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-start"],
@@ -91,35 +111,89 @@
 			]
 		},
 		{
-			"name": "hero-section-01",
+			"name": "features-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "button", "card", "utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "features-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\features-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "features-01/components/features-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\features-01\\components\\features-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "hero-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
 			"registryDependencies": ["button", "dropdown-menu", "navigation-menu", "utils", "badge"],
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "hero-section-01/+page.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-section-01\\+page.svelte"
+					"target": "hero-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-01\\+page.svelte"
 				},
 				{
 					"type": "registry:component",
-					"target": "hero-section-01/components/header.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\header.svelte"
+					"target": "hero-01/components/header.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-01\\components\\header.svelte"
 				},
 				{
 					"type": "registry:component",
-					"target": "hero-section-01/components/hero-section-01.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\hero-section-01.svelte"
+					"target": "hero-01/components/hero-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-01\\components\\hero-01.svelte"
 				},
 				{
 					"type": "registry:component",
-					"target": "hero-section-01/components/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-section-01\\components\\logo.svelte"
+					"target": "hero-01/components/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-01\\components\\logo.svelte"
 				},
 				{
 					"type": "registry:component",
-					"target": "hero-section-01/assets/svg/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-section-01\\assets\\svg\\logo.svelte"
+					"target": "hero-01/assets/svg/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-01\\assets\\svg\\logo.svelte"
+				}
+			]
+		},
+		{
+			"name": "pricing-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["button", "card", "switch", "separator"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "pricing-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\pricing-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "pricing-01/components/pricing-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\pricing-01\\components\\pricing-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "testimonials-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["avatar", "card", "carousel", "local:rating"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "testimonials-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\testimonials-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "testimonials-01/components/testimonials-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\testimonials-01\\components\\testimonials-01.svelte"
 				}
 			]
 		},

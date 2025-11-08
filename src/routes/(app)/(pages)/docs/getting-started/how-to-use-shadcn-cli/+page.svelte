@@ -88,7 +88,7 @@
 			</a> for more information.
 		</p>
 		<div class="w-full">
-			<PmAddComp name="hero-section-01" />
+			<PmAddComp name="hero-01" />
 		</div>
 
 		<h2 class="text-xl font-bold">Installing Themes</h2>
@@ -139,7 +139,7 @@
 		<h2 class="text-xl font-bold">Installing Multiple Items</h2>
 		<p class="text-foreground/80">You can install multiple items at once by listing them:</p>
 		<div class="w-full">
-			<PmAddComp name={['button-01', 'hero-section-01', 'art-deco']} />
+			<PmAddComp name={['button-01', 'hero-01', 'art-deco']} />
 		</div>
 
 		<h2 class="text-xl font-bold">Force Overwriting Existing Files</h2>

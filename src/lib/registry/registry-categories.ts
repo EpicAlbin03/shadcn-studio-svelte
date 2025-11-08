@@ -3,7 +3,7 @@ export const registryCategories = [
 		name: 'Marketing',
 		slug: 'marketing',
 		hidden: false,
-		blocks: ['hero-section-01']
+		blocks: ['hero-01', 'features-01', 'pricing-01', 'testimonials-01']
 	},
 	{
 		name: 'Dashboard & App',

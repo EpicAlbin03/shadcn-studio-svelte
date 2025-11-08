@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header, { type NavigationSection } from './components/header.svelte';
-	import HeroSection01 from './components/hero-section-01.svelte';
+	import HeroSection01 from './components/hero-01.svelte';
 
 	const navigationData: NavigationSection[] = [
 		{
