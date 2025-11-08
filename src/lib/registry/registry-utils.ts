@@ -55,6 +55,7 @@ export function transformImportPaths(content: string): string {
 		ui: '$lib/components/ui',
 		utils: '$lib/utils',
 		components: '$lib/components',
+		blocks: '$lib/blocks',
 		hooks: '$lib/hooks',
 		lib: '$lib'
 	};
