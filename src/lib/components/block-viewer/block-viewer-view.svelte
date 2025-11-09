@@ -2,11 +2,59 @@
 	import { BlockViewerContext } from './block-viewer.svelte';
 	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import BlockViewerIframe from './block-viewer-iframe.svelte';
+	import { RESIZE_MESSAGE, REQUEST_RESIZE_MESSAGE } from '$lib/utils/blocks';
 
 	const ctx = BlockViewerContext.get();
 
-	// const iframeHtml = `<iframe title="${ctx.item.name}" src="/view/${ctx.item.name}" height="930" class="bg-background no-scrollbar relative z-20 hidden w-full md:block"></iframe>`;
+	const postIframeResizeRequest = () => {
+		const iframe = ctx.iframeEl;
+		if (!iframe?.contentWindow) return;
+
+		iframe.contentWindow.postMessage(
+			{
+				type: REQUEST_RESIZE_MESSAGE,
+				name: ctx.item.name
+			},
+			window.location.origin
+		);
+	};
+
+	const handleMessage = (event: MessageEvent<{ type: string; name: string; height: number }>) => {
+		if (event.origin !== window.location.origin) return;
+		if (!event.data || event.data.type !== RESIZE_MESSAGE) return;
+		if (event.data.name !== ctx.item.name) return;
+		if (typeof event.data.height !== 'number') return;
+
+		const nextHeight = `${Math.ceil(event.data.height)}px`;
+		if (ctx.iframeHeight !== nextHeight) {
+			ctx.iframeHeight = nextHeight;
+		}
+	};
+
+	$effect(() => {
+		const iframe = ctx.iframeEl;
+		ctx.iframeKey;
+		if (!iframe) return;
+
+		postIframeResizeRequest();
+
+		const handleLoad = () => postIframeResizeRequest();
+
+		let isReady = false;
+		try {
+			isReady = iframe.contentDocument?.readyState === 'complete';
+		} catch {
+			// Ignore cross-origin access errors
+		}
+
+		if (isReady) postIframeResizeRequest();
+
+		iframe.addEventListener('load', handleLoad);
+		return () => iframe.removeEventListener('load', handleLoad);
+	});
 </script>
+
+<svelte:window onmessage={handleMessage} />
 
 <div class="hidden group-data-[view=code]/block-view-wrapper:hidden md:h-(--height) lg:flex">
 	<div class="relative grid w-full gap-4">

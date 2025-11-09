@@ -11,11 +11,13 @@
 		USER_SETTINGS_COOKIE_NAME
 	} from '$lib/config/user-config.svelte';
 	import type { PageProps } from './$types.js';
+	import { useResizeObserver } from 'runed';
+	import { RESIZE_MESSAGE, REQUEST_RESIZE_MESSAGE } from '$lib/utils/blocks';
 
 	let { data }: PageProps = $props();
+	let viewContainer = $state<HTMLDivElement | null>(null);
 
 	const getStoredThemeStyles = (): ThemeStyles | null => {
-		if (!browser) return null;
 		const cookieEntry = document.cookie
 			.split(';')
 			.map((cookie) => cookie.trim())
@@ -33,27 +35,63 @@
 	};
 
 	const applyStoredTheme = () => {
-		if (!browser) return;
 		const themeStyles = getStoredThemeStyles();
-		if (!themeStyles) return;
-		applyThemeStyles(themeStyles);
+		if (themeStyles) {
+			applyThemeStyles(themeStyles);
+		}
 	};
-
-	onMount(() => {
-		applyStoredTheme();
-	});
 
 	const handleStorage = (event: StorageEvent) => {
 		if (event.key === MODE_STORAGE_KEY) {
 			applyStoredTheme();
 		}
 	};
+
+	const handleMessage = (event: MessageEvent<{ type: string; name: string }>) => {
+		if (event.origin !== window.location.origin) return;
+		if (event.data?.type !== REQUEST_RESIZE_MESSAGE) return;
+		if (event.data.name !== data.meta.name) return;
+		if (!viewContainer) return;
+		postHeight(viewContainer.getBoundingClientRect().height);
+	};
+
+	const postHeight = (height: number) => {
+		if (!height || height < 0) return;
+
+		const nextHeight = Math.ceil(height);
+		window.parent?.postMessage(
+			{
+				type: RESIZE_MESSAGE,
+				name: data.meta.name,
+				height: nextHeight
+			},
+			window.location.origin
+		);
+	};
+
+	if (browser) {
+		useResizeObserver(
+			() => viewContainer,
+			([entry]) => {
+				if (entry) {
+					postHeight(entry.contentRect.height);
+				}
+			}
+		);
+	}
+
+	onMount(() => {
+		applyStoredTheme();
+		if (viewContainer) {
+			postHeight(viewContainer.getBoundingClientRect().height);
+		}
+	});
 </script>
 
-<svelte:window onstorage={handleStorage} />
+<svelte:window onstorage={handleStorage} onmessage={handleMessage} />
 
 <MetaData title={data.meta.name} description={data.meta.description} ogType="article" />
 
-<div class={cn('bg-background', data.meta?.className)}>
+<div class={cn('bg-background', data.meta?.className)} bind:this={viewContainer}>
 	<data.component />
 </div>

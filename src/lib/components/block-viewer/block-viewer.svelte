@@ -17,6 +17,8 @@
 		resizablePaneRef: Pane | null;
 		tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
 		iframeKey: number;
+		iframeHeight: string;
+		iframeEl: HTMLIFrameElement | null;
 		activeFileCodeToCopy: string;
 		highlightedFiles: HighlightedBlock['files'];
 		showTree?: boolean;
@@ -53,6 +55,8 @@
 	let resizablePaneRef = $state<Pane>(null!);
 	let iframeKey = $state<number>(0);
 	let activeFileCodeToCopy = $state<string>('');
+	let iframeHeight = $state<string>(item.meta?.iframeHeight ?? '930px');
+	let iframeEl = $state<HTMLIFrameElement | null>(null);
 	const highlightedFiles = $derived(item.files);
 
 	BlockViewerContext.set({
@@ -64,6 +68,18 @@
 		},
 		set iframeKey(value) {
 			iframeKey = value;
+		},
+		get iframeHeight() {
+			return iframeHeight;
+		},
+		set iframeHeight(value) {
+			iframeHeight = value;
+		},
+		get iframeEl() {
+			return iframeEl;
+		},
+		set iframeEl(value) {
+			iframeEl = value;
 		},
 		get view() {
 			return view;
@@ -135,10 +151,10 @@
 	id={item.name}
 	data-view={view}
 	class="group/block-view-wrapper flex min-w-0 scroll-mt-24 flex-col-reverse items-stretch gap-4 overflow-hidden md:flex-col"
-	style="--height: {item.meta?.iframeHeight ?? '930px'}"
->
-	<BlockViewerToolbar />
-	<BlockViewerView />
+	style="--height: {iframeHeight}"
+	>
+		<BlockViewerToolbar />
+		<BlockViewerView />
 	<ComponentCodeViewerCode />
 	<BlockViewerViewMobile>{@render children?.()}</BlockViewerViewMobile>
 </div>
