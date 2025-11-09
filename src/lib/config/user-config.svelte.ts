@@ -6,6 +6,7 @@ import { Context, PersistedState } from 'runed';
 import { z } from 'zod/v4';
 
 export const USER_SETTINGS_COOKIE_NAME = 'scnstudio_user_config';
+export const MODE_STORAGE_KEY = 'mode-watcher-mode';
 
 const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('pnpm');
 const colorFormatSchema = z.enum(['hex', 'rgb', 'hsl', 'oklch']).default('oklch');
