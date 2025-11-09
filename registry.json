@@ -111,6 +111,96 @@
 			]
 		},
 		{
+			"name": "about-us-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "about-us-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\about-us-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "about-us-01/components/about-us-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\about-us-01\\components\\about-us-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "blog-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button", "card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "blog-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\blog-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "blog-01/components/blog-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\blog-01\\components\\blog-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "contact-us-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["card", "avatar"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "contact-us-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\contact-us-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "contact-us-01/components/contact-us-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\contact-us-01\\components\\contact-us-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "cta-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "cta-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "cta-01/components/cta-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-01\\components\\cta-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "faq-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["accordion"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "faq-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\faq-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "faq-01/components/faq-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\faq-01\\components\\faq-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "features-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -125,6 +215,52 @@
 					"type": "registry:component",
 					"target": "features-01/components/features-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\features-01\\components\\features-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "footer-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["separator", "utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "footer-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\footer-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "footer-01/components/footer-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\footer-01\\components\\footer-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "footer-01/components/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\footer-01\\components\\logo.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "footer-01/assets/svg/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\footer-01\\assets\\svg\\logo.svelte"
+				}
+			]
+		},
+		{
+			"name": "gallery-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "gallery-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\gallery-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "gallery-01/components/gallery-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\gallery-01\\components\\gallery-01.svelte"
 				}
 			]
 		},
@@ -162,6 +298,70 @@
 			]
 		},
 		{
+			"name": "logo-cloud-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "logo-cloud-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\logo-cloud-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "logo-cloud-01/components/logo-cloud-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\logo-cloud-01\\components\\logo-cloud-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "navbar-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["utils", "button", "dropdown-menu"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "navbar-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\navbar-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "navbar-01/components/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\navbar-01\\components\\logo.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "navbar-01/components/navbar-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\navbar-01\\components\\navbar-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "navbar-01/assets/svg/logo.svelte",
+					"path": "src\\lib\\registry\\blocks\\navbar-01\\assets\\svg\\logo.svelte"
+				}
+			]
+		},
+		{
+			"name": "portfolio-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["badge", "separator"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "portfolio-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\portfolio-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "portfolio-01/components/portfolio-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\portfolio-01\\components\\portfolio-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "pricing-01",
 			"type": "registry:block",
 			"dependencies": [],
@@ -176,6 +376,42 @@
 					"type": "registry:component",
 					"target": "pricing-01/components/pricing-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\pricing-01\\components\\pricing-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "social-proof-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "social-proof-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\social-proof-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "social-proof-01/components/social-proof-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\social-proof-01\\components\\social-proof-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "team-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["card", "separator"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "team-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\team-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "team-01/components/team-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\team-01\\components\\team-01.svelte"
 				}
 			]
 		},

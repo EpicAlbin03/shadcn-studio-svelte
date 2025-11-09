@@ -19,5 +19,41 @@ export const blockMeta = {
 	},
 	'testimonials-01': {
 		description: 'Testimonials 1'
+	},
+	'social-proof-01': {
+		description: 'Social Proof 1'
+	},
+	'portfolio-01': {
+		description: 'Portfolio 1'
+	},
+	'team-01': {
+		description: 'Team 1'
+	},
+	'cta-01': {
+		description: 'CTA 1'
+	},
+	'logo-cloud-01': {
+		description: 'Logo Cloud 1'
+	},
+	'faq-01': {
+		description: 'FAQ 1'
+	},
+	'gallery-01': {
+		description: 'Gallery 1'
+	},
+	'blog-01': {
+		description: 'Blog 1'
+	},
+	'about-us-01': {
+		description: 'About Us 1'
+	},
+	'contact-us-01': {
+		description: 'Contact Us 1'
+	},
+	'navbar-01': {
+		description: 'Navbar 1'
+	},
+	'footer-01': {
+		description: 'Footer 1'
 	}
 } as Record<BlockName, BlockMeta>;
