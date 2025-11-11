@@ -1,4 +1,9 @@
-import { defaultTheme } from '$lib/assets/data/preset-themes';
+import {
+	DEFAULT_FONT_MONO,
+	DEFAULT_FONT_SANS,
+	DEFAULT_FONT_SERIF,
+	defaultTheme
+} from '$lib/assets/data/preset-themes';
 import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { colorFormatter } from './color-converter';
 import type { ColorFormat } from './color-converter';
@@ -83,9 +88,9 @@ export const generateThemeCode = (
   --sidebar-border: ${formatColor(themeStyles.light['sidebar-border'])};
   --sidebar-ring: ${formatColor(themeStyles.light['sidebar-ring'])};
 
-  --font-sans: ${themeStyles.light['font-sans']};
-  --font-serif: ${themeStyles.light['font-serif']};
-  --font-mono: ${themeStyles.light['font-mono']};
+  --font-sans: ${themeStyles.light['font-sans'] ?? DEFAULT_FONT_SANS};
+  --font-serif: ${themeStyles.light['font-serif'] ?? DEFAULT_FONT_SERIF};
+  --font-mono: ${themeStyles.light['font-mono'] ?? DEFAULT_FONT_MONO};
 
   --radius: ${themeStyles.light.radius};
   ${generateShadowVariables(getShadowMap(themeStyles.light, colorFormat))}
