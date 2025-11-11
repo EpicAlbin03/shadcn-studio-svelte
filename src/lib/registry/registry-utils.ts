@@ -11,11 +11,35 @@ export function transformUIPath(target: string): string {
 }
 
 export function transformComponentPath(target: string): string {
-	return `components/${target}`;
+	return `lib/components/${target}`;
 }
 
 export function transformLibPath(target: string): string {
 	return `lib/${target}`;
+}
+
+export function transformBlockPath(target: string): string {
+	return `lib/components/${target}`;
+}
+
+function collapseSingleChildFolders(node: FileTree): FileTree {
+	if (node.path) {
+		return node;
+	}
+
+	if (node.children) {
+		node.children = node.children.map(collapseSingleChildFolders);
+
+		if (node.children.length === 1 && node.children[0].children) {
+			const child = node.children[0];
+			return {
+				name: `${node.name}/${child.name}`,
+				children: child.children
+			};
+		}
+	}
+
+	return node;
 }
 
 export function createFileTreeForRegistryItemFiles(
@@ -51,7 +75,8 @@ export function createFileTreeForRegistryItemFiles(
 		}
 	}
 
-	return root;
+	// Collapse single-child folders
+	return root.map(collapseSingleChildFolders);
 }
 
 export function transformImportPaths(content: string): string {
@@ -59,7 +84,7 @@ export function transformImportPaths(content: string): string {
 		ui: '$lib/components/ui',
 		utils: '$lib/utils',
 		components: '$lib/components',
-		blocks: '$lib/blocks',
+		blocks: '$lib/components',
 		hooks: '$lib/hooks',
 		lib: '$lib'
 	};

@@ -73,14 +73,19 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		file.content = transformImportPaths(file.content);
 		const highlightedContent = await highlightCode(file.content, lang);
 		let target;
-		if (item.type === 'registry:component') {
+
+		if (file.type === 'registry:page') {
+			target = file.target;
+		} else if (item.type === 'registry:component') {
 			target = transformComponentPath(file.target);
 		} else if (item.type === 'registry:block') {
-			target = file.target;
+			target = transformBlockPath(file.target);
 		} else if (item.type === 'registry:lib') {
 			target = transformLibPath(file.target);
-		} else {
+		} else if (item.type === 'registry:ui') {
 			target = transformUIPath(file.target);
+		} else {
+			target = file.target;
 		}
 		return { ...file, highlightedContent, target };
 	});

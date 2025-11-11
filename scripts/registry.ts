@@ -197,7 +197,13 @@ async function buildBlockRegistry(
 		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
 
 		// Create target path preserving directory structure from block root
-		const target = `${blockName}/${compPath.replace(/\\/g, '/')}`;
+		// For page files, place them in routes/ instead of block folder
+		let target: string;
+		if (isPage) {
+			target = `routes/${compPath.replace(/\\/g, '/')}`;
+		} else {
+			target = `${blockName}/${compPath.replace(/\\/g, '/')}`;
+		}
 
 		files.push({ path: relativePath, type, target } as RegistryItemFiles[number]);
 

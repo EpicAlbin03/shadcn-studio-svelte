@@ -118,7 +118,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "about-us-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\about-us-01\\+page.svelte"
 				},
 				{
@@ -136,7 +136,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "blog-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\blog-01\\+page.svelte"
 				},
 				{
@@ -154,7 +154,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "contact-us-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\contact-us-01\\+page.svelte"
 				},
 				{
@@ -172,7 +172,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "cta-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\cta-01\\+page.svelte"
 				},
 				{
@@ -190,7 +190,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "faq-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\faq-01\\+page.svelte"
 				},
 				{
@@ -208,7 +208,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "features-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\features-01\\+page.svelte"
 				},
 				{
@@ -226,7 +226,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "footer-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\footer-01\\+page.svelte"
 				},
 				{
@@ -244,7 +244,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "gallery-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\gallery-01\\+page.svelte"
 				},
 				{
@@ -269,7 +269,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "hero-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-01\\+page.svelte"
 				},
 				{
@@ -292,7 +292,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "logo-cloud-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\logo-cloud-01\\+page.svelte"
 				},
 				{
@@ -310,7 +310,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "navbar-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\navbar-01\\+page.svelte"
 				},
 				{
@@ -328,7 +328,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "portfolio-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\portfolio-01\\+page.svelte"
 				},
 				{
@@ -346,7 +346,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "pricing-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\pricing-01\\+page.svelte"
 				},
 				{
@@ -364,7 +364,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "social-proof-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\social-proof-01\\+page.svelte"
 				},
 				{
@@ -382,7 +382,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "team-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\team-01\\+page.svelte"
 				},
 				{
@@ -400,7 +400,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "testimonials-01/+page.svelte",
+					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\testimonials-01\\+page.svelte"
 				},
 				{
