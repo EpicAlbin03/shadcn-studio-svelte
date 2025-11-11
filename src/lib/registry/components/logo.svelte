@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LogoSvg from '../assets/svg/logo.svelte';
+	import LogoSvg from '$lib/registry/lib/assets/svg/logo.svelte';
 	import { cn } from '$lib/utils';
 
 	type Props = { class?: string };

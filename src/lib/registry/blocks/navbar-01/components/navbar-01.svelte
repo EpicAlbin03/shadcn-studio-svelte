@@ -2,7 +2,7 @@
 	import { MenuIcon, SearchIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import Logo from './logo.svelte';
+	import Logo from '$lib/registry/components/logo.svelte';
 
 	type NavigationItem = {
 		title: string;

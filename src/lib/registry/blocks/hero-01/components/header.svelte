@@ -4,7 +4,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 	import { cn } from '$lib/utils';
-	import Logo from './logo.svelte';
+	import Logo from '$lib/registry/components/logo.svelte';
 
 	export type NavigationSection = {
 		title: string;

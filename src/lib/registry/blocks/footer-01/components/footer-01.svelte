@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from '@lucide/svelte';
 	import { Separator } from '$lib/components/ui/separator';
-	import Logo from './logo.svelte';
+	import Logo from '$lib/registry/components/logo.svelte';
 </script>
 
 <footer>

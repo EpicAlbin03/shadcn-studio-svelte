@@ -319,16 +319,34 @@ async function buildComponentRegistry(
 }
 
 async function crawlLib(rootPath: string): Promise<RegistryItems> {
-	const dir = fs.readdirSync(rootPath, { withFileTypes: true });
+	const dir = fs.readdirSync(rootPath, { withFileTypes: true, recursive: true });
 	const items: RegistryItems = [];
 	for (const dirent of dir) {
 		if (!dirent.isFile()) continue;
 
-		const [name] = dirent.name.split('.ts');
+		// Handle both .ts and .svelte files
+		const nameMatch = dirent.name.match(/^(.+)\.(ts|svelte)$/);
+		if (!nameMatch) continue;
 
-		const filepath = path.join(rootPath, dirent.name);
+		const basename = nameMatch[1];
+		const filepath = path.join(dirent.parentPath || rootPath, dirent.name);
 		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
 		const relativePath = path.relative(process.cwd(), filepath);
+
+		// For nested files, create a name that includes the parent path to avoid conflicts
+		// e.g., lib/assets/svg/logo.svelte -> "logo-svg"
+		const relativeToLib = path.relative(rootPath, filepath);
+		const pathParts = relativeToLib.split(path.sep);
+		let name: string;
+
+		if (pathParts.length > 1) {
+			// Nested file - include parent directory in name
+			// e.g., assets/svg/logo.svelte -> logo-svg
+			const parentDir = pathParts[pathParts.length - 2];
+			name = `${basename}-${parentDir}`;
+		} else {
+			name = basename;
+		}
 
 		const { registryDependencies, packageDependencies } = await getFileDependencies(
 			filepath,
@@ -557,6 +575,23 @@ async function getFileDependencies(
 				} else if (source.includes('hook')) {
 					const hook = source.split('/').at(-1)!.split('.')[0];
 					registryDependencies.add(`local:${hook}`);
+				} else if (source.includes('components')) {
+					const component = source.split('/').at(-1)!.split('.')[0];
+					registryDependencies.add(`local:${component}`);
+				} else if (source.includes('lib')) {
+					// For lib files, check if it's nested (has parent directory)
+					// e.g., $lib/registry/lib/assets/svg/logo.svelte -> logo-svg
+					const parts = source.split('/');
+					const fileName = parts.at(-1)!.split('.')[0];
+					const libIndex = parts.indexOf('lib');
+
+					// If there are more than 1 directory after 'lib', it's nested
+					if (parts.length - libIndex > 2) {
+						const parentDir = parts.at(-2)!;
+						registryDependencies.add(`local:${fileName}-${parentDir}`);
+					} else {
+						registryDependencies.add(`local:${fileName}`);
+					}
 				}
 			} else if (source.startsWith('$lib/')) {
 				if (source.includes('ui')) {

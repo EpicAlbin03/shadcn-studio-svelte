@@ -222,7 +222,7 @@
 			"name": "footer-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["separator", "utils"],
+			"registryDependencies": ["separator", "local:logo"],
 			"files": [
 				{
 					"type": "registry:page",
@@ -233,16 +233,6 @@
 					"type": "registry:component",
 					"target": "footer-01/components/footer-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\footer-01\\components\\footer-01.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "footer-01/components/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\footer-01\\components\\logo.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "footer-01/assets/svg/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\footer-01\\assets\\svg\\logo.svelte"
 				}
 			]
 		},
@@ -268,7 +258,14 @@
 			"name": "hero-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["button", "dropdown-menu", "navigation-menu", "utils", "badge"],
+			"registryDependencies": [
+				"button",
+				"dropdown-menu",
+				"navigation-menu",
+				"utils",
+				"local:logo",
+				"badge"
+			],
 			"files": [
 				{
 					"type": "registry:page",
@@ -284,16 +281,6 @@
 					"type": "registry:component",
 					"target": "hero-01/components/hero-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-01\\components\\hero-01.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "hero-01/components/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-01\\components\\logo.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "hero-01/assets/svg/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\hero-01\\assets\\svg\\logo.svelte"
 				}
 			]
 		},
@@ -319,7 +306,7 @@
 			"name": "navbar-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["utils", "button", "dropdown-menu"],
+			"registryDependencies": ["button", "dropdown-menu", "local:logo"],
 			"files": [
 				{
 					"type": "registry:page",
@@ -328,18 +315,8 @@
 				},
 				{
 					"type": "registry:component",
-					"target": "navbar-01/components/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\navbar-01\\components\\logo.svelte"
-				},
-				{
-					"type": "registry:component",
 					"target": "navbar-01/components/navbar-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\navbar-01\\components\\navbar-01.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "navbar-01/assets/svg/logo.svelte",
-					"path": "src\\lib\\registry\\blocks\\navbar-01\\assets\\svg\\logo.svelte"
 				}
 			]
 		},
@@ -5190,6 +5167,18 @@
 			]
 		},
 		{
+			"name": "logo",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:logo-svg", "utils"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\logo.svelte"
+				}
+			]
+		},
+		{
 			"name": "pagination-01",
 			"type": "registry:component",
 			"dependencies": ["@lucide/svelte"],
@@ -7763,6 +7752,18 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\tooltip-17.svelte"
+				}
+			]
+		},
+		{
+			"name": "logo-svg",
+			"type": "registry:lib",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:lib",
+					"path": "src\\lib\\registry\\lib\\assets\\svg\\logo.svelte"
 				}
 			]
 		},
