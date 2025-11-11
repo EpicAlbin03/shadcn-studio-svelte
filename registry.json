@@ -7768,7 +7768,7 @@
 			]
 		},
 		{
-			"name": "default",
+			"name": "themes/default",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -7897,7 +7897,7 @@
 			}
 		},
 		{
-			"name": "marshmallow",
+			"name": "themes/marshmallow",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8026,7 +8026,7 @@
 			}
 		},
 		{
-			"name": "art-deco",
+			"name": "themes/art-deco",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8155,7 +8155,7 @@
 			}
 		},
 		{
-			"name": "vs-code",
+			"name": "themes/vs-code",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8284,7 +8284,7 @@
 			}
 		},
 		{
-			"name": "spotify",
+			"name": "themes/spotify",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8413,7 +8413,7 @@
 			}
 		},
 		{
-			"name": "summer",
+			"name": "themes/summer",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8542,7 +8542,7 @@
 			}
 		},
 		{
-			"name": "material-design",
+			"name": "themes/material-design",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8671,7 +8671,7 @@
 			}
 		},
 		{
-			"name": "marvel",
+			"name": "themes/marvel",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8800,7 +8800,7 @@
 			}
 		},
 		{
-			"name": "valorant",
+			"name": "themes/valorant",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -8929,7 +8929,7 @@
 			}
 		},
 		{
-			"name": "ghibli-studio",
+			"name": "themes/ghibli-studio",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9058,7 +9058,7 @@
 			}
 		},
 		{
-			"name": "modern-minimal",
+			"name": "themes/modern-minimal",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9187,7 +9187,7 @@
 			}
 		},
 		{
-			"name": "nature",
+			"name": "themes/nature",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9316,7 +9316,7 @@
 			}
 		},
 		{
-			"name": "elegant-luxury",
+			"name": "themes/elegant-luxury",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9445,7 +9445,7 @@
 			}
 		},
 		{
-			"name": "neo-brutalism",
+			"name": "themes/neo-brutalism",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9574,7 +9574,7 @@
 			}
 		},
 		{
-			"name": "pastel-dreams",
+			"name": "themes/pastel-dreams",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9703,7 +9703,7 @@
 			}
 		},
 		{
-			"name": "clean-slate",
+			"name": "themes/clean-slate",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9832,7 +9832,7 @@
 			}
 		},
 		{
-			"name": "midnight-bloom",
+			"name": "themes/midnight-bloom",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -9961,7 +9961,7 @@
 			}
 		},
 		{
-			"name": "sunset-horizon",
+			"name": "themes/sunset-horizon",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -10090,7 +10090,7 @@
 			}
 		},
 		{
-			"name": "claude",
+			"name": "themes/claude",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -10219,7 +10219,7 @@
 			}
 		},
 		{
-			"name": "caffeine",
+			"name": "themes/caffeine",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -10348,7 +10348,7 @@
 			}
 		},
 		{
-			"name": "corporate",
+			"name": "themes/corporate",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -10477,7 +10477,7 @@
 			}
 		},
 		{
-			"name": "slack",
+			"name": "themes/slack",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],
@@ -10606,7 +10606,7 @@
 			}
 		},
 		{
-			"name": "perplexity",
+			"name": "themes/perplexity",
 			"type": "registry:style",
 			"registryDependencies": [],
 			"files": [],

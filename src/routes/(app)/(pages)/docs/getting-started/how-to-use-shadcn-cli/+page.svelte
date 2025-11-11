@@ -129,7 +129,7 @@
 		</Alert.Root>
 
 		<div class="w-full">
-			<PmAddComp name="art-deco" />
+			<PmAddComp name="themes/art-deco" />
 		</div>
 	</div>
 
@@ -139,7 +139,7 @@
 		<h2 class="text-xl font-bold">Installing Multiple Items</h2>
 		<p class="text-foreground/80">You can install multiple items at once by listing them:</p>
 		<div class="w-full">
-			<PmAddComp name={['button-01', 'hero-01', 'art-deco']} />
+			<PmAddComp name={['button-01', 'hero-01', 'themes/art-deco']} />
 		</div>
 
 		<h2 class="text-xl font-bold">Force Overwriting Existing Files</h2>

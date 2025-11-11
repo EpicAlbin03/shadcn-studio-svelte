@@ -506,7 +506,7 @@ function buildThemesRegistry(): RegistryItems {
 		};
 
 		items.push({
-			name: theme.name,
+			name: `themes/${theme.name}`,
 			type: 'registry:style',
 			files: [],
 			registryDependencies: [],

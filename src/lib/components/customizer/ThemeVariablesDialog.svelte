@@ -112,7 +112,7 @@
 		</Dialog.Header>
 
 		{#if activeTheme.name in presetThemesMap}
-			<PmAddComp name={activeTheme.name} />
+			<PmAddComp name={`themes/${activeTheme.name}`} />
 		{:else}
 			<PmBlock command="CLI is only available for pre-built themes" />
 		{/if}
