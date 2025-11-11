@@ -7763,6 +7763,7 @@
 			"files": [
 				{
 					"type": "registry:lib",
+					"target": "assets/svg/logo.svelte",
 					"path": "src\\lib\\registry\\lib\\assets\\svg\\logo.svelte"
 				}
 			]

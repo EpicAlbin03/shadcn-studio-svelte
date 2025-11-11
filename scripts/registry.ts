@@ -318,9 +318,10 @@ async function buildComponentRegistry(
 	} satisfies RegistryItems[number];
 }
 
-async function crawlLib(rootPath: string): Promise<RegistryItems> {
-	const dir = fs.readdirSync(rootPath, { withFileTypes: true, recursive: true });
+async function buildLibRegistry(libPath: string, libName: string): Promise<RegistryItems> {
+	const dir = fs.readdirSync(libPath, { withFileTypes: true, recursive: true });
 	const items: RegistryItems = [];
+
 	for (const dirent of dir) {
 		if (!dirent.isFile()) continue;
 
@@ -329,19 +330,22 @@ async function crawlLib(rootPath: string): Promise<RegistryItems> {
 		if (!nameMatch) continue;
 
 		const basename = nameMatch[1];
-		const filepath = path.join(dirent.parentPath || rootPath, dirent.name);
-		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
-		const relativePath = path.relative(process.cwd(), filepath);
+		const absPath = path.join(dirent.parentPath || libPath, dirent.name);
+		const relativePath = path.relative(process.cwd(), absPath);
+		const source = fs.readFileSync(absPath, { encoding: 'utf8' });
+
+		// Build the relative path from libPath to the file for target
+		const relativeToLib = path.relative(libPath, absPath);
+		const target = `${libName}/${relativeToLib.replace(/\\/g, '/')}`;
 
 		// For nested files, create a name that includes the parent path to avoid conflicts
-		// e.g., lib/assets/svg/logo.svelte -> "logo-svg"
-		const relativeToLib = path.relative(rootPath, filepath);
+		// e.g., assets/svg/logo.svelte -> "logo-svg"
 		const pathParts = relativeToLib.split(path.sep);
 		let name: string;
 
 		if (pathParts.length > 1) {
 			// Nested file - include parent directory in name
-			// e.g., assets/svg/logo.svelte -> logo-svg
+			// e.g., svg/logo.svelte -> logo-svg
 			const parentDir = pathParts[pathParts.length - 2];
 			name = `${basename}-${parentDir}`;
 		} else {
@@ -349,12 +353,51 @@ async function crawlLib(rootPath: string): Promise<RegistryItems> {
 		}
 
 		const { registryDependencies, packageDependencies } = await getFileDependencies(
-			filepath,
+			absPath,
 			source
 		);
 
 		items.push({
 			name,
+			type: 'registry:lib',
+			files: [{ path: relativePath, type: 'registry:lib', target } as RegistryItemFiles[number]],
+			registryDependencies: Array.from(registryDependencies),
+			dependencies: Array.from(packageDependencies)
+		});
+	}
+
+	return items;
+}
+
+async function crawlLib(rootPath: string): Promise<RegistryItems> {
+	const dir = fs.readdirSync(rootPath, { withFileTypes: true });
+	const items: RegistryItems = [];
+
+	for (const dirent of dir) {
+		const filepath = path.join(rootPath, dirent.name);
+
+		if (!dirent.isFile()) {
+			// If it's a directory, use buildLibRegistry to process all files in it
+			const dirItems = await buildLibRegistry(filepath, dirent.name);
+			items.push(...dirItems);
+			continue;
+		}
+
+		// Handle both .ts and .svelte files
+		const nameMatch = dirent.name.match(/^(.+)\.(ts|svelte)$/);
+		if (!nameMatch) continue;
+
+		const basename = nameMatch[1];
+		const source = fs.readFileSync(filepath, { encoding: 'utf8' });
+		const relativePath = path.relative(process.cwd(), filepath);
+
+		const { registryDependencies, packageDependencies } = await getFileDependencies(
+			filepath,
+			source
+		);
+
+		items.push({
+			name: basename,
 			type: 'registry:lib',
 			files: [{ path: relativePath, type: 'registry:lib' }],
 			registryDependencies: Array.from(registryDependencies),

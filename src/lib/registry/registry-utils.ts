@@ -14,6 +14,10 @@ export function transformComponentPath(target: string): string {
 	return `components/${target}`;
 }
 
+export function transformLibPath(target: string): string {
+	return `lib/${target}`;
+}
+
 export function createFileTreeForRegistryItemFiles(
 	files: Array<{ target: string; type: RegistryItemFile['type'] }>
 ): FileTree[] {

@@ -7,7 +7,8 @@ import {
 	transformUIPath,
 	transformComponentPath,
 	transformImportPaths,
-	transformBlockPath
+	transformBlockPath,
+	transformLibPath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
@@ -76,6 +77,8 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 			target = transformComponentPath(file.target);
 		} else if (item.type === 'registry:block') {
 			target = file.target;
+		} else if (item.type === 'registry:lib') {
+			target = transformLibPath(file.target);
 		} else {
 			target = transformUIPath(file.target);
 		}
