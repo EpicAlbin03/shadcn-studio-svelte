@@ -79,5 +79,11 @@ export const blockMeta = {
 	},
 	'error-01': {
 		description: 'Error 1'
+	},
+	'application-shell-01': {
+		description: 'Application Shell 1'
+	},
+	'charts-01': {
+		description: 'Charts 1'
 	}
 } as Record<BlockName, BlockMeta>;

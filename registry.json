@@ -147,6 +147,37 @@
 			]
 		},
 		{
+			"name": "application-shell-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"separator",
+				"card",
+				"breadcrumb",
+				"sidebar",
+				"button",
+				"dropdown-menu",
+				"avatar"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\application-shell-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "application-shell-01/components/dropdown-language.svelte",
+					"path": "src\\lib\\registry\\blocks\\application-shell-01\\components\\dropdown-language.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "application-shell-01/components/dropdown-profile.svelte",
+					"path": "src\\lib\\registry\\blocks\\application-shell-01\\components\\dropdown-profile.svelte"
+				}
+			]
+		},
+		{
 			"name": "blog-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -161,6 +192,24 @@
 					"type": "registry:component",
 					"target": "blog-01/components/blog-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\blog-01\\components\\blog-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "charts-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte", "layerchart"],
+			"registryDependencies": ["avatar", "card", "chart"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\charts-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "charts-01/components/charts-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\charts-01\\components\\charts-01.svelte"
 				}
 			]
 		},
