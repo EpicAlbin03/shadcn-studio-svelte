@@ -19,7 +19,8 @@ export const registryCategories = [
 			'about-us-01',
 			'contact-us-01',
 			'navbar-01',
-			'footer-01'
+			'footer-01',
+			'login-01'
 		]
 	},
 	{

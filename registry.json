@@ -285,6 +285,38 @@
 			]
 		},
 		{
+			"name": "login-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"button",
+				"card",
+				"separator",
+				"local:logo",
+				"local:auth-background-shape-svg",
+				"checkbox",
+				"input",
+				"field"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\login-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "login-01/components/login-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\login-01\\components\\login-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "login-01/components/login-form.svelte",
+					"path": "src\\lib\\registry\\blocks\\login-01\\components\\login-form.svelte"
+				}
+			]
+		},
+		{
 			"name": "logo-cloud-01",
 			"type": "registry:block",
 			"dependencies": [],
@@ -7752,6 +7784,19 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\tooltip-17.svelte"
+				}
+			]
+		},
+		{
+			"name": "auth-background-shape-svg",
+			"type": "registry:lib",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:lib",
+					"target": "assets/svg/auth-background-shape.svelte",
+					"path": "src\\lib\\registry\\lib\\assets\\svg\\auth-background-shape.svelte"
 				}
 			]
 		},

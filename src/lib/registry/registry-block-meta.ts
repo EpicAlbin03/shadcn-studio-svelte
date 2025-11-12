@@ -55,5 +55,8 @@ export const blockMeta = {
 	},
 	'footer-01': {
 		description: 'Footer 1'
+	},
+	'login-01': {
+		description: 'Login 1'
 	}
 } as Record<BlockName, BlockMeta>;
