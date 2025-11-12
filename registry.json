@@ -129,6 +129,24 @@
 			]
 		},
 		{
+			"name": "app-integration-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["button", "card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\app-integration-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "app-integration-01/components/app-integration-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\app-integration-01\\components\\app-integration-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "blog-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -183,6 +201,24 @@
 			]
 		},
 		{
+			"name": "error-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\error-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "error-01/components/error-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\error-01\\components\\error-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "faq-01",
 			"type": "registry:block",
 			"dependencies": [],
@@ -233,6 +269,36 @@
 					"type": "registry:component",
 					"target": "footer-01/components/footer-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\footer-01\\components\\footer-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "forgot-password-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"card",
+				"local:logo",
+				"local:auth-background-shape-svg",
+				"button",
+				"input",
+				"field"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\forgot-password-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "forgot-password-01/components/forgot-password-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\forgot-password-01\\components\\forgot-password-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "forgot-password-01/components/forgot-password-form.svelte",
+					"path": "src\\lib\\registry\\blocks\\forgot-password-01\\components\\forgot-password-form.svelte"
 				}
 			]
 		},
@@ -389,6 +455,68 @@
 			]
 		},
 		{
+			"name": "register-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"button",
+				"card",
+				"separator",
+				"local:logo",
+				"local:auth-background-shape-svg",
+				"checkbox",
+				"input",
+				"field"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\register-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "register-01/components/register-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\register-01\\components\\register-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "register-01/components/register-form.svelte",
+					"path": "src\\lib\\registry\\blocks\\register-01\\components\\register-form.svelte"
+				}
+			]
+		},
+		{
+			"name": "reset-password-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"card",
+				"local:logo",
+				"local:auth-background-shape-svg",
+				"button",
+				"input",
+				"field"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\reset-password-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "reset-password-01/components/reset-password-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\reset-password-01\\components\\reset-password-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "reset-password-01/components/reset-password-form.svelte",
+					"path": "src\\lib\\registry\\blocks\\reset-password-01\\components\\reset-password-form.svelte"
+				}
+			]
+		},
+		{
 			"name": "social-proof-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -439,6 +567,54 @@
 					"type": "registry:component",
 					"target": "testimonials-01/components/testimonials-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\testimonials-01\\components\\testimonials-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "two-factor-authentication-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": [
+				"card",
+				"local:logo",
+				"local:auth-background-shape-svg",
+				"button",
+				"input-otp",
+				"field"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\two-factor-authentication-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "two-factor-authentication-01/components/two-factor-authentication-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\two-factor-authentication-01\\components\\two-factor-authentication-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "two-factor-authentication-01/components/two-factor-authentication-form.svelte",
+					"path": "src\\lib\\registry\\blocks\\two-factor-authentication-01\\components\\two-factor-authentication-form.svelte"
+				}
+			]
+		},
+		{
+			"name": "verify-email-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["button", "card", "local:logo", "local:auth-background-shape-svg"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\verify-email-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "verify-email-01/components/verify-email-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\verify-email-01\\components\\verify-email-01.svelte"
 				}
 			]
 		},

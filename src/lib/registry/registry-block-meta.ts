@@ -58,5 +58,26 @@ export const blockMeta = {
 	},
 	'login-01': {
 		description: 'Login 1'
+	},
+	'register-01': {
+		description: 'Register 1'
+	},
+	'forgot-password-01': {
+		description: 'Forgot Password 1'
+	},
+	'reset-password-01': {
+		description: 'Reset Password 1'
+	},
+	'verify-email-01': {
+		description: 'Verify Email 1'
+	},
+	'two-factor-authentication-01': {
+		description: 'Two Factor Authentication 1'
+	},
+	'app-integration-01': {
+		description: 'App Integration 1'
+	},
+	'error-01': {
+		description: 'Error 1'
 	}
 } as Record<BlockName, BlockMeta>;

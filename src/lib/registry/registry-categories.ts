@@ -20,7 +20,14 @@ export const registryCategories = [
 			'contact-us-01',
 			'navbar-01',
 			'footer-01',
-			'login-01'
+			'login-01',
+			'register-01',
+			'forgot-password-01',
+			'reset-password-01',
+			'verify-email-01',
+			'two-factor-authentication-01',
+			'app-integration-01',
+			'error-01'
 		]
 	},
 	{

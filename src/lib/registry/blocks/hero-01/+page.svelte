@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header, { type NavigationSection } from './components/header.svelte';
-	import HeroSection01 from './components/hero-01.svelte';
+	import HeroSection from './components/hero-01.svelte';
 
 	const navigationData: NavigationSection[] = [
 		{
@@ -26,6 +26,6 @@
 	<Header {navigationData} />
 
 	<main class="flex flex-col">
-		<HeroSection01 />
+		<HeroSection />
 	</main>
 </div>
