@@ -8,7 +8,8 @@ import {
 	transformComponentPath,
 	transformImportPaths,
 	transformBlockPath,
-	transformLibPath
+	transformLibPath,
+	transformBlockRelativeImports
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
@@ -71,6 +72,10 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		const lang = path.extname(file.target).slice(1);
 
 		file.content = transformImportPaths(file.content);
+		if (item.type === 'registry:block' && file.type === 'registry:page') {
+			file.content = transformBlockRelativeImports(file.content, item.name);
+		}
+
 		const highlightedContent = await highlightCode(file.content, lang);
 		let target;
 

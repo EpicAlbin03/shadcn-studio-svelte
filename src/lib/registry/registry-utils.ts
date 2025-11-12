@@ -93,3 +93,13 @@ export function transformImportPaths(content: string): string {
 	}
 	return content;
 }
+
+export function transformBlockRelativeImports(content: string, blockName: string): string {
+	// Transform relative imports in block +page.svelte files
+	// e.g., ./components/login-01.svelte -> $lib/components/login-01/login-01.svelte
+	const relativeImportRegex = /from\s+['"]\.\/components\/([^'"]+)['"]/g;
+	return content.replace(relativeImportRegex, (match, componentFile) => {
+		const filename = componentFile.replace('.svelte', '');
+		return `from '$lib/components/${blockName}/${filename}.svelte'`;
+	});
+}
