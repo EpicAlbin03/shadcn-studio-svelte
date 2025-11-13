@@ -9,7 +9,8 @@ import {
 	transformImportPaths,
 	transformBlockPath,
 	transformLibPath,
-	transformBlockRelativeImports
+	transformBlockRelativeImports,
+	transformHookPath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
@@ -89,6 +90,8 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 			target = transformLibPath(file.target);
 		} else if (item.type === 'registry:ui') {
 			target = transformUIPath(file.target);
+		} else if (item.type === 'registry:hook') {
+			target = transformHookPath(file.target);
 		} else {
 			target = file.target;
 		}

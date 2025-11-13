@@ -22,6 +22,10 @@ export function transformBlockPath(target: string): string {
 	return `lib/components/${target}`;
 }
 
+export function transformHookPath(target: string): string {
+	return `lib/hooks/${target}`;
+}
+
 function collapseSingleChildFolders(node: FileTree): FileTree {
 	if (node.path) {
 		return node;
