@@ -121,7 +121,7 @@
 				<div class="flex items-center gap-3">
 					<img src="/apple-touch-icon.png" class="size-10.5 rounded-lg" alt="logo" />
 					<div class="flex flex-col gap-0.5">
-						<span class="text-xl font-medium">Sandy&apos; Company</span>
+						<span class="text-xl font-medium">Sandy' Company</span>
 						<span class="text-sm text-muted-foreground">sandy@company.com</span>
 					</div>
 				</div>

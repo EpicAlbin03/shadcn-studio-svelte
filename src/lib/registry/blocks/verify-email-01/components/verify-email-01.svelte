@@ -19,7 +19,7 @@
 			<div>
 				<Card.Title class="mb-1.5 text-2xl">Verify your email</Card.Title>
 				<Card.Description class="text-base">
-					An activation link has been sent to your email address: hello$libexample.com. Please check
+					An activation link has been sent to your email address: hello@example.com. Please check
 					your inbox and click on the link to complete the activation process.
 				</Card.Description>
 			</div>
@@ -30,7 +30,7 @@
 				<Button class="w-full" href="#">Skip for now</Button>
 
 				<p class="text-center text-muted-foreground">
-					Didn&apos;t get the mail?{' '}
+					Didn't get the mail?{' '}
 					<a href="#" class="text-card-foreground hover:underline"> Resend </a>
 				</p>
 			</div>

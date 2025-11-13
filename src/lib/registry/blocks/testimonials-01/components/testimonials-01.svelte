@@ -34,7 +34,7 @@
 			<h2 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Customers Feedback</h2>
 
 			<p class="text-xl text-muted-foreground">
-				From career changes to dream jobs, here&apos;s how Shadcn Studio helped.
+				From career changes to dream jobs, here's how Shadcn Studio helped.
 			</p>
 
 			<div class="flex items-center gap-4">

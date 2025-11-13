@@ -7,7 +7,7 @@
 		<h2 class="mb-6 text-5xl font-semibold">Whoops!</h2>
 		<h3 class="mb-1.5 text-3xl font-semibold">Something went wrong</h3>
 		<p class="mb-6 max-w-sm text-muted-foreground">
-			The page you&apos;re looking for isn&apos;t found, we suggest you back to home.
+			The page you're looking for isn't found, we suggest you back to home.
 		</p>
 		<Button href="#" size="lg" class="rounded-lg text-base shadow-sm">Back to home page</Button>
 	</div>

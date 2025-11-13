@@ -43,7 +43,7 @@
 			</div>
 			<div class="flex flex-1 flex-col items-start">
 				<span class="text-lg font-semibold text-foreground">John Doe</span>
-				<span class="text-base text-muted-foreground">john.doe$libexample.com</span>
+				<span class="text-base text-muted-foreground">john.doe@example.com</span>
 			</div>
 		</DropdownMenu.Label>
 

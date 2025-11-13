@@ -62,9 +62,7 @@
 <Card.Root class="w-full max-w-sm shadow-none">
 	<Card.Header>
 		<Card.Title>Report Issue</Card.Title>
-		<Card.Description>
-			Describe the issue you&apos;re facing; our team will help you.
-		</Card.Description>
+		<Card.Description>Describe the issue you're facing; our team will help you.</Card.Description>
 	</Card.Header>
 	<Card.Content>
 		<form method="POST" class="w-full max-w-xs space-y-6" use:enhance>

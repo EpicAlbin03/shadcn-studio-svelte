@@ -21,9 +21,9 @@
 						Create Impactful White Label Reports
 					</h2>
 					<p class="text-lg text-muted-foreground">
-						Craft customizable reports that showcase your campaign&apos;s success, align with your
-						brand, and simplify sharing insights with stakeholders while enabling data export and
-						ROI analysis.
+						Craft customizable reports that showcase your campaign's success, align with your brand,
+						and simplify sharing insights with stakeholders while enabling data export and ROI
+						analysis.
 					</p>
 				</div>
 
