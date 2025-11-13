@@ -223,13 +223,23 @@
 									label: salesChartConfig.background.label,
 									color: salesChartConfig.background.color,
 									value: 'background',
-									props: { class: 'opacity-60' }
+									props: {
+										class: 'opacity-60'
+									}
 								},
 								{
 									key: 'sales',
 									label: salesChartConfig.sales.label,
 									color: salesChartConfig.sales.color,
-									value: 'sales'
+									value: 'sales',
+									props: {
+										motion: {
+											x: { type: 'tween', duration: 500, easing: cubicInOut },
+											width: { type: 'tween', duration: 500, easing: cubicInOut },
+											height: { type: 'tween', duration: 500, easing: cubicInOut },
+											y: { type: 'tween', duration: 500, easing: cubicInOut }
+										}
+									}
 								}
 							]}
 							props={{
@@ -239,13 +249,7 @@
 									radius: 8,
 									// use the height of the chart to animate the bars
 									initialY: salesContext?.height,
-									initialHeight: 0,
-									motion: {
-										x: { type: 'tween', duration: 500, easing: cubicInOut },
-										width: { type: 'tween', duration: 500, easing: cubicInOut },
-										height: { type: 'tween', duration: 500, easing: cubicInOut },
-										y: { type: 'tween', duration: 500, easing: cubicInOut }
-									}
+									initialHeight: 0
 								},
 								highlight: { area: { fill: 'none' } }
 							}}
