@@ -17,8 +17,15 @@
 			const module = await import(`$lib/registry/components/${componentName}.svelte`);
 			return module.default;
 		} catch (error) {
-			console.error(`Failed to load component ${componentName}: ${error}`);
-			throw new Error(`Failed to load component ${componentName}`);
+			try {
+				const module = await import(
+					`$lib/registry/components/${componentName}/${componentName}.svelte`
+				);
+				return module.default;
+			} catch (folderError) {
+				console.error(`Failed to load component ${componentName}: ${error}`);
+				throw new Error(`Failed to load component ${componentName}`);
+			}
 		}
 	}
 </script>
