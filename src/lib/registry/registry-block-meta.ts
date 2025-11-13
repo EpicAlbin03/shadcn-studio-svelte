@@ -80,6 +80,9 @@ export const blockMeta = {
 	'error-01': {
 		description: 'Error 1'
 	},
+	'dashboard-shell-01': {
+		description: 'Dashboard Shell 1'
+	},
 	'application-shell-01': {
 		description: 'Application Shell 1'
 	},

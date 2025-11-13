@@ -191,18 +191,13 @@
 		{
 			"name": "charts-01",
 			"type": "registry:block",
-			"dependencies": ["@lucide/svelte", "layerchart"],
-			"registryDependencies": ["avatar", "card", "chart"],
+			"dependencies": [],
+			"registryDependencies": ["local:charts-01-comp"],
 			"files": [
 				{
 					"type": "registry:page",
 					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\charts-01\\+page.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "charts-01/components/charts-01.svelte",
-					"path": "src\\lib\\registry\\blocks\\charts-01\\components\\charts-01.svelte"
 				}
 			]
 		},
@@ -319,6 +314,47 @@
 					"type": "registry:page",
 					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-header-01\\+page.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-shell-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte", "@tanstack/table-core"],
+			"registryDependencies": [
+				"sidebar",
+				"local:statistics-01-comp",
+				"local:widget-01-comp",
+				"local:dashboard-sidebar-01-comp",
+				"local:dashboard-header-01-comp",
+				"local:dashboard-footer-01-comp",
+				"local:widget-02-comp",
+				"local:charts-01-comp",
+				"card",
+				"avatar",
+				"badge",
+				"button",
+				"dropdown-menu",
+				"table",
+				"data-table",
+				"local:use-pagination",
+				"utils"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-shell-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "dashboard-shell-01/components/dashboard-shell-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-shell-01\\components\\dashboard-shell-01.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "dashboard-shell-01/components/data-table-transaction.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-shell-01\\components\\data-table-transaction.svelte"
 				}
 			]
 		},
@@ -673,17 +709,12 @@
 			"name": "statistics-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["card", "utils"],
+			"registryDependencies": ["local:statistics-01-comp"],
 			"files": [
 				{
 					"type": "registry:page",
 					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\statistics-01\\+page.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "statistics-01/components/statistics-01.svelte",
-					"path": "src\\lib\\registry\\blocks\\statistics-01\\components\\statistics-01.svelte"
 				}
 			]
 		},
@@ -774,36 +805,26 @@
 		{
 			"name": "widget-01",
 			"type": "registry:block",
-			"dependencies": ["@lucide/svelte"],
-			"registryDependencies": ["avatar", "button", "card", "dropdown-menu", "progress"],
+			"dependencies": [],
+			"registryDependencies": ["local:widget-01-comp"],
 			"files": [
 				{
 					"type": "registry:page",
 					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\widget-01\\+page.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "widget-01/components/widget-01.svelte",
-					"path": "src\\lib\\registry\\blocks\\widget-01\\components\\widget-01.svelte"
 				}
 			]
 		},
 		{
 			"name": "widget-02",
 			"type": "registry:block",
-			"dependencies": ["layerchart"],
-			"registryDependencies": ["card", "chart", "separator", "utils"],
+			"dependencies": [],
+			"registryDependencies": ["local:widget-02-comp"],
 			"files": [
 				{
 					"type": "registry:page",
 					"target": "routes/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\widget-02\\+page.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "widget-02/components/widget-02.svelte",
-					"path": "src\\lib\\registry\\blocks\\widget-02\\components\\widget-02.svelte"
 				}
 			]
 		},
@@ -3280,6 +3301,18 @@
 			]
 		},
 		{
+			"name": "charts-01-comp",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte", "layerchart"],
+			"registryDependencies": ["avatar", "card", "chart"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\charts-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "checkbox-01",
 			"type": "registry:component",
 			"dependencies": [],
@@ -4015,7 +4048,7 @@
 				"select",
 				"table",
 				"data-table",
-				"use-pagination",
+				"local:use-pagination",
 				"utils"
 			],
 			"files": [
@@ -6977,6 +7010,18 @@
 			]
 		},
 		{
+			"name": "statistics-01-comp",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["card", "utils"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\statistics-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "switch-01",
 			"type": "registry:component",
 			"dependencies": [],
@@ -8209,6 +8254,42 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\tooltip-17.svelte"
+				}
+			]
+		},
+		{
+			"name": "widget-01-comp",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "button", "card", "dropdown-menu", "progress"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\widget-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "widget-02-comp",
+			"type": "registry:component",
+			"dependencies": ["layerchart"],
+			"registryDependencies": ["card", "chart", "separator", "utils"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\widget-02.svelte"
+				}
+			]
+		},
+		{
+			"name": "use-pagination",
+			"type": "registry:hook",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:hook",
+					"path": "src\\lib\\registry\\hooks\\use-pagination.svelte.ts"
 				}
 			]
 		},

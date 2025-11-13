@@ -41,7 +41,15 @@ type RegistryItemFiles = Registry['items'][number]['files'];
 
 // Add -comp suffix to prevent name conflicts
 function applyCompSuffix(componentName: string): string {
-	const components = ['dashboard-header-01', 'dashboard-footer-01', 'dashboard-sidebar-01'];
+	const components = [
+		'dashboard-header-01',
+		'dashboard-footer-01',
+		'dashboard-sidebar-01',
+		'charts-01',
+		'widget-01',
+		'widget-02',
+		'statistics-01'
+	];
 	return components.includes(componentName) ? `${componentName}-comp` : componentName;
 }
 

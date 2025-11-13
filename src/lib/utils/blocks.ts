@@ -6,7 +6,7 @@ export const REQUEST_RESIZE_MESSAGE = 'block-viewer:request-resize';
 
 export type BlockName = (typeof blocks)[number];
 
-export const FEATURED_BLOCKS = ['hero-01'];
+export const FEATURED_BLOCKS = ['hero-01', 'dashboard-shell-01'] as const;
 
 export function isBlock(name: unknown): name is BlockName {
 	return blocks.includes(name as BlockName);

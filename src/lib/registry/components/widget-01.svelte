@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
 	import { ChevronDownIcon, ChevronUpIcon, EllipsisVerticalIcon } from '@lucide/svelte';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
@@ -8,19 +8,23 @@
 
 	const listItems = ['Share', 'Update', 'Refresh'];
 
+	export type EarningData = {
+		img: string;
+		platform: string;
+		technologies: string;
+		earnings: string;
+		progressPercentage: number;
+	};
+</script>
+
+<script lang="ts">
 	type Props = {
 		title: string;
 		earning: number;
 		trend: 'up' | 'down';
 		percentage: number;
 		comparisonText: string;
-		earningData: {
-			img: string;
-			platform: string;
-			technologies: string;
-			earnings: string;
-			progressPercentage: number;
-		}[];
+		earningData: EarningData[];
 		class?: string;
 	};
 

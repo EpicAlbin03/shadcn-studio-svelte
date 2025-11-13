@@ -23,7 +23,7 @@
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table';
-	import { usePagination } from '$lib/hooks/use-pagination.svelte';
+	import { usePagination } from '$lib/registry/hooks/use-pagination.svelte';
 	import { cn } from '$lib/utils';
 	import { createRawSnippet } from 'svelte';
 

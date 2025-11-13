@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SalesMetricsCard from './components/charts-01.svelte';
+	import SalesMetricsCard from '$lib/registry/components/charts-01.svelte';
 </script>
 
 <div class="py-8 sm:py-16 lg:py-24">

@@ -1,17 +1,25 @@
-<script lang="ts">
+<script lang="ts" module>
 	import * as Card from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
 	import { type Icon as IconType } from '@lucide/svelte';
 
-	type Props = {
+	export type StatisticsCardData = {
 		icon: typeof IconType;
 		value: string;
 		title: string;
 		changePercentage: string;
 		class?: string;
 	};
+</script>
 
-	let { icon: Icon, value, title, changePercentage, class: className }: Props = $props();
+<script lang="ts">
+	let {
+		icon: Icon,
+		value,
+		title,
+		changePercentage,
+		class: className
+	}: StatisticsCardData = $props();
 </script>
 
 <Card.Root class={cn('gap-4', className)}>
