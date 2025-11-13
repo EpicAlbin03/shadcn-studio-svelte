@@ -102,6 +102,15 @@
 	const totalProfit = revenueChartData.reduce((acc, curr) => acc + curr.sales, 0);
 	let salesContext = $state<ChartContextValue>();
 	const salesBarColors = [salesChartConfig.background.color, salesChartConfig.sales.color];
+
+	const maxBarSize = 16;
+	const fixedBarScale = $derived.by(() => {
+		if (!salesContext?.width) return undefined;
+		const availableWidth = salesContext.width;
+		const step = availableWidth / totalBars;
+		const padding = (step - maxBarSize) / step;
+		return scaleBand().paddingInner(Math.max(0.1, Math.min(0.9, padding)));
+	});
 </script>
 
 <Card.Root class={className}>
@@ -208,7 +217,7 @@
 						<BarChart
 							bind:context={salesContext}
 							data={salesChartData}
-							xScale={scaleBand().padding(0.32)}
+							xScale={fixedBarScale}
 							x="index"
 							y="sales"
 							yDomain={[0, barValue]}
