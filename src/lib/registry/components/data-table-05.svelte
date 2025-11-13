@@ -87,39 +87,39 @@
 			header: 'Name',
 			accessorKey: 'name',
 			cell: ({ row }) => {
-				const nameSnippet = createRawSnippet<[string]>((getName) => {
-					const name = getName();
+				const name = row.getValue('name');
+				const nameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${name}</div>`
 					};
 				});
-				return renderSnippet(nameSnippet, row.getValue('name'));
+				return renderSnippet(nameSnippet);
 			}
 		},
 		{
 			accessorKey: 'status',
 			header: 'Status',
 			cell: ({ row }) => {
-				const statusSnippet = createRawSnippet<[string]>((getStatus) => {
-					const status = getStatus();
+				const status = row.getValue('status');
+				const statusSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="capitalize">${status}</div>`
 					};
 				});
-				return renderSnippet(statusSnippet, row.getValue('status'));
+				return renderSnippet(statusSnippet);
 			}
 		},
 		{
 			accessorKey: 'email',
 			header: 'Email',
 			cell: ({ row }) => {
-				const emailSnippet = createRawSnippet<[string]>((getEmail) => {
-					const email = getEmail();
+				const email = row.getValue('email');
+				const emailSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="lowercase">${email}</div>`
 					};
 				});
-				return renderSnippet(emailSnippet, row.getValue('email'));
+				return renderSnippet(emailSnippet);
 			}
 		},
 		{
@@ -132,13 +132,12 @@
 					currency: 'USD'
 				}).format(amount);
 
-				const amountSnippet = createRawSnippet<[string]>((getFormatted) => {
-					const formattedAmount = getFormatted();
+				const amountSnippet = createRawSnippet(() => {
 					return {
-						render: () => `<div class="font-medium">${formattedAmount}</div>`
+						render: () => `<div class="font-medium">${formatted}</div>`
 					};
 				});
-				return renderSnippet(amountSnippet, formatted);
+				return renderSnippet(amountSnippet);
 			}
 		}
 	];

@@ -70,13 +70,13 @@
 			header: 'First Name',
 			accessorKey: 'firstName',
 			cell: ({ row }) => {
-				const firstNameSnippet = createRawSnippet<[string]>((getFirstName) => {
-					const firstName = getFirstName();
+				const firstName = row.getValue('firstName');
+				const firstNameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${firstName}</div>`
 					};
 				});
-				return renderSnippet(firstNameSnippet, row.getValue('firstName'));
+				return renderSnippet(firstNameSnippet);
 			},
 			sortUndefined: 'last',
 			sortDescFirst: false
@@ -86,13 +86,13 @@
 			header: 'Last Name',
 			accessorKey: 'lastName',
 			cell: ({ row }) => {
-				const lastNameSnippet = createRawSnippet<[string]>((getLastName) => {
-					const lastName = getLastName();
+				const lastName = row.getValue('lastName');
+				const lastNameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${lastName}</div>`
 					};
 				});
-				return renderSnippet(lastNameSnippet, row.getValue('lastName'));
+				return renderSnippet(lastNameSnippet);
 			}
 		},
 		{
@@ -100,13 +100,13 @@
 			header: 'Job Title',
 			accessorKey: 'jobTitle',
 			cell: ({ row }) => {
-				const jobTitleSnippet = createRawSnippet<[string]>((getJobTitle) => {
-					const jobTitle = getJobTitle();
+				const jobTitle = row.getValue('jobTitle');
+				const jobTitleSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${jobTitle}</div>`
 					};
 				});
-				return renderSnippet(jobTitleSnippet, row.getValue('jobTitle'));
+				return renderSnippet(jobTitleSnippet);
 			}
 		},
 		{
@@ -114,13 +114,13 @@
 			header: 'Department',
 			accessorKey: 'department',
 			cell: ({ row }) => {
-				const departmentSnippet = createRawSnippet<[string]>((getDepartment) => {
-					const department = getDepartment();
+				const department = row.getValue('department');
+				const departmentSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${department}</div>`
 					};
 				});
-				return renderSnippet(departmentSnippet, row.getValue('department'));
+				return renderSnippet(departmentSnippet);
 			}
 		},
 		{
@@ -128,13 +128,13 @@
 			header: 'Date of Birth',
 			accessorKey: 'dob',
 			cell: ({ row }) => {
-				const dobSnippet = createRawSnippet<[string]>((getDob) => {
-					const dob = getDob();
+				const dob = row.getValue('dob');
+				const dobSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${dob}</div>`
 					};
 				});
-				return renderSnippet(dobSnippet, row.getValue('dob'));
+				return renderSnippet(dobSnippet);
 			}
 		},
 		{
@@ -142,13 +142,13 @@
 			header: 'Hire Date',
 			accessorKey: 'hireDate',
 			cell: ({ row }) => {
-				const hireDateSnippet = createRawSnippet<[string]>((getHireDate) => {
-					const hireDate = getHireDate();
+				const hireDate = row.getValue('hireDate');
+				const hireDateSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${hireDate}</div>`
 					};
 				});
-				return renderSnippet(hireDateSnippet, row.getValue('hireDate'));
+				return renderSnippet(hireDateSnippet);
 			}
 		},
 		{
@@ -162,13 +162,12 @@
 					currency: 'USD'
 				}).format(salary);
 
-				const salarySnippet = createRawSnippet<[string]>((getFormatted) => {
-					const formattedSalary = getFormatted();
+				const salarySnippet = createRawSnippet(() => {
 					return {
-						render: () => `<div>${formattedSalary}</div>`
+						render: () => `<div>${formatted}</div>`
 					};
 				});
-				return renderSnippet(salarySnippet, formatted);
+				return renderSnippet(salarySnippet);
 			}
 		}
 	];

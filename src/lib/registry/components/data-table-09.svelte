@@ -156,13 +156,13 @@
 			header: 'Team Name',
 			accessorKey: 'teamName',
 			cell: ({ row }) => {
-				const teamNameSnippet = createRawSnippet<[string]>((getTeamName) => {
-					const teamName = getTeamName();
+				const teamName = row.getValue('teamName');
+				const teamNameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${teamName}</div>`
 					};
 				});
-				return renderSnippet(teamNameSnippet, row.getValue('teamName'));
+				return renderSnippet(teamNameSnippet);
 			}
 		},
 		{
@@ -184,17 +184,17 @@
 			header: 'Budget',
 			accessorKey: 'budget',
 			cell: ({ row }) => {
-				const budgetSnippet = createRawSnippet<[number]>((getBudget) => {
-					const amount = getBudget();
-					const formatted = new Intl.NumberFormat('en-US', {
-						style: 'currency',
-						currency: 'USD'
-					}).format(amount);
+				const amount = row.getValue('budget') as number;
+				const formatted = new Intl.NumberFormat('en-US', {
+					style: 'currency',
+					currency: 'USD'
+				}).format(amount);
+				const budgetSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${formatted}</div>`
 					};
 				});
-				return renderSnippet(budgetSnippet, row.getValue('budget'));
+				return renderSnippet(budgetSnippet);
 			}
 		}
 	];

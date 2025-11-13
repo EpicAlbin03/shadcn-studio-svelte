@@ -67,16 +67,16 @@
 				const nameHeaderSnippet = createRawSnippet(() => ({
 					render: () => `<div class="truncate">Name</div>`
 				}));
-				return renderSnippet(nameHeaderSnippet, '');
+				return renderSnippet(nameHeaderSnippet);
 			},
 			cell: ({ row }) => {
-				const nameSnippet = createRawSnippet<[string]>((getName) => {
-					const name = getName();
+				const name = row.getValue('name');
+				const nameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="truncate font-medium">${name}</div>`
 					};
 				});
-				return renderSnippet(nameSnippet, row.getValue('name'));
+				return renderSnippet(nameSnippet);
 			}
 		},
 		{
@@ -85,16 +85,16 @@
 				const statusHeaderSnippet = createRawSnippet(() => ({
 					render: () => `<div class="truncate">Status</div>`
 				}));
-				return renderSnippet(statusHeaderSnippet, '');
+				return renderSnippet(statusHeaderSnippet);
 			},
 			cell: ({ row }) => {
-				const statusSnippet = createRawSnippet<[string]>((getStatus) => {
-					const status = getStatus();
+				const status = row.getValue('status');
+				const statusSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="truncate capitalize">${status}</div>`
 					};
 				});
-				return renderSnippet(statusSnippet, row.getValue('status'));
+				return renderSnippet(statusSnippet);
 			}
 		},
 		{
@@ -103,16 +103,16 @@
 				const emailHeaderSnippet = createRawSnippet(() => ({
 					render: () => `<div class="truncate">Email</div>`
 				}));
-				return renderSnippet(emailHeaderSnippet, '');
+				return renderSnippet(emailHeaderSnippet);
 			},
 			cell: ({ row }) => {
-				const emailSnippet = createRawSnippet<[string]>((getEmail) => {
-					const email = getEmail();
+				const email = row.getValue('email');
+				const emailSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="truncate lowercase">${email}</div>`
 					};
 				});
-				return renderSnippet(emailSnippet, row.getValue('email'));
+				return renderSnippet(emailSnippet);
 			}
 		},
 		{
@@ -121,7 +121,7 @@
 				const amountHeaderSnippet = createRawSnippet(() => ({
 					render: () => `<div class="truncate">Amount</div>`
 				}));
-				return renderSnippet(amountHeaderSnippet, '');
+				return renderSnippet(amountHeaderSnippet);
 			},
 			cell: ({ row }) => {
 				const amount = parseFloat(row.getValue('amount'));
@@ -130,13 +130,12 @@
 					currency: 'USD'
 				}).format(amount);
 
-				const amountSnippet = createRawSnippet<[string]>((getFormatted) => {
-					const formattedAmount = getFormatted();
+				const amountSnippet = createRawSnippet(() => {
 					return {
-						render: () => `<div class="font-medium">${formattedAmount}</div>`
+						render: () => `<div class="font-medium">${formatted}</div>`
 					};
 				});
-				return renderSnippet(amountSnippet, formatted);
+				return renderSnippet(amountSnippet);
 			}
 		},
 		{
@@ -145,16 +144,16 @@
 				const dueDateHeaderSnippet = createRawSnippet(() => ({
 					render: () => `<div class="truncate">Due Date</div>`
 				}));
-				return renderSnippet(dueDateHeaderSnippet, '');
+				return renderSnippet(dueDateHeaderSnippet);
 			},
 			cell: ({ row }) => {
-				const dueDateSnippet = createRawSnippet<[string]>((getDueDate) => {
-					const dueDate = getDueDate();
+				const dueDate = row.getValue('dueDate');
+				const dueDateSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="truncate lowercase">${dueDate}</div>`
 					};
 				});
-				return renderSnippet(dueDateSnippet, row.getValue('dueDate'));
+				return renderSnippet(dueDateSnippet);
 			}
 		}
 	];

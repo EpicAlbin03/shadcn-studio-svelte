@@ -137,13 +137,13 @@
 			accessorKey: 'price',
 			header: 'Price',
 			cell: ({ row }) => {
-				const priceSnippet = createRawSnippet<[string]>((getPrice) => {
-					const price = getPrice();
+				const price = row.getValue('price');
+				const priceSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>$${price}</div>`
 					};
 				});
-				return renderSnippet(priceSnippet, row.getValue('price'));
+				return renderSnippet(priceSnippet);
 			},
 			enableSorting: false,
 			meta: {
@@ -165,13 +165,13 @@
 			accessorKey: 'rating',
 			header: 'Rating',
 			cell: ({ row }) => {
-				const ratingSnippet = createRawSnippet<[string]>((getRating) => {
-					const rating = getRating();
+				const rating = row.getValue('rating');
+				const ratingSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${rating}</div>`
 					};
 				});
-				return renderSnippet(ratingSnippet, row.getValue('rating'));
+				return renderSnippet(ratingSnippet);
 			},
 			meta: {
 				filterVariant: 'range'

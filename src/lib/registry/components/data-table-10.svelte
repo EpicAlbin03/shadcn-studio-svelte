@@ -261,26 +261,26 @@
 			header: 'Product Name',
 			accessorKey: 'product_name',
 			cell: ({ row }) => {
-				const productNameSnippet = createRawSnippet<[string]>((getProductName) => {
-					const productName = getProductName();
+				const productName = row.getValue('product_name');
+				const productNameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${productName}</div>`
 					};
 				});
-				return renderSnippet(productNameSnippet, row.getValue('product_name'));
+				return renderSnippet(productNameSnippet);
 			}
 		},
 		{
 			header: 'Price',
 			accessorKey: 'price',
 			cell: ({ row }) => {
-				const priceSnippet = createRawSnippet<[string]>((getPrice) => {
-					const price = getPrice();
+				const price = row.getValue('price');
+				const priceSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${price}</div>`
 					};
 				});
-				return renderSnippet(priceSnippet, row.getValue('price'));
+				return renderSnippet(priceSnippet);
 			}
 		},
 		{

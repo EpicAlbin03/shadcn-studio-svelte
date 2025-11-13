@@ -117,39 +117,39 @@
 			header: 'Product Name',
 			accessorKey: 'productName',
 			cell: ({ row }) => {
-				const productNameSnippet = createRawSnippet<[string]>((getProductName) => {
-					const productName = getProductName();
+				const productName = row.getValue('productName');
+				const productNameSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="font-medium">${productName}</div>`
 					};
 				});
-				return renderSnippet(productNameSnippet, row.getValue('productName'));
+				return renderSnippet(productNameSnippet);
 			}
 		},
 		{
 			header: 'Category',
 			accessorKey: 'category',
 			cell: ({ row }) => {
-				const categorySnippet = createRawSnippet<[string]>((getCategory) => {
-					const category = getCategory();
+				const category = row.getValue('category');
+				const categorySnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${category}</div>`
 					};
 				});
-				return renderSnippet(categorySnippet, row.getValue('category'));
+				return renderSnippet(categorySnippet);
 			}
 		},
 		{
 			header: 'Stock Quantity',
 			accessorKey: 'stockQuantity',
 			cell: ({ row }) => {
-				const stockSnippet = createRawSnippet<[number]>((getStock) => {
-					const stock = getStock();
+				const stock = row.getValue('stockQuantity');
+				const stockSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${stock}</div>`
 					};
 				});
-				return renderSnippet(stockSnippet, row.getValue('stockQuantity'));
+				return renderSnippet(stockSnippet);
 			}
 		},
 		{
@@ -162,39 +162,38 @@
 					currency: 'USD'
 				}).format(price);
 
-				const priceSnippet = createRawSnippet<[string]>((getFormatted) => {
-					const formattedPrice = getFormatted();
+				const priceSnippet = createRawSnippet(() => {
 					return {
-						render: () => `<div>${formattedPrice}</div>`
+						render: () => `<div>${formatted}</div>`
 					};
 				});
-				return renderSnippet(priceSnippet, formatted);
+				return renderSnippet(priceSnippet);
 			}
 		},
 		{
 			header: 'Supplier',
 			accessorKey: 'supplier',
 			cell: ({ row }) => {
-				const supplierSnippet = createRawSnippet<[string]>((getSupplier) => {
-					const supplier = getSupplier();
+				const supplier = row.getValue('supplier');
+				const supplierSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div>${supplier}</div>`
 					};
 				});
-				return renderSnippet(supplierSnippet, row.getValue('supplier'));
+				return renderSnippet(supplierSnippet);
 			}
 		},
 		{
 			header: 'Discontinued',
 			accessorKey: 'discontinued',
 			cell: ({ row }) => {
-				const discontinuedSnippet = createRawSnippet<[string]>((getDiscontinued) => {
-					const discontinued = getDiscontinued();
+				const discontinued = row.getValue('discontinued');
+				const discontinuedSnippet = createRawSnippet(() => {
 					return {
 						render: () => `<div class="capitalize">${discontinued}</div>`
 					};
 				});
-				return renderSnippet(discontinuedSnippet, row.getValue('discontinued'));
+				return renderSnippet(discontinuedSnippet);
 			}
 		}
 	];

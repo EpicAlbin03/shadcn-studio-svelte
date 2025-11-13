@@ -68,7 +68,7 @@
 					currency: 'USD'
 				}).format(amount);
 
-				const amountSnippet = createRawSnippet(() => {
+				const amountSnippet = createRawSnippet<[string]>(() => {
 					return {
 						render: () => `<span>${formatted}</span>`
 					};
@@ -86,7 +86,7 @@
 		{
 			accessorKey: 'paidBy',
 			header: () => {
-				const paidByHeaderSnippet = createRawSnippet(() => {
+				const paidByHeaderSnippet = createRawSnippet<[string]>(() => {
 					return {
 						render: () => `<span class="w-fit">Paid by</span>`
 					};
