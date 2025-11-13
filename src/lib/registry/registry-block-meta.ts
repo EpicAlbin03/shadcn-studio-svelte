@@ -85,5 +85,23 @@ export const blockMeta = {
 	},
 	'charts-01': {
 		description: 'Charts 1'
+	},
+	'widget-01': {
+		description: 'Widget 1'
+	},
+	'widget-02': {
+		description: 'Widget 2'
+	},
+	'statistics-01': {
+		description: 'Statistics 1'
+	},
+	'dashboard-dialog-01': {
+		description: 'Dashboard Dialog 1'
+	},
+	'dashboard-dropdown-01': {
+		description: 'Dashboard Dropdown 1'
+	},
+	'dashboard-dropdown-02': {
+		description: 'Dashboard Dropdown 2'
 	}
 } as Record<BlockName, BlockMeta>;

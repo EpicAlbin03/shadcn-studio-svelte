@@ -250,6 +250,60 @@
 			]
 		},
 		{
+			"name": "dashboard-dialog-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "button", "dialog", "label", "radio-group", "utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dialog-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "dashboard-dialog-01/components/dashboard-dialog-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dialog-01\\components\\dashboard-dialog-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-dropdown-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button", "dropdown-menu"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "dashboard-dropdown-01/components/dashboard-dropdown-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-01\\components\\dashboard-dropdown-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-dropdown-02",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "dropdown-menu"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-02\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "dashboard-dropdown-02/components/dashboard-dropdown-02.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-02\\components\\dashboard-dropdown-02.svelte"
+				}
+			]
+		},
+		{
 			"name": "error-01",
 			"type": "registry:block",
 			"dependencies": [],
@@ -584,6 +638,24 @@
 			]
 		},
 		{
+			"name": "statistics-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["card", "utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\statistics-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "statistics-01/components/statistics-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\statistics-01\\components\\statistics-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "team-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -664,6 +736,42 @@
 					"type": "registry:component",
 					"target": "verify-email-01/components/verify-email-01.svelte",
 					"path": "src\\lib\\registry\\blocks\\verify-email-01\\components\\verify-email-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "widget-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "button", "card", "dropdown-menu", "progress"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\widget-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "widget-01/components/widget-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\widget-01\\components\\widget-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "widget-02",
+			"type": "registry:block",
+			"dependencies": ["layerchart"],
+			"registryDependencies": ["card", "chart", "separator", "utils"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\widget-02\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "widget-02/components/widget-02.svelte",
+					"path": "src\\lib\\registry\\blocks\\widget-02\\components\\widget-02.svelte"
 				}
 			]
 		},

@@ -34,7 +34,16 @@ export const registryCategories = [
 		name: 'Dashboard & App',
 		slug: 'dashboard',
 		hidden: false,
-		blocks: ['application-shell-01', 'charts-01']
+		blocks: [
+			'application-shell-01',
+			'charts-01',
+			'widget-01',
+			'widget-02',
+			'statistics-01',
+			'dashboard-dialog-01',
+			'dashboard-dropdown-01',
+			'dashboard-dropdown-02'
+		]
 	},
 	{
 		name: 'eCommerce',
