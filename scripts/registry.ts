@@ -39,6 +39,12 @@ const tsParser = acorn.Parser.extend(tsPlugin());
 type RegistryItems = Registry['items'];
 type RegistryItemFiles = Registry['items'][number]['files'];
 
+// Add -comp suffix to prevent name conflicts
+function applyCompSuffix(componentName: string): string {
+	const components = ['dashboard-header-01', 'dashboard-footer-01', 'dashboard-sidebar-01'];
+	return components.includes(componentName) ? `${componentName}-comp` : componentName;
+}
+
 async function crawlIfExists(
 	rootPath: string,
 	crawler: (rootPath: string) => Promise<RegistryItems>
@@ -282,7 +288,7 @@ async function crawlComponents(rootPath: string): Promise<RegistryItems> {
 		);
 
 		items.push({
-			name,
+			name: applyCompSuffix(name),
 			type: 'registry:component',
 			files: [{ path: relativePath, type: 'registry:component' }],
 			registryDependencies: Array.from(registryDependencies),
@@ -318,7 +324,7 @@ async function buildComponentRegistry(
 	return {
 		type: 'registry:component',
 		files,
-		name: componentName,
+		name: applyCompSuffix(componentName),
 		registryDependencies: Array.from(registryDependencies),
 		dependencies: Array.from(packageDependencies)
 	} satisfies RegistryItems[number];
@@ -626,7 +632,7 @@ async function getFileDependencies(
 					registryDependencies.add(`local:${hook}`);
 				} else if (source.includes('components')) {
 					const component = source.split('/').at(-1)!.split('.')[0];
-					registryDependencies.add(`local:${component}`);
+					registryDependencies.add(`local:${applyCompSuffix(component)}`);
 				} else if (source.includes('lib')) {
 					// For lib files, check if it's nested (has parent directory)
 					// e.g., $lib/registry/lib/assets/svg/logo.svelte -> logo-svg
