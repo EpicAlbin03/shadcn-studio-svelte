@@ -1,10 +1,21 @@
 import type { ComponentProps } from '$lib/types/components';
-import { components } from '$lib/assets/data/components';
+import { categories } from '$lib/config/components.svelte';
 
 export const getComponentsByNames = (names: string[]): ComponentProps[] => {
-	const componentsMap = new Map(components.map((comp) => [comp.name, comp]));
+	const componentMap = new Map<string, ComponentProps>();
+
+	categories.forEach((category) => {
+		if (category.components) {
+			category.components.forEach((comp) => {
+				componentMap.set(comp.name, {
+					name: comp.name,
+					badge: category.badge
+				});
+			});
+		}
+	});
 
 	return names
-		.map((name) => componentsMap.get(name))
+		.map((name) => componentMap.get(name))
 		.filter((comp): comp is ComponentProps => comp !== undefined);
 };

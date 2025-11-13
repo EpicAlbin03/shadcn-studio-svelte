@@ -36,6 +36,8 @@
 		TooltipSVG
 	} from '$lib/assets/svg';
 
+	type Badge = 'New' | 'Updated' | undefined;
+
 	export type ComponentCategory = {
 		slug: string;
 		name: string;
@@ -51,7 +53,7 @@
 					xl?: number;
 				};
 				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: string;
+				badge?: Badge;
 				note?: Snippet;
 				hasAnimation?: never | false;
 				animation?: never | undefined;
@@ -67,11 +69,11 @@
 					xl?: number;
 				};
 				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: string;
+				badge?: Badge;
 				note?: Snippet;
 				hasAnimation: true;
 				animation?: {
-					badge?: string;
+					badge?: Badge;
 					breakpoints?: {
 						xs?: number;
 						sm?: number;
