@@ -103,5 +103,14 @@ export const blockMeta = {
 	},
 	'dashboard-dropdown-02': {
 		description: 'Dashboard Dropdown 2'
+	},
+	'dashboard-sidebar-01': {
+		description: 'Dashboard Sidebar 1'
+	},
+	'dashboard-header-01': {
+		description: 'Dashboard Header 1'
+	},
+	'dashboard-footer-01': {
+		description: 'Dashboard Footer 1'
 	}
 } as Record<BlockName, BlockMeta>;

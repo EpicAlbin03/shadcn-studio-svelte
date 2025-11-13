@@ -42,7 +42,10 @@ export const registryCategories = [
 			'statistics-01',
 			'dashboard-dialog-01',
 			'dashboard-dropdown-01',
-			'dashboard-dropdown-02'
+			'dashboard-dropdown-02',
+			'dashboard-sidebar-01',
+			'dashboard-header-01',
+			'dashboard-footer-01'
 		]
 	},
 	{

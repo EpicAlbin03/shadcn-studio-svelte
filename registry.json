@@ -149,15 +149,13 @@
 		{
 			"name": "application-shell-01",
 			"type": "registry:block",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": [],
 			"registryDependencies": [
-				"separator",
-				"card",
-				"breadcrumb",
 				"sidebar",
-				"button",
-				"dropdown-menu",
-				"avatar"
+				"card",
+				"local:dashboard-sidebar-01-comp",
+				"local:dashboard-header-01-comp",
+				"local:dashboard-footer-01-comp"
 			],
 			"files": [
 				{
@@ -167,13 +165,8 @@
 				},
 				{
 					"type": "registry:component",
-					"target": "application-shell-01/components/dropdown-language.svelte",
-					"path": "src\\lib\\registry\\blocks\\application-shell-01\\components\\dropdown-language.svelte"
-				},
-				{
-					"type": "registry:component",
-					"target": "application-shell-01/components/dropdown-profile.svelte",
-					"path": "src\\lib\\registry\\blocks\\application-shell-01\\components\\dropdown-profile.svelte"
+					"target": "application-shell-01/components/application-shell-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\application-shell-01\\components\\application-shell-01.svelte"
 				}
 			]
 		},
@@ -300,6 +293,45 @@
 					"type": "registry:component",
 					"target": "dashboard-dropdown-02/components/dashboard-dropdown-02.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-02\\components\\dashboard-dropdown-02.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-footer-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["local:dashboard-footer-01-comp", "card", "sidebar"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-footer-01\\+page.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-header-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["local:dashboard-header-01-comp", "card", "sidebar"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-header-01\\+page.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-sidebar-01",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["local:dashboard-sidebar-01-comp", "sidebar", "card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "routes/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\dashboard-sidebar-01\\+page.svelte"
 				}
 			]
 		},
@@ -3772,6 +3804,42 @@
 			]
 		},
 		{
+			"name": "dashboard-footer-01-comp",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\dashboard-footer-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-header-01-comp",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["sidebar", "separator", "breadcrumb"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\dashboard-header-01.svelte"
+				}
+			]
+		},
+		{
+			"name": "dashboard-sidebar-01-comp",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["sidebar"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\dashboard-sidebar-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "data-table-01",
 			"type": "registry:component",
 			"dependencies": ["@tanstack/table-core"],
@@ -4471,6 +4539,18 @@
 			]
 		},
 		{
+			"name": "dropdown-language",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button", "dropdown-menu"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\dropdown-language.svelte"
+				}
+			]
+		},
+		{
 			"name": "dropdown-menu-01",
 			"type": "registry:component",
 			"dependencies": [],
@@ -4659,6 +4739,18 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\dropdown-menu-16.svelte"
+				}
+			]
+		},
+		{
+			"name": "dropdown-profile",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["avatar", "dropdown-menu", "button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\dropdown-profile.svelte"
 				}
 			]
 		},
