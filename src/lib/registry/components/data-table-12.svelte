@@ -121,8 +121,8 @@
 		{
 			accessorKey: 'status',
 			header: 'Status',
-			cell: ({ row }) => {
-				return renderSnippet(StatusSnippet, row.getValue('status'));
+			cell: ({ getValue }) => {
+				return renderSnippet(StatusSnippet, { value: getValue() as string });
 			}
 		},
 		{
@@ -265,7 +265,7 @@
 	}
 </script>
 
-{#snippet StatusSnippet(status: string)}
+{#snippet StatusSnippet({ value }: { value: string })}
 	{@const styles = {
 		success:
 			'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
@@ -273,9 +273,9 @@
 			'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
 		processing:
 			'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
-	}[status]}
+	}[value]}
 	<Badge class={cn('rounded-full border-none focus-visible:outline-none', styles)}>
-		{status}
+		{value}
 	</Badge>
 {/snippet}
 
