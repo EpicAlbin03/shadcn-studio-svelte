@@ -18,10 +18,12 @@ export const blockMeta = {
 		description: 'Pricing 1'
 	},
 	'testimonials-01': {
-		description: 'Testimonials 1'
+		description: 'Testimonials 1',
+		iframeHeight: '600px'
 	},
 	'social-proof-01': {
-		description: 'Social Proof 1'
+		description: 'Social Proof 1',
+		iframeHeight: '600px'
 	},
 	'portfolio-01': {
 		description: 'Portfolio 1'
@@ -30,10 +32,12 @@ export const blockMeta = {
 		description: 'Team 1'
 	},
 	'cta-01': {
-		description: 'CTA 1'
+		description: 'CTA 1',
+		iframeHeight: '600px'
 	},
 	'logo-cloud-01': {
-		description: 'Logo Cloud 1'
+		description: 'Logo Cloud 1',
+		iframeHeight: '600px'
 	},
 	'faq-01': {
 		description: 'FAQ 1'
@@ -51,10 +55,12 @@ export const blockMeta = {
 		description: 'Contact Us 1'
 	},
 	'navbar-01': {
-		description: 'Navbar 1'
+		description: 'Navbar 1',
+		iframeHeight: '600px'
 	},
 	'footer-01': {
-		description: 'Footer 1'
+		description: 'Footer 1',
+		iframeHeight: '600px'
 	},
 	'login-01': {
 		description: 'Login 1'
@@ -75,7 +81,8 @@ export const blockMeta = {
 		description: 'Two Factor Authentication 1'
 	},
 	'app-integration-01': {
-		description: 'App Integration 1'
+		description: 'App Integration 1',
+		iframeHeight: '600px'
 	},
 	'error-01': {
 		description: 'Error 1'
@@ -90,22 +97,28 @@ export const blockMeta = {
 		description: 'Charts 1'
 	},
 	'widget-01': {
-		description: 'Widget 1'
+		description: 'Widget 1',
+		iframeHeight: '600px'
 	},
 	'widget-02': {
-		description: 'Widget 2'
+		description: 'Widget 2',
+		iframeHeight: '600px'
 	},
 	'statistics-01': {
-		description: 'Statistics 1'
+		description: 'Statistics 1',
+		iframeHeight: '600px'
 	},
 	'dashboard-dialog-01': {
-		description: 'Dashboard Dialog 1'
+		description: 'Dashboard Dialog 1',
+		iframeHeight: '600px'
 	},
 	'dashboard-dropdown-01': {
-		description: 'Dashboard Dropdown 1'
+		description: 'Dashboard Dropdown 1',
+		iframeHeight: '600px'
 	},
 	'dashboard-dropdown-02': {
-		description: 'Dashboard Dropdown 2'
+		description: 'Dashboard Dropdown 2',
+		iframeHeight: '600px'
 	},
 	'dashboard-sidebar-01': {
 		description: 'Dashboard Sidebar 1'
