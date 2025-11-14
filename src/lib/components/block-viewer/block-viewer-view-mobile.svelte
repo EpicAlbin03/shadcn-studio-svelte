@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
-	import { BlockViewerContext } from "./block-viewer.svelte";
+	import type { Snippet } from 'svelte';
+	import { BlockViewerContext } from './block-viewer.svelte';
 
 	const ctx = BlockViewerContext.get();
 	let { children }: { children?: Snippet } = $props();
@@ -11,16 +11,16 @@
 		<div class="line-clamp-1 text-sm font-medium">
 			{ctx.item.description}
 		</div>
-		<div class="text-muted-foreground ml-auto shrink-0 font-mono text-xs">
+		<div class="ml-auto shrink-0 font-mono text-xs text-muted-foreground">
 			{ctx.item.name}
 		</div>
 	</div>
-	{#if ctx.item.meta?.mobile === "component"}
+	{#if ctx.item.meta?.mobile === 'component'}
 		{@render children?.()}
 	{:else}
 		<div class="overflow-hidden rounded-xl border">
 			<img
-				src="/img/registry/{ctx.item.name}-light.png"
+				src="/blocks/registry/{ctx.item.name}.png"
 				alt={ctx.item.name}
 				data-block={ctx.item.name}
 				width={1440}
@@ -28,7 +28,7 @@
 				class="object-cover dark:hidden"
 			/>
 			<img
-				src="/img/registry/{ctx.item.name}-dark.png"
+				src="/blocks/registry/{ctx.item.name}-dark.png"
 				alt={ctx.item.name}
 				data-block={ctx.item.name}
 				width={1440}
