@@ -102,13 +102,13 @@
 							class="cursor-pointer text-muted-foreground opacity-0 transition-none group-focus-within/item:opacity-100 group-hover/item:opacity-100 hover:!bg-transparent hover:text-foreground disabled:opacity-100"
 						>
 							<CodeIcon />
-							<span class="sr-only">View code</span>
+							<span class="sr-only">View Code</span>
 						</Button>
 					{/snippet}
 				</Dialog.Trigger>
 			{/snippet}
 		</Tooltip.Trigger>
-		<Tooltip.Content>View code</Tooltip.Content>
+		<Tooltip.Content>View Code</Tooltip.Content>
 	</Tooltip.Root>
 	<Dialog.Content
 		bind:ref={contentRef}

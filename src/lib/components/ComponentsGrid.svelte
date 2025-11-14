@@ -54,7 +54,7 @@
 	{#each components as component, index (component.name)}
 		<div
 			class={cn(
-				'flex items-center justify-center',
+				'flex justify-center',
 				{
 					'border-b-0': index >= length - (length % columns || columns),
 					'border-e-0': (index + 1) % columns === 0,
