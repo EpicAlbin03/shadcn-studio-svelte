@@ -1,8 +1,8 @@
 import { z } from 'zod/v4';
 import { blocks } from '../../__registry__/blocks.js';
 
-export const RESIZE_MESSAGE = 'block-viewer:resize';
-export const REQUEST_RESIZE_MESSAGE = 'block-viewer:request-resize';
+// export const RESIZE_MESSAGE = 'block-viewer:resize';
+// export const REQUEST_RESIZE_MESSAGE = 'block-viewer:request-resize';
 
 export type BlockName = (typeof blocks)[number];
 
