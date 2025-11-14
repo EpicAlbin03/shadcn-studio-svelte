@@ -61,7 +61,7 @@
 		{
 			"name": "rating",
 			"type": "registry:ui",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "tailwind-variants"],
 			"registryDependencies": ["utils"],
 			"files": [
 				{
@@ -3303,7 +3303,7 @@
 		{
 			"name": "charts-01-comp",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte", "layerchart"],
+			"dependencies": ["@lucide/svelte", "layerchart", "d3-scale"],
 			"registryDependencies": ["avatar", "card", "chart"],
 			"files": [
 				{
@@ -3639,7 +3639,7 @@
 		{
 			"name": "collapsible-09",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "cleave.js"],
 			"registryDependencies": [
 				"button",
 				"collapsible",
@@ -4061,7 +4061,7 @@
 		{
 			"name": "data-table-12",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte", "papaparse", "@tanstack/table-core"],
+			"dependencies": ["@lucide/svelte", "papaparse", "xlsx", "@tanstack/table-core"],
 			"registryDependencies": [
 				"badge",
 				"button",
@@ -4250,7 +4250,7 @@
 		{
 			"name": "date-picker-13",
 			"type": "registry:component",
-			"dependencies": ["layerchart", "bits-ui", "@internationalized/date"],
+			"dependencies": ["layerchart", "bits-ui", "@internationalized/date", "d3-scale"],
 			"registryDependencies": ["chart", "card", "popover", "button", "range-calendar"],
 			"files": [
 				{
@@ -5491,7 +5491,7 @@
 		{
 			"name": "input-mask-03",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "cleave.js"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{
@@ -5503,7 +5503,7 @@
 		{
 			"name": "input-mask-04",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["cleave.js"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{
@@ -5515,7 +5515,7 @@
 		{
 			"name": "input-mask-05",
 			"type": "registry:component",
-			"dependencies": [],
+			"dependencies": ["cleave.js"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{
@@ -5527,7 +5527,7 @@
 		{
 			"name": "input-mask-06",
 			"type": "registry:component",
-			"dependencies": ["@lucide/svelte"],
+			"dependencies": ["@lucide/svelte", "cleave.js"],
 			"registryDependencies": ["input", "label"],
 			"files": [
 				{

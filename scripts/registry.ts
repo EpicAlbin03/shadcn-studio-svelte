@@ -6,32 +6,13 @@ import { walk, type Node } from 'estree-walker';
 import * as svelte from 'svelte/compiler';
 import { registryItemSchema, type Registry } from '@shadcn-svelte/registry';
 import { presetThemes } from '../src/lib/assets/data/preset-themes.js';
+import packageJson from '../package.json' with { type: 'json' };
 
-const REGISTRY_DEPENDENCY = '$lib/registry';
+const REGISTRY_PATH = '$lib/registry';
 const UTILS_PATH = '$lib/utils';
-const PACKAGE_DEPENDENCIES: string[] = [
-	'@lucide/svelte',
-	'bits-ui',
-	'@internationalized/date',
-	'@tanstack/table-core',
-	'@dnd-kit-svelte/core',
-	'@dnd-kit-svelte/modifiers',
-	'@dnd-kit-svelte/sortable',
-	'@dnd-kit-svelte/utilities',
-	'@types/cleave.js',
-	'@types/inputmask',
-	'@types/papaparse',
-	'chrono-node',
-	'inputmask',
-	'layerchart',
-	'little-date',
-	'motion-start',
-	'papaparse',
-	'runed',
-	'svelte-sonner',
-	'sveltekit-superforms',
-	'zod'
-];
+const PACKAGE_DEPENDENCIES: string[] = Object.keys(packageJson.devDependencies).filter(
+	(dep) => dep !== 'svelte'
+);
 const DYNAMIC_IMPORTS: string[] = [];
 
 const tsParser = acorn.Parser.extend(tsPlugin());
@@ -631,7 +612,7 @@ async function getFileDependencies(
 		if (node.type === 'ImportDeclaration') {
 			const source = node.source.value as string;
 
-			if (source.startsWith(REGISTRY_DEPENDENCY)) {
+			if (source.startsWith(REGISTRY_PATH)) {
 				if (source.includes('ui')) {
 					const component = extractComponentName(source);
 					registryDependencies.add(`local:${component}`);
