@@ -3,25 +3,17 @@
 	import ComponentCodeViewer from '$lib/components/component-code-viewer/component-code-viewer.svelte';
 	import { page } from '$app/state';
 	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import { Sparkles } from '@lucide/svelte';
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { PUBLIC_URL } from '$lib/config/site-config';
+	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 
 	type Props = { componentsData: ComponentProps };
 
 	let { componentsData }: Props = $props();
 
 	const source = $derived(componentsData as HighlightedBlock);
-	const clipboard = new UseClipboard();
 
 	export const copyPromptText = `I’m looking at this shadcn-studio-svelte documentation: ${PUBLIC_URL}/docs/components/${componentsData.name}.
 Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`;
-
-	function handleCopyPrompt(e: MouseEvent) {
-		clipboard.copy(copyPromptText);
-	}
 </script>
 
 <div class="absolute end-2 top-2 flex w-full items-center justify-between">
@@ -29,25 +21,8 @@ Help me understand how to use it. Be ready to explain concepts, give examples, o
 		{componentsData.name}
 	</div>
 
-	<div class="flex items-center justify-center gap-2">
-		<Tooltip.Root disableCloseOnTriggerClick>
-			<Tooltip.Trigger onclick={handleCopyPrompt}>
-				{#snippet child({ props })}
-					<Button
-						{...props}
-						variant="ghost"
-						size="icon"
-						class="cursor-pointer text-muted-foreground opacity-0 transition-none group-focus-within/item:opacity-100 group-hover/item:opacity-100 hover:!bg-transparent hover:text-foreground disabled:opacity-100"
-					>
-						<Sparkles />
-						<span class="sr-only">Copy Prompt</span>
-					</Button>
-				{/snippet}
-			</Tooltip.Trigger>
-			<Tooltip.Content>
-				{clipboard.copied ? 'Copied' : 'Copy Prompt'}
-			</Tooltip.Content>
-		</Tooltip.Root>
+	<div class="ml-auto flex items-center justify-center gap-2">
+		<CopyPrompt {copyPromptText} />
 
 		{#if source}
 			{#key page.url.pathname}

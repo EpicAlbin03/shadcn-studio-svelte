@@ -99,7 +99,7 @@
 							{...props}
 							variant="ghost"
 							size="icon"
-							class="cursor-pointer text-muted-foreground opacity-0 transition-none group-focus-within/item:opacity-100 group-hover/item:opacity-100 hover:!bg-transparent hover:text-foreground disabled:opacity-100"
+							class="hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:!bg-transparent hover:text-foreground"
 						>
 							<CodeIcon />
 							<span class="sr-only">View Code</span>

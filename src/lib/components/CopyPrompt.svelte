@@ -3,29 +3,36 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { cn } from '$lib/utils';
+	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 
-	type Props = { class?: string };
+	type Props = { class?: string; copyPromptText: string };
 
-	let { class: className }: Props = $props();
+	let { class: className, copyPromptText }: Props = $props();
+
+	const clipboard = new UseClipboard();
+
+	function handleCopyPrompt(e: MouseEvent) {
+		clipboard.copy(copyPromptText);
+	}
 </script>
 
-<Tooltip.Root>
-	<Tooltip.Trigger>
+<Tooltip.Root disableCloseOnTriggerClick>
+	<Tooltip.Trigger onclick={handleCopyPrompt}>
 		{#snippet child({ props })}
 			<Button
 				{...props}
 				variant="ghost"
 				size="icon"
 				class={cn(
-					'cursor-pointer text-muted-foreground opacity-0 transition-none group-focus-within/item:opacity-100 group-hover/item:opacity-100 hover:!bg-transparent hover:text-foreground disabled:opacity-0 disabled:group-hover/item:opacity-50',
+					'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:!bg-transparent hover:text-foreground',
 					className
 				)}
-				aria-label="Copy prompt"
-				disabled
+				aria-label="Copy Prompt"
 			>
 				<SparklesIcon />
+				<span class="sr-only">Copy Prompt</span>
 			</Button>
 		{/snippet}
 	</Tooltip.Trigger>
-	<Tooltip.Content>Copy prompt (Coming Soon)</Tooltip.Content>
+	<Tooltip.Content>{clipboard.copied ? 'Copied' : 'Copy Prompt'}</Tooltip.Content>
 </Tooltip.Root>
