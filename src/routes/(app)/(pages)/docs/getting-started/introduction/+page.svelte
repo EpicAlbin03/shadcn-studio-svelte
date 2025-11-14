@@ -4,6 +4,13 @@
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { introFaqs } from '$lib/assets/data/faqs';
 	import MetaData from '$lib/components/MetaData.svelte';
+	import {
+		DocPageHeader,
+		DocSection,
+		DocHeading,
+		DocParagraph,
+		DocList
+	} from '$lib/components/docs';
 
 	const title = 'Introduction';
 	const description =
@@ -13,61 +20,57 @@
 <MetaData {title} {description} />
 
 <div class="flex flex-1 flex-col space-y-6 p-4 sm:space-y-10 sm:p-8">
-	<div class="flex flex-col items-start space-y-3">
-		<h1 class="text-3xl font-bold sm:text-3xl">{title}</h1>
-		<p class="text-muted-foreground">
-			{description}
-		</p>
-	</div>
-	<div class="flex flex-col items-start space-y-3">
-		<h2 class="text-2xl font-bold">What is shadcn/studio?</h2>
-		<p class="text-foreground/80">
+	<DocPageHeader {title} {description} />
+
+	<DocSection>
+		<DocHeading>What is shadcn/studio?</DocHeading>
+		<DocParagraph>
 			<strong> This isn't a traditional component library or a replacement for Shadcn </strong>
 			. Instead, it's a unique collection offers customizable variants of components, blocks, and templates.
 			Preview, customize, and copy-paste them into your apps with ease.
-		</p>
-		<p class="text-foreground/80">
+		</DocParagraph>
+		<DocParagraph>
 			Building on the solid foundation of the Shadcn components & blocks, we've enhanced it with
 			custom-designed components & blocks to give you a head start. This allows you to craft,
 			customize, and ship your projects faster and more efficiently.
-		</p>
-	</div>
+		</DocParagraph>
+	</DocSection>
 
-	<div class="flex flex-col items-start space-y-3">
-		<h2 class="text-2xl font-bold">Not a Standard Library, but a Distribution of Components</h2>
-		<p class="text-foreground/80">
-			Following the philosophy of Shadcn, shadcn/studio isn't a conventional “install-from-NPM”
+	<DocSection>
+		<DocHeading>Not a Standard Library, but a Distribution of Components</DocHeading>
+		<DocParagraph>
+			Following the philosophy of Shadcn, shadcn/studio isn't a conventional "install-from-NPM"
 			library. Rather, it's an open-source distribution of components designed for maximum
 			adaptability. You can copy the code, modify styles, adjust logic, or integrate it with other
 			tools—free from the limitations of typical libraries. This &quot;open code&quot; model
 			empowers you to customize with confidence and creativity.
-		</p>
-	</div>
+		</DocParagraph>
+	</DocSection>
 
-	<div class="flex flex-col items-start space-y-3">
-		<h2 class="text-2xl font-bold">Why Should I use shadcn/studio?</h2>
-		<p class="text-foreground/80">
+	<DocSection>
+		<DocHeading>Why Should I use shadcn/studio?</DocHeading>
+		<DocParagraph>
 			shadcn/ui aims to provide core components with a unique distribution system, allowing
 			developers to copy and paste reusable, customizable UI elements directly into their codebase.
-		</p>
+		</DocParagraph>
 
-		<p class="text-foreground/80">
+		<DocParagraph>
 			While this approach offers flexibility and control, it comes with some limitations: a lack of
 			diverse component variants examples, limited theme customization options, and limited
 			pre-built blocks. Additionally, its extensive customization options, though powerful, can
 			sometimes feel overwhelming, especially for those seeking a more guided or streamlined
 			experience.
-		</p>
-	</div>
+		</DocParagraph>
+	</DocSection>
 
-	<div class="flex flex-col items-start space-y-3">
-		<h3 class="text-md font-bold">This is where shadcn/studio shines ✨</h3>
-		<p class="text-foreground/80">
+	<DocSection>
+		<DocHeading level={3}>This is where shadcn/studio shines ✨</DocHeading>
+		<DocParagraph>
 			An open-source collection of copy-and-paste shadcn components, blocks, and templates - paired
 			with a powerful theme generator to craft, customize, and ship faster 🚀. It provides a robust
 			toolkit for building stunning, interactive user interfaces with ease.
-		</p>
-		<ul class="ms-8 list-disc space-y-2 text-foreground/80 lg:max-w-7/10">
+		</DocParagraph>
+		<DocList class="lg:max-w-7/10">
 			<li>
 				<strong>Open-source:</strong> Dive into a growing, community-driven collection of copy-and-paste
 				components, blocks, and templates.
@@ -84,11 +87,11 @@
 				<strong>Powerful theme generator:</strong> Tailor your UI effortlessly with real-time previews,
 				ensuring consistent, branded designs delivered faster.
 			</li>
-		</ul>
-	</div>
+		</DocList>
+	</DocSection>
 
-	<div class="flex flex-col items-start space-y-3">
-		<h2 class="text-2xl font-bold">Frequently Asked Questions</h2>
+	<DocSection>
+		<DocHeading>Frequently Asked Questions</DocHeading>
 		<Accordion.Root type="single" class="w-full">
 			{#each introFaqs as { question, answer }, index (question)}
 				<Accordion.Item value="question-{index}">
@@ -106,5 +109,5 @@
 				</Accordion.Item>
 			{/each}
 		</Accordion.Root>
-	</div>
+	</DocSection>
 </div>
