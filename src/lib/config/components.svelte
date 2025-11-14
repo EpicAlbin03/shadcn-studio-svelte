@@ -791,9 +791,7 @@
 				{ name: 'input-43' },
 				{ name: 'input-44' },
 				{ name: 'input-45' },
-				{ name: 'input-46' },
-				{ name: 'input-47' },
-				{ name: 'input-48' }
+				{ name: 'input-46' }
 			]
 		},
 		{
@@ -841,7 +839,6 @@
 			slug: 'pagination',
 			name: 'Pagination',
 			svg: PaginationSVG,
-			badge: 'New',
 			breakpoints: {
 				md: 2
 			},
@@ -1003,7 +1000,7 @@
 			slug: 'sheet',
 			name: 'Sheet',
 			svg: SheetSVG,
-			badge: 'New',
+
 			breakpoints: {
 				sm: 2,
 				md: 3
@@ -1025,7 +1022,7 @@
 		{
 			slug: 'sonner',
 			name: 'Sonner',
-			badge: 'New',
+
 			svg: SonnerSVG,
 			breakpoints: {
 				md: 2,
@@ -1129,7 +1126,7 @@
 			slug: 'tabs',
 			name: 'Tabs',
 			svg: TabsSVG,
-			badge: 'New',
+
 			breakpoints: {
 				xl: 2
 			},
@@ -1139,7 +1136,6 @@
 			],
 			hasAnimation: true,
 			animation: {
-				badge: 'New',
 				breakpoints: {
 					xl: 2
 				}

@@ -21,7 +21,7 @@
 
 <div class="flex flex-1 flex-col space-y-4 p-4 sm:space-y-8 sm:p-8">
 	<div class="flex flex-col items-start space-y-3">
-		<h1 class="text-2xl font-bold sm:text-3xl">{`Shadcn ${category.name}`}</h1>
+		<h1 class="text-2xl font-bold sm:text-3xl">Shadcn {category.name}</h1>
 		<p class="text-muted-foreground">
 			Elevate your UI with a growing collection of {components.filter(
 				(component) => !component?.isAnimated
@@ -45,7 +45,7 @@
 	/>
 	{#if category.hasAnimation}
 		<div id="animated-variants" class="flex flex-col items-start space-y-3 pt-24">
-			<h2 class="text-2xl font-bold sm:text-3xl">{`Animated ${category.name}`}</h2>
+			<h2 class="text-2xl font-bold sm:text-3xl">Animated ${category.name}</h2>
 			<p class="text-muted-foreground">
 				Enhance your interface with {components.filter((component) => component?.isAnimated).length}
 				animated {category.name.toLowerCase()} components, crafted with Svelte, Tailwind CSS, and Motion
