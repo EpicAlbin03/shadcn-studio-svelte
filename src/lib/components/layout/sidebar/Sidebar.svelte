@@ -117,7 +117,7 @@
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-4', { 'first:pt-8': !isBreakpointReached })}
 			>
 				<Sidebar.Menu class="gap-2.5">
-					<Collapsible class="group/collapsible" open>
+					<Collapsible class="group/collapsible" open={false}>
 						<Sidebar.MenuItem>
 							<CollapsibleTrigger>
 								{#snippet child({ props })}
