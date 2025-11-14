@@ -652,6 +652,11 @@ async function getFileDependencies(
 			PACKAGE_DEPENDENCIES.forEach((dep) => {
 				if (source === dep) {
 					packageDependencies.add(dep);
+					// Check if @types/ version exists and add it
+					const typesPackage = `@types/${dep.startsWith('@') ? dep.split('/')[1] : dep}`;
+					if (PACKAGE_DEPENDENCIES.includes(typesPackage)) {
+						packageDependencies.add(typesPackage);
+					}
 				}
 			});
 		} else if (node.type === 'ImportExpression' && node.source.type === 'Literal') {
