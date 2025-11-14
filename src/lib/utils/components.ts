@@ -7,10 +7,7 @@ export const getComponentsByNames = (names: string[]): ComponentProps[] => {
 	categories.forEach((category) => {
 		if (category.components) {
 			category.components.forEach((comp) => {
-				componentMap.set(comp.name, {
-					name: comp.name,
-					badge: category.badge
-				});
+				componentMap.set(comp.name, comp);
 			});
 		}
 	});
