@@ -22,7 +22,7 @@
 	<DocPageHeader {title} {description} />
 
 	<DocSection>
-		<DocHeading>Overview</DocHeading>
+		<DocHeading heading="Overview" />
 		<DocParagraph>
 			shadcn/studio uses the shadcn-svelte CLI, offering an easy way to install our components,
 			blocks, and themes. The CLI is designed to help you quickly add ready-to-use assets without
@@ -40,7 +40,7 @@
 	</DocSection>
 
 	<DocSection>
-		<DocHeading>Setup</DocHeading>
+		<DocHeading heading="Setup" />
 		<DocParagraph>
 			Before using the shadcn/studio CLI, make sure that you've installed shadcn in your project by
 			following the official
@@ -56,12 +56,12 @@
 	</DocSection>
 
 	<DocSection spacing="medium">
-		<DocHeading>Installation</DocHeading>
+		<DocHeading heading="Installation" />
 		<DocParagraph>
 			You can install components, blocks, and themes using the CLI commands below.
 		</DocParagraph>
 
-		<DocHeading>Installing Components</DocHeading>
+		<DocHeading heading="Installing Components" level={3} />
 		<DocParagraph>
 			Components are enhanced versions of shadcn/ui components, with added functionality and
 			styling. You can refer to the <a
@@ -75,7 +75,7 @@
 		</DocParagraph>
 		<DocCodeBlock name="button-01" />
 
-		<DocHeading>Installing Blocks</DocHeading>
+		<DocHeading heading="Installing Blocks" level={3} />
 		<DocParagraph>
 			You can refer to the <a
 				href={gettingStartedPages.find((p) => p.slug === 'blocks')?.href}
@@ -88,7 +88,7 @@
 		</DocParagraph>
 		<DocCodeBlock name="hero-01" />
 
-		<DocHeading>Installing Themes</DocHeading>
+		<DocHeading heading="Installing Themes" level={3} />
 		<DocAlert variant="info">
 			Only the pre-built themes are available for installation via the CLI.
 		</DocAlert>
@@ -116,21 +116,21 @@
 	</DocSection>
 
 	<DocSection spacing="medium">
-		<DocHeading>Advanced Usage</DocHeading>
+		<DocHeading heading="Advanced Usage" />
 
-		<DocHeading>Installing Multiple Items</DocHeading>
+		<DocHeading heading="Installing Multiple Items" level={3} />
 		<DocParagraph>You can install multiple items at once by listing them:</DocParagraph>
 		<DocCodeBlock name={['button-01', 'hero-01', 'themes/art-deco']} />
 
-		<DocHeading>Force Overwriting Existing Files</DocHeading>
+		<DocHeading heading="Force Overwriting Existing Files" level={3} />
 		<DocParagraph>If you want to overwrite existing files during installation:</DocParagraph>
 		<DocCodeBlock name="button-01" overwrite />
 	</DocSection>
 
 	<DocSection spacing="medium">
-		<DocHeading>Troubleshooting</DocHeading>
+		<DocHeading heading="Troubleshooting" />
 
-		<DocHeading>1. Block/Component/Theme Not Found</DocHeading>
+		<DocHeading heading="Block/Component/Theme Not Found" level={3} />
 		<DocAlert variant="error" title="Error: Block/Component/Theme not found">
 			"The requested block/component/theme could not be found. Please check the
 			block/component/theme name and try again."
@@ -145,7 +145,7 @@
 	</DocSection>
 
 	<DocSection spacing="medium">
-		<DocHeading>Best Practices</DocHeading>
+		<DocHeading heading="Best Practices" />
 
 		<DocList type="ol">
 			<li>

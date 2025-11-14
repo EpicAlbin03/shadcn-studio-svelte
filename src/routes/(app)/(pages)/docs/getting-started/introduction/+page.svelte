@@ -23,7 +23,7 @@
 	<DocPageHeader {title} {description} />
 
 	<DocSection>
-		<DocHeading>What is shadcn/studio?</DocHeading>
+		<DocHeading heading="What is shadcn/studio?" />
 		<DocParagraph>
 			<strong> This isn't a traditional component library or a replacement for Shadcn </strong>
 			. Instead, it's a unique collection offers customizable variants of components, blocks, and templates.
@@ -37,7 +37,7 @@
 	</DocSection>
 
 	<DocSection>
-		<DocHeading>Not a Standard Library, but a Distribution of Components</DocHeading>
+		<DocHeading heading="Not a Standard Library, but a Distribution of Components" />
 		<DocParagraph>
 			Following the philosophy of Shadcn, shadcn/studio isn't a conventional "install-from-NPM"
 			library. Rather, it's an open-source distribution of components designed for maximum
@@ -48,7 +48,7 @@
 	</DocSection>
 
 	<DocSection>
-		<DocHeading>Why Should I use shadcn/studio?</DocHeading>
+		<DocHeading heading="Why Should I use shadcn/studio?" />
 		<DocParagraph>
 			shadcn/ui aims to provide core components with a unique distribution system, allowing
 			developers to copy and paste reusable, customizable UI elements directly into their codebase.
@@ -64,7 +64,7 @@
 	</DocSection>
 
 	<DocSection>
-		<DocHeading level={3}>This is where shadcn/studio shines ✨</DocHeading>
+		<DocHeading heading="This is where shadcn/studio shines ✨" level={3} />
 		<DocParagraph>
 			An open-source collection of copy-and-paste shadcn components, blocks, and templates - paired
 			with a powerful theme generator to craft, customize, and ship faster 🚀. It provides a robust
@@ -91,7 +91,7 @@
 	</DocSection>
 
 	<DocSection>
-		<DocHeading>Frequently Asked Questions</DocHeading>
+		<DocHeading heading="Frequently Asked Questions" />
 		<Accordion.Root type="single" class="w-full">
 			{#each introFaqs as { question, answer }, index (question)}
 				<Accordion.Item value="question-{index}">

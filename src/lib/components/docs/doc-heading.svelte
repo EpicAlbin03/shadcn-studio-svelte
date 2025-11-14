@@ -1,19 +1,22 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { cn } from '$lib/utils';
 
 	type Props = {
+		heading: string;
 		level?: 2 | 3;
-		children: Snippet;
 	};
 
-	let { level = 2, children }: Props = $props();
+	let { heading, level = 2 }: Props = $props();
 
 	const sizeClass = level === 2 ? 'text-2xl' : 'text-xl';
+	const id = heading
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
 </script>
 
 {#if level === 2}
-	<h2 class={cn(sizeClass, 'font-bold')}>{@render children()}</h2>
+	<h2 class={cn(sizeClass, 'font-bold')} {id}>{heading}</h2>
 {:else if level === 3}
-	<h3 class={cn(sizeClass, 'font-bold')}>{@render children()}</h3>
+	<h3 class={cn(sizeClass, 'font-bold')} {id}>{heading}</h3>
 {/if}
