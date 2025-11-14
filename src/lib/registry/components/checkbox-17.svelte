@@ -2,7 +2,7 @@
 	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
 
 	const message =
-		'Motion components will be available soon. There is currently a bug with motion-start preventing props to be spread on motion elements.';
+		'Motion components will be available soon*. It is currently not possible to spread props on motion elements.';
 </script>
 
 <UnderConstruction {message} />
