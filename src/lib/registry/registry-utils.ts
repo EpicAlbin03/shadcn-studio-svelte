@@ -7,7 +7,7 @@ export type FileTree = {
 };
 
 export function transformUIPath(target: string): string {
-	return `ui/${target}`;
+	return `lib/components/ui/${target}`;
 }
 
 export function transformComponentPath(target: string): string {
