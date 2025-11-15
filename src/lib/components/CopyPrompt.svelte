@@ -5,9 +5,9 @@
 	import { cn } from '$lib/utils';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 
-	type Props = { class?: string; copyPromptText: string };
+	type Props = { class?: string; copyPromptText: string; hidden?: boolean };
 
-	let { class: className, copyPromptText }: Props = $props();
+	let { class: className, copyPromptText, hidden }: Props = $props();
 
 	const clipboard = new UseClipboard();
 
@@ -21,10 +21,11 @@
 		{#snippet child({ props })}
 			<Button
 				{...props}
-				variant="ghost"
+				variant={hidden ? 'ghost' : 'outline'}
 				size="icon"
 				class={cn(
-					'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:!bg-transparent hover:text-foreground',
+					hidden &&
+						'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:!bg-transparent hover:text-foreground',
 					className
 				)}
 				aria-label="Copy Prompt"

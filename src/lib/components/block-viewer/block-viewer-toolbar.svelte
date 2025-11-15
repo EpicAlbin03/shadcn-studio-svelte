@@ -15,35 +15,54 @@
 	import { getCommand } from '$lib/utils/package-manager.js';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { PUBLIC_URL } from '$lib/config/site-config';
+	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
+	import { getCopyPromptText } from '$lib/utils/copy-prompt';
+	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server';
+	import { page } from '$app/state';
 
 	const ctx = BlockViewerContext.get();
 	const userConfig = UserConfigContext.get();
 
+	const packageManager = $derived(userConfig.settings.packageManager);
+	const blockName = $derived(ctx.item.name);
+	const source = $derived(ctx.item as HighlightedBlock);
+
 	const clipboard = new UseClipboard();
+
+	const categorySlug = $derived.by(() => {
+		const match = page.url.pathname.match(/\/blocks\/([^\/]+)/);
+		return match ? match[1] : '';
+	});
 
 	const addCommand = $derived(
 		getCommand(
 			userConfig.settings.packageManager,
 			'execute',
-			`shadcn-svelte@latest add ${PUBLIC_URL}/registry/${ctx.item.name}.json`
+			`shadcn-svelte@latest add ${PUBLIC_URL}/registry/${blockName}.json`
 		)
 	);
 
 	const command = $derived(addCommand.command + ' ' + addCommand.args.join(' '));
+	const copyPromptText = $derived(
+		getCopyPromptText(packageManager, blockName, categorySlug, source, true)
+	);
 </script>
 
 <div class="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
-	<Tabs.Root bind:value={ctx.view} class="hidden shrink-0 lg:flex">
-		<Tabs.List
-			class="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs"
-		>
-			<Tabs.Trigger value="preview">Preview</Tabs.Trigger>
-			<Tabs.Trigger value="code">Code</Tabs.Trigger>
-		</Tabs.List>
-	</Tabs.Root>
+	<div class="flex items-center gap-3">
+		<Tabs.Root bind:value={ctx.view} class="hidden shrink-0 lg:flex">
+			<Tabs.List
+				class="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs"
+			>
+				<Tabs.Trigger value="preview">Preview</Tabs.Trigger>
+				<Tabs.Trigger value="code">Code</Tabs.Trigger>
+			</Tabs.List>
+		</Tabs.Root>
+		<CopyPrompt {copyPromptText} />
+	</div>
 	<Separator orientation="vertical" class="mx-2 !h-4" />
 	<a
-		href="#{ctx.item.name}"
+		href="#{blockName}"
 		class="shrink-0 text-center text-sm font-medium underline-offset-2 hover:underline md:text-left"
 	>
 		{ctx.item.description?.replace(/\.$/, '')}
@@ -75,7 +94,7 @@
 					variant="ghost"
 					class="size-6 rounded-sm p-0"
 					title="Open in New Tab"
-					href="/view/{ctx.item.name}"
+					href="/view/{blockName}"
 					target="_blank"
 				>
 					<span class="sr-only">Open in New Tab</span>

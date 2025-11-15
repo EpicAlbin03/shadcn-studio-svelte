@@ -4,12 +4,15 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import { ExternalLinkIcon } from '@lucide/svelte';
 	import type { PageProps } from './$types';
+	import { ComponentCategoryContext } from '$lib/utils/components';
 
 	let { data }: PageProps = $props();
 
 	const validComponentsData = $derived(data.validComponentsData);
 	const category = $derived(data.category);
 	const components = $derived(data.components);
+
+	ComponentCategoryContext.set(data.category);
 
 	const title = $derived(`Shadcn ${category.name}`);
 	const description = $derived(
@@ -45,7 +48,7 @@
 	/>
 	{#if category.hasAnimation}
 		<div id="animated-variants" class="flex flex-col items-start space-y-3 pt-24">
-			<h2 class="text-2xl font-bold sm:text-3xl">Animated ${category.name}</h2>
+			<h2 class="text-2xl font-bold sm:text-3xl">Animated {category.name}</h2>
 			<p class="text-muted-foreground">
 				Enhance your interface with {components.filter((component) => component?.isAnimated).length}
 				animated {category.name.toLowerCase()} components, crafted with Svelte, Tailwind CSS, and Motion

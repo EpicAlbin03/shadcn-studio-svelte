@@ -14,6 +14,7 @@
 		className
 	)}
 	data-slot={componentName}
+	id={componentName}
 >
 	{@render children?.()}
 </div>
