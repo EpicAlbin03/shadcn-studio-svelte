@@ -64,7 +64,7 @@
 							<a href="/theme-generator/#roadmap">Roadmap</a>
 						</li> -->
 						<li>
-							<a href="/theme-generator/#faq">FAQ</a>
+							<a href="/theme-generator#faq">FAQ</a>
 						</li>
 						<li>
 							<a href="/sitemap.xml">Sitemap</a>

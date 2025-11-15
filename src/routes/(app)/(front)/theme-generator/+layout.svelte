@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
+	import { tick } from 'svelte';
 	import { PlusIcon, Sparkles } from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
 	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
@@ -14,6 +16,18 @@
 
 	const title = 'Shadcn Theme Generator';
 	const description = 'Preview your theme changes across different components and layouts.';
+
+	afterNavigate(async ({ to }) => {
+		if (to?.url.hash) {
+			await tick();
+			setTimeout(() => {
+				const element = document.getElementById(to.url.hash.slice(1));
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			}, 100);
+		}
+	});
 </script>
 
 <MetaData {title} {description} />
