@@ -18,6 +18,15 @@ export const entries: EntryGenerator = () =>
  * Any components / blocks that won't have a .json file associated with them.
  */
 const ITEMS_TO_IGNORE = ['combobox', 'date-picker', 'typography'];
+const MAX_BLOCKS_PER_REQUEST = 5; // keeps prerendered dependency paths below Windows limits
+
+const chunkBlocks = (items: string[], size: number): string[][] => {
+	const chunks: string[][] = [];
+	for (let i = 0; i < items.length; i += size) {
+		chunks.push(items.slice(i, i + size));
+	}
+	return chunks;
+};
 
 export const load: PageLoad = async ({ params, fetch }) => {
 	const category = getCategory(params.category);
@@ -33,17 +42,26 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		.map((comp) => comp.name)
 		.filter((name) => !ITEMS_TO_IGNORE.includes(name));
 
-	// Fetch all components in a single request
+	const fetchChunks = chunkBlocks(componentNamesToFetch, MAX_BLOCKS_PER_REQUEST);
+
 	let highlightedBlocks: HighlightedBlock[] = [];
 
-	if (componentNamesToFetch.length > 0) {
+	if (fetchChunks.length > 0) {
 		try {
-			const blocksQuery = componentNamesToFetch.join(',');
-			const res = await fetch(`/api/block/${encodeURIComponent(blocksQuery)}`);
+			const chunkedResults = await Promise.all(
+				fetchChunks.map(async (chunk) => {
+					const blocksQuery = encodeURIComponent(chunk.join(','));
+					const res = await fetch(`/api/block/${blocksQuery}`);
 
-			if (res.ok) {
-				highlightedBlocks = await res.json();
-			}
+					if (res.ok) {
+						return (await res.json()) as HighlightedBlock[];
+					}
+
+					return [];
+				})
+			);
+
+			highlightedBlocks = chunkedResults.flat();
 		} catch (error) {
 			console.error('Failed to fetch components:', error);
 		}

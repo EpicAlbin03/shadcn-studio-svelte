@@ -19,13 +19,13 @@
 	const packageManager = $derived(userConfig.settings.packageManager);
 
 	const copyPromptText = $derived(
-		getCopyPromptText(packageManager, componentsData.name, componentCategory.slug, source)
+		getCopyPromptText(packageManager, source.name, componentCategory.slug, source)
 	);
 </script>
 
 <div class="absolute end-2 top-2 flex w-full items-center justify-between">
 	<div class="ml-6 hidden text-sm text-muted-foreground group-hover/item:block">
-		{componentsData.name}
+		{source.name}
 	</div>
 
 	<div class="ml-auto flex items-center justify-center gap-2">

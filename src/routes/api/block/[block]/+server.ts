@@ -115,32 +115,38 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 	});
 }
 
+function normalizeBlockNames(blockNames: string[]): string[] {
+	return Array.from(
+		new Set(blockNames.map((name) => name.trim()).filter((name) => name.length > 0))
+	);
+}
+
+async function loadMultipleBlocks(blockNames: string[]): Promise<HighlightedBlock[]> {
+	const items = await Promise.all(
+		blockNames.map(async (name) => {
+			try {
+				return await loadItem(name);
+			} catch (error) {
+				console.error(`Failed to load block: ${name}`, error);
+				return null;
+			}
+		})
+	);
+
+	return items.filter((item): item is HighlightedBlock => item !== null);
+}
+
 export const GET: RequestHandler = async ({ params }) => {
 	const { block } = params;
 
 	if (block.includes(',')) {
 		// Handle multiple blocks
-		const blockNames = block
-			.split(',')
-			.map((name) => name.trim())
-			.filter(Boolean);
-		const items = await Promise.all(
-			blockNames.map(async (name) => {
-				try {
-					return await loadItem(name);
-				} catch (error) {
-					console.error(`Failed to load block: ${name}`, error);
-					return null;
-				}
-			})
-		);
-
-		// Filter out any failed loads
-		const validItems = items.filter((item): item is HighlightedBlock => item !== null);
+		const blockNames = normalizeBlockNames(block.split(','));
+		const validItems = await loadMultipleBlocks(blockNames);
 		return json(validItems);
 	}
 
-	// Handle single block (existing behavior)
+	// Handle single block
 	const item = await loadItem(block);
 	return json(item);
 };
