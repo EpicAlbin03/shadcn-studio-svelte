@@ -10,7 +10,8 @@ import {
 	transformBlockPath,
 	transformLibPath,
 	transformBlockRelativeImports,
-	transformHookPath
+	transformHookPath,
+	transformPagePath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
@@ -81,7 +82,7 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		let target;
 
 		if (file.type === 'registry:page') {
-			target = file.target;
+			target = transformPagePath(file.target);
 		} else if (item.type === 'registry:component') {
 			target = transformComponentPath(file.target);
 		} else if (item.type === 'registry:block') {

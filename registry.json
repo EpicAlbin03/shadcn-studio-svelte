@@ -118,7 +118,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "about-us-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\about-us-01\\+page.svelte"
 				},
 				{
@@ -136,7 +136,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "app-integration-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\app-integration-01\\+page.svelte"
 				},
 				{
@@ -160,7 +160,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "application-shell-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\application-shell-01\\+page.svelte"
 				},
 				{
@@ -178,7 +178,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "blog-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\blog-01\\+page.svelte"
 				},
 				{
@@ -196,7 +196,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "charts-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\charts-01\\+page.svelte"
 				}
 			]
@@ -209,7 +209,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "contact-us-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\contact-us-01\\+page.svelte"
 				},
 				{
@@ -227,7 +227,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "cta-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\cta-01\\+page.svelte"
 				},
 				{
@@ -245,7 +245,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-dialog-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-dialog-01\\+page.svelte"
 				},
 				{
@@ -263,7 +263,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-dropdown-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-01\\+page.svelte"
 				},
 				{
@@ -281,7 +281,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-dropdown-02/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-dropdown-02\\+page.svelte"
 				},
 				{
@@ -299,7 +299,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-footer-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-footer-01\\+page.svelte"
 				}
 			]
@@ -312,7 +312,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-header-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-header-01\\+page.svelte"
 				}
 			]
@@ -343,7 +343,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-shell-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-shell-01\\+page.svelte"
 				},
 				{
@@ -366,7 +366,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "dashboard-sidebar-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\dashboard-sidebar-01\\+page.svelte"
 				}
 			]
@@ -379,7 +379,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "error-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\error-01\\+page.svelte"
 				},
 				{
@@ -397,7 +397,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "faq-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\faq-01\\+page.svelte"
 				},
 				{
@@ -415,7 +415,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "features-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\features-01\\+page.svelte"
 				},
 				{
@@ -433,7 +433,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "footer-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\footer-01\\+page.svelte"
 				},
 				{
@@ -458,7 +458,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "forgot-password-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\forgot-password-01\\+page.svelte"
 				},
 				{
@@ -481,7 +481,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "gallery-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\gallery-01\\+page.svelte"
 				},
 				{
@@ -506,7 +506,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "hero-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\hero-01\\+page.svelte"
 				},
 				{
@@ -538,7 +538,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "login-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\login-01\\+page.svelte"
 				},
 				{
@@ -561,7 +561,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "logo-cloud-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\logo-cloud-01\\+page.svelte"
 				},
 				{
@@ -579,7 +579,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "navbar-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\navbar-01\\+page.svelte"
 				},
 				{
@@ -597,7 +597,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "portfolio-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\portfolio-01\\+page.svelte"
 				},
 				{
@@ -615,7 +615,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "pricing-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\pricing-01\\+page.svelte"
 				},
 				{
@@ -642,7 +642,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "register-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\register-01\\+page.svelte"
 				},
 				{
@@ -672,7 +672,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "reset-password-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\reset-password-01\\+page.svelte"
 				},
 				{
@@ -695,7 +695,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "social-proof-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\social-proof-01\\+page.svelte"
 				},
 				{
@@ -713,7 +713,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "statistics-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\statistics-01\\+page.svelte"
 				}
 			]
@@ -726,7 +726,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "team-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\team-01\\+page.svelte"
 				},
 				{
@@ -744,7 +744,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "testimonials-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\testimonials-01\\+page.svelte"
 				},
 				{
@@ -769,7 +769,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "two-factor-authentication-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\two-factor-authentication-01\\+page.svelte"
 				},
 				{
@@ -792,7 +792,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "verify-email-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\verify-email-01\\+page.svelte"
 				},
 				{
@@ -810,7 +810,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "widget-01/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\widget-01\\+page.svelte"
 				}
 			]
@@ -823,7 +823,7 @@
 			"files": [
 				{
 					"type": "registry:page",
-					"target": "routes/+page.svelte",
+					"target": "widget-02/+page.svelte",
 					"path": "src\\lib\\registry\\blocks\\widget-02\\+page.svelte"
 				}
 			]

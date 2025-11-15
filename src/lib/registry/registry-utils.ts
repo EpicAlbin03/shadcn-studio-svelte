@@ -22,6 +22,10 @@ export function transformBlockPath(target: string): string {
 	return `lib/components/${target}`;
 }
 
+export function transformPagePath(target: string): string {
+	return `routes/${target}`;
+}
+
 export function transformHookPath(target: string): string {
 	return `lib/hooks/${target}`;
 }
