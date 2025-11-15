@@ -49,7 +49,7 @@
 </script>
 
 <div class="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
-	<div class="flex items-center gap-3">
+	<div class="flex shrink-0 items-center gap-3">
 		<Tabs.Root bind:value={ctx.view} class="hidden shrink-0 lg:flex">
 			<Tabs.List
 				class="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs"
@@ -60,15 +60,15 @@
 		</Tabs.Root>
 		<CopyPrompt {copyPromptText} />
 	</div>
-	<Separator orientation="vertical" class="mx-2 !h-4" />
+	<Separator orientation="vertical" class="mx-1 !h-4 shrink-0" />
 	<a
 		href="#{blockName}"
-		class="shrink-0 text-center text-sm font-medium underline-offset-2 hover:underline md:text-left"
+		class="shrink-0 pr-1 text-center text-sm font-medium underline-offset-2 hover:underline md:text-left"
 	>
 		{ctx.item.description?.replace(/\.$/, '')}
 	</a>
-	<div class="ml-auto flex shrink-0 items-center gap-2">
-		<div class="h-8 items-center gap-1.5 rounded-md border p-1 shadow-none">
+	<div class="ml-auto flex min-w-0 items-center gap-2">
+		<div class="h-8 shrink-0 items-center gap-1.5 rounded-md border p-1 shadow-none">
 			<ToggleGroup.Root
 				type="single"
 				value="100"
@@ -115,10 +115,10 @@
 				</Button>
 			</ToggleGroup.Root>
 		</div>
-		<Separator orientation="vertical" class="mx-1 !h-4" />
+		<Separator orientation="vertical" class="mx-1 !h-4 shrink-0" />
 		<Button
 			variant="outline"
-			class="min-w-0 gap-1 px-2 shadow-none"
+			class="max-w-full min-w-20 gap-1 overflow-hidden px-2 shadow-none"
 			size="sm"
 			onclick={() => clipboard.copy(command)}
 		>
@@ -127,7 +127,7 @@
 			{:else}
 				<TerminalIcon class="shrink-0" />
 			{/if}
-			<span class="hidden min-w-0 truncate lg:inline">{command}</span>
+			<span class="min-w-0 truncate lg:inline">{command}</span>
 		</Button>
 	</div>
 </div>
