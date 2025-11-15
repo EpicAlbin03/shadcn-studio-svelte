@@ -31,6 +31,7 @@
 	function runCommand(command: () => unknown) {
 		open = false;
 		command();
+		search = '';
 	}
 </script>
 

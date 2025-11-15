@@ -45,6 +45,11 @@ export const searchData: SearchData[] = [
 				icon: Circle,
 				name: 'Introduction',
 				href: '/docs/getting-started/introduction'
+			},
+			{
+				icon: Circle,
+				name: 'How to use Shadcn CLI',
+				href: '/docs/getting-started/how-to-use-shadcn-cli'
 			}
 		]
 	},
