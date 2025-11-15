@@ -6,12 +6,9 @@
 	"scripts": {
 		"dev": "pnpm --reporter append-only --color \"/dev:/\"",
 		"dev:svelte": "vite dev",
-		"build": "pnpm build:llm-placeholders && pnpm build:svelte && pnpm build:llms",
+		"build": "pnpm build:svelte",
 		"build:svelte": "vite build",
 		"build:registry": "tsx scripts/build-registry.ts build-registry && pnpm shadcn-svelte registry build --output ./static/registry",
-		"build:llms": "tsx scripts/build-llms.ts",
-		"build:llm-placeholders": "tsx scripts/build-llm-placeholders.ts",
-		"replace:velite": "tsx scripts/velite/velite-watch-output.ts",
 		"sync": "pnpm build:registry && svelte-kit sync",
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
