@@ -38,7 +38,9 @@ function parseCookie(cookie: string): Record<string, string> {
 	const cookieMap: Record<string, string> = {};
 	for (const cookie of cookies) {
 		const [key, value] = cookie.split('=');
-		cookieMap[key] = value;
+		if (key && value) {
+			cookieMap[key.trim()] = value;
+		}
 	}
 	return cookieMap;
 }
