@@ -1,7 +1,9 @@
 <script lang="ts">
-	// import { BlockViewerContext } from './block-viewer.svelte';
+	import { BlockViewerContext } from './block-viewer.svelte';
 	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import BlockViewerIframe from './block-viewer-iframe.svelte';
+
+	const ctx = BlockViewerContext.get();
 	// import { RESIZE_MESSAGE, REQUEST_RESIZE_MESSAGE } from '$lib/utils/blocks';
 
 	// const ctx = BlockViewerContext.get();
@@ -66,6 +68,7 @@
 			class="relative z-10 after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-xl after:bg-surface/50"
 		>
 			<Resizable.Pane
+				bind:this={ctx.resizablePaneRef}
 				class="relative aspect-[4/2.5] overflow-hidden rounded-lg border bg-background md:aspect-auto md:rounded-xl"
 				defaultSize={100}
 				minSize={30}
