@@ -9,7 +9,7 @@
 		"prebuild": "pnpm sync",
 		"build": "pnpm build:svelte",
 		"build:svelte": "vite build",
-		"build:registry": "tsx scripts/build-registry.ts build-registry && pnpm shadcn-svelte registry build --output ./static/registry",
+		"build:registry": "tsx scripts/init-registry-dirs.ts && tsx scripts/build-registry.ts build-registry && pnpm shadcn-svelte registry build --output ./static/registry",
 		"sync": "pnpm build:registry && svelte-kit sync",
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
