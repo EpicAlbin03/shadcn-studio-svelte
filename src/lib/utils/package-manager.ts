@@ -23,6 +23,11 @@ export function getCommand(
 	// special handling for create
 	if (type === 'create') return { command: pm, args: ['create', ...args] };
 
+	// special handling for yarn execute
+	if (type === 'execute' && pm === 'yarn') {
+		return { command: 'yarn', args };
+	}
+
 	const cmd = resolveCommand(pm, type, args);
 
 	// since docs are static any unresolved command is a code error
