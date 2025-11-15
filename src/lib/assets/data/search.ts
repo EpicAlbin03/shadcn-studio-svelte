@@ -80,7 +80,7 @@ export const searchData: SearchData[] = [
 				category.blocks.map((block) => ({
 					icon: Circle,
 					name: block,
-					href: `/blocks/${category.slug}`
+					href: `/blocks/${category.slug}#${block}`
 				}))
 			)
 		]
