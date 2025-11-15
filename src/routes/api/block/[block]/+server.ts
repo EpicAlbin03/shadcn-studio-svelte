@@ -115,15 +115,12 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 	});
 }
 
-export const GET: RequestHandler = async ({ params, url }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	const { block } = params;
 
-	// Check if multiple blocks are requested via query parameter
-	const blocksParam = url.searchParams.get('blocks');
-
-	if (blocksParam) {
+	if (block.includes(',')) {
 		// Handle multiple blocks
-		const blockNames = blocksParam
+		const blockNames = block
 			.split(',')
 			.map((name) => name.trim())
 			.filter(Boolean);

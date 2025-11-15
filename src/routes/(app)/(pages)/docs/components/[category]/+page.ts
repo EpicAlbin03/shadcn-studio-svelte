@@ -39,7 +39,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	if (componentNamesToFetch.length > 0) {
 		try {
 			const blocksQuery = componentNamesToFetch.join(',');
-			const res = await fetch(`/api/block/_?blocks=${encodeURIComponent(blocksQuery)}`);
+			const res = await fetch(`/api/block/${encodeURIComponent(blocksQuery)}`);
 
 			if (res.ok) {
 				highlightedBlocks = await res.json();
