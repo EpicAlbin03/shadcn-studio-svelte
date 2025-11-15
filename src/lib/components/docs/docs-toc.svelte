@@ -1,4 +1,44 @@
 <script lang="ts" module>
+	function useActiveItem(getItemIds: () => string[]) {
+		let activeId = $state<string | null>(null);
+		const itemIds = $derived(getItemIds().map((id) => id.replace('#', '')));
+
+		$effect(() => {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					for (const entry of entries) {
+						if (entry.isIntersecting) {
+							activeId = entry.target.id;
+						}
+					}
+				},
+				{ rootMargin: '0% 0% -80% 0%' }
+			);
+
+			for (const id of itemIds ?? []) {
+				const element = document.getElementById(id);
+				if (element) {
+					observer.observe(element);
+				}
+			}
+
+			return () => {
+				for (const id of itemIds ?? []) {
+					const element = document.getElementById(id);
+					if (element) {
+						observer.unobserve(element);
+					}
+				}
+			};
+		});
+
+		return {
+			get current() {
+				return activeId;
+			}
+		};
+	}
+
 	export type TocItem = {
 		title: string;
 		url: string;
@@ -29,12 +69,10 @@
 		class?: string;
 	} = $props();
 
-	let activeId = $state<string | null>(null);
-
-	function handleClick(url: string) {
-		activeId = url.replace('#', '');
-	}
-
+	const itemIds = $derived(
+		(toc.items ?? []).flatMap((item) => [item.url, ...(item.items?.map((i) => i.url) ?? [])])
+	);
+	const activeHeading = useActiveItem(() => itemIds);
 	let open = $state(false);
 </script>
 
@@ -79,7 +117,7 @@
 			{/if}
 			<ol class="space-y-3">
 				{#each toc.items as item, index (item.url)}
-					{@const isActive = item.url === `#${activeId}`}
+					{@const isActive = item.url === `#${activeHeading.current}`}
 					<li class="flex flex-col items-start gap-2">
 						<div class="relative flex w-full items-center">
 							{#if isActive}
@@ -87,7 +125,6 @@
 							{/if}
 							<a
 								href={item.url}
-								onclick={() => handleClick(item.url)}
 								data-active={isActive}
 								class={cn(
 									'pl-4 text-sm font-medium transition-colors hover:text-foreground',
@@ -100,7 +137,7 @@
 						{#if item.items?.length}
 							<ol class="w-full space-y-2">
 								{#each item.items as subItem (subItem.url)}
-									{@const isSubActive = subItem.url === `#${activeId}`}
+									{@const isSubActive = subItem.url === `#${activeHeading.current}`}
 									<li>
 										<div class="relative flex w-full items-center">
 											{#if isSubActive}
@@ -108,7 +145,6 @@
 											{/if}
 											<a
 												href={subItem.url}
-												onclick={() => handleClick(subItem.url)}
 												data-active={isSubActive}
 												class={cn(
 													'flex items-center gap-1.5 pl-6 text-sm transition-colors hover:text-foreground',
