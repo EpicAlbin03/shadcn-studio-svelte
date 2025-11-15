@@ -35,6 +35,9 @@
 		TextareaSVG,
 		TooltipSVG
 	} from '$lib/assets/svg';
+	import type { ComponentProps } from '$lib/types/components';
+
+	type Badge = 'New' | 'Updated' | undefined;
 
 	export type ComponentCategory = {
 		slug: string;
@@ -42,7 +45,7 @@
 		links?: { label: string; href: string }[];
 	} & (
 		| {
-				components: { name: string }[];
+				components: ComponentProps[];
 				breakpoints?: {
 					xs?: number;
 					sm?: number;
@@ -51,14 +54,14 @@
 					xl?: number;
 				};
 				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: string;
+				badge?: Badge;
 				note?: Snippet;
 				hasAnimation?: never | false;
 				animation?: never | undefined;
 				isComingSoon?: never | false;
 		  }
 		| {
-				components: { name: string }[];
+				components: ComponentProps[];
 				breakpoints?: {
 					xs?: number;
 					sm?: number;
@@ -67,11 +70,11 @@
 					xl?: number;
 				};
 				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: string;
+				badge?: Badge;
 				note?: Snippet;
 				hasAnimation: true;
 				animation?: {
-					badge?: string;
+					badge?: Badge;
 					breakpoints?: {
 						xs?: number;
 						sm?: number;
@@ -317,15 +320,39 @@
 				{ name: 'button-36' },
 				{ name: 'button-37' },
 				{ name: 'button-38' },
-				{ name: 'button-39' },
-				{ name: 'button-40' },
-				{ name: 'button-41' },
-				{ name: 'button-42' },
-				{ name: 'button-43' },
-				{ name: 'button-44' },
-				{ name: 'button-45' },
-				{ name: 'button-46' },
-				{ name: 'button-47' }
+				{ name: 'button-39', isAnimated: true },
+				{ name: 'button-40', isAnimated: true },
+				{ name: 'button-41', isAnimated: true },
+				{ name: 'button-42', isAnimated: true },
+				{ name: 'button-43', isAnimated: true },
+				{ name: 'button-44', isAnimated: true },
+				{ name: 'button-45', isAnimated: true },
+				{
+					name: 'button-46',
+					isAnimated: true,
+					cssVars: {
+						theme: {
+							'animate-heartbeat': 'heartbeat 2s infinite ease-in-out'
+						}
+					},
+					css: {
+						'@keyframes heartbeat': {
+							'0%': {
+								'box-shadow': '0 0 0 0 var(--destructive)',
+								transform: 'scale(1)'
+							},
+							'50%': {
+								'box-shadow': '0 0 0 7px transparent',
+								transform: 'scale(1.05)'
+							},
+							'100%': {
+								'box-shadow': '0 0 0 0 transparent',
+								transform: 'scale(1)'
+							}
+						}
+					}
+				},
+				{ name: 'button-47', isAnimated: true }
 			]
 		},
 		{
@@ -358,10 +385,10 @@
 				{ name: 'button-group-10' },
 				{ name: 'button-group-11' },
 				{ name: 'button-group-12' },
-				{ name: 'button-group-13' },
-				{ name: 'button-group-14' },
-				{ name: 'button-group-15' },
-				{ name: 'button-group-16' }
+				{ name: 'button-group-13', isAnimated: true },
+				{ name: 'button-group-14', isAnimated: true },
+				{ name: 'button-group-15', isAnimated: true },
+				{ name: 'button-group-16', isAnimated: true }
 			]
 		},
 		{
@@ -392,11 +419,11 @@
 				{ name: 'calendar-14' },
 				{ name: 'calendar-15' },
 				{ name: 'calendar-16' },
-				{ name: 'calendar-17' },
+				{ name: 'calendar-17', underConstruction: true },
 				{ name: 'calendar-18' },
 				{ name: 'calendar-19' },
 				{ name: 'calendar-20' },
-				{ name: 'calendar-21' },
+				{ name: 'calendar-21', underConstruction: true },
 				{ name: 'calendar-22' },
 				{ name: 'calendar-23' },
 				{ name: 'calendar-24' },
@@ -432,9 +459,9 @@
 				{ name: 'card-12' },
 				{ name: 'card-13' },
 				{ name: 'card-14' },
-				{ name: 'card-15' },
-				{ name: 'card-16' },
-				{ name: 'card-17' }
+				{ name: 'card-15', className: 'col-span-full border-e-0' },
+				{ name: 'card-16', isAnimated: true },
+				{ name: 'card-17', isAnimated: true }
 			]
 		},
 		{
@@ -473,9 +500,9 @@
 				{ name: 'checkbox-14' },
 				{ name: 'checkbox-15' },
 				{ name: 'checkbox-16' },
-				{ name: 'checkbox-17' },
-				{ name: 'checkbox-18' },
-				{ name: 'checkbox-19' }
+				{ name: 'checkbox-17', isAnimated: true, underConstruction: true },
+				{ name: 'checkbox-18', isAnimated: true, underConstruction: true },
+				{ name: 'checkbox-19', isAnimated: true, underConstruction: true }
 			]
 		},
 		{
@@ -505,7 +532,7 @@
 				{ name: 'collapsible-07' },
 				{ name: 'collapsible-08' },
 				{ name: 'collapsible-09' },
-				{ name: 'collapsible-10' }
+				{ name: 'collapsible-10', isAnimated: true }
 			]
 		},
 		{
@@ -539,8 +566,8 @@
 				{ name: 'combobox-10' },
 				{ name: 'combobox-11' },
 				{ name: 'combobox-12' },
-				{ name: 'combobox-13' },
-				{ name: 'combobox-14' }
+				{ name: 'combobox-13', isAnimated: true },
+				{ name: 'combobox-14', isAnimated: true }
 			]
 		},
 		{
@@ -596,7 +623,7 @@
 				{ name: 'date-picker-10' },
 				{ name: 'date-picker-11' },
 				{ name: 'date-picker-12' },
-				{ name: 'date-picker-13' }
+				{ name: 'date-picker-13', className: 'col-span-full border-e-0' }
 			]
 		},
 		{
@@ -640,9 +667,9 @@
 				{ name: 'dialog-21' },
 				{ name: 'dialog-22' },
 				{ name: 'dialog-23' },
-				{ name: 'dialog-24' },
-				{ name: 'dialog-25' },
-				{ name: 'dialog-26' }
+				{ name: 'dialog-24', isAnimated: true },
+				{ name: 'dialog-25', isAnimated: true },
+				{ name: 'dialog-26', isAnimated: true }
 			]
 		},
 		{
@@ -679,8 +706,8 @@
 				{ name: 'dropdown-menu-12' },
 				{ name: 'dropdown-menu-13' },
 				{ name: 'dropdown-menu-14' },
-				{ name: 'dropdown-menu-15' },
-				{ name: 'dropdown-menu-16' }
+				{ name: 'dropdown-menu-15', isAnimated: true },
+				{ name: 'dropdown-menu-16', isAnimated: true }
 			]
 		},
 		{
@@ -764,9 +791,7 @@
 				{ name: 'input-43' },
 				{ name: 'input-44' },
 				{ name: 'input-45' },
-				{ name: 'input-46' },
-				{ name: 'input-47' },
-				{ name: 'input-48' }
+				{ name: 'input-46' }
 			]
 		},
 		{
@@ -814,7 +839,6 @@
 			slug: 'pagination',
 			name: 'Pagination',
 			svg: PaginationSVG,
-			badge: 'New',
 			breakpoints: {
 				md: 2
 			},
@@ -837,7 +861,7 @@
 				{ name: 'pagination-12' },
 				{ name: 'pagination-13' },
 				{ name: 'pagination-14' },
-				{ name: 'pagination-15' }
+				{ name: 'pagination-15', className: 'col-span-full border-e-0' }
 			]
 		},
 		{
@@ -872,9 +896,9 @@
 				{ name: 'popover-10' },
 				{ name: 'popover-11' },
 				{ name: 'popover-12' },
-				{ name: 'popover-13' },
-				{ name: 'popover-14' },
-				{ name: 'popover-15' }
+				{ name: 'popover-13', isAnimated: true },
+				{ name: 'popover-14', isAnimated: true },
+				{ name: 'popover-15', isAnimated: true }
 			]
 		},
 		{
@@ -908,8 +932,8 @@
 				{ name: 'radio-group-11' },
 				{ name: 'radio-group-12' },
 				{ name: 'radio-group-13' },
-				{ name: 'radio-group-14' },
-				{ name: 'radio-group-15' }
+				{ name: 'radio-group-14', isAnimated: true, underConstruction: true },
+				{ name: 'radio-group-15', isAnimated: true }
 			]
 		},
 		{
@@ -966,17 +990,17 @@
 				{ name: 'select-32' },
 				{ name: 'select-33' },
 				{ name: 'select-34' },
-				{ name: 'select-35' },
-				{ name: 'select-36' },
-				{ name: 'select-37' },
-				{ name: 'select-38' }
+				{ name: 'select-35', underConstruction: true },
+				{ name: 'select-36', underConstruction: true },
+				{ name: 'select-37', isAnimated: true },
+				{ name: 'select-38', isAnimated: true }
 			]
 		},
 		{
 			slug: 'sheet',
 			name: 'Sheet',
 			svg: SheetSVG,
-			badge: 'New',
+
 			breakpoints: {
 				sm: 2,
 				md: 3
@@ -992,13 +1016,13 @@
 				{ name: 'sheet-04' },
 				{ name: 'sheet-05' },
 				{ name: 'sheet-06' },
-				{ name: 'sheet-07' }
+				{ name: 'sheet-07', className: 'col-span-full border-e-0' }
 			]
 		},
 		{
 			slug: 'sonner',
 			name: 'Sonner',
-			badge: 'New',
+
 			svg: SonnerSVG,
 			breakpoints: {
 				md: 2,
@@ -1069,8 +1093,8 @@
 				{ name: 'switch-16' },
 				{ name: 'switch-17' },
 				{ name: 'switch-18' },
-				{ name: 'switch-19' },
-				{ name: 'switch-20' }
+				{ name: 'switch-19', isAnimated: true, underConstruction: true },
+				{ name: 'switch-20', isAnimated: true, underConstruction: true }
 			]
 		},
 		{
@@ -1102,7 +1126,7 @@
 			slug: 'tabs',
 			name: 'Tabs',
 			svg: TabsSVG,
-			badge: 'New',
+
 			breakpoints: {
 				xl: 2
 			},
@@ -1112,7 +1136,6 @@
 			],
 			hasAnimation: true,
 			animation: {
-				badge: 'New',
 				breakpoints: {
 					xl: 2
 				}
@@ -1144,9 +1167,9 @@
 				{ name: 'tabs-24' },
 				{ name: 'tabs-25' },
 				{ name: 'tabs-26' },
-				{ name: 'tabs-27' },
-				{ name: 'tabs-28' },
-				{ name: 'tabs-29' }
+				{ name: 'tabs-27', isAnimated: true, underConstruction: true },
+				{ name: 'tabs-28', isAnimated: true, underConstruction: true },
+				{ name: 'tabs-29', isAnimated: true, underConstruction: true }
 			]
 		},
 		{
@@ -1219,8 +1242,8 @@
 				{ name: 'tooltip-13' },
 				{ name: 'tooltip-14' },
 				{ name: 'tooltip-15' },
-				{ name: 'tooltip-16' },
-				{ name: 'tooltip-17' }
+				{ name: 'tooltip-16', isAnimated: true, underConstruction: true },
+				{ name: 'tooltip-17', isAnimated: true, underConstruction: true }
 			]
 		},
 		{

@@ -7,7 +7,8 @@
 
 	const userConfig = UserConfigContext.get();
 	const mode = $derived(_mode.current ?? 'light');
-	const currentTheme = $derived(userConfig.activeTheme.cssVars?.[mode]) as
+	const activeTheme = $derived(userConfig.settings.activeTheme);
+	const currentTheme = $derived(activeTheme.cssVars?.[mode]) as
 		| Partial<ThemeStyleProps>
 		| undefined;
 
@@ -16,28 +17,31 @@
 
 		// apply common styles to both light and dark modes
 		if (key === 'font-sans' || key === 'font-serif' || key === 'font-mono' || key === 'radius') {
-			userConfig.setActiveTheme({
-				...userConfig.activeTheme,
+			const updatedTheme = {
+				...activeTheme,
 				cssVars: {
-					...userConfig.activeTheme.cssVars,
-					light: { ...userConfig.activeTheme.cssVars?.light, [key]: value },
-					dark: { ...userConfig.activeTheme.cssVars?.dark, [key]: value }
+					...activeTheme.cssVars,
+					light: { ...activeTheme.cssVars?.light, [key]: value },
+					dark: { ...activeTheme.cssVars?.dark, [key]: value }
 				}
-			});
+			};
 
+			userConfig.setSettings({ activeTheme: updatedTheme });
 			return;
 		}
 
-		userConfig.setActiveTheme({
-			...userConfig.activeTheme,
+		const updatedTheme = {
+			...activeTheme,
 			cssVars: {
-				...userConfig.activeTheme.cssVars,
+				...activeTheme.cssVars,
 				[mode]: {
 					...currentTheme,
 					[key]: value
 				}
 			}
-		});
+		};
+
+		userConfig.setSettings({ activeTheme: updatedTheme });
 	}
 </script>
 

@@ -1,4 +1,9 @@
-import { defaultTheme } from '$lib/assets/data/preset-themes';
+import {
+	DEFAULT_FONT_MONO,
+	DEFAULT_FONT_SANS,
+	DEFAULT_FONT_SERIF,
+	defaultTheme
+} from '$lib/assets/data/preset-themes';
 import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { colorFormatter } from './color-converter';
 import type { ColorFormat } from './color-converter';
@@ -24,7 +29,7 @@ const generateShadowVariables = (shadowMap: Record<string, string>): string => {
 const generateTrackingVariables = (themeStyles: ThemeStyles): string => {
 	const styles = themeStyles['light'];
 
-	if (styles['letter-spacing'] === '0em') {
+	if (styles['letter-spacing'] === '0em' || !styles['letter-spacing']) {
 		return '';
 	}
 
@@ -50,7 +55,7 @@ export const generateThemeCode = (
 
 	const themeStyles = styles as ThemeType;
 
-	return `:root {
+	const rootVars = `:root {
   --background: ${formatColor(themeStyles.light.background)};
   --foreground: ${formatColor(themeStyles.light.foreground)};
   --card: ${formatColor(themeStyles.light.card)};
@@ -83,20 +88,21 @@ export const generateThemeCode = (
   --sidebar-border: ${formatColor(themeStyles.light['sidebar-border'])};
   --sidebar-ring: ${formatColor(themeStyles.light['sidebar-ring'])};
 
-  --font-sans: ${themeStyles.light['font-sans']};
-  --font-serif: ${themeStyles.light['font-serif']};
-  --font-mono: ${themeStyles.light['font-mono']};
+  --font-sans: ${themeStyles.light['font-sans'] ?? DEFAULT_FONT_SANS};
+  --font-serif: ${themeStyles.light['font-serif'] ?? DEFAULT_FONT_SERIF};
+  --font-mono: ${themeStyles.light['font-mono'] ?? DEFAULT_FONT_MONO};
 
   --radius: ${themeStyles.light.radius};
   ${generateShadowVariables(getShadowMap(themeStyles.light, colorFormat))}
   ${
+		themeStyles.light['letter-spacing'] &&
 		themeStyles.light['letter-spacing'] !== defaultTheme.cssVars.light['letter-spacing']
 			? `\n  --tracking-normal: ${themeStyles.light['letter-spacing']};`
 			: ''
-	}${themeStyles.light.spacing !== defaultTheme.cssVars.light.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
-}
+	}${themeStyles.light.spacing && themeStyles.light.spacing !== defaultTheme.cssVars.light.spacing ? `\n  --spacing: ${themeStyles.light.spacing};` : ''}
+}`.replace(/\n\s*\n?}$/m, '\n}');
 
-.dark {
+	const darkVars = `.dark {
   --background: ${formatColor(themeStyles.dark.background)};
   --foreground: ${formatColor(themeStyles.dark.foreground)};
   --card: ${formatColor(themeStyles.dark.card)};
@@ -129,9 +135,9 @@ export const generateThemeCode = (
   --sidebar-border: ${formatColor(themeStyles.dark['sidebar-border'])};
   --sidebar-ring: ${formatColor(themeStyles.dark['sidebar-ring'])};
   ${generateShadowVariables(getShadowMap(themeStyles.dark, colorFormat))}
-}
+}`;
 
-@theme inline {
+	const inlineVars = `@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -181,5 +187,7 @@ export const generateThemeCode = (
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);${generateTrackingVariables(themeStyles)}
-}${themeStyles['light']['letter-spacing'] != '0em' ? '\n\nbody {\n  letter-spacing: var(--tracking-normal);\n}' : ''}`;
+}${themeStyles['light']['letter-spacing'] && themeStyles['light']['letter-spacing'] != '0em' ? '\n\nbody {\n  letter-spacing: var(--tracking-normal);\n}' : ''}`;
+
+	return [rootVars, darkVars, inlineVars].join('\n\n');
 };

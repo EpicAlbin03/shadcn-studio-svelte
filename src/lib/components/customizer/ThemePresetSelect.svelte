@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dices } from '@lucide/svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme';
+	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
 	import { Badge } from '$lib/components/ui/badge';
@@ -13,12 +13,22 @@
 		presetThemesMap,
 		type PresetThemeName
 	} from '$lib/assets/data/preset-themes';
+	import { toast } from 'svelte-sonner';
 
 	const userConfig = UserConfigContext.get();
+	const activeTheme = $derived(userConfig.settings.activeTheme);
+	const colorFormat = $derived(userConfig.settings.colorFormat);
+	const savedThemes = $derived(userConfig.savedThemes);
 
-	const label = $derived(
-		userConfig.activeTheme.name in presetThemesMap ? userConfig.activeTheme.label : 'Choose Theme'
-	);
+	const label = $derived.by(() => {
+		if (activeTheme.name in presetThemesMap) {
+			return activeTheme.label;
+		} else if (savedThemes.length > 0) {
+			return savedThemes.find((t) => t.name === activeTheme.name)?.label;
+		} else {
+			return 'Choose Theme';
+		}
+	});
 
 	const orderedPresets = $derived.by(() => {
 		// First get all preset entries
@@ -44,10 +54,10 @@
 		];
 	});
 
-	function getThemeColor(name: PresetThemeName, color: keyof ThemeStyleProps) {
-		// If it's default theme, use the first preset as default
-		const theme = name === 'default' ? presetThemesMap['default'] : presetThemesMap[name];
-
+	function getThemeColor(
+		theme: { cssVars: ThemeStyles } = presetThemesMap['default'],
+		color: keyof ThemeStyleProps
+	) {
 		return theme?.cssVars.light?.[color] || theme?.cssVars.dark?.[color] || '#000000';
 	}
 
@@ -55,7 +65,7 @@
 	function randomize() {
 		const random = Math.floor(Math.random() * presetThemes.length);
 		const themeName = presetThemes[random].name as PresetThemeName;
-		userConfig.setActiveTheme(presetThemesMap[themeName]);
+		userConfig.setSettings({ activeTheme: presetThemesMap[themeName] });
 	}
 </script>
 
@@ -73,38 +83,76 @@
 	<Select.Root
 		type="single"
 		bind:value={
-			() => label, (v) => userConfig.setActiveTheme(presetThemesMap[v as PresetThemeName])
+			() => label,
+			(v) => {
+				const theme =
+					presetThemesMap[v as PresetThemeName] ?? savedThemes.find((t) => t.name === v);
+				userConfig.setSettings({ activeTheme: theme });
+				toast.success(`Theme "${theme.name}" has been applied.`);
+			}
 		}
 	>
-		<Select.Trigger class="h-12 w-full cursor-pointer">
+		<Select.Trigger class="h-12 w-full cursor-pointer capitalize">
 			{label}
 		</Select.Trigger>
 		<Select.Content>
+			{#if savedThemes.length > 0}
+				<Select.Group>
+					<Select.Label>My Themes</Select.Label>
+					{#each savedThemes as theme (theme.name)}
+						<Select.Item value={theme.name} class="flex items-center gap-3">
+							<!-- Theme Color Grid Icon -->
+							<div class="flex items-center">
+								<div class="relative size-[26px] rounded border bg-background p-1">
+									<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'primary')}"
+										></div>
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'destructive')}"
+										></div>
+										<div
+											class="rounded-[2px]"
+											style="background-color: {getThemeColor(theme, 'secondary')}"
+										></div>
+										<div
+											class="rounded-full"
+											style="background-color: {getThemeColor(theme, 'accent')}"
+										></div>
+									</div>
+								</div>
+							</div>
+							<span class="capitalize">{theme.label}</span>
+						</Select.Item>
+					{/each}
+				</Select.Group>
+			{/if}
 			<Select.Group>
-				<Select.Label>Pre Built Themes</Select.Label>
+				<Select.Label>Pre-built Themes</Select.Label>
 				{#each orderedPresets as theme}
 					{@const badge = theme.meta?.badge}
-					{@const name = theme.name as PresetThemeName}
-					<Select.Item value={name} class="flex items-center gap-3">
+					<Select.Item value={theme.name} class="flex items-center gap-3">
 						<!-- Theme Color Grid Icon -->
 						<div class="flex items-center">
 							<div class="relative size-[26px] rounded border bg-background p-1">
 								<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'primary')}"
+										style="background-color: {getThemeColor(theme, 'primary')}"
 									></div>
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'destructive')}"
+										style="background-color: {getThemeColor(theme, 'destructive')}"
 									></div>
 									<div
 										class="rounded-[2px]"
-										style="background-color: {getThemeColor(name, 'secondary')}"
+										style="background-color: {getThemeColor(theme, 'secondary')}"
 									></div>
 									<div
 										class="rounded-full"
-										style="background-color: {getThemeColor(name, 'accent')}"
+										style="background-color: {getThemeColor(theme, 'accent')}"
 									></div>
 								</div>
 							</div>

@@ -3,8 +3,17 @@
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import { AppSidebar, CustomSidebarTrigger } from '$lib/components/layout/sidebar';
+	import type { Snippet } from 'svelte';
+	import DocsToc, { type TableOfContents } from '$lib/components/docs/docs-toc.svelte';
 
-	let { children } = $props();
+	type Props = {
+		children?: Snippet;
+		isDocPage?: boolean;
+		toc?: TableOfContents;
+		title?: string;
+	};
+
+	let { children, isDocPage, toc, title }: Props = $props();
 </script>
 
 <div class="flex h-full w-full min-w-0 flex-col">
@@ -15,6 +24,11 @@
 		>
 			<AppSidebar />
 			<PagesContent>{@render children?.()}</PagesContent>
+			{#if isDocPage && toc}
+				<div class="w-[300px] border-l border-dashed max-xl:hidden">
+					<DocsToc {toc} {title} />
+				</div>
+			{/if}
 		</div>
 	</div>
 	<Footer />

@@ -1,18 +1,9 @@
-export type FileTree = {
-	name: string;
-	path?: string;
-	children?: FileTree[];
-};
+import type { HighlightedBlock } from '../../routes/api/block/[block]/+server';
 
 export type ComponentProps = {
 	name: string;
 	title?: string;
 	description?: string;
-	files: {
-		path: string;
-		content?: string;
-		target?: string;
-	}[];
 	cssVars?: {
 		theme?: Record<string, string>;
 		light?: Record<string, string>;
@@ -23,9 +14,4 @@ export type ComponentProps = {
 	badge?: 'New' | 'Updated';
 	className?: string;
 	underConstruction?: boolean;
-};
-
-export type ProcessedComponentsData = {
-	component: ComponentProps;
-	tree: FileTree[] | null;
-};
+} & Partial<HighlightedBlock>;

@@ -22,6 +22,7 @@
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import { cn } from '$lib/utils';
 	import { categories } from '$lib/config/components.svelte';
+	import { gettingStartedPages } from '$lib/utils/pages';
 
 	const breakpoint = new MediaQuery('(max-width: 1023px)', false);
 	let isBreakpointReached = $derived(breakpoint.current);
@@ -56,6 +57,10 @@
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-5', { 'first:pt-8': !isBreakpointReached })}
 			>
 				<Sidebar.Menu class="gap-2.5">
+					<CustomSidebarMenuItem href="/components">
+						<Component class="!size-5" />
+						Components
+					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/theme-generator">
 						<PaintbrushVertical class="!size-5" />
 						Theme Generator
@@ -65,35 +70,13 @@
 							<Flame class="size-4" /> Hot
 						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem href="/components">
-						<Component class="!size-5" />
-						Components
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
-						<Figma class="!size-5" />
-						Figma UI Kit
-						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
-						>
-							Coming Soon
-						</Sidebar.MenuBadge>
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
+					<CustomSidebarMenuItem href="/blocks">
 						<LayoutPanelTop class="!size-5" />
 						Blocks
 						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
+							class="static rounded-full border-transparent bg-primary px-2 py-0.5 font-normal text-primary-foreground [a&]:hover:bg-primary/90"
 						>
-							Coming Soon
-						</Sidebar.MenuBadge>
-					</CustomSidebarMenuItem>
-					<CustomSidebarMenuItem>
-						<File class="!size-5" />
-						Templates
-						<Sidebar.MenuBadge
-							class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
-						>
-							Coming Soon
+							New
 						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 				</Sidebar.Menu>
@@ -119,9 +102,11 @@
 							</CollapsibleTrigger>
 							<CollapsibleContent>
 								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
-									<CustomSidebarMenuSubItem href="/docs/getting-started/introduction">
-										Introduction
-									</CustomSidebarMenuSubItem>
+									{#each gettingStartedPages as page (page.slug)}
+										<CustomSidebarMenuSubItem href={page.href}>
+											{page.title}
+										</CustomSidebarMenuSubItem>
+									{/each}
 								</Sidebar.MenuSub>
 							</CollapsibleContent>
 						</Sidebar.MenuItem>
@@ -132,7 +117,7 @@
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-4', { 'first:pt-8': !isBreakpointReached })}
 			>
 				<Sidebar.Menu class="gap-2.5">
-					<Collapsible class="group/collapsible" open>
+					<Collapsible class="group/collapsible" open={false}>
 						<Sidebar.MenuItem>
 							<CollapsibleTrigger>
 								{#snippet child({ props })}

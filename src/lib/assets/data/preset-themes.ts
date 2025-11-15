@@ -149,7 +149,7 @@ export const presetThemes = [
 
 				radius: '0rem',
 
-				'shadow-color': 'oklch(0.83 0.09 248.95 )',
+				'shadow-color': 'oklch(0.83 0.09 248.95)',
 				'shadow-opacity': '0.10',
 				'shadow-blur': '5px',
 				'shadow-spread': '0px',
@@ -196,9 +196,6 @@ export const presetThemes = [
 				'shadow-offset-x': '0px',
 				'shadow-offset-y': '1px'
 			}
-		},
-		meta: {
-			badge: 'New'
 		}
 	},
 	{
@@ -292,9 +289,6 @@ export const presetThemes = [
 				'shadow-offset-x': '0px',
 				'shadow-offset-y': '1px'
 			}
-		},
-		meta: {
-			badge: 'New'
 		}
 	},
 	{

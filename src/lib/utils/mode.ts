@@ -4,7 +4,7 @@ import { applyThemeStyles } from './theme';
 
 export function setMode(userConfig: UserConfig, mode: 'light' | 'dark' | 'system') {
 	_setMode(mode);
-	applyThemeStyles(userConfig.activeTheme.cssVars);
+	applyThemeStyles(userConfig.settings.activeTheme.cssVars);
 }
 
 export function toggleMode(userConfig: UserConfig) {

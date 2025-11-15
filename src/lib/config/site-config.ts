@@ -1,8 +1,10 @@
+export const PUBLIC_URL = 'https://shadcnstudio-svelte.netlify.app';
+
 export const siteConfig = {
 	name: 'shadcn/studio-svelte',
-	url: 'https://shadcnstudio-svelte.netlify.app',
+	url: PUBLIC_URL,
 	ogImage: {
-		url: 'https://shadcnstudio-svelte.netlify.app/opengraph.png',
+		url: `${PUBLIC_URL}/opengraph.png`,
 		width: '1200',
 		height: '630'
 	},

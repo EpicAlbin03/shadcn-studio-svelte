@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MediaQuery } from 'svelte/reactivity';
 	import { goto } from '$app/navigation';
-	import { Search, Palette, Component, Sparkles } from '@lucide/svelte';
+	import { Search, Palette, Component, Sparkles, LayoutPanelTop } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command';
 	import { searchData } from '$lib/assets/data/search';
@@ -31,6 +31,7 @@
 	function runCommand(command: () => unknown) {
 		open = false;
 		command();
+		search = '';
 	}
 </script>
 
@@ -51,7 +52,7 @@
 		<span class="text-sm">⌘</span>K
 	</kbd>
 </Button>
-<Command.Dialog bind:open>
+<Command.Dialog bind:open onOpenChange={() => (search = '')}>
 	<Command.Input placeholder="Type a command or search..." bind:value={search} />
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
@@ -81,6 +82,10 @@
 				<Command.Item onSelect={() => runCommand(() => goto('/components'))}>
 					<Component />
 					<span>Components</span>
+				</Command.Item>
+				<Command.Item onSelect={() => runCommand(() => goto('/blocks'))}>
+					<LayoutPanelTop />
+					<span>Blocks</span>
 				</Command.Item>
 				<Command.Item onSelect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
 					<Sparkles />

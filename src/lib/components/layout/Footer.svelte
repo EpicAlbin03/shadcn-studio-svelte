@@ -37,7 +37,7 @@
 					</a>
 				</div>
 				<p class="text-sm text-muted-foreground">
-					This project is independent and not affiliated with Figma, shadcn/ui, or shadcn/studio.
+					This project is independent and not affiliated with shadcn/ui, or shadcn/studio.
 				</p>
 			</div>
 			<div
@@ -53,30 +53,18 @@
 							<a href="/components">Shadcn Components</a>
 						</li>
 						<li>
-							<a href="#">
-								Shadcn Figma UI Kit <span class="font-normal text-muted-foreground">(Soon)</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Shadcn Blocks <span class="font-normal text-muted-foreground">(Soon)</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								Shadcn Templates <span class="font-normal text-muted-foreground">(Soon)</span>
-							</a>
+							<a href="/blocks"> Shadcn Blocks </a>
 						</li>
 					</ul>
 				</div>
 				<div class="flex flex-col gap-5">
 					<div class="text-lg font-semibold">Resources</div>
 					<ul class="space-y-3">
-						<li>
+						<!-- <li>
 							<a href="/theme-generator/#roadmap">Roadmap</a>
-						</li>
+						</li> -->
 						<li>
-							<a href="/theme-generator/#faq">FAQ</a>
+							<a href="/theme-generator#faq">FAQ</a>
 						</li>
 						<li>
 							<a href="/sitemap.xml">Sitemap</a>
@@ -105,10 +93,10 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">Privacy policy</a>
+							<a href="https://shadcnstudio.com/privacy-policy">Privacy policy</a>
 						</li>
 						<li>
-							<a href="#">Terms & Condition</a>
+							<a href="https://shadcnstudio.com/terms-and-condition">Terms & Condition</a>
 						</li>
 					</ul>
 				</div>
