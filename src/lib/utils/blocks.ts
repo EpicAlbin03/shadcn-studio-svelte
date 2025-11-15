@@ -7,6 +7,7 @@ import { blocks } from '../../__registry__/blocks.js';
 export type BlockName = (typeof blocks)[number];
 
 export const FEATURED_BLOCKS = ['hero-01', 'dashboard-shell-01'] as const;
+export const BLOCKS_QUERY_DELIMITER = '+';
 
 export function isBlock(name: unknown): name is BlockName {
 	return blocks.includes(name as BlockName);

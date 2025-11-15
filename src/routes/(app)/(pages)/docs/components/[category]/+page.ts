@@ -4,6 +4,7 @@ import type { EntryGenerator, PageLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
 import type { ComponentProps } from '$lib/types/components';
 import type { HighlightedBlock } from '../../../../../api/block/[block]/+server.js';
+import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 
 export const prerender = true;
 
@@ -50,7 +51,9 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		try {
 			const chunkedResults = await Promise.all(
 				fetchChunks.map(async (chunk) => {
-					const blocksQuery = encodeURIComponent(chunk.join(','));
+					const blocksQuery = chunk
+						.map((name) => encodeURIComponent(name))
+						.join(BLOCKS_QUERY_DELIMITER);
 					const res = await fetch(`/api/block/${blocksQuery}`);
 
 					if (res.ok) {

@@ -15,6 +15,7 @@ import {
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
+import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 
 export type HighlightedBlock = z.output<typeof highlightedBlockSchema>;
 
@@ -117,8 +118,31 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 
 function normalizeBlockNames(blockNames: string[]): string[] {
 	return Array.from(
-		new Set(blockNames.map((name) => name.trim()).filter((name) => name.length > 0))
+		new Set(
+			blockNames
+				.map((name) => {
+					const trimmed = name.trim();
+					try {
+						return decodeURIComponent(trimmed);
+					} catch {
+						return trimmed;
+					}
+				})
+				.filter((name) => name.length > 0)
+		)
 	);
+}
+
+function parseBlockParam(blockParam: string): string[] | null {
+	if (blockParam.includes(BLOCKS_QUERY_DELIMITER)) {
+		return blockParam.split(BLOCKS_QUERY_DELIMITER);
+	}
+
+	if (blockParam.includes(',')) {
+		return blockParam.split(',');
+	}
+
+	return null;
 }
 
 async function loadMultipleBlocks(blockNames: string[]): Promise<HighlightedBlock[]> {
@@ -139,9 +163,9 @@ async function loadMultipleBlocks(blockNames: string[]): Promise<HighlightedBloc
 export const GET: RequestHandler = async ({ params }) => {
 	const { block } = params;
 
-	if (block.includes(',')) {
-		// Handle multiple blocks
-		const blockNames = normalizeBlockNames(block.split(','));
+	const parsedBlockNames = parseBlockParam(block);
+	if (parsedBlockNames) {
+		const blockNames = normalizeBlockNames(parsedBlockNames);
 		const validItems = await loadMultipleBlocks(blockNames);
 		return json(validItems);
 	}
