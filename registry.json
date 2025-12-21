@@ -13,7 +13,7 @@
 		{
 			"name": "bounce-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
@@ -29,7 +29,7 @@
 		{
 			"name": "magnetic-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
@@ -81,7 +81,7 @@
 		{
 			"name": "ripple-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -97,7 +97,7 @@
 		{
 			"name": "shimmer-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -2511,7 +2511,7 @@
 		{
 			"name": "button-42",
 			"type": "registry:component",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{

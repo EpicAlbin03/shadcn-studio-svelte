@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { Motion, type MotionProps } from 'motion-start';
-	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
+	import { motion, type MotionProps } from 'motion-sv';
+	import { type ButtonProps } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
 	export type ShimmerButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
@@ -12,13 +12,13 @@
 		class: className,
 		variant = 'default',
 		size = 'default',
-		ref = $bindable(null)
+		ref = $bindable(null),
+		...props
 	}: ShimmerButtonProps = $props();
 </script>
 
-<!-- TODO: Spread props when motion-start is compatible -->
-<Motion.button
-	bind:el={ref}
+<motion.button
+	bind:ref
 	class="relative inline-flex overflow-hidden rounded-lg bg-[linear-gradient(120deg,var(--primary)_calc(var(--shimmer-button-x)-25%),var(--primary-foreground)_var(--shimmer-button-x),var(--primary)_calc(var(--shimmer-button-x)+25%))] [--shimmer-button-x:0%]"
 	initial={{
 		scale: 1,
@@ -37,12 +37,13 @@
 			ease: [0.445, 0.05, 0.55, 0.95]
 		}
 	}}
-	whileTap={{
+	whilePress={{
 		scale: 0.95
 	}}
 	whileHover={{
 		scale: 1.05
 	}}
+	{...props}
 >
 	<span
 		class={cn(
@@ -52,4 +53,4 @@
 	>
 		{@render children?.()}
 	</span>
-</Motion.button>
+</motion.button>

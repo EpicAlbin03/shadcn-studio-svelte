@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { motion, type MotionProps, type Transition } from 'motion-start';
+	import { motion, type MotionProps, type Transition } from 'motion-sv';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
@@ -25,7 +25,8 @@
 		size = 'default',
 		ref = $bindable(null),
 		scale = 10,
-		transition = { duration: 0.6, ease: 'easeOut' }
+		transition = { duration: 0.6, ease: 'easeOut' },
+		...props
 	}: RippleButtonProps = $props();
 
 	let ripples = $state<Ripple[]>([]);
@@ -56,12 +57,12 @@
 	}
 </script>
 
-<!-- TODO: Spread props when motion-start is compatible -->
 <motion.button
-	bind:el={ref}
+	bind:ref
+	class={cn(buttonVariants({ variant, size }), 'relative overflow-hidden', className)}
 	data-slot="ripple-button"
 	onclick={handleClick}
-	class={cn(buttonVariants({ variant, size }), 'relative overflow-hidden', className)}
+	{...props}
 >
 	{@render children?.()}
 	{#each ripples as ripple (ripple.id)}
