@@ -1168,8 +1168,8 @@
 				{ name: 'tabs-25' },
 				{ name: 'tabs-26' },
 				{ name: 'tabs-27', isAnimated: true },
-				{ name: 'tabs-28', isAnimated: true, underConstruction: true },
-				{ name: 'tabs-29', isAnimated: true, underConstruction: true }
+				{ name: 'tabs-28', isAnimated: true },
+				{ name: 'tabs-29', isAnimated: true }
 			]
 		},
 		{

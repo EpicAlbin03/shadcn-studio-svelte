@@ -7868,8 +7868,8 @@
 		{
 			"name": "tabs-28",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv", "@lucide/svelte"],
+			"registryDependencies": ["tabs", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7880,8 +7880,8 @@
 		{
 			"name": "tabs-29",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed", "@lucide/svelte"],
+			"registryDependencies": ["tabs"],
 			"files": [
 				{
 					"type": "registry:component",

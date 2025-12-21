@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Tabs from '$lib/registry/ui/motion-tabs';
+	import * as MotionTabs from '$lib/registry/ui/motion-tabs';
 	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
 
 	const tabs = [
@@ -31,23 +31,23 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs.Root value="explore" class="gap-4">
-		<Tabs.List>
+	<MotionTabs.Root value="explore" class="gap-4">
+		<MotionTabs.List>
 			{#each tabs as tab (tab.value)}
-				<Tabs.Trigger value={tab.value}>
+				<MotionTabs.Trigger value={tab.value}>
 					{tab.name}
-				</Tabs.Trigger>
+				</MotionTabs.Trigger>
 			{/each}
-		</Tabs.List>
+		</MotionTabs.List>
 
-		<Tabs.Contents class="mx-1 -mt-2 mb-1 h-full rounded-sm bg-background">
+		<MotionTabs.Contents class="mx-1 -mt-2 mb-1 h-full rounded-sm bg-background">
 			{#each tabs as tab (tab.value)}
-				<Tabs.Content value={tab.value}>
+				<MotionTabs.Content value={tab.value}>
 					<p class="text-sm text-muted-foreground">{@html tab.content}</p>
-				</Tabs.Content>
+				</MotionTabs.Content>
 			{/each}
-		</Tabs.Contents>
-	</Tabs.Root>
+		</MotionTabs.Contents>
+	</MotionTabs.Root>
 
 	<p class="mt-4 text-center text-xs text-muted-foreground">
 		Inspired by
