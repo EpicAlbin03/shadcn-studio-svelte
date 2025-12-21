@@ -81,7 +81,12 @@
 			</RainbowButton>
 		{/snippet}
 	</Sheet.Trigger>
-	<Sheet.Content class="h-full w-full gap-0 sm:max-w-[400px] [&>button]:hidden">
+	<Sheet.Content
+		class="h-full w-full gap-0 sm:max-w-[400px] [&>button]:hidden"
+		interactOutsideBehavior="ignore"
+		preventScroll={false}
+		overlay={false}
+	>
 		<Sheet.Header
 			class="min-h-(--header-height) flex-row items-center justify-between border-b border-dashed px-6"
 		>
