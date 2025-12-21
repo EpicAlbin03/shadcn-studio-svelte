@@ -2,4 +2,4 @@
 	import { Badge } from '$lib/components/ui/badge';
 </script>
 
-<Badge class="rounded-full">Rounded</Badge>
+<Badge class="rounded-sm">Rounded</Badge>
