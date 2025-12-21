@@ -135,6 +135,22 @@
 			]
 		},
 		{
+			"name": "motion-tooltip",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["utils", "avatar"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tooltip\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tooltip\\motion-tooltip.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -8325,7 +8341,7 @@
 			"name": "tooltip-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
