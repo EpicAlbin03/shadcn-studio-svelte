@@ -95,6 +95,46 @@
 			]
 		},
 		{
+			"name": "motion-tabs",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-highlight-item.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-highlight.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-content.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-contents.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-list.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-trigger.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -7816,8 +7856,8 @@
 		{
 			"name": "tabs-27",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["local:motion-tabs"],
 			"files": [
 				{
 					"type": "registry:component",
