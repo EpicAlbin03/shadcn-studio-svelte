@@ -143,9 +143,6 @@ importers:
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.38.10)
-      motion-start:
-        specifier: ^0.1.15
-        version: 0.1.15(svelte@5.38.10)
       motion-sv:
         specifier: ^0.1.8
         version: 0.1.8(svelte@5.38.10)
@@ -1600,9 +1597,6 @@ packages:
       react-dom:
         optional: true
 
-  framesync@6.1.2:
-    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
-
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1944,12 +1938,6 @@ packages:
   motion-dom@12.23.23:
     resolution: {integrity: sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA==}
 
-  motion-start@0.1.15:
-    resolution: {integrity: sha512-lOlQc+oEEDhOu8Yf8SVkb+HuKPb7N64q79hB7NGwquci3Uyf7Jp/L9Q2g6tzgjoPvxHoL8n0+HVDyfIu11Pn8A==}
-    engines: {bun: '>=1.0.0', node: '>=20'}
-    peerDependencies:
-      svelte: ^5.5.3
-
   motion-sv@0.1.8:
     resolution: {integrity: sha512-ZW4kHlMP/fjp40B7Y+dmfJ3D7TyyevQMz+EvpkVneUN3MYAH9qWtb0l+N0KGerpx2wGMd5bbdbrBChmRy9z4fw==}
     peerDependencies:
@@ -2046,9 +2034,6 @@ packages:
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
-
-  popmotion@11.0.5:
-    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
 
   postcss-load-config@3.1.4:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
@@ -2364,9 +2349,6 @@ packages:
 
   style-to-object@1.0.9:
     resolution: {integrity: sha512-G4qppLgKu/k6FwRpHiGiKPaPTFcG3g4wNVX/Qsfu+RqQM30E7Tyu/TEgxcL9PNLF5pdRLwQdE3YKKf+KF2Dzlw==}
-
-  style-value-types@5.1.2:
-    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
 
   super-sitemap@1.0.5:
     resolution: {integrity: sha512-30cgsnFxPTDSgHlp1rM8PPWw7t5xpiMIVJwcSLB8+jnl9lirAb6ZrAjh+hrvynOvz1RrSzKjHjVLHH+r6+ja1w==}
@@ -4056,10 +4038,6 @@ snapshots:
       motion-utils: 12.23.6
       tslib: 2.8.1
 
-  framesync@6.1.2:
-    dependencies:
-      tslib: 2.4.0
-
   fsevents@2.3.3:
     optional: true
 
@@ -4388,13 +4366,6 @@ snapshots:
     dependencies:
       motion-utils: 12.23.6
 
-  motion-start@0.1.15(svelte@5.38.10):
-    dependencies:
-      framesync: 6.1.2
-      popmotion: 11.0.5
-      style-value-types: 5.1.2
-      svelte: 5.38.10
-
   motion-sv@0.1.8(svelte@5.38.10):
     dependencies:
       csstype: 3.1.3
@@ -4486,13 +4457,6 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.3: {}
-
-  popmotion@11.0.5:
-    dependencies:
-      framesync: 6.1.2
-      hey-listen: 1.0.8
-      style-value-types: 5.1.2
-      tslib: 2.4.0
 
   postcss-load-config@3.1.4(postcss@8.5.6):
     dependencies:
@@ -4751,11 +4715,6 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.4
 
-  style-value-types@5.1.2:
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-
   super-sitemap@1.0.5(svelte@5.38.10):
     dependencies:
       directory-tree: 3.5.2
@@ -4937,7 +4896,8 @@ snapshots:
 
   ts-deepmerge@7.0.3: {}
 
-  tslib@2.4.0: {}
+  tslib@2.4.0:
+    optional: true
 
   tslib@2.8.1: {}
 
