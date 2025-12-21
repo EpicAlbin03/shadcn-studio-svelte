@@ -31,10 +31,10 @@
 			</Button>
 		{/snippet}
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="w-80" align={align || 'end'}>
-		<DropdownMenu.Label class="flex items-center gap-4 px-4 py-2.5 font-normal">
+	<DropdownMenu.Content align={align || 'end'}>
+		<DropdownMenu.Label class="flex items-center gap-4 font-normal">
 			<div class="relative">
-				<Avatar.Root class="size-10">
+				<Avatar.Root class="size-9">
 					<Avatar.Image src="/avatars/01.webp" alt="John Doe" />
 					<Avatar.Fallback>JD</Avatar.Fallback>
 				</Avatar.Root>
@@ -43,24 +43,24 @@
 				></span>
 			</div>
 			<div class="flex flex-1 flex-col items-start">
-				<span class="text-lg font-semibold text-foreground">John Doe</span>
-				<span class="text-base text-muted-foreground">john.doe@example.com</span>
+				<span class="text-base font-semibold text-foreground">John Doe</span>
+				<span class="text-sm text-muted-foreground">john.doe@example.com</span>
 			</div>
 		</DropdownMenu.Label>
 
 		<DropdownMenu.Separator />
 
 		<DropdownMenu.Group>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<UserIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<UserIcon class="text-foreground" />
 				<span>My account</span>
 			</DropdownMenu.Item>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<SettingsIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<SettingsIcon class="text-foreground" />
 				<span>Settings</span>
 			</DropdownMenu.Item>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<CreditCardIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<CreditCardIcon class="text-foreground" />
 				<span>Billing</span>
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>
@@ -68,24 +68,24 @@
 		<DropdownMenu.Separator />
 
 		<DropdownMenu.Group>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<UsersIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<UsersIcon class="text-foreground" />
 				<span>Manage team</span>
 			</DropdownMenu.Item>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<SquarePenIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<SquarePenIcon class="text-foreground" />
 				<span>Customization</span>
 			</DropdownMenu.Item>
-			<DropdownMenu.Item class="px-4 py-2.5 text-base">
-				<CirclePlusIcon class="size-5 text-foreground" />
+			<DropdownMenu.Item class="text-base">
+				<CirclePlusIcon class="text-foreground" />
 				<span>Add team account</span>
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>
 
 		<DropdownMenu.Separator />
 
-		<DropdownMenu.Item variant="destructive" class="px-4 py-2.5 text-base">
-			<LogOutIcon class="size-5" />
+		<DropdownMenu.Item variant="destructive" class="text-base">
+			<LogOutIcon />
 			<span>Logout</span>
 		</DropdownMenu.Item>
 	</DropdownMenu.Content>
