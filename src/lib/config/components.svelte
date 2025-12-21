@@ -1093,8 +1093,8 @@
 				{ name: 'switch-16' },
 				{ name: 'switch-17' },
 				{ name: 'switch-18' },
-				{ name: 'switch-19', isAnimated: true, underConstruction: true },
-				{ name: 'switch-20', isAnimated: true, underConstruction: true }
+				{ name: 'switch-19', isAnimated: true },
+				{ name: 'switch-20', isAnimated: true }
 			]
 		},
 		{

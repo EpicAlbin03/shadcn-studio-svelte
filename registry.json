@@ -79,6 +79,22 @@
 			]
 		},
 		{
+			"name": "motion-switch",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "bits-ui", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-switch\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-switch\\motion-switch.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -7273,7 +7289,7 @@
 			"name": "switch-19",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7285,7 +7301,7 @@
 			"name": "switch-20",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-switch"],
 			"files": [
 				{
 					"type": "registry:component",
