@@ -13,7 +13,7 @@
 	const id = $props.id();
 
 	let value = $state('rock');
-	const selectedFruit = $derived(genres.find((f) => f.value === value) ?? genres[0]);
+	const selectedGenre = $derived(genres.find((g) => g.value === value) ?? genres[0]);
 </script>
 
 <div class="w-full max-w-xs space-y-2">
@@ -21,8 +21,8 @@
 	<Select.Root type="single" bind:value>
 		<Select.Trigger {id} class="w-full">
 			<span class="flex items-center gap-2">
-				<selectedFruit.icon />
-				{selectedFruit.label ?? 'Select a genre'}
+				<selectedGenre.icon />
+				{selectedGenre.label ?? 'Select a genre'}
 			</span>
 		</Select.Trigger>
 		<Select.Content>
