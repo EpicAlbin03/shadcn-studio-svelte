@@ -45,7 +45,12 @@
 	<Card.Content>
 		<div class="flex items-center gap-2">
 			<Label for="link" class="sr-only">Link</Label>
-			<Input id="link" value="http://example.com/link/to/document" readonly class="h-8" />
+			<Input
+				id="link"
+				value="http://example.com/link/to/document"
+				readonly
+				class="h-8 min-w-0 flex-1"
+			/>
 			<Button class="shadow-none">Copy Link</Button>
 		</div>
 		<Separator class="my-4" />

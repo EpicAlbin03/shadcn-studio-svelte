@@ -6,7 +6,6 @@
 	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
 	import { features } from '$lib/assets/data/features';
-	import { roadmap } from '$lib/assets/data/roadmap';
 	import { faqs } from '$lib/assets/data/faqs';
 	import MetaData from '$lib/components/MetaData.svelte';
 
@@ -18,7 +17,7 @@
 
 <MetaData {title} {description} />
 
-<div class="p-4 sm:p-8">
+<div class="p-6 sm:p-8">
 	<section class="pb-12 sm:pb-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">

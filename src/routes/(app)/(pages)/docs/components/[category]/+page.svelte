@@ -22,7 +22,7 @@
 
 <MetaData {title} {description} />
 
-<div class="flex flex-1 flex-col space-y-4 p-4 sm:mb-20 sm:space-y-8 sm:p-8">
+<div class="flex flex-1 flex-col space-y-4 p-6 sm:mb-20 sm:space-y-8 sm:p-8">
 	<div class="flex flex-col items-start space-y-3">
 		<h1 class="text-2xl font-bold sm:text-3xl">Shadcn {category.name}</h1>
 		<p class="text-muted-foreground">

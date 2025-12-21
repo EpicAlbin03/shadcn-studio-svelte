@@ -19,7 +19,7 @@
 
 <MetaData {title} {description} />
 
-<div class="flex flex-1 flex-col space-y-6 p-4 sm:space-y-10 sm:p-8">
+<div class="flex flex-1 flex-col space-y-6 p-6 sm:space-y-10 sm:p-8">
 	<DocPageHeader {title} {description} />
 
 	<DocSection>

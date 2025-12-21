@@ -65,7 +65,7 @@
 								.join('')}
 						</Avatar.Fallback>
 					</Avatar.Root>
-					<div class="flex flex-col gap-0.5">
+					<div class="flex min-w-0 flex-col gap-0.5">
 						<p class="text-sm leading-none font-medium">{member.name}</p>
 						<p class="text-xs text-muted-foreground">{member.email}</p>
 					</div>

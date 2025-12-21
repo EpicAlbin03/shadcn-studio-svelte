@@ -12,8 +12,8 @@
 		<ExamplesNav class="flex-1 overflow-hidden [&>a:first-child]:text-primary" />
 	</PageNav>
 {/if}
-<div class="container-wrapper flex flex-1 flex-col section-soft pb-6">
-	<div class="container flex flex-1 flex-col">
+<div class="flex flex-1 flex-col section-soft pb-6">
+	<div class="flex flex-1 flex-col">
 		<CardsDemo />
 	</div>
 </div>

@@ -7,7 +7,7 @@
 
 <footer class="flex w-full flex-col">
 	<div
-		class="mx-auto w-full max-w-[1400px] border-t border-dashed px-4 py-9 min-[1400px]:border-x min-[1800px]:max-w-[1536px] sm:px-8 sm:py-16"
+		class="mx-auto w-full max-w-[1400px] border-t border-dashed px-6 py-9 min-[1400px]:border-x min-[1800px]:max-w-[1536px] sm:px-8 sm:py-16"
 	>
 		<div class="grid grid-cols-5 gap-6 sm:gap-8">
 			<div class="col-span-full flex flex-col items-start gap-4 lg:col-span-2">

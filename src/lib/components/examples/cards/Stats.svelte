@@ -50,10 +50,14 @@
 			color: 'var(--primary)'
 		}
 	} satisfies Chart.ChartConfig;
+	import { MediaQuery } from 'svelte/reactivity';
+
+	const isLarge = new MediaQuery('(min-width: 1024px)');
+	const isXLarge = new MediaQuery('(min-width: 1280px)');
 </script>
 
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-	<Card.Root>
+<div class="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+	<Card.Root class="min-w-0">
 		<Card.Header>
 			<Card.Description>Total Revenue</Card.Description>
 			<Card.Title class="text-3xl">$15,231.89</Card.Title>
@@ -87,38 +91,40 @@
 			</Chart.Container>
 		</Card.Content>
 	</Card.Root>
-	<Card.Root class="pb-0 lg:hidden xl:flex">
-		<Card.Header>
-			<Card.Description>Subscriptions</Card.Description>
-			<Card.Title class="text-3xl">+2,350</Card.Title>
-			<Card.Description>+180.1% from last month</Card.Description>
-			<Card.Action>
-				<Button variant="ghost" size="sm">View More</Button>
-			</Card.Action>
-		</Card.Header>
-		<Card.Content class="mt-auto max-h-[124px] flex-1 overflow-hidden p-0">
-			<Chart.Container config={chartConfig} class="-mb-4 h-full w-full overflow-hidden">
-				<AreaChart
-					data={data.map((d, i) => ({ ...d, index: i }))}
-					x="index"
-					y="subscription"
-					axis={false}
-					grid={false}
-					tooltip={false}
-					yPadding={[0, 8]}
-					props={{
-						area: {
-							curve: curveNatural,
-							fill: 'var(--color-subscription)',
-							fillOpacity: 0.05
-						},
-						line: {
-							stroke: 'var(--color-subscription)',
-							strokeWidth: 2
-						}
-					}}
-				/>
-			</Chart.Container>
-		</Card.Content>
-	</Card.Root>
+	{#if !isLarge.current || isXLarge.current}
+		<Card.Root class="min-w-0 pb-0 lg:hidden xl:flex">
+			<Card.Header>
+				<Card.Description>Subscriptions</Card.Description>
+				<Card.Title class="text-3xl">+2,350</Card.Title>
+				<Card.Description>+180.1% from last month</Card.Description>
+				<Card.Action>
+					<Button variant="ghost" size="sm">View More</Button>
+				</Card.Action>
+			</Card.Header>
+			<Card.Content class="mt-auto max-h-[124px] flex-1 overflow-hidden p-0">
+				<Chart.Container config={chartConfig} class="-mb-4 h-full w-full overflow-hidden">
+					<AreaChart
+						data={data.map((d, i) => ({ ...d, index: i }))}
+						x="index"
+						y="subscription"
+						axis={false}
+						grid={false}
+						tooltip={false}
+						yPadding={[0, 8]}
+						props={{
+							area: {
+								curve: curveNatural,
+								fill: 'var(--color-subscription)',
+								fillOpacity: 0.05
+							},
+							line: {
+								stroke: 'var(--color-subscription)',
+								strokeWidth: 2
+							}
+						}}
+					/>
+				</Chart.Container>
+			</Card.Content>
+		</Card.Root>
+	{/if}
 </div>
