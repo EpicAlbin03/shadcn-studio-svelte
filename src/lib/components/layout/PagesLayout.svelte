@@ -23,7 +23,10 @@
 			class="mx-auto flex w-full max-w-[1400px] border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]"
 		>
 			<AppSidebar />
-			<PagesContent>{@render children?.()}</PagesContent>
+			<PagesContent>
+				{@render children?.()}
+				<Footer />
+			</PagesContent>
 			{#if isDocPage && toc}
 				<div class="w-[300px] border-l border-dashed max-xl:hidden">
 					<DocsToc {toc} {title} />
@@ -31,5 +34,5 @@
 			{/if}
 		</div>
 	</div>
-	<Footer />
+	<!-- <Footer /> -->
 </div>
