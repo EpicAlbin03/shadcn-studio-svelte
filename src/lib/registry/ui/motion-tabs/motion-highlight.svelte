@@ -23,6 +23,7 @@
 		clearBounds: () => void;
 		id: string;
 		hover: boolean;
+		previousActiveValue: string | null;
 		className?: string;
 		activeClassName?: string;
 		setActiveClassName: (className: string) => void;
@@ -75,11 +76,21 @@
 	let containerRef = $state<HTMLDivElement | null>(null);
 	let boundsState = $state<Bounds | null>(null);
 	let activeClassNameState = $state('');
+	let previousValue = $state<string | null>(null);
+	let internalValue = $state(value);
 
 	const id = $props.id();
 
+	$effect(() => {
+		if (value !== internalValue) {
+			previousValue = internalValue;
+			internalValue = value;
+		}
+	});
+
 	function setActiveValue(newValue: string | null) {
 		if (value !== newValue) {
+			previousValue = value;
 			value = newValue;
 			onValueChange?.(newValue);
 		}
@@ -141,7 +152,7 @@
 			return mode;
 		},
 		get activeValue() {
-			return value;
+			return internalValue;
 		},
 		setActiveValue,
 		setBounds,
@@ -149,6 +160,9 @@
 		id,
 		get hover() {
 			return hover;
+		},
+		get previousActiveValue() {
+			return previousValue;
 		},
 		get className() {
 			return className;

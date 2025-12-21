@@ -81,15 +81,17 @@
 						data-slot="motion-highlight"
 						class={cn('absolute inset-0 z-0 bg-muted', ctx.className, ctx.activeClassName)}
 						transition={itemTransition}
-						initial={{ opacity: 0 }}
+						initial={ctx.previousActiveValue ? false : { opacity: 0 }}
 						animate={{ opacity: 1 }}
-						exit={{
-							opacity: 0,
-							transition: {
-								...itemTransition,
-								delay: (itemTransition?.delay ?? 0) + (ctx.exitDelay ?? 0)
-							}
-						}}
+						exit={ctx.activeValue
+							? { transition: { duration: 0 } }
+							: {
+									opacity: 0,
+									transition: {
+										...itemTransition,
+										delay: (itemTransition?.delay ?? 0) + (ctx.exitDelay ?? 0)
+									}
+								}}
 						data-active={isActive ? 'true' : 'false'}
 						data-value={childValue}
 					/>
