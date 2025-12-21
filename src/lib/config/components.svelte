@@ -1243,7 +1243,7 @@
 				{ name: 'tooltip-14' },
 				{ name: 'tooltip-15' },
 				{ name: 'tooltip-16', isAnimated: true },
-				{ name: 'tooltip-17', isAnimated: true, underConstruction: true }
+				{ name: 'tooltip-17', isAnimated: true }
 			]
 		},
 		{

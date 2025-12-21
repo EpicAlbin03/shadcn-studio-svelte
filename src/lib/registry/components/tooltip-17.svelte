@@ -1,20 +1,6 @@
 <script lang="ts">
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
-
-	const message =
-		'Motion components will be available soon*. It is currently not possible to spread props on motion elements.';
-</script>
-
-<UnderConstruction {message} />
-
-<!-- <script lang="ts">
-	import * as Avatar from "$lib/components/ui/avatar/index.js";
-	import {
-		Tooltip,
-		TooltipContent,
-		TooltipProvider,
-		TooltipTrigger
-	} from '$lib/components/ui/global-tooltip';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import * as GlobalTooltip from '$lib/registry/ui/global-tooltip';
 
 	const avatars = [
 		{
@@ -42,21 +28,21 @@
 
 <div class="space-y-4">
 	<div class="flex -space-x-2">
-		<TooltipProvider>
+		<GlobalTooltip.Provider>
 			{#each avatars as avatar}
-				<Tooltip.Root>
-					<Tooltip.Trigger>
-						<Avatar
+				<GlobalTooltip.Root>
+					<GlobalTooltip.Trigger>
+						<Avatar.Root
 							class="size-10 ring-2 ring-background transition-all duration-300 ease-in-out hover:z-1 hover:scale-105"
 						>
 							<Avatar.Image src={avatar.src} alt={avatar.name} />
 							<Avatar.Fallback class="text-xs">{avatar.fallback}</Avatar.Fallback>
 						</Avatar.Root>
-					</Tooltip.Trigger>
-					<Tooltip.Content>{avatar.name}</Tooltip.Content>
-				</Tooltip.Root>
+					</GlobalTooltip.Trigger>
+					<GlobalTooltip.Content>{avatar.name}</GlobalTooltip.Content>
+				</GlobalTooltip.Root>
 			{/each}
-		</TooltipProvider>
+		</GlobalTooltip.Provider>
 	</div>
 	<p class="text-xs text-muted-foreground">
 		Inspired by
@@ -69,4 +55,4 @@
 			Animate UI
 		</a>
 	</p>
-</div> -->
+</div>

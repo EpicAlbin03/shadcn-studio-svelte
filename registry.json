@@ -27,6 +27,46 @@
 			]
 		},
 		{
+			"name": "global-tooltip",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "bits-ui", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-arrow.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-content.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-overlay.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-provider.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-trigger.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\types.ts"
+				}
+			]
+		},
+		{
 			"name": "magnetic-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-sv"],
@@ -8353,7 +8393,7 @@
 			"name": "tooltip-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["avatar", "local:global-tooltip"],
 			"files": [
 				{
 					"type": "registry:component",

@@ -7,6 +7,7 @@
 - **Events:** Use `onclick={handler}` instead of `on:click`.
 - **Snippets:** Use `{#snippet}` and `{@render}` instead of `<slot>`.
 - **Async:** Use `<svelte:boundary>` and `{#await}`.
+- **Component Id:** Use `$props.id()` instead of `crypto.randomUUID()`.
 
 ## General Rules
 
