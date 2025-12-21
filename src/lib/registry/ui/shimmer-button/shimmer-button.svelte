@@ -3,7 +3,7 @@
 	import { type ButtonProps } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
-	export type ShimmerButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
+	export type ShimmerButtonProps = MotionProps<'button'> & Omit<ButtonProps, 'style'>;
 </script>
 
 <script lang="ts">

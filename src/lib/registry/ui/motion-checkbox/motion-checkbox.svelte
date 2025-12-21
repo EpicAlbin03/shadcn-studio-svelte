@@ -1,11 +1,13 @@
 <script lang="ts" module>
-	import { motion, type MotionProps } from 'motion-sv';
+	import { motion } from 'motion-sv';
 	import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 	import { MinusIcon } from '@lucide/svelte';
 
-	export type MotionCheckboxProps = MotionProps &
-		Omit<WithoutChildrenOrChild<CheckboxPrimitive.RootProps>, 'style'>;
+	export type MotionCheckboxProps = Omit<
+		WithoutChildrenOrChild<CheckboxPrimitive.RootProps>,
+		'style'
+	>;
 </script>
 
 <script lang="ts">
@@ -15,7 +17,7 @@
 		indeterminate = $bindable(false),
 		class: className,
 		...props
-	}: WithoutChildrenOrChild<CheckboxPrimitive.RootProps> = $props();
+	}: MotionCheckboxProps = $props();
 </script>
 
 <CheckboxPrimitive.Root

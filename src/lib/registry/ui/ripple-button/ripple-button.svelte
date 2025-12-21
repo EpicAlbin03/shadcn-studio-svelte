@@ -3,7 +3,7 @@
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 
-	export type RippleButtonProps = MotionProps &
+	export type RippleButtonProps = MotionProps<'button'> &
 		Omit<ButtonProps, 'style'> & {
 			scale?: number;
 			transition?: Transition;

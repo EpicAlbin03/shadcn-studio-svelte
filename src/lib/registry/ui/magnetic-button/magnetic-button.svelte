@@ -3,7 +3,7 @@
 	import { cn } from '$lib/utils';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
 
-	export type MagneticButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
+	export type MagneticButtonProps = MotionProps<'button'> & Omit<ButtonProps, 'style'>;
 </script>
 
 <script lang="ts">
