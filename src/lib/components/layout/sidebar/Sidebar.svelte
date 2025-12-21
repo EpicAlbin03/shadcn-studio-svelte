@@ -73,11 +73,11 @@
 					<CustomSidebarMenuItem href="/blocks">
 						<LayoutPanelTop class="!size-5" />
 						Blocks
-						<Sidebar.MenuBadge
+						<!-- <Sidebar.MenuBadge
 							class="static rounded-full border-transparent bg-primary px-2 py-0.5 font-normal text-primary-foreground [a&]:hover:bg-primary/90"
 						>
 							New
-						</Sidebar.MenuBadge>
+						</Sidebar.MenuBadge> -->
 					</CustomSidebarMenuItem>
 				</Sidebar.Menu>
 			</Sidebar.Group>
