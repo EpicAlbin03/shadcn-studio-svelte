@@ -45,7 +45,7 @@
 		{
 			"name": "motion-checkbox",
 			"type": "registry:ui",
-			"dependencies": ["motion-start", "bits-ui", "@lucide/svelte"],
+			"dependencies": ["motion-sv", "bits-ui", "@lucide/svelte"],
 			"registryDependencies": ["utils"],
 			"files": [
 				{
@@ -3508,7 +3508,7 @@
 			"name": "checkbox-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3520,7 +3520,7 @@
 			"name": "checkbox-18",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3531,8 +3531,8 @@
 		{
 			"name": "checkbox-19",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",

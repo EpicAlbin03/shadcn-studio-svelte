@@ -1,12 +1,11 @@
 <script lang="ts" module>
-	import { motion, type MotionProps } from 'motion-start';
-	import type { Snippet } from 'svelte';
+	import { motion, type MotionProps } from 'motion-sv';
 	import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
-	import { CheckIcon, MinusIcon } from '@lucide/svelte';
+	import { MinusIcon } from '@lucide/svelte';
 
-	export type MotionCheckboxProps = Omit<MotionProps, 'style'> &
-		WithoutChildrenOrChild<CheckboxPrimitive.RootProps>;
+	export type MotionCheckboxProps = MotionProps &
+		Omit<WithoutChildrenOrChild<CheckboxPrimitive.RootProps>, 'style'>;
 </script>
 
 <script lang="ts">
@@ -19,59 +18,49 @@
 	}: WithoutChildrenOrChild<CheckboxPrimitive.RootProps> = $props();
 </script>
 
-<CheckboxPrimitive.Root>
-	{#snippet child()}
-		<motion.button
-			data-slot="checkbox"
-			class={cn(
-				'peer size-4 shrink-0 rounded-[4px] border border-input shadow-xs transition-colors duration-500 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:bg-input/30 dark:aria-invalid:ring-destructive/40 dark:data-[state=checked]:bg-primary',
-				className
-			)}
-			whileTap={{ scale: 0.95 }}
-			whileHover={{ scale: 1.05 }}
-			{...props}
-		>
-			<div data-slot="checkbox-indicator" class="text-current transition-none">
-				{#if checked}
-					<CheckIcon class="size-3.5" />
-				{:else if indeterminate}
-					<MinusIcon class="size-3.5" />
-				{/if}
-			</div>
-			<!-- <Motion.svg
+<CheckboxPrimitive.Root
+	bind:ref
+	data-slot="checkbox"
+	class={cn(
+		'peer flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-input shadow-xs transition-shadow outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:bg-input/30 dark:aria-invalid:ring-destructive/40 dark:data-[state=checked]:bg-primary',
+		className
+	)}
+	bind:checked
+	bind:indeterminate
+	{...props}
+>
+	{#snippet children({ checked, indeterminate })}
+		{#if checked}
+			<motion.div
 				data-slot="checkbox-indicator"
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				strokeWidth="3.5"
-				stroke="currentColor"
-				class="size-3.5"
-				initial="unchecked"
-				animate={checked ? 'checked' : 'unchecked'}
+				class="text-current transition-none"
+				whilePress={{ scale: 0.95 }}
+				whileHover={{ scale: 1.05 }}
 			>
-				<Motion.path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					d="M4.5 12.75l6 6 9-13.5"
-					variants={{
-						checked: {
-							pathLength: 1,
-							opacity: 1,
-							transition: {
-								duration: 0.2,
-								delay: 0.2
-							}
-						},
-						unchecked: {
-							pathLength: 0,
-							opacity: 0,
-							transition: {
-								duration: 0.2
-							}
-						}
-					}}
-				/>
-			</Motion.svg> -->
-		</motion.button>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="3.5"
+					stroke="currentColor"
+					class="size-3.5"
+				>
+					<motion.path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M4.5 12.75l6 6 9-13.5"
+						initial={{ pathLength: 0, opacity: 0 }}
+						animate={checked ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+						transition={{
+							duration: 0.2,
+							delay: checked ? 0.2 : 0
+						}}
+						style={{ strokeLinecap: 'round', strokeLinejoin: 'round' }}
+					/>
+				</svg>
+			</motion.div>
+		{:else if indeterminate}
+			<MinusIcon class="size-3.5" />
+		{/if}
 	{/snippet}
 </CheckboxPrimitive.Root>

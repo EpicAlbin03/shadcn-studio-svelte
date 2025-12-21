@@ -500,9 +500,9 @@
 				{ name: 'checkbox-14' },
 				{ name: 'checkbox-15' },
 				{ name: 'checkbox-16' },
-				{ name: 'checkbox-17', isAnimated: true, underConstruction: true },
-				{ name: 'checkbox-18', isAnimated: true, underConstruction: true },
-				{ name: 'checkbox-19', isAnimated: true, underConstruction: true }
+				{ name: 'checkbox-17', isAnimated: true },
+				{ name: 'checkbox-18', isAnimated: true },
+				{ name: 'checkbox-19', isAnimated: true }
 			]
 		},
 		{
