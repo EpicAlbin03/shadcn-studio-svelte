@@ -932,7 +932,7 @@
 				{ name: 'radio-group-11' },
 				{ name: 'radio-group-12' },
 				{ name: 'radio-group-13' },
-				{ name: 'radio-group-14', isAnimated: true, underConstruction: true },
+				{ name: 'radio-group-14', isAnimated: true },
 				{ name: 'radio-group-15', isAnimated: true }
 			]
 		},

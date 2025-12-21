@@ -59,6 +59,26 @@
 			]
 		},
 		{
+			"name": "motion-radio-group",
+			"type": "registry:ui",
+			"dependencies": ["bits-ui", "motion-sv", "@lucide/svelte"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\motion-radio-group-item.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\motion-radio-group.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -6200,7 +6220,7 @@
 			"name": "radio-group-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-radio-group"],
 			"files": [
 				{
 					"type": "registry:component",

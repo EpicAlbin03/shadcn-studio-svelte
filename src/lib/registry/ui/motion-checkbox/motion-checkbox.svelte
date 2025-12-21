@@ -4,10 +4,7 @@
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 	import { MinusIcon } from '@lucide/svelte';
 
-	export type MotionCheckboxProps = Omit<
-		WithoutChildrenOrChild<CheckboxPrimitive.RootProps>,
-		'style'
-	>;
+	export type MotionCheckboxProps = WithoutChildrenOrChild<CheckboxPrimitive.RootProps>;
 </script>
 
 <script lang="ts">
