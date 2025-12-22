@@ -500,9 +500,9 @@
 				{ name: 'checkbox-14' },
 				{ name: 'checkbox-15' },
 				{ name: 'checkbox-16' },
-				{ name: 'checkbox-17', isAnimated: true, underConstruction: true },
-				{ name: 'checkbox-18', isAnimated: true, underConstruction: true },
-				{ name: 'checkbox-19', isAnimated: true, underConstruction: true }
+				{ name: 'checkbox-17', isAnimated: true },
+				{ name: 'checkbox-18', isAnimated: true },
+				{ name: 'checkbox-19', isAnimated: true }
 			]
 		},
 		{
@@ -932,7 +932,7 @@
 				{ name: 'radio-group-11' },
 				{ name: 'radio-group-12' },
 				{ name: 'radio-group-13' },
-				{ name: 'radio-group-14', isAnimated: true, underConstruction: true },
+				{ name: 'radio-group-14', isAnimated: true },
 				{ name: 'radio-group-15', isAnimated: true }
 			]
 		},
@@ -1093,8 +1093,8 @@
 				{ name: 'switch-16' },
 				{ name: 'switch-17' },
 				{ name: 'switch-18' },
-				{ name: 'switch-19', isAnimated: true, underConstruction: true },
-				{ name: 'switch-20', isAnimated: true, underConstruction: true }
+				{ name: 'switch-19', isAnimated: true },
+				{ name: 'switch-20', isAnimated: true }
 			]
 		},
 		{
@@ -1167,9 +1167,9 @@
 				{ name: 'tabs-24' },
 				{ name: 'tabs-25' },
 				{ name: 'tabs-26' },
-				{ name: 'tabs-27', isAnimated: true, underConstruction: true },
-				{ name: 'tabs-28', isAnimated: true, underConstruction: true },
-				{ name: 'tabs-29', isAnimated: true, underConstruction: true }
+				{ name: 'tabs-27', isAnimated: true },
+				{ name: 'tabs-28', isAnimated: true },
+				{ name: 'tabs-29', isAnimated: true }
 			]
 		},
 		{
@@ -1242,8 +1242,8 @@
 				{ name: 'tooltip-13' },
 				{ name: 'tooltip-14' },
 				{ name: 'tooltip-15' },
-				{ name: 'tooltip-16', isAnimated: true, underConstruction: true },
-				{ name: 'tooltip-17', isAnimated: true, underConstruction: true }
+				{ name: 'tooltip-16', isAnimated: true },
+				{ name: 'tooltip-17', isAnimated: true }
 			]
 		},
 		{

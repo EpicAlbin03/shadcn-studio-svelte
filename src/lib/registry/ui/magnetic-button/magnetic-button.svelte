@@ -1,9 +1,9 @@
 <script lang="ts" module>
-	import { Motion, type MotionProps } from 'motion-start';
+	import { motion, type MotionProps } from 'motion-sv';
 	import { cn } from '$lib/utils';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
 
-	export type MagneticButtonProps = MotionProps & Omit<ButtonProps, 'style'>;
+	export type MagneticButtonProps = MotionProps<'button'> & Omit<ButtonProps, 'style'>;
 </script>
 
 <script lang="ts">
@@ -17,7 +17,8 @@
 		class: className,
 		variant = 'default',
 		size = 'default',
-		ref = $bindable(null)
+		ref = $bindable(null),
+		...props
 	}: MagneticButtonProps = $props();
 
 	let position = $state<Position>({ x: 0, y: 0 });
@@ -39,16 +40,17 @@
 	}
 </script>
 
-<Motion.button
-	bind:el={ref}
+<motion.button
+	bind:ref
+	class={cn(buttonVariants({ variant, size }), 'relative transition-none', className)}
 	onmousemove={handleMouse}
 	onmouseleave={reset}
 	animate={{ x, y }}
 	transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
-	whileTap={{
+	whilePress={{
 		scale: 0.95
 	}}
-	class={cn(buttonVariants({ variant, size }), 'relative transition-none', className)}
+	{...props}
 >
 	{@render children?.()}
-</Motion.button>
+</motion.button>

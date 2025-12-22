@@ -10,7 +10,7 @@
 
 <MetaData {title} {description} />
 
-<div class="flex flex-col items-start justify-center space-y-4 p-4 sm:space-y-8 sm:p-8">
+<div class="flex flex-col items-start justify-center space-y-4 p-6 sm:space-y-8 sm:p-8">
 	<div class="flex flex-col space-y-3">
 		<h1 class="text-2xl font-bold sm:text-3xl">Shadcn Components</h1>
 		<p class="text-muted-foreground">

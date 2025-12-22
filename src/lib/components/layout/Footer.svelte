@@ -7,7 +7,7 @@
 
 <footer class="flex w-full flex-col">
 	<div
-		class="mx-auto w-full max-w-[1400px] border-t border-dashed px-4 py-9 min-[1400px]:border-x min-[1800px]:max-w-[1536px] sm:px-8 sm:py-16"
+		class="mx-auto w-full max-w-[1400px] border-t border-dashed px-6 py-9 min-[1400px]:border-x min-[1800px]:max-w-[1536px] sm:px-8 sm:py-16"
 	>
 		<div class="grid grid-cols-5 gap-6 sm:gap-8">
 			<div class="col-span-full flex flex-col items-start gap-4 lg:col-span-2">
@@ -46,14 +46,14 @@
 				<div class="flex flex-col gap-5">
 					<div class="text-lg font-semibold">Products</div>
 					<ul class="space-y-3">
-						<li>
-							<a href="/theme-generator">Shadcn Theme Generator</a>
+						<li class="hover:underline">
+							<a href="/theme-generator">Theme Generator</a>
 						</li>
-						<li>
-							<a href="/components">Shadcn Components</a>
+						<li class="hover:underline">
+							<a href="/components">Components</a>
 						</li>
-						<li>
-							<a href="/blocks"> Shadcn Blocks </a>
+						<li class="hover:underline">
+							<a href="/blocks">Blocks </a>
 						</li>
 					</ul>
 				</div>
@@ -63,10 +63,10 @@
 						<!-- <li>
 							<a href="/theme-generator/#roadmap">Roadmap</a>
 						</li> -->
-						<li>
+						<li class="hover:underline">
 							<a href="/theme-generator#faq">FAQ</a>
 						</li>
-						<li>
+						<li class="hover:underline">
 							<a href="/sitemap.xml">Sitemap</a>
 						</li>
 						<!-- <li>
@@ -83,7 +83,7 @@
 				<div class="flex flex-col gap-5">
 					<div class="text-lg font-semibold">Legal</div>
 					<ul class="space-y-3">
-						<li>
+						<li class="hover:underline">
 							<a
 								href="https://github.com/EpicAlbin03/shadcn-studio-svelte/blob/main/LICENSE.md"
 								target="_blank"
@@ -92,10 +92,10 @@
 								License
 							</a>
 						</li>
-						<li>
+						<li class="hover:underline">
 							<a href="https://shadcnstudio.com/privacy-policy">Privacy policy</a>
 						</li>
-						<li>
+						<li class="hover:underline">
 							<a href="https://shadcnstudio.com/terms-and-condition">Terms & Condition</a>
 						</li>
 					</ul>
@@ -109,17 +109,31 @@
 		>
 			<p>
 				Built by
-				<a href="https://x.com/ajaypatel_aj" target="_blank" class="font-medium text-foreground">
+				<a
+					href="https://x.com/ajaypatel_aj"
+					target="_blank"
+					class="font-medium text-foreground hover:underline"
+				>
 					@Ajay Patel
 				</a>
 				&
-				<a href="https://x.com/imananddesigner" target="_blank" class="font-medium text-foreground">
+				<a
+					href="https://x.com/imananddesigner"
+					target="_blank"
+					class="font-medium text-foreground hover:underline"
+				>
 					@Anand Patel
 				</a>
 				at
-				<a href="https://shadcnstudio.com" class="font-medium text-foreground">shadcn/studio</a>
+				<a href="https://shadcnstudio.com" class="font-medium text-foreground hover:underline"
+					>shadcn/studio</a
+				>
 				. Ported to Svelte by
-				<a href="https://x.com/EpicAlbin03" target="_blank" class="font-medium text-foreground">
+				<a
+					href="https://x.com/EpicAlbin03"
+					target="_blank"
+					class="font-medium text-foreground hover:underline"
+				>
 					@EpicAlbin03
 				</a>
 			</p>

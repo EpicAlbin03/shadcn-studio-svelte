@@ -1,14 +1,5 @@
 <script lang="ts">
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
-
-	const message =
-		'Motion components will be available soon*. It is currently not possible to spread props on motion elements.';
-</script>
-
-<UnderConstruction {message} />
-
-<!-- <script lang="ts">
-	import { AnimatedTooltip } from '$lib/components/ui/motion-tooltip';
+	import { MotionTooltip } from '$lib/registry/ui/motion-tooltip';
 
 	const avatars = [
 		{
@@ -40,7 +31,7 @@
 
 <div class="space-y-4">
 	<div class="flex w-full flex-row items-center justify-center">
-		<AnimatedTooltip items={avatars} />
+		<MotionTooltip items={avatars} />
 	</div>
 	<p class="text-xs text-muted-foreground">
 		Inspired by
@@ -53,4 +44,4 @@
 			Aceternity UI
 		</a>
 	</p>
-</div> -->
+</div>

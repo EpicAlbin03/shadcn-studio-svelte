@@ -256,7 +256,7 @@
 		</Card.Action>
 	</Card.Header>
 	<Card.Content class="flex flex-col gap-4">
-		<div class="rounded-md border">
+		<div class="overflow-x-auto rounded-md border">
 			<Table.Root>
 				<Table.Header>
 					{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}

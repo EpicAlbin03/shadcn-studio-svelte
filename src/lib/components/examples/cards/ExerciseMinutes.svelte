@@ -54,16 +54,13 @@
 	} satisfies Chart.ChartConfig;
 </script>
 
-<Card.Root>
+<Card.Root class="min-w-0">
 	<Card.Header>
 		<Card.Title>Exercise Minutes</Card.Title>
 		<Card.Description>Your exercise minutes are ahead of where you normally are.</Card.Description>
 	</Card.Header>
 	<Card.Content class="pb-4">
-		<Chart.Container
-			config={chartConfig}
-			class="w-full md:h-[200px] [&_.lc-highlight-line]:stroke-1"
-		>
+		<Chart.Container config={chartConfig} class="h-[200px] w-full [&_.lc-highlight-line]:stroke-1">
 			<LineChart
 				axis="x"
 				data={data.map((d, i) => ({ ...d, index: i }))}

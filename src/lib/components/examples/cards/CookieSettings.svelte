@@ -12,7 +12,7 @@
 	</Card.Header>
 	<Card.Content class="grid gap-6">
 		<div class="flex items-center justify-between gap-4">
-			<Label for="necessary" class="flex flex-col items-start">
+			<Label for="necessary" class="flex flex-1 flex-col items-start">
 				<span>Strictly Necessary</span>
 				<span class="leading-snug font-normal text-muted-foreground">
 					These cookies are essential in order to use the website and use its features.
@@ -21,7 +21,7 @@
 			<Switch id="necessary" checked aria-label="Necessary" />
 		</div>
 		<div class="flex items-center justify-between gap-4">
-			<Label for="functional" class="flex flex-col items-start">
+			<Label for="functional" class="flex flex-1 flex-col items-start">
 				<span>Functional Cookies</span>
 				<span class="leading-snug font-normal text-muted-foreground">
 					These cookies allow the website to provide personalized functionality.

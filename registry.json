@@ -13,7 +13,7 @@
 		{
 			"name": "bounce-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
@@ -27,9 +27,49 @@
 			]
 		},
 		{
+			"name": "global-tooltip",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "bits-ui", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-arrow.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-content.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-overlay.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-provider.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip-trigger.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\global-tooltip.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\global-tooltip\\types.ts"
+				}
+			]
+		},
+		{
 			"name": "magnetic-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
@@ -45,7 +85,7 @@
 		{
 			"name": "motion-checkbox",
 			"type": "registry:ui",
-			"dependencies": ["motion-start", "bits-ui", "@lucide/svelte"],
+			"dependencies": ["motion-sv", "bits-ui", "@lucide/svelte"],
 			"registryDependencies": ["utils"],
 			"files": [
 				{
@@ -55,6 +95,98 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\motion-checkbox\\motion-checkbox.svelte"
+				}
+			]
+		},
+		{
+			"name": "motion-radio-group",
+			"type": "registry:ui",
+			"dependencies": ["bits-ui", "motion-sv", "@lucide/svelte"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\motion-radio-group-item.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-radio-group\\motion-radio-group.svelte"
+				}
+			]
+		},
+		{
+			"name": "motion-switch",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "bits-ui", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-switch\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-switch\\motion-switch.svelte"
+				}
+			]
+		},
+		{
+			"name": "motion-tabs",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv", "runed"],
+			"registryDependencies": ["utils"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-highlight-item.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-highlight.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-content.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-contents.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-list.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs-trigger.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tabs\\motion-tabs.svelte"
+				}
+			]
+		},
+		{
+			"name": "motion-tooltip",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["utils", "avatar"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tooltip\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\motion-tooltip\\motion-tooltip.svelte"
 				}
 			]
 		},
@@ -81,7 +213,7 @@
 		{
 			"name": "ripple-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -97,7 +229,7 @@
 		{
 			"name": "shimmer-button",
 			"type": "registry:ui",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -2511,7 +2643,7 @@
 		{
 			"name": "button-42",
 			"type": "registry:component",
-			"dependencies": ["motion-start"],
+			"dependencies": ["motion-sv"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -2751,7 +2883,7 @@
 		{
 			"name": "button-group-15",
 			"type": "registry:component",
-			"dependencies": ["motion-start", "@lucide/svelte"],
+			"dependencies": ["motion-sv", "@lucide/svelte"],
 			"registryDependencies": ["button", "utils"],
 			"files": [
 				{
@@ -3508,7 +3640,7 @@
 			"name": "checkbox-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3520,7 +3652,7 @@
 			"name": "checkbox-18",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -3531,8 +3663,8 @@
 		{
 			"name": "checkbox-19",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["local:motion-checkbox", "label"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -6200,7 +6332,7 @@
 			"name": "radio-group-14",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-radio-group"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7253,7 +7385,7 @@
 			"name": "switch-19",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7265,7 +7397,7 @@
 			"name": "switch-20",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["label", "local:motion-switch"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7780,8 +7912,8 @@
 		{
 			"name": "tabs-27",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["local:motion-tabs"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7792,8 +7924,8 @@
 		{
 			"name": "tabs-28",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv", "@lucide/svelte"],
+			"registryDependencies": ["tabs", "utils"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -7804,8 +7936,8 @@
 		{
 			"name": "tabs-29",
 			"type": "registry:component",
-			"dependencies": [],
-			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed", "@lucide/svelte"],
+			"registryDependencies": ["tabs"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -8249,7 +8381,7 @@
 			"name": "tooltip-16",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["local:motion-tooltip"],
 			"files": [
 				{
 					"type": "registry:component",
@@ -8261,7 +8393,7 @@
 			"name": "tooltip-17",
 			"type": "registry:component",
 			"dependencies": [],
-			"registryDependencies": [],
+			"registryDependencies": ["avatar", "local:global-tooltip"],
 			"files": [
 				{
 					"type": "registry:component",

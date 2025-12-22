@@ -66,7 +66,7 @@
 	let context = $state<ChartContextValue>();
 </script>
 
-<Card.Root class="w-full gap-5">
+<Card.Root class="w-full min-w-0 gap-5">
 	<Card.Header>
 		<Card.Title>Move Goal</Card.Title>
 		<Card.Description>Set your daily activity goal.</Card.Description>

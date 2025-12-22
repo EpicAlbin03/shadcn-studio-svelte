@@ -24,6 +24,7 @@ We are grateful for the contributions of the open-source community, particularly
 - [shadcn/studio](https://shadcnstudio.com)
 - [shadcn-svelte](https://shadcn-svelte.com)
 - [bits-ui](https://bits-ui.com)
+- [motion-svelte](https://github.com/hanielu/motion-svelte)
 - [tweakcn](https://tweakcn.com/) (Our Theme Generator is heavily inspired by tweakcn)
 
 These projects form the backbone of shadcn/studio, allowing us to build a powerful copy-and-paste components.
