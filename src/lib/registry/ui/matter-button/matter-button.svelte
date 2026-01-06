@@ -24,6 +24,8 @@
 >
 	<Button
 		bind:ref
+		{variant}
+		{size}
 		class={cn(
 			'relative overflow-hidden rounded-full bg-black text-white duration-500 hover:bg-black',
 

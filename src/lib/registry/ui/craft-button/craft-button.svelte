@@ -31,6 +31,8 @@
 
 <Button
 	bind:ref
+	{variant}
+	{size}
 	class={cn(
 		'group relative cursor-pointer overflow-hidden rounded-full duration-500 hover:bg-background hover:shadow-md dark:border dark:border-transparent dark:hover:border-primary/30',
 		className

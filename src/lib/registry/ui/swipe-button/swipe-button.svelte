@@ -44,6 +44,7 @@
 <Button
 	bind:ref
 	{variant}
+	{size}
 	class={cn(
 		swipeButtonVariants({ variant }),
 		size === 'lg' && 'text-base has-[>svg]:px-6',
