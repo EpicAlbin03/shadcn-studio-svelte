@@ -358,7 +358,8 @@
 				{ name: 'button-50', isAnimated: true },
 				{ name: 'button-51', isAnimated: true },
 				{ name: 'button-52', isAnimated: true },
-				{ name: 'button-53', isAnimated: true }
+				{ name: 'button-53', isAnimated: true },
+				{ name: 'button-54', isAnimated: true }
 			]
 		},
 		{
