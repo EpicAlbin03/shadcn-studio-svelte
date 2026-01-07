@@ -1,9 +1,12 @@
-import Root, { type FlowButtonProps } from './flow-button.svelte';
+import PrimaryFlowButton, { type PrimaryFlowButtonProps } from './primary-flow-button.svelte';
+import SecondaryFlowButton, { type SecondaryFlowButtonProps } from './secondary-flow-button.svelte';
 
 export {
-	Root,
-	type FlowButtonProps as Props,
+	PrimaryFlowButton,
+	SecondaryFlowButton,
+	type PrimaryFlowButtonProps as PrimaryProps,
+	type SecondaryFlowButtonProps as SecondaryProps,
 	//
-	Root as FlowButton,
-	type FlowButtonProps
+	type PrimaryFlowButtonProps,
+	type SecondaryFlowButtonProps
 };

@@ -27,6 +27,46 @@
 			]
 		},
 		{
+			"name": "craft-button",
+			"type": "registry:ui",
+			"dependencies": ["runed"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button-icon.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button-label.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\index.ts"
+				}
+			]
+		},
+		{
+			"name": "flow-button",
+			"type": "registry:ui",
+			"dependencies": ["tailwind-variants"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\flow-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\index.ts"
+				}
+			]
+		},
+		{
 			"name": "global-tooltip",
 			"type": "registry:ui",
 			"dependencies": ["motion-sv", "bits-ui", "runed"],
@@ -79,6 +119,22 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\magnetic-button\\magnetic-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "matter-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\matter-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\matter-button\\matter-button.svelte"
 				}
 			]
 		},
@@ -191,6 +247,26 @@
 			]
 		},
 		{
+			"name": "orion-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\primary-orion-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\secondary-orion-button.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -239,6 +315,22 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\shimmer-button\\shimmer-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "swipe-button",
+			"type": "registry:ui",
+			"dependencies": ["tailwind-variants"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\swipe-button.svelte"
 				}
 			]
 		},
@@ -2709,6 +2801,66 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\button-47.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-48",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:matter-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-48.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-49",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["local:craft-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-49.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-50",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:swipe-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-50.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-51",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:flow-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-51.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-52",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:orion-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-52.svelte"
 				}
 			]
 		},

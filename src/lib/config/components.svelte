@@ -352,7 +352,12 @@
 						}
 					}
 				},
-				{ name: 'button-47', isAnimated: true }
+				{ name: 'button-47', isAnimated: true },
+				{ name: 'button-48', isAnimated: true },
+				{ name: 'button-49', isAnimated: true },
+				{ name: 'button-50', isAnimated: true },
+				{ name: 'button-51', isAnimated: true },
+				{ name: 'button-52', isAnimated: true }
 			]
 		},
 		{

@@ -1,9 +1,14 @@
-import Root, { type OrionButtonProps } from './orion-button.svelte';
+import PrimaryOrionButton, { type PrimaryOrionButtonProps } from './primary-orion-button.svelte';
+import SecondaryOrionButton, {
+	type SecondaryOrionButtonProps
+} from './secondary-orion-button.svelte';
 
 export {
-	Root,
-	type OrionButtonProps as Props,
+	PrimaryOrionButton,
+	SecondaryOrionButton,
+	type PrimaryOrionButtonProps as PrimaryProps,
+	type SecondaryOrionButtonProps as SecondaryProps,
 	//
-	Root as OrionButton,
-	type OrionButtonProps
+	type PrimaryOrionButtonProps,
+	type SecondaryOrionButtonProps
 };

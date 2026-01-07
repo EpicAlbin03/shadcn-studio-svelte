@@ -1,9 +1,14 @@
-import Root, { type SwipeButtonProps } from './swipe-button.svelte';
+import PrimarySwipeButton, { type PrimarySwipeButtonProps } from './primary-swipe-button.svelte';
+import SecondarySwipeButton, {
+	type SecondarySwipeButtonProps
+} from './secondary-swipe-button.svelte';
 
 export {
-	Root,
-	type SwipeButtonProps as Props,
+	PrimarySwipeButton,
+	SecondarySwipeButton,
+	type PrimarySwipeButtonProps as PrimaryProps,
+	type SecondarySwipeButtonProps as SecondaryProps,
 	//
-	Root as SwipeButton,
-	type SwipeButtonProps
+	type PrimarySwipeButtonProps,
+	type SecondarySwipeButtonProps
 };
