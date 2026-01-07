@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SwipeButton } from '$lib/registry/ui/swipe-button';
+	import { PrimarySwipeButton } from '$lib/registry/ui/swipe-button';
 </script>
 
-<SwipeButton>Swipe Button</SwipeButton>
+<PrimarySwipeButton>Swipe Button</PrimarySwipeButton>
