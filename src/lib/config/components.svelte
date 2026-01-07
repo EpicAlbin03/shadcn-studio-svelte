@@ -38,7 +38,7 @@
 	import type { ComponentProps } from '$lib/types/components';
 	import { componentMeta } from './component-meta';
 
-	type Badge = 'New' | 'Updated' | undefined;
+	type Badge = 'New' | 'Updated' | string | undefined;
 
 	export type ComponentCategory = {
 		slug: string;
@@ -275,8 +275,10 @@
 				{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/button' },
 				{ label: 'bits-ui', href: 'https://bits-ui.com/docs/components/button' }
 			],
+			badge: '+8 New',
 			hasAnimation: true,
 			animation: {
+				badge: '+8 New',
 				breakpoints: {
 					md: 2,
 					xl: 3
@@ -330,14 +332,14 @@
 				{ name: 'button-45', isAnimated: true },
 				{ name: 'button-46', isAnimated: true, ...componentMeta['button-46'] },
 				{ name: 'button-47', isAnimated: true },
-				{ name: 'button-48', isAnimated: true },
-				{ name: 'button-49', isAnimated: true },
-				{ name: 'button-50', isAnimated: true },
-				{ name: 'button-51', isAnimated: true },
-				{ name: 'button-52', isAnimated: true },
-				{ name: 'button-53', isAnimated: true },
-				{ name: 'button-54', isAnimated: true },
-				{ name: 'button-55', isAnimated: true, ...componentMeta['button-55'] }
+				{ name: 'button-48', isAnimated: true, badge: 'New' },
+				{ name: 'button-49', isAnimated: true, badge: 'New' },
+				{ name: 'button-50', isAnimated: true, badge: 'New' },
+				{ name: 'button-51', isAnimated: true, badge: 'New' },
+				{ name: 'button-52', isAnimated: true, badge: 'New' },
+				{ name: 'button-53', isAnimated: true, badge: 'New' },
+				{ name: 'button-54', isAnimated: true, badge: 'New' },
+				{ name: 'button-55', isAnimated: true, ...componentMeta['button-55'], badge: 'New' }
 			]
 		},
 		{
