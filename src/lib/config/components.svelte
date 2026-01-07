@@ -36,6 +36,7 @@
 		TooltipSVG
 	} from '$lib/assets/svg';
 	import type { ComponentProps } from '$lib/types/components';
+	import { componentMeta } from './component-meta';
 
 	type Badge = 'New' | 'Updated' | undefined;
 
@@ -327,31 +328,7 @@
 				{ name: 'button-43', isAnimated: true },
 				{ name: 'button-44', isAnimated: true },
 				{ name: 'button-45', isAnimated: true },
-				{
-					name: 'button-46',
-					isAnimated: true,
-					cssVars: {
-						theme: {
-							'animate-heartbeat': 'heartbeat 2s infinite ease-in-out'
-						}
-					},
-					css: {
-						'@keyframes heartbeat': {
-							'0%': {
-								'box-shadow': '0 0 0 0 var(--destructive)',
-								transform: 'scale(1)'
-							},
-							'50%': {
-								'box-shadow': '0 0 0 7px transparent',
-								transform: 'scale(1.05)'
-							},
-							'100%': {
-								'box-shadow': '0 0 0 0 transparent',
-								transform: 'scale(1)'
-							}
-						}
-					}
-				},
+				{ name: 'button-46', isAnimated: true, ...componentMeta['button-46'] },
 				{ name: 'button-47', isAnimated: true },
 				{ name: 'button-48', isAnimated: true },
 				{ name: 'button-49', isAnimated: true },
@@ -360,17 +337,7 @@
 				{ name: 'button-52', isAnimated: true },
 				{ name: 'button-53', isAnimated: true },
 				{ name: 'button-54', isAnimated: true },
-				{
-					name: 'button-55',
-					isAnimated: true,
-					css: {
-						'@property --button-angle': {
-							syntax: '<angle>',
-							inherits: 'false',
-							'initial-value': '-75deg'
-						}
-					}
-				}
+				{ name: 'button-55', isAnimated: true, ...componentMeta['button-55'] }
 			]
 		},
 		{
