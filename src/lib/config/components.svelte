@@ -359,7 +359,18 @@
 				{ name: 'button-51', isAnimated: true },
 				{ name: 'button-52', isAnimated: true },
 				{ name: 'button-53', isAnimated: true },
-				{ name: 'button-54', isAnimated: true }
+				{ name: 'button-54', isAnimated: true },
+				{
+					name: 'button-55',
+					isAnimated: true,
+					css: {
+						'@property --button-angle': {
+							syntax: '<angle>',
+							inherits: 'false',
+							'initial-value': '-75deg'
+						}
+					}
+				}
 			]
 		},
 		{

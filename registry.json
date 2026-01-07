@@ -53,16 +53,36 @@
 		{
 			"name": "flow-button",
 			"type": "registry:ui",
-			"dependencies": ["tailwind-variants"],
+			"dependencies": [],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
 					"type": "registry:file",
-					"path": "src\\lib\\registry\\ui\\flow-button\\flow-button.svelte"
+					"path": "src\\lib\\registry\\ui\\flow-button\\index.ts"
 				},
 				{
 					"type": "registry:file",
-					"path": "src\\lib\\registry\\ui\\flow-button\\index.ts"
+					"path": "src\\lib\\registry\\ui\\flow-button\\primary-flow-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\secondary-flow-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "glass-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\glass-button\\glass-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\glass-button\\index.ts"
 				}
 			]
 		},
@@ -103,6 +123,26 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\global-tooltip\\types.ts"
+				}
+			]
+		},
+		{
+			"name": "grow-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\primary-grow-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\secondary-grow-button.svelte"
 				}
 			]
 		},
@@ -247,6 +287,26 @@
 			]
 		},
 		{
+			"name": "neural-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\border-beam.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\neural-button.svelte"
+				}
+			]
+		},
+		{
 			"name": "orion-button",
 			"type": "registry:ui",
 			"dependencies": [],
@@ -321,7 +381,7 @@
 		{
 			"name": "swipe-button",
 			"type": "registry:ui",
-			"dependencies": ["tailwind-variants"],
+			"dependencies": [],
 			"registryDependencies": ["utils", "button"],
 			"files": [
 				{
@@ -330,7 +390,11 @@
 				},
 				{
 					"type": "registry:file",
-					"path": "src\\lib\\registry\\ui\\swipe-button\\swipe-button.svelte"
+					"path": "src\\lib\\registry\\ui\\swipe-button\\primary-swipe-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\secondary-swipe-button.svelte"
 				}
 			]
 		},
@@ -2861,6 +2925,42 @@
 				{
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\button-52.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-53",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:grow-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-53.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-54",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:neural-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-54.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-55",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:glass-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-55.svelte"
 				}
 			]
 		},
