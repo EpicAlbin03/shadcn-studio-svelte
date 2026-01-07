@@ -6,6 +6,7 @@ import { walk, type Node } from 'estree-walker';
 import * as svelte from 'svelte/compiler';
 import { registryItemSchema, type Registry } from '@shadcn-svelte/registry';
 import { presetThemes } from '../src/lib/assets/data/preset-themes.js';
+import { componentMeta } from '../src/lib/config/component-meta.js';
 import packageJson from '../package.json' with { type: 'json' };
 
 const REGISTRY_PATH = '$lib/registry';
@@ -269,12 +270,15 @@ async function crawlComponents(rootPath: string): Promise<RegistryItems> {
 			source
 		);
 
+		const meta = componentMeta[name];
 		items.push({
 			name: applyCompSuffix(name),
 			type: 'registry:component',
 			files: [{ path: relativePath, type: 'registry:component' }],
 			registryDependencies: Array.from(registryDependencies),
-			dependencies: Array.from(packageDependencies)
+			dependencies: Array.from(packageDependencies),
+			...(meta?.cssVars && { cssVars: meta.cssVars }),
+			...(meta?.css && { css: meta.css })
 		});
 	}
 

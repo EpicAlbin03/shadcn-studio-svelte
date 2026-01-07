@@ -1,6 +1,12 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@property --button-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: -75deg;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @custom-variant fixed (&:is(.layout-fixed *));

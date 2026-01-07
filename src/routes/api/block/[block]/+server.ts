@@ -16,6 +16,7 @@ import {
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
 import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
+import { generateCssFromMeta } from '$lib/utils/generate-css-from-meta.js';
 
 export type HighlightedBlock = z.output<typeof highlightedBlockSchema>;
 
@@ -106,6 +107,21 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 	if (item.registryDependencies && item.registryDependencies.length > 0) {
 		const dependencyFiles = await loadRegistryDependencies(item.registryDependencies, visited);
 		allFiles = [...allFiles, ...dependencyFiles];
+	}
+
+	// Add styles/app.css if cssVars or css exists
+	const cssContent = generateCssFromMeta(
+		item.cssVars,
+		item.css as Parameters<typeof generateCssFromMeta>[1]
+	);
+	if (cssContent) {
+		const highlightedCss = await highlightCode(cssContent, 'css');
+		allFiles.push({
+			target: 'app.css',
+			type: 'registry:file',
+			content: cssContent,
+			highlightedContent: highlightedCss
+		});
 	}
 
 	return highlightedBlockSchema.parse({

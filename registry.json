@@ -27,6 +27,66 @@
 			]
 		},
 		{
+			"name": "craft-button",
+			"type": "registry:ui",
+			"dependencies": ["runed"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button-icon.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button-label.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\craft-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\craft-button\\index.ts"
+				}
+			]
+		},
+		{
+			"name": "flow-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\primary-flow-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\flow-button\\secondary-flow-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "glass-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\glass-button\\glass-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\glass-button\\index.ts"
+				}
+			]
+		},
+		{
 			"name": "global-tooltip",
 			"type": "registry:ui",
 			"dependencies": ["motion-sv", "bits-ui", "runed"],
@@ -67,6 +127,26 @@
 			]
 		},
 		{
+			"name": "grow-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\primary-grow-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\grow-button\\secondary-grow-button.svelte"
+				}
+			]
+		},
+		{
 			"name": "magnetic-button",
 			"type": "registry:ui",
 			"dependencies": ["motion-sv"],
@@ -79,6 +159,22 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\magnetic-button\\magnetic-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "matter-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\matter-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\matter-button\\matter-button.svelte"
 				}
 			]
 		},
@@ -191,6 +287,46 @@
 			]
 		},
 		{
+			"name": "neural-button",
+			"type": "registry:ui",
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\border-beam.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\neural-button\\neural-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "orion-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\primary-orion-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\orion-button\\secondary-orion-button.svelte"
+				}
+			]
+		},
+		{
 			"name": "rating",
 			"type": "registry:ui",
 			"dependencies": ["@lucide/svelte", "tailwind-variants"],
@@ -239,6 +375,26 @@
 				{
 					"type": "registry:file",
 					"path": "src\\lib\\registry\\ui\\shimmer-button\\shimmer-button.svelte"
+				}
+			]
+		},
+		{
+			"name": "swipe-button",
+			"type": "registry:ui",
+			"dependencies": [],
+			"registryDependencies": ["utils", "button"],
+			"files": [
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\index.ts"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\primary-swipe-button.svelte"
+				},
+				{
+					"type": "registry:file",
+					"path": "src\\lib\\registry\\ui\\swipe-button\\secondary-swipe-button.svelte"
 				}
 			]
 		},
@@ -2698,7 +2854,28 @@
 					"type": "registry:component",
 					"path": "src\\lib\\registry\\components\\button-46.svelte"
 				}
-			]
+			],
+			"cssVars": {
+				"theme": {
+					"animate-heartbeat": "heartbeat 2s infinite ease-in-out"
+				}
+			},
+			"css": {
+				"@keyframes heartbeat": {
+					"0%": {
+						"box-shadow": "0 0 0 0 var(--destructive)",
+						"transform": "scale(1)"
+					},
+					"50%": {
+						"box-shadow": "0 0 0 7px transparent",
+						"transform": "scale(1.05)"
+					},
+					"100%": {
+						"box-shadow": "0 0 0 0 transparent",
+						"transform": "scale(1)"
+					}
+				}
+			}
 		},
 		{
 			"name": "button-47",
@@ -2711,6 +2888,109 @@
 					"path": "src\\lib\\registry\\components\\button-47.svelte"
 				}
 			]
+		},
+		{
+			"name": "button-48",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:matter-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-48.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-49",
+			"type": "registry:component",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["local:craft-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-49.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-50",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:swipe-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-50.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-51",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:flow-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-51.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-52",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:orion-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-52.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-53",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:grow-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-53.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-54",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:neural-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-54.svelte"
+				}
+			]
+		},
+		{
+			"name": "button-55",
+			"type": "registry:component",
+			"dependencies": [],
+			"registryDependencies": ["local:glass-button"],
+			"files": [
+				{
+					"type": "registry:component",
+					"path": "src\\lib\\registry\\components\\button-55.svelte"
+				}
+			],
+			"css": {
+				"@property --button-angle": {
+					"syntax": "<angle>",
+					"inherits": "false",
+					"initial-value": "-75deg"
+				}
+			}
 		},
 		{
 			"name": "button-group-01",

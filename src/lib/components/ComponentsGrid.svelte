@@ -75,7 +75,9 @@
 					/>
 				{/if}
 				{#if component?.badge}
-					<span class="absolute start-4.5 top-3 font-['Gamja_Flower'] text-lg">
+					<span
+						class="absolute start-4.5 top-3 font-['Gamja_Flower'] text-lg group-hover/item:hidden"
+					>
 						{component?.badge}
 					</span>
 				{/if}

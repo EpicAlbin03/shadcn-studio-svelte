@@ -152,12 +152,11 @@
 											{/if}
 											{#if category.animation?.badge}
 												<Sidebar.MenuBadge
-													class={cn({
-														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground':
-															category.animation.badge === 'New',
-														'static rounded-full bg-indigo-600/10 px-2 py-0.5 font-normal text-indigo-600 dark:bg-indigo-400/20 dark:text-indigo-400':
-															category.animation.badge === 'Updated'
-													})}
+													class={cn(
+														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground',
+														category.badge &&
+															'static rounded-full bg-indigo-600/10 px-2 py-0.5 font-normal text-indigo-600 dark:bg-indigo-400/20 dark:text-indigo-400'
+													)}
 												>
 													{category.animation.badge}
 												</Sidebar.MenuBadge>
@@ -207,12 +206,11 @@
 											{/if}
 											{#if category.badge}
 												<Sidebar.MenuBadge
-													class={cn({
-														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground':
-															category.badge === 'New',
-														'static rounded-full bg-indigo-600/10 px-2 py-0.5 font-normal text-indigo-600 dark:bg-indigo-400/20 dark:text-indigo-400':
-															category.badge === 'Updated'
-													})}
+													class={cn(
+														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground',
+														category.badge &&
+															'static rounded-full bg-indigo-600/10 px-2 py-0.5 font-normal text-indigo-600 dark:bg-indigo-400/20 dark:text-indigo-400'
+													)}
 												>
 													{category.badge}
 												</Sidebar.MenuBadge>
