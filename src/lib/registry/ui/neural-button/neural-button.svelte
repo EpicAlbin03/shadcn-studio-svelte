@@ -70,7 +70,7 @@
 	{variant}
 	{size}
 	class={cn(
-		'relative z-1  overflow-hidden rounded-xl bg-sky-600! text-white ring-2 ring-sky-600/60! transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95 dark:bg-sky-400/60! dark:ring-sky-400/60!',
+		'relative z-1 overflow-hidden rounded-xl bg-sky-600! text-white shadow-[0_0_0_2px_oklch(0.685_0.169_237.323/0.6)] transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95 dark:bg-sky-400/60! dark:shadow-[0_0_0_2px_oklch(0.746_0.16_232.661/0.6)]',
 		size === 'lg' && 'text-base has-[>svg]:px-6',
 		className
 	)}
