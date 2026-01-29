@@ -810,6 +810,50 @@
 			]
 		},
 		{
+			"name": "hero-41",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte", "embla-carousel-autoplay"],
+			"registryDependencies": [
+				"button",
+				"tooltip",
+				"utils",
+				"local:bistro-logo-svg",
+				"separator",
+				"carousel",
+				"context.js",
+				"dropdown-menu",
+				"collapsible",
+				"navigation-menu"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "hero-41/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-41\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-41/components/header.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-41\\components\\header.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-41/components/hero-41.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-41\\components\\hero-41.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-41/components/menu-dropdown.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-41\\components\\menu-dropdown.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-41/components/menu-navigation.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-41\\components\\menu-navigation.svelte"
+				}
+			]
+		},
+		{
 			"name": "login-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
@@ -8727,6 +8771,19 @@
 					"type": "registry:lib",
 					"target": "assets/svg/auth-background-shape.svelte",
 					"path": "src\\lib\\registry\\lib\\assets\\svg\\auth-background-shape.svelte"
+				}
+			]
+		},
+		{
+			"name": "bistro-logo-svg",
+			"type": "registry:lib",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:lib",
+					"target": "assets/svg/bistro-logo.svelte",
+					"path": "src\\lib\\registry\\lib\\assets\\svg\\bistro-logo.svelte"
 				}
 			]
 		},
