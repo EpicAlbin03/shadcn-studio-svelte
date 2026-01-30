@@ -60,8 +60,10 @@ export const registryCategories = [
 	{
 		name: 'eCommerce',
 		slug: 'ecommerce',
-		hidden: true,
-		blocks: []
+		hidden: false,
+		blocks: [
+			'product-list-01'
+		]
 	},
 	{
 		name: 'Datatable',

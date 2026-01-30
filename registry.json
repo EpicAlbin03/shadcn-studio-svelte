@@ -1092,6 +1092,24 @@
 			]
 		},
 		{
+			"name": "product-list-01",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["badge", "button", "card", "separator"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "product-list-01/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\product-list-01\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "product-list-01/components/product-list-01.svelte",
+					"path": "src\\lib\\registry\\blocks\\product-list-01\\components\\product-list-01.svelte"
+				}
+			]
+		},
+		{
 			"name": "register-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
