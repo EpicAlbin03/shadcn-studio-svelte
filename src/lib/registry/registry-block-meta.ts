@@ -62,6 +62,9 @@ export const blockMeta = {
 	'blog-01': {
 		description: 'Blog 1'
 	},
+	'blog-15': {
+		description: 'Blog 15'
+	},
 	'about-us-01': {
 		description: 'About Us 1'
 	},

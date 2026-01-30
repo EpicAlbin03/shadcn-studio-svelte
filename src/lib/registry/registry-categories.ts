@@ -20,6 +20,7 @@ export const registryCategories = [
 			'faq-01',
 			'gallery-01',
 			'blog-01',
+			'blog-15',
 			'about-us-01',
 			'contact-us-01',
 			'navbar-01',

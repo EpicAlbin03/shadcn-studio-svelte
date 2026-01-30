@@ -477,6 +477,24 @@
 			]
 		},
 		{
+			"name": "blog-15",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["badge", "button", "card", "input", "scroll-area", "tabs"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "blog-15/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\blog-15\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "blog-15/components/blog-15.svelte",
+					"path": "src\\lib\\registry\\blocks\\blog-15\\components\\blog-15.svelte"
+				}
+			]
+		},
+		{
 			"name": "charts-01",
 			"type": "registry:block",
 			"dependencies": [],
