@@ -5,6 +5,7 @@ export const registryCategories = [
 		hidden: false,
 		blocks: [
 			'hero-01',
+			'hero-35',
 			'hero-41',
 			'features-01',
 			'pricing-01',

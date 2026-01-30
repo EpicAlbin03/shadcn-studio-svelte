@@ -810,6 +810,50 @@
 			]
 		},
 		{
+			"name": "hero-35",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": [
+				"button",
+				"tooltip",
+				"utils",
+				"local:ink-logo-svg",
+				"badge",
+				"input",
+				"card",
+				"dropdown-menu",
+				"collapsible",
+				"navigation-menu"
+			],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "hero-35/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-35\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-35/components/header.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-35\\components\\header.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-35/components/hero-35.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-35\\components\\hero-35.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-35/components/menu-dropdown.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-35\\components\\menu-dropdown.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "hero-35/components/menu-navigation.svelte",
+					"path": "src\\lib\\registry\\blocks\\hero-35\\components\\menu-navigation.svelte"
+				}
+			]
+		},
+		{
 			"name": "hero-41",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte", "embla-carousel-autoplay"],
@@ -8784,6 +8828,19 @@
 					"type": "registry:lib",
 					"target": "assets/svg/bistro-logo.svelte",
 					"path": "src\\lib\\registry\\lib\\assets\\svg\\bistro-logo.svelte"
+				}
+			]
+		},
+		{
+			"name": "ink-logo-svg",
+			"type": "registry:lib",
+			"dependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"type": "registry:lib",
+					"target": "assets/svg/ink-logo.svelte",
+					"path": "src\\lib\\registry\\lib\\assets\\svg\\ink-logo.svelte"
 				}
 			]
 		},

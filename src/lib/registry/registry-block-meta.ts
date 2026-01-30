@@ -11,6 +11,9 @@ export const blockMeta = {
 	'hero-01': {
 		description: 'Hero 1'
 	},
+	'hero-35': {
+		description: 'Hero 35'
+	},
 	'hero-41': {
 		description: 'Hero 41'
 	},
