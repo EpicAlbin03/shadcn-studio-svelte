@@ -2,7 +2,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { page } from '$app/state';
 	import { registryCategories } from '$lib/registry/registry-categories';
-	import { FEATURED_BLOCKS } from '$lib/utils/blocks';
+	import { FEATURED_BLOCKS, NEW_BLOCKS } from '$lib/utils/blocks';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 </script>
 
@@ -30,6 +30,10 @@
 			{@render BlocksNavLink({
 				category: { name: 'Featured', slug: '', hidden: false, blocks: FEATURED_BLOCKS },
 				isActive: page.url.pathname === '/blocks'
+			})}
+			{@render BlocksNavLink({
+				category: { name: 'New', slug: 'new', hidden: NEW_BLOCKS.length === 0, blocks: NEW_BLOCKS },
+				isActive: page.url.pathname === '/blocks/new'
 			})}
 			{#each registryCategories as category (category.slug)}
 				{@render BlocksNavLink({
