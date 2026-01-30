@@ -526,6 +526,24 @@
 			]
 		},
 		{
+			"name": "cta-10",
+			"type": "registry:block",
+			"dependencies": ["@lucide/svelte"],
+			"registryDependencies": ["button", "card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "cta-10/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-10\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "cta-10/components/cta-10.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-10\\components\\cta-10.svelte"
+				}
+			]
+		},
+		{
 			"name": "dashboard-dialog-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],
