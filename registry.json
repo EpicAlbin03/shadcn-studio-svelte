@@ -768,6 +768,24 @@
 			]
 		},
 		{
+			"name": "faq-17",
+			"type": "registry:block",
+			"dependencies": ["motion-sv"],
+			"registryDependencies": ["badge", "button", "card"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "faq-17/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\faq-17\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "faq-17/components/faq-17.svelte",
+					"path": "src\\lib\\registry\\blocks\\faq-17\\components\\faq-17.svelte"
+				}
+			]
+		},
+		{
 			"name": "features-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],

@@ -60,6 +60,9 @@ export const blockMeta = {
 	'faq-01': {
 		description: 'FAQ 1'
 	},
+	'faq-17': {
+		description: 'FAQ 17'
+	},
 	'gallery-01': {
 		description: 'Gallery 1'
 	},
