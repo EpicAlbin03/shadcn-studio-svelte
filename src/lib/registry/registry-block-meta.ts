@@ -45,6 +45,10 @@ export const blockMeta = {
 		description: 'CTA 10',
 		iframeHeight: '600px'
 	},
+	'cta-12': {
+		description: 'CTA 12',
+		iframeHeight: '600px'
+	},
 	'logo-cloud-01': {
 		description: 'Logo Cloud 1',
 		iframeHeight: '600px'

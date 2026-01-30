@@ -544,6 +544,24 @@
 			]
 		},
 		{
+			"name": "cta-12",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["button", "card", "input"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "cta-12/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-12\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "cta-12/components/cta-12.svelte",
+					"path": "src\\lib\\registry\\blocks\\cta-12\\components\\cta-12.svelte"
+				}
+			]
+		},
+		{
 			"name": "dashboard-dialog-01",
 			"type": "registry:block",
 			"dependencies": ["@lucide/svelte"],

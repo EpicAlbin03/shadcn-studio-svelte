@@ -15,6 +15,7 @@ export const registryCategories = [
 			'team-01',
 			'cta-01',
 			'cta-10',
+			'cta-12',
 			'logo-cloud-01',
 			'faq-01',
 			'gallery-01',
