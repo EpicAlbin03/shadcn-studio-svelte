@@ -24,7 +24,7 @@
 
 	const blogdata = [
 		{
-			img: '/blocks/hero-35-01.webp',
+			img: '/blocks/landing-page-02.webp',
 			date: 'January 20, 2026',
 			blogTitle: 'Build with Empathy for Better User Outcomes',
 			description: 'Understand user needs to create intuitive and lovable experiences.',
@@ -35,7 +35,7 @@
 			categoryLink: '#'
 		},
 		{
-			img: '/blocks/hero-35-02.webp',
+			img: '/blocks/landing-page-03.webp',
 			date: 'May 20, 2025',
 			blogTitle: 'Write Code That Scales with Your Product',
 			description: 'Structure your projects for easier updates, faster growth, and bugs.',
