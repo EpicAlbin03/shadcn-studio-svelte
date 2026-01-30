@@ -10,6 +10,7 @@ export const registryCategories = [
 			'features-01',
 			'pricing-01',
 			'testimonials-01',
+			'testimonials-18',
 			'social-proof-01',
 			'portfolio-01',
 			'team-01',

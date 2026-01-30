@@ -27,6 +27,10 @@ export const blockMeta = {
 		description: 'Testimonials 1',
 		iframeHeight: '600px'
 	},
+	'testimonials-18': {
+		description: 'Testimonials 18',
+		iframeHeight: '600px'
+	},
 	'social-proof-01': {
 		description: 'Social Proof 1',
 		iframeHeight: '600px'

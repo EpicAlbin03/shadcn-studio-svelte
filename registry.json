@@ -1203,6 +1203,24 @@
 			]
 		},
 		{
+			"name": "testimonials-18",
+			"type": "registry:block",
+			"dependencies": [],
+			"registryDependencies": ["avatar", "badge", "carousel"],
+			"files": [
+				{
+					"type": "registry:page",
+					"target": "testimonials-18/+page.svelte",
+					"path": "src\\lib\\registry\\blocks\\testimonials-18\\+page.svelte"
+				},
+				{
+					"type": "registry:component",
+					"target": "testimonials-18/components/testimonials-18.svelte",
+					"path": "src\\lib\\registry\\blocks\\testimonials-18\\components\\testimonials-18.svelte"
+				}
+			]
+		},
+		{
 			"name": "two-factor-authentication-01",
 			"type": "registry:block",
 			"dependencies": [],
