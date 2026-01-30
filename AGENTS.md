@@ -20,6 +20,6 @@ Trigger: user says "use btca" (for codebase/docs questions).
 
 Run:
 
-- btca ask -t <tech> -q "<question>"
+- btca ask --resource <resource> --question "<question>"
 
-Available <tech>: svelte, tailwindcss, runed, motion-svelte
+Available <resource>: svelte, tailwindcss, runed, motion-svelte
