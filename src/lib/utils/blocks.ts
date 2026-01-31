@@ -6,7 +6,8 @@ import { blocks } from '../../__registry__/blocks.js';
 
 export type BlockName = (typeof blocks)[number];
 
-export const FEATURED_BLOCKS = ['hero-01', 'dashboard-shell-01'] as const;
+export const FEATURED_BLOCKS: string[] = ['hero-01', 'dashboard-shell-01', 'product-list-01'];
+export const NEW_BLOCKS: string[] = ['hero-41', 'hero-35', 'cta-10', 'cta-12', 'blog-15', 'blog-17', 'testimonials-18', 'faq-17', 'product-list-01'];
 export const BLOCKS_QUERY_DELIMITER = '+';
 
 export function isBlock(name: unknown): name is BlockName {

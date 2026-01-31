@@ -3,6 +3,7 @@
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte.js';
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import MonitorIcon from '@lucide/svelte/icons/monitor';
@@ -17,6 +18,7 @@
 	import { PUBLIC_URL } from '$lib/config/site-config';
 	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 	import { getCopyPromptText } from '$lib/utils/copy-prompt';
+	import { NEW_BLOCKS } from '$lib/utils/blocks';
 	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server';
 	import { page } from '$app/state';
 
@@ -46,6 +48,7 @@
 	const copyPromptText = $derived(
 		getCopyPromptText(packageManager, blockName, categorySlug, source, true)
 	);
+	const isNew = $derived(NEW_BLOCKS.includes(blockName));
 </script>
 
 <div class="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
@@ -67,6 +70,11 @@
 	>
 		{ctx.item.description?.replace(/\.$/, '')}
 	</a>
+	{#if isNew}
+		<Badge class="rounded bg-sky-600/10 text-sky-600 dark:bg-sky-400/10 dark:text-sky-400">
+			New
+		</Badge>
+	{/if}
 	<div class="ml-auto flex min-w-0 items-center gap-2">
 		<div class="h-8 shrink-0 items-center gap-1.5 rounded-md border p-1 shadow-none">
 			<ToggleGroup.Root

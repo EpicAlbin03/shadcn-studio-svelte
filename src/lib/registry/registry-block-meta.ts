@@ -11,6 +11,12 @@ export const blockMeta = {
 	'hero-01': {
 		description: 'Hero 1'
 	},
+	'hero-35': {
+		description: 'Hero 35'
+	},
+	'hero-41': {
+		description: 'Hero 41'
+	},
 	'features-01': {
 		description: 'Features 1'
 	},
@@ -19,6 +25,10 @@ export const blockMeta = {
 	},
 	'testimonials-01': {
 		description: 'Testimonials 1',
+		iframeHeight: '600px'
+	},
+	'testimonials-18': {
+		description: 'Testimonials 18',
 		iframeHeight: '600px'
 	},
 	'social-proof-01': {
@@ -35,6 +45,14 @@ export const blockMeta = {
 		description: 'CTA 1',
 		iframeHeight: '600px'
 	},
+	'cta-10': {
+		description: 'CTA 10',
+		iframeHeight: '600px'
+	},
+	'cta-12': {
+		description: 'CTA 12',
+		iframeHeight: '600px'
+	},
 	'logo-cloud-01': {
 		description: 'Logo Cloud 1',
 		iframeHeight: '600px'
@@ -42,11 +60,20 @@ export const blockMeta = {
 	'faq-01': {
 		description: 'FAQ 1'
 	},
+	'faq-17': {
+		description: 'FAQ 17'
+	},
 	'gallery-01': {
 		description: 'Gallery 1'
 	},
 	'blog-01': {
 		description: 'Blog 1'
+	},
+	'blog-15': {
+		description: 'Blog 15'
+	},
+	'blog-17': {
+		description: 'Blog 17'
 	},
 	'about-us-01': {
 		description: 'About Us 1'
@@ -128,5 +155,8 @@ export const blockMeta = {
 	},
 	'dashboard-footer-01': {
 		description: 'Dashboard Footer 1'
+	},
+	'product-list-01': {
+		description: 'Product List 1'
 	}
 } as Record<BlockName, BlockMeta>;

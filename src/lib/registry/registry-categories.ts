@@ -5,17 +5,25 @@ export const registryCategories = [
 		hidden: false,
 		blocks: [
 			'hero-01',
+			'hero-35',
+			'hero-41',
 			'features-01',
 			'pricing-01',
 			'testimonials-01',
+			'testimonials-18',
 			'social-proof-01',
 			'portfolio-01',
 			'team-01',
 			'cta-01',
+			'cta-10',
+			'cta-12',
 			'logo-cloud-01',
 			'faq-01',
+			'faq-17',
 			'gallery-01',
 			'blog-01',
+			'blog-15',
+			'blog-17',
 			'about-us-01',
 			'contact-us-01',
 			'navbar-01',
@@ -52,8 +60,10 @@ export const registryCategories = [
 	{
 		name: 'eCommerce',
 		slug: 'ecommerce',
-		hidden: true,
-		blocks: []
+		hidden: false,
+		blocks: [
+			'product-list-01'
+		]
 	},
 	{
 		name: 'Datatable',
