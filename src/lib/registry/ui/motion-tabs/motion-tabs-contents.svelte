@@ -32,6 +32,7 @@
 	const ctx = motionTabsContext.get();
 
 	let contentsRef = $state<HTMLDivElement | null>(null);
+	let activeHeight = $state<number | undefined>(undefined);
 
 	function updateValues() {
 		if (!contentsRef) return;
@@ -39,15 +40,49 @@
 		contentValues = Array.from(contentElements).map((el) => el.getAttribute('data-value') ?? '');
 	}
 
+	function measureActiveHeight() {
+		if (!contentsRef) return;
+		const activeEl = contentsRef.querySelector(
+			`[data-slot="tabs-content"][data-value="${ctx.activeValue}"]`
+		);
+		if (activeEl) {
+			const containerStyle = getComputedStyle(contentsRef);
+			const paddingTop = parseFloat(containerStyle.paddingTop);
+			const paddingBottom = parseFloat(containerStyle.paddingBottom);
+			activeHeight = activeEl.scrollHeight + paddingTop + paddingBottom;
+		}
+	}
+
 	$effect(() => {
 		if (contentsRef) updateValues();
 	});
 
+	$effect(() => {
+		void ctx.activeValue;
+		measureActiveHeight();
+	});
+
 	useMutationObserver(
 		() => contentsRef,
-		() => updateValues(),
+		() => {
+			updateValues();
+			measureActiveHeight();
+		},
 		{ childList: true, subtree: true }
 	);
+
+	$effect(() => {
+		if (!contentsRef) return;
+
+		const observer = new ResizeObserver(() => {
+			measureActiveHeight();
+		});
+
+		const contentElements = contentsRef.querySelectorAll('[data-slot="tabs-content"]');
+		contentElements.forEach((el) => observer.observe(el));
+
+		return () => observer.disconnect();
+	});
 
 	const activeIndex = $derived(contentValues.indexOf(ctx.activeValue));
 </script>
@@ -55,7 +90,8 @@
 <div
 	bind:this={contentsRef}
 	data-slot="tabs-contents"
-	class={cn('overflow-hidden', className)}
+	class={cn('overflow-hidden transition-[height] duration-300 ease-out', className)}
+	style:height={activeHeight !== undefined ? `${activeHeight}px` : undefined}
 	{...restProps}
 >
 	<motion.div class="-mx-2 flex" animate={{ x: `${activeIndex * -100}%` }} {transition}>

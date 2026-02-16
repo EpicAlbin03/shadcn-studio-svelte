@@ -28,7 +28,10 @@
 
 <MotionHighlight
 	controlledItems
-	class={cn('rounded-sm bg-background shadow-sm', activeClassName)}
+	class={cn(
+		'rounded-md bg-background shadow-sm dark:border dark:border-input dark:bg-input/30',
+		activeClassName
+	)}
 	value={ctx.activeValue}
 	{transition}
 >
@@ -36,7 +39,7 @@
 		role="tablist"
 		data-slot="tabs-list"
 		class={cn(
-			'inline-flex h-10 w-fit items-center justify-center rounded-lg bg-muted p-[4px] text-muted-foreground',
+			'inline-flex h-9 w-fit items-center justify-center rounded-lg bg-muted p-[3px] text-muted-foreground',
 			className
 		)}
 		{...restProps}
