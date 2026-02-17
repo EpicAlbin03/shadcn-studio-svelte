@@ -3,7 +3,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { Transition } from 'motion-sv';
 	import { motion } from 'motion-sv';
-	import { useMutationObserver } from 'runed';
+	import { useMutationObserver, watch } from 'runed';
 	import { cn } from '$lib/utils';
 	import { motionTabsContext } from './motion-tabs.svelte';
 
@@ -53,14 +53,13 @@
 		}
 	}
 
-	$effect(() => {
-		if (contentsRef) updateValues();
-	});
-
-	$effect(() => {
-		void ctx.activeValue;
-		measureActiveHeight();
-	});
+	watch(
+		() => ctx.activeValue,
+		() => {
+			measureActiveHeight();
+		},
+		{ lazy: true }
+	);
 
 	useMutationObserver(
 		() => contentsRef,
@@ -73,6 +72,8 @@
 
 	$effect(() => {
 		if (!contentsRef) return;
+
+		updateValues();
 
 		const observer = new ResizeObserver(() => {
 			measureActiveHeight();
