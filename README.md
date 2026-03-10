@@ -15,7 +15,7 @@
 
 ## Documentation
 
-Visit https://shadcnstudio-svelte.netlify.app to view the documentation.
+Visit https://shadcnstudio-svelte.netlify.app/docs/getting-started/introduction to view the documentation.
 
 ## Support
 
