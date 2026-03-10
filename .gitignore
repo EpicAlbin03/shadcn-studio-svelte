@@ -8,6 +8,7 @@ node_modules
 /.svelte-kit
 /.vscode
 /build
+registry.json
 
 /static/registry
 /static/schema/registry.json
