@@ -46,10 +46,15 @@ export default defineConfig({
 	},
 	build: {
 		// minify: false,
-		rollupOptions: {
+		rolldownOptions: {
 			output: {
-				manualChunks: {
-					icons: ['@lucide/svelte', '@tabler/icons-svelte']
+				codeSplitting: {
+					groups: [
+						{
+							name: 'icons',
+							test: /node_modules\/(?:@lucide\/svelte|@tabler\/icons-svelte)\//
+						}
+					]
 				}
 			}
 		}
@@ -61,7 +66,7 @@ export default defineConfig({
 
 async function buildRegistry() {
 	await build();
-	execSync('pnpm shadcn-svelte registry build --output static/registry', {
+	execSync('bun run shadcn-svelte registry build --output static/registry', {
 		stdio: ['pipe', 'pipe', 'inherit']
 	});
 	fs.cpSync(path.resolve('static', 'registry'), path.resolve('src', '__registry__', 'json'), {
