@@ -5,13 +5,16 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "bunx build:svelte",
+		"build": "bun run build:svelte",
 		"build:svelte": "vite build",
-		"build:registry": "tsx scripts/init-registry-dirs.ts && tsx scripts/build-registry.ts build-registry && bunx shadcn-svelte registry build --output ./static/registry",
-		"sync": "bunx build:registry && svelte-kit sync",
+		"build:registry": "bun run scripts/init-registry-dirs.ts && bun run scripts/build-registry.ts build-registry && bun run shadcn-svelte registry build --output ./static/registry",
+		"sync": "bun run build:registry && svelte-kit sync",
 		"preview": "vite preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch --tsgo",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@dnd-kit-svelte/core": "^0.0.11",
@@ -39,6 +42,7 @@
 		"@types/inputmask": "^5.0.7",
 		"@types/node": "^25.4.0",
 		"@types/papaparse": "^5.5.2",
+		"@typescript/native-preview": "^7.0.0-dev.20260310.1",
 		"acorn": "^8.16.0",
 		"bits-ui": "^2.16.3",
 		"chroma-js": "^3.2.0",
@@ -82,7 +86,6 @@
 		"tailwind-merge": "^3.5.0",
 		"tailwind-variants": "^3.2.2",
 		"tailwindcss": "^4.2.1",
-		"tsx": "^4.21.0",
 		"tw-animate-css": "^1.4.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.57.0",
