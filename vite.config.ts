@@ -7,7 +7,6 @@ import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { build } from './scripts/build-registry';
-import { visualizer } from 'rollup-plugin-visualizer';
 import packageJson from './package.json' with { type: 'json' };
 
 // don't build when we're running `vite preview`
@@ -22,10 +21,6 @@ export const staticDirPath = path.join(__dirname, 'src/registry/json');
 
 export default defineConfig({
 	plugins: [
-		visualizer({
-			emitFile: true,
-			filename: 'stats.html'
-		}),
 		tailwindcss(),
 		sveltekit(),
 		{
