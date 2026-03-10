@@ -5,11 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild": "pnpm sync",
-		"build": "pnpm build:svelte",
+		"build": "bunx build:svelte",
 		"build:svelte": "vite build",
-		"build:registry": "tsx scripts/init-registry-dirs.ts && tsx scripts/build-registry.ts build-registry && pnpm shadcn-svelte registry build --output ./static/registry",
-		"sync": "pnpm build:registry && svelte-kit sync",
+		"build:registry": "tsx scripts/init-registry-dirs.ts && tsx scripts/build-registry.ts build-registry && bunx shadcn-svelte registry build --output ./static/registry",
+		"sync": "bunx build:registry && svelte-kit sync",
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
@@ -91,10 +90,5 @@
 		"vite": "^7.0.4",
 		"xlsx": "^0.18.5",
 		"zod": "4.0.10"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
 	}
 }
