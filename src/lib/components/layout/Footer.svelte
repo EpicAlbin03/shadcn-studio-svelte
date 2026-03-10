@@ -93,10 +93,12 @@
 							</a>
 						</li>
 						<li class="hover:underline">
-							<a href="https://shadcnstudio.com/privacy-policy">Privacy policy</a>
+							<a href="https://shadcnstudio.com/?ref=mfoMfp/privacy-policy">Privacy policy</a>
 						</li>
 						<li class="hover:underline">
-							<a href="https://shadcnstudio.com/terms-and-condition">Terms & Condition</a>
+							<a href="https://shadcnstudio.com/?ref=mfoMfp/terms-and-condition"
+								>Terms & Condition</a
+							>
 						</li>
 					</ul>
 				</div>
@@ -125,8 +127,9 @@
 					@Anand Patel
 				</a>
 				at
-				<a href="https://shadcnstudio.com" class="font-medium text-foreground hover:underline"
-					>shadcn/studio</a
+				<a
+					href="https://shadcnstudio.com/?ref=mfoMfp"
+					class="font-medium text-foreground hover:underline">shadcn/studio</a
 				>
 				. Ported to Svelte by
 				<a

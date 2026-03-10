@@ -5,7 +5,7 @@
  </h1>
 </p>
 
-[shadcn/studio-svelte](https://shadcnstudio-svelte.netlify.app) is an unofficial community-led [Svelte](https://svelte.dev) port of [shadcn/studio](https://shadcnstudio.com).
+[shadcn/studio-svelte](https://shadcnstudio-svelte.netlify.app) is an unofficial community-led [Svelte](https://svelte.dev) port of [shadcn/studio](https://shadcnstudio.com/?ref=mfoMfp).
 
 > **Note** <br> **This project is not affiliated with shadcn/studio** <br>
 
@@ -17,17 +17,20 @@
 
 Visit https://shadcnstudio-svelte.netlify.app to view the documentation.
 
+## Support
+
+If you're planning to pick up **shadcn/studio**, you can sign up through my [referral link](https://shadcnstudio.com/?ref=mfoMfp). I'll receive a small commission at no extra cost to you.
+
 ## Credits
 
 We are grateful for the contributions of the open-source community, particularly:
 
-- [shadcn/studio](https://shadcnstudio.com)
-- [shadcn-svelte](https://shadcn-svelte.com)
-- [bits-ui](https://bits-ui.com)
-- [motion-svelte](https://github.com/hanielu/motion-svelte)
-- [tweakcn](https://tweakcn.com/) (Our Theme Generator is heavily inspired by tweakcn)
+- [shadcn/studio](https://shadcnstudio.com/?ref=mfoMfp) (Original project)
+- [shadcn-svelte](https://shadcn-svelte.com) & [bits-ui](https://bits-ui.com) (Svelte port of shadcn/ui, providing the foundational components)
+- [motion-svelte](https://github.com/hanielu/motion-svelte) (Svelte port of Framer Motion, powering our animations)
+- [tweakcn](https://tweakcn.com/) (Our theme generator is heavily inspired by tweakcn)
 
-These projects form the backbone of shadcn/studio, allowing us to build a powerful copy-and-paste components.
+These projects form the backbone of shadcn/studio-svelte, allowing us to build powerful copy-and-paste components.
 
 ## License
 
