@@ -1,4 +1,9 @@
-# Repository Guide for Agents
+# AGENTS.md
+
+## Critical Rules
+
+- **ONLY use `bun`** - never npm/pnpm/yarn
+- **NEVER run dev/build commands** (`bun dev`, `bun build`)
 
 ## Svelte 5 Conventions
 
