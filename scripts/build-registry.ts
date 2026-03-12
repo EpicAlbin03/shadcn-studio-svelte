@@ -2,7 +2,7 @@
  * Registry build script for shadcn-svelte registry projects.
  *
  * Usage:
- *   bun run scripts/build-registry.ts build-registry
+ *   bun run scripts/build-registry.ts
  *
  * Reads `registry.config.ts` from the project root, crawls registry directories
  * using declarative CrawlSpecs, resolves dependencies via AST analysis, and outputs:
@@ -766,6 +766,6 @@ export async function build(): Promise<void> {
 // CLI entry point
 // ============================================================================
 
-if (process.argv.includes('build-registry')) {
-	build();
+if (import.meta.main) {
+	await build();
 }
