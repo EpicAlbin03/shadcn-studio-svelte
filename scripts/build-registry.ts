@@ -74,6 +74,7 @@ export type RegistryConfig = {
 	name: string;
 	homepage: string;
 	aliases: RegistryAliases;
+	overrideDependencies?: string[];
 	dirs?: RegistryDirs;
 	componentMeta?: ComponentMeta;
 	plugins?: RegistryPlugin[];
@@ -639,6 +640,9 @@ export async function build(): Promise<void> {
 		name: config.name,
 		homepage: config.homepage,
 		aliases: config.aliases,
+		...(config.overrideDependencies && {
+			overrideDependencies: config.overrideDependencies
+		}),
 		items: [...registry]
 	};
 
