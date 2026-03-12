@@ -27,4 +27,4 @@ Run:
 
 - btca ask --resource <resource> --question "<question>"
 
-Available <resource>: svelte, tailwindcss, runed, motion-svelte
+Available <resource>: svelte, tailwindcss, runed, motion-svelte, shadcn-svelte

@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"build": "bun run build:svelte",
 		"build:svelte": "vite build",
-		"build:registry": "bun run scripts/init-registry-dirs.ts && bun run scripts/build-registry.ts build-registry && bun run shadcn-svelte registry build --output ./static/registry",
+		"build:registry": "bun run scripts/build-registry.ts build-registry && bun run shadcn-svelte registry build --output ./static/registry",
 		"sync": "bun run build:registry && svelte-kit sync",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
