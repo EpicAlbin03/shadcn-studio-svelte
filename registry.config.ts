@@ -13,11 +13,11 @@ export default defineConfig({
 		utils: '$lib/utils'
 	},
 	dirs: {
-		ui: 'src/lib/registry/ui',
-		blocks: 'src/lib/registry/blocks',
-		components: 'src/lib/registry/components',
-		hooks: 'src/lib/registry/hooks',
-		lib: 'src/lib/registry/lib'
+		ui: '$lib/registry/ui',
+		blocks: '$lib/registry/blocks',
+		components: '$lib/registry/components',
+		hooks: '$lib/registry/hooks',
+		lib: '$lib/registry/lib'
 	},
 	componentMeta,
 	plugins: [themesPlugin()]
