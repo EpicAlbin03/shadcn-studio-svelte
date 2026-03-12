@@ -150,9 +150,27 @@ const CRAWL_SPECS = {
 
 const tsParser = acorn.Parser.extend(tsPlugin());
 
-const PACKAGE_DEPENDENCIES: string[] = Object.keys(packageJson.devDependencies).filter(
-	(dep) => dep !== 'svelte'
+type PackageDependencyMap = Record<string, string>;
+
+const projectPackageJson = packageJson as {
+	dependencies?: PackageDependencyMap;
+	devDependencies?: PackageDependencyMap;
+};
+
+const IGNORED_PACKAGE_DEPENDENCIES = new Set(['svelte', '@sveltejs/kit', 'tailwindcss', 'vite']);
+
+const PROJECT_PACKAGE_MAP = {
+	...(projectPackageJson.dependencies ?? {}),
+	...(projectPackageJson.devDependencies ?? {})
+};
+
+const PACKAGE_DEPENDENCIES = Object.keys(PROJECT_PACKAGE_MAP).filter(
+	(dep) => !IGNORED_PACKAGE_DEPENDENCIES.has(dep)
 );
+
+const SOURCE_FILE_EXTENSIONS = new Set(['.svelte', '.ts', '.js', '.mjs', '.cjs']);
+
+const PACKAGE_PEER_DEPENDENCIES = buildPackagePeerDependencies();
 
 const OUTPUT_ITEM_TYPES = [
 	'registry:ui',
@@ -201,6 +219,82 @@ function stripExtension(filename: string): string {
 	return filename.slice(0, cutIndex);
 }
 
+function getTypesPackageName(dep: string): string {
+	if (!dep.startsWith('@')) return `@types/${dep}`;
+	const [scope, pkg] = dep.slice(1).split('/');
+	if (!scope || !pkg) return `@types/${dep.slice(1)}`;
+	return `@types/${scope}__${pkg}`;
+}
+
+function toSortedArray(values: Set<string>): string[] {
+	return [...values].sort((a, b) => a.localeCompare(b));
+}
+
+function toRegistryDependencyName(name: string): string {
+	return name.startsWith('local:') ? name.slice('local:'.length) : name;
+}
+
+function toLocalRegistryDependency(name: string): string {
+	return name.startsWith('local:') ? name : `local:${name}`;
+}
+
+function parseDependencyName(importSource: string): string | undefined {
+	if (!importSource || importSource.startsWith('.') || importSource.startsWith('/'))
+		return undefined;
+	if (importSource.startsWith('@')) {
+		const [scope, pkg] = importSource.split('/');
+		if (!scope || !pkg) return undefined;
+		return `${scope}/${pkg}`;
+	}
+	return importSource.split('/')[0];
+}
+
+function getPackageDependenciesFromImport(importSource: string): string[] {
+	const depName = parseDependencyName(importSource);
+	if (!depName || !PROJECT_PACKAGE_MAP[depName]) return [];
+	if (IGNORED_PACKAGE_DEPENDENCIES.has(depName)) return [];
+
+	const dependencies = new Set<string>([depName]);
+	for (const peer of PACKAGE_PEER_DEPENDENCIES.get(depName) ?? []) {
+		if (!IGNORED_PACKAGE_DEPENDENCIES.has(peer)) dependencies.add(peer);
+	}
+
+	return [...dependencies];
+}
+
+function buildPackagePeerDependencies(): Map<string, Set<string>> {
+	const peersByPackage = new Map<string, Set<string>>();
+
+	for (const depName of PACKAGE_DEPENDENCIES) {
+		const peers = new Set<string>();
+		const packageJsonPath = path.resolve('node_modules', ...depName.split('/'), 'package.json');
+
+		if (fs.existsSync(packageJsonPath)) {
+			try {
+				const depPackage = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8')) as {
+					peerDependencies?: Record<string, string>;
+					peerDependenciesMeta?: Record<string, { optional?: boolean }>;
+				};
+
+				for (const peerName of Object.keys(depPackage.peerDependencies ?? {})) {
+					if (IGNORED_PACKAGE_DEPENDENCIES.has(peerName)) continue;
+					if (depPackage.peerDependenciesMeta?.[peerName]?.optional) continue;
+					if (PROJECT_PACKAGE_MAP[peerName]) peers.add(peerName);
+				}
+			} catch {
+				// Ignore malformed dependency package metadata.
+			}
+		}
+
+		const typesPackage = getTypesPackageName(depName);
+		if (PROJECT_PACKAGE_MAP[typesPackage]) peers.add(typesPackage);
+
+		peersByPackage.set(depName, peers);
+	}
+
+	return peersByPackage;
+}
+
 // ============================================================================
 // AST-based dependency extraction
 // ============================================================================
@@ -214,6 +308,11 @@ async function getFileDependencies(
 	content: string,
 	config: RegistryConfig
 ): Promise<{ registryDependencies: Set<string>; packageDependencies: Set<string> }> {
+	const extension = path.extname(filename);
+	if (!SOURCE_FILE_EXTENSIONS.has(extension)) {
+		return { registryDependencies: new Set(), packageDependencies: new Set() };
+	}
+
 	let ast: unknown;
 	let moduleAst: unknown;
 
@@ -249,24 +348,27 @@ async function getFileDependencies(
 				const lastPart = parts.at(-1)!;
 
 				if (aliasKey === 'utils') {
-					registryDependencies.add('utils');
+					registryDependencies.add(toRegistryDependencyName('utils'));
+				} else if (aliasKey === 'components') {
+					const name = stripExtension(lastPart);
+					registryDependencies.add(toLocalRegistryDependency(name));
 				} else if (aliasKey === 'ui') {
 					const name =
 						lastPart === 'index.js' || lastPart.endsWith('.svelte')
 							? (parts.at(-2) ?? lastPart)
 							: lastPart;
-					registryDependencies.add(`local:${name}`);
+					registryDependencies.add(toRegistryDependencyName(name));
 				} else if (aliasKey === 'lib') {
 					const fileName = stripExtension(lastPart);
 					if (parts.length > 1) {
 						const parentDir = parts.at(-2)!;
-						registryDependencies.add(`local:${fileName}-${parentDir}`);
+						registryDependencies.add(toRegistryDependencyName(`${fileName}-${parentDir}`));
 					} else {
-						registryDependencies.add(`local:${fileName}`);
+						registryDependencies.add(toRegistryDependencyName(fileName));
 					}
 				} else {
 					const name = stripExtension(lastPart);
-					registryDependencies.add(`local:${name}`);
+					registryDependencies.add(toRegistryDependencyName(name));
 				}
 				break;
 			}
@@ -277,27 +379,21 @@ async function getFileDependencies(
 					const lastPart = parts.at(-1)!;
 					const name =
 						lastPart === 'index.js' || lastPart.endsWith('.svelte') ? parts.at(-2)! : lastPart;
-					registryDependencies.add(name);
+					registryDependencies.add(toRegistryDependencyName(name));
 				} else if (source.includes('/hook')) {
 					const name = stripExtension(source.split('/').at(-1)!);
-					registryDependencies.add(name);
+					registryDependencies.add(toRegistryDependencyName(name));
 				} else {
 					const utilsAlias = config.aliases['utils'];
 					if (utilsAlias && source.startsWith(utilsAlias)) {
-						registryDependencies.add('utils');
+						registryDependencies.add(toRegistryDependencyName('utils'));
 					}
 				}
 			}
 
-			PACKAGE_DEPENDENCIES.forEach((dep) => {
-				if (source === dep) {
-					packageDependencies.add(dep);
-					const typesPackage = `@types/${dep.startsWith('@') ? dep.split('/')[1] : dep}`;
-					if (PACKAGE_DEPENDENCIES.includes(typesPackage)) {
-						packageDependencies.add(typesPackage);
-					}
-				}
-			});
+			for (const dep of getPackageDependenciesFromImport(source)) {
+				packageDependencies.add(dep);
+			}
 		}
 	};
 
@@ -362,8 +458,8 @@ async function crawl(
 		items.push({
 			name,
 			type: spec.type,
-			dependencies: [...packageDependencies],
-			registryDependencies: [...registryDependencies],
+			dependencies: toSortedArray(packageDependencies),
+			registryDependencies: toSortedArray(registryDependencies),
 			files: [{ path: relativePath, type: spec.fileType }],
 			...(meta?.cssVars && { cssVars: meta.cssVars }),
 			...(meta?.css && { css: meta.css })
@@ -420,8 +516,8 @@ async function crawlFolder(
 	return {
 		name: folderName,
 		type: spec.type,
-		dependencies: [...packageDeps],
-		registryDependencies: [...registryDeps],
+		dependencies: toSortedArray(packageDeps),
+		registryDependencies: toSortedArray(registryDeps),
 		files,
 		...(configMeta?.cssVars && { cssVars: configMeta.cssVars }),
 		...(configMeta?.css && { css: configMeta.css })
@@ -463,8 +559,8 @@ async function crawlFlatFolder(
 		items.push({
 			name,
 			type: spec.type,
-			dependencies: [...packageDependencies],
-			registryDependencies: [...registryDependencies],
+			dependencies: toSortedArray(packageDependencies),
+			registryDependencies: toSortedArray(registryDependencies),
 			files: [file]
 		});
 	}
@@ -513,7 +609,12 @@ export async function build(): Promise<void> {
 	const registry = await buildRegistry(config);
 
 	// Validate: no self-references
-	const selfReferenced = registry.filter((item) => item.registryDependencies.includes(item.name));
+	const selfReferenced = registry.filter((item) => {
+		const localName = `local:${item.name}`;
+		return (
+			item.registryDependencies.includes(item.name) || item.registryDependencies.includes(localName)
+		);
+	});
 	if (selfReferenced.length) {
 		const msg = selfReferenced.map((item) => `  - '${item.name}' depends on itself`).join('\n');
 		throw new Error(`Self-referencing registry items:\n${msg}`);
