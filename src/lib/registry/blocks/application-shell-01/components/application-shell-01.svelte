@@ -1,8 +1,8 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01.svelte';
-	import DashboardHeader from '$lib/registry/components/dashboard-header-01.svelte';
-	import DashboardFooter from '$lib/registry/components/dashboard-footer-01.svelte';
+	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01-comp.svelte';
+	import DashboardHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
+	import DashboardFooter from '$lib/registry/components/dashboard-footer-01-comp.svelte';
 </script>
 
 <DashboardSidebar />

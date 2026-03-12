@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TotalEarningCard from '$lib/registry/components/widget-01.svelte';
+	import TotalEarningCard from '$lib/registry/components/widget-01-comp.svelte';
 
 	const earningData = [
 		{

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CalendarX2Icon, Clock8Icon, TriangleAlertIcon, TruckIcon } from '@lucide/svelte';
-	import StatisticsCard from '$lib/registry/components/statistics-01.svelte';
+	import StatisticsCard from '$lib/registry/components/statistics-01-comp.svelte';
 
 	const statisticsCardData = [
 		{

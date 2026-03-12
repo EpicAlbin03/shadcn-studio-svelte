@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01.svelte';
+	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01-comp.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import * as Card from '$lib/components/ui/card';
 </script>

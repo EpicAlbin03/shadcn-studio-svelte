@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProductInsightsCard from '$lib/registry/components/widget-02.svelte';
+	import ProductInsightsCard from '$lib/registry/components/widget-02-comp.svelte';
 </script>
 
 <div class="mx-auto max-w-7xl px-6 py-8 sm:px-8 sm:py-16">

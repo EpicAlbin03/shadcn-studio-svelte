@@ -1,13 +1,15 @@
 <script lang="ts">
-	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01.svelte';
-	import DashboardHeader from '$lib/registry/components/dashboard-header-01.svelte';
-	import DashboardFooter from '$lib/registry/components/dashboard-footer-01.svelte';
+	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01-comp.svelte';
+	import DashboardHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
+	import DashboardFooter from '$lib/registry/components/dashboard-footer-01-comp.svelte';
 	import StatisticsCard, {
 		type StatisticsCardData
-	} from '$lib/registry/components/statistics-01.svelte';
-	import ProductInsightsCard from '$lib/registry/components/widget-02.svelte';
-	import TotalEarningCard, { type EarningData } from '$lib/registry/components/widget-01.svelte';
-	import SalesMetricsCard from '$lib/registry/components/charts-01.svelte';
+	} from '$lib/registry/components/statistics-01-comp.svelte';
+	import ProductInsightsCard from '$lib/registry/components/widget-02-comp.svelte';
+	import TotalEarningCard, {
+		type EarningData
+	} from '$lib/registry/components/widget-01-comp.svelte';
+	import SalesMetricsCard from '$lib/registry/components/charts-01-comp.svelte';
 	import TransactionDatatable, { type TransactionItem } from './data-table-transaction.svelte';
 	import * as Card from '$lib/components/ui/card';
 

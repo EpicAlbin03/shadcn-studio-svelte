@@ -2,8 +2,8 @@
 	import DashboardShell from './components/dashboard-shell-01.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import { CalendarX2Icon, TriangleAlertIcon, TruckIcon } from '@lucide/svelte';
-	import type { StatisticsCardData } from '$lib/registry/components/statistics-01.svelte';
-	import type { EarningData } from '$lib/registry/components/widget-01.svelte';
+	import type { StatisticsCardData } from '$lib/registry/components/statistics-01-comp.svelte';
+	import type { EarningData } from '$lib/registry/components/widget-01-comp.svelte';
 	import type { TransactionItem } from './components/data-table-transaction.svelte';
 
 	const statisticsCardData: StatisticsCardData[] = [
