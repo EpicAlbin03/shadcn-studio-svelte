@@ -44,7 +44,12 @@ export type RegistryConfig = {
 	name: string;
 	homepage: string;
 	aliases: RegistryAliases;
+	/** Base path for inferred registry dirs. @default '$lib/registry' */
+	registryDir?: string;
 	overrideDependencies?: string[];
+	ignoredPackageDependencies?: string[];
+	crawlExtensions?: string[];
+	/** Optional per-dir overrides for inferred paths. */
 	dirs?: RegistryDirs;
 	componentMeta?: ComponentMeta;
 	plugins?: RegistryPlugin[];

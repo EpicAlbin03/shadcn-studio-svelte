@@ -22,20 +22,43 @@ const projectPackageJson = packageJson as {
 	devDependencies?: PackageDependencyMap;
 };
 
-const IGNORED_PACKAGE_DEPENDENCIES = new Set(['svelte', '@sveltejs/kit', 'tailwindcss', 'vite']);
-
 const PROJECT_PACKAGE_MAP = {
 	...(projectPackageJson.dependencies ?? {}),
 	...(projectPackageJson.devDependencies ?? {})
 };
 
-const PACKAGE_DEPENDENCIES = Object.keys(PROJECT_PACKAGE_MAP).filter(
-	(dep) => !IGNORED_PACKAGE_DEPENDENCIES.has(dep)
-);
+type DependencyContext = {
+	ignoredPackageDependencies: Set<string>;
+	crawlExtensions: Set<string>;
+	packagePeerDependencies: Map<string, Set<string>>;
+};
 
-const SOURCE_FILE_EXTENSIONS = new Set(['.svelte', '.ts', '.js', '.mjs', '.cjs']);
+const dependencyContextCache = new Map<string, DependencyContext>();
 
-const PACKAGE_PEER_DEPENDENCIES = buildPackagePeerDependencies();
+function getDependencyContext(config: RegistryConfig): DependencyContext {
+	const ignoredDependencies = [...new Set(config.ignoredPackageDependencies ?? [])];
+	const crawlExtensions = [...new Set(config.crawlExtensions ?? [])];
+	const cacheKey = JSON.stringify({
+		ignoredDependencies: [...ignoredDependencies].sort(),
+		crawlExtensions: [...crawlExtensions].sort()
+	});
+	const cached = dependencyContextCache.get(cacheKey);
+	if (cached) return cached;
+
+	const ignoredPackageDependencies = new Set(ignoredDependencies);
+	const resolvedCrawlExtensions = new Set(crawlExtensions);
+	const packageDependencies = Object.keys(PROJECT_PACKAGE_MAP).filter(
+		(dep) => !ignoredPackageDependencies.has(dep)
+	);
+
+	const context: DependencyContext = {
+		ignoredPackageDependencies,
+		crawlExtensions: resolvedCrawlExtensions,
+		packagePeerDependencies: buildPackagePeerDependencies(packageDependencies, ignoredPackageDependencies)
+	};
+	dependencyContextCache.set(cacheKey, context);
+	return context;
+}
 
 function parseDependencyName(importSource: string): string | undefined {
 	if (!importSource || importSource.startsWith('.') || importSource.startsWith('/'))
@@ -48,23 +71,30 @@ function parseDependencyName(importSource: string): string | undefined {
 	return importSource.split('/')[0];
 }
 
-function getPackageDependenciesFromImport(importSource: string): string[] {
+function getPackageDependenciesFromImport(
+	importSource: string,
+	ignoredPackageDependencies: Set<string>,
+	packagePeerDependencies: Map<string, Set<string>>
+): string[] {
 	const depName = parseDependencyName(importSource);
 	if (!depName || !PROJECT_PACKAGE_MAP[depName]) return [];
-	if (IGNORED_PACKAGE_DEPENDENCIES.has(depName)) return [];
+	if (ignoredPackageDependencies.has(depName)) return [];
 
 	const dependencies = new Set<string>([depName]);
-	for (const peer of PACKAGE_PEER_DEPENDENCIES.get(depName) ?? []) {
-		if (!IGNORED_PACKAGE_DEPENDENCIES.has(peer)) dependencies.add(peer);
+	for (const peer of packagePeerDependencies.get(depName) ?? []) {
+		if (!ignoredPackageDependencies.has(peer)) dependencies.add(peer);
 	}
 
 	return [...dependencies];
 }
 
-function buildPackagePeerDependencies(): Map<string, Set<string>> {
+function buildPackagePeerDependencies(
+	packageDependencies: string[],
+	ignoredPackageDependencies: Set<string>
+): Map<string, Set<string>> {
 	const peersByPackage = new Map<string, Set<string>>();
 
-	for (const depName of PACKAGE_DEPENDENCIES) {
+	for (const depName of packageDependencies) {
 		const peers = new Set<string>();
 		const packageJsonPath = path.resolve('node_modules', ...depName.split('/'), 'package.json');
 
@@ -76,7 +106,7 @@ function buildPackagePeerDependencies(): Map<string, Set<string>> {
 				};
 
 				for (const peerName of Object.keys(depPackage.peerDependencies ?? {})) {
-					if (IGNORED_PACKAGE_DEPENDENCIES.has(peerName)) continue;
+					if (ignoredPackageDependencies.has(peerName)) continue;
 					if (depPackage.peerDependenciesMeta?.[peerName]?.optional) continue;
 					if (PROJECT_PACKAGE_MAP[peerName]) peers.add(peerName);
 				}
@@ -103,8 +133,10 @@ export async function getFileDependencies(
 	content: string,
 	config: RegistryConfig
 ): Promise<{ registryDependencies: Set<string>; packageDependencies: Set<string> }> {
+	const { crawlExtensions, ignoredPackageDependencies, packagePeerDependencies } =
+		getDependencyContext(config);
 	const extension = path.extname(filename);
-	if (!SOURCE_FILE_EXTENSIONS.has(extension)) {
+	if (!crawlExtensions.has(extension)) {
 		return { registryDependencies: new Set(), packageDependencies: new Set() };
 	}
 
@@ -186,7 +218,11 @@ export async function getFileDependencies(
 				}
 			}
 
-			for (const dep of getPackageDependenciesFromImport(source)) {
+			for (const dep of getPackageDependenciesFromImport(
+				source,
+				ignoredPackageDependencies,
+				packagePeerDependencies
+			)) {
 				packageDependencies.add(dep);
 			}
 		}
