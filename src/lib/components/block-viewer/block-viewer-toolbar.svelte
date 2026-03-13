@@ -19,7 +19,7 @@
 	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 	import { getCopyPromptText } from '$lib/utils/copy-prompt';
 	import { NEW_BLOCKS } from '$lib/utils/blocks';
-	import type { HighlightedBlock } from '../../../routes/api/block/[block]/+server';
+	import type { HighlightedBlock } from '../../../routes/api/registry/[item]/+server';
 	import { page } from '$app/state';
 
 	const ctx = BlockViewerContext.get();

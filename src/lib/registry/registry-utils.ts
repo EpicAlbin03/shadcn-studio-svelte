@@ -1,4 +1,5 @@
-import type { RegistryItemFile } from '@shadcn-svelte/registry';
+import type { RegistryItemFile, RegistryItemType } from '@shadcn-svelte/registry';
+import componentsConfig from '../../../components.json';
 
 export type FileTree = {
 	name: string;
@@ -6,28 +7,23 @@ export type FileTree = {
 	children?: FileTree[];
 };
 
-export function transformUIPath(target: string): string {
-	return `lib/components/ui/${target}`;
-}
-
-export function transformComponentPath(target: string): string {
-	return `lib/components/${target}`;
-}
-
-export function transformLibPath(target: string): string {
-	return `lib/${target}`;
-}
-
-export function transformBlockPath(target: string): string {
-	return `lib/components/${target}`;
-}
-
-export function transformPagePath(target: string): string {
-	return `routes/${target}`;
-}
-
-export function transformHookPath(target: string): string {
-	return `lib/hooks/${target}`;
+export function transformTargetPath(target: string, type: RegistryItemType): string {
+	switch (type) {
+		case 'registry:ui':
+			return `lib/components/ui/${target}`;
+		case 'registry:component':
+			return `lib/components/${target}`;
+		case 'registry:lib':
+			return `lib/${target}`;
+		case 'registry:block':
+			return `lib/components/${target}`;
+		case 'registry:page':
+			return `routes/${target}`;
+		case 'registry:hook':
+			return `lib/hooks/${target}`;
+		default:
+			return target;
+	}
 }
 
 function collapseSingleChildFolders(node: FileTree): FileTree {
@@ -88,13 +84,14 @@ export function createFileTreeForRegistryItemFiles(
 }
 
 export function transformImportPaths(content: string): string {
+	const componentAliases = componentsConfig.aliases;
 	const aliases = {
-		ui: '$lib/components/ui',
-		utils: '$lib/utils',
-		components: '$lib/components',
-		blocks: '$lib/components',
-		hooks: '$lib/hooks',
-		lib: '$lib'
+		ui: componentAliases.ui,
+		utils: componentAliases.utils,
+		components: componentAliases.components,
+		blocks: componentAliases.components,
+		hooks: componentAliases.hooks,
+		lib: componentAliases.lib
 	};
 	for (const [alias, path] of Object.entries(aliases)) {
 		content = content.replaceAll(`$${alias.toUpperCase()}$`, path);

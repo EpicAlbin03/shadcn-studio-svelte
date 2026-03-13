@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
 import type { ComponentProps } from '$lib/types/components';
-import type { HighlightedBlock } from '../../../../../api/block/[block]/+server.js';
+import type { HighlightedBlock } from '../../../../../api/registry/[block]/+server.js;
 import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 
 export const prerender = true;
@@ -54,7 +54,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 					const blocksQuery = chunk
 						.map((name) => encodeURIComponent(name))
 						.join(BLOCKS_QUERY_DELIMITER);
-					const res = await fetch(`/api/block/${blocksQuery}`);
+					const res = await fetch(`/api/registry/${blocksQuery}`);
 
 					if (res.ok) {
 						return (await res.json()) as HighlightedBlock[];

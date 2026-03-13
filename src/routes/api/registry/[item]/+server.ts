@@ -4,14 +4,9 @@ import { json } from '@sveltejs/kit';
 import { registryItemFileSchema, registryItemSchema } from '@shadcn-svelte/registry';
 import { highlightCode } from '$lib/utils/highlight-code.js';
 import {
-	transformUIPath,
-	transformComponentPath,
 	transformImportPaths,
-	transformBlockPath,
-	transformLibPath,
 	transformBlockRelativeImports,
-	transformHookPath,
-	transformPagePath
+	transformTargetPath
 } from '$lib/registry/registry-utils';
 import type { RequestHandler } from './$types.js';
 import { blockMeta } from '$lib/registry/registry-block-meta.js';
@@ -62,14 +57,14 @@ async function loadRegistryDependencies(
 	return dependencyFiles.flat();
 }
 
-async function loadItem(block: string, visited = new Set<string>()): Promise<HighlightedBlock> {
+async function loadItem(itemName: string, visited = new Set<string>()): Promise<HighlightedBlock> {
 	// Prevent infinite loops
-	if (visited.has(block)) {
-		throw new Error(`Circular dependency detected: ${block}`);
+	if (visited.has(itemName)) {
+		throw new Error(`Circular dependency detected: ${itemName}`);
 	}
-	visited.add(block);
+	visited.add(itemName);
 
-	const { default: mod } = await import(`../../../../__registry__/json/${block}.json`);
+	const { default: mod } = await import(`../../../../__registry__/json/${itemName}.json`);
 	const item = registryItemSchema.parse(mod);
 	const meta = blockMeta[item.name as keyof typeof blockMeta];
 	const files = item.files.map(async (file) => {
@@ -81,24 +76,8 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 		}
 
 		const highlightedContent = await highlightCode(file.content, lang);
-		let target;
 
-		if (file.type === 'registry:page') {
-			target = transformPagePath(file.target);
-		} else if (item.type === 'registry:component') {
-			target = transformComponentPath(file.target);
-		} else if (item.type === 'registry:block') {
-			target = transformBlockPath(file.target);
-		} else if (item.type === 'registry:lib') {
-			target = transformLibPath(file.target);
-		} else if (item.type === 'registry:ui') {
-			target = transformUIPath(file.target);
-		} else if (item.type === 'registry:hook') {
-			target = transformHookPath(file.target);
-		} else {
-			target = file.target;
-		}
-		return { ...file, highlightedContent, target };
+		return { ...file, highlightedContent, target: transformTargetPath(file.target, item.type) };
 	});
 
 	let allFiles = await Promise.all(files);
@@ -132,10 +111,10 @@ async function loadItem(block: string, visited = new Set<string>()): Promise<Hig
 	});
 }
 
-function normalizeBlockNames(blockNames: string[]): string[] {
+function normalizeItemNames(itemNames: string[]): string[] {
 	return Array.from(
 		new Set(
-			blockNames
+			itemNames
 				.map((name) => {
 					const trimmed = name.trim();
 					try {
@@ -149,25 +128,25 @@ function normalizeBlockNames(blockNames: string[]): string[] {
 	);
 }
 
-function parseBlockParam(blockParam: string): string[] | null {
-	if (blockParam.includes(BLOCKS_QUERY_DELIMITER)) {
-		return blockParam.split(BLOCKS_QUERY_DELIMITER);
+function parseItemParam(itemParam: string): string[] | null {
+	if (itemParam.includes(BLOCKS_QUERY_DELIMITER)) {
+		return itemParam.split(BLOCKS_QUERY_DELIMITER);
 	}
 
-	if (blockParam.includes(',')) {
-		return blockParam.split(',');
+	if (itemParam.includes(',')) {
+		return itemParam.split(',');
 	}
 
 	return null;
 }
 
-async function loadMultipleBlocks(blockNames: string[]): Promise<HighlightedBlock[]> {
+async function loadMultipleItems(itemNames: string[]): Promise<HighlightedBlock[]> {
 	const items = await Promise.all(
-		blockNames.map(async (name) => {
+		itemNames.map(async (name) => {
 			try {
 				return await loadItem(name);
 			} catch (error) {
-				console.error(`Failed to load block: ${name}`, error);
+				console.error(`Failed to load item: ${name}`, error);
 				return null;
 			}
 		})
@@ -179,10 +158,10 @@ async function loadMultipleBlocks(blockNames: string[]): Promise<HighlightedBloc
 export const GET: RequestHandler = async ({ params }) => {
 	const { block } = params;
 
-	const parsedBlockNames = parseBlockParam(block);
-	if (parsedBlockNames) {
-		const blockNames = normalizeBlockNames(parsedBlockNames);
-		const validItems = await loadMultipleBlocks(blockNames);
+	const parsedItemNames = parseItemParam(block);
+	if (parsedItemNames) {
+		const itemNames = normalizeItemNames(parsedItemNames);
+		const validItems = await loadMultipleItems(itemNames);
 		return json(validItems);
 	}
 

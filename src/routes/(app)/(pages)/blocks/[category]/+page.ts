@@ -3,7 +3,7 @@ import { registryCategories } from '$lib/registry/registry-categories';
 import { NEW_BLOCKS } from '$lib/utils/blocks';
 import type { Component } from 'svelte';
 import { error } from '@sveltejs/kit';
-import type { HighlightedBlock } from '../../../../api/block/[block]/+server.js';
+import type { HighlightedBlock } from '../../../../api/registry/[block]/+server.js;
 
 export const prerender = true;
 
@@ -26,32 +26,32 @@ export const load: PageLoad = async ({ params, data, fetch }) => {
 
 	if (category === 'new') {
 		loadItems = data.newBlocks.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else if (category === 'marketing') {
 		loadItems = data.marketings.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else if (category === 'dashboard') {
 		loadItems = data.dashboards.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else if (category === 'ecommerce') {
 		loadItems = data.ecommerces.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else if (category === 'datatable') {
 		loadItems = data.datatables.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else if (category === 'bento') {
 		loadItems = data.bentos.map(async (block) => {
-			const resp = await fetch(`/api/block/${block}`);
+			const resp = await fetch(`/api/registry/${block}`);
 			return (await resp.json()) as Item;
 		});
 	} else {
