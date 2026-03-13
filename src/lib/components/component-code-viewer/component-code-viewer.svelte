@@ -6,17 +6,17 @@
 	import CodeIcon from '@lucide/svelte/icons/code';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import type { HighlightedBlock } from '../../../routes/api/registry/[item]/+server.js';
+	import type { HighlightedCodeBlock } from '../../../routes/api/registry/[item]/+server.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import PmAddComp from '$lib/components/pm-add-comp.svelte';
 
 	type ComponentCodeViewerContextType = {
-		item: HighlightedBlock;
+		item: HighlightedCodeBlock;
 		activeFile: string | null;
 		resizablePaneRef: Pane | null;
 		tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
-		highlightedFiles: HighlightedBlock['files'];
+		highlightedFiles: HighlightedCodeBlock['files'];
 		activeFileCodeToCopy: string;
 		showTree?: boolean;
 	};

@@ -8,10 +8,10 @@
 	import { ComponentCodeViewerContext } from '$lib/components/component-code-viewer/component-code-viewer.svelte';
 	import type { Snippet } from 'svelte';
 	import BlockViewerViewMobile from './block-viewer-view-mobile.svelte';
-	import type { HighlightedBlock } from '../../../routes/api/registry/[item]/+server.js';
+	import type { HighlightedCodeBlock } from '../../../routes/api/registry/[item]/+server.js';
 
 	type BlockViewerContextType = {
-		item: HighlightedBlock;
+		item: HighlightedCodeBlock;
 		view: 'code' | 'preview';
 		activeFile: string | null;
 		resizablePaneRef: Pane | null;
@@ -20,7 +20,7 @@
 		// iframeHeight: string;
 		// iframeEl: HTMLIFrameElement | null;
 		activeFileCodeToCopy: string;
-		highlightedFiles: HighlightedBlock['files'];
+		highlightedFiles: HighlightedCodeBlock['files'];
 		showTree?: boolean;
 	};
 

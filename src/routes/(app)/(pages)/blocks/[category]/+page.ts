@@ -3,7 +3,7 @@ import { registryCategories } from '$lib/registry/registry-categories';
 import { NEW_BLOCKS } from '$lib/utils/blocks';
 import type { Component } from 'svelte';
 import { error } from '@sveltejs/kit';
-import type { HighlightedBlock } from '../../../../api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '../../../../api/registry/[item]/+server.js';
 
 export const prerender = true;
 
@@ -15,7 +15,7 @@ export const entries: EntryGenerator = () => {
 	return categoryEntries;
 };
 
-type Item = HighlightedBlock & {
+type Item = HighlightedCodeBlock & {
 	component?: Promise<Component>;
 };
 

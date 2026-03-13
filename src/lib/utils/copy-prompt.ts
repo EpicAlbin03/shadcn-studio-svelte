@@ -1,5 +1,5 @@
 import { PUBLIC_URL } from '$lib/config/site-config';
-import type { HighlightedBlock } from '../../routes/api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '../../routes/api/registry/[item]/+server.js';
 import { getCommand } from './package-manager';
 
 function getInstallCommand(packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun', componentName: string) {
@@ -11,7 +11,7 @@ function getInstallCommand(packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun', comp
 	return `${cmd.command} ${cmd.args.join(' ')}`.trim();
 }
 
-function getSourceCode(source?: HighlightedBlock) {
+function getSourceCode(source?: HighlightedCodeBlock) {
 	if (!source) return '';
 
 	let code = '';
@@ -31,7 +31,7 @@ export function getCopyPromptText(
 	packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun',
 	componentName: string,
 	categorySlug: string,
-	source?: HighlightedBlock,
+	source?: HighlightedCodeBlock,
 	isBlock?: boolean
 ) {
 	return `I'm looking at this shadcn-studio-svelte documentation: ${PUBLIC_URL}/${isBlock ? 'blocks' : 'docs/components'}${categorySlug === '' ? '' : '/'}${categorySlug}#${componentName}.

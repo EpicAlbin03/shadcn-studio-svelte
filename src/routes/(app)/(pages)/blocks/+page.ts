@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types.js';
-import type { HighlightedBlock } from '../../../api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '../../../api/registry/[item]/+server.js';
 import { FEATURED_BLOCKS } from '$lib/utils/blocks.js';
 
 export const prerender = true;
@@ -7,7 +7,7 @@ export const prerender = true;
 export const load: PageLoad = async ({ fetch }) => {
 	const loadItems = FEATURED_BLOCKS.map(async (block) => {
 		const resp = await fetch(`/api/registry/${block}`);
-		return (await resp.json()) as HighlightedBlock;
+		return (await resp.json()) as HighlightedCodeBlock;
 	});
 
 	const result = await Promise.all(loadItems);

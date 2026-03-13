@@ -19,7 +19,7 @@
 	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 	import { getCopyPromptText } from '$lib/utils/copy-prompt';
 	import { NEW_BLOCKS } from '$lib/utils/blocks';
-	import type { HighlightedBlock } from '../../../routes/api/registry/[item]/+server';
+	import type { HighlightedCodeBlock } from '../../../routes/api/registry/[item]/+server';
 	import { page } from '$app/state';
 
 	const ctx = BlockViewerContext.get();
@@ -27,7 +27,7 @@
 
 	const packageManager = $derived(userConfig.settings.packageManager);
 	const blockName = $derived(ctx.item.name);
-	const source = $derived(ctx.item as HighlightedBlock);
+	const source = $derived(ctx.item as HighlightedCodeBlock);
 
 	const clipboard = new UseClipboard();
 

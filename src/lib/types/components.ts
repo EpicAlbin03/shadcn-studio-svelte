@@ -1,4 +1,4 @@
-import type { HighlightedBlock } from '../../routes/api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '../../routes/api/registry/[item]/+server.js';
 
 export type ComponentProps = {
 	name: string;
@@ -14,4 +14,4 @@ export type ComponentProps = {
 	badge?: 'New' | 'Updated';
 	className?: string;
 	underConstruction?: boolean;
-} & Partial<HighlightedBlock>;
+} & Partial<HighlightedCodeBlock>;

@@ -14,9 +14,9 @@ import { blockMeta } from '$lib/registry/registry-block-meta.js';
 import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 import { generateCssFromMeta } from '$lib/utils/generate-css-from-meta.js';
 
-export type HighlightedBlock = z.output<typeof highlightedBlockSchema>;
+export type HighlightedCodeBlock = z.output<typeof highlightedCodeBlockSchema>;
 
-const highlightedBlockSchema = registryItemSchema
+const highlightedCodeBlockSchema = registryItemSchema
 	.pick({ name: true, description: true, meta: true, type: true })
 	.extend({
 		files: z.array(
@@ -58,7 +58,7 @@ async function loadRegistryDependencies(
 	return dependencyFiles.flat();
 }
 
-async function loadItem(itemName: string, visited = new Set<string>()): Promise<HighlightedBlock> {
+async function loadItem(itemName: string, visited = new Set<string>()): Promise<HighlightedCodeBlock> {
 	// Prevent infinite loops
 	if (visited.has(itemName)) {
 		throw new Error(`Circular dependency detected: ${itemName}`);
@@ -104,7 +104,7 @@ async function loadItem(itemName: string, visited = new Set<string>()): Promise<
 		});
 	}
 
-	return highlightedBlockSchema.parse({
+	return highlightedCodeBlockSchema.parse({
 		...item,
 		files: allFiles,
 		description: meta?.description,
@@ -143,7 +143,7 @@ function parseItemParam(itemParam?: string): string[] | null {
 	return null;
 }
 
-async function loadMultipleItems(itemNames: string[]): Promise<HighlightedBlock[]> {
+async function loadMultipleItems(itemNames: string[]): Promise<HighlightedCodeBlock[]> {
 	const items = await Promise.all(
 		itemNames.map(async (name) => {
 			try {
@@ -155,7 +155,7 @@ async function loadMultipleItems(itemNames: string[]): Promise<HighlightedBlock[
 		})
 	);
 
-	return items.filter((item): item is HighlightedBlock => item !== null);
+	return items.filter((item): item is HighlightedCodeBlock => item !== null);
 }
 
 export const GET: RequestHandler = async ({ params }) => {
