@@ -65,7 +65,7 @@ export async function loadHighlightedCodeBlock(itemName: string, visited = new S
 	}
 	visited.add(itemName);
 
-	const { default: mod } = await import(`../../../../__registry__/json/${itemName}.json`);
+	const { default: mod } = await import(`../../../__registry__/json/${itemName}.json`);
 	const item = registryItemSchema.parse(mod);
 	const meta = blockMeta[item.name as keyof typeof blockMeta];
 	const files = item.files.map(async (file) => {
