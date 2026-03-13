@@ -129,7 +129,9 @@ function normalizeItemNames(itemNames: string[]): string[] {
 	);
 }
 
-function parseItemParam(itemParam: string): string[] | null {
+function parseItemParam(itemParam?: string): string[] | null {
+	if (!itemParam) return null;
+
 	if (itemParam.includes(BLOCKS_QUERY_DELIMITER)) {
 		return itemParam.split(BLOCKS_QUERY_DELIMITER);
 	}
@@ -157,9 +159,12 @@ async function loadMultipleItems(itemNames: string[]): Promise<HighlightedBlock[
 }
 
 export const GET: RequestHandler = async ({ params }) => {
-	const { block } = params;
+	const itemParam = params.item;
+	if (!itemParam) {
+		return json({ message: 'Missing registry item parameter.' }, { status: 400 });
+	}
 
-	const parsedItemNames = parseItemParam(block);
+	const parsedItemNames = parseItemParam(itemParam);
 	if (parsedItemNames) {
 		const itemNames = normalizeItemNames(parsedItemNames);
 		const validItems = await loadMultipleItems(itemNames);
@@ -167,7 +172,7 @@ export const GET: RequestHandler = async ({ params }) => {
 	}
 
 	// Handle single block
-	const item = await loadItem(block);
+	const item = await loadItem(itemParam);
 	return json(item);
 };
 

@@ -18,6 +18,7 @@
 	};
 
 	let { components, slug, validComponentsData, breakpoints }: Props = $props();
+	const validComponentsByName = $derived(new Map(validComponentsData.map((comp) => [comp.name, comp])));
 
 	const bp = $derived({
 		xs: breakpoints?.xs ?? 1,
@@ -68,11 +69,10 @@
 			<ComponentCard componentName={component.name} class={component?.className}>
 				<ComponentLoader componentName={component.name} category={slug} />
 				{#if !component.underConstruction}
-					<ComponentDetails
-						componentsData={validComponentsData.find(
-							(comp) => comp.name === component.name
-						) as ComponentProps}
-					/>
+					{@const componentData = validComponentsByName.get(component.name)}
+					{#if componentData}
+						<ComponentDetails componentsData={componentData} />
+					{/if}
 				{/if}
 				{#if component?.badge}
 					<span
