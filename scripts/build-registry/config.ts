@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { createPathsMatcher, getTsconfig } from 'get-tsconfig';
 import type { RegistryConfig, RegistryDirs } from './types';
 
@@ -76,7 +77,7 @@ export async function loadConfig(): Promise<RegistryConfig> {
 	if (!fs.existsSync(configPath)) {
 		throw new Error('Missing registry.config.ts in project root. Create one using defineConfig().');
 	}
-	const mod = await import(configPath);
+	const mod = await import(pathToFileURL(configPath).href);
 	const config = mod.default as RegistryConfig;
 	const registryDir = config.registryDir ?? DEFAULT_REGISTRY_DIR;
 	const inferredDirs = inferRegistryDirs(registryDir);

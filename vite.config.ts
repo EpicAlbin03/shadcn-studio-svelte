@@ -6,7 +6,6 @@ import { minimatch } from 'minimatch';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { build } from './scripts/build-registry';
 import packageJson from './package.json' with { type: 'json' };
 
 // don't build when we're running `vite preview`
@@ -60,7 +59,9 @@ export default defineConfig({
 });
 
 async function buildRegistry() {
-	await build();
+	execSync('bun run scripts/build-registry', {
+		stdio: ['pipe', 'pipe', 'inherit']
+	});
 	execSync('bun run shadcn-svelte registry build --output static/registry', {
 		stdio: ['pipe', 'pipe', 'inherit']
 	});
