@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageLoad } from './$types';
 import { getComponentsByNames } from '$lib/utils/components';
 import type { ComponentProps } from '$lib/types/components';
-import type { HighlightedBlock } from '../../../../../api/registry/[block]/+server.js;
+import type { HighlightedBlock } from '../../../../../api/registry/[item]/+server.js';
 import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 
 export const prerender = true;

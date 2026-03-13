@@ -1,4 +1,4 @@
-import type { HighlightedBlock } from '../../routes/api/registry/[block]/+server;
+import type { HighlightedBlock } from '../../routes/api/registry/[item]/+server.js';
 
 export type ComponentProps = {
 	name: string;

@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types.js';
-import type { HighlightedBlock } from '../../../api/registry/[item]/+server.js;
+import type { HighlightedBlock } from '../../../api/registry/[item]/+server.js';
 import { FEATURED_BLOCKS } from '$lib/utils/blocks.js';
 
 export const prerender = true;

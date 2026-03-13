@@ -2,6 +2,7 @@ import path from 'node:path';
 import { z } from 'zod/v4';
 import { json } from '@sveltejs/kit';
 import { registryItemFileSchema, registryItemSchema } from '@shadcn-svelte/registry';
+import componentsConfig from '../../../../../components.json';
 import { highlightCode } from '$lib/utils/highlight-code.js';
 import {
 	transformImportPaths,
@@ -70,7 +71,7 @@ async function loadItem(itemName: string, visited = new Set<string>()): Promise<
 	const files = item.files.map(async (file) => {
 		const lang = path.extname(file.target).slice(1);
 
-		file.content = transformImportPaths(file.content);
+		file.content = transformImportPaths(file.content, componentsConfig.aliases);
 		if (item.type === 'registry:block' && file.type === 'registry:page') {
 			file.content = transformBlockRelativeImports(file.content, item.name);
 		}

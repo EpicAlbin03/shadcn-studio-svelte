@@ -1,10 +1,17 @@
 import type { RegistryItemFile, RegistryItemType } from '@shadcn-svelte/registry';
-import componentsConfig from '../../../components.json';
 
 export type FileTree = {
 	name: string;
 	path?: string;
 	children?: FileTree[];
+};
+
+type ComponentAliases = {
+	ui: string;
+	utils: string;
+	components: string;
+	hooks: string;
+	lib: string;
 };
 
 export function transformTargetPath(target: string, type: RegistryItemType): string {
@@ -83,8 +90,7 @@ export function createFileTreeForRegistryItemFiles(
 	return root.map(collapseSingleChildFolders);
 }
 
-export function transformImportPaths(content: string): string {
-	const componentAliases = componentsConfig.aliases;
+export function transformImportPaths(content: string, componentAliases: ComponentAliases): string {
 	const aliases = {
 		ui: componentAliases.ui,
 		utils: componentAliases.utils,
