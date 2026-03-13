@@ -5,6 +5,7 @@ import { themesPlugin } from './scripts/themes-plugin';
 export default defineConfig({
 	name: 'shadcn-studio-svelte',
 	homepage: 'https://shadcnstudio-svelte.netlify.app',
+	// Remove when moving to @latest
 	overrideDependencies: ["vaul-svelte@next", "layerchart@next"],
 	aliases: {
 		ui: '$lib/registry/ui',
