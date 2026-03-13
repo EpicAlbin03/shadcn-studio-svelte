@@ -15,13 +15,37 @@ export const entries: EntryGenerator = () =>
 			category: category.slug
 		}));
 
-const MAX_CODE_BLOCKS_PER_REQUEST = 5; // keeps prerendered dependency paths below Windows limits
+const WINDOWS_MAX_DIR_PATH = 248;
+const REGISTRY_ROUTE_PREFIX = '/api/registry/';
+const MAX_CODE_BLOCKS_QUERY_LENGTH = WINDOWS_MAX_DIR_PATH - REGISTRY_ROUTE_PREFIX.length;
 
-const chunkCodeBlocks = (items: string[], size: number): string[][] => {
+const chunkCodeBlocks = (items: string[], maxQueryLength: number): string[][] => {
 	const chunks: string[][] = [];
-	for (let i = 0; i < items.length; i += size) {
-		chunks.push(items.slice(i, i + size));
+	let currentChunk: string[] = [];
+	let currentChunkLength = 0;
+
+	for (const item of items) {
+		const encodedItem = encodeURIComponent(item);
+		const additionalLength =
+			currentChunk.length === 0
+				? encodedItem.length
+				: BLOCKS_QUERY_DELIMITER.length + encodedItem.length;
+
+		if (currentChunk.length > 0 && currentChunkLength + additionalLength > maxQueryLength) {
+			chunks.push(currentChunk);
+			currentChunk = [encodedItem];
+			currentChunkLength = encodedItem.length;
+			continue;
+		}
+
+		currentChunk.push(encodedItem);
+		currentChunkLength += additionalLength;
 	}
+
+	if (currentChunk.length > 0) {
+		chunks.push(currentChunk);
+	}
+
 	return chunks;
 };
 
@@ -35,7 +59,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const components = getComponentsByNames(category.components.map((item) => item.name));
 
 	const codeBlockNamesToFetch = components.map((comp) => comp.name);
-	const codeBlockChunks = chunkCodeBlocks(codeBlockNamesToFetch, MAX_CODE_BLOCKS_PER_REQUEST);
+	const codeBlockChunks = chunkCodeBlocks(codeBlockNamesToFetch, MAX_CODE_BLOCKS_QUERY_LENGTH);
 
 	let highlightedCodeBlocks: HighlightedCodeBlock[] = [];
 
@@ -43,9 +67,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		try {
 			const chunkedResults = await Promise.all(
 				codeBlockChunks.map(async (chunk) => {
-					const codeBlocksQuery = chunk
-						.map((name) => encodeURIComponent(name))
-						.join(BLOCKS_QUERY_DELIMITER);
+					const codeBlocksQuery = chunk.join(BLOCKS_QUERY_DELIMITER);
 					const res = await fetch(`/api/registry/${codeBlocksQuery}`);
 
 					if (res.ok) {
