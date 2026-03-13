@@ -1,5 +1,5 @@
 import { PUBLIC_URL } from '$lib/config/site-config';
-import type { HighlightedCodeBlock } from '../../routes/api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 import { getCommand } from './package-manager';
 
 function getInstallCommand(packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun', componentName: string) {

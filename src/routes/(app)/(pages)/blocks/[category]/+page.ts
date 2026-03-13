@@ -3,7 +3,7 @@ import { registryCategories } from '$lib/registry/registry-categories';
 import { NEW_BLOCKS } from '$lib/utils/blocks';
 import type { Component } from 'svelte';
 import { error } from '@sveltejs/kit';
-import type { HighlightedCodeBlock } from '../../../../api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 
 export const prerender = true;
 

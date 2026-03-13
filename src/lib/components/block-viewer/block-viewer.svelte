@@ -8,7 +8,7 @@
 	import { ComponentCodeViewerContext } from '$lib/components/component-code-viewer/component-code-viewer.svelte';
 	import type { Snippet } from 'svelte';
 	import BlockViewerViewMobile from './block-viewer-view-mobile.svelte';
-	import type { HighlightedCodeBlock } from '../../../routes/api/registry/[item]/+server.js';
+	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 
 	type BlockViewerContextType = {
 		item: HighlightedCodeBlock;

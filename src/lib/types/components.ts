@@ -1,4 +1,4 @@
-import type { HighlightedCodeBlock } from '../../routes/api/registry/[item]/+server.js';
+import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 
 export type ComponentProps = {
 	name: string;

@@ -2,7 +2,7 @@
 	import type { ComponentProps } from '$lib/types/components';
 	import ComponentCodeViewer from '$lib/components/component-code-viewer/component-code-viewer.svelte';
 	import { page } from '$app/state';
-	import type { HighlightedCodeBlock } from '../../../routes/api/registry/[item]/+server';
+	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
 	import { ComponentCategoryContext } from '$lib/utils/components';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
