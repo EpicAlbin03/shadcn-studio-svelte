@@ -64,38 +64,6 @@
 		</div>
 	</section>
 
-	<!-- <section id="roadmap" class="py-12 sm:py-20">
-		<div class="mb-12 flex flex-col items-center justify-center gap-4">
-			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
-				<Sparkles class="size-4" />
-				Roadmap
-			</Badge>
-			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">What's Coming Next</h2>
-			<p class="max-w-[800px] text-center text-muted-foreground">
-				Discover the latest updates and features we're working on to enhance your experience.
-			</p>
-		</div>
-		<div class="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-			{#each roadmap as item}
-				<Card class="group gap-0">
-					<CardContent class="relative">
-						<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-muted">
-							<item.icon class="size-6" aria-hidden />
-						</div>
-						<h3 class="mb-2 text-xl font-semibold">{item.title}</h3>
-						<p class="text-sm text-muted-foreground">{item.description}</p>
-						<Badge
-							variant={item.status === 'In Progress' ? 'outline' : 'secondary'}
-							class={cn('absolute end-6 top-0 shadow')}
-						>
-							{item.status}
-						</Badge>
-					</CardContent>
-				</Card>
-			{/each}
-		</div>
-	</section> -->
-
 	<section id="faq" class="py-12 sm:py-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">

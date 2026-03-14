@@ -60,9 +60,6 @@
 				<div class="flex flex-col gap-5">
 					<div class="text-lg font-semibold">Resources</div>
 					<ul class="space-y-3">
-						<!-- <li>
-							<a href="/theme-generator/#roadmap">Roadmap</a>
-						</li> -->
 						<li class="hover:underline">
 							<a href="/theme-generator#faq">FAQ</a>
 						</li>
