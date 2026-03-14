@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { PUBLIC_URL } from '$lib/config/site-config';
-	import PMExecute from './pm-execute.svelte';
+	import PmBlock from './pm-block.svelte';
 
 	let { name, overwrite }: { name: string | string[]; overwrite?: boolean } = $props();
 
-	const command = `shadcn-svelte@latest add ${PUBLIC_URL}/registry/${
-		Array.isArray(name) ? name.join(' ') : name
-	}.json ${overwrite ? '--overwrite' : ''}`;
+	const command = $derived(
+		`shadcn-svelte@latest add ${PUBLIC_URL}/registry/${
+			typeof name === 'string' ? name : name.join(' ')
+		}.json ${overwrite ? '--overwrite' : ''}`.trim()
+	);
 </script>
 
-<PMExecute {command} />
+<PmBlock type="execute" {command} />

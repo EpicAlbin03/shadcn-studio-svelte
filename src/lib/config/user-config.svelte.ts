@@ -8,7 +8,7 @@ import { z } from 'zod/v4';
 export const USER_SETTINGS_COOKIE_NAME = 'scnstudio_user_config';
 export const MODE_STORAGE_KEY = 'mode-watcher-mode';
 
-const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('pnpm');
+const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('bun');
 const colorFormatSchema = z.enum(['hex', 'rgb', 'hsl', 'oklch']).default('oklch');
 const themeCustomizerTourCompletedSchema = z.boolean().default(false);
 
@@ -24,7 +24,7 @@ export const userSettingsSchema = z
 		themeCustomizerTourCompleted: themeCustomizerTourCompletedSchema
 	})
 	.default({
-		packageManager: 'pnpm',
+		packageManager: 'bun',
 		colorFormat: 'oklch',
 		activeTheme: defaultTheme,
 		themeCustomizerTourCompleted: false

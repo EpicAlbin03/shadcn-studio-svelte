@@ -16,24 +16,21 @@
 	} = $props();
 
 	const userConfig = UserConfigContext.get();
-	const packageManager = $derived(userConfig.settings.packageManager);
+	const activePackageManager = $derived(userConfig.settings.packageManager);
 
-	function getCommandText(agent: PackageManager) {
-		const cmd = getCommand(agent, type, command);
-		if (!type) {
-			return `${cmd.args.join(' ')}`.trim();
-		}
+	function getCommandText(packageManager: PackageManager) {
+		const cmd = getCommand(packageManager, type, command);
 		return `${cmd.command} ${cmd.args.join(' ')}`.trim();
 	}
 
-	const commandText = $derived(getCommandText(packageManager));
+	const commandText = $derived(getCommandText(activePackageManager));
 </script>
 
 <figure data-rehype-pretty-code-figure class="m-0 rounded-lg border bg-code text-code-foreground">
 	<div class="overflow-x-auto">
 		<Tabs.Root
 			bind:value={
-				() => packageManager,
+				() => activePackageManager,
 				(v) => {
 					userConfig.setSettings({ packageManager: v });
 				}
@@ -63,8 +60,8 @@
 						data-llm-ignore={pm === 'yarn' || pm === 'yarn@berry' ? '' : undefined}
 					>
 						{#snippet child({ props })}
-							{@const { hidden, class: className, ...rest } = props}
-							<div {...rest} class={cn(className as string, (hidden as boolean) && 'hidden')}>
+							{@const { hidden, class: className, ...restProps } = props}
+							<div {...restProps} class={cn(className as string, (hidden as boolean) && 'hidden')}>
 								<pre><code class="font-mono text-sm leading-none text-wrap" data-language="bash"
 										>{getCommandText(pm)}</code
 									></pre>

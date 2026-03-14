@@ -1,7 +1,8 @@
 import { resolveCommand } from 'package-manager-detector/commands';
 import type { Agent, Command, ResolvedCommand } from 'package-manager-detector';
 
-export const PACKAGE_MANAGERS: Agent[] = ['pnpm', 'npm', 'bun', 'yarn'] as const;
+// order shown in pm-block
+export const PACKAGE_MANAGERS: Agent[] = ['bun', 'pnpm', 'npm', 'yarn'] as const;
 export type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
 export type PackageManagerCommand = Command | 'create' | undefined;
@@ -11,22 +12,20 @@ export function getCommand(
 	type: PackageManagerCommand,
 	command: string | string[]
 ): ResolvedCommand {
-	let args = [];
+	let args: string[];
 	if (typeof command === 'string') {
 		args = command.split(' ');
 	} else {
 		args = command;
 	}
 
+	// yarn@berry is version 2+ of yarn
+	if (pm === 'yarn') pm = 'yarn@berry';
+
 	if (!type) return { command: pm, args };
 
 	// special handling for create
 	if (type === 'create') return { command: pm, args: ['create', ...args] };
-
-	// special handling for yarn execute
-	if (type === 'execute' && pm === 'yarn') {
-		return { command: 'yarn', args };
-	}
 
 	const cmd = resolveCommand(pm, type, args);
 
