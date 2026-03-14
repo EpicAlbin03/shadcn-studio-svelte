@@ -1,39 +1,21 @@
 <script lang="ts">
-	import { SparklesIcon } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button';
-	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { CopyButton, type CopyButtonProps } from '$lib/components/ui/copy-button';
 	import { cn } from '$lib/utils';
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { SparklesIcon } from '@lucide/svelte';
 
-	type Props = { class?: string; copyPromptText: string; hidden?: boolean };
+	type Props = CopyButtonProps & { hidden?: boolean };
 
-	let { class: className, copyPromptText, hidden }: Props = $props();
-
-	const clipboard = new UseClipboard();
-
-	function handleCopyPrompt(e: MouseEvent) {
-		clipboard.copy(copyPromptText);
-	}
+	let { hidden, ...props }: Props = $props();
 </script>
 
-<Tooltip.Root disableCloseOnTriggerClick>
-	<Tooltip.Trigger onclick={handleCopyPrompt}>
-		{#snippet child({ props })}
-			<Button
-				{...props}
-				variant={hidden ? 'ghost' : 'outline'}
-				size="icon"
-				class={cn(
-					hidden &&
-						'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:!bg-transparent hover:text-foreground',
-					className
-				)}
-				aria-label="Copy Prompt"
-			>
-				<SparklesIcon />
-				<span class="sr-only">Copy Prompt</span>
-			</Button>
-		{/snippet}
-	</Tooltip.Trigger>
-	<Tooltip.Content>{clipboard.copied ? 'Copied' : 'Copy Prompt'}</Tooltip.Content>
-</Tooltip.Root>
+<CopyButton
+	variant={hidden ? 'ghost' : 'outline'}
+	icon={SparklesIcon}
+	class={cn(
+		hidden &&
+			'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:bg-transparent! hover:text-foreground'
+	)}
+	tooltip="Copy Prompt"
+	aria-label="Copy Prompt"
+	{...props}
+/>

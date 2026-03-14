@@ -1,17 +1,31 @@
-<script lang="ts">
+<script lang="ts" module>
 	import { Check, Copy } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, type ButtonProps } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils';
 
-	type Props = {
+	export type CopyButtonProps = ButtonProps & {
 		text: string;
 		class?: string;
 		onCopied?: (e: MouseEvent) => void;
+		icon?: LucideIcon;
+		tooltip?: string;
+		tooltipCopied?: string;
 	};
+</script>
 
-	let { text, class: className, onCopied }: Props = $props();
+<script lang="ts">
+	let {
+		text,
+		class: className,
+		variant = 'ghost',
+		ref = $bindable(null),
+		onCopied,
+		icon: Icon,
+		tooltip = 'Copy to Clipboard',
+		tooltipCopied = 'Copied'
+	}: CopyButtonProps = $props();
 
 	const clipboard = new UseClipboard();
 
@@ -25,18 +39,21 @@
 	<Tooltip.Trigger onclick={handleCopy}>
 		{#snippet child({ props })}
 			<Button
+				bind:ref
 				{...props}
 				data-slot="copy-button"
 				size="icon"
-				variant="ghost"
+				{variant}
 				class={cn(
-					'z-10 size-7 shrink-0 rounded-md p-0 opacity-70 hover:opacity-100 focus-visible:opacity-100 [&>.lucide-check]:text-green-600 dark:[&>.lucide-check]:text-green-400 [&>svg]:size-3',
+					'[&>.lucide-check]:text-green-600 dark:[&>.lucide-check]:text-green-400 [&>svg]:size-3',
 					className
 				)}
 			>
 				<span class="sr-only" data-llm-ignore>Copy</span>
 				{#if clipboard.copied}
 					<Check />
+				{:else if Icon}
+					<Icon />
 				{:else}
 					<Copy />
 				{/if}
@@ -44,6 +61,6 @@
 		{/snippet}
 	</Tooltip.Trigger>
 	<Tooltip.Content>
-		{clipboard.copied ? 'Copied' : 'Copy to Clipboard'}
+		{clipboard.copied ? tooltipCopied : tooltip}
 	</Tooltip.Content>
 </Tooltip.Root>

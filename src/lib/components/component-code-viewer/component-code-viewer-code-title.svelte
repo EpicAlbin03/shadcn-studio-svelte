@@ -2,7 +2,7 @@
 	import { ComponentCodeViewerContext } from './component-code-viewer.svelte';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { getIconForLanguageExtension } from '$lib/utils/icons';
-	import CopyButton from '../CopyButton.svelte';
+	import CodeBlockCopyButton from '$lib/components/CodeBlockCopyButton.svelte';
 	import { cn } from '$lib/utils';
 
 	const ctx = ComponentCodeViewerContext.get();
@@ -25,7 +25,7 @@
 		{file.target}
 		<div class="ml-auto flex items-center gap-2">
 			{#if ctx.activeFileCodeToCopy}
-				<CopyButton text={ctx.activeFileCodeToCopy} class="mr-2" />
+				<CodeBlockCopyButton text={ctx.activeFileCodeToCopy} class="mr-2" />
 			{/if}
 		</div>
 	</figcaption>
@@ -53,7 +53,7 @@
 		</Select.Root>
 		<div class="ml-auto flex items-center gap-2">
 			{#if ctx.activeFileCodeToCopy}
-				<CopyButton text={ctx.activeFileCodeToCopy} class="mr-0" />
+				<CodeBlockCopyButton text={ctx.activeFileCodeToCopy} class="mr-0" />
 			{/if}
 		</div>
 	</div>

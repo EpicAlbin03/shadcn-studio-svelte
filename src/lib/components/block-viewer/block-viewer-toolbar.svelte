@@ -61,7 +61,7 @@
 				<Tabs.Trigger value="code">Code</Tabs.Trigger>
 			</Tabs.List>
 		</Tabs.Root>
-		<CopyPrompt {copyPromptText} />
+		<CopyPrompt text={copyPromptText} />
 	</div>
 	<Separator orientation="vertical" class="mx-1 !h-4 shrink-0" />
 	<a

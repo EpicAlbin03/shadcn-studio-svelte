@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="ml-auto flex items-center justify-center gap-2">
-		<CopyPrompt {copyPromptText} hidden />
+		<CopyPrompt text={copyPromptText} hidden />
 
 		{#if source}
 			{#key page.url.pathname}
