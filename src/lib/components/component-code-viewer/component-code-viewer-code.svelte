@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Code from '../ui/code/code.svelte';
 	import ComponentCodeViewerCodeTitle from './component-code-viewer-code-title.svelte';
 	import ComponentCodeViewerFileTree from './component-code-viewer-file-tree.svelte';
 	import { ComponentCodeViewerContext } from './component-code-viewer.svelte';
@@ -40,24 +41,17 @@
 			class:rounded-l-none={showTree}
 		>
 			<ComponentCodeViewerCodeTitle />
-			<div
-				bind:this={codeContainer}
-				class="no-scrollbar overflow-y-auto"
+			<Code
+				bind:ref={codeContainer}
 				{@attach (node) => {
 					if (file.highlightedContent) {
 						ctx.activeFileCodeToCopy = file.content ?? node.innerText;
 					}
 				}}
-			>
-				{#if file.highlightedContent}
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html file.highlightedContent}
-				{:else if file.content}
-					<pre class="m-0 p-4 text-sm" style="background-color: transparent;"><code
-							>{file.content}</code
-						></pre>
-				{/if}
-			</div>
+				code={file.highlightedContent ?? file.content}
+				isHighlighted={!!file.highlightedContent}
+				standalone={false}
+			/>
 		</figure>
 	</div>
 {/if}

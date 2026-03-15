@@ -30,7 +30,7 @@ export class UseClipboard {
 	private delay: number;
 	private timeout: ReturnType<typeof setTimeout> | undefined = undefined;
 
-	constructor({ delay = 1500 }: Partial<Options> = {}) {
+	constructor({ delay = 2000 }: Partial<Options> = {}) {
 		this.delay = delay;
 	}
 

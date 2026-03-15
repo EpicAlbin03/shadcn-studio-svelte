@@ -2,7 +2,7 @@ import path from 'node:path';
 import { z } from 'zod/v4';
 import { registryItemFileSchema, registryItemSchema } from '@shadcn-svelte/registry';
 import componentsConfig from '../../../../components.json';
-import { highlightCode } from '$lib/utils/highlight-code.js';
+import { highlightCode } from '$lib/components/ui/code';
 import {
 	transformImportPaths,
 	transformBlockRelativeImports,

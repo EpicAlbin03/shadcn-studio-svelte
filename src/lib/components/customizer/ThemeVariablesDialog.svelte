@@ -7,7 +7,7 @@
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { ComponentCodeViewerContext } from '$lib/components/component-code-viewer/component-code-viewer.svelte';
 	import ComponentCodeViewerCode from '$lib/components/component-code-viewer/component-code-viewer-code.svelte';
-	import { highlightCode } from '$lib/utils/highlight-code';
+	import { highlightCode } from '$lib/components/ui/code';
 	import PmAddComp from '../pm-add-comp.svelte';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
 	import PmBlock from '../pm-block.svelte';

@@ -38,6 +38,9 @@
 		...restProps
 	}: CopyButtonProps = $props();
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const rp = $derived(restProps as any);
+
 	// If button-text is provided, set the size to default
 	let buttonSize = $derived(size === 'icon' && children ? 'default' : size);
 
@@ -50,7 +53,7 @@
 </script>
 
 <Tooltip.Root disableCloseOnTriggerClick>
-	<Tooltip.Trigger onclick={async () => handleCopy()}>
+	<Tooltip.Trigger {...rp} onclick={async () => handleCopy()}>
 		{#snippet child({ props })}
 			<Button
 				{...props}
@@ -60,7 +63,6 @@
 				data-slot="copy-button"
 				type="button"
 				name="copy"
-				{...restProps}
 			>
 				{#if clipboard.status === 'success'}
 					<div in:scale={{ duration: animationDuration, start: 0.85 }}>

@@ -1,6 +1,5 @@
 import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
-import { cn } from '$lib/utils';
 
 const highlightCodeCache = new Map<string, string>();
 const jsEngine = createJavaScriptRegexEngine();
@@ -15,15 +14,24 @@ const highlighterPromise = createHighlighterCore({
 	engine: jsEngine
 });
 
+type Options = {
+	lineNumbers?: boolean;
+	highlightedLines?: number[];
+};
+
 export async function highlightCode(
 	code: string,
 	language: string = 'svelte',
-	standalone = false
+	options: Options = {}
 ): Promise<string> {
-	const cachedCode = highlightCodeCache.get(code);
+	const { lineNumbers = true, highlightedLines = [] } = options;
+	const cacheKey = `${language}:${lineNumbers ? '1' : '0'}:${highlightedLines.join(',')}:${code}`;
+	const cachedCode = highlightCodeCache.get(cacheKey);
 	if (cachedCode) return cachedCode;
 
 	const highlighter = await highlighterPromise;
+	const highlightedLineSet = new Set(highlightedLines);
+	let lineNumber = 0;
 
 	const html = highlighter.codeToHtml(formatCode(code), {
 		lang: language,
@@ -34,22 +42,33 @@ export async function highlightCode(
 		transformers: [
 			{
 				pre(node) {
-					node.properties['class'] = cn(
-						'no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0 !bg-transparent',
-						standalone && 'rounded-lg'
-					);
+					node.properties['class'] = [
+						'no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-slot=tabs]]:p-0 bg-transparent!',
+						lineNumbers && 'has-[[data-line-numbers]]:px-0'
+					]
+						.filter(Boolean)
+						.join(' ');
 				},
 				code(node) {
-					node.properties['data-line-numbers'] = '';
+					if (lineNumbers) {
+						node.properties['data-line-numbers'] = '';
+					}
 				},
 				line(node) {
+					lineNumber += 1;
 					node.properties['data-line'] = '';
+					if (!lineNumbers) {
+						node.properties['class'] = 'px-4';
+					}
+					if (highlightedLineSet.has(lineNumber)) {
+						node.properties['data-highlighted-line'] = '';
+					}
 				}
 			}
 		]
 	});
 
-	highlightCodeCache.set(code, html);
+	highlightCodeCache.set(cacheKey, html);
 
 	return html;
 }
