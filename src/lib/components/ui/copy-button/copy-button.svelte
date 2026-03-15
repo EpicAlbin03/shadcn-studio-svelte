@@ -1,66 +1,98 @@
 <script lang="ts" module>
-	import { Check, Copy } from '@lucide/svelte';
 	import { Button, type ButtonProps } from '$lib/components/ui/button';
-	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
-	import { cn } from '$lib/utils';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import CopyIcon from '@lucide/svelte/icons/copy';
+	import XIcon from '@lucide/svelte/icons/x';
+	import { scale } from 'svelte/transition';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	export type CopyButtonProps = ButtonProps & {
 		text: string;
-		class?: string;
-		onCopied?: (e: MouseEvent) => void;
 		icon?: LucideIcon;
-		tooltip?: string;
-		tooltipCopied?: string;
+		animationDuration?: number;
+		onCopied?: (status: UseClipboard['status']) => void;
+		tooltip?: {
+			default?: string;
+			success?: string;
+			failure?: string;
+		};
 	};
 </script>
 
 <script lang="ts">
 	let {
-		text,
-		class: className,
-		variant = 'ghost',
 		ref = $bindable(null),
-		onCopied,
+		text,
 		icon: Icon,
-		tooltip = 'Copy to Clipboard',
-		tooltipCopied = 'Copied'
+		animationDuration = 500,
+		variant = 'ghost',
+		size = 'icon',
+		onCopied,
+		tooltip = {
+			default: 'Copy to Clipboard',
+			success: 'Copied',
+			failure: 'Failed to copy'
+		},
+		children,
+		...restProps
 	}: CopyButtonProps = $props();
+
+	// If button-text is provided, set the size to default
+	let buttonSize = $derived(size === 'icon' && children ? 'default' : size);
 
 	const clipboard = new UseClipboard();
 
-	function handleCopy(e: MouseEvent) {
-		clipboard.copy(text);
-		onCopied?.(e);
+	async function handleCopy() {
+		const status = await clipboard.copy(text);
+		onCopied?.(status);
 	}
 </script>
 
 <Tooltip.Root disableCloseOnTriggerClick>
-	<Tooltip.Trigger onclick={handleCopy}>
+	<Tooltip.Trigger onclick={async () => handleCopy()}>
 		{#snippet child({ props })}
 			<Button
-				bind:ref
 				{...props}
-				data-slot="copy-button"
-				size="icon"
+				bind:ref
 				{variant}
-				class={cn(
-					'[&>.lucide-check]:text-green-600 dark:[&>.lucide-check]:text-green-400 [&>svg]:size-3',
-					className
-				)}
+				size={buttonSize}
+				data-slot="copy-button"
+				type="button"
+				name="copy"
+				{...restProps}
 			>
-				<span class="sr-only" data-llm-ignore>Copy</span>
-				{#if clipboard.copied}
-					<Check />
-				{:else if Icon}
-					<Icon />
+				{#if clipboard.status === 'success'}
+					<div in:scale={{ duration: animationDuration, start: 0.85 }}>
+						<CheckIcon tabindex={-1} class="text-green-600 dark:text-green-400" />
+						<span class="sr-only" data-llm-ignore>{tooltip.success}</span>
+					</div>
+				{:else if clipboard.status === 'failure'}
+					<div in:scale={{ duration: animationDuration, start: 0.85 }}>
+						<XIcon tabindex={-1} class="text-destructive" />
+						<span class="sr-only" data-llm-ignore>{tooltip.failure}</span>
+					</div>
 				{:else}
-					<Copy />
+					<div in:scale={{ duration: animationDuration, start: 0.85 }}>
+						{#if Icon}
+							<Icon tabindex={-1} />
+						{:else}
+							<CopyIcon tabindex={-1} />
+						{/if}
+						<span class="sr-only" data-llm-ignore>{tooltip.default}</span>
+					</div>
 				{/if}
+				{@render children?.()}
 			</Button>
 		{/snippet}
 	</Tooltip.Trigger>
 	<Tooltip.Content>
-		{clipboard.copied ? tooltipCopied : tooltip}
+		{#if clipboard.status === 'success'}
+			{tooltip.success}
+		{:else if clipboard.status === 'failure'}
+			{tooltip.failure}
+		{:else}
+			{tooltip.default}
+		{/if}
 	</Tooltip.Content>
 </Tooltip.Root>

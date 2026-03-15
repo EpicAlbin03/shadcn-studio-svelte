@@ -15,7 +15,9 @@
 		hidden &&
 			'hidden cursor-pointer text-muted-foreground transition-none group-hover/item:block hover:bg-transparent! hover:text-foreground'
 	)}
-	tooltip="Copy Prompt"
+	tooltip={{
+		default: 'Copy Prompt'
+	}}
 	aria-label="Copy Prompt"
 	{...props}
 />
