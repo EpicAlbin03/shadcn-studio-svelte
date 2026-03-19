@@ -4,12 +4,6 @@
 
 	let { class: className }: { class?: string } = $props();
 	const ctx = BlockViewerContext.get();
-	// const iframeHeight = $derived(Number.parseFloat(ctx.iframeHeight) || 930);
-	// let iframeRef = $state<HTMLIFrameElement | null>(null);
-
-	// $effect(() => {
-	// 	ctx.iframeEl = iframeRef;
-	// });
 </script>
 
 {#key ctx.iframeKey}

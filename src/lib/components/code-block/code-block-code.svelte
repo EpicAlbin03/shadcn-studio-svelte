@@ -27,7 +27,7 @@
 
 {#if file}
 	<div class="flex h-(--height) overflow-hidden rounded-lg border bg-code text-code-foreground">
-		{#if ctx.showFileTree}
+		{#if !ctx.hideFileTree}
 			<div class="hidden w-72 md:block">
 				<CodeBlockFileTree />
 			</div>
@@ -36,9 +36,9 @@
 			data-rehype-pretty-code-figure
 			class={cn(
 				'mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none',
-				!ctx.showFileTree && 'pl-4'
+				ctx.hideFileTree && 'pl-4'
 			)}
-			class:rounded-l-none={ctx.showFileTree}
+			class:rounded-l-none={!ctx.hideFileTree}
 		>
 			<CodeBlockTitle />
 			<Code

@@ -98,7 +98,7 @@
 		<CodeBlock
 			{files}
 			{height}
-			showFileTree={false}
+			hideFileTree
 			class="group/block-view-wrapper w-full min-w-0 [&_pre]:px-4!"
 		/>
 		<Dialog.Close class="sr-only">Close</Dialog.Close>

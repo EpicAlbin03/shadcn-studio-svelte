@@ -16,7 +16,7 @@
 	<figcaption
 		class={cn(
 			'hidden h-12 shrink-0 items-center gap-2 border-b px-4 py-2 text-code-foreground select-none md:flex [&_svg]:size-4 [&_svg]:text-code-foreground',
-			!ctx.showFileTree && 'pl-4'
+			ctx.hideFileTree && 'pl-4'
 		)}
 		data-language={language}
 	>

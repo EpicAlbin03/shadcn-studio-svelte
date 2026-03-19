@@ -11,6 +11,7 @@
 		text: string;
 		icon?: LucideIcon;
 		animationDuration?: number;
+		disableTooltip?: boolean;
 		onCopied?: (status: UseClipboard['status']) => void;
 		tooltip?: {
 			default?: string;
@@ -26,6 +27,7 @@
 		text,
 		icon: Icon,
 		animationDuration = 500,
+		disableTooltip = false,
 		variant = 'ghost',
 		size = 'icon',
 		onCopied,
@@ -52,7 +54,7 @@
 	}
 </script>
 
-<Tooltip.Root disableCloseOnTriggerClick>
+<Tooltip.Root disableCloseOnTriggerClick disabled={disableTooltip}>
 	<Tooltip.Trigger {...rp} onclick={async () => handleCopy()}>
 		{#snippet child({ props })}
 			<Button

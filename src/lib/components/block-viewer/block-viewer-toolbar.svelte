@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { BlockViewerContext } from './block-viewer.svelte';
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte.js';
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { CopyButton } from '$lib/components/ui/copy-button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
@@ -10,7 +10,6 @@
 	import TabletIcon from '@lucide/svelte/icons/tablet';
 	import SmartphoneIcon from '@lucide/svelte/icons/smartphone';
 	import FullscreenIcon from '@lucide/svelte/icons/fullscreen';
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import { getCommand } from '$lib/utils/package-manager.js';
@@ -29,10 +28,8 @@
 	const blockName = $derived(ctx.item.name);
 	const source = $derived(ctx.item as HighlightedCodeBlock);
 
-	const clipboard = new UseClipboard();
-
 	const categorySlug = $derived.by(() => {
-		const match = page.url.pathname.match(/\/blocks\/([^\/]+)/);
+		const match = page.url.pathname.match(/\/blocks\/([^/]+)/);
 		return match ? match[1] : '';
 	});
 
@@ -63,7 +60,7 @@
 		</Tabs.Root>
 		<CopyPrompt text={copyPromptText} />
 	</div>
-	<Separator orientation="vertical" class="mx-1 !h-4 shrink-0" />
+	<Separator orientation="vertical" class="mx-1 h-4! shrink-0" />
 	<a
 		href="#{blockName}"
 		class="shrink-0 pr-1 text-center text-sm font-medium underline-offset-2 hover:underline md:text-left"
@@ -85,7 +82,7 @@
 						ctx.resizablePaneRef.resize(parseInt(value));
 					}
 				}}
-				class="gap-1 *:data-[slot=toggle-group-item]:!size-6 *:data-[slot=toggle-group-item]:!rounded-sm"
+				class="gap-1 *:data-[slot=toggle-group-item]:size-6! *:data-[slot=toggle-group-item]:rounded-sm!"
 			>
 				<ToggleGroup.Item value="100" title="Desktop">
 					<MonitorIcon />
@@ -96,7 +93,7 @@
 				<ToggleGroup.Item value="30" title="Mobile">
 					<SmartphoneIcon />
 				</ToggleGroup.Item>
-				<Separator orientation="vertical" class="!h-4" />
+				<Separator orientation="vertical" class="h-4!" />
 				<Button
 					size="icon"
 					variant="ghost"
@@ -108,7 +105,7 @@
 					<span class="sr-only">Open in New Tab</span>
 					<FullscreenIcon />
 				</Button>
-				<Separator orientation="vertical" class="!h-4" />
+				<Separator orientation="vertical" class="h-4!" />
 				<Button
 					size="icon"
 					variant="ghost"
@@ -123,19 +120,16 @@
 				</Button>
 			</ToggleGroup.Root>
 		</div>
-		<Separator orientation="vertical" class="mx-1 !h-4 shrink-0" />
-		<Button
+		<Separator orientation="vertical" class="mx-1 h-4! shrink-0" />
+		<CopyButton
 			variant="outline"
 			class="max-w-full min-w-20 gap-1 overflow-hidden px-2 shadow-none"
 			size="sm"
-			onclick={() => clipboard.copy(command)}
+			text={command}
+			icon={TerminalIcon}
+			disableTooltip
 		>
-			{#if clipboard.copied}
-				<CheckIcon class="shrink-0" />
-			{:else}
-				<TerminalIcon class="shrink-0" />
-			{/if}
 			<span class="min-w-0 truncate lg:inline">{command}</span>
-		</Button>
+		</CopyButton>
 	</div>
 </div>

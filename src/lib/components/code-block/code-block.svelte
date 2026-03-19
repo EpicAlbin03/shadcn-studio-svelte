@@ -15,7 +15,7 @@
 		tree: FileTree[] | null;
 		files: CodeBlockFile[];
 		activeFileCodeToCopy: string;
-		showFileTree: boolean;
+		hideFileTree: boolean;
 	};
 
 	export const CodeBlockContext = new Context<CodeBlockContextType>('CodeBlock');
@@ -23,13 +23,18 @@
 	export type CodeBlockProps = {
 		files: CodeBlockFile[];
 		height?: string;
-		showFileTree?: boolean;
+		hideFileTree?: boolean;
 		class?: string;
 	};
 </script>
 
 <script lang="ts">
-	let { files, height = '600px', showFileTree = true, class: className }: CodeBlockProps = $props();
+	let {
+		files,
+		height = '600px',
+		hideFileTree = false,
+		class: className
+	}: CodeBlockProps = $props();
 
 	const tree = $derived(
 		createFileTreeForRegistryItemFiles(
@@ -74,8 +79,8 @@
 		set activeFileCodeToCopy(value) {
 			activeFileCodeToCopy = value;
 		},
-		get showFileTree() {
-			return showFileTree;
+		get hideFileTree() {
+			return hideFileTree;
 		}
 	});
 </script>
