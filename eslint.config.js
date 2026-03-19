@@ -57,6 +57,6 @@ export default defineConfig(
 		}
 	},
 	{
-		ignores: ['build/', 'dist/', '.svelte-kit/', '.netlify/', 'src/__registry__/']
+		ignores: ['build', 'dist', '.svelte-kit', '.netlify', 'src/__registry__']
 	}
 );

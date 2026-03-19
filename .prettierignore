@@ -1,3 +1,12 @@
+node_modules
+.env
+.env.*
+!.env.example
+build
+dist
+.svelte-kit
+.netlify
+
 # Package Managers
 package-lock.json
 pnpm-lock.yaml
@@ -6,4 +15,5 @@ bun.lock
 bun.lockb
 
 # Miscellaneous
-/static/
+static
+src/__registry__
