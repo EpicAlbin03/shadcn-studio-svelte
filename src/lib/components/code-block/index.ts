@@ -1,2 +1,10 @@
-export { default as CodeBlock } from './code-block.svelte';
-export type { CodeBlockFile, CodeBlockProps } from './code-block.svelte';
+import Root, { type CodeBlockFile, type CodeBlockProps } from './code-block.svelte';
+
+export {
+	Root,
+	type CodeBlockProps as Props,
+	//
+	Root as CodeBlock,
+	type CodeBlockFile,
+	type CodeBlockProps
+};

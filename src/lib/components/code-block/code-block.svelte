@@ -23,12 +23,13 @@
 	export type CodeBlockProps = {
 		files: CodeBlockFile[];
 		height?: string;
+		showFileTree?: boolean;
 		class?: string;
 	};
 </script>
 
 <script lang="ts">
-	let { files, height = '600px', class: className }: CodeBlockProps = $props();
+	let { files, height = '600px', showFileTree = true, class: className }: CodeBlockProps = $props();
 
 	const tree = $derived(
 		createFileTreeForRegistryItemFiles(
@@ -53,7 +54,6 @@
 
 	let activeFile = $state<string | null>(getFirstFileTarget() ?? null);
 	let activeFileCodeToCopy = $state('');
-	const showFileTree = $derived(files.length > 1 && tree.length > 0);
 
 	CodeBlockContext.set({
 		get activeFile() {

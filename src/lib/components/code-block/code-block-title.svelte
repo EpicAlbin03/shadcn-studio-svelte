@@ -8,7 +8,6 @@
 	const ctx = CodeBlockContext.get();
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));
 	const language = $derived(file?.target?.split('.').pop() ?? 'svelte');
-	// const isCSS = $derived(language === 'css');
 	const Icon = $derived(getIconForLanguageExtension(language));
 </script>
 
@@ -16,8 +15,8 @@
 	<!-- svelte-ignore a11y_figcaption_parent -->
 	<figcaption
 		class={cn(
-			'hidden h-12 shrink-0 items-center gap-2 border-b px-4 py-2 text-code-foreground select-none md:flex [&_svg]:size-4 [&_svg]:text-code-foreground'
-			// isCSS && 'pl-8'
+			'hidden h-12 shrink-0 items-center gap-2 border-b px-4 py-2 text-code-foreground select-none md:flex [&_svg]:size-4 [&_svg]:text-code-foreground',
+			!ctx.showFileTree && 'pl-4'
 		)}
 		data-language={language}
 	>

@@ -5,8 +5,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Copy } from '@lucide/svelte';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { ComponentCodeViewerContext } from '$lib/components/component-code-viewer/component-code-viewer.svelte';
-	import ComponentCodeViewerCode from '$lib/components/component-code-viewer/component-code-viewer-code.svelte';
+	import { CodeBlock } from '$lib/components/code-block';
 	import { highlightCode } from '$lib/components/ui/code';
 	import PmAddComp from '../pm-add-comp.svelte';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
@@ -35,52 +34,14 @@
 		});
 	});
 
-	// Create a mock "item" structure for the component viewer
-	const mockItem = $derived({
-		name: 'Theme Variables',
-		files: [
-			{
-				target: FILE_NAME,
-				content: themeCSS,
-				highlightedContent: highlightedThemeCSS || null
-			}
-		]
-	});
-
-	let activeFile = $state<string>(FILE_NAME);
-	let resizablePaneRef = $state(null!);
-	let activeFileCodeToCopy = $state<string>('');
-
-	ComponentCodeViewerContext.set({
-		get item() {
-			return mockItem as any;
-		},
-		get activeFile() {
-			return activeFile;
-		},
-		set activeFile(value) {
-			activeFile = value;
-		},
-		get resizablePaneRef() {
-			return resizablePaneRef;
-		},
-		set resizablePaneRef(value) {
-			resizablePaneRef = value;
-		},
-		get tree() {
-			return null;
-		},
-		get highlightedFiles() {
-			return mockItem.files as any;
-		},
-		get activeFileCodeToCopy() {
-			return activeFileCodeToCopy;
-		},
-		set activeFileCodeToCopy(value) {
-			activeFileCodeToCopy = value;
-		},
-		showTree: false
-	});
+	const files = $derived([
+		{
+			target: FILE_NAME,
+			content: themeCSS,
+			highlightedContent: highlightedThemeCSS || undefined,
+			type: 'registry:file'
+		}
+	]);
 </script>
 
 <Dialog.Root>
@@ -134,12 +95,12 @@
 			</Select.Content>
 		</Select.Root>
 
-		<div
-			class="group/block-view-wrapper flex w-full min-w-0 flex-col-reverse items-stretch gap-4 overflow-hidden md:flex-col [&_pre]:!px-4"
-			style="--height: {height};"
-		>
-			<ComponentCodeViewerCode />
-		</div>
+		<CodeBlock
+			{files}
+			{height}
+			showFileTree={false}
+			class="group/block-view-wrapper w-full min-w-0 [&_pre]:px-4!"
+		/>
 		<Dialog.Close class="sr-only">Close</Dialog.Close>
 	</Dialog.Content>
 </Dialog.Root>

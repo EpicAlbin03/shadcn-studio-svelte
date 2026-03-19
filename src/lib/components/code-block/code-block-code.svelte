@@ -3,6 +3,7 @@
 	import CodeBlockTitle from './code-block-title.svelte';
 	import CodeBlockFileTree from './code-block-file-tree.svelte';
 	import { CodeBlockContext } from './code-block.svelte';
+	import { cn } from '$lib/utils';
 
 	const ctx = CodeBlockContext.get();
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));
@@ -25,9 +26,7 @@
 <svelte:document onkeydown={handleKeydown} />
 
 {#if file}
-	<div
-		class="flex h-(--height) overflow-hidden rounded-lg border bg-code text-code-foreground"
-	>
+	<div class="flex h-(--height) overflow-hidden rounded-lg border bg-code text-code-foreground">
 		{#if ctx.showFileTree}
 			<div class="hidden w-72 md:block">
 				<CodeBlockFileTree />
@@ -35,7 +34,10 @@
 		{/if}
 		<figure
 			data-rehype-pretty-code-figure
-			class="mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none"
+			class={cn(
+				'mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none',
+				!ctx.showFileTree && 'pl-4'
+			)}
 			class:rounded-l-none={ctx.showFileTree}
 		>
 			<CodeBlockTitle />
@@ -49,6 +51,7 @@
 				code={file.highlightedContent ?? file.content}
 				isHighlighted={!!file.highlightedContent}
 				standalone={false}
+				copyButton={false}
 			/>
 		</figure>
 	</div>
