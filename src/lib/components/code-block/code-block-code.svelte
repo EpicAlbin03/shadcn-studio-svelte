@@ -9,8 +9,16 @@
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));
 	let codeContainer = $state<HTMLElement | null>(null);
 
+	function isVisible(element: HTMLElement) {
+		return element.getClientRects().length > 0;
+	}
+
 	function handleKeydown(event: KeyboardEvent) {
 		if (!codeContainer) return;
+		if (!isVisible(codeContainer)) return;
+		const target = event.target as HTMLElement | null;
+		if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA' || target?.isContentEditable)
+			return;
 		if (event.key === 'a' && (event.metaKey || event.ctrlKey)) {
 			event.preventDefault();
 			const range = document.createRange();

@@ -71,8 +71,8 @@
 >
 	<BlockViewerToolbar />
 	<BlockViewerView />
-	<div class="group-data-[view=preview]/block-view-wrapper:hidden">
+	{#if view === 'code'}
 		<CodeBlock files={codeBlockFiles} height={item.meta?.iframeHeight ?? '930px'} />
-	</div>
+	{/if}
 	<BlockViewerViewMobile>{@render children?.()}</BlockViewerViewMobile>
 </div>

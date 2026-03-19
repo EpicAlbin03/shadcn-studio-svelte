@@ -34,11 +34,23 @@ function isMissingRegistryItemError(error: unknown) {
 	return error instanceof Error && error.message.includes('Unknown variable dynamic import');
 }
 
+function dedupeFilesByTarget(files: HighlightedFile[]) {
+	const seen = new Set<string>();
+	return files.filter((file) => {
+		if (seen.has(file.target)) return false;
+		seen.add(file.target);
+		return true;
+	});
+}
+
 async function loadRegistryDependencies(dependencies: string[], visited: Set<string>) {
 	const dependencyFiles = await Promise.all(
 		dependencies.map(async (dep) => {
 			// Handle both "local:component-name" and "./component-name.json" formats.
-			const depName = dep.replace(/^local:/, '').replace(/^\.\//, '').replace(/\.json$/, '');
+			const depName = dep
+				.replace(/^local:/, '')
+				.replace(/^\.\//, '')
+				.replace(/\.json$/, '');
 
 			try {
 				const depItem = await loadHighlightedCodeBlock(depName, new Set(visited));
@@ -88,6 +100,8 @@ export async function loadHighlightedCodeBlock(itemName: string, visited = new S
 		const dependencyFiles = await loadRegistryDependencies(item.registryDependencies, visited);
 		allFiles = [...allFiles, ...dependencyFiles];
 	}
+
+	allFiles = dedupeFilesByTarget(allFiles);
 
 	// Add styles/app.css if cssVars or css exists.
 	const cssContent = generateCssFromMeta(

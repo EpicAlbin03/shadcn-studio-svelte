@@ -7,8 +7,18 @@
 
 	const ctx = CodeBlockContext.get();
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));
-	const language = $derived(file?.target?.split('.').pop() ?? 'svelte');
+	const language = $derived(getLanguageFromTarget(file?.target));
 	const Icon = $derived(getIconForLanguageExtension(language));
+
+	function getLanguageFromTarget(target?: string) {
+		return target?.split('.').pop() ?? 'svelte';
+	}
+
+	function truncateMobileTarget(target: string) {
+		const parts = target.split('/');
+		if (parts.length <= 3) return target;
+		return `${parts[0]}/${parts[1]}/…/${parts.at(-1) ?? ''}`;
+	}
 </script>
 
 {#if file}
@@ -30,24 +40,22 @@
 	</figcaption>
 
 	<div
-		class="flex h-12 shrink-0 items-center gap-2 border-b px-2 py-2 text-code-foreground md:hidden [&_svg]:size-4"
+		class="flex h-12 min-w-0 shrink-0 items-center gap-2 border-b px-2 py-2 text-code-foreground md:hidden [&_svg]:size-4"
 	>
 		<Select.Root type="single" bind:value={() => ctx.activeFile ?? '', (v) => (ctx.activeFile = v)}>
-			<Select.Trigger class="w-64 justify-start [&>svg]:ml-auto">
+			<Select.Trigger class="w-fit min-w-64 justify-start [&>svg]:ml-auto">
 				<Icon class="ml-0! opacity-70" />
-				{file.target}
+				{truncateMobileTarget(file.target)}
 			</Select.Trigger>
-			<Select.Content>
-				{#if ctx.tree}
-					{@const tree = ctx.tree[0]}
-					{#if tree && tree.children}
-						{#each tree.children as treeFile (treeFile.name)}
-							<Select.Item value={treeFile.path ?? ''}>
-								{treeFile.name}
-							</Select.Item>
-						{/each}
-					{/if}
-				{/if}
+			<Select.Content align="start">
+				{#each ctx.files as codeFile (codeFile.target)}
+					{@const fileExt = getLanguageFromTarget(codeFile.target)}
+					{@const FileIcon = getIconForLanguageExtension(fileExt)}
+					<Select.Item value={codeFile.target}>
+						<FileIcon class="opacity-70" />
+						{truncateMobileTarget(codeFile.target)}
+					</Select.Item>
+				{/each}
 			</Select.Content>
 		</Select.Root>
 		<div class="ml-auto flex items-center gap-2">
