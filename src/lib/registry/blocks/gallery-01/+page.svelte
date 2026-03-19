@@ -55,7 +55,7 @@
 		{
 			images: [
 				{
-					src: '/img/blocks/gallery-1.webp',
+					src: '/img/blocks/gallery-01.webp',
 					alt: 'Coastal cliffs and ocean view'
 				}
 			]
