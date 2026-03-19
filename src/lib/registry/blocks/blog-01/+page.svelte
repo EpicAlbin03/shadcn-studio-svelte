@@ -3,7 +3,7 @@
 
 	const blogCards = [
 		{
-			img: '/blocks/blog-01.webp',
+			img: '/img/blocks/blog-01.webp',
 			alt: 'Modern house',
 			title: 'Laws of Transfer of Immovable Property',
 			description:
@@ -11,7 +11,7 @@
 			blogLink: '#'
 		},
 		{
-			img: '/blocks/blog-02.webp',
+			img: '/img/blocks/blog-02.webp',
 			alt: 'Traditional house',
 			title: 'Thane Development Plan 2026 & Master Plan',
 			description:
@@ -19,7 +19,7 @@
 			blogLink: '#'
 		},
 		{
-			img: '/blocks/blog-03.webp',
+			img: '/img/blocks/blog-03.webp',
 			alt: 'Modern house with pool',
 			title: 'What is a Property Sale Agreement?',
 			description:

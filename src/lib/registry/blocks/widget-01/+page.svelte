@@ -3,21 +3,21 @@
 
 	const earningData = [
 		{
-			img: '/blocks/zipcar.webp',
+			img: '/img/blocks/zipcar.webp',
 			platform: 'Zipcar',
 			technologies: 'Vuejs & HTML',
 			earnings: '-$23,569.26',
 			progressPercentage: 75
 		},
 		{
-			img: '/blocks/bitbank.webp',
+			img: '/img/blocks/bitbank.webp',
 			platform: 'Bitbank',
 			technologies: 'Figma & React',
 			earnings: '-$12,650.31',
 			progressPercentage: 25
 		},
 		{
-			img: '/blocks/aviato.webp',
+			img: '/img/blocks/aviato.webp',
 			platform: 'Aviato',
 			technologies: 'HTML & Angular',
 			earnings: '-$55,699.50',

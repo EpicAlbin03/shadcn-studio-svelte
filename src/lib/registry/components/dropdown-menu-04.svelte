@@ -5,31 +5,31 @@
 
 	const listItems = [
 		{
-			src: '/avatars/06.webp',
+			src: '/img/avatars/06.webp',
 			fallback: 'AD',
 			name: 'Angel Dorwart',
 			mail: 'sbaker@hotmail.com'
 		},
 		{
-			src: '/avatars/07.webp',
+			src: '/img/avatars/07.webp',
 			fallback: 'SR',
 			name: 'Skylar Rosser',
 			mail: 'gbaker@yahoo.com'
 		},
 		{
-			src: '/avatars/08.webp',
+			src: '/img/avatars/08.webp',
 			fallback: 'DB',
 			name: 'Dulce Botosh',
 			mail: 'tlee@gmail.com'
 		},
 		{
-			src: '/avatars/09.png',
+			src: '/img/avatars/09.png',
 			fallback: 'AS',
 			name: 'Ahmad Stanton',
 			mail: 'kdavis@hotmail.com'
 		},
 		{
-			src: '/avatars/10.webp',
+			src: '/img/avatars/10.webp',
 			fallback: 'RG',
 			name: 'Randy Gouse',
 			mail: 'ijackson@yahoo.com'

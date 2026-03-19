@@ -34,7 +34,7 @@
 				<p class="text-sm">Scan this code at checkout for 25% off</p>
 			</div>
 			<div class="aspect-square rounded-xl border p-2">
-				<img src="/components/qr-code.webp" alt="Discount QR Code" class="size-38 rounded-md" />
+				<img src="/img/components/qr-code.webp" alt="Discount QR Code" class="size-38 rounded-md" />
 			</div>
 			<div class="flex w-full items-center gap-1.5">
 				<Separator class="flex-1" />

@@ -51,7 +51,7 @@
 			<span class="text-lg font-semibold">Product insight</span>
 			<span class="text-sm text-muted-foreground">Published on 12 MAY 2025 - 6:10 PM</span>
 		</div>
-		<img src="/blocks/widget-02.webp" alt="Product" class="w-20.5 rounded-md" />
+		<img src="/img/blocks/widget-02.webp" alt="Product" class="w-20.5 rounded-md" />
 	</Card.Header>
 	<Card.Content class="space-y-4">
 		<Separator />

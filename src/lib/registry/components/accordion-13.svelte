@@ -7,20 +7,20 @@
 			icon: PackageIcon,
 			title: 'How do I track my order?',
 			content: "You'll receive tracking information via email once your order ships.",
-			media: '/components/accordion-01.webp'
+			media: '/img/components/accordion-01.webp'
 		},
 		{
 			icon: RefreshCwIcon,
 			title: 'What is your return policy?',
 			content: 'We offer a 30-day return policy for most items.',
-			media: '/components/accordion-02.webp'
+			media: '/img/components/accordion-02.webp'
 		},
 		{
 			icon: HeadsetIcon,
 			title: 'How can I contact customer support?',
 			content:
 				'You can reach us via live chat, email at support@example.com, or by phone at 1-800-123-4567.',
-			media: '/components/accordion-03.webp'
+			media: '/img/components/accordion-03.webp'
 		}
 	];
 </script>

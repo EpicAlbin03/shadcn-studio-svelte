@@ -15,27 +15,27 @@
 		{
 			name: 'Olivia Martin',
 			email: 'm@example.com',
-			avatar: '/avatars/01.webp'
+			avatar: '/img/avatars/01.webp'
 		},
 		{
 			name: 'Isabella Nguyen',
 			email: 'isabella.nguyen@email.com',
-			avatar: '/avatars/03.webp'
+			avatar: '/img/avatars/03.webp'
 		},
 		{
 			name: 'Emma Wilson',
 			email: 'emma@example.com',
-			avatar: '/avatars/05.webp'
+			avatar: '/img/avatars/05.webp'
 		},
 		{
 			name: 'Jackson Lee',
 			email: 'lee@example.com',
-			avatar: '/avatars/02.webp'
+			avatar: '/img/avatars/02.webp'
 		},
 		{
 			name: 'William Kim',
 			email: 'will@email.com',
-			avatar: '/avatars/04.webp'
+			avatar: '/img/avatars/04.webp'
 		}
 	] as const;
 
@@ -71,7 +71,7 @@
 	<Card.Header class="flex flex-row items-center">
 		<div class="flex items-center gap-4">
 			<Avatar.Root class="border">
-				<Avatar.Image src="/avatars/01.webp" alt="Image" />
+				<Avatar.Image src="/img/avatars/01.webp" alt="Image" />
 				<Avatar.Fallback>OM</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col gap-0.5">

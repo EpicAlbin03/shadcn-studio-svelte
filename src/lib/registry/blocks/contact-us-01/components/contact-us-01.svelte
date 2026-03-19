@@ -23,7 +23,7 @@
 
 		<div class="grid items-center gap-12 lg:grid-cols-2">
 			<img
-				src="/blocks/contact-us.webp"
+				src="/img/blocks/contact-us.webp"
 				alt="Contact illustration"
 				class="size-full rounded-md object-cover max-lg:max-h-70"
 			/>

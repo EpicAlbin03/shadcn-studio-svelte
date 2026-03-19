@@ -38,7 +38,7 @@
 		{
 			id: '1',
 			product: 'Black Chair',
-			productImage: '/components/product-01.webp',
+			productImage: '/img/components/product-01.webp',
 			fallback: 'BC',
 			price: 159,
 			availability: 'In Stock',
@@ -47,7 +47,7 @@
 		{
 			id: '2',
 			product: 'Nike Jordan',
-			productImage: '/components/product-02.webp',
+			productImage: '/img/components/product-02.webp',
 			fallback: 'NJ',
 			price: 599,
 			availability: 'Limited',
@@ -56,7 +56,7 @@
 		{
 			id: '3',
 			product: 'OnePlus 7 Pro',
-			productImage: '/components/product-03.webp',
+			productImage: '/img/components/product-03.webp',
 			fallback: 'O7P',
 			price: 1299,
 			availability: 'Out of Stock',
@@ -65,7 +65,7 @@
 		{
 			id: '4',
 			product: 'Nintendo Switch',
-			productImage: '/components/product-04.webp',
+			productImage: '/img/components/product-04.webp',
 			fallback: 'NS',
 			price: 499,
 			availability: 'In Stock',
@@ -74,7 +74,7 @@
 		{
 			id: '5',
 			product: 'Apple Magic Mouse',
-			productImage: '/components/product-05.webp',
+			productImage: '/img/components/product-05.webp',
 			fallback: 'AMM',
 			price: 970,
 			availability: 'Limited',
@@ -83,7 +83,7 @@
 		{
 			id: '6',
 			product: 'Apple Watch',
-			productImage: '/components/product-06.webp',
+			productImage: '/img/components/product-06.webp',
 			fallback: 'AW',
 			price: 1500,
 			availability: 'Limited',
@@ -92,7 +92,7 @@
 		{
 			id: '7',
 			product: 'Casio G-Shock',
-			productImage: '/components/product-08.webp',
+			productImage: '/img/components/product-08.webp',
 			fallback: 'CGS',
 			price: 194,
 			availability: 'Out of Stock',
@@ -101,7 +101,7 @@
 		{
 			id: '8',
 			product: 'RayBan Sunglasses',
-			productImage: '/components/product-10.webp',
+			productImage: '/img/components/product-10.webp',
 			fallback: 'RBS',
 			price: 199,
 			availability: 'Out of Stock',

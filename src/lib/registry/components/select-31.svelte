@@ -6,19 +6,19 @@
 	const users = [
 		{
 			id: '1',
-			src: '/avatars/01.webp',
+			src: '/img/avatars/01.webp',
 			fallback: 'PG',
 			name: 'Phillip George'
 		},
 		{
 			id: '2',
-			src: '/avatars/02.webp',
+			src: '/img/avatars/02.webp',
 			fallback: 'JD',
 			name: 'Jaylon Donin'
 		},
 		{
 			id: '3',
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'TC',
 			name: 'Tiana Curtis'
 		}

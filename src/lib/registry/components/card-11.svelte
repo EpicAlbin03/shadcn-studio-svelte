@@ -20,7 +20,7 @@
 	<Card.Header class="flex items-center justify-between gap-3">
 		<div class="flex items-center gap-3">
 			<Avatar.Root class="ring-2 ring-ring">
-				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">PG</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col gap-0.5">
@@ -43,7 +43,7 @@
 	</Card.Header>
 	<Card.Content class="space-y-6 text-sm">
 		<img
-			src="/components/card-06.webp"
+			src="/img/components/card-06.webp"
 			alt="Banner"
 			class="aspect-video w-full rounded-md object-cover"
 		/>

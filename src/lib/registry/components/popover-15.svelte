@@ -16,7 +16,7 @@
 		<div class="grid gap-4">
 			<div class="flex flex-col items-center gap-2">
 				<Avatar.Root class="size-20">
-					<Avatar.Image src="/avatars/05.webp" alt="Howard Lloyd" />
+					<Avatar.Image src="/img/avatars/05.webp" alt="Howard Lloyd" />
 					<Avatar.Fallback class="text-xs">HL</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="flex flex-col items-center text-center">

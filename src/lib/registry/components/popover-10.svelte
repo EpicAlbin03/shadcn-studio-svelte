@@ -8,18 +8,18 @@
 
 	const users = [
 		{
-			image: '/avatars/03.webp',
+			image: '/img/avatars/03.webp',
 			name: 'Howard Lloyd',
 			fallback: 'HL',
 			notifications: 3
 		},
 		{
-			image: '/avatars/06.webp',
+			image: '/img/avatars/06.webp',
 			name: 'Olivia Sparks',
 			fallback: 'OS'
 		},
 		{
-			image: '/avatars/05.webp',
+			image: '/img/avatars/05.webp',
 			name: 'Hallie Richards',
 			fallback: 'HR',
 			notifications: 1

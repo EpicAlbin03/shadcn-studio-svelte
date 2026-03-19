@@ -15,7 +15,7 @@
 	<div class="relative max-h-screen w-full p-2 max-lg:hidden">
 		<div class="h-full w-full rounded-2xl bg-black"></div>
 		<img
-			src="/blocks/error.webp"
+			src="/img/blocks/error.webp"
 			alt="404 illustration"
 			class="absolute top-1/2 left-1/2 h-[clamp(260px,25vw,406px)] -translate-x-1/2 -translate-y-1/2"
 		/>

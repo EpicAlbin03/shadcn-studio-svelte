@@ -5,7 +5,7 @@
 
 <div class="relative w-fit">
 	<Avatar.Root class="size-10 rounded-sm">
-		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
+		<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" class="rounded-sm" />
 		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 	</Avatar.Root>
 	<Badge

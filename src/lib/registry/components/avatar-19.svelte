@@ -5,32 +5,32 @@
 
 	const avatars = [
 		{
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'OS',
 			name: 'Olivia Sparks'
 		},
 		{
-			src: '/avatars/06.webp',
+			src: '/img/avatars/06.webp',
 			fallback: 'HL',
 			name: 'Howard Lloyd'
 		},
 		{
-			src: '/avatars/05.webp',
+			src: '/img/avatars/05.webp',
 			fallback: 'HR',
 			name: 'Hallie Richards'
 		},
 		{
-			src: '/avatars/16.webp',
+			src: '/img/avatars/16.webp',
 			fallback: 'JW',
 			name: 'Jenny Wilson'
 		},
 		{
-			src: '/avatars/01.webp',
+			src: '/img/avatars/01.webp',
 			fallback: 'DR',
 			name: 'Darlene Robertson'
 		},
 		{
-			src: '/avatars/02.webp',
+			src: '/img/avatars/02.webp',
 			fallback: 'LA',
 			name: 'Leslie Alexander'
 		}

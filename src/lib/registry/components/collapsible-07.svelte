@@ -25,7 +25,7 @@
 			<Card.Content class="space-y-2 px-0">
 				<p class="px-6">You'll receive tracking information via email once your order ships.</p>
 				<img
-					src="/components/accordion-01.webp"
+					src="/img/components/accordion-01.webp"
 					alt="Banner"
 					class="aspect-video h-70 rounded-b-xl object-cover"
 				/>

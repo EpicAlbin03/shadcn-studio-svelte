@@ -4,7 +4,7 @@
 
 <div class="relative w-fit">
 	<Avatar.Root class="size-10">
-		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+		<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 		<Avatar.Fallback>HR</Avatar.Fallback>
 	</Avatar.Root>
 	<span

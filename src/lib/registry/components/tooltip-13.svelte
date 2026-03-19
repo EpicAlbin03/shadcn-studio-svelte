@@ -7,17 +7,17 @@
 
 	const avatars = [
 		{
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'OS',
 			name: 'Olivia Sparks'
 		},
 		{
-			src: '/avatars/06.webp',
+			src: '/img/avatars/06.webp',
 			fallback: 'HL',
 			name: 'Howard Lloyd'
 		},
 		{
-			src: '/avatars/05.webp',
+			src: '/img/avatars/05.webp',
 			fallback: 'HR',
 			name: 'Hallie Richards'
 		}

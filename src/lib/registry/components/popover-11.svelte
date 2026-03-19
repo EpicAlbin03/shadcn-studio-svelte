@@ -8,21 +8,21 @@
 	const notifications = [
 		{
 			id: 1,
-			image: '/avatars/03.webp',
+			image: '/img/avatars/03.webp',
 			message: 'Harry assigned you task of New API implementation',
 			fallback: 'HL',
 			time: '15 Minutes'
 		},
 		{
 			id: 2,
-			image: '/avatars/06.webp',
+			image: '/img/avatars/06.webp',
 			message: 'Jerry joined team',
 			fallback: 'OS',
 			time: '35 Minutes'
 		},
 		{
 			id: 3,
-			image: '/avatars/05.webp',
+			image: '/img/avatars/05.webp',
 			message: 'Congratulate ruby for married life',
 			fallback: 'HR',
 			time: '3 days'

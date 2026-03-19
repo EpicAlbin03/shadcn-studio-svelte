@@ -58,5 +58,5 @@
 		<Button size="lg" href="#">Try It Now</Button>
 	</div>
 
-	<img src="/blocks/hero.webp" alt="Dishes" class="min-h-67 w-full object-cover" />
+	<img src="/img/blocks/hero.webp" alt="Dishes" class="min-h-67 w-full object-cover" />
 </section>

@@ -6,7 +6,7 @@
 
 	const users = [
 		{
-			image: '/avatars/03.webp',
+			image: '/img/avatars/03.webp',
 			fallback: 'HL',
 			name: 'Howard Lloyd',
 			bio: 'Senior Product Manager with 8+ years of experience in SaaS product development and team leadership.',
@@ -14,7 +14,7 @@
 			followers: 120
 		},
 		{
-			image: '/avatars/06.webp',
+			image: '/img/avatars/06.webp',
 			fallback: 'OS',
 			name: 'Olivia Sparks',
 			bio: 'Full-stack Software Engineer specializing in React, Node.js, and cloud architecture solutions.',
@@ -23,7 +23,7 @@
 			followed: true
 		},
 		{
-			image: '/avatars/05.webp',
+			image: '/img/avatars/05.webp',
 			fallback: 'HR',
 			name: 'Hallie Richards',
 			bio: 'Creative UI/UX Designer with expertise in user research, wireframing, and accessible interface design.',

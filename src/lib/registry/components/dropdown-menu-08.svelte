@@ -13,7 +13,7 @@
 	<DropdownMenu.Content class="w-56">
 		<DropdownMenu.Label class="flex items-center gap-2">
 			<Avatar.Root>
-				<Avatar.Image src="/avatars/01.webp" alt="Phillip George" />
+				<Avatar.Image src="/img/avatars/01.webp" alt="Phillip George" />
 				<Avatar.Fallback class="text-xs">PG</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-1 flex-col">

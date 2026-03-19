@@ -13,7 +13,7 @@
 	<Tooltip.Content>
 		<div class="flex items-center gap-1.5">
 			<Avatar.Root class="size-5">
-				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 			</Avatar.Root>
 			<p class="font-medium">Hallie Richards</p>

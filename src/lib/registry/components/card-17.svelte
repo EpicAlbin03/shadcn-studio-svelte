@@ -99,7 +99,7 @@
 	<Card.Content class="space-y-6 text-sm">
 		<img
 			bind:this={imageRef}
-			src="/components/card-10.webp"
+			src="/img/components/card-10.webp"
 			alt="Banner"
 			class="aspect-video w-full rounded-md object-cover"
 			width={500}

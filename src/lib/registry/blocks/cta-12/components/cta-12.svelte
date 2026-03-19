@@ -11,7 +11,7 @@
 				<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 					<div class="relative h-64 sm:h-80 lg:h-auto">
 						<img
-							src="/blocks/cta-12.webp"
+							src="/img/blocks/cta-12.webp"
 							alt="Workspace with laptop"
 							class="h-full w-full rounded-lg object-cover"
 						/>

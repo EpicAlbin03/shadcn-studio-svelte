@@ -5,28 +5,28 @@
 
 	const tasks = [
 		{
-			image: '/avatars/03.webp',
+			image: '/img/avatars/03.webp',
 			fallback: 'HL',
 			name: 'Howard Lloyd',
 			designation: 'Product Manager',
 			percentage: 90
 		},
 		{
-			image: '/avatars/06.webp',
+			image: '/img/avatars/06.webp',
 			fallback: 'OS',
 			name: 'Olivia Sparks',
 			designation: 'Software Engineer',
 			percentage: 60
 		},
 		{
-			image: '/avatars/05.webp',
+			image: '/img/avatars/05.webp',
 			fallback: 'HR',
 			name: 'Hallie Richards',
 			designation: 'UI/UX Designer',
 			percentage: 80
 		},
 		{
-			image: '/avatars/16.webp',
+			image: '/img/avatars/16.webp',
 			fallback: 'JW',
 			name: 'Jenny Wilson',
 			designation: 'Junior Developer',

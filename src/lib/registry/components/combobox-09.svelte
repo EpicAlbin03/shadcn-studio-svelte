@@ -7,16 +7,16 @@
 	import { tick } from 'svelte';
 
 	const countries = [
-		{ value: '1', label: 'India', flag: '/flags/india.webp' },
-		{ value: '2', label: 'China', flag: '/flags/china.webp' },
-		{ value: '3', label: 'Monaco', flag: '/flags/monaco.webp' },
-		{ value: '4', label: 'Serbia', flag: '/flags/serbia.webp' },
-		{ value: '5', label: 'Romania', flag: '/flags/romania.webp' },
-		{ value: '6', label: 'Mayotte', flag: '/flags/mayotte.webp' },
-		{ value: '7', label: 'Iraq', flag: '/flags/iraq.webp' },
-		{ value: '8', label: 'Syria', flag: '/flags/syria.webp' },
-		{ value: '9', label: 'Korea', flag: '/flags/korea.webp' },
-		{ value: '10', label: 'Zimbabwe', flag: '/flags/zimbabwe.webp' }
+		{ value: '1', label: 'India', flag: '/img/flags/india.webp' },
+		{ value: '2', label: 'China', flag: '/img/flags/china.webp' },
+		{ value: '3', label: 'Monaco', flag: '/img/flags/monaco.webp' },
+		{ value: '4', label: 'Serbia', flag: '/img/flags/serbia.webp' },
+		{ value: '5', label: 'Romania', flag: '/img/flags/romania.webp' },
+		{ value: '6', label: 'Mayotte', flag: '/img/flags/mayotte.webp' },
+		{ value: '7', label: 'Iraq', flag: '/img/flags/iraq.webp' },
+		{ value: '8', label: 'Syria', flag: '/img/flags/syria.webp' },
+		{ value: '9', label: 'Korea', flag: '/img/flags/korea.webp' },
+		{ value: '10', label: 'Zimbabwe', flag: '/img/flags/zimbabwe.webp' }
 	];
 
 	const id = $props.id();

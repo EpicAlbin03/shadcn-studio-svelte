@@ -8,37 +8,37 @@
 
 	const friends = [
 		{
-			src: '/avatars/01.webp',
+			src: '/img/avatars/01.webp',
 			fallback: 'CP',
 			name: 'Cristofer Press',
 			mail: 'cristoferpress@gmail.com'
 		},
 		{
-			src: '/avatars/02.webp',
+			src: '/img/avatars/02.webp',
 			fallback: 'Ck',
 			name: 'Carla Korsgaard',
 			mail: 'carlakorsgaard@gmail.com'
 		},
 		{
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'HB',
 			name: 'Hanna Baptista',
 			mail: 'hannabaptista@gmail.com'
 		},
 		{
-			src: '/avatars/04.webp',
+			src: '/img/avatars/04.webp',
 			fallback: 'ZD',
 			name: 'Zord Dorwart',
 			mail: 'zorddorwart@gmail.com'
 		},
 		{
-			src: '/avatars/05.webp',
+			src: '/img/avatars/05.webp',
 			fallback: 'CB',
 			name: 'Corey Bergson',
 			mail: 'coreybergson@gmail.com'
 		},
 		{
-			src: '/avatars/06.webp',
+			src: '/img/avatars/06.webp',
 			fallback: 'JL',
 			name: 'James Lubin',
 			mail: 'jameslubin@gmail.com'

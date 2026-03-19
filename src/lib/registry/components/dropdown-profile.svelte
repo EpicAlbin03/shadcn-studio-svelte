@@ -25,7 +25,7 @@
 		{#snippet child({ props })}
 			<Button {...props} variant="ghost" size="icon" class="size-9.5">
 				<Avatar.Root class="size-9.5 rounded-md">
-					<Avatar.Image src="/avatars/01.webp" />
+					<Avatar.Image src="/img/avatars/01.webp" />
 					<Avatar.Fallback>JD</Avatar.Fallback>
 				</Avatar.Root>
 			</Button>
@@ -35,7 +35,7 @@
 		<DropdownMenu.Label class="flex items-center gap-4 font-normal">
 			<div class="relative">
 				<Avatar.Root class="size-9">
-					<Avatar.Image src="/avatars/01.webp" alt="John Doe" />
+					<Avatar.Image src="/img/avatars/01.webp" alt="John Doe" />
 					<Avatar.Fallback>JD</Avatar.Fallback>
 				</Avatar.Root>
 				<span

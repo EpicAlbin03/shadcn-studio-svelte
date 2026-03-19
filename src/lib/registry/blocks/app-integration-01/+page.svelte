@@ -5,19 +5,19 @@
 		{
 			name: 'Microsoft',
 			description: 'Empowering Innovation and Connectivity',
-			image: '/blocks/microsoft-icon.webp',
+			image: '/img/blocks/microsoft-icon.webp',
 			alt: 'Microsoft'
 		},
 		{
 			name: 'Spotify',
 			description: 'Your soundtrack to every moment.',
-			image: '/blocks/spotify-icon.webp',
+			image: '/img/blocks/spotify-icon.webp',
 			alt: 'Spotify'
 		},
 		{
 			name: 'Github',
 			description: 'Your Hub for Open Source Innovation',
-			image: '/blocks/github-icon.webp',
+			image: '/img/blocks/github-icon.webp',
 			alt: 'Github'
 		}
 	];

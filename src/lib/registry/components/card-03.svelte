@@ -15,7 +15,7 @@
 		</div>
 		<div class="flex items-center gap-4">
 			<Avatar.Root>
-				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">JA</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col">
@@ -25,7 +25,7 @@
 		</div>
 		<div class="flex items-center gap-4">
 			<Avatar.Root>
-				<Avatar.Image src="/avatars/02.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/02.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">DA</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col">
@@ -35,7 +35,7 @@
 		</div>
 		<div class="flex items-center gap-4">
 			<Avatar.Root>
-				<Avatar.Image src="/avatars/03.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/03.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col">

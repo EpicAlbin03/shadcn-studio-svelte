@@ -5,7 +5,7 @@
 
 <Button class="rounded-full ps-2">
 	<Avatar.Root class="size-6">
-		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+		<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 		<Avatar.Fallback class="text-xs text-foreground">HR</Avatar.Fallback>
 	</Avatar.Root>
 	@hallierichards

@@ -29,14 +29,14 @@
 
 	const earningData: EarningData[] = [
 		{
-			img: '/blocks/zipcar.webp',
+			img: '/img/blocks/zipcar.webp',
 			platform: 'Zipcar',
 			technologies: 'Vuejs & HTML',
 			earnings: '-$23,569.26',
 			progressPercentage: 75
 		},
 		{
-			img: '/blocks/bitbank.webp',
+			img: '/img/blocks/bitbank.webp',
 			platform: 'Bitbank',
 			technologies: 'Figma & React',
 			earnings: '-$12,650.31',
@@ -47,7 +47,7 @@
 	const transactionData: TransactionItem[] = [
 		{
 			id: '1',
-			avatar: '/avatars/01.webp',
+			avatar: '/img/avatars/01.webp',
 			avatarFallback: 'JA',
 			name: 'Jack Alfredo',
 			amount: 316.0,
@@ -57,7 +57,7 @@
 		},
 		{
 			id: '2',
-			avatar: '/avatars/02.webp',
+			avatar: '/img/avatars/02.webp',
 			avatarFallback: 'MG',
 			name: 'Maria Gonzalez',
 			amount: 253.4,
@@ -67,7 +67,7 @@
 		},
 		{
 			id: '3',
-			avatar: '/avatars/03.webp',
+			avatar: '/img/avatars/03.webp',
 			avatarFallback: 'JD',
 			name: 'John Doe',
 			amount: 852.0,
@@ -77,7 +77,7 @@
 		},
 		{
 			id: '4',
-			avatar: '/avatars/04.webp',
+			avatar: '/img/avatars/04.webp',
 			avatarFallback: 'EC',
 			name: 'Emily Carter',
 			amount: 889.0,
@@ -87,7 +87,7 @@
 		},
 		{
 			id: '5',
-			avatar: '/avatars/05.webp',
+			avatar: '/img/avatars/05.webp',
 			avatarFallback: 'DL',
 			name: 'David Lee',
 			amount: 723.16,
@@ -97,7 +97,7 @@
 		},
 		{
 			id: '6',
-			avatar: '/avatars/06.webp',
+			avatar: '/img/avatars/06.webp',
 			avatarFallback: 'SP',
 			name: 'Sophia Patel',
 			amount: 612.0,
@@ -107,7 +107,7 @@
 		},
 		{
 			id: '7',
-			avatar: '/avatars/07.webp',
+			avatar: '/img/avatars/07.webp',
 			avatarFallback: 'RW',
 			name: 'Robert Wilson',
 			amount: 445.25,
@@ -117,7 +117,7 @@
 		},
 		{
 			id: '8',
-			avatar: '/avatars/08.webp',
+			avatar: '/img/avatars/08.webp',
 			avatarFallback: 'LM',
 			name: 'Lisa Martinez',
 			amount: 297.8,
@@ -127,7 +127,7 @@
 		},
 		{
 			id: '9',
-			avatar: '/avatars/09.png',
+			avatar: '/img/avatars/09.png',
 			avatarFallback: 'MT',
 			name: 'Michael Thompson',
 			amount: 756.9,
@@ -137,7 +137,7 @@
 		},
 		{
 			id: '10',
-			avatar: '/avatars/10.webp',
+			avatar: '/img/avatars/10.webp',
 			avatarFallback: 'AJ',
 			name: 'Amanda Johnson',
 			amount: 189.5,
@@ -147,7 +147,7 @@
 		},
 		{
 			id: '11',
-			avatar: '/avatars/11.png',
+			avatar: '/img/avatars/11.png',
 			avatarFallback: 'KB',
 			name: 'Kevin Brown',
 			amount: 1024.75,
@@ -157,7 +157,7 @@
 		},
 		{
 			id: '12',
-			avatar: '/avatars/12.png',
+			avatar: '/img/avatars/12.png',
 			avatarFallback: 'SD',
 			name: 'Sarah Davis',
 			amount: 367.2,
@@ -167,7 +167,7 @@
 		},
 		{
 			id: '13',
-			avatar: '/avatars/13.png',
+			avatar: '/img/avatars/13.png',
 			avatarFallback: 'CG',
 			name: 'Christopher Garcia',
 			amount: 598.45,
@@ -177,7 +177,7 @@
 		},
 		{
 			id: '14',
-			avatar: '/avatars/14.png',
+			avatar: '/img/avatars/14.png',
 			avatarFallback: 'JR',
 			name: 'Jennifer Rodriguez',
 			amount: 821.3,
@@ -187,7 +187,7 @@
 		},
 		{
 			id: '15',
-			avatar: '/avatars/15.webp',
+			avatar: '/img/avatars/15.webp',
 			avatarFallback: 'DM',
 			name: 'Daniel Miller',
 			amount: 156.75,
@@ -197,7 +197,7 @@
 		},
 		{
 			id: '16',
-			avatar: '/avatars/16.webp',
+			avatar: '/img/avatars/16.webp',
 			avatarFallback: 'NW',
 			name: 'Nicole White',
 			amount: 934.1,
@@ -207,7 +207,7 @@
 		},
 		{
 			id: '17',
-			avatar: '/avatars/17.webp',
+			avatar: '/img/avatars/17.webp',
 			avatarFallback: 'AL',
 			name: 'Anthony Lopez',
 			amount: 412.85,
@@ -217,7 +217,7 @@
 		},
 		{
 			id: '18',
-			avatar: '/avatars/18.webp',
+			avatar: '/img/avatars/18.webp',
 			avatarFallback: 'MH',
 			name: 'Michelle Harris',
 			amount: 675.5,
@@ -227,7 +227,7 @@
 		},
 		{
 			id: '19',
-			avatar: '/avatars/19.webp',
+			avatar: '/img/avatars/19.webp',
 			avatarFallback: 'JC',
 			name: 'James Clark',
 			amount: 289.95,
@@ -237,7 +237,7 @@
 		},
 		{
 			id: '20',
-			avatar: '/avatars/20.webp',
+			avatar: '/img/avatars/20.webp',
 			avatarFallback: 'RL',
 			name: 'Rachel Lewis',
 			amount: 1156.25,
@@ -247,7 +247,7 @@
 		},
 		{
 			id: '21',
-			avatar: '/avatars/21.webp',
+			avatar: '/img/avatars/21.webp',
 			avatarFallback: 'TY',
 			name: 'Thomas Young',
 			amount: 543.6,
@@ -257,7 +257,7 @@
 		},
 		{
 			id: '22',
-			avatar: '/avatars/22.webp',
+			avatar: '/img/avatars/22.webp',
 			avatarFallback: 'SB',
 			name: 'Stephanie Brown',
 			amount: 789.3,
@@ -267,7 +267,7 @@
 		},
 		{
 			id: '23',
-			avatar: '/avatars/23.webp',
+			avatar: '/img/avatars/23.webp',
 			avatarFallback: 'BM',
 			name: 'Brandon Moore',
 			amount: 425.75,
@@ -277,7 +277,7 @@
 		},
 		{
 			id: '24',
-			avatar: '/avatars/24.webp',
+			avatar: '/img/avatars/24.webp',
 			avatarFallback: 'KT',
 			name: 'Kelly Taylor',
 			amount: 1203.5,
@@ -287,7 +287,7 @@
 		},
 		{
 			id: '25',
-			avatar: '/avatars/25.webp',
+			avatar: '/img/avatars/25.webp',
 			avatarFallback: 'MA',
 			name: 'Mark Anderson',
 			amount: 356.2,

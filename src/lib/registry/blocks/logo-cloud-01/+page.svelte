@@ -3,43 +3,43 @@
 
 	const logos = [
 		{
-			image: '/blocks/amazon.webp',
+			image: '/img/blocks/amazon.webp',
 			alt: 'Amazon'
 		},
 		{
-			image: '/blocks/hubspot.webp',
+			image: '/img/blocks/hubspot.webp',
 			alt: 'HubSpot'
 		},
 		{
-			image: '/blocks/walmart.webp',
+			image: '/img/blocks/walmart.webp',
 			alt: 'Walmart'
 		},
 		{
-			image: '/blocks/microsoft.webp',
+			image: '/img/blocks/microsoft.webp',
 			alt: 'Microsoft'
 		},
 		{
-			image: '/blocks/evernote.webp',
+			image: '/img/blocks/evernote.webp',
 			alt: 'Evernote'
 		},
 		{
-			image: '/blocks/paypal.webp',
+			image: '/img/blocks/paypal.webp',
 			alt: 'PayPal'
 		},
 		{
-			image: '/blocks/airbnb.webp',
+			image: '/img/blocks/airbnb.webp',
 			alt: 'Airbnb'
 		},
 		{
-			image: '/blocks/adobe.webp',
+			image: '/img/blocks/adobe.webp',
 			alt: 'Adobe'
 		},
 		{
-			image: '/blocks/shopify.webp',
+			image: '/img/blocks/shopify.webp',
 			alt: 'Shopify'
 		},
 		{
-			image: '/blocks/huawei.webp',
+			image: '/img/blocks/huawei.webp',
 			alt: 'Huawei'
 		}
 	];

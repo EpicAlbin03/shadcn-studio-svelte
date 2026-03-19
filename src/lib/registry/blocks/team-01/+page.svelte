@@ -3,7 +3,7 @@
 
 	const teamMembers = [
 		{
-			image: '/blocks/team-01.webp',
+			image: '/img/blocks/team-01.webp',
 			alt: 'Phillip Bothman',
 			name: 'Phillip Bothman',
 			role: 'Founder & CEO',
@@ -16,7 +16,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-02.webp',
+			image: '/img/blocks/team-02.webp',
 			alt: 'James Kenter',
 			name: 'James Kenter',
 			role: 'Engineering Manager',
@@ -29,7 +29,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-03.webp',
+			image: '/img/blocks/team-03.webp',
 			alt: 'Cristofer Kenter',
 			name: 'Cristofer Kenter',
 			role: 'Product Designer',
@@ -42,7 +42,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-04.webp',
+			image: '/img/blocks/team-04.webp',
 			alt: 'Alena Lubin',
 			name: 'Alena Lubin',
 			role: 'Frontend Developer',
@@ -55,7 +55,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-05.webp',
+			image: '/img/blocks/team-05.webp',
 			alt: 'Jayden Lipshultz',
 			name: 'Jayden Lipshultz',
 			role: 'Sales Lead',
@@ -68,7 +68,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-06.webp',
+			image: '/img/blocks/team-06.webp',
 			alt: 'Maria Donin',
 			name: 'Maria Donin',
 			role: 'Product Manager',
@@ -81,7 +81,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-07.webp',
+			image: '/img/blocks/team-07.webp',
 			alt: 'Carter Saris',
 			name: 'Carter Saris',
 			role: 'UX Researcher',
@@ -94,7 +94,7 @@
 			}
 		},
 		{
-			image: '/blocks/team-08.webp',
+			image: '/img/blocks/team-08.webp',
 			alt: 'Ahmad Donin',
 			name: 'Ahmad Donin',
 			role: 'Customer Success',

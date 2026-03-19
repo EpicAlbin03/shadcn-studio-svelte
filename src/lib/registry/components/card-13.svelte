@@ -16,7 +16,7 @@
 	<Card.Footer class="justify-between gap-3 max-sm:flex-col max-sm:items-stretch">
 		<div class="flex items-center gap-3">
 			<Avatar.Root class="ring-2 ring-ring">
-				<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
+				<Avatar.Image src="/img/avatars/05.webp" alt="Hallie Richards" />
 				<Avatar.Fallback class="text-xs">SG</Avatar.Fallback>
 			</Avatar.Root>
 			<div class="flex flex-col gap-0.5">

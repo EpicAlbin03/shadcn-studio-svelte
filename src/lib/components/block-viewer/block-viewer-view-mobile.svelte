@@ -29,7 +29,7 @@
 		{:else}
 			<div class="overflow-hidden rounded-xl border">
 				<img
-					src="/blocks/registry/{ctx.item.name}.png"
+					src="/img/blocks/registry/{ctx.item.name}.png"
 					alt={ctx.item.name}
 					data-block={ctx.item.name}
 					width={1440}
@@ -37,7 +37,7 @@
 					class="object-cover dark:hidden"
 				/>
 				<img
-					src="/blocks/registry/{ctx.item.name}-dark.png"
+					src="/img/blocks/registry/{ctx.item.name}-dark.png"
 					alt={ctx.item.name}
 					data-block={ctx.item.name}
 					width={1440}

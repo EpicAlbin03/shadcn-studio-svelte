@@ -8,7 +8,7 @@
 >
 	<Card.Root class="overflow-hidden pt-0">
 		<Card.Content class="px-0">
-			<img src="/components/card-07.webp" alt="Banner" class="aspect-video w-92 object-cover" />
+			<img src="/img/components/card-07.webp" alt="Banner" class="aspect-video w-92 object-cover" />
 		</Card.Content>
 		<Card.Header>
 			<Card.Title>Mystical Blue Swirl</Card.Title>
@@ -24,7 +24,7 @@
 	</Card.Root>
 	<Card.Root class="overflow-hidden pt-0">
 		<Card.Content class="px-0">
-			<img src="/components/card-04.webp" alt="Banner" class="aspect-video w-92 object-cover" />
+			<img src="/img/components/card-04.webp" alt="Banner" class="aspect-video w-92 object-cover" />
 		</Card.Content>
 		<Card.Header>
 			<Card.Title>Fiery Sunset Gradient</Card.Title>
@@ -40,7 +40,7 @@
 	</Card.Root>
 	<Card.Root class="overflow-hidden pt-0">
 		<Card.Content class="px-0">
-			<img src="/components/card-05.webp" alt="Banner" class="aspect-video w-92 object-cover" />
+			<img src="/img/components/card-05.webp" alt="Banner" class="aspect-video w-92 object-cover" />
 		</Card.Content>
 		<Card.Header>
 			<Card.Title>Cosmic Blue Waves</Card.Title>

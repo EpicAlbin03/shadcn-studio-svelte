@@ -8,11 +8,9 @@
 	let liked = $state(false);
 </script>
 
-<div
-	class="relative max-w-md rounded-xl bg-linear-to-r from-zinc-600 to-violet-300 pt-0 shadow-lg"
->
+<div class="relative max-w-md rounded-xl bg-linear-to-r from-zinc-600 to-violet-300 pt-0 shadow-lg">
 	<div class="flex h-60 items-center justify-center">
-		<img src="/components/card-11.webp" alt="Shoes" class="w-75" />
+		<img src="/img/components/card-11.webp" alt="Shoes" class="w-75" />
 	</div>
 	<Button
 		size="icon"

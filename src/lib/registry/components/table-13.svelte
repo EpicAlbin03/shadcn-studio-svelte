@@ -6,7 +6,7 @@
 		{
 			id: '1',
 			name: 'Philip George',
-			src: '/avatars/01.webp',
+			src: '/img/avatars/01.webp',
 			fallback: 'PG',
 			email: 'philipgeorge20@gmail.com',
 			location: 'Mumbai, India',
@@ -16,7 +16,7 @@
 		{
 			id: '2',
 			name: 'Tiana Curtis',
-			src: '/avatars/02.webp',
+			src: '/img/avatars/02.webp',
 			fallback: 'TC',
 			email: 'tiana12@yahoo.com',
 			location: 'New York, US',
@@ -26,7 +26,7 @@
 		{
 			id: '3',
 			name: 'Jaylon Donin',
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'JD',
 			email: 'jaylon23d.@outlook.com',
 			location: 'Washington, US',
@@ -36,7 +36,7 @@
 		{
 			id: '4',
 			name: 'Kim Yim',
-			src: '/avatars/04.webp',
+			src: '/img/avatars/04.webp',
 			fallback: 'KY',
 			email: 'kim96@gmail.com',
 			location: 'Busan, South Korea',

@@ -5,7 +5,7 @@
 
 <Card.Root class="max-w-lg py-0 sm:flex-row sm:gap-0">
 	<Card.Content class="grow px-0">
-		<img src="/components/card-03.webp" alt="Banner" class="size-full rounded-s-xl" />
+		<img src="/img/components/card-03.webp" alt="Banner" class="size-full rounded-s-xl" />
 	</Card.Content>
 	<div class="sm:min-w-54">
 		<Card.Header class="pt-6">

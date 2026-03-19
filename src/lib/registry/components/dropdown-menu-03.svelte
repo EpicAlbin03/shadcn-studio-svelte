@@ -6,7 +6,7 @@
 
 	const listItems = [
 		{
-			src: '/avatars/01.webp',
+			src: '/img/avatars/01.webp',
 			fallback: 'PG',
 			name: 'Phillip George',
 			message: 'Hii samira, thanks for the...',
@@ -14,7 +14,7 @@
 			newMessages: 1
 		},
 		{
-			src: '/avatars/02.webp',
+			src: '/img/avatars/02.webp',
 			fallback: 'JD',
 			name: 'Jaylon Donin',
 			message: "I'll send the texts and...",
@@ -22,7 +22,7 @@
 			newMessages: 3
 		},
 		{
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'TC',
 			name: 'Tiana Curtis',
 			message: "That's Great!",
@@ -30,7 +30,7 @@
 			newMessages: null
 		},
 		{
-			src: '/avatars/04.webp',
+			src: '/img/avatars/04.webp',
 			fallback: 'ZV',
 			name: 'Zaire Vetrovs',
 			message: 'https://www.youtub...',
@@ -38,7 +38,7 @@
 			newMessages: 2
 		},
 		{
-			src: '/avatars/05.webp',
+			src: '/img/avatars/05.webp',
 			fallback: 'KP',
 			name: 'Kianna Philips',
 			message: 'Okay, It was awesome.',

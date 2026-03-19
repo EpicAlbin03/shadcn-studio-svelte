@@ -6,7 +6,7 @@
 <Card.Root class="max-w-md pt-0">
 	<Card.Content class="px-0">
 		<img
-			src="/components/card-02.webp"
+			src="/img/components/card-02.webp"
 			alt="Banner"
 			class="aspect-video h-70 rounded-t-xl object-cover"
 		/>

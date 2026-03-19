@@ -24,14 +24,14 @@
 	data-llm-ignore
 >
 	<img
-		src="/blocks/registry/{name}.png"
+		src="/img/blocks/registry/{name}.png"
 		alt={name}
 		width={1440}
 		height={900}
 		class="absolute top-0 left-0 z-20 w-242.5 max-w-none bg-background sm:w-7xl md:hidden dark:hidden md:dark:hidden"
 	/>
 	<img
-		src="/blocks/registry/{name}-dark.png"
+		src="/img/blocks/registry/{name}-dark.png"
 		alt={name}
 		width={1440}
 		height={900}

@@ -11,7 +11,7 @@
 	</Card.Header>
 	<Card.Content class="px-0">
 		<img
-			src="/components/card-01.webp"
+			src="/img/components/card-01.webp"
 			alt="Banner"
 			class="aspect-video h-70 rounded-b-xl object-cover"
 		/>

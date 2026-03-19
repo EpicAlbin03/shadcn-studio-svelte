@@ -11,49 +11,49 @@
 		{
 			name: 'Phillip George',
 			email: 'phillip12@gmail.com',
-			avatar: '/avatars/01.webp',
+			avatar: '/img/avatars/01.webp',
 			status: 'online'
 		},
 		{
 			name: 'Jaylon Donin',
 			email: 'jaylo-don@yahoo.com',
-			avatar: '/avatars/02.webp',
+			avatar: '/img/avatars/02.webp',
 			status: 'offline'
 		},
 		{
 			name: 'Tiana Curtis',
 			email: 'tiana_curtis@gmail.com',
-			avatar: '/avatars/03.webp',
+			avatar: '/img/avatars/03.webp',
 			status: 'away'
 		},
 		{
 			name: 'Zaire Vetrovs',
 			email: 'zaire.vetrovs@outlook.com',
-			avatar: '/avatars/04.webp',
+			avatar: '/img/avatars/04.webp',
 			status: 'online'
 		},
 		{
 			name: 'Kianna Philips',
 			email: 'kiannaphilips@gmail.com',
-			avatar: '/avatars/05.webp',
+			avatar: '/img/avatars/05.webp',
 			status: 'busy'
 		},
 		{
 			name: 'John Doe',
 			email: 'john2doe@icloud.com',
-			avatar: '/avatars/06.webp',
+			avatar: '/img/avatars/06.webp',
 			status: 'online'
 		},
 		{
 			name: 'Rock Lee',
 			email: 'rocklee@protonmail.com',
-			avatar: '/avatars/07.webp',
+			avatar: '/img/avatars/07.webp',
 			status: 'busy'
 		},
 		{
 			name: 'Henry Potter',
 			email: 'henry3potter@gmail.com',
-			avatar: '/avatars/08.webp',
+			avatar: '/img/avatars/08.webp',
 			status: 'online'
 		}
 	];

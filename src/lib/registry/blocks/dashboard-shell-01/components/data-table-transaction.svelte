@@ -157,7 +157,7 @@
 
 {#snippet PaymentImage({ paidBy }: { paidBy: PaidBy })}
 	<img
-		src={paidBy === 'mastercard' ? '/blocks/mastercard.webp' : '/blocks/visa.webp'}
+		src={paidBy === 'mastercard' ? '/img/blocks/mastercard.webp' : '/img/blocks/visa.webp'}
 		alt="Payment platform"
 		class="w-10.5"
 	/>

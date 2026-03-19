@@ -31,7 +31,7 @@
 	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="secondary" size="icon" class="overflow-hidden rounded-full">
-				<img src="/avatars/05.webp" alt="Hallie Richards" />
+				<img src="/img/avatars/05.webp" alt="Hallie Richards" />
 			</Button>
 		{/snippet}
 	</DropdownMenu.Trigger>

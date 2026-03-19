@@ -6,22 +6,22 @@
 
 	const avatars = [
 		{
-			src: '/avatars/03.webp',
+			src: '/img/avatars/03.webp',
 			fallback: 'OS',
 			name: 'Olivia Sparks'
 		},
 		{
-			src: '/avatars/06.webp',
+			src: '/img/avatars/06.webp',
 			fallback: 'HL',
 			name: 'Howard Lloyd'
 		},
 		{
-			src: '/avatars/05.webp',
+			src: '/img/avatars/05.webp',
 			fallback: 'HR',
 			name: 'Hallie Richards'
 		},
 		{
-			src: '/avatars/16.webp',
+			src: '/img/avatars/16.webp',
 			fallback: 'JW',
 			name: 'Jenny Wilson'
 		}
@@ -53,7 +53,7 @@
 					<span class="text-xs text-muted-foreground">Team organization</span>
 				</div>
 				<Avatar.Root class="max-sm:hidden">
-					<Avatar.Image src="/avatars/11.png" alt="Hallie Richards" />
+					<Avatar.Image src="/img/avatars/11.png" alt="Hallie Richards" />
 					<Avatar.Fallback class="text-xs">Angel</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="flex items-center gap-2">
@@ -93,7 +93,7 @@
 					<span class="text-xs text-muted-foreground">Progress Overview Update</span>
 				</div>
 				<Avatar.Root class="max-sm:hidden">
-					<Avatar.Image src="/avatars/11.png" alt="Hallie Richards" />
+					<Avatar.Image src="/img/avatars/11.png" alt="Hallie Richards" />
 					<Avatar.Fallback class="text-xs">Angel</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="flex items-center gap-2">
@@ -133,7 +133,7 @@
 					<span class="text-xs text-muted-foreground">Feedback from Stakeholders</span>
 				</div>
 				<Avatar.Root class="max-sm:hidden">
-					<Avatar.Image src="/avatars/14.png" alt="Hallie Richards" />
+					<Avatar.Image src="/img/avatars/14.png" alt="Hallie Richards" />
 					<Avatar.Fallback class="text-xs">Angel</Avatar.Fallback>
 				</Avatar.Root>
 				<div class="flex items-center gap-2">
