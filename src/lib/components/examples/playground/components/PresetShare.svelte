@@ -8,7 +8,7 @@
 
 <Popover.Root>
 	<Popover.Trigger class={buttonVariants({ variant: 'secondary' })}>Share</Popover.Trigger>
-	<Popover.Content class="w-[520px]" align="end">
+	<Popover.Content class="w-130" align="end">
 		<div class="flex flex-col space-y-2 text-center sm:text-left">
 			<h3 class="text-lg font-semibold">Share preset</h3>
 			<p class="text-sm text-muted-foreground">

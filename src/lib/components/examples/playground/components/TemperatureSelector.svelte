@@ -25,14 +25,14 @@
 						max={1}
 						bind:value={value as never}
 						step={0.1}
-						class="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+						class="**:[[role=slider]]:h-4 **:[[role=slider]]:w-4"
 						aria-label="Temperature"
 						{...restProps}
 					/>
 				</div>
 			{/snippet}
 		</HoverCard.Trigger>
-		<HoverCard.Content class="w-[260px] text-sm" align="start" side="left">
+		<HoverCard.Content class="w-65 text-sm" align="start" side="left">
 			Controls randomness: lowering results in less random completions. As the temperature
 			approaches zero, the model will become deterministic and repetitive.
 		</HoverCard.Content>

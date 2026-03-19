@@ -82,7 +82,7 @@
 		{/snippet}
 	</Sheet.Trigger>
 	<Sheet.Content
-		class="h-full w-full gap-0 sm:max-w-[400px] [&>button]:hidden"
+		class="h-full w-full gap-0 sm:max-w-100 [&>button]:hidden"
 		interactOutsideBehavior="ignore"
 		preventScroll={false}
 		overlay={false}

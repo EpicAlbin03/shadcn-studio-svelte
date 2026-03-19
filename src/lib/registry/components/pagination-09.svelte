@@ -24,7 +24,7 @@
 							{page}
 							{isActive}
 							class={isActive
-								? 'rounded-none border-0 border-b-2 border-primary! bg-transparent! !shadow-none'
+								? 'rounded-none border-0 border-b-2 border-primary! bg-transparent! shadow-none!'
 								: undefined}
 						>
 							{page.value}

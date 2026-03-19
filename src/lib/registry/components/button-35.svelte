@@ -9,7 +9,7 @@
 	<span class="sr-only">Messages</span>
 	<Badge
 		variant="destructive"
-		class="absolute -end-2.5 -top-2.5 h-5 min-w-5 rounded-full px-1 tabular-nums"
+		class="absolute -inset-e-2.5 -top-2.5 h-5 min-w-5 rounded-full px-1 tabular-nums"
 	>
 		8
 	</Badge>

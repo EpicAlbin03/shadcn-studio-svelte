@@ -251,7 +251,7 @@
 					<Table.Row class="bg-muted/50 [&>th]:border-t-0">
 						{#each headerGroup.headers as header (header.id)}
 							<Table.Head
-								class="relative h-10 border-t before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent {dragOverColumnId ===
+								class="relative h-10 border-t before:absolute before:inset-y-0 before:inset-s-0 before:w-px before:bg-border first:before:bg-transparent {dragOverColumnId ===
 								header.column.id
 									? 'bg-muted'
 									: ''}"

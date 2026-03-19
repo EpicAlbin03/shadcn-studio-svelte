@@ -39,7 +39,7 @@
 			</div>
 
 			<div class="grid gap-6 max-xl:col-span-full lg:max-xl:grid-cols-2">
-				<ProductInsightsCard class="justify-between gap-3 [&>[data-slot=card-content]]:space-y-5" />
+				<ProductInsightsCard class="justify-between gap-3 *:data-[slot=card-content]:space-y-5" />
 
 				<TotalEarningCard
 					title="Total Earning"
@@ -48,12 +48,12 @@
 					percentage={10}
 					comparisonText="Compare to last year ($84,325)"
 					{earningData}
-					class="justify-between gap-5 sm:min-w-0 [&>[data-slot=card-content]]:space-y-7"
+					class="justify-between gap-5 sm:min-w-0 *:data-[slot=card-content]:space-y-7"
 				/>
 			</div>
 
 			<SalesMetricsCard
-				class="col-span-full xl:col-span-2 [&>[data-slot=card-content]]:space-y-6"
+				class="col-span-full xl:col-span-2 *:data-[slot=card-content]:space-y-6"
 			/>
 
 			<Card.Root class="col-span-full w-full py-0">

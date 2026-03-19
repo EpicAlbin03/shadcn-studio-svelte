@@ -9,7 +9,7 @@
 			aria-label="Animated gradient small switch"
 			size="sm"
 			id="small-gradient-switch"
-			class="border-none bg-gradient-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:!translate-x-0.25"
+			class="border-none bg-linear-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:translate-x-px!"
 		/>
 		<Label for="small-gradient-switch">Small switch</Label>
 	</div>
@@ -17,7 +17,7 @@
 		<MotionSwitch
 			aria-label="Animated gradient medium switch"
 			id="medium-gradient-switch"
-			class="border-none bg-gradient-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:!translate-x-0.25"
+			class="border-none bg-linear-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:translate-x-px!"
 		/>
 		<Label for="medium-gradient-switch">Medium switch</Label>
 	</div>
@@ -26,7 +26,7 @@
 			aria-label="Animated gradient large switch"
 			size="lg"
 			id="large-gradient-switch"
-			class="border-none bg-gradient-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:!translate-x-0.25"
+			class="border-none bg-linear-to-r from-amber-500 to-destructive/60 focus-visible:border-destructive focus-visible:ring-destructive/20 data-[state=checked]:from-sky-400 data-[state=checked]:to-indigo-700 dark:focus-visible:ring-destructive/40 [&_span]:size-5 [&_span]:translate-x-px!"
 		/>
 		<Label for="large-gradient-switch">Large switch</Label>
 	</div>

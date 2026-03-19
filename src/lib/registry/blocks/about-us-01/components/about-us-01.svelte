@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="relative mb-8 h-full w-full max-lg:space-y-6 sm:mb-16 lg:mb-24">
-			<div class="aspect-video w-full overflow-hidden rounded-xl lg:h-[644px]">
+			<div class="aspect-video w-full overflow-hidden rounded-xl lg:h-161">
 				<iframe
 					width="100%"
 					height="100%"

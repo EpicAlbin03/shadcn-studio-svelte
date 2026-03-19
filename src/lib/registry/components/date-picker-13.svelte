@@ -139,7 +139,7 @@
 				{/snippet}
 				{#snippet tooltip()}
 					<Chart.Tooltip
-						class="w-[150px]"
+						class="w-37.5"
 						nameKey="visitors"
 						labelFormatter={(d) =>
 							new Date(d).toLocaleDateString('en-US', {

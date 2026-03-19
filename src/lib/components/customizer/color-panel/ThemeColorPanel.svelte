@@ -121,7 +121,7 @@
 		</Accordion.Item>
 
 		<!-- Other Colors -->
-		<Accordion.Item value="other" class="rounded-lg !border px-4">
+		<Accordion.Item value="other" class="rounded-lg border! px-4">
 			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
 				Other Colors
 			</Accordion.Trigger>
@@ -165,7 +165,7 @@
 		</Accordion.Item>
 
 		<!-- Sidebar Colors -->
-		<Accordion.Item value="sidebar" class="rounded-lg !border px-4">
+		<Accordion.Item value="sidebar" class="rounded-lg border! px-4">
 			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
 				Sidebar Colors
 			</Accordion.Trigger>
@@ -214,7 +214,7 @@
 		</Accordion.Item>
 
 		<!-- Chart Colors -->
-		<Accordion.Item value="chart" class="rounded-lg !border px-4">
+		<Accordion.Item value="chart" class="rounded-lg border! px-4">
 			<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">
 				Chart Colors
 			</Accordion.Trigger>

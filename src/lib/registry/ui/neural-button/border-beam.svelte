@@ -42,14 +42,14 @@
 </script>
 
 <div
-	class="pointer-events-none absolute inset-0 rounded-[inherit] border-(length:--border-beam-width) border-transparent [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)] [mask-composite:intersect] [mask-clip:padding-box,border-box]"
+	class="pointer-events-none absolute inset-0 rounded-[inherit] border-(length:--border-beam-width) border-transparent mask-[linear-gradient(transparent,transparent),linear-gradient(#000,#000)] mask-intersect [mask-clip:padding-box,border-box]"
 	style:--border-beam-width="{borderWidth}px"
 	{...restProps}
 >
 	<motion.div
 		class={cn(
 			'absolute aspect-square',
-			'rounded-full bg-gradient-to-l from-[var(--color-from)] via-[var(--color-to)] to-transparent',
+			'rounded-full bg-linear-to-l from-(--color-from) via-(--color-to) to-transparent',
 			className
 		)}
 		style={{

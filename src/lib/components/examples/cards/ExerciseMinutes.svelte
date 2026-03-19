@@ -60,7 +60,7 @@
 		<Card.Description>Your exercise minutes are ahead of where you normally are.</Card.Description>
 	</Card.Header>
 	<Card.Content class="pb-4">
-		<Chart.Container config={chartConfig} class="h-[200px] w-full [&_.lc-highlight-line]:stroke-1">
+		<Chart.Container config={chartConfig} class="h-50 w-full [&_.lc-highlight-line]:stroke-1">
 			<LineChart
 				axis="x"
 				data={data.map((d, i) => ({ ...d, index: i }))}

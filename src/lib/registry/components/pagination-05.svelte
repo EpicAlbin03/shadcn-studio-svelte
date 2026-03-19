@@ -30,7 +30,7 @@
 									[buttonVariants({
 										variant: 'default',
 										className:
-											'hover:!text-primary-foreground dark:border-transparent dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 dark:hover:text-primary-foreground'
+											'hover:text-primary-foreground! dark:border-transparent dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 dark:hover:text-primary-foreground'
 									})]: isActive
 								},
 								'rounded-none border-none'

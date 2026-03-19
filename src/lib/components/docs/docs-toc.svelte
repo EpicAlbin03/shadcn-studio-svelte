@@ -108,7 +108,7 @@
 	{:else}
 		<div
 			class={cn(
-				'sticky top-[var(--header-height)] flex max-h-[calc(100vh-var(--header-height)-2rem)] flex-col overflow-y-auto p-5',
+				'sticky top-(--header-height) flex max-h-[calc(100vh-var(--header-height)-2rem)] flex-col overflow-y-auto p-5',
 				className
 			)}
 		>

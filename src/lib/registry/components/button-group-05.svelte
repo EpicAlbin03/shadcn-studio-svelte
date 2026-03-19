@@ -6,7 +6,7 @@
 <div class="inline-flex w-fit -space-x-px rounded-md shadow-xs rtl:space-x-reverse">
 	<Button
 		variant="outline"
-		class="rounded-none rounded-s-md shadow-none hover:!bg-[#9146ff]/10 focus-visible:z-10"
+		class="rounded-none rounded-s-md shadow-none hover:bg-[#9146ff]/10! focus-visible:z-10"
 		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
@@ -16,7 +16,7 @@
 	</Button>
 	<Button
 		variant="outline"
-		class="rounded-none shadow-none hover:!bg-[#EA4C89]/10 focus-visible:z-10"
+		class="rounded-none shadow-none hover:bg-[#EA4C89]/10! focus-visible:z-10"
 		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
@@ -26,7 +26,7 @@
 	</Button>
 	<Button
 		variant="outline"
-		class="rounded-none shadow-none hover:!bg-[#fb169a]/10 focus-visible:z-10"
+		class="rounded-none shadow-none hover:bg-[#fb169a]/10! focus-visible:z-10"
 		href="#"
 		target="_blank"
 		rel="noopener noreferrer"
@@ -36,7 +36,7 @@
 	</Button>
 	<Button
 		variant="outline"
-		class="rounded-none rounded-e-md shadow-none hover:!bg-[#0866ff]/10 focus-visible:z-10"
+		class="rounded-none rounded-e-md shadow-none hover:bg-[#0866ff]/10! focus-visible:z-10"
 		href="#"
 		target="_blank"
 		rel="noopener noreferrer"

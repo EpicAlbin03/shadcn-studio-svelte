@@ -48,7 +48,7 @@
 		</Select.Content>
 	</Select.Root>
 	<Select.Root type="single" bind:value>
-		<Select.Trigger {id} class="!h-10 w-full">
+		<Select.Trigger {id} class="h-10! w-full">
 			{triggerContent ?? 'Large select'}
 		</Select.Trigger>
 		<Select.Content>

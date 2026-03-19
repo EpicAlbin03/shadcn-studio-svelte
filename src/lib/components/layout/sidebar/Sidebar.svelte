@@ -51,18 +51,18 @@
 			</Button>
 		</Sidebar.Header>
 	{/if}
-	<ScrollArea class="max-h-[calc(100vh-var(--header-height))] lg:!sticky lg:top-(--header-height)">
+	<ScrollArea class="max-h-[calc(100vh-var(--header-height))] lg:sticky! lg:top-(--header-height)">
 		<Sidebar.Content>
 			<Sidebar.Group
 				class={cn('px-3 pt-0 pb-4 last:pb-8 lg:px-5', { 'first:pt-8': !isBreakpointReached })}
 			>
 				<Sidebar.Menu class="gap-2.5">
 					<CustomSidebarMenuItem href="/components">
-						<Component class="!size-5" />
+						<Component class="size-5!" />
 						Components
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/theme-generator">
-						<PaintbrushVertical class="!size-5" />
+						<PaintbrushVertical class="size-5!" />
 						Theme Generator
 						<Sidebar.MenuBadge
 							class="static gap-0.5 rounded-full bg-destructive/10 px-2 py-0.5 font-normal text-destructive"
@@ -71,7 +71,7 @@
 						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/blocks">
-						<LayoutPanelTop class="!size-5" />
+						<LayoutPanelTop class="size-5!" />
 						Blocks
 						<!-- <Sidebar.MenuBadge
 							class="static rounded-full border-transparent bg-primary px-2 py-0.5 font-normal text-primary-foreground [a&]:hover:bg-primary/90"

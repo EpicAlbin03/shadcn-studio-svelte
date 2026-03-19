@@ -11,7 +11,7 @@
 	<div class="relative">
 		<Input {id} type="email" placeholder="Email address" class="peer pe-9" />
 		<div
-			class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
 		>
 			<MailIcon class="size-4" />
 			<span class="sr-only">Email</span>

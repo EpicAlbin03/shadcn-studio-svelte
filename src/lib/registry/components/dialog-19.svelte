@@ -12,7 +12,7 @@
 				<Button {...props} variant="outline">Middle left align</Button>
 			{/snippet}
 		</Dialog.Trigger>
-		<Dialog.Content class="sm:left-0 sm:ms-6 sm:max-w-[425px] sm:translate-x-0">
+		<Dialog.Content class="sm:left-0 sm:ms-6 sm:max-w-106.25 sm:translate-x-0">
 			<Dialog.Header>
 				<Dialog.Title>Edit profile</Dialog.Title>
 				<Dialog.Description>

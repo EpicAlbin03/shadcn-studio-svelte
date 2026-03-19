@@ -27,7 +27,7 @@
 
 <Button
 	size="icon"
-	class={cn('fixed end-6 bottom-6 z-50 cursor-pointer transition-all duration-200', {
+	class={cn('fixed inset-e-6 bottom-6 z-50 cursor-pointer transition-all duration-200', {
 		'scale-0': !showScrollButton
 	})}
 	onclick={scrollToTop}

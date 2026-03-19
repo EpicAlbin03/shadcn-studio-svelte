@@ -19,7 +19,7 @@
 
 {#snippet backgroundDecorations()}
 	<span
-		class="pointer-events-none absolute inset-0 -z-1 bg-gradient-to-r from-neutral-900/20 to-white/20"
+		class="pointer-events-none absolute inset-0 -z-1 bg-linear-to-r from-neutral-900/20 to-white/20"
 	>
 		<span
 			class="absolute inset-px rounded-[calc(var(--radius-xl)-1px)] bg-sky-600 dark:bg-sky-400/60"

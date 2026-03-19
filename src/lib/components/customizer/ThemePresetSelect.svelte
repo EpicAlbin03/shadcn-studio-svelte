@@ -103,8 +103,8 @@
 						<Select.Item value={theme.name} class="flex items-center gap-3">
 							<!-- Theme Color Grid Icon -->
 							<div class="flex items-center">
-								<div class="relative size-[26px] rounded border bg-background p-1">
-									<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
+								<div class="relative size-6.5 rounded border bg-background p-1">
+									<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-0.5">
 										<div
 											class="rounded-[2px]"
 											style="background-color: {getThemeColor(theme, 'primary')}"
@@ -136,8 +136,8 @@
 					<Select.Item value={theme.name} class="flex items-center gap-3">
 						<!-- Theme Color Grid Icon -->
 						<div class="flex items-center">
-							<div class="relative size-[26px] rounded border bg-background p-1">
-								<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-[2px]">
+							<div class="relative size-6.5 rounded border bg-background p-1">
+								<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-0.5">
 									<div
 										class="rounded-[2px]"
 										style="background-color: {getThemeColor(theme, 'primary')}"

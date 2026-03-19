@@ -64,7 +64,7 @@
 			<Card.Description>+20.1% from last month</Card.Description>
 		</Card.Header>
 		<Card.Content class="pb-0">
-			<Chart.Container config={chartConfig} class="h-[80px] w-full">
+			<Chart.Container config={chartConfig} class="h-20 w-full">
 				<LineChart
 					axis={false}
 					data={data.map((d, i) => ({ ...d, index: i }))}
@@ -101,7 +101,7 @@
 					<Button variant="ghost" size="sm">View More</Button>
 				</Card.Action>
 			</Card.Header>
-			<Card.Content class="mt-auto max-h-[124px] flex-1 overflow-hidden p-0">
+			<Card.Content class="mt-auto max-h-31 flex-1 overflow-hidden p-0">
 				<Chart.Container config={chartConfig} class="-mb-4 h-full w-full overflow-hidden">
 					<AreaChart
 						data={data.map((d, i) => ({ ...d, index: i }))}

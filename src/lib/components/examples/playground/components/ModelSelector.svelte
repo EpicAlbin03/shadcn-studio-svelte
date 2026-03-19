@@ -64,7 +64,7 @@
 				</div>
 			{/snippet}
 		</HoverCard.Trigger>
-		<HoverCard.Content class="w-[260px] text-sm" align="start" side="left">
+		<HoverCard.Content class="w-65 text-sm" align="start" side="left">
 			The model which will generate the completion. Some models are suitable for natural language
 			tasks, others specialize in code. Learn more.
 		</HoverCard.Content>
@@ -72,7 +72,7 @@
 
 	<Popover.Root bind:open onOpenChange={onPopoverOpenChange}>
 		<Popover.Trigger
-			class={buttonVariants({ variant: 'outline', class: 'w-[200px] justify-between' })}
+			class={buttonVariants({ variant: 'outline', class: 'w-50 justify-between' })}
 			role="combobox"
 			aria-expanded={open}
 			id={triggerId}
@@ -80,11 +80,11 @@
 			{selectedValue}
 			<ChevronsUpDownIcon class="opacity-50" />
 		</Popover.Trigger>
-		<Popover.Content class="w-[250px] p-0" onInteractOutside={onPopoverOutsideClick}>
+		<Popover.Content class="w-62.5 p-0" onInteractOutside={onPopoverOutsideClick}>
 			<HoverCard.Root open={hoverCardIsOpen} openDelay={0}>
 				<HoverCard.Content
 					interactOutsideBehavior="ignore"
-					class="-ml-2 min-h-[280px]"
+					class="-ml-2 min-h-70"
 					side="left"
 					align="start"
 				>
@@ -109,7 +109,7 @@
 				</HoverCard.Content>
 				<Command.Root loop>
 					<Command.Input placeholder="Search Models...." />
-					<Command.List class="h-(--bits-command-list-height) max-h-[400px]">
+					<Command.List class="h-(--bits-command-list-height) max-h-100">
 						<Command.Empty>No models found.</Command.Empty>
 						{#each types as type (type)}
 							<Command.Group heading={type}>

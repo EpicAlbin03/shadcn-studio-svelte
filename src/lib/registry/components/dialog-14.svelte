@@ -14,7 +14,7 @@
 			{/snippet}
 		</Dialog.Trigger>
 		<Dialog.Content
-			class="bg-gradient-to-b from-sky-100 to-card to-40% [background-size:100%_101%] sm:max-w-sm dark:from-sky-900"
+			class="bg-linear-to-b from-sky-100 to-card to-40% bg-size-[100%_101%] sm:max-w-sm dark:from-sky-900"
 		>
 			<Dialog.Header class="items-center">
 				<div

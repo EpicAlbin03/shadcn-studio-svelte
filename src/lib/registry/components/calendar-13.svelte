@@ -13,9 +13,9 @@
 				class="
       [[data-selected]]:!dark:bg-sky-400
       [[data-selected]]:!dark:hover:bg-sky-400
-      !rounded-full
-      [[data-selected]]:!bg-sky-600
-      [[data-selected]]:!text-white
+      rounded-full!
+      data-selected:bg-sky-600!
+      data-selected:text-white!
       "
 			>
 				{day.day}

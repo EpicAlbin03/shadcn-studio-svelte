@@ -85,7 +85,7 @@
 						}}
 						class="absolute -top-2 left-1/2 z-50 flex flex-col items-center justify-center rounded-md bg-foreground px-4 py-2 text-xs text-background shadow-xl"
 					>
-						<div class="relative z-[1] text-base font-semibold">{item.name}</div>
+						<div class="relative z-1 text-base font-semibold">{item.name}</div>
 						<div class="text-xs text-background/80">{item.designation}</div>
 					</motion.div>
 				{/if}
@@ -95,7 +95,7 @@
 				{@render children({ item, index })}
 			{:else}
 				<Avatar.Root
-					class="relative size-10 ring-2 ring-background transition-all duration-300 ease-in-out hover:z-[1] hover:scale-105"
+					class="relative size-10 ring-2 ring-background transition-all duration-300 ease-in-out hover:z-1 hover:scale-105"
 					onmousemove={handleMouseMove}
 				>
 					<Avatar.Image src={item.image} alt={item.name} />

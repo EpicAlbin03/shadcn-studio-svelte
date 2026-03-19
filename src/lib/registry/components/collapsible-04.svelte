@@ -33,7 +33,7 @@
 	];
 </script>
 
-<ul class="flex w-full max-w-[350px] flex-col gap-4">
+<ul class="flex w-full max-w-87.5 flex-col gap-4">
 	{#each users as user (user.name)}
 		<Collapsible.Root>
 			{#snippet child({ props })}
@@ -46,7 +46,7 @@
 							</Avatar.Root>
 							<span class="font-medium">{user.name}</span>
 						</div>
-						<ChevronRightIcon class="size-4 transition-transform [[data-state=open]_&]:rotate-90" />
+						<ChevronRightIcon class="size-4 transition-transform in-data-[state=open]:rotate-90" />
 					</Collapsible.Trigger>
 					<Collapsible.Content>
 						<div class="flex flex-col gap-2">

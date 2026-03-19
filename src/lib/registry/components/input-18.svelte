@@ -10,12 +10,12 @@
 	<div class="relative">
 		<Input {id} type="text" placeholder="shadcnstudio" class="peer ps-17 pe-13" />
 		<span
-			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-sm peer-disabled:opacity-50"
 		>
 			https://
 		</span>
 		<span
-			class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-sm peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-sm peer-disabled:opacity-50"
 		>
 			.com
 		</span>

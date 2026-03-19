@@ -60,7 +60,7 @@
 			{/snippet}
 		</Popover.Trigger>
 		<Popover.Content
-			class="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"
+			class="w-full min-w-(--radix-popper-anchor-width) border-input p-0"
 			align="start"
 		>
 			<Command.Root>

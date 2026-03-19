@@ -34,7 +34,7 @@
 	<Popover.Trigger
 		class={buttonVariants({
 			variant: 'outline',
-			class: 'flex-1 justify-between md:max-w-[200px] lg:max-w-[300px]'
+			class: 'flex-1 justify-between md:max-w-50 lg:max-w-75'
 		})}
 		role="combobox"
 		aria-expanded={open}
@@ -43,7 +43,7 @@
 		{selectedValue}
 		<ChevronsUpDownIcon class="opacity-50" />
 	</Popover.Trigger>
-	<Popover.Content class="w-full p-0 md:w-[200px] lg:w-[300px]">
+	<Popover.Content class="w-full p-0 md:w-50 lg:w-75">
 		<Command.Root>
 			<Command.Input placeholder="Search presets..." />
 			<Command.List>

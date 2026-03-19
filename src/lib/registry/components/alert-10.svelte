@@ -7,7 +7,7 @@
 
 {#if isActive}
 	<Alert.Root
-		class="flex justify-between border-accent-foreground/20 bg-gradient-to-b from-accent to-transparent to-60% text-accent-foreground"
+		class="flex justify-between border-accent-foreground/20 bg-linear-to-b from-accent to-transparent to-60% text-accent-foreground"
 	>
 		<CircleAlertIcon />
 		<div class="flex flex-1 flex-col gap-1">

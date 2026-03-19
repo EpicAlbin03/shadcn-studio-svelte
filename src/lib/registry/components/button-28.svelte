@@ -27,7 +27,7 @@
 	</span>
 	<span
 		class={cn(
-			'absolute start-4 transition-all',
+			'absolute inset-s-4 transition-all',
 			copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
 		)}
 	>

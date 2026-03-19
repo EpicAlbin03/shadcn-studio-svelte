@@ -51,7 +51,7 @@
 		<!-- Navigation -->
 		<MenuNavigation
 			{navigationData}
-			className="max-lg:hidden [&_[data-slot=navigation-menu-list]]:gap-1"
+			className="max-lg:hidden **:data-[slot=navigation-menu-list]:gap-1"
 		/>
 
 		<!-- Actions -->

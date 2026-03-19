@@ -7,7 +7,7 @@
 
 <Dialog.Root>
 	<Dialog.Trigger class={buttonVariants({ variant: 'secondary' })}>Save</Dialog.Trigger>
-	<Dialog.Content class="sm:max-w-[475px]">
+	<Dialog.Content class="sm:max-w-118.75">
 		<Dialog.Header>
 			<Dialog.Title>Save preset</Dialog.Title>
 			<Dialog.Description>

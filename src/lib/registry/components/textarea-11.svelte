@@ -10,7 +10,7 @@
 	<Label for={id}>Textarea with start icon</Label>
 	<div class="relative">
 		<div
-			class="pointer-events-none absolute start-0 top-2.5 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-s-0 top-2.5 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
 		>
 			<HomeIcon class="size-4" />
 			<span class="sr-only">Address</span>

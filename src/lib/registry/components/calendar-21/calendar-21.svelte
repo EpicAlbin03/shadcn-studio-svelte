@@ -39,14 +39,14 @@
 		minValue={startDate}
 		maxValue={endDate}
 		class="overflow-hidden rounded-md border p-2
-  [&_[data-calendar-header]]:!ms-2.5
-  [&_[data-calendar-header]]:!me-20
-  [&_[data-calendar-header]]:!justify-start
-  [&_nav]:!absolute
-  [&_nav]:!end-0
-  [&_nav]:!flex
-  [&_nav]:!w-fit
-  [&_nav]:!items-center
+  **:data-calendar-header:ms-2.5!
+  **:data-calendar-header:me-20!
+  **:data-calendar-header:justify-start!
+  [&_nav]:absolute!
+  [&_nav]:inset-e-0!
+  [&_nav]:flex!
+  [&_nav]:w-fit!
+  [&_nav]:items-center!
   "
 	/>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">

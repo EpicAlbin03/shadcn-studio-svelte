@@ -23,7 +23,7 @@
 	<Select.Root type="single" bind:value>
 		<Select.Trigger
 			{id}
-			class="w-full border-sky-600 bg-sky-600/10 text-sky-600 shadow-none focus-visible:border-sky-600 focus-visible:ring-sky-600/20 dark:bg-sky-400/10 dark:text-sky-400 dark:hover:bg-sky-400/10 dark:focus-visible:ring-sky-400/40 [&_svg]:!text-sky-600 dark:[&_svg]:!text-sky-400"
+			class="w-full border-sky-600 bg-sky-600/10 text-sky-600 shadow-none focus-visible:border-sky-600 focus-visible:ring-sky-600/20 dark:bg-sky-400/10 dark:text-sky-400 dark:hover:bg-sky-400/10 dark:focus-visible:ring-sky-400/40 [&_svg]:text-sky-600! dark:[&_svg]:text-sky-400!"
 		>
 			{triggerContent}
 		</Select.Trigger>
@@ -36,7 +36,7 @@
 					<Select.Item
 						value={language.value}
 						label={language.label}
-						class="focus:[&_svg]:!text-sky-600 dark:focus:[&_svg]:!text-sky-400"
+						class="focus:[&_svg]:text-sky-600! dark:focus:[&_svg]:text-sky-400!"
 					>
 						{language.label}
 					</Select.Item>

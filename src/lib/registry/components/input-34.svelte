@@ -22,7 +22,7 @@
 			class="peer pe-14"
 		/>
 		<span
-			class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-xs text-muted-foreground tabular-nums peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-xs text-muted-foreground tabular-nums peer-disabled:opacity-50"
 		>
 			{characterCount}/{maxLength}
 		</span>

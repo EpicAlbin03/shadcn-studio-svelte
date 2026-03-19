@@ -25,14 +25,14 @@
 						max={1}
 						bind:value={value as never}
 						step={0.1}
-						class="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+						class="**:[[role=slider]]:h-4 **:[[role=slider]]:w-4"
 						aria-label="Top P"
 						{...restProps}
 					/>
 				</div>
 			{/snippet}
 		</HoverCard.Trigger>
-		<HoverCard.Content class="w-[260px] text-sm" side="left" align="start">
+		<HoverCard.Content class="w-65 text-sm" side="left" align="start">
 			Control diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options are
 			considered.
 		</HoverCard.Content>

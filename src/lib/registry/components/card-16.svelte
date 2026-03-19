@@ -55,8 +55,8 @@
 			</CardContent>
 		</Card>
 		<div
-			class="blob absolute start-0 top-0 h-20 w-20 rounded-full bg-sky-600/60 opacity-0 blur-2xl transition-all duration-300 ease-in-out dark:bg-sky-400/60"
+			class="blob absolute inset-s-0 top-0 h-20 w-20 rounded-full bg-sky-600/60 opacity-0 blur-2xl transition-all duration-300 ease-in-out dark:bg-sky-400/60"
 		></div>
-		<div class="fake-blob absolute start-0 top-0 h-20 w-20 rounded-full"></div>
+		<div class="fake-blob absolute inset-s-0 top-0 h-20 w-20 rounded-full"></div>
 	</div>
 </div>

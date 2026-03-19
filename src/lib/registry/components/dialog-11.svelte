@@ -48,7 +48,7 @@
 						{/each}
 					</RadioGroup>
 				</fieldset>
-				<div class="grid grow-1 gap-3">
+				<div class="grid grow gap-3">
 					<Textarea placeholder="Type your message here." id="message-2" required />
 					<p class="text-sm text-muted-foreground">500/500 characters left</p>
 				</div>

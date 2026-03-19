@@ -22,7 +22,7 @@
 		<Card.Content class="flex justify-center px-4">
 			<Calendar type="single" bind:value class="bg-transparent p-0 [--cell-size:--spacing(10)]" />
 		</Card.Content>
-		<Card.Footer class="flex flex-wrap gap-2 border-t px-4 !pt-4">
+		<Card.Footer class="flex flex-wrap gap-2 border-t px-4 pt-4!">
 			{#each presets as preset (preset.value)}
 				<Button
 					variant="outline"

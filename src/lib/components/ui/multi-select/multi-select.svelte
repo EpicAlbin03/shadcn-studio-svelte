@@ -273,7 +273,7 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class={cn(
-			'relative min-h-[38px] rounded-md border border-input text-sm transition-[color,box-shadow] outline-none focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50 has-aria-invalid:border-destructive has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40',
+			'relative min-h-9.5 rounded-md border border-input text-sm transition-[color,box-shadow] outline-none focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50 has-aria-invalid:border-destructive has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40',
 			{
 				'p-1': selected.length !== 0,
 				'cursor-text': !disabled && selected.length !== 0
@@ -355,7 +355,7 @@
 					onChange?.(selected.filter((s) => s.fixed));
 				}}
 				class={cn(
-					'absolute end-0 top-0 flex size-9 items-center justify-center rounded-md border border-transparent text-muted-foreground/80 transition-[color,box-shadow] outline-none hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50',
+					'absolute inset-e-0 top-0 flex size-9 items-center justify-center rounded-md border border-transparent text-muted-foreground/80 transition-[color,box-shadow] outline-none hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50',
 					(hideClearAllButton ||
 						disabled ||
 						selected.length < 1 ||

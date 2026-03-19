@@ -36,7 +36,7 @@
 	];
 </script>
 
-<Collapsible.Root class="flex w-full max-w-[350px] flex-col items-start gap-4">
+<Collapsible.Root class="flex w-full max-w-87.5 flex-col items-start gap-4">
 	<div class="font-medium">Today's task completion</div>
 	<ul class="flex w-full flex-col gap-2">
 		{#each tasks.slice(0, 2) as task (task.name)}

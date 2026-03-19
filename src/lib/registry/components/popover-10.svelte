@@ -65,7 +65,7 @@
 		<div class="grid gap-4">
 			<div class="relative">
 				<div
-					class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
+					class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
 				>
 					<SearchIcon class="size-4" />
 					<span class="sr-only">Search</span>
@@ -78,7 +78,7 @@
 				/>
 				{#if isLoading}
 					<div
-						class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
+						class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
 					>
 						<LoaderCircleIcon class="size-4 animate-spin" />
 						<span class="sr-only">Loading...</span>

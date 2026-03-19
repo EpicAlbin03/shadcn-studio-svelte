@@ -25,14 +25,14 @@
 						max={4000}
 						bind:value={value as never}
 						step={10}
-						class="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+						class="**:[[role=slider]]:h-4 **:[[role=slider]]:w-4"
 						aria-label="Maximum Length"
 						{...restProps}
 					/>
 				</div>
 			{/snippet}
 		</HoverCard.Trigger>
-		<HoverCard.Content class="w-[260px] text-sm" side="left" align="start">
+		<HoverCard.Content class="w-65 text-sm" side="left" align="start">
 			The maximum number of tokens to generate. Requests can use up to 2,048 or 4,000 tokens, shared
 			between prompt and completion. The exact limit varies by model.
 		</HoverCard.Content>

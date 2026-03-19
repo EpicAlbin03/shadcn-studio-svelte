@@ -35,7 +35,7 @@
 				{perPage || 'Select number of results'}
 			</Select.Trigger>
 			<Select.Content
-				class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2"
+				class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:inset-e-2"
 			>
 				<Select.Item value="10">10</Select.Item>
 				<Select.Item value="25">25</Select.Item>

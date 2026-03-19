@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 p-0.5"
+	class="flex items-center justify-center rounded-full bg-linear-to-r from-indigo-500 to-pink-500 p-0.5"
 >
 	<Badge class="rounded-full border-none bg-background text-foreground hover:bg-background">
 		Gradient Outline

@@ -10,7 +10,7 @@
 	<Label for="{id}-time" class="px-1">Time input</Label>
 	<div class="relative">
 		<div
-			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
 		>
 			<Clock8Icon class="size-4" />
 			<span class="sr-only">User</span>

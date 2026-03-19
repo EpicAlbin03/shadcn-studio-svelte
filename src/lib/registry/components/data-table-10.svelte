@@ -444,7 +444,7 @@
 					{table.getState().pagination.pageSize}
 				</Select.Trigger>
 				<Select.Content
-					class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:end-2"
+					class="[&_*[role=option]]:ps-2 [&_*[role=option]]:pe-8 [&_*[role=option]>span]:start-auto [&_*[role=option]>span]:inset-e-2"
 				>
 					{#each [5, 10, 25, 50] as pageSize (pageSize)}
 						<Select.Item value={pageSize.toString()}>{pageSize}</Select.Item>

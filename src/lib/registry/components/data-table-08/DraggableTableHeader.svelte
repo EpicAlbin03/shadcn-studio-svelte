@@ -20,7 +20,7 @@
 <Table.Head
 	data-dragging={isDragging.current}
 	bind:ref={node.current}
-	class="relative z-0 h-10 border-t whitespace-nowrap before:absolute before:inset-y-0 before:start-0 before:w-px before:bg-border first:before:bg-transparent data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
+	class="relative z-0 h-10 border-t whitespace-nowrap before:absolute before:inset-y-0 before:inset-s-0 before:w-px before:bg-border first:before:bg-transparent data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
 	style="transition: {transition.current};
 	transform: {CSS.Transform.toString(transform.current)};
 	width: {header.column.getSize()}px;"

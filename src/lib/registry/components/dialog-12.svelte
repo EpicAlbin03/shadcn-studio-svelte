@@ -49,7 +49,7 @@
 		<div class="flex flex-col items-center gap-2">
 			<div
 				class={cn(
-					'flex size-10 shrink-0 items-center justify-center rounded-full bg-sky-600/10 dark:bg-sky-400/100',
+					'flex size-10 shrink-0 items-center justify-center rounded-full bg-sky-600/10 dark:bg-sky-400',
 					{ 'bg-green-600/10 dark:bg-green-400/10': hasGuessed }
 				)}
 				aria-hidden="true"

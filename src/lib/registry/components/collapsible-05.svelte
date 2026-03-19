@@ -8,7 +8,7 @@
 	import { Separator } from '$lib/components/ui/separator';
 </script>
 
-<div class="w-full max-w-[350px] space-y-3">
+<div class="w-full max-w-87.5 space-y-3">
 	<Collapsible.Root class="flex flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Price Range</div>
@@ -35,7 +35,7 @@
 		</Collapsible.Content>
 	</Collapsible.Root>
 	<Separator />
-	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-87.5 flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Customer Ratings</div>
 			<Collapsible.Trigger class="group">
@@ -89,7 +89,7 @@
 		</Collapsible.Content>
 	</Collapsible.Root>
 	<Separator />
-	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-87.5 flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Brand</div>
 			<Collapsible.Trigger class="group">
@@ -127,7 +127,7 @@
 		</Collapsible.Content>
 	</Collapsible.Root>
 	<Separator />
-	<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
+	<Collapsible.Root class="flex w-full max-w-87.5 flex-col gap-2">
 		<div class="flex items-center justify-between gap-4 px-4">
 			<div class="text-sm font-semibold">Battery</div>
 			<Collapsible.Trigger class="group">

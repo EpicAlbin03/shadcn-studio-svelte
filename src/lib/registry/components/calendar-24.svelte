@@ -24,7 +24,7 @@
 				type="single"
 				bind:value
 				isDateUnavailable={(date) => bookedDates.some((d) => d.compare(date) === 0)}
-				class="bg-transparent p-0 [--cell-size:--spacing(10)] data-unavailable:line-through data-unavailable:opacity-100 md:[--cell-size:--spacing(12)] [&_[data-outside-month]]:hidden"
+				class="bg-transparent p-0 [--cell-size:--spacing(10)] data-unavailable:line-through data-unavailable:opacity-100 md:[--cell-size:--spacing(12)] **:data-outside-month:hidden"
 				weekdayFormat="short"
 			/>
 		</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</Card.Content>
-	<Card.Footer class="flex flex-col gap-4 border-t px-6 !py-5 md:flex-row">
+	<Card.Footer class="flex flex-col gap-4 border-t px-6 py-5! md:flex-row">
 		<div class="flex items-center gap-2 text-sm">
 			{#if value && selectedTime}
 				<CircleCheck class="size-5 stroke-green-600 dark:stroke-green-400" />

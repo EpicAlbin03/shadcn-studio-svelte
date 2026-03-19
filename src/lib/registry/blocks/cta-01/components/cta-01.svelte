@@ -16,7 +16,7 @@
 					</p>
 				</div>
 				<div class="flex flex-wrap items-center gap-6 max-md:w-full max-md:flex-col md:justify-end">
-					<div class="flex w-[200px] items-center gap-4 rounded-md bg-card-foreground px-6 py-3">
+					<div class="flex w-50 items-center gap-4 rounded-md bg-card-foreground px-6 py-3">
 						<img src="/blocks/apple.webp" alt="App Store" class="size-8.5 invert dark:invert-0" />
 						<div class="flex flex-col items-start">
 							<p class="text-xs leading-4 text-card">Download on the</p>
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 
-					<div class="flex w-[200px] items-center gap-4 rounded-md bg-card-foreground px-6 py-3">
+					<div class="flex w-50 items-center gap-4 rounded-md bg-card-foreground px-6 py-3">
 						<img src="/blocks/google-play.webp" alt="Google Play" class="size-8.5" />
 						<div class="flex flex-col items-start">
 							<p class="text-xs leading-4 text-card">Download on the</p>

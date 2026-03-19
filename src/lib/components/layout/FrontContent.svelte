@@ -6,7 +6,7 @@
 
 <main class="flex flex-1 flex-col">
 	<div
-		class="mx-auto h-full w-full max-w-[1400px] border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]"
+		class="mx-auto h-full w-full max-w-350 border-dashed min-[1400px]:border-x min-[1800px]:max-w-384"
 	>
 		{@render children?.()}
 	</div>

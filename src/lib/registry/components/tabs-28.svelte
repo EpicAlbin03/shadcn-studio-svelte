@@ -48,7 +48,7 @@
 					<Tabs.Trigger {value} class="flex h-8 w-full items-center justify-center gap-1 px-2">
 						{#snippet child({ props })}
 							<div {...props}>
-								<Icon class="aspect-square size-4 flex-shrink-0" />
+								<Icon class="aspect-square size-4 shrink-0" />
 								<AnimatePresence initial={false}>
 									{#if isActive}
 										<motion.span

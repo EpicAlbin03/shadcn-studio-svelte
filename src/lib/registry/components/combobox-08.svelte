@@ -105,7 +105,7 @@
 				</Button>
 			{/snippet}
 		</Popover.Trigger>
-		<Popover.Content class="w-[300px] p-0">
+		<Popover.Content class="w-75 p-0">
 			<Command.Root>
 				<Command.Input placeholder="Search user..." />
 				<Command.List>

@@ -6,7 +6,7 @@
 	class="relative max-w-md py-0 before:absolute before:size-full before:rounded-xl before:bg-primary/70"
 >
 	<Card.Content class="px-0">
-		<img src="/components/card-08.webp" alt="Banner" class="h-70 w-112 rounded-xl" />
+		<img src="/components/card-08.webp" alt="Banner" class="h-70 w-md rounded-xl" />
 	</Card.Content>
 	<div class="absolute">
 		<Card.Header class="w-full pt-6 text-primary-foreground">

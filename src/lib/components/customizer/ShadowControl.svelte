@@ -25,7 +25,7 @@
 </script>
 
 <Accordion.Root type="single" value="shadow">
-	<Accordion.Item value="shadow" class="rounded-lg !border px-4">
+	<Accordion.Item value="shadow" class="rounded-lg border! px-4">
 		<Accordion.Trigger class="cursor-pointer py-3 text-base font-medium">Shadow</Accordion.Trigger>
 		<Accordion.Content class="space-y-3 pt-2 pb-4">
 			<div class="space-y-4">

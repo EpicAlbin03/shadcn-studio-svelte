@@ -31,7 +31,7 @@
 			class="peer pe-11"
 		/>
 		<div
-			class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
 		>
 			<CreditCardIcon class="size-4" />
 			<span class="sr-only">Card Provider</span>

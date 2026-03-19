@@ -3,7 +3,7 @@
 </script>
 
 <Button
-	class="bg-transparent bg-gradient-to-r from-primary via-primary/60 to-primary [background-size:200%_auto] hover:bg-transparent hover:bg-[99%_center]"
+	class="bg-transparent bg-linear-to-r from-primary via-primary/60 to-primary bg-size-[200%_auto] hover:bg-transparent hover:bg-position-[99%_center]"
 >
 	Get Started
 </Button>

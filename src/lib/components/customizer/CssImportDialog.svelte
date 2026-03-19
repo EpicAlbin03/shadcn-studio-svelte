@@ -97,7 +97,7 @@
 			</Button>
 		{/snippet}
 	</Dialog.Trigger>
-	<Dialog.Content class="max-h-[90vh] sm:max-w-[600px]">
+	<Dialog.Content class="max-h-[90vh] sm:max-w-150">
 		<Dialog.Header>
 			<Dialog.Title class="text-foreground">Import Custom CSS</Dialog.Title>
 			<Dialog.Description>
@@ -128,7 +128,7 @@
   /* And more */
 }
   `}
-				class="max-h-[500px] min-h-[300px] font-mono text-sm text-foreground"
+				class="max-h-125 min-h-75 font-mono text-sm text-foreground"
 				bind:value={cssText}
 				onchange={() => {
 					if (error) error = null;

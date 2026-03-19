@@ -87,7 +87,7 @@
 					>
 						<span class="inline-flex bg-background px-1">Address</span>
 					</label>
-					<Textarea id="address" placeholder=" " class="!bg-background" />
+					<Textarea id="address" placeholder=" " class="bg-background!" />
 				</div>
 				<div class="group relative w-full">
 					<label
@@ -196,7 +196,7 @@
 								class="peer rounded-b-none pe-9 shadow-none"
 							/>
 							<div
-								class="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
+								class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
 							>
 								<CreditCardIcon class="size-4" />
 								<span class="sr-only">Card Provider</span>

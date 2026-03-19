@@ -9,7 +9,7 @@
 		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 	</Avatar.Root>
 	<Badge
-		class="absolute -end-2.5 -top-2.5 h-5 min-w-5 rounded-full bg-indigo-500 px-1 tabular-nums"
+		class="absolute -inset-e-2.5 -top-2.5 h-5 min-w-5 rounded-full bg-indigo-500 px-1 tabular-nums"
 	>
 		8
 	</Badge>

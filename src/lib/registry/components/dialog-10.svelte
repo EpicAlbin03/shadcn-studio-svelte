@@ -41,7 +41,7 @@
 				</Dialog.Description>
 			</Dialog.Header>
 			<form class="flex flex-col gap-4 pt-4">
-				<div class="grid grow-1 gap-3">
+				<div class="grid grow gap-3">
 					<Label for="email">Refer by email</Label>
 					<Input
 						type="text"

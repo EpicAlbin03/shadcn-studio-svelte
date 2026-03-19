@@ -13,7 +13,7 @@
 
 <div>
 	<Card.Root class="w-fit py-4">
-		<Card.Header class="flex items-center justify-center gap-2 border-b px-3 !pb-3">
+		<Card.Header class="flex items-center justify-center gap-2 border-b px-3 pb-3!">
 			<div class="flex w-full flex-col gap-3">
 				<Label for={id} class="text-xs">Enter Time</Label>
 				<div class="relative grow">
@@ -25,7 +25,7 @@
 						class="peer appearance-none ps-9 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
 					/>
 					<div
-						class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50"
+						class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 peer-disabled:opacity-50"
 					>
 						<ClockIcon size={16} aria-hidden="true" />
 					</div>

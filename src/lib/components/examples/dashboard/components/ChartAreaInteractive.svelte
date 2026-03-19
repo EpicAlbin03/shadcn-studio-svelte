@@ -150,7 +150,7 @@
 				type="single"
 				bind:value={timeRange}
 				variant="outline"
-				class="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
+				class="hidden *:data-[slot=toggle-group-item]:px-4! @[767px]/card:flex"
 			>
 				<ToggleGroup.Item value="90d">Last 3 months</ToggleGroup.Item>
 				<ToggleGroup.Item value="30d">Last 30 days</ToggleGroup.Item>
@@ -175,7 +175,7 @@
 		</Card.Action>
 	</Card.Header>
 	<Card.Content class="px-2 pt-4 sm:px-6 sm:pt-6">
-		<Chart.Container config={chartConfig} class="aspect-auto h-[250px] w-full">
+		<Chart.Container config={chartConfig} class="aspect-auto h-62.5 w-full">
 			<AreaChart
 				data={filteredData}
 				x="date"

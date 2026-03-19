@@ -14,7 +14,7 @@
 		<Button
 			variant="ghost"
 			size="icon"
-			class="absolute inset-y-0 end-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
+			class="absolute inset-y-0 inset-e-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
 		>
 			<SendHorizontalIcon />
 			<span class="sr-only">Subscribe</span>

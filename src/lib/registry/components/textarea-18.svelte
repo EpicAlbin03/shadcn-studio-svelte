@@ -7,5 +7,5 @@
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>No resize textarea</Label>
-	<Textarea {id} placeholder="Type your feedback here" class="[resize:none]" />
+	<Textarea {id} placeholder="Type your feedback here" class="resize-none" />
 </div>

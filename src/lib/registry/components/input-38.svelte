@@ -11,7 +11,7 @@
 	<Label for={id}>Search input with icon and button</Label>
 	<div class="relative">
 		<div
-			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-muted-foreground peer-disabled:opacity-50"
 		>
 			<SearchIcon class="size-4" />
 			<span class="sr-only">Search</span>
@@ -25,7 +25,7 @@
 		<Button
 			variant="ghost"
 			size="icon"
-			class="absolute inset-y-0 end-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
+			class="absolute inset-y-0 inset-e-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
 		>
 			<MicIcon />
 			<span class="sr-only">Press to speak</span>

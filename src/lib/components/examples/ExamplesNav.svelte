@@ -31,7 +31,7 @@
 </script>
 
 <div class={cn('flex items-center', className)} {...restProps}>
-	<ScrollArea class="max-w-[96%] md:max-w-[600px] lg:max-w-none" orientation="both">
+	<ScrollArea class="max-w-[96%] md:max-w-150 lg:max-w-none" orientation="both">
 		<div class="flex items-center">
 			{@render ExampleLink({
 				example: { name: 'Examples', href: '/theme-generator', hidden: false },

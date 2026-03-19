@@ -4,7 +4,7 @@
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 </script>
 
-<Collapsible.Root class="flex w-full max-w-[350px] flex-col gap-2">
+<Collapsible.Root class="flex w-full max-w-87.5 flex-col gap-2">
 	<div class="flex items-center justify-between gap-4 px-4">
 		<div class="text-sm font-semibold">@peduarte starred 3 repositories</div>
 		<Collapsible.Trigger>

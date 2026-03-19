@@ -8,7 +8,7 @@
 		<Avatar.Fallback>HR</Avatar.Fallback>
 	</Avatar.Root>
 	<span
-		class="absolute -end-0.5 -bottom-0.5 size-3 rounded-full border-2 border-background bg-green-600 dark:bg-green-400"
+		class="absolute -inset-e-0.5 -bottom-0.5 size-3 rounded-full border-2 border-background bg-green-600 dark:bg-green-400"
 	>
 		<span class="sr-only">Online</span>
 	</span>

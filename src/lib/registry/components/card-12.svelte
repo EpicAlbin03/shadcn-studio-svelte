@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="relative max-w-md rounded-xl bg-gradient-to-r from-zinc-600 to-violet-300 pt-0 shadow-lg"
+	class="relative max-w-md rounded-xl bg-linear-to-r from-zinc-600 to-violet-300 pt-0 shadow-lg"
 >
 	<div class="flex h-60 items-center justify-center">
 		<img src="/components/card-11.webp" alt="Shoes" class="w-75" />
@@ -17,7 +17,7 @@
 	<Button
 		size="icon"
 		onclick={() => (liked = !liked)}
-		class="absolute end-4 top-4 rounded-full bg-primary/10 hover:bg-primary/20"
+		class="absolute inset-e-4 top-4 rounded-full bg-primary/10 hover:bg-primary/20"
 	>
 		<HeartIcon
 			class={cn('size-4', liked ? 'fill-destructive stroke-destructive' : 'stroke-white')}

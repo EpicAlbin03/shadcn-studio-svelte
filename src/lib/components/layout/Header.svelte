@@ -19,10 +19,10 @@
 </script>
 
 <header
-	class="sticky top-0 z-(--header-z-index) flex min-h-(--header-height) w-full flex-shrink-0 items-center justify-center border-b border-dashed bg-background/60 backdrop-blur-[8px]"
+	class="sticky top-0 z-(--header-z-index) flex min-h-(--header-height) w-full shrink-0 items-center justify-center border-b border-dashed bg-background/60 backdrop-blur-sm"
 >
 	<div
-		class="mx-auto flex h-full w-full max-w-[1400px] items-center border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]"
+		class="mx-auto flex h-full w-full max-w-350 items-center border-dashed min-[1400px]:border-x min-[1800px]:max-w-384"
 	>
 		<div class="flex w-full items-center max-lg:gap-4">
 			<div class="flex items-center gap-3 ps-4 sm:ps-8">

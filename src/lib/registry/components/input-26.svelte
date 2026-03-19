@@ -17,7 +17,7 @@
 			variant="ghost"
 			size="icon"
 			onclick={() => (isVisible = !isVisible)}
-			class="absolute inset-y-0 end-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
+			class="absolute inset-y-0 inset-e-0 rounded-s-none text-muted-foreground hover:bg-transparent focus-visible:ring-ring/50"
 		>
 			{#if isVisible}
 				<EyeOffIcon />

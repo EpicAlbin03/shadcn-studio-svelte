@@ -11,7 +11,7 @@
 			<header
 				class="sticky top-0 z-50 flex h-13.75 items-center justify-between gap-6 border-b bg-card px-4 py-2 sm:px-6"
 			>
-				<Sidebar.Trigger class="[&_svg]:!size-5" />
+				<Sidebar.Trigger class="[&_svg]:size-5!" />
 			</header>
 			<main class="size-full flex-1 px-4 py-6 sm:px-6">
 				<Card.Root class="h-250">

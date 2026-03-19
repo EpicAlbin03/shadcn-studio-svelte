@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex w-full max-w-56 flex-col justify-center gap-4">
-	<Button variant="outline" class="!border-[#e84133] !text-[#e84133]">
+	<Button variant="outline" class="border-[#e84133]! text-[#e84133]!">
 		<svg xmlns="http://www.w3.org/2000/svg" width="256" height="262" viewBox="0 0 256 262">
 			<path
 				fill="#4285f4"
@@ -38,7 +38,7 @@
 		</svg>
 		<span class="flex flex-1 justify-center">Continue with X</span>
 	</Button>
-	<Button variant="outline" class="!border-[#0866fe] !text-[#0866fe]">
+	<Button variant="outline" class="border-[#0866fe]! text-[#0866fe]!">
 		<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 			<path
 				fill="#1877f2"

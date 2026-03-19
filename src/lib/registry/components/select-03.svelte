@@ -17,7 +17,7 @@
 			<option value="4">Inception</option>
 		</SelectNative>
 		<div
-			class="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50"
+			class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50"
 		>
 			<FilmIcon size={16} aria-hidden="true" />
 		</div>

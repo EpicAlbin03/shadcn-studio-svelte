@@ -24,7 +24,7 @@
 			onchange={(e) => {
 				table.getColumn('title')?.setFilterValue(e.currentTarget.value);
 			}}
-			class="h-8 w-[150px] lg:w-[250px]"
+			class="h-8 w-37.5 lg:w-62.5"
 		/>
 
 		{#if statusCol}

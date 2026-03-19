@@ -13,7 +13,7 @@
 			{/snippet}
 		</Dialog.Trigger>
 		<Dialog.Content
-			class="sm:end-0 sm:top-0 sm:left-auto sm:m-6 sm:max-w-[425px] sm:translate-x-0 sm:translate-y-0"
+			class="sm:inset-e-0 sm:top-0 sm:left-auto sm:m-6 sm:max-w-106.25 sm:translate-x-0 sm:translate-y-0"
 		>
 			<Dialog.Header>
 				<Dialog.Title>Edit profile</Dialog.Title>

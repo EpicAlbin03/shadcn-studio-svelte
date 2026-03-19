@@ -12,7 +12,7 @@
 				<Button {...props} variant="outline">Top align</Button>
 			{/snippet}
 		</Dialog.Trigger>
-		<Dialog.Content class="top-0 mt-6 translate-y-0 sm:max-w-[425px]">
+		<Dialog.Content class="top-0 mt-6 translate-y-0 sm:max-w-106.25">
 			<Dialog.Header>
 				<Dialog.Title>Edit profile</Dialog.Title>
 				<Dialog.Description>

@@ -8,7 +8,7 @@
 <div class="group relative w-full max-w-xs">
 	<Label
 		for={id}
-		class="absolute start-2 top-0 z-1 block -translate-y-1/2 bg-background px-1 text-xs text-foreground"
+		class="absolute inset-s-2 top-0 z-1 block -translate-y-1/2 bg-background px-1 text-xs text-foreground"
 	>
 		Input with overlapping label
 	</Label>

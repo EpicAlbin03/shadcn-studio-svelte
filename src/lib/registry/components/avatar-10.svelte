@@ -9,7 +9,7 @@
 		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 	</Avatar.Root>
 	<button
-		class="absolute -end-1 -bottom-1 inline-flex cursor-pointer items-center justify-center rounded-full focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+		class="absolute -inset-e-1 -bottom-1 inline-flex cursor-pointer items-center justify-center rounded-full focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
 	>
 		<PlusCircleIcon class="size-5 fill-slate-400 text-background" />
 		<span class="sr-only">Add</span>

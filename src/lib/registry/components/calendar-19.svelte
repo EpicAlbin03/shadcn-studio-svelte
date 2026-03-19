@@ -20,7 +20,7 @@
 
 <div>
 	<Card.Root class="gap-5 py-5">
-		<Card.Header class="flex items-center gap-2 border-b px-3 !pb-3">
+		<Card.Header class="flex items-center gap-2 border-b px-3 pb-3!">
 			<div class="flex w-full flex-col gap-3">
 				<Label for={id} class="text-xs">Enter Date</Label>
 				<Popover.Root bind:open>

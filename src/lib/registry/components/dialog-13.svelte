@@ -16,7 +16,7 @@
 			{/snippet}
 		</Dialog.Trigger>
 		<Dialog.Content
-			class="bg-gradient-to-b from-green-100 to-card to-40% [background-size:100%_101%] sm:max-w-sm dark:from-green-900"
+			class="bg-linear-to-b from-green-100 to-card to-40% bg-size-[100%_101%] sm:max-w-sm dark:from-green-900"
 		>
 			<Dialog.Header class="items-center">
 				<Dialog.Title>Sign Up</Dialog.Title>

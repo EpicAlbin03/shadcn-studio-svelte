@@ -24,7 +24,7 @@
 					<span class="text-sm">@iamhoward</span>
 				</div>
 			</div>
-			<div class="mx-auto h-px w-45 bg-gradient-to-r from-border/20 via-border to-border/20"></div>
+			<div class="mx-auto h-px w-45 bg-linear-to-r from-border/20 via-border to-border/20"></div>
 			<p class="text-center text-sm italic">
 				Product Manager @oliviasparks, passionate about building user-centric solutions that solve
 				real problems.

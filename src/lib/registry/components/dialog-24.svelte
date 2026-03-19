@@ -13,7 +13,7 @@
 			{/snippet}
 		</Dialog.Trigger>
 		<Dialog.Content
-			class="data-[state=open]:duration-600 data-[state=open]:!zoom-in-100 data-[state=open]:slide-in-from-bottom-20 sm:max-w-[425px]"
+			class="data-[state=open]:duration-600 data-[state=open]:!zoom-in-100 data-[state=open]:slide-in-from-bottom-20 sm:max-w-106.25"
 		>
 			<Dialog.Header>
 				<Dialog.Title>Edit profile</Dialog.Title>

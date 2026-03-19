@@ -101,7 +101,7 @@
 
 		<div
 			data-slot="motion-highlight-item"
-			class={cn('relative z-[1]', className)}
+			class={cn('relative z-1', className)}
 			data-active={isActive ? 'true' : 'false'}
 			data-value={childValue}
 		>

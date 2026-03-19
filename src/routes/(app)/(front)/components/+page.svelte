@@ -24,11 +24,11 @@
 			<div class="group overflow-hidden rounded-xl border">
 				<a href="/docs/components/{category.slug}">
 					<div
-						class="relative flex h-52 items-center justify-center border-b bg-primary/[0.045] dark:bg-transparent"
+						class="relative flex h-52 items-center justify-center border-b bg-primary/4.5 dark:bg-transparent"
 					>
 						<Icon class="transition-all duration-300 group-hover:scale-110" />
 						{#if category.badge}
-							<span class="absolute start-4 top-2 font-['Gamja_Flower'] text-xl">
+							<span class="absolute inset-s-4 top-2 font-['Gamja_Flower'] text-xl">
 								{category.badge}
 							</span>
 						{/if}
@@ -44,7 +44,7 @@
 		{/each}
 		<div class="group overflow-hidden rounded-xl border">
 			<div
-				class="flex h-52 items-center justify-center border-b bg-primary/[0.045] dark:bg-transparent"
+				class="flex h-52 items-center justify-center border-b bg-primary/4.5 dark:bg-transparent"
 			>
 				<MoreComponentsSVG class="transition-all duration-300 group-hover:scale-110" />
 			</div>

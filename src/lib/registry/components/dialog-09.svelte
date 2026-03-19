@@ -20,7 +20,7 @@
 			</Dialog.Description>
 		</Dialog.Header>
 		<form class="flex gap-4">
-			<div class="grid grow-1 gap-3">
+			<div class="grid grow gap-3">
 				<Label for="email">Email</Label>
 				<Input type="email" id="email" name="email" placeholder="example@gmail.com" required />
 			</div>

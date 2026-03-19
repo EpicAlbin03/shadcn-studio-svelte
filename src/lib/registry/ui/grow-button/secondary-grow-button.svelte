@@ -21,7 +21,7 @@
 	{variant}
 	{size}
 	class={cn(
-		'cursor-pointer rounded-lg border border-[color-mix(in_oklab,_var(--primary)_30%,_var(--card))] bg-[color-mix(in_oklab,_var(--primary)_10%,_var(--card))] text-primary hover:bg-[color-mix(in_oklab,_var(--primary)_15%,_var(--card))] active:scale-95',
+		'cursor-pointer rounded-lg border border-[color-mix(in_oklab,var(--primary)_30%,var(--card))] bg-[color-mix(in_oklab,var(--primary)_10%,var(--card))] text-primary hover:bg-[color-mix(in_oklab,var(--primary)_15%,var(--card))] active:scale-95',
 		size === 'lg' && 'text-base has-[>svg]:px-6',
 		className
 	)}

@@ -28,7 +28,7 @@
 							class={isActive
 								? cn(
 										buttonVariants({ variant: 'secondary', size: 'icon' }),
-										'!border-none !shadow-none hover:!text-secondary-foreground'
+										'border-none! shadow-none! hover:text-secondary-foreground!'
 									)
 								: undefined}
 						>

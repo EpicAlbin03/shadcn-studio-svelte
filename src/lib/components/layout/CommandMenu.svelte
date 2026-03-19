@@ -39,7 +39,7 @@
 
 <Button
 	variant="outline"
-	class="relative w-9 cursor-pointer text-sm font-normal xl:w-52 xl:justify-start xl:!pe-12 xl:text-muted-foreground xl:shadow-none"
+	class="relative w-9 cursor-pointer text-sm font-normal xl:w-52 xl:justify-start xl:pe-12! xl:text-muted-foreground xl:shadow-none"
 	onclick={() => (open = true)}
 	{...isBreakpointReached && { size: 'icon' }}
 >
@@ -47,7 +47,7 @@
 	<span class="inline-flex max-xl:hidden">Search...</span>
 	<span class="sr-only">Search</span>
 	<kbd
-		class="pointer-events-none absolute top-[.4375rem] right-1.5 flex h-5 items-center gap-1 rounded border bg-muted px-1.5 text-xs font-medium select-none max-xl:hidden"
+		class="pointer-events-none absolute top-1.75 right-1.5 flex h-5 items-center gap-1 rounded border bg-muted px-1.5 text-xs font-medium select-none max-xl:hidden"
 	>
 		<span class="text-sm">⌘</span>K
 	</kbd>

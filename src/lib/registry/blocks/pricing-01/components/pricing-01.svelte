@@ -67,7 +67,7 @@
 							<Button class="w-fit">Enterprise</Button>
 						</div>
 
-						<Separator orientation="vertical" class="!h-[132px] max-sm:hidden" />
+						<Separator orientation="vertical" class="h-33! max-sm:hidden" />
 
 						<div class="flex items-end justify-end max-sm:hidden">
 							<div class="flex flex-col items-end">

@@ -27,7 +27,7 @@
 			<h1 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
 				Shadcn Theme Generator
 			</h1>
-			<p class="max-w-[800px] text-center text-muted-foreground">
+			<p class="max-w-200 text-center text-muted-foreground">
 				Preview your theme changes across different components and layouts.
 			</p>
 		</div>
@@ -44,7 +44,7 @@
 			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
 				Design Your Perfect UI with Ease
 			</h2>
-			<p class="max-w-[800px] text-center text-muted-foreground">
+			<p class="max-w-200 text-center text-muted-foreground">
 				Transform your shadcn components in real time—customize, save, and ship stunning interfaces
 				faster than ever.
 			</p>
@@ -73,7 +73,7 @@
 			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
 				Frequently Asked Questions
 			</h2>
-			<p class="max-w-[800px] text-center text-muted-foreground">
+			<p class="max-w-200 text-center text-muted-foreground">
 				Find answers to common questions about shadcn/studio.
 			</p>
 		</div>
@@ -128,7 +128,7 @@
 	>
 		<div
 			aria-hidden="true"
-			class="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px]"
+			class="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-size-[24px_24px]"
 		></div>
 		<div
 			aria-hidden="true"

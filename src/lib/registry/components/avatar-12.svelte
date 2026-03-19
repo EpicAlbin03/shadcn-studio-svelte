@@ -8,7 +8,7 @@
 		<Avatar.Image src="/avatars/05.webp" alt="Hallie Richards" />
 		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 	</Avatar.Root>
-	<span class="absolute -end-1.5 -top-1.5">
+	<span class="absolute -inset-e-1.5 -top-1.5">
 		<span class="sr-only">Verified</span>
 		<BadgeCheckIcon class="size-5 fill-sky-500 text-background" />
 	</span>

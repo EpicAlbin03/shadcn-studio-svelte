@@ -131,7 +131,7 @@
 						<div class="flex h-full flex-col space-y-4">
 							<Textarea
 								placeholder="Write a tagline for an ice cream shop"
-								class="min-h-[400px] flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
+								class="min-h-100 flex-1 p-4 md:min-h-175 lg:min-h-175"
 							/>
 							<div class="flex items-center space-x-2">
 								<Button>Submit</Button>
@@ -147,7 +147,7 @@
 							<div class="grid h-full grid-rows-2 gap-6 lg:grid-cols-2 lg:grid-rows-1">
 								<Textarea
 									placeholder="We're writing to [inset]. Congrats from OpenAI!"
-									class="h-full min-h-[300px] lg:min-h-[700px] xl:min-h-[700px]"
+									class="h-full min-h-75 lg:min-h-175 xl:min-h-175"
 								/>
 								<div class="rounded-md border bg-muted"></div>
 							</div>
@@ -169,7 +169,7 @@
 										<Textarea
 											id="input"
 											placeholder="We is going to the market."
-											class="flex-1 lg:min-h-[580px]"
+											class="flex-1 lg:min-h-145"
 										/>
 									</div>
 									<div class="flex flex-col space-y-2">
@@ -178,7 +178,7 @@
 									</div>
 								</div>
 								<div
-									class="mt-[21px] min-h-[400px] rounded-md border bg-muted lg:min-h-[700px]"
+									class="mt-5.25 min-h-100 rounded-md border bg-muted lg:min-h-175"
 								></div>
 							</div>
 							<div class="flex items-center space-x-2">

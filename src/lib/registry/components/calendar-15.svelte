@@ -10,14 +10,14 @@
 		type="single"
 		bind:value
 		class="rounded-md border
-  [&_[data-calendar-header]]:!flex
-  [&_[data-calendar-header]]:!w-full
-  [&_[data-calendar-header]]:!items-center
-  [&_[data-calendar-header]]:!justify-start
-  [&_nav]:!flex
-  [&_nav]:!h-8
-  [&_nav]:!items-center
-  [&_nav]:!justify-end
+  **:data-calendar-header:flex!
+  **:data-calendar-header:w-full!
+  **:data-calendar-header:items-center!
+  **:data-calendar-header:justify-start!
+  [&_nav]:flex!
+  [&_nav]:h-8!
+  [&_nav]:items-center!
+  [&_nav]:justify-end!
   "
 	/>
 	<p class="mt-4 text-center text-xs text-muted-foreground" role="region">

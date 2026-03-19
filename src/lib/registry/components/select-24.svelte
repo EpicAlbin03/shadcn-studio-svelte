@@ -17,12 +17,12 @@
 <div class="group relative w-full max-w-xs">
 	<label
 		for={id}
-		class="absolute start-2 top-0 z-10 block -translate-y-1/2 bg-background px-1 text-xs font-medium text-foreground group-has-disabled:opacity-50"
+		class="absolute inset-s-2 top-0 z-10 block -translate-y-1/2 bg-background px-1 text-xs font-medium text-foreground group-has-disabled:opacity-50"
 	>
 		Select with overlapping label
 	</label>
 	<Select.Root type="single" bind:value>
-		<Select.Trigger {id} class="w-full dark:!bg-background">
+		<Select.Trigger {id} class="w-full dark:bg-background!">
 			{triggerContent}
 		</Select.Trigger>
 		<Select.Content>

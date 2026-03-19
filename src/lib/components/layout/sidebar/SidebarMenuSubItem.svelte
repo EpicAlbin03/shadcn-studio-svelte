@@ -23,15 +23,15 @@
 </script>
 
 <Sidebar.MenuSubItem
-	class={cn('border-s-1 hover:border-s-2 hover:border-foreground', {
+	class={cn('border-s hover:border-s-2 hover:border-foreground', {
 		'border-s-2 border-primary hover:border-primary active:border-primary': active
 	})}
 >
 	{#if href}
 		<Sidebar.MenuSubButton
 			class={cn(
-				'h-8 cursor-pointer rounded-s-none px-3 text-muted-foreground outline-none hover:bg-transparent hover:ps-[11px] hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 active:bg-transparent active:text-foreground',
-				{ 'ps-[11px] text-primary hover:text-primary active:text-primary': active }
+				'h-8 cursor-pointer rounded-s-none px-3 text-muted-foreground outline-none hover:bg-transparent hover:ps-2.75 hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 active:bg-transparent active:text-foreground',
+				{ 'ps-2.75 text-primary hover:text-primary active:text-primary': active }
 			)}
 		>
 			{#snippet child({ props })}
@@ -52,8 +52,8 @@
 	{:else}
 		<Sidebar.MenuSubButton
 			class={cn(
-				'h-8 cursor-pointer rounded-s-none px-3 text-muted-foreground outline-none hover:bg-transparent hover:ps-[11px] hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 active:bg-transparent active:text-foreground',
-				{ 'ps-[11px] text-primary hover:text-primary active:text-primary': active }
+				'h-8 cursor-pointer rounded-s-none px-3 text-muted-foreground outline-none hover:bg-transparent hover:ps-2.75 hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 active:bg-transparent active:text-foreground',
+				{ 'ps-2.75 text-primary hover:text-primary active:text-primary': active }
 			)}
 		>
 			{@render children?.()}
@@ -61,14 +61,14 @@
 	{/if}
 	{#if isUpdated}
 		<Sidebar.MenuBadge
-			class="!end-0 top-1/2 -translate-y-1/2 rounded-[4px] bg-indigo-500/20 px-2 py-0.5 font-normal text-indigo-500"
+			class="inset-e-0! top-1/2 -translate-y-1/2 rounded-lg bg-indigo-500/20 px-2 py-0.5 font-normal text-indigo-500"
 		>
 			Updated
 		</Sidebar.MenuBadge>
 	{/if}
 	{#if isNew}
 		<Sidebar.MenuBadge
-			class="!end-0 top-1/2 -translate-y-1/2 rounded-[4px] bg-green-500/20 px-2 py-0.5 font-normal text-green-500"
+			class="inset-e-0! top-1/2 -translate-y-1/2 rounded-lg bg-green-500/20 px-2 py-0.5 font-normal text-green-500"
 		>
 			New
 		</Sidebar.MenuBadge>

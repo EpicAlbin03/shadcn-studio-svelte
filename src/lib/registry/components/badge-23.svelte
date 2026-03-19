@@ -10,5 +10,5 @@
 			<ShoppingCartIcon class="size-5" />
 		</Avatar.Fallback>
 	</Avatar.Root>
-	<Badge class="absolute -end-2.5 -top-2.5 h-5 min-w-5 rounded-full px-1 tabular-nums">8</Badge>
+	<Badge class="absolute -inset-e-2.5 -top-2.5 h-5 min-w-5 rounded-full px-1 tabular-nums">8</Badge>
 </div>

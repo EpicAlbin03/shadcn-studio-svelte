@@ -11,5 +11,5 @@
 	>
 		<span class="inline-flex bg-background px-1">Textarea with floating label</span>
 	</label>
-	<Textarea {id} placeholder=" " class="!bg-background" />
+	<Textarea {id} placeholder=" " class="bg-background!" />
 </div>

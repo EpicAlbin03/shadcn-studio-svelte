@@ -5,7 +5,7 @@
 
 <Dialog.Root>
 	<Dialog.Trigger class={buttonVariants({ variant: 'secondary' })}>View code</Dialog.Trigger>
-	<Dialog.Content class="sm:max-w-[625px]">
+	<Dialog.Content class="sm:max-w-156.25">
 		<Dialog.Header>
 			<Dialog.Title>View code</Dialog.Title>
 			<Dialog.Description>

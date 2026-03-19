@@ -20,7 +20,7 @@
 	<Header toggle={CustomSidebarTrigger} />
 	<div class="flex flex-1">
 		<div
-			class="mx-auto flex w-full max-w-[1400px] border-dashed min-[1400px]:border-x min-[1800px]:max-w-[1536px]"
+			class="mx-auto flex w-full max-w-350 border-dashed min-[1400px]:border-x min-[1800px]:max-w-384"
 		>
 			<AppSidebar />
 			<PagesContent>
@@ -28,7 +28,7 @@
 				<Footer />
 			</PagesContent>
 			{#if isDocPage && toc}
-				<div class="w-[300px] border-l border-dashed max-xl:hidden">
+				<div class="w-75 border-l border-dashed max-xl:hidden">
 					<DocsToc {toc} {title} />
 				</div>
 			{/if}

@@ -11,7 +11,7 @@
 		<Avatar.Fallback class="text-xs">HR</Avatar.Fallback>
 	</Avatar.Root>
 	<span
-		class="absolute -end-1.5 -bottom-1.5 inline-flex size-4 items-center justify-center rounded-full bg-green-600 dark:bg-green-400"
+		class="absolute -inset-e-1.5 -bottom-1.5 inline-flex size-4 items-center justify-center rounded-full bg-green-600 dark:bg-green-400"
 	>
 		<CheckIcon class="size-3 text-white" />
 	</span>

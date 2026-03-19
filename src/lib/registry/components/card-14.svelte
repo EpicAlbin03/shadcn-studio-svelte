@@ -12,7 +12,7 @@
 			variant="ghost"
 			size="icon"
 			onclick={() => (isActive = false)}
-			class="absolute end-2 top-2 rounded-full"
+			class="absolute inset-e-2 top-2 rounded-full"
 		>
 			<XIcon />
 			<span class="sr-only">Close</span>
