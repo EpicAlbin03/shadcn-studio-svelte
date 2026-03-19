@@ -40,7 +40,8 @@ export default defineConfig(
 		},
 		rules: {
 			'svelte/no-useless-mustaches': 'warn',
-			'svelte/no-navigation-without-resolve': 'off'
+			'svelte/no-navigation-without-resolve': 'off',
+			'svelte/require-each-key': 'off'
 		}
 	},
 	{
@@ -56,13 +57,6 @@ export default defineConfig(
 		}
 	},
 	{
-		ignores: [
-			'build/',
-			'.svelte-kit/',
-			'dist/',
-			'.svelte-kit/**/*',
-			'docs/.svelte-kit/**/*',
-			'.svelte-kit'
-		]
+		ignores: ['build/', 'dist/', '.svelte-kit/', '.netlify/', 'src/__registry__/']
 	}
 );
