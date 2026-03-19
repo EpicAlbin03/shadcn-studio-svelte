@@ -45,7 +45,7 @@
 						</linearGradient>
 					</defs>
 				</svg>
-			</span>{' '}
+			</span>
 			Recipes for Parties!
 		</h1>
 

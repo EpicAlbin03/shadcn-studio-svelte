@@ -29,7 +29,7 @@
 				<RegisterForm />
 
 				<p class="text-center text-muted-foreground">
-					Already have an account?{' '}
+					Already have an account?
 					<a href="#" class="text-card-foreground hover:underline"> Sign in instead </a>
 				</p>
 

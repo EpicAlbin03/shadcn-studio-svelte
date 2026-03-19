@@ -69,7 +69,7 @@
 									<div class="flex-1">
 										<h4 class="font-medium">{testimonial.name}</h4>
 										<p class="text-sm text-muted-foreground">
-											{testimonial.role} at{' '}
+											{testimonial.role} at
 											<span class="font-semibold text-card-foreground">{testimonial.company}</span>
 										</p>
 									</div>

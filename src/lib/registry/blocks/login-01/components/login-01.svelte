@@ -26,7 +26,7 @@
 
 		<Card.Content>
 			<p class="mb-6 text-muted-foreground">
-				Login with{' '}
+				Login with
 				<a href="#" class="text-card-foreground hover:underline"> Magic Link </a>
 			</p>
 
@@ -39,7 +39,7 @@
 				<LoginForm />
 
 				<p class="text-center text-muted-foreground">
-					New on our platform?{' '}
+					New on our platform?
 					<a href="#" class="text-card-foreground hover:underline"> Create an account </a>
 				</p>
 

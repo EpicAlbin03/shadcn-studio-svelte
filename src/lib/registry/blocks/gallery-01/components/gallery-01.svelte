@@ -24,7 +24,7 @@
 					Explore our
 					<span class="absolute bottom-1 left-0 -z-1 h-px w-full bg-primary" aria-hidden="true"
 					></span>
-				</span>{' '}
+				</span>
 				Gallery
 			</h2>
 			<p class="text-xl text-muted-foreground">

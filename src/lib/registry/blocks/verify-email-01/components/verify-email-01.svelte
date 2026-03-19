@@ -30,7 +30,7 @@
 				<Button class="w-full" href="#">Skip for now</Button>
 
 				<p class="text-center text-muted-foreground">
-					Didn't get the mail?{' '}
+					Didn't get the mail?
 					<a href="#" class="text-card-foreground hover:underline"> Resend </a>
 				</p>
 			</div>
