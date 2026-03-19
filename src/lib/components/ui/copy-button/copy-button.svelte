@@ -29,22 +29,25 @@
 		animationDuration = 500,
 		disableTooltip = false,
 		variant = 'ghost',
-		size = 'icon',
+		size: sizeProp = 'icon',
 		onCopied,
-		tooltip = {
-			default: 'Copy to Clipboard',
-			success: 'Copied',
-			failure: 'Failed to copy'
-		},
+		tooltip: tooltipProp,
 		children,
 		...restProps
 	}: CopyButtonProps = $props();
+
+	const tooltip = $derived({
+		default: 'Copy to Clipboard',
+		success: 'Copied',
+		failure: 'Failed to copy',
+		...tooltipProp
+	});
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const rp = $derived(restProps as any);
 
 	// If button-text is provided, set the size to default
-	let buttonSize = $derived(size === 'icon' && children ? 'default' : size);
+	let size = $derived(sizeProp === 'icon' && children ? 'default' : sizeProp);
 
 	const clipboard = new UseClipboard();
 
@@ -61,7 +64,7 @@
 				{...props}
 				bind:ref
 				{variant}
-				size={buttonSize}
+				{size}
 				data-slot="copy-button"
 				type="button"
 				name="copy"
