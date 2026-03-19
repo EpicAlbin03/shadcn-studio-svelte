@@ -58,9 +58,11 @@
 				<Tabs.Trigger value="code">Code</Tabs.Trigger>
 			</Tabs.List>
 		</Tabs.Root>
-		<CopyPrompt text={copyPromptText} />
+		<CopyPrompt size="icon-sm" variant="ghost" text={copyPromptText} />
 	</div>
+
 	<Separator orientation="vertical" class="mx-1 h-4! shrink-0" />
+
 	<a
 		href="#{blockName}"
 		class="shrink-0 pr-1 text-center text-sm font-medium underline-offset-2 hover:underline md:text-left"
@@ -72,6 +74,7 @@
 			New
 		</Badge>
 	{/if}
+
 	<div class="ml-auto flex min-w-0 items-center gap-2">
 		<div class="h-8 shrink-0 items-center gap-1.5 rounded-md border p-1 shadow-none">
 			<ToggleGroup.Root
@@ -93,7 +96,9 @@
 				<ToggleGroup.Item value="30" title="Mobile">
 					<SmartphoneIcon />
 				</ToggleGroup.Item>
+
 				<Separator orientation="vertical" class="h-4!" />
+
 				<Button
 					size="icon"
 					variant="ghost"
@@ -120,7 +125,9 @@
 				</Button>
 			</ToggleGroup.Root>
 		</div>
+
 		<Separator orientation="vertical" class="mx-1 h-4! shrink-0" />
+
 		<CopyButton
 			variant="outline"
 			class="max-w-full min-w-20 gap-1 overflow-hidden px-2 shadow-none"
