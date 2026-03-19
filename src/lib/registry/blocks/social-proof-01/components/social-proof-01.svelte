@@ -39,12 +39,12 @@
 
 			<div class="shrink-0">
 				<img
-					src="/img/blocks/social-proof.webp"
+					src="/img/blocks/social-proof-01.webp"
 					alt="Social Widget"
 					class="w-142 object-contain dark:hidden"
 				/>
 				<img
-					src="/img/blocks/social-proof-dark.webp"
+					src="/img/blocks/social-proof-01-dark.webp"
 					alt="Social Widget"
 					class="hidden w-142 object-contain dark:inline-block"
 				/>

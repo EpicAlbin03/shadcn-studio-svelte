@@ -55,7 +55,7 @@
 			}
 		},
 		{
-			image: '/img/blocks/team-05.webp',
+			image: '/img/blocks/team-08.webp',
 			alt: 'Jayden Lipshultz',
 			name: 'Jayden Lipshultz',
 			role: 'Sales Lead',
@@ -68,7 +68,7 @@
 			}
 		},
 		{
-			image: '/img/blocks/team-06.webp',
+			image: '/img/blocks/team-07.webp',
 			alt: 'Maria Donin',
 			name: 'Maria Donin',
 			role: 'Product Manager',
@@ -81,7 +81,7 @@
 			}
 		},
 		{
-			image: '/img/blocks/team-07.webp',
+			image: '/img/blocks/team-06.webp',
 			alt: 'Carter Saris',
 			name: 'Carter Saris',
 			role: 'UX Researcher',
@@ -94,7 +94,7 @@
 			}
 		},
 		{
-			image: '/img/blocks/team-08.webp',
+			image: '/img/blocks/team-05.webp',
 			alt: 'Ahmad Donin',
 			name: 'Ahmad Donin',
 			role: 'Customer Success',
