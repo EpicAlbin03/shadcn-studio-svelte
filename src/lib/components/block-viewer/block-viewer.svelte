@@ -3,7 +3,7 @@
 	import { Context } from 'runed';
 	import BlockViewerToolbar from './block-viewer-toolbar.svelte';
 	import BlockViewerView from './block-viewer-view.svelte';
-	import { CodeBlock } from '$lib/components/code-block/index.js';
+	import { CodeBlock } from '$lib/components/code-block';
 	import type { Snippet } from 'svelte';
 	import BlockViewerViewMobile from './block-viewer-view-mobile.svelte';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';

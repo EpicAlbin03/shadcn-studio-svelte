@@ -15,7 +15,7 @@
 	<!-- svelte-ignore a11y_figcaption_parent -->
 	<figcaption
 		class={cn(
-			'hidden h-12 shrink-0 items-center gap-2 border-b px-4 py-2 text-code-foreground select-none md:flex [&_svg]:size-4 [&_svg]:text-code-foreground',
+			'hidden h-12 shrink-0 items-center gap-2 border-b px-4 py-2 text-code-foreground select-none md:flex [&_svg]:size-4',
 			ctx.hideFileTree && 'pl-4'
 		)}
 		data-language={language}
@@ -30,7 +30,7 @@
 	</figcaption>
 
 	<div
-		class="flex h-12 shrink-0 items-center gap-2 border-b px-2 py-2 text-code-foreground md:hidden [&_svg]:size-4 [&_svg]:text-code-foreground"
+		class="flex h-12 shrink-0 items-center gap-2 border-b px-2 py-2 text-code-foreground md:hidden [&_svg]:size-4"
 	>
 		<Select.Root type="single" bind:value={() => ctx.activeFile ?? '', (v) => (ctx.activeFile = v)}>
 			<Select.Trigger class="w-64 justify-start [&>svg]:ml-auto">
