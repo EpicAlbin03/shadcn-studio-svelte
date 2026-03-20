@@ -5,7 +5,7 @@
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { cn } from '$lib/utils';
-	import CodeBlockCopyButton from '$lib/components/CodeBlockCopyButton.svelte';
+	import CopyCode from '$lib/components/CopyCode.svelte';
 
 	const {
 		type,
@@ -71,6 +71,6 @@
 				{/each}
 			</div>
 		</Tabs.Root>
-		<CodeBlockCopyButton text={commandText} class="absolute top-2 right-2" />
+		<CopyCode text={commandText} class="absolute top-2 right-2" />
 	</div>
 </figure>

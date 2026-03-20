@@ -2,7 +2,7 @@
 	import { CodeBlockContext } from './code-block.svelte';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { getIconForLanguageExtension } from '$lib/utils/icons';
-	import CodeBlockCopyButton from '$lib/components/CodeBlockCopyButton.svelte';
+	import CopyCode from '$lib/components/CopyCode.svelte';
 	import { cn } from '$lib/utils';
 
 	const ctx = CodeBlockContext.get();
@@ -34,7 +34,7 @@
 		{file.target}
 		<div class="ml-auto flex items-center gap-2">
 			{#if ctx.activeFileCodeToCopy}
-				<CodeBlockCopyButton text={ctx.activeFileCodeToCopy} class="mr-2" />
+				<CopyCode text={ctx.activeFileCodeToCopy} class="mr-2" />
 			{/if}
 		</div>
 	</figcaption>
@@ -60,7 +60,7 @@
 		</Select.Root>
 		<div class="ml-auto flex items-center gap-2">
 			{#if ctx.activeFileCodeToCopy}
-				<CodeBlockCopyButton text={ctx.activeFileCodeToCopy} class="mr-0" />
+				<CopyCode text={ctx.activeFileCodeToCopy} class="mr-0" />
 			{/if}
 		</div>
 	</div>
