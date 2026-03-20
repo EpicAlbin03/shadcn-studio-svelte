@@ -58,7 +58,7 @@
 				{#each notifications as notification (notification.id)}
 					<li>
 						<button
-							class={'flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-accent'}
+							class="flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-accent"
 							onclick={() => readMessages.push(notification.id)}
 						>
 							<Avatar.Root class="rounded-lg">
