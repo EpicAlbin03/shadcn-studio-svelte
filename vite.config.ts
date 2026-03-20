@@ -62,10 +62,10 @@ async function buildRegistry() {
 	execSync('bun run scripts/build-registry', {
 		stdio: ['pipe', 'pipe', 'inherit']
 	});
-	execSync('bun run shadcn-svelte registry build --output static/registry', {
+	execSync('bun run shadcn-svelte registry build', {
 		stdio: ['pipe', 'pipe', 'inherit']
 	});
-	fs.cpSync(path.resolve('static', 'registry'), path.resolve('src', '__registry__', 'json'), {
+	fs.cpSync(path.resolve('static', 'r'), path.resolve('src', '__registry__', 'json'), {
 		recursive: true
 	});
 }
