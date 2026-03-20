@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CalendarX2Icon from '@lucide/svelte/icons/calendar-x2';
-	import Clock8Icon from '@lucide/svelte/icons/clock8';
+	import CalendarX2Icon from '@lucide/svelte/icons/calendar-x-2';
+	import Clock8Icon from '@lucide/svelte/icons/clock-8';
 	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
 	import TruckIcon from '@lucide/svelte/icons/truck';
 	import StatisticsCard from '$lib/registry/components/statistics-01-comp.svelte';

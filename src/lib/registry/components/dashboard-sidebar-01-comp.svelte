@@ -5,12 +5,12 @@
 	import ChartPieIcon from '@lucide/svelte/icons/chart-pie';
 	import ChartSplineIcon from '@lucide/svelte/icons/chart-spline';
 	import ClipboardListIcon from '@lucide/svelte/icons/clipboard-list';
-	import Clock9Icon from '@lucide/svelte/icons/clock9';
+	import Clock9Icon from '@lucide/svelte/icons/clock-9';
 	import CrownIcon from '@lucide/svelte/icons/crown';
 	import HashIcon from '@lucide/svelte/icons/hash';
 	import SettingsIcon from '@lucide/svelte/icons/settings';
 	import SquareActivityIcon from '@lucide/svelte/icons/square-activity';
-	import Undo2Icon from '@lucide/svelte/icons/undo2';
+	import Undo2Icon from '@lucide/svelte/icons/undo-2';
 	import UsersIcon from '@lucide/svelte/icons/users';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 </script>

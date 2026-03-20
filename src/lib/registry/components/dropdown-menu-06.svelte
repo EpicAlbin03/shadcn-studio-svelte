@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AlignJustifyIcon from '@lucide/svelte/icons/align-justify';
-	import Heading1Icon from '@lucide/svelte/icons/heading1';
-	import Heading2Icon from '@lucide/svelte/icons/heading2';
+	import Heading1Icon from '@lucide/svelte/icons/heading-1';
+	import Heading2Icon from '@lucide/svelte/icons/heading-2';
 	import PencilIcon from '@lucide/svelte/icons/pencil';
 	import TextSearchIcon from '@lucide/svelte/icons/text-search';
 	import { Button } from '$lib/components/ui/button';

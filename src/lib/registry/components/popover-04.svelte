@@ -1,6 +1,6 @@
 <script lang="ts">
+	import Volume2Icon from '@lucide/svelte/icons/volume-2';
 	import VolumeXIcon from '@lucide/svelte/icons/volume-x';
-	import Volume2Icon from '@lucide/svelte/icons/volume2';
 	import { Button } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';

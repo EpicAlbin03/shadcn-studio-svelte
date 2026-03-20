@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Rows2Icon from '@lucide/svelte/icons/rows2';
-	import Rows3Icon from '@lucide/svelte/icons/rows3';
-	import Rows4Icon from '@lucide/svelte/icons/rows4';
+	import Rows2Icon from '@lucide/svelte/icons/rows-2';
+	import Rows3Icon from '@lucide/svelte/icons/rows-3';
+	import Rows4Icon from '@lucide/svelte/icons/rows-4';
 	import { getCoreRowModel, type ColumnDef, type RowSelectionState } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
 	import { Checkbox } from '$lib/components/ui/checkbox';

@@ -3,7 +3,7 @@
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
 	import SunIcon from '@lucide/svelte/icons/sun';
-	import Trash2Icon from '@lucide/svelte/icons/trash2';
+	import Trash2Icon from '@lucide/svelte/icons/trash-2';
 	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
 	import { mode as _mode } from 'mode-watcher';
 	import {

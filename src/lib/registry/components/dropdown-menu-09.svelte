@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PencilLineIcon from '@lucide/svelte/icons/pencil-line';
-	import Trash2Icon from '@lucide/svelte/icons/trash2';
+	import Trash2Icon from '@lucide/svelte/icons/trash-2';
 	import UploadIcon from '@lucide/svelte/icons/upload';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
