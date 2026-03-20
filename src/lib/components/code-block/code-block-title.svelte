@@ -2,7 +2,7 @@
 	import { CodeBlockContext } from './code-block.svelte';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { getIconForLanguageExtension } from '$lib/utils/icons';
-	import CopyCode from '$lib/components/CopyCode.svelte';
+	import CopyCode from '$lib/components/copy-code.svelte';
 	import { cn } from '$lib/utils';
 
 	const ctx = CodeBlockContext.get();

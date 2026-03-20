@@ -5,7 +5,7 @@
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { cn } from '$lib/utils';
-	import CopyCode from '$lib/components/CopyCode.svelte';
+	import CopyCode from '$lib/components/copy-code.svelte';
 
 	const {
 		type,

@@ -3,7 +3,7 @@
 	import { CodeBlock } from '$lib/components/code-block';
 	import { page } from '$app/state';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
-	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
+	import CopyPrompt from '$lib/components/copy-prompt.svelte';
 	import { ComponentCategoryContext } from '$lib/utils/components';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { getCopyPromptText } from '$lib/utils/copy-prompt';

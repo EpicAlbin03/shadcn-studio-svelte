@@ -15,7 +15,7 @@
 	import { getCommand } from '$lib/utils/package-manager.js';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { PUBLIC_URL } from '$lib/config/site-config';
-	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
+	import CopyPrompt from '$lib/components/copy-prompt.svelte';
 	import { getCopyPromptText } from '$lib/utils/copy-prompt';
 	import { NEW_BLOCKS } from '$lib/utils/blocks';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
