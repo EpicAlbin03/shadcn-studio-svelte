@@ -44,7 +44,6 @@
 		disabled?: boolean;
 		enabled?: boolean;
 		exitDelay?: number;
-		controlledItems?: boolean;
 		boundsOffset?: Partial<Bounds>;
 		containerClassName?: string;
 		forceUpdateBounds?: boolean;
@@ -65,7 +64,6 @@
 		disabled = false,
 		enabled = true,
 		exitDelay = 0.2,
-		controlledItems = false,
 		boundsOffset = { top: 0, left: 0, width: 0, height: 0 },
 		containerClassName,
 		forceUpdateBounds = false,
@@ -76,15 +74,15 @@
 	let containerRef = $state<HTMLDivElement | null>(null);
 	let boundsState = $state<Bounds | null>(null);
 	let activeClassNameState = $state('');
-	let previousValue = $state<string | null>(null);
-	let internalValue = $state(value);
+	let previousValue = $state<string | null>(value);
+	let lastValue = $state<string | null>(value);
 
 	const id = $props.id();
 
 	$effect(() => {
-		if (value !== internalValue) {
-			previousValue = internalValue;
-			internalValue = value;
+		if (value !== lastValue) {
+			previousValue = lastValue;
+			lastValue = value;
 		}
 	});
 
@@ -92,6 +90,7 @@
 		if (value !== newValue) {
 			previousValue = value;
 			value = newValue;
+			lastValue = newValue;
 			onValueChange?.(newValue);
 		}
 	}
@@ -152,7 +151,7 @@
 			return mode;
 		},
 		get activeValue() {
-			return internalValue;
+			return value;
 		},
 		setActiveValue,
 		setBounds,

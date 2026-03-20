@@ -30,8 +30,7 @@
 	<button
 		data-slot="tabs-trigger"
 		role="tab"
-		onclick={(e) => {
-			e.stopPropagation();
+		onclick={() => {
 			ctx.handleValueChange(value);
 		}}
 		data-state={isActive ? 'active' : 'inactive'}

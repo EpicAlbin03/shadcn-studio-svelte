@@ -27,7 +27,6 @@
 </script>
 
 <MotionHighlight
-	controlledItems
 	class={cn(
 		'rounded-md bg-background shadow-sm dark:border dark:border-input dark:bg-input/30',
 		activeClassName

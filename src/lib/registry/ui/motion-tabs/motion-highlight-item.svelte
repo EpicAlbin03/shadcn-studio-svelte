@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { AnimatePresence, createLayoutMotion, motion } from 'motion-sv';
+	import { AnimatePresence, createLayoutMotion, motion, type Transition } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
@@ -10,11 +10,25 @@
 		id?: string;
 		value?: string;
 		class?: string;
+		transition?: Transition;
+		activeClassName?: string;
+		disabled?: boolean;
+		forceUpdateBounds?: boolean;
 	};
 </script>
 
 <script lang="ts">
-	let { children, id, value, class: className, ...restProps }: MotionHighlightItemProps = $props();
+	let {
+		children,
+		id,
+		value,
+		class: className,
+		transition,
+		activeClassName,
+		disabled,
+		forceUpdateBounds,
+		...restProps
+	}: MotionHighlightItemProps = $props();
 
 	let itemRef = $state<HTMLDivElement | null>(null);
 	const itemId = $props.id();
@@ -24,36 +38,78 @@
 
 	const childValue = $derived(id ?? value ?? itemId);
 	const isActive = $derived(ctx.activeValue === childValue);
-	const isDisabled = $derived(ctx.disabled);
-	const itemTransition = $derived(ctx.transition);
+	const isDisabled = $derived(disabled ?? ctx.disabled);
+	const itemTransition = $derived(transition ?? ctx.transition);
+	const shouldUpdateBounds = $derived(
+		forceUpdateBounds === true || (ctx.forceUpdateBounds && forceUpdateBounds !== false)
+	);
 
 	// Update bounds when active in parent mode
 	$effect(() => {
 		if (ctx.mode !== 'parent' || !itemRef) return;
 
-		if (isActive) {
+		let rafId = 0;
+		let previousBounds: DOMRect | null = null;
+
+		const updateBounds = () => {
+			if (!itemRef) return;
+
 			const bounds = itemRef.getBoundingClientRect();
+
+			if (shouldUpdateBounds) {
+				if (
+					previousBounds &&
+					previousBounds.top === bounds.top &&
+					previousBounds.left === bounds.left &&
+					previousBounds.width === bounds.width &&
+					previousBounds.height === bounds.height
+				) {
+					rafId = requestAnimationFrame(updateBounds);
+					return;
+				}
+
+				previousBounds = bounds;
+				rafId = requestAnimationFrame(updateBounds);
+			}
+
 			ctx.setBounds(bounds);
+		};
+
+		if (isActive) {
+			updateBounds();
+			ctx.setActiveClassName(activeClassName ?? '');
 		} else if (!ctx.activeValue) {
 			ctx.clearBounds();
 		}
+
+		if (!shouldUpdateBounds) return;
+
+		return () => {
+			cancelAnimationFrame(rafId);
+		};
 	});
+
+	const setActiveWithLayout = (nextValue: string | null) => {
+		layout.update.with(() => {
+			ctx.setActiveValue(nextValue);
+		})();
+	};
 
 	function handleMouseEnter() {
 		if (ctx.hover) {
-			ctx.setActiveValue(childValue);
+			setActiveWithLayout(childValue);
 		}
 	}
 
 	function handleMouseLeave() {
 		if (ctx.hover) {
-			ctx.setActiveValue(null);
+			setActiveWithLayout(null);
 		}
 	}
 
 	function handleClick() {
 		if (!ctx.hover) {
-			ctx.setActiveValue(childValue);
+			setActiveWithLayout(childValue);
 		}
 	}
 </script>
@@ -77,7 +133,7 @@
 			<AnimatePresence initial={false}>
 				{#if isActive && !isDisabled}
 					<layout.div
-						layoutId={`transition-background-${ctx.id}`}
+						layoutId="transition-background-{ctx.id}"
 						data-slot="motion-highlight"
 						class={cn('absolute inset-0 z-0 bg-muted', ctx.className, ctx.activeClassName)}
 						transition={itemTransition}

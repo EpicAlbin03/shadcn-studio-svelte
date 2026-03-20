@@ -1,4 +1,5 @@
 <script lang="ts" module>
+	import { createLayoutMotion, motion } from 'motion-sv';
 	import { Context } from 'runed';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
@@ -30,12 +31,16 @@
 		...restProps
 	}: MotionTabsProps = $props();
 
+	const layout = createLayoutMotion(motion);
 	const triggers = new SvelteMap<string, boolean>();
 	let initialSet = false;
+	const activeValue = $derived(value);
 
 	function handleValueChange(val: string) {
-		value = val;
-		onValueChange?.(val);
+		layout.update.with(() => {
+			value = val;
+			onValueChange?.(val);
+		})();
 	}
 
 	function registerTrigger(val: string, exists: boolean) {
@@ -43,9 +48,11 @@
 			triggers.set(val, true);
 
 			// Set first tab as default if no value
-			if (!value && !initialSet) {
-				value = val;
-				initialSet = true;
+			if (!activeValue && !initialSet) {
+				layout.update.with(() => {
+					value = val;
+					initialSet = true;
+				})();
 			}
 		} else {
 			triggers.delete(val);
@@ -54,7 +61,7 @@
 
 	motionTabsContext.set({
 		get activeValue() {
-			return value;
+			return activeValue;
 		},
 		handleValueChange,
 		registerTrigger

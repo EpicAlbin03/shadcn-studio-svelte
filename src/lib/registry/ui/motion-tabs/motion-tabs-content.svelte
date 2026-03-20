@@ -28,7 +28,7 @@
 		initial={{ filter: 'blur(0px)' }}
 		animate={{ filter: isActive ? 'blur(0px)' : 'blur(2px)' }}
 		exit={{ filter: 'blur(0px)' }}
-		transition={{ type: 'tween', duration: 0.2 }}
+		transition={{ type: 'spring', stiffness: 300, damping: 20 }}
 	>
 		{@render children?.()}
 	</motion.div>
