@@ -11,7 +11,7 @@ node_modules
 
 /registry.json
 /static/schema.json
-/static/registry
+/static/r
 /static/schema/registry.json
 /static/schema/registry-item.json
 /static/**/*.md

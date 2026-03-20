@@ -37,7 +37,7 @@
 		getCommand(
 			userConfig.settings.packageManager,
 			'execute',
-			`shadcn-svelte@latest add ${PUBLIC_URL}/registry/${blockName}.json`
+			`shadcn-svelte@latest add ${PUBLIC_URL}/r/${blockName}.json`
 		)
 	);
 

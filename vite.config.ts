@@ -16,7 +16,7 @@ if (!process.argv.includes('preview')) {
 }
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-export const staticDirPath = path.join(__dirname, 'src/registry/json');
+export const staticDirPath = path.join(__dirname, 'src/r/json');
 
 export default defineConfig({
 	plugins: [

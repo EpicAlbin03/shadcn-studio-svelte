@@ -108,7 +108,7 @@ export function themesPlugin(): RegistryPlugin {
 		name: 'themes',
 		buildStart() {
 			// Ensure the themes output directory exists for the shadcn-svelte CLI
-			fs.mkdirSync(path.resolve('static', 'registry', 'themes'), { recursive: true });
+			fs.mkdirSync(path.resolve('static', 'r', 'themes'), { recursive: true });
 		},
 		items() {
 			return buildThemeItems();
