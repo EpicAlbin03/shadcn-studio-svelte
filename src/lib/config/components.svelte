@@ -1,7 +1,6 @@
 <script lang="ts" module>
-	import type { Component, Snippet } from 'svelte';
-	import type { SVGAttributes } from 'svelte/elements';
-	import { CircleAlertIcon } from '@lucide/svelte';
+	import type { ComponentCategory } from './components.types';
+	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import {
 		AccordionSVG,
@@ -35,68 +34,7 @@
 		TextareaSVG,
 		TooltipSVG
 	} from '$lib/assets/svg';
-	import type { ComponentProps } from '$lib/types/components';
 	import { componentMeta } from './component-meta';
-
-	type Badge = 'New' | 'Updated' | string | undefined;
-
-	export type ComponentCategory = {
-		slug: string;
-		name: string;
-		links?: { label: string; href: string }[];
-	} & (
-		| {
-				components: ComponentProps[];
-				breakpoints?: {
-					xs?: number;
-					sm?: number;
-					md?: number;
-					lg?: number;
-					xl?: number;
-				};
-				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: Badge;
-				note?: Snippet;
-				hasAnimation?: never | false;
-				animation?: never | undefined;
-				isComingSoon?: never | false;
-		  }
-		| {
-				components: ComponentProps[];
-				breakpoints?: {
-					xs?: number;
-					sm?: number;
-					md?: number;
-					lg?: number;
-					xl?: number;
-				};
-				svg: Component<SVGAttributes<SVGElement>>;
-				badge?: Badge;
-				note?: Snippet;
-				hasAnimation: true;
-				animation?: {
-					badge?: Badge;
-					breakpoints?: {
-						xs?: number;
-						sm?: number;
-						md?: number;
-						lg?: number;
-						xl?: number;
-					};
-				};
-				isComingSoon?: never | false;
-		  }
-		| {
-				svg?: never;
-				components?: never;
-				breakpoints?: never | undefined;
-				badge?: never | undefined;
-				note?: never | undefined;
-				hasAnimation?: never | undefined;
-				animation?: never | undefined;
-				isComingSoon: true;
-		  }
-	);
 
 	export const categories: ComponentCategory[] = [
 		{
