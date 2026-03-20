@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Construction } from '@lucide/svelte';
+	import ConstructionIcon from '@lucide/svelte/icons/construction';
 
 	type Props = {
 		message?: string;
@@ -9,6 +9,6 @@
 </script>
 
 <div class="flex h-full flex-col items-center justify-center gap-4 text-center">
-	<Construction class="size-10" />
+	<ConstructionIcon class="size-10" />
 	<span>{message}</span>
 </div>
