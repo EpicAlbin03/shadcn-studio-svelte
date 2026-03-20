@@ -2,12 +2,10 @@
 	import type { ComponentProps } from '$lib/types/components';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
-	import { ComponentCard, ComponentDetails, ComponentLoader } from './component';
+	import { ComponentCard, ComponentDetails, ComponentLoader } from '$lib/components/component';
 
 	type Props = {
 		components: ComponentProps[];
-		slug: string;
-		validComponentsData: ComponentProps[];
 		breakpoints?: {
 			xs?: number;
 			sm?: number;
@@ -17,8 +15,7 @@
 		};
 	};
 
-	let { components, slug, validComponentsData, breakpoints }: Props = $props();
-	const validComponentsByName = $derived(new Map(validComponentsData.map((comp) => [comp.name, comp])));
+	let { components, breakpoints }: Props = $props();
 
 	const bp = $derived({
 		xs: breakpoints?.xs ?? 1,
@@ -67,13 +64,10 @@
 			)}
 		>
 			<ComponentCard componentName={component.name} class={component?.className}>
-				<ComponentLoader componentName={component.name} category={slug} />
-				{#if !component.underConstruction}
-					{@const componentData = validComponentsByName.get(component.name)}
-					{#if componentData}
-						<ComponentDetails componentsData={componentData} />
-					{/if}
-				{/if}
+				<ComponentLoader componentName={component.name} />
+				<!-- {#if component.files.content} -->
+				<ComponentDetails {component} />
+				<!-- {/if} -->
 				{#if component?.badge}
 					<span
 						class="absolute start-4.5 top-3 font-['Gamja_Flower'] text-lg group-hover/item:hidden"

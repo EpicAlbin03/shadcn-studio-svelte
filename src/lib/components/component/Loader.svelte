@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { SpinnerSVG } from '$lib/assets/svg';
 	import type { ComponentProps } from '$lib/types/components';
-	import { CircleX } from '@lucide/svelte';
+	import CircleXIcon from '@lucide/svelte/icons/circle-x';
 	import type { Component as ComponentType } from 'svelte';
 
-	type Props = { componentName: ComponentProps['name']; category: string };
+	type Props = { componentName: ComponentProps['name'] };
 
-	let { componentName, category, ...props }: Props = $props();
+	let { componentName, ...props }: Props = $props();
 
 	async function loadComponent(): Promise<ComponentType | null> {
 		if (!componentName) {
@@ -24,7 +24,7 @@
 				return module.default;
 			} catch (folderError) {
 				console.error(`Failed to load component ${componentName}: ${error}`);
-				throw new Error(`Failed to load component ${componentName}`);
+				throw new Error(`Failed to load component ${componentName}`, { cause: folderError });
 			}
 		}
 	}
@@ -40,7 +40,7 @@
 	{/if}
 {:catch error}
 	<div class="flex h-full flex-col items-center justify-center gap-4">
-		<CircleX class="size-10" />
+		<CircleXIcon class="size-10" />
 		{error.message}
 	</div>
 {/await}
