@@ -1,8 +1,8 @@
 <script lang="ts">
-	import FrontContent from '$lib/components/layout/FrontContent.svelte';
-	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import FrontContent from '$lib/components/layout/FrontContent.svelte';
 	import FrontMenuToggle from '$lib/components/layout/FrontMenuToggle.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 
 	let { children } = $props();
 </script>

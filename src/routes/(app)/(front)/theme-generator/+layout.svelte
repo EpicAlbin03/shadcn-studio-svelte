@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { PlusIcon, Sparkles } from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
+	import { faqs } from '$lib/assets/data/faqs';
+	import { features } from '$lib/assets/data/features';
+	import MetaData from '$lib/components/MetaData.svelte';
 	import { Accordion, AccordionContent, AccordionItem } from '$lib/components/ui/accordion';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Card, CardContent, CardHeader } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
-	import { features } from '$lib/assets/data/features';
-	import { faqs } from '$lib/assets/data/faqs';
-	import MetaData from '$lib/components/MetaData.svelte';
 
 	let { children } = $props();
 

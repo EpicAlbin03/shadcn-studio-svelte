@@ -1,11 +1,11 @@
+import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execSync } from 'node:child_process';
+import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite';
 import { minimatch } from 'minimatch';
 import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite';
-import { sveltekit } from '@sveltejs/kit/vite';
 import packageJson from './package.json' with { type: 'json' };
 
 // don't build when we're running `vite preview`

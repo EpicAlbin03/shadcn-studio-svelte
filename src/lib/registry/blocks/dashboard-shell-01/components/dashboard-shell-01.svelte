@@ -1,17 +1,17 @@
 <script lang="ts">
-	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01-comp.svelte';
-	import DashboardHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
+	import * as Card from '$lib/components/ui/card';
+	import SalesMetricsCard from '$lib/registry/components/charts-01-comp.svelte';
 	import DashboardFooter from '$lib/registry/components/dashboard-footer-01-comp.svelte';
+	import DashboardHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
+	import DashboardSidebar from '$lib/registry/components/dashboard-sidebar-01-comp.svelte';
 	import StatisticsCard, {
 		type StatisticsCardData
 	} from '$lib/registry/components/statistics-01-comp.svelte';
-	import ProductInsightsCard from '$lib/registry/components/widget-02-comp.svelte';
 	import TotalEarningCard, {
 		type EarningData
 	} from '$lib/registry/components/widget-01-comp.svelte';
-	import SalesMetricsCard from '$lib/registry/components/charts-01-comp.svelte';
+	import ProductInsightsCard from '$lib/registry/components/widget-02-comp.svelte';
 	import TransactionDatatable, { type TransactionItem } from './data-table-transaction.svelte';
-	import * as Card from '$lib/components/ui/card';
 
 	type Props = {
 		statisticsCardData: StatisticsCardData[];
@@ -48,13 +48,11 @@
 					percentage={10}
 					comparisonText="Compare to last year ($84,325)"
 					{earningData}
-					class="justify-between gap-5 sm:min-w-0 *:data-[slot=card-content]:space-y-7"
+					class="justify-between gap-5 *:data-[slot=card-content]:space-y-7 sm:min-w-0"
 				/>
 			</div>
 
-			<SalesMetricsCard
-				class="col-span-full xl:col-span-2 *:data-[slot=card-content]:space-y-6"
-			/>
+			<SalesMetricsCard class="col-span-full *:data-[slot=card-content]:space-y-6 xl:col-span-2" />
 
 			<Card.Root class="col-span-full w-full py-0">
 				<TransactionDatatable data={transactionData} />

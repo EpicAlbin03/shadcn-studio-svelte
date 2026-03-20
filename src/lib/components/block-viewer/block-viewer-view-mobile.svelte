@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { BlockViewerContext } from './block-viewer.svelte';
-	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
+	import { BlockViewerContext } from './block-viewer.svelte';
 
 	const ctx = BlockViewerContext.get();
 	let { children }: { children?: Snippet } = $props();

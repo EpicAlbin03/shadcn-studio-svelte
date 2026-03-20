@@ -1,7 +1,7 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import type { ComponentProps } from '$lib/types/components';
 	import { cn } from '$lib/utils';
-	import type { Snippet } from 'svelte';
 
 	type Props = { children?: Snippet; componentName: ComponentProps['name']; class?: string };
 

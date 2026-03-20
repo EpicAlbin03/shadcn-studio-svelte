@@ -1,8 +1,8 @@
-import Provider, { type GlobalTooltipProviderProps } from './global-tooltip-provider.svelte';
-import Root, { type GlobalTooltipProps } from './global-tooltip.svelte';
-import Content, { type GlobalTooltipContentProps } from './global-tooltip-content.svelte';
-import Trigger, { type GlobalTooltipTriggerProps } from './global-tooltip-trigger.svelte';
 import Arrow, { type GlobalTooltipArrowProps } from './global-tooltip-arrow.svelte';
+import Content, { type GlobalTooltipContentProps } from './global-tooltip-content.svelte';
+import Provider, { type GlobalTooltipProviderProps } from './global-tooltip-provider.svelte';
+import Trigger, { type GlobalTooltipTriggerProps } from './global-tooltip-trigger.svelte';
+import Root, { type GlobalTooltipProps } from './global-tooltip.svelte';
 
 export {
 	Provider,

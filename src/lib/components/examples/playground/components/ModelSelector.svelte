@@ -1,14 +1,14 @@
 <script lang="ts">
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
-	import { tick } from 'svelte';
 	import { useId } from 'bits-ui';
-	import type { Model, ModelType } from '../data/models.js';
-	import ModelItem from './ModelItem.svelte';
-	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
+	import { tick } from 'svelte';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
 	import * as Command from '$lib/components/ui/command/index.js';
+	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
+	import { Label } from '$lib/components/ui/label/index.js';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import type { Model, ModelType } from '../data/models.js';
+	import ModelItem from './ModelItem.svelte';
 
 	let { types, models }: { types: ModelType[]; models: Model[] } = $props();
 

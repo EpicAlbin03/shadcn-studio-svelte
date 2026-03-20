@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { cn, type WithElementRef } from '$lib/utils';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { tv, type VariantProps } from 'tailwind-variants';
 	import { CopyButton } from '$lib/components/ui/copy-button';
+	import { cn, type WithElementRef } from '$lib/utils';
 
 	export const codeVariants = tv({
 		base: 'not-prose relative h-full overflow-auto',

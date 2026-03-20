@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from '$lib/utils';
 	import { type Icon as IconType } from '@lucide/svelte';
 	import type { HTMLLabelAttributes, MouseEventHandler } from 'svelte/elements';
+	import { cn, type WithElementRef } from '$lib/utils';
 	import { ratingVariants, type RatingVariant } from './rating.svelte';
 
 	type RatingItemProps = WithElementRef<HTMLLabelAttributes> & {

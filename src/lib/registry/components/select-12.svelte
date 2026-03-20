@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { FilmIcon } from '@lucide/svelte';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
-	import { FilmIcon } from '@lucide/svelte';
 
 	const movies = [
 		{ value: 'god of wars', label: 'God of Wars' },

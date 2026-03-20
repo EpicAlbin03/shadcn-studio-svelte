@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { CheckIcon, MailIcon } from '@lucide/svelte';
-	import * as InputOTP from '$lib/components/ui/input-otp/index.js';
+	import { untrack } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import * as InputOTP from '$lib/components/ui/input-otp/index.js';
 	import { cn } from '$lib/utils';
-	import { untrack } from 'svelte';
 
 	const CORRECT_CODE = '11208';
 

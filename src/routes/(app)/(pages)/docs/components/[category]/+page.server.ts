@@ -1,8 +1,8 @@
-import { categories, getCategory, type ComponentCategory } from '$lib/config/components.svelte';
 import { error } from '@sveltejs/kit';
-import type { EntryGenerator, PageServerLoad } from './$types';
-import type { ComponentProps } from '$lib/types/components';
+import { categories, getCategory, type ComponentCategory } from '$lib/config/components.svelte';
 import { loadHighlightedCodeBlocks } from '$lib/server/registry/highlighted-code-blocks';
+import type { ComponentProps } from '$lib/types/components';
+import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const prerender = true;
 

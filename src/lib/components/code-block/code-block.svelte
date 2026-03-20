@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { createFileTreeForRegistryItemFiles, type FileTree } from '$lib/registry/registry-utils';
 	import { Context } from 'runed';
+	import { createFileTreeForRegistryItemFiles, type FileTree } from '$lib/registry/registry-utils';
 	import CodeBlockCode from './code-block-code.svelte';
 
 	export type CodeBlockFile = {

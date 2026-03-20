@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils';
 	import { Button, type ButtonProps } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 
 	export type PrimaryFlowButtonProps = ButtonProps;
 </script>

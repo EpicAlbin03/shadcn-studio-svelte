@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Progress } from '$lib/components/ui/progress';
-	import { onMount } from 'svelte';
 
 	let progress = $state(0);
 

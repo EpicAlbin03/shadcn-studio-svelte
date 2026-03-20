@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types.js';
+	import BlockPreview from '$lib/components/block-preview.svelte';
 	import BlockViewer from '$lib/components/block-viewer/block-viewer.svelte';
 	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
-	import BlockPreview from '$lib/components/block-preview.svelte';
+	import type { PageData } from './$types.js';
 
 	let { data }: { data: PageData } = $props();
 </script>

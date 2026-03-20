@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { Dices } from '@lucide/svelte';
-	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
-	import { Button } from '$lib/components/ui/button';
-	import * as Select from '$lib/components/ui/select';
-	import { Badge } from '$lib/components/ui/badge';
-	import CssImportDialog from './CssImportDialog.svelte';
-	import { cn } from '$lib/utils';
-	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import { toast } from 'svelte-sonner';
 	import {
 		defaultTheme,
 		presetThemes,
 		presetThemesMap,
 		type PresetThemeName
 	} from '$lib/assets/data/preset-themes';
-	import { toast } from 'svelte-sonner';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Button } from '$lib/components/ui/button';
+	import * as Select from '$lib/components/ui/select';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
+	import { cn } from '$lib/utils';
+	import CssImportDialog from './CssImportDialog.svelte';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);

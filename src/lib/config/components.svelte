@@ -1,7 +1,5 @@
 <script lang="ts" module>
-	import type { ComponentCategory } from './components.types';
 	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
-	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import {
 		AccordionSVG,
 		AlertSVG,
@@ -34,7 +32,9 @@
 		TextareaSVG,
 		TooltipSVG
 	} from '$lib/assets/svg';
+	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import { componentMeta } from './component-meta';
+	import type { ComponentCategory } from './components.types';
 
 	export const categories: ComponentCategory[] = [
 		{

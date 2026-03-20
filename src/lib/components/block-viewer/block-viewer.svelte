@@ -1,12 +1,12 @@
 <script lang="ts" module>
 	import { Pane } from 'paneforge';
 	import { Context } from 'runed';
-	import BlockViewerToolbar from './block-viewer-toolbar.svelte';
-	import BlockViewerView from './block-viewer-view.svelte';
-	import { CodeBlock } from '$lib/components/code-block';
 	import type { Snippet } from 'svelte';
-	import BlockViewerViewMobile from './block-viewer-view-mobile.svelte';
+	import { CodeBlock } from '$lib/components/code-block';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
+	import BlockViewerToolbar from './block-viewer-toolbar.svelte';
+	import BlockViewerViewMobile from './block-viewer-view-mobile.svelte';
+	import BlockViewerView from './block-viewer-view.svelte';
 
 	type BlockViewerContextType = {
 		item: HighlightedCodeBlock;

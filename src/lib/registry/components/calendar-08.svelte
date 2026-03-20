@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { RangeCalendar } from '$lib/components/ui/range-calendar';
 	import { CalendarDate } from '@internationalized/date';
-	import * as Card from '$lib/components/ui/card/index.js';
-	import * as Select from '$lib/components/ui/select/index.js';
 	import type { DateRange } from 'bits-ui';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { RangeCalendar } from '$lib/components/ui/range-calendar';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	const localizedStrings = {
 		en: {

@@ -1,10 +1,10 @@
 <script lang="ts" module>
+	import type { Transition } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import type { Transition } from 'motion-sv';
 	import { cn } from '$lib/utils';
-	import { motionTabsContext } from './motion-tabs.svelte';
 	import MotionHighlight from './motion-highlight.svelte';
+	import { motionTabsContext } from './motion-tabs.svelte';
 
 	export type MotionTabsListProps = HTMLAttributes<HTMLDivElement> & {
 		children?: Snippet;

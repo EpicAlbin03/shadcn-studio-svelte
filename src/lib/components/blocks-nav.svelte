@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { page } from '$app/state';
+	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import { registryCategories } from '$lib/registry/registry-categories';
 	import { FEATURED_BLOCKS, NEW_BLOCKS } from '$lib/utils/blocks';
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 </script>
 
 {#snippet BlocksNavLink({

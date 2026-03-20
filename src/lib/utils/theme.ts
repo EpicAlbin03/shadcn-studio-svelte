@@ -1,5 +1,5 @@
-import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { mode } from 'mode-watcher';
+import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { colorFormatter } from './color-converter';
 import { setShadowVariables } from './shadows';
 

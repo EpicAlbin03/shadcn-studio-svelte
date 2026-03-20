@@ -1,11 +1,11 @@
 <script lang="ts">
 	import {
-		SwatchBookIcon,
-		SearchIcon,
-		StarIcon,
-		SmartphoneIcon,
 		LockKeyholeIcon,
-		ShieldBanIcon
+		SearchIcon,
+		ShieldBanIcon,
+		SmartphoneIcon,
+		StarIcon,
+		SwatchBookIcon
 	} from '@lucide/svelte';
 	import Features from './components/features-01.svelte';
 

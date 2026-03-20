@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { BlockViewerContext } from './block-viewer.svelte';
 	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import BlockViewerIframe from './block-viewer-iframe.svelte';
+	import { BlockViewerContext } from './block-viewer.svelte';
 
 	const ctx = BlockViewerContext.get();
 </script>

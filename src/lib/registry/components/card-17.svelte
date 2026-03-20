@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card/index.js';
 	import { onDestroy } from 'svelte';
+	import * as Card from '$lib/components/ui/card/index.js';
 
 	type CardTransform = {
 		rotateX: number;

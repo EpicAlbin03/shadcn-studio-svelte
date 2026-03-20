@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { ComponentProps } from '$lib/types/components';
-	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import { ComponentCard, ComponentDetails, ComponentLoader } from '$lib/components/component';
+	import type { ComponentProps } from '$lib/types/components';
+	import { cn } from '$lib/utils';
 
 	type Props = {
 		components: ComponentProps[];

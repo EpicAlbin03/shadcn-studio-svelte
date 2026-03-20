@@ -1,10 +1,10 @@
 <script lang="ts">
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import Autoplay from 'embla-carousel-autoplay';
-	import { Separator } from '$lib/components/ui/separator';
 	import { Button } from '$lib/components/ui/button';
 	import * as Carousel from '$lib/components/ui/carousel';
 	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
+	import { Separator } from '$lib/components/ui/separator';
 	import { cn } from '$lib/utils';
 
 	export type MenuData = {

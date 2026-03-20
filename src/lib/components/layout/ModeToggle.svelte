@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { MoonStar, Sun } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { toggleMode } from '$lib/utils/mode';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import { toggleMode } from '$lib/utils/mode';
 
 	const userConfig = UserConfigContext.get();
 </script>

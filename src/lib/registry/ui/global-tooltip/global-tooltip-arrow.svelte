@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import type { Side } from './types.js';
 	import { cn } from '$lib/utils';
+	import type { Side } from './types.js';
 
 	export type GlobalTooltipArrowProps = {
 		side: Side;

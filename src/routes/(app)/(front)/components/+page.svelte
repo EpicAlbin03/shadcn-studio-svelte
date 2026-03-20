@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { categories } from '$lib/config/components.svelte';
 	import { MoreComponentsSVG } from '$lib/assets/svg';
 	import MetaData from '$lib/components/MetaData.svelte';
+	import { categories } from '$lib/config/components.svelte';
 
 	const title = 'Shadcn Components';
 	const description =

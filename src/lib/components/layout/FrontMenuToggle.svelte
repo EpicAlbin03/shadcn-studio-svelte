@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Menu } from '@lucide/svelte';
-	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 	import { Button } from '$lib/components/ui/button';
+	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 </script>
 
 <NavigationMenu.Root>

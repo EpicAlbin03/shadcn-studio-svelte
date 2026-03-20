@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { CodeBlockContext } from './code-block.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import CodeBlockTree from './code-block-tree.svelte';
+	import { CodeBlockContext } from './code-block.svelte';
 
 	const ctx = CodeBlockContext.get();
 </script>

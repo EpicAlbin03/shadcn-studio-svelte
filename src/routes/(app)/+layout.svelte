@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { UserConfig, UserConfigContext } from '$lib/config/user-config.svelte';
-	import { tick } from 'svelte';
 
 	let { children, data } = $props();
 

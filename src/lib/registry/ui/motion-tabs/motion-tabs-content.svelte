@@ -1,7 +1,7 @@
 <script lang="ts" module>
+	import { motion } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { motion } from 'motion-sv';
 	import { cn } from '$lib/utils';
 	import { motionTabsContext } from './motion-tabs.svelte';
 

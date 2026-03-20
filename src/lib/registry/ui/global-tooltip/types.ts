@@ -1,5 +1,5 @@
-import type { Snippet } from 'svelte';
 import type { Transition } from 'motion-sv';
+import type { Snippet } from 'svelte';
 
 export type Side = 'top' | 'bottom' | 'left' | 'right';
 

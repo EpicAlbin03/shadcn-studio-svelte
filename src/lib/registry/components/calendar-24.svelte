@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
+	import { CircleCheck } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
-	import { CircleCheck } from '@lucide/svelte';
 
 	let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 20));
 	let selectedTime = $state<string | null>('10:00');
@@ -24,12 +24,12 @@
 				type="single"
 				bind:value
 				isDateUnavailable={(date) => bookedDates.some((d) => d.compare(date) === 0)}
-				class="bg-transparent p-0 [--cell-size:--spacing(10)] data-unavailable:line-through data-unavailable:opacity-100 md:[--cell-size:--spacing(12)] **:data-outside-month:hidden"
+				class="bg-transparent p-0 [--cell-size:--spacing(10)] **:data-outside-month:hidden data-unavailable:line-through data-unavailable:opacity-100 md:[--cell-size:--spacing(12)]"
 				weekdayFormat="short"
 			/>
 		</div>
 		<div
-			class="no-scrollbar inset-y-0 right-0 flex max-h-72 w-full scroll-pb-6 flex-col gap-4 overflow-y-auto border-t p-6 md:absolute md:max-h-none md:w-48 md:border-t-0 md:border-l"
+			class="inset-y-0 right-0 no-scrollbar flex max-h-72 w-full scroll-pb-6 flex-col gap-4 overflow-y-auto border-t p-6 md:absolute md:max-h-none md:w-48 md:border-t-0 md:border-l"
 		>
 			<div class="grid gap-2">
 				{#each timeSlots as time (time)}

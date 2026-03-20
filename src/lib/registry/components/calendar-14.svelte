@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { RangeCalendar } from '$lib/components/ui/range-calendar';
-	import RangeCalendarDay from '$lib/components/ui/range-calendar/range-calendar-day.svelte';
 	import { CalendarDate } from '@internationalized/date';
 	import type { DateRange } from 'bits-ui';
+	import { RangeCalendar } from '$lib/components/ui/range-calendar';
+	import RangeCalendarDay from '$lib/components/ui/range-calendar/range-calendar-day.svelte';
 
 	let value = $state<DateRange>({
 		start: new CalendarDate(2025, 6, 4),

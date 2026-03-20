@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Header } from '@tanstack/table-core';
-	import type { Employee } from '$lib/components/shadcn-studio/data-table/data-table-08.svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import { FlexRender } from '$lib/components/ui/data-table';
 	import { useSortable } from '@dnd-kit-svelte/sortable';
 	import { CSS } from '@dnd-kit-svelte/utilities';
 	import { GripVerticalIcon } from '@lucide/svelte';
+	import type { Header } from '@tanstack/table-core';
+	import type { Employee } from '$lib/components/shadcn-studio/data-table/data-table-08.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { FlexRender } from '$lib/components/ui/data-table';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Props = { header: Header<Employee, unknown> };
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { MotionCheckbox } from '$lib/registry/ui/motion-checkbox';
 	import { Label } from '$lib/components/ui/label';
+	import { MotionCheckbox } from '$lib/registry/ui/motion-checkbox';
 
 	const id = $props.id();
 

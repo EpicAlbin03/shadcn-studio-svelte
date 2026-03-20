@@ -1,7 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getFileDependencies } from './dependencies';
-import type { CrawlSpec, RegistryConfig, RegistryDirs, RegistryItemFiles, RegistryItems } from './types';
+import type {
+	CrawlSpec,
+	RegistryConfig,
+	RegistryDirs,
+	RegistryItemFiles,
+	RegistryItems
+} from './types';
 import { stripExtension, toSortedArray } from './utils';
 
 const CRAWL_SPECS = {
@@ -41,7 +47,11 @@ const CRAWL_SPECS = {
 } satisfies Record<keyof RegistryDirs, CrawlSpec>;
 
 /** Crawl a registry type directory using the given spec. */
-async function crawl(rootPath: string, spec: CrawlSpec, config: RegistryConfig): Promise<RegistryItems> {
+async function crawl(
+	rootPath: string,
+	spec: CrawlSpec,
+	config: RegistryConfig
+): Promise<RegistryItems> {
 	if (!fs.existsSync(rootPath)) return [];
 
 	const dir = fs.readdirSync(rootPath, { withFileTypes: true });

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronDown, ChevronsDown, ChevronUp, ChevronsUp, Equal } from '@lucide/svelte';
+	import { ChevronDown, ChevronsDown, ChevronsUp, ChevronUp, Equal } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 

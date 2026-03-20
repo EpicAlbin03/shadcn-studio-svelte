@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { CircleAlertIcon, TriangleAlertIcon } from '@lucide/svelte';
-	import * as Alert from '$lib/components/ui/alert/index.js';
+	import type { Snippet } from 'svelte';
 	import { tv, type VariantProps } from 'tailwind-variants';
+	import * as Alert from '$lib/components/ui/alert/index.js';
 
 	const alertVariants = tv({
 		slots: {

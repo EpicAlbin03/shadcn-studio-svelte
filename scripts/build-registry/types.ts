@@ -1,8 +1,4 @@
-import type {
-	Registry,
-	RegistryItemFileType,
-	RegistryItemType
-} from '@shadcn-svelte/registry';
+import type { Registry, RegistryItemFileType, RegistryItemType } from '@shadcn-svelte/registry';
 
 export type RegistryItems = Registry['items'];
 export type RegistryItemFiles = RegistryItems[number]['files'];

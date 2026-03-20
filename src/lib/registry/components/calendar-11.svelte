@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { formatDateRange } from 'little-date';
+	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import { PlusIcon } from '@lucide/svelte';
+	import { formatDateRange } from 'little-date';
 	import { Button } from '$lib/components/ui/button';
 	import { Calendar } from '$lib/components/ui/calendar';
-	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import * as Card from '$lib/components/ui/card/index.js';
 
 	const events = [

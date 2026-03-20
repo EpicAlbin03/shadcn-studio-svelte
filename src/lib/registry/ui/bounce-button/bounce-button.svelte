@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import { motion, type MotionProps } from 'motion-sv';
-	import { cn } from '$lib/utils';
 	import { buttonVariants, type ButtonProps } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 
 	export type BounceButtonProps = MotionProps<'button'> & Omit<ButtonProps, 'style'>;
 </script>

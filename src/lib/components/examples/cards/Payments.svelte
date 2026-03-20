@@ -10,11 +10,6 @@
 <script lang="ts">
 	import ArrowUpDownIcon from '@lucide/svelte/icons/arrow-up-down';
 	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import * as Card from '$lib/components/ui/card/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-	import * as Table from '$lib/components/ui/table/index.js';
 	import {
 		getCoreRowModel,
 		getFilteredRowModel,
@@ -29,10 +24,15 @@
 		type SortingState,
 		type VisibilityState
 	} from '@tanstack/table-core';
-	import { renderComponent, renderSnippet } from '$lib/components/ui/data-table/render-helpers.js';
 	import { createRawSnippet } from 'svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox/index.js';
 	import { createSvelteTable } from '$lib/components/ui/data-table/data-table.svelte.js';
 	import { FlexRender } from '$lib/components/ui/data-table/index.js';
+	import { renderComponent, renderSnippet } from '$lib/components/ui/data-table/render-helpers.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	const data: Payment[] = [
 		{

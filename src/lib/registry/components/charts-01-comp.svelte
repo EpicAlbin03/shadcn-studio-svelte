@@ -7,12 +7,12 @@
 		ShoppingBagIcon,
 		TrendingUpIcon
 	} from '@lucide/svelte';
-	import { BarChart, PieChart, Text, type ChartContextValue } from 'layerchart';
 	import { scaleBand } from 'd3-scale';
+	import { BarChart, PieChart, Text, type ChartContextValue } from 'layerchart';
+	import { cubicInOut } from 'svelte/easing';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import * as Card from '$lib/components/ui/card';
 	import * as Chart from '$lib/components/ui/chart';
-	import { cubicInOut } from 'svelte/easing';
 
 	const salesPlanPercentage = 54;
 	const totalBars = 24;

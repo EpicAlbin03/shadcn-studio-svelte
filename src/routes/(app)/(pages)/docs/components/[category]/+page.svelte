@@ -1,10 +1,10 @@
 <script lang="ts">
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import ComponentsGrid from '$lib/components/components-grid.svelte';
 	import MetaData from '$lib/components/MetaData.svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
-	import type { PageProps } from './$types';
 	import { ComponentCategoryContext } from '$lib/utils/components';
+	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 

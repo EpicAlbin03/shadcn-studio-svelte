@@ -1,10 +1,10 @@
 <script lang="ts" module>
+	import { AnimatePresence, motion, type Transition } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { motion, AnimatePresence, type Transition } from 'motion-sv';
 	import { Spring } from 'svelte/motion';
-	import { cn } from '$lib/utils';
 	import * as Avatar from '$lib/components/ui/avatar';
+	import { cn } from '$lib/utils';
 
 	export type MotionTooltipItem = {
 		image: string;

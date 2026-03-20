@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { ArrowUpRightIcon, CalendarDaysIcon } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
-	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
+	import { Input } from '$lib/components/ui/input';
 
 	export type BlogData = {
 		img: string;

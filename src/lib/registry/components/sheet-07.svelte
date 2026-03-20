@@ -1,31 +1,31 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
+	import {
+		getCoreRowModel,
+		getFacetedUniqueValues,
+		getFilteredRowModel,
+		getPaginationRowModel,
+		getSortedRowModel,
+		type ColumnDef,
+		type ColumnFiltersState,
+		type RowSelectionState,
+		type SortingState,
+		type VisibilityState
+	} from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
+	import {
+		createSvelteTable,
+		FlexRender,
+		renderComponent,
+		renderSnippet
+	} from '$lib/components/ui/data-table/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import {
-		type ColumnDef,
-		type ColumnFiltersState,
-		type SortingState,
-		type VisibilityState,
-		type RowSelectionState,
-		getCoreRowModel,
-		getPaginationRowModel,
-		getSortedRowModel,
-		getFilteredRowModel,
-		getFacetedUniqueValues
-	} from '@tanstack/table-core';
-	import {
-		FlexRender,
-		createSvelteTable,
-		renderComponent,
-		renderSnippet
-	} from '$lib/components/ui/data-table/index.js';
-	import { createRawSnippet } from 'svelte';
 
 	type Payment = {
 		id: string;

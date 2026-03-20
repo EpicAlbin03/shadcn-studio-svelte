@@ -1,6 +1,6 @@
-import type { PageLoad } from './$types.js';
 import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
 import { FEATURED_BLOCKS } from '$lib/utils/blocks.js';
+import type { PageLoad } from './$types.js';
 
 export const prerender = true;
 

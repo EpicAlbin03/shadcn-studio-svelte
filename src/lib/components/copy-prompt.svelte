@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { SparklesIcon } from '@lucide/svelte';
 	import { CopyButton, type CopyButtonProps } from '$lib/components/ui/copy-button';
 	import { cn } from '$lib/utils';
-	import { SparklesIcon } from '@lucide/svelte';
 
 	type Props = CopyButtonProps & { hidden?: boolean };
 

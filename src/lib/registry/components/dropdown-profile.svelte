@@ -1,16 +1,16 @@
 <script lang="ts">
 	import {
-		UserIcon,
-		SettingsIcon,
-		CreditCardIcon,
-		UsersIcon,
-		SquarePenIcon,
 		CirclePlusIcon,
-		LogOutIcon
+		CreditCardIcon,
+		LogOutIcon,
+		SettingsIcon,
+		SquarePenIcon,
+		UserIcon,
+		UsersIcon
 	} from '@lucide/svelte';
 	import * as Avatar from '$lib/components/ui/avatar';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 
 	type Props = {
 		open?: boolean;

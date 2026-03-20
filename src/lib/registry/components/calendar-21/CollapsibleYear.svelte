@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { ChevronDownIcon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
+	import { Button } from '$lib/components/ui/button';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	type Props = { title: string; children: Snippet; open?: boolean };
 

@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { type Icon as IconType } from '@lucide/svelte';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 	import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 	import { cn } from '$lib/utils';
-	import { type Icon as IconType } from '@lucide/svelte';
 
 	export type NavigationItem = {
 		title: string;

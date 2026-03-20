@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Calendar } from '$lib/components/ui/calendar';
 	import {
 		CalendarDate,
 		endOfYear,
@@ -7,6 +6,7 @@
 		startOfYear,
 		today
 	} from '@internationalized/date';
+	import { Calendar } from '$lib/components/ui/calendar';
 
 	let todayDate = today(getLocalTimeZone());
 	let value = $state<CalendarDate | undefined>(todayDate);

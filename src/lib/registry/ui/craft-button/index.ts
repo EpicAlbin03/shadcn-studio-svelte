@@ -1,6 +1,6 @@
-import Root, { type CraftButtonProps, CraftButtonContext } from './craft-button.svelte';
 import Icon, { type CraftButtonIconProps } from './craft-button-icon.svelte';
 import Label, { type CraftButtonLabelProps } from './craft-button-label.svelte';
+import Root, { CraftButtonContext, type CraftButtonProps } from './craft-button.svelte';
 
 export {
 	Root,

@@ -1,15 +1,15 @@
 <script lang="ts">
+	import {
+		DocAlert,
+		DocCodeBlock,
+		DocHeading,
+		DocList,
+		DocPageHeader,
+		DocParagraph,
+		DocSection
+	} from '$lib/components/docs';
 	import MetaData from '$lib/components/MetaData.svelte';
 	import { gettingStartedPages } from '$lib/utils/pages';
-	import {
-		DocPageHeader,
-		DocSection,
-		DocHeading,
-		DocParagraph,
-		DocList,
-		DocCodeBlock,
-		DocAlert
-	} from '$lib/components/docs';
 
 	const title = 'How to use Shadcn CLI';
 	const description =
@@ -152,8 +152,8 @@
 				<strong>Regularly update</strong> your Shadcn CLI to stay up to date with new features.
 			</li>
 			<li>
-				<strong>Customize components</strong> after installation to ensure they match your project's
-				design requirements.
+				<strong>Customize components</strong> after installation to ensure they match your project's design
+				requirements.
 			</li>
 		</DocList>
 	</DocSection>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { motion, AnimatePresence, easeOut } from 'motion-sv';
-	import { MotionCheckbox } from '$lib/registry/ui/motion-checkbox';
+	import { AnimatePresence, easeOut, motion } from 'motion-sv';
 	import { Label } from '$lib/components/ui/label';
+	import { MotionCheckbox } from '$lib/registry/ui/motion-checkbox';
 
 	const id = $props.id();
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { BarChart, type ChartContextValue } from 'layerchart';
+	import { cubicInOut } from 'svelte/easing';
 	import * as Card from '$lib/components/ui/card';
 	import * as Chart from '$lib/components/ui/chart';
 	import { Separator } from '$lib/components/ui/separator';
 	import { cn } from '$lib/utils';
-	import { cubicInOut } from 'svelte/easing';
 
 	// Product reached data
 	const productReachChartData = [

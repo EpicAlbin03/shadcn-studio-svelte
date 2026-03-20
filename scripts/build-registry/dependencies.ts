@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import * as acorn from 'acorn';
 import { tsPlugin } from '@sveltejs/acorn-typescript';
+import * as acorn from 'acorn';
 import { walk, type Node } from 'estree-walker';
 import * as svelte from 'svelte/compiler';
 import packageJson from '../../package.json' with { type: 'json' };
@@ -54,7 +54,10 @@ function getDependencyContext(config: RegistryConfig): DependencyContext {
 	const context: DependencyContext = {
 		ignoredPackageDependencies,
 		crawlExtensions: resolvedCrawlExtensions,
-		packagePeerDependencies: buildPackagePeerDependencies(packageDependencies, ignoredPackageDependencies)
+		packagePeerDependencies: buildPackagePeerDependencies(
+			packageDependencies,
+			ignoredPackageDependencies
+		)
 	};
 	dependencyContextCache.set(cacheKey, context);
 	return context;

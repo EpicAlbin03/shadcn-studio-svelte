@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SidebarHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Sidebar from '$lib/components/ui/sidebar';
+	import SidebarHeader from '$lib/registry/components/dashboard-header-01-comp.svelte';
 </script>
 
 <div class="flex min-h-dvh w-full">

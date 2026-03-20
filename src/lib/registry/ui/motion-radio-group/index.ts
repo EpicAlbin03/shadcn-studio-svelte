@@ -1,5 +1,5 @@
-import Root, { type MotionRadioGroupProps } from './motion-radio-group.svelte';
 import Item, { type MotionRadioGroupItemProps } from './motion-radio-group-item.svelte';
+import Root, { type MotionRadioGroupProps } from './motion-radio-group.svelte';
 
 export {
 	Root,

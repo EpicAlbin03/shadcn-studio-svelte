@@ -1,16 +1,17 @@
 <script lang="ts">
-	import MetaData from '$lib/components/MetaData.svelte';
-	import { cn } from '$lib/utils';
-	import { applyThemeStyles } from '$lib/utils/theme';
-	import type { ThemeStyles } from '$lib/types/theme';
 	// import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import MetaData from '$lib/components/MetaData.svelte';
 	import {
 		MODE_STORAGE_KEY,
 		parseUserSettings,
 		USER_SETTINGS_COOKIE_NAME
 	} from '$lib/config/user-config.svelte';
+	import type { ThemeStyles } from '$lib/types/theme';
+	import { cn } from '$lib/utils';
+	import { applyThemeStyles } from '$lib/utils/theme';
 	import type { PageProps } from './$types.js';
+
 	// import { useResizeObserver } from 'runed';
 	// import { RESIZE_MESSAGE, REQUEST_RESIZE_MESSAGE } from '$lib/utils/blocks';
 

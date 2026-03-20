@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Code from '../ui/code/code.svelte';
-	import CodeBlockTitle from './code-block-title.svelte';
-	import CodeBlockFileTree from './code-block-file-tree.svelte';
-	import { CodeBlockContext } from './code-block.svelte';
 	import { cn } from '$lib/utils';
+	import Code from '../ui/code/code.svelte';
+	import CodeBlockFileTree from './code-block-file-tree.svelte';
+	import CodeBlockTitle from './code-block-title.svelte';
+	import { CodeBlockContext } from './code-block.svelte';
 
 	const ctx = CodeBlockContext.get();
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));

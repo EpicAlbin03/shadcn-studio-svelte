@@ -1,9 +1,9 @@
 <script lang="ts" module>
+	import type { Transition } from 'motion-sv';
+	import { AnimatePresence, LayoutGroup, motion } from 'motion-sv';
+	import { Context } from 'runed';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import type { Transition } from 'motion-sv';
-	import { Context } from 'runed';
-	import { motion, AnimatePresence, LayoutGroup } from 'motion-sv';
 	import { cn } from '$lib/utils';
 
 	export type MotionHighlightMode = 'children' | 'parent';

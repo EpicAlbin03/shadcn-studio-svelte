@@ -1,7 +1,7 @@
 <script lang="ts" module>
-	import type { Snippet } from 'svelte';
-	import type { Side, Align, TooltipContext } from './types.js';
 	import { Context } from 'runed';
+	import type { Snippet } from 'svelte';
+	import type { Align, Side, TooltipContext } from './types.js';
 
 	export type GlobalTooltipProps = {
 		children: Snippet;

@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { LanguagesIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { LanguagesIcon } from '@lucide/svelte';
 
 	type Props = {
 		open?: boolean;

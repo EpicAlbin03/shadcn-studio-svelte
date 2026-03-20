@@ -14,12 +14,12 @@
 	import SearchIcon from '@tabler/icons-svelte/icons/search';
 	import SettingsIcon from '@tabler/icons-svelte/icons/settings';
 	import UsersIcon from '@tabler/icons-svelte/icons/users';
+	import type { ComponentProps } from 'svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import NavDocuments from './NavDocuments.svelte';
 	import NavMain from './NavMain.svelte';
 	import NavSecondary from './NavSecondary.svelte';
 	import NavUser from './NavUser.svelte';
-	import type { ComponentProps } from 'svelte';
 
 	const data = {
 		user: {

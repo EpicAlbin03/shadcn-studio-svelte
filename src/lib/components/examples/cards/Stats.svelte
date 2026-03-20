@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { curveNatural } from 'd3-shape';
 	import { AreaChart, LineChart } from 'layerchart';
+	import { MediaQuery } from 'svelte/reactivity';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Chart from '$lib/components/ui/chart/index.js';
-	import { curveNatural } from 'd3-shape';
 
 	const data = [
 		{
@@ -50,7 +51,6 @@
 			color: 'var(--primary)'
 		}
 	} satisfies Chart.ChartConfig;
-	import { MediaQuery } from 'svelte/reactivity';
 
 	const isLarge = new MediaQuery('(min-width: 1024px)');
 	const isXLarge = new MediaQuery('(min-width: 1280px)');

@@ -1,9 +1,9 @@
 <script lang="ts">
+	import '../app.css';
 	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
-	import '../app.css';
-	import { TooltipProvider } from '$lib/components/ui/tooltip';
 	import MetaData from '$lib/components/MetaData.svelte';
+	import { TooltipProvider } from '$lib/components/ui/tooltip';
 
 	let { children } = $props();
 
@@ -14,7 +14,7 @@
 
 <MetaData {title} {description} />
 
-<ModeWatcher defaultMode="system" disableTransitions themeStorageKey={''} />
+<ModeWatcher defaultMode="system" disableTransitions themeStorageKey="" />
 <Toaster duration={3000} />
 
 <TooltipProvider>

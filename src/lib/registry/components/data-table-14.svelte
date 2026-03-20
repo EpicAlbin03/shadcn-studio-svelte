@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { type ColumnDef, getCoreRowModel } from '@tanstack/table-core';
+	import { GripVerticalIcon } from '@lucide/svelte';
+	import { getCoreRowModel, type ColumnDef } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Button } from '$lib/components/ui/button';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Button } from '$lib/components/ui/button';
-	import { GripVerticalIcon } from '@lucide/svelte';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Employee = {
 		employeeId: number;

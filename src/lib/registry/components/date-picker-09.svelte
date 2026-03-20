@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { Clock8Icon } from '@lucide/svelte';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import { Clock8Icon } from '@lucide/svelte';
 
 	const id = $props.id();
 </script>

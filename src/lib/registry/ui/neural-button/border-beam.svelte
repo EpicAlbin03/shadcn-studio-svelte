@@ -1,7 +1,7 @@
 <script lang="ts" module>
-	import type { Transition, MotionStyle } from 'motion-sv';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { MotionStyle, Transition } from 'motion-sv';
 	import { motion } from 'motion-sv';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 
 	export type BorderBeamProps = Omit<HTMLAttributes<HTMLDivElement>, 'style'> & {

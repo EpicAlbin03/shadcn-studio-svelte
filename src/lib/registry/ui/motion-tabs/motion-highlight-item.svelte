@@ -1,7 +1,7 @@
 <script lang="ts" module>
+	import { AnimatePresence, createLayoutMotion, motion } from 'motion-sv';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { motion, AnimatePresence, createLayoutMotion } from 'motion-sv';
 	import { cn } from '$lib/utils';
 	import { motionHighlightContext } from './motion-highlight.svelte';
 

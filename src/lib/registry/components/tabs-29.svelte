@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { motion } from 'motion-sv';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { watch } from 'runed';
 	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
+	import { motion } from 'motion-sv';
+	import { watch } from 'runed';
+	import * as Tabs from '$lib/components/ui/tabs';
 
 	const tabs = [
 		{

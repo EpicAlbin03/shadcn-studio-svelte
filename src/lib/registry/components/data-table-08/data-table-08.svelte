@@ -13,15 +13,6 @@
 
 <script lang="ts">
 	import {
-		type ColumnDef,
-		getCoreRowModel,
-		getSortedRowModel,
-		type SortingState
-	} from '@tanstack/table-core';
-	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import { createSvelteTable, renderSnippet } from '$lib/components/ui/data-table/index.js';
-	import {
 		closestCenter,
 		DndContext,
 		KeyboardSensor,
@@ -31,14 +22,23 @@
 		useSensors,
 		type DragEndEvent
 	} from '@dnd-kit-svelte/core';
+	import { restrictToHorizontalAxis } from '@dnd-kit-svelte/modifiers';
 	import {
 		arrayMove,
 		horizontalListSortingStrategy,
 		SortableContext
 	} from '@dnd-kit-svelte/sortable';
+	import {
+		getCoreRowModel,
+		getSortedRowModel,
+		type ColumnDef,
+		type SortingState
+	} from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
+	import { createSvelteTable, renderSnippet } from '$lib/components/ui/data-table/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import DragAlongCell from './DragAlongCell.svelte';
 	import DraggableTableHeader from './DraggableTableHeader.svelte';
-	import { restrictToHorizontalAxis } from '@dnd-kit-svelte/modifiers';
 
 	const data: Employee[] = [
 		{

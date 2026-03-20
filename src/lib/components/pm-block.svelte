@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Command } from 'package-manager-detector';
-	import * as Tabs from '$lib/components/ui/tabs/index.js';
-	import { getCommand, PACKAGE_MANAGERS, type PackageManager } from '$lib/utils/package-manager.js';
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
+	import type { Command } from 'package-manager-detector';
+	import CopyCode from '$lib/components/copy-code.svelte';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { cn } from '$lib/utils';
-	import CopyCode from '$lib/components/copy-code.svelte';
+	import { getCommand, PACKAGE_MANAGERS, type PackageManager } from '$lib/utils/package-manager.js';
 
 	const {
 		type,

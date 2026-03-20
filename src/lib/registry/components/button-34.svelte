@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SunIcon, MoonIcon } from '@lucide/svelte';
+	import { MoonIcon, SunIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 

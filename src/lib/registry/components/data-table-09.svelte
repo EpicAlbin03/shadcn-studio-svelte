@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { ChevronDownIcon, ChevronUpIcon } from '@lucide/svelte';
 	import {
+		getCoreRowModel,
+		getExpandedRowModel,
 		type ColumnDef,
 		type ExpandedState,
-		type Row,
-		getCoreRowModel,
-		getExpandedRowModel
+		type Row
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Button } from '$lib/components/ui/button';
-	import { Checkbox } from '$lib/components/ui/checkbox';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Member = {
 		name: string;

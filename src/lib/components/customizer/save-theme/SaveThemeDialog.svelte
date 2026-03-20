@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { toast } from 'svelte-sonner';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
-	import { toast } from 'svelte-sonner';
 
 	type Props = {
 		isOpen: boolean;

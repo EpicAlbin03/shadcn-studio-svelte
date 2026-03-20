@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Slider as SliderPrimitive } from 'bits-ui';
 	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
-	import { Slider } from '$lib/components/ui/slider/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
+	import { Slider } from '$lib/components/ui/slider/index.js';
 
 	let { value = $bindable(), ...restProps }: SliderPrimitive.RootProps = $props();
 </script>

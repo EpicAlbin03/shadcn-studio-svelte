@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import * as InputOTP from '$lib/components/ui/input-otp';
 	import * as Field from '$lib/components/ui/field/index.js';
+	import * as InputOTP from '$lib/components/ui/input-otp';
 </script>
 
 <form class="space-y-4" onsubmit={(e) => e.preventDefault()}>

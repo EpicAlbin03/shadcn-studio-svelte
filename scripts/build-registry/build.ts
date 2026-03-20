@@ -1,8 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import prettier from 'prettier';
-import { rimraf } from 'rimraf';
-import { toJSONSchema } from 'zod/v4';
 import {
 	componentsJsonSchema,
 	registryItemSchema,
@@ -10,8 +7,11 @@ import {
 	type Registry,
 	type RegistryItemType
 } from '@shadcn-svelte/registry';
-import { buildRegistry } from './crawl';
+import prettier from 'prettier';
+import { rimraf } from 'rimraf';
+import { toJSONSchema } from 'zod/v4';
 import { loadConfig } from './config';
+import { buildRegistry } from './crawl';
 import { writeFileWithDirs } from './utils';
 
 const OUTPUT_ITEM_TYPES = [

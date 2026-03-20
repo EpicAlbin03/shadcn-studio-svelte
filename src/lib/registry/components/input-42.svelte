@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Label } from '$lib/components/ui/label';
 	import { MinusIcon, PlusIcon } from '@lucide/svelte';
 	import { onDestroy } from 'svelte';
+	import { Label } from '$lib/components/ui/label';
 
 	const id = $props.id();
 

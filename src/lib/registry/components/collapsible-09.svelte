@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ChevronDownIcon, CreditCardIcon } from '@lucide/svelte';
+	import Cleave from 'cleave.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Input } from '$lib/components/ui/input';
@@ -7,7 +8,6 @@
 	import * as RadioGroup from '$lib/components/ui/radio-group';
 	import { Separator } from '$lib/components/ui/separator';
 	import { Textarea } from '$lib/components/ui/textarea';
-	import Cleave from 'cleave.js';
 
 	const id = $props.id();
 

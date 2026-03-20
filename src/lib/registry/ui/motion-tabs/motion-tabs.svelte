@@ -1,7 +1,7 @@
 <script lang="ts" module>
+	import { Context } from 'runed';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { Context } from 'runed';
 	import { SvelteMap } from 'svelte/reactivity';
 	import { cn } from '$lib/utils';
 

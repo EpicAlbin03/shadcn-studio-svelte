@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
+	import { CalendarDate, endOfYear, getLocalTimeZone, startOfYear } from '@internationalized/date';
 	import { watch } from 'runed';
 	import type { Snippet } from 'svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import CollapsibleYear from './CollapsibleYear.svelte';
-	import { CalendarDate, endOfYear, getLocalTimeZone, startOfYear } from '@internationalized/date';
 
 	type Props = {
 		class?: string;

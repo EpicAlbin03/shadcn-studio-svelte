@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as MotionTabs from '$lib/registry/ui/motion-tabs';
 	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
+	import * as MotionTabs from '$lib/registry/ui/motion-tabs';
 
 	const tabs = [
 		{

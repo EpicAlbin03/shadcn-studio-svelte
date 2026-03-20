@@ -73,6 +73,36 @@
 
 <script lang="ts">
 	import {
+		closestCenter,
+		DndContext,
+		KeyboardSensor,
+		MouseSensor,
+		TouchSensor,
+		useSensor,
+		useSensors,
+		type DragEndEvent,
+		type UniqueIdentifier
+	} from '@dnd-kit-svelte/core';
+	import { restrictToVerticalAxis } from '@dnd-kit-svelte/modifiers';
+	import {
+		arrayMove,
+		SortableContext,
+		useSortable,
+		verticalListSortingStrategy
+	} from '@dnd-kit-svelte/sortable';
+	import { CSS } from '@dnd-kit-svelte/utilities';
+	import ChevronDownIcon from '@tabler/icons-svelte/icons/chevron-down';
+	import ChevronLeftIcon from '@tabler/icons-svelte/icons/chevron-left';
+	import ChevronRightIcon from '@tabler/icons-svelte/icons/chevron-right';
+	import ChevronsLeftIcon from '@tabler/icons-svelte/icons/chevrons-left';
+	import ChevronsRightIcon from '@tabler/icons-svelte/icons/chevrons-right';
+	import CircleCheckFilledIcon from '@tabler/icons-svelte/icons/circle-check-filled';
+	import DotsVerticalIcon from '@tabler/icons-svelte/icons/dots-vertical';
+	import GripVerticalIcon from '@tabler/icons-svelte/icons/grip-vertical';
+	import LayoutColumnsIcon from '@tabler/icons-svelte/icons/layout-columns';
+	import LoaderIcon from '@tabler/icons-svelte/icons/loader';
+	import PlusIcon from '@tabler/icons-svelte/icons/plus';
+	import {
 		getCoreRowModel,
 		getFacetedRowModel,
 		getFacetedUniqueValues,
@@ -87,56 +117,26 @@
 		type SortingState,
 		type VisibilityState
 	} from '@tanstack/table-core';
-	import type { Schema } from './schemas.js';
-	import {
-		useSensors,
-		MouseSensor,
-		TouchSensor,
-		KeyboardSensor,
-		useSensor,
-		type DragEndEvent,
-		type UniqueIdentifier,
-		DndContext,
-		closestCenter
-	} from '@dnd-kit-svelte/core';
-	import {
-		arrayMove,
-		SortableContext,
-		useSortable,
-		verticalListSortingStrategy
-	} from '@dnd-kit-svelte/sortable';
-	import { restrictToVerticalAxis } from '@dnd-kit-svelte/modifiers';
-	import { createSvelteTable } from '$lib/components/ui/data-table/data-table.svelte.js';
-	import * as Tabs from '$lib/components/ui/tabs/index.js';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
+	import { createRawSnippet } from 'svelte';
+	import { toast } from 'svelte-sonner';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { createSvelteTable } from '$lib/components/ui/data-table/data-table.svelte.js';
 	import {
 		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import LayoutColumnsIcon from '@tabler/icons-svelte/icons/layout-columns';
-	import GripVerticalIcon from '@tabler/icons-svelte/icons/grip-vertical';
-	import ChevronDownIcon from '@tabler/icons-svelte/icons/chevron-down';
-	import PlusIcon from '@tabler/icons-svelte/icons/plus';
-	import ChevronsLeftIcon from '@tabler/icons-svelte/icons/chevrons-left';
-	import ChevronLeftIcon from '@tabler/icons-svelte/icons/chevron-left';
-	import ChevronRightIcon from '@tabler/icons-svelte/icons/chevron-right';
-	import ChevronsRightIcon from '@tabler/icons-svelte/icons/chevrons-right';
-	import CircleCheckFilledIcon from '@tabler/icons-svelte/icons/circle-check-filled';
-	import LoaderIcon from '@tabler/icons-svelte/icons/loader';
-	import DotsVerticalIcon from '@tabler/icons-svelte/icons/dots-vertical';
-	import { toast } from 'svelte-sonner';
-	import DataTableCheckbox from './DataTableCheckbox.svelte';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import { Input } from '$lib/components/ui/input/index.js';
+	import { Label } from '$lib/components/ui/label/index.js';
+	import * as Select from '$lib/components/ui/select/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import DataTableCellViewer from './DataTableCellViewer.svelte';
-	import { createRawSnippet } from 'svelte';
+	import DataTableCheckbox from './DataTableCheckbox.svelte';
 	import DataTableReviewer from './DataTableReviewer.svelte';
-	import { CSS } from '@dnd-kit-svelte/utilities';
+	import type { Schema } from './schemas.js';
 
 	let { data }: { data: Schema[] } = $props();
 	let pagination = $state<PaginationState>({ pageIndex: 0, pageSize: 10 });

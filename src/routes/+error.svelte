@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { Button } from '$lib/components/ui/button';
 	import { NotFoundSVG } from '$lib/assets/svg';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-9">

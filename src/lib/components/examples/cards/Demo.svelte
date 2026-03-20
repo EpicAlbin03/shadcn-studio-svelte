@@ -1,17 +1,17 @@
 <script lang="ts">
-	import CardsStats from './Stats.svelte';
-	import CardsCalendar from './Calendar.svelte';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import CardsActivityGoal from './ActivityGoal.svelte';
-	import CardsTeamMembers from './TeamMembers.svelte';
-	import CardsCookieSettings from './CookieSettings.svelte';
-	import CardsExerciseMinutes from './ExerciseMinutes.svelte';
+	import CardsCalendar from './Calendar.svelte';
 	import CardsChat from './Chat.svelte';
+	import CardsCookieSettings from './CookieSettings.svelte';
 	import CardsCreateAccount from './CreateAccount.svelte';
-	import CardsReportIssue from './ReportIssue.svelte';
-	import CardsShare from './Share.svelte';
+	import CardsExerciseMinutes from './ExerciseMinutes.svelte';
 	import CardsForms from './Forms.svelte';
 	import CardsPayments from './Payments.svelte';
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import CardsReportIssue from './ReportIssue.svelte';
+	import CardsShare from './Share.svelte';
+	import CardsStats from './Stats.svelte';
+	import CardsTeamMembers from './TeamMembers.svelte';
 
 	const mobile = new IsMobile();
 </script>

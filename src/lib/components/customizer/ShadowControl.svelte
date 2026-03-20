@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SliderWithInput from './SliderWithInput.svelte';
-	import ColorSwatch from './color-panel/ColorSwatch.svelte';
 	import * as Accordion from '$lib/components/ui/accordion';
+	import ColorSwatch from './color-panel/ColorSwatch.svelte';
+	import SliderWithInput from './SliderWithInput.svelte';
 
 	type Props = {
 		shadowColor: string;

@@ -12,25 +12,25 @@
 
 <script lang="ts">
 	import {
+		getCoreRowModel,
+		getFacetedUniqueValues,
+		getFilteredRowModel,
 		type ColumnDef,
 		type ColumnFiltersState,
 		type Row,
-		type RowSelectionState,
-		getCoreRowModel,
-		getFacetedUniqueValues,
-		getFilteredRowModel
+		type RowSelectionState
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import * as Avatar from '$lib/components/ui/avatar/index.js';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox';
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
-	import { Badge } from '$lib/components/ui/badge';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils';
 	import Filter from './Filter.svelte';
 

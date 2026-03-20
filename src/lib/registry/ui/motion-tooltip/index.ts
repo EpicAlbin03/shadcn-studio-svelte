@@ -1,4 +1,4 @@
-import Root, { type MotionTooltipProps, type MotionTooltipItem } from './motion-tooltip.svelte';
+import Root, { type MotionTooltipItem, type MotionTooltipProps } from './motion-tooltip.svelte';
 
 export {
 	Root,

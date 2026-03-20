@@ -1,35 +1,35 @@
 <script lang="ts">
-	import { RotateCcw, Sun, Moon, AlertCircle, Trash2, TriangleAlert } from '@lucide/svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme';
-	import ShadowControl from './ShadowControl.svelte';
-	import ThemeFontSelect from './ThemeFontSelect.svelte';
-	import SliderWithInput from './SliderWithInput.svelte';
-	import ThemeColorPanel from './color-panel/ThemeColorPanel.svelte';
-	import HoldToSaveTheme from './save-theme/HoldToSaveTheme.svelte';
-	import ThemePresetSelect from './ThemePresetSelect.svelte';
-	import ThemeVariablesDialog from './ThemeVariablesDialog.svelte';
-	import { Label } from '$lib/components/ui/label';
-	import { Button } from '$lib/components/ui/button';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import * as Alert from '$lib/components/ui/alert';
-	import * as ToggleGroup from '$lib/components/ui/toggle-group';
-	import * as Tabs from '$lib/components/ui/tabs';
+	import { AlertCircle, Moon, RotateCcw, Sun, Trash2, TriangleAlert } from '@lucide/svelte';
+	import { mode as _mode } from 'mode-watcher';
 	import {
+		DEFAULT_FONT_MONO,
 		DEFAULT_FONT_SANS,
 		DEFAULT_FONT_SERIF,
-		DEFAULT_FONT_MONO,
 		presetThemesMap
 	} from '$lib/assets/data/preset-themes';
+	import * as Alert from '$lib/components/ui/alert';
+	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import { Label } from '$lib/components/ui/label';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
+	import * as Tabs from '$lib/components/ui/tabs';
+	import * as ToggleGroup from '$lib/components/ui/toggle-group';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import type { ThemeStyleProps } from '$lib/types/theme';
+	import { setMode } from '$lib/utils/mode';
 	import {
 		getAppliedThemeFont,
+		monoFonts,
 		sansSerifFonts,
-		serifFonts,
-		monoFonts
+		serifFonts
 	} from '$lib/utils/theme-fonts';
-	import { mode as _mode } from 'mode-watcher';
-	import { setMode } from '$lib/utils/mode';
-	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
+	import ThemeColorPanel from './color-panel/ThemeColorPanel.svelte';
+	import HoldToSaveTheme from './save-theme/HoldToSaveTheme.svelte';
+	import ShadowControl from './ShadowControl.svelte';
+	import SliderWithInput from './SliderWithInput.svelte';
+	import ThemeFontSelect from './ThemeFontSelect.svelte';
+	import ThemePresetSelect from './ThemePresetSelect.svelte';
+	import ThemeVariablesDialog from './ThemeVariablesDialog.svelte';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);

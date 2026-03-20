@@ -1,21 +1,21 @@
 <script lang="ts">
+	import { ChevronDownIcon, ChevronUpIcon } from '@lucide/svelte';
 	import {
+		getCoreRowModel,
+		getSortedRowModel,
 		type ColumnDef,
 		type RowSelectionState,
-		type SortingState,
-		getCoreRowModel,
-		getSortedRowModel
+		type SortingState
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox';
-	import { ChevronDownIcon, ChevronUpIcon } from '@lucide/svelte';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils';
 
 	type Payment = {

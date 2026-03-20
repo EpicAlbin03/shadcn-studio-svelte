@@ -1,11 +1,11 @@
 <script lang="ts" module>
-	import type { Snippet } from 'svelte';
 	import type { Transition } from 'motion-sv';
-	import { Context } from 'runed';
-	import type { GlobalTooltipContext, TooltipData } from './types.js';
 	import { LayoutGroup } from 'motion-sv';
+	import { Context } from 'runed';
+	import type { Snippet } from 'svelte';
 	import { onMount } from 'svelte';
 	import GlobalTooltipOverlay from './global-tooltip-overlay.svelte';
+	import type { GlobalTooltipContext, TooltipData } from './types.js';
 
 	export type GlobalTooltipProviderProps = {
 		children: Snippet;

@@ -1,14 +1,16 @@
-import type { EntryGenerator, PageLoad } from './$types.js';
-import { registryCategories } from '$lib/registry/registry-categories';
-import { NEW_BLOCKS } from '$lib/utils/blocks';
-import type { Component } from 'svelte';
 import { error } from '@sveltejs/kit';
+import type { Component } from 'svelte';
+import { registryCategories } from '$lib/registry/registry-categories';
 import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
+import { NEW_BLOCKS } from '$lib/utils/blocks';
+import type { EntryGenerator, PageLoad } from './$types.js';
 
 export const prerender = true;
 
 export const entries: EntryGenerator = () => {
-	const categoryEntries = registryCategories.filter((c) => !c.hidden).map(({ slug }) => ({ category: slug }));
+	const categoryEntries = registryCategories
+		.filter((c) => !c.hidden)
+		.map(({ slug }) => ({ category: slug }));
 	if (NEW_BLOCKS.length > 0) {
 		categoryEntries.unshift({ category: 'new' });
 	}

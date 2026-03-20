@@ -1,14 +1,14 @@
 <script lang="ts">
+	import 'shepherd.js/dist/css/shepherd.css';
+	import './shepherd.css';
 	import { Palette, X } from '@lucide/svelte';
 	import Shepherd from 'shepherd.js';
+	import { onMount } from 'svelte';
 	import { offset } from 'svelte-floating-ui/dom';
-	import 'shepherd.js/dist/css/shepherd.css';
 	import { RainbowButton } from '$lib/components/ui/rainbow-button';
 	import * as Sheet from '$lib/components/ui/sheet';
-	import './shepherd.css';
-	import { onMount } from 'svelte';
-	import ThemeControlPanel from './ThemeControlPanel.svelte';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import ThemeControlPanel from './ThemeControlPanel.svelte';
 
 	const userConfig = UserConfigContext.get();
 

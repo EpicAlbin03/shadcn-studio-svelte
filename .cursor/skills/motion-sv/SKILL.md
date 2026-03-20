@@ -20,21 +20,17 @@ The primary component factory. Use dot notation to render **any** HTML element.
 
 ```svelte
 <script>
-  import { motion } from "motion-sv";
+	import { motion } from 'motion-sv';
 </script>
 
 <!-- Sections & Headings -->
 <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-  <motion.h1 animate={{ y: 0 }}>Headline</motion.h1>
+	<motion.h1 animate={{ y: 0 }}>Headline</motion.h1>
 </motion.section>
 
 <!-- Links & Buttons -->
-<motion.a
-  href="/about"
-  whileHover={{ scale: 1.05 }}
-  whilePress={{ scale: 0.95 }}
->
-  Go to About
+<motion.a href="/about" whileHover={{ scale: 1.05 }} whilePress={{ scale: 0.95 }}>
+	Go to About
 </motion.a>
 ```
 
@@ -44,8 +40,9 @@ ALWAYS pass styles as an object via `style={{ key: value }}`, never as a string.
 
 ```svelte
 <script>
-  import { motion, useMotionValue } from "motion-sv";
-  const x = useMotionValue(0);
+	import { motion, useMotionValue } from 'motion-sv';
+
+	const x = useMotionValue(0);
 </script>
 
 <!-- ❌ BAD: String syntax (Values won't update) -->
@@ -53,11 +50,11 @@ ALWAYS pass styles as an object via `style={{ key: value }}`, never as a string.
 
 <!-- ✅ GOOD: Object syntax -->
 <motion.div
-  style={{
-    x,
-    backgroundColor: "#ff0000",
-    "--custom-var": 100
-  }}
+	style={{
+		x,
+		backgroundColor: '#ff0000',
+		'--custom-var': 100
+	}}
 />
 ```
 
@@ -67,23 +64,19 @@ For better developer experience and type safety, define variants using the `Vari
 
 ```svelte
 <script lang="ts">
-  import { motion, type Variants } from "motion-sv";
+	import { motion, type Variants } from 'motion-sv';
 
-  const boxVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 }
-    }
-  };
+	const boxVariants: Variants = {
+		hidden: { opacity: 0, scale: 0.8 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: { duration: 0.5 }
+		}
+	};
 </script>
 
-<motion.div
-  variants={boxVariants}
-  initial="hidden"
-  animate="visible"
-/>
+<motion.div variants={boxVariants} initial="hidden" animate="visible" />
 ```
 
 ### Supported Props
@@ -100,15 +93,15 @@ For better developer experience and type safety, define variants using the `Vari
 
 ```svelte
 <motion.section
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  inViewOptions={{
-    once: true,
-    amount: "some", // "some" | "all" | 0..1
-    margin: "0px 0px -200px 0px"
-  }}
+	initial={{ opacity: 0 }}
+	whileInView={{ opacity: 1 }}
+	inViewOptions={{
+		once: true,
+		amount: 'some', // "some" | "all" | 0..1
+		margin: '0px 0px -200px 0px'
+	}}
 >
-  Hello
+	Hello
 </motion.section>
 ```
 
@@ -119,19 +112,20 @@ _Modes:_ `"sync"` (default), `"wait"`, `"popLayout"`.
 
 ```svelte
 <script>
-  import { motion, AnimatePresence } from "motion-sv";
-  let show = $state(true);
+	import { AnimatePresence, motion } from 'motion-sv';
+
+	let show = $state(true);
 </script>
 
 <AnimatePresence mode="wait">
-  {#if show}
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      key="unique-key"
-    />
-  {/if}
+	{#if show}
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			key="unique-key"
+		/>
+	{/if}
 </AnimatePresence>
 ```
 
@@ -147,21 +141,21 @@ Svelte lacks `getSnapshotBeforeUpdate`. You **MUST** use `createLayoutMotion` fo
 
 ```svelte
 <script>
-  import { motion, createLayoutMotion } from "motion-sv";
+	import { createLayoutMotion, motion } from 'motion-sv';
 
-  let isOn = $state(false);
-  const layout = createLayoutMotion(motion);
+	let isOn = $state(false);
+	const layout = createLayoutMotion(motion);
 
-  // Wrap state mutation
-  const toggle = layout.update.with(() => (isOn = !isOn));
+	// Wrap state mutation
+	const toggle = layout.update.with(() => (isOn = !isOn));
 </script>
 
 <div onclick={toggle}>
-  <!-- Use layout.div and layoutDependency or layoutId -->
-  <layout.div
-    layoutDependency={isOn}
-    transition={{ type: "spring", stiffness: 700, damping: 30 }}
-  />
+	<!-- Use layout.div and layoutDependency or layoutId -->
+	<layout.div
+		layoutDependency={isOn}
+		transition={{ type: 'spring', stiffness: 700, damping: 30 }}
+	/>
 </div>
 ```
 
@@ -171,16 +165,17 @@ Use specific components for reordering lists.
 
 ```svelte
 <script>
-  import { ReorderGroup, ReorderItem } from "motion-sv";
-  let items = $state([0, 1, 2]);
+	import { ReorderGroup, ReorderItem } from 'motion-sv';
+
+	let items = $state([0, 1, 2]);
 </script>
 
 <ReorderGroup axis="y" bind:values={items}>
-  {#each items as item (item)}
-    <ReorderItem value={item}>
-      {item}
-    </ReorderItem>
-  {/each}
+	{#each items as item (item)}
+		<ReorderItem value={item}>
+			{item}
+		</ReorderItem>
+	{/each}
 </ReorderGroup>
 ```
 
@@ -190,11 +185,11 @@ Reduce bundle size by loading features on demand.
 
 ```svelte
 <script>
-  import { LazyMotion, domAnimation } from "motion-sv";
+	import { domAnimation, LazyMotion } from 'motion-sv';
 </script>
 
 <LazyMotion features={domAnimation}>
-  <!-- Children using motion components -->
+	<!-- Children using motion components -->
 </LazyMotion>
 ```
 

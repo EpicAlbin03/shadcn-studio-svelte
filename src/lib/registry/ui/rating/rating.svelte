@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { cn, type WithElementRef } from '$lib/utils';
 	import { StarIcon, type Icon as IconType } from '@lucide/svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { type VariantProps, tv } from 'tailwind-variants';
+	import { tv, type VariantProps } from 'tailwind-variants';
+	import { cn, type WithElementRef } from '$lib/utils';
 	import RatingItem from './rating-item.svelte';
 
 	export const ratingVariants = tv({

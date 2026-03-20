@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { RangeCalendar } from '$lib/components/ui/range-calendar';
 	import {
 		endOfMonth,
 		endOfYear,
@@ -8,9 +7,10 @@
 		startOfYear,
 		today
 	} from '@internationalized/date';
+	import type { DateRange } from 'bits-ui';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import type { DateRange } from 'bits-ui';
+	import { RangeCalendar } from '$lib/components/ui/range-calendar';
 
 	let todayDate = today(getLocalTimeZone());
 

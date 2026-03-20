@@ -1,11 +1,11 @@
 <script lang="ts">
-	import RangeCalendar from '$lib/components/ui/range-calendar/range-calendar.svelte';
-	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { getLocalTimeZone } from '@internationalized/date';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import type { DateRange } from 'bits-ui';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
-	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import { getLocalTimeZone } from '@internationalized/date';
-	import type { DateRange } from 'bits-ui';
+	import * as Popover from '$lib/components/ui/popover/index.js';
+	import RangeCalendar from '$lib/components/ui/range-calendar/range-calendar.svelte';
 
 	const id = $props.id();
 	let open = $state(false);

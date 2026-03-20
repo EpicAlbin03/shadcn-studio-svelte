@@ -1,5 +1,5 @@
-import * as sitemap from 'super-sitemap';
 import type { RequestHandler } from '@sveltejs/kit';
+import * as sitemap from 'super-sitemap';
 import { categories } from '$lib/config/components.svelte';
 import { PUBLIC_URL } from '$lib/config/site-config';
 import { registryCategories } from '$lib/registry/registry-categories';

@@ -1,11 +1,11 @@
 <script lang="ts" module>
-	import { Button, type ButtonProps } from '$lib/components/ui/button';
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import CopyIcon from '@lucide/svelte/icons/copy';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { scale } from 'svelte/transition';
+	import { Button, type ButtonProps } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 
 	export type CopyButtonProps = ButtonProps & {
 		text: string;

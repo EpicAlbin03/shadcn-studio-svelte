@@ -1,5 +1,5 @@
-import Root, { type NeuralButtonProps } from './neural-button.svelte';
 import BorderBeam, { type BorderBeamProps } from './border-beam.svelte';
+import Root, { type NeuralButtonProps } from './neural-button.svelte';
 
 export {
 	Root,

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
+	import { tick } from 'svelte';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { tick } from 'svelte';
 
 	const users = [
 		{

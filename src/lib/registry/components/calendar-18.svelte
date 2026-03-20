@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import { Button } from '$lib/components/ui/button';
 	import { Calendar } from '$lib/components/ui/calendar';
-	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import * as Card from '$lib/components/ui/card/index.js';
 
 	let value = $state<CalendarDate | undefined>(new CalendarDate(2025, 6, 15));

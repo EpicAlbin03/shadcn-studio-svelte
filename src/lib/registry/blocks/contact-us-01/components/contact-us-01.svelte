@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
-	import * as Avatar from '$lib/components/ui/avatar';
 	import { type Icon as IconType } from '@lucide/svelte';
+	import * as Avatar from '$lib/components/ui/avatar';
+	import * as Card from '$lib/components/ui/card';
 
 	type ContactInfo = {
 		title: string;

@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { REGEXP_ONLY_DIGITS } from 'bits-ui';
 	import * as InputOTP from '$lib/components/ui/input-otp/index.js';
 	import Label from '$lib/components/ui/label/label.svelte';
-	import { REGEXP_ONLY_DIGITS } from 'bits-ui';
 
 	const id = $props.id();
 </script>

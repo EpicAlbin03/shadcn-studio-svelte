@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils/index.js";
-	import type { HTMLAttributes } from "svelte/elements";
+	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn, type WithElementRef } from '$lib/utils/index.js';
 
 	let {
 		ref = $bindable(null),
@@ -13,7 +13,7 @@
 <kbd
 	bind:this={ref}
 	data-slot="kbd-group"
-	class={cn("inline-flex items-center gap-1", className)}
+	class={cn('inline-flex items-center gap-1', className)}
 	{...restProps}
 >
 	{@render children?.()}

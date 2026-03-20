@@ -27,7 +27,9 @@ function getTsconfigPathsMatcher(): (specifier: string) => string[] {
 
 	const matcher = createPathsMatcher(tsconfig);
 	if (!matcher) {
-		throw new Error(`Unable to create a tsconfig paths matcher from ${path.basename(tsconfig.path)}.`);
+		throw new Error(
+			`Unable to create a tsconfig paths matcher from ${path.basename(tsconfig.path)}.`
+		);
 	}
 
 	return matcher;
@@ -66,8 +68,14 @@ export function defineConfig(config: RegistryConfig): RegistryConfig {
 	return {
 		...config,
 		registryDir: config.registryDir ?? DEFAULT_REGISTRY_DIR,
-		ignoredPackageDependencies:
-			config.ignoredPackageDependencies ?? ['svelte', '@sveltejs/kit', 'vite', 'tailwindcss', '@tailwindcss/vite', '@sveltejs/vite-plugin-svelte'],
+		ignoredPackageDependencies: config.ignoredPackageDependencies ?? [
+			'svelte',
+			'@sveltejs/kit',
+			'vite',
+			'tailwindcss',
+			'@tailwindcss/vite',
+			'@sveltejs/vite-plugin-svelte'
+		],
 		crawlExtensions: config.crawlExtensions ?? ['.svelte', '.ts', '.js', '.mjs', '.cjs']
 	};
 }

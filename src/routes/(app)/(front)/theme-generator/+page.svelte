@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import PageNav from '$lib/components/examples/PageNav.svelte';
-	import ExamplesNav from '$lib/components/examples/ExamplesNav.svelte';
 	import CardsDemo from '$lib/components/examples/cards/Demo.svelte';
+	import ExamplesNav from '$lib/components/examples/ExamplesNav.svelte';
+	import PageNav from '$lib/components/examples/PageNav.svelte';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 
 	const mobile = new IsMobile();
 </script>

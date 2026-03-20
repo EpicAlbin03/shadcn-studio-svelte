@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import * as Select from '$lib/components/ui/select/index.js';
 	import { SearchIcon } from '@lucide/svelte';
 	import type { Column } from '@tanstack/table-core';
 	import type { Item } from '$lib/components/shadcn-studio/data-table/data-table-04.svelte';
+	import { Input } from '$lib/components/ui/input';
+	import { Label } from '$lib/components/ui/label';
+	import * as Select from '$lib/components/ui/select/index.js';
 
 	type Props = { column: Column<Item, unknown> };
 

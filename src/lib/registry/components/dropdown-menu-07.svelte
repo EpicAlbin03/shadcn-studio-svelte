@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { User, Settings, Bell, LogOut, CreditCard } from '@lucide/svelte';
+	import { Bell, CreditCard, LogOut, Settings, User } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 

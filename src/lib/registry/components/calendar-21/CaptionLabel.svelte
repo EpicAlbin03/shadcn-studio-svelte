@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
 	import { ChevronDownIcon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import { Button } from '$lib/components/ui/button';
 
 	type Props = HTMLAttributes<HTMLSpanElement> & {
 		children: Snippet;

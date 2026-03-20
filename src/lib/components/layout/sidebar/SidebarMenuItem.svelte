@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import { cn } from '$lib/utils';
-	import type { Snippet } from 'svelte';
 
 	const { setOpenMobile } = Sidebar.useSidebar();
 	let pathname = $derived(page.url.pathname);

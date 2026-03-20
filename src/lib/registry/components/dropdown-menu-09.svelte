@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PencilLine, Upload, Trash2 } from '@lucide/svelte';
+	import { PencilLine, Trash2, Upload } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>

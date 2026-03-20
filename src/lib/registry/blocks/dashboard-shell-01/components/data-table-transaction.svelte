@@ -7,18 +7,18 @@
 		getPaginationRowModel,
 		getSortedRowModel
 	} from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-	import * as Table from '$lib/components/ui/table/index.js';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import { usePagination } from '$lib/registry/hooks/use-pagination.svelte.js';
-	import { createRawSnippet } from 'svelte';
 	import { cn } from '$lib/utils';
 
 	type Status = 'pending' | 'processing' | 'paid' | 'failed';

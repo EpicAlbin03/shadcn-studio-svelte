@@ -1,7 +1,7 @@
 <script lang="ts" module>
-	import { type Snippet, untrack } from 'svelte';
-	import { tooltipContext } from './global-tooltip.svelte';
+	import { untrack, type Snippet } from 'svelte';
 	import { globalTooltipContext } from './global-tooltip-provider.svelte';
+	import { tooltipContext } from './global-tooltip.svelte';
 
 	export type GlobalTooltipTriggerProps = {
 		children: Snippet<[{ props: Record<string, unknown> }]>;

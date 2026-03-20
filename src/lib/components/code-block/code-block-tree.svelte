@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { FileTree } from '$lib/registry/registry-utils.js';
-	import CodeBlockTree from './code-block-tree.svelte';
-	import { CodeBlockContext } from './code-block.svelte';
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import FileIcon from '@lucide/svelte/icons/file';
 	import FolderIcon from '@lucide/svelte/icons/folder';
+	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import type { FileTree } from '$lib/registry/registry-utils.js';
+	import CodeBlockTree from './code-block-tree.svelte';
+	import { CodeBlockContext } from './code-block.svelte';
 
 	let { item, index }: { item: FileTree; index: number } = $props();
 

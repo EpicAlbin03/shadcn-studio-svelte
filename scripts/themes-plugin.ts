@@ -8,8 +8,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Registry } from '@shadcn-svelte/registry';
-import type { RegistryPlugin } from './build-registry';
 import { presetThemes } from '../src/lib/assets/data/preset-themes.js';
+import type { RegistryPlugin } from './build-registry';
 
 type RegistryItems = Registry['items'];
 

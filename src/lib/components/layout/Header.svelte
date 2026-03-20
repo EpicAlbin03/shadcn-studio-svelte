@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import type { Component } from 'svelte';
+	import Github from '$lib/assets/svg/Github.svelte';
+	import X from '$lib/assets/svg/X.svelte';
+	import ThemeGenerator from '$lib/components/customizer/ThemeGenerator.svelte';
 	import CommandMenu from '$lib/components/layout/CommandMenu.svelte';
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import ModeToggle from '$lib/components/layout/ModeToggle.svelte';
 	import NavMenu from '$lib/components/layout/NavMenu.svelte';
-	import ThemeGenerator from '$lib/components/customizer/ThemeGenerator.svelte';
-	import Github from '$lib/assets/svg/Github.svelte';
-	import X from '$lib/assets/svg/X.svelte';
-	import type { Component } from 'svelte';
+	import { Button } from '$lib/components/ui/button';
 
 	type Props = {
 		toggle: Component;

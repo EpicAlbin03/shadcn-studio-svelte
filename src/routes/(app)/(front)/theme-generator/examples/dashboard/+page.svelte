@@ -1,11 +1,11 @@
 <script lang="ts">
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/examples/dashboard/components/AppSidebar.svelte';
-	import { data } from '$lib/components/examples/dashboard/data.js';
-	import SiteHeader from '$lib/components/examples/dashboard/components/SiteHeader.svelte';
-	import SectionCards from '$lib/components/examples/dashboard/components/SectionCards.svelte';
 	import ChartAreaInteractive from '$lib/components/examples/dashboard/components/ChartAreaInteractive.svelte';
 	import DataTable from '$lib/components/examples/dashboard/components/DataTable.svelte';
+	import SectionCards from '$lib/components/examples/dashboard/components/SectionCards.svelte';
+	import SiteHeader from '$lib/components/examples/dashboard/components/SiteHeader.svelte';
+	import { data } from '$lib/components/examples/dashboard/data.js';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 </script>
 
 <div class="md:hidden">

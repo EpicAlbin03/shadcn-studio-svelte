@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Calendar } from '$lib/components/ui/calendar';
 	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { Calendar } from '$lib/components/ui/calendar';
 	import * as Card from '$lib/components/ui/card/index.js';
 
 	const presets = [

@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { CalendarDate } from '@internationalized/date';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { RangeCalendar } from '$lib/components/ui/range-calendar/index.js';
-	import { CalendarDate } from '@internationalized/date';
 
 	const start = new CalendarDate(2023, 5, 5);
 </script>

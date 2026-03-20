@@ -1,9 +1,9 @@
 <script lang="ts" module>
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
 	import type { Transition } from 'motion-sv';
 	import { motion } from 'motion-sv';
 	import { useMutationObserver, watch } from 'runed';
+	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 	import { motionTabsContext } from './motion-tabs.svelte';
 

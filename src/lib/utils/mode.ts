@@ -1,5 +1,5 @@
-import { UserConfig } from '$lib/config/user-config.svelte';
 import { setMode as _setMode, mode } from 'mode-watcher';
+import { UserConfig } from '$lib/config/user-config.svelte';
 import { applyThemeStyles } from './theme';
 
 export function setMode(userConfig: UserConfig, mode: 'light' | 'dark' | 'system') {

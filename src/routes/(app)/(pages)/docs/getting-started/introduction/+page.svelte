@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { PlusIcon } from '@lucide/svelte';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
-	import * as Accordion from '$lib/components/ui/accordion';
 	import { introFaqs } from '$lib/assets/data/faqs';
-	import MetaData from '$lib/components/MetaData.svelte';
 	import {
-		DocPageHeader,
-		DocSection,
 		DocHeading,
+		DocList,
+		DocPageHeader,
 		DocParagraph,
-		DocList
+		DocSection
 	} from '$lib/components/docs';
+	import MetaData from '$lib/components/MetaData.svelte';
+	import * as Accordion from '$lib/components/ui/accordion';
 
 	const title = 'Introduction';
 	const description =

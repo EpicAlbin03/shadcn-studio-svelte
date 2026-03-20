@@ -2,10 +2,10 @@
 	import { CalendarClockIcon, MenuIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import BistroLogo from '$lib/registry/lib/assets/svg/bistro-logo.svelte';
+	import { cn } from '$lib/utils';
 	import MenuDropdown, { type NavigationSection } from './menu-dropdown.svelte';
 	import MenuNavigation from './menu-navigation.svelte';
-	import { cn } from '$lib/utils';
-	import BistroLogo from '$lib/registry/lib/assets/svg/bistro-logo.svelte';
 
 	type HeaderProps = {
 		navigationData: NavigationSection[];

@@ -22,16 +22,16 @@
 </script>
 
 <script lang="ts">
+	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
+	import { tick } from 'svelte';
+	import { toast } from 'svelte-sonner';
 	import { defaults, superForm } from 'sveltekit-superforms';
 	import { zod4 } from 'sveltekit-superforms/adapters';
-	import { toast } from 'svelte-sonner';
-	import * as Form from '$lib/components/ui/form/index.js';
-	import * as Command from '$lib/components/ui/command/index.js';
-	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Button } from '$lib/components/ui/button';
-	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
+	import * as Command from '$lib/components/ui/command/index.js';
+	import * as Form from '$lib/components/ui/form/index.js';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils';
-	import { tick } from 'svelte';
 
 	const form = superForm(defaults(zod4(formSchema)), {
 		validators: zod4(formSchema),

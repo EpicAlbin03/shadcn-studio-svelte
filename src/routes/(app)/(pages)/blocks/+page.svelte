@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$types.js';
-	import BlockViewer from '$lib/components/block-viewer/block-viewer.svelte';
 	import BlockPreview from '$lib/components/block-preview.svelte';
+	import BlockViewer from '$lib/components/block-viewer/block-viewer.svelte';
+	import type { PageData } from './$types.js';
 
 	let { data }: { data: PageData } = $props();
 </script>

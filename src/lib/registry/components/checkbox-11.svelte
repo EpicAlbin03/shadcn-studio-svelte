@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HeartIcon, CircleIcon, StarIcon } from '@lucide/svelte';
+	import { CircleIcon, HeartIcon, StarIcon } from '@lucide/svelte';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 </script>
 

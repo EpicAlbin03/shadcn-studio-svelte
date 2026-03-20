@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { motion, AnimatePresence } from 'motion-sv';
 	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
+	import { AnimatePresence, motion } from 'motion-sv';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { cn } from '$lib/utils';
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Command as CommandPrimitive } from 'bits-ui';
 	import { XIcon } from '@lucide/svelte';
+	import { Command as CommandPrimitive } from 'bits-ui';
+	import { Debounced } from 'runed';
 	import * as Command from '$lib/components/ui/command';
 	import { cn } from '$lib/utils';
-	import { Debounced } from 'runed';
 	import type { GroupOption, MultiSelectProps, Option } from './types';
 
 	function transToGroupOption(options: Option[], groupBy?: string) {

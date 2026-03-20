@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { RangeCalendar } from '$lib/components/ui/range-calendar';
 	import { CalendarDate } from '@internationalized/date';
 	import type { DateRange } from 'bits-ui';
+	import { RangeCalendar } from '$lib/components/ui/range-calendar';
 
 	let value = $state<DateRange>({
 		start: new CalendarDate(2025, 5, 22),

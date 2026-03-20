@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { SidebarProvider } from '$lib/components/ui/sidebar';
 	import PagesLayout from '$lib/components/layout/PagesLayout.svelte';
+	import { SidebarProvider } from '$lib/components/ui/sidebar';
 
 	let { children, data } = $props();
 

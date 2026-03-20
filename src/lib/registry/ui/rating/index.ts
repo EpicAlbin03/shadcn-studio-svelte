@@ -1,4 +1,4 @@
-import Root, { type RatingProps, type RatingVariant, ratingVariants } from './rating.svelte';
+import Root, { ratingVariants, type RatingProps, type RatingVariant } from './rating.svelte';
 
 export {
 	Root,

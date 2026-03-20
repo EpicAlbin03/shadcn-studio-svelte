@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clock8Icon, MapPinIcon, BriefcaseBusinessIcon, PhoneIcon } from '@lucide/svelte';
+	import { BriefcaseBusinessIcon, Clock8Icon, MapPinIcon, PhoneIcon } from '@lucide/svelte';
 	import ContactUs from './components/contact-us-01.svelte';
 
 	const contactInfo = [

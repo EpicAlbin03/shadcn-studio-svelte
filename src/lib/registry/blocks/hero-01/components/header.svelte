@@ -3,8 +3,8 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
-	import { cn } from '$lib/utils';
 	import Logo from '$lib/registry/components/logo.svelte';
+	import { cn } from '$lib/utils';
 
 	export type NavigationSection = {
 		title: string;

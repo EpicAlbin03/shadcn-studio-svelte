@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { UploadIcon, XIcon } from '@lucide/svelte';
+	import { onMount } from 'svelte';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Progress } from '$lib/components/ui/progress';
-	import { onMount } from 'svelte';
 
 	let isActive = $state(true);
 	let progress = $state(0);

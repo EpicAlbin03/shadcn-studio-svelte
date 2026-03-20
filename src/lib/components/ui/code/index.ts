@@ -1,9 +1,5 @@
-import Root, {
-	type CodeProps,
-	type CodeVariant,
-	codeVariants,
-} from "./code.svelte";
-import { highlightCode } from "./highlight-code";
+import Root, { codeVariants, type CodeProps, type CodeVariant } from './code.svelte';
+import { highlightCode } from './highlight-code';
 
 export {
 	Root,
@@ -14,6 +10,5 @@ export {
 	type CodeProps,
 	type CodeVariant,
 	//
-	highlightCode,
+	highlightCode
 };
-

@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils';
 	import { RadioGroup as RadioGroupPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils';
 
 	export type MotionRadioGroupProps = RadioGroupPrimitive.RootProps;
 </script>

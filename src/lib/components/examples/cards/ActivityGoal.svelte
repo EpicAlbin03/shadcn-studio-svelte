@@ -1,12 +1,12 @@
 <script lang="ts">
 	import MinusIcon from '@lucide/svelte/icons/minus';
 	import PlusIcon from '@lucide/svelte/icons/plus';
+	import { scaleBand } from 'd3-scale';
+	import { BarChart, type ChartContextValue } from 'layerchart';
+	import { cubicInOut } from 'svelte/easing';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Chart from '$lib/components/ui/chart/index.js';
-	import { BarChart, type ChartContextValue } from 'layerchart';
-	import { cubicInOut } from 'svelte/easing';
-	import { scaleBand } from 'd3-scale';
 
 	const data = [
 		{

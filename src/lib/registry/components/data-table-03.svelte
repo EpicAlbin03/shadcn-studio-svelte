@@ -1,23 +1,23 @@
 <script lang="ts">
+	import { ChevronDownIcon, Columns3Icon, RefreshCcwIcon, SearchIcon } from '@lucide/svelte';
 	import {
+		getCoreRowModel,
 		type ColumnDef,
 		type RowSelectionState,
-		type VisibilityState,
-		getCoreRowModel
+		type VisibilityState
 	} from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { Button } from '$lib/components/ui/button';
-	import { ChevronDownIcon, Columns3Icon, RefreshCcwIcon, SearchIcon } from '@lucide/svelte';
 	import { Input } from '$lib/components/ui/input';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Payment = {
 		id: string;

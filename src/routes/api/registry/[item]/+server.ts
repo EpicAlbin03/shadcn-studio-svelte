@@ -1,10 +1,10 @@
 import { json } from '@sveltejs/kit';
-import type { RequestHandler } from './$types.js';
-import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 import {
 	loadHighlightedCodeBlock,
 	loadHighlightedCodeBlocks
 } from '$lib/server/registry/highlighted-code-blocks.js';
+import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
+import type { RequestHandler } from './$types.js';
 
 function normalizeItemNames(itemNames: string[]): string[] {
 	return Array.from(

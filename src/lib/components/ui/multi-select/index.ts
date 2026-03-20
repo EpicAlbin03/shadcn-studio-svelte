@@ -1,5 +1,5 @@
 import Root from './multi-select.svelte';
-import type { MultiSelectProps, Option, GroupOption } from './types';
+import type { GroupOption, MultiSelectProps, Option } from './types';
 
 export {
 	Root,

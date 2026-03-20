@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
 	import * as Field from '$lib/components/ui/field/index.js';
+	import { Input } from '$lib/components/ui/input';
 </script>
 
 <form class="space-y-4" onsubmit={(e) => e.preventDefault()}>

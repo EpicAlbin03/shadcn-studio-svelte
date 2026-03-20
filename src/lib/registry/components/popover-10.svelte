@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { LoaderCircleIcon, SearchIcon } from '@lucide/svelte';
+	import { Debounced } from 'runed';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { Debounced } from 'runed';
 
 	const users = [
 		{

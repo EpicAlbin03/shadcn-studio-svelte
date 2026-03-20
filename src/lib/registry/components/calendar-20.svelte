@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Calendar } from '$lib/components/ui/calendar';
 	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
-	import { Label } from '$lib/components/ui/label/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import * as Card from '$lib/components/ui/card/index.js';
 	import { ClockIcon } from '@lucide/svelte';
+	import { Calendar } from '$lib/components/ui/calendar';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import { Input } from '$lib/components/ui/input/index.js';
+	import { Label } from '$lib/components/ui/label/index.js';
 
 	const id = $props.id();
 

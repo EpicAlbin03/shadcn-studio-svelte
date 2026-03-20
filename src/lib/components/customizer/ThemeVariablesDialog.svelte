@@ -1,16 +1,16 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
-	import { generateThemeCode } from '$lib/utils/theme-style-generator';
-	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import { Button } from '$lib/components/ui/button';
 	import { Copy } from '@lucide/svelte';
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { CodeBlock } from '$lib/components/code-block';
-	import { highlightCode } from '$lib/components/ui/code';
-	import PmAddComp from '../pm-add-comp.svelte';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
-	import PmBlock from '../pm-block.svelte';
+	import { CodeBlock } from '$lib/components/code-block';
+	import { Button } from '$lib/components/ui/button';
+	import { highlightCode } from '$lib/components/ui/code';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Select from '$lib/components/ui/select';
+	import { UserConfigContext } from '$lib/config/user-config.svelte';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { generateThemeCode } from '$lib/utils/theme-style-generator';
+	import PmAddComp from '../pm-add-comp.svelte';
+	import PmBlock from '../pm-block.svelte';
 
 	const userConfig = UserConfigContext.get();
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as CraftButton from '$lib/registry/ui/craft-button';
 	import { ArrowUpRightIcon } from '@lucide/svelte';
+	import * as CraftButton from '$lib/registry/ui/craft-button';
 </script>
 
 <CraftButton.Root>

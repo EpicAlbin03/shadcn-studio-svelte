@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { motion } from 'motion-sv';
-	import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 	import { Switch as SwitchPrimitive } from 'bits-ui';
+	import { motion } from 'motion-sv';
 	import { useDebounce } from 'runed';
+	import { cn, type WithoutChildrenOrChild } from '$lib/utils';
 
 	const SIZES = {
 		sm: { TRACK_WIDTH: 26, THUMB_SIZE: 14, THUMB_STRETCH: 18 },

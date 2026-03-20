@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { GuitarIcon, HeadphonesIcon, MicVocalIcon, MusicIcon } from '@lucide/svelte';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
-	import { GuitarIcon, HeadphonesIcon, MicVocalIcon, MusicIcon } from '@lucide/svelte';
 
 	const genres = [
 		{ value: 'rock', label: 'Rock', icon: GuitarIcon },

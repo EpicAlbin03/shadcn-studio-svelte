@@ -5,9 +5,9 @@
 		ChevronLeftIcon,
 		ChevronRightIcon
 	} from '@lucide/svelte';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import * as Pagination from '$lib/components/ui/pagination/index.js';
 	import { cn } from '$lib/utils';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
 
 	const count = 30;
 	const perPage = 10;

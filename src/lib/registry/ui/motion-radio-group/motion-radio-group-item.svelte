@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils';
-	import { RadioGroup as RadioGroupPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
-	import { motion, AnimatePresence, type Transition } from 'motion-sv';
 	import { CircleIcon } from '@lucide/svelte';
+	import { RadioGroup as RadioGroupPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
+	import { AnimatePresence, motion, type Transition } from 'motion-sv';
+	import { cn } from '$lib/utils';
 
 	export type MotionRadioGroupItemProps = WithoutChildrenOrChild<RadioGroupPrimitive.ItemProps> & {
 		transition?: Transition;

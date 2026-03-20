@@ -2,8 +2,8 @@
 	import { EyeIcon, EyeOffIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import { Input } from '$lib/components/ui/input';
 	import * as Field from '$lib/components/ui/field/index.js';
+	import { Input } from '$lib/components/ui/input';
 
 	let isPasswordVisible = $state(false);
 	let isConfirmPasswordVisible = $state(false);

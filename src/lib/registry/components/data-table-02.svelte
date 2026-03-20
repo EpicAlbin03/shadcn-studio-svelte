@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { type ColumnDef, type RowSelectionState, getCoreRowModel } from '@tanstack/table-core';
+	import { Rows2Icon, Rows3Icon, Rows4Icon } from '@lucide/svelte';
+	import { getCoreRowModel, type ColumnDef, type RowSelectionState } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Select from '$lib/components/ui/select';
-	import { Rows2Icon, Rows3Icon, Rows4Icon } from '@lucide/svelte';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils';
 
 	type Payment = {

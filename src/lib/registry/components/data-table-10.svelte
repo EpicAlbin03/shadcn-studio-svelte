@@ -10,24 +10,24 @@
 	import type {
 		ColumnDef,
 		PaginationState,
-		SortingState,
-		RowSelectionState
+		RowSelectionState,
+		SortingState
 	} from '@tanstack/table-core';
 	import { getCoreRowModel, getPaginationRowModel, getSortedRowModel } from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
-	import { Label } from '$lib/components/ui/label';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import * as Table from '$lib/components/ui/table';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table';
+	import { Label } from '$lib/components/ui/label';
+	import * as Select from '$lib/components/ui/select/index.js';
+	import * as Table from '$lib/components/ui/table';
 	import { cn } from '$lib/utils';
-	import { createRawSnippet } from 'svelte';
 
 	type Item = {
 		product_name: string;

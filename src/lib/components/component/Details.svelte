@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { ComponentProps } from '$lib/types/components';
-	import { CodeBlock } from '$lib/components/code-block';
+	import CodeIcon from '@lucide/svelte/icons/code';
 	import { page } from '$app/state';
-	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
+	import { CodeBlock } from '$lib/components/code-block';
 	import CopyPrompt from '$lib/components/copy-prompt.svelte';
-	import { ComponentCategoryContext } from '$lib/utils/components';
-	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
-	import { getCopyPromptText } from '$lib/utils/copy-prompt';
+	import PmAddComp from '$lib/components/pm-add-comp.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import CodeIcon from '@lucide/svelte/icons/code';
+	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import PmAddComp from '$lib/components/pm-add-comp.svelte';
+	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
+	import type { ComponentProps } from '$lib/types/components';
+	import { ComponentCategoryContext } from '$lib/utils/components';
+	import { getCopyPromptText } from '$lib/utils/copy-prompt';
 
 	type Props = { component: ComponentProps };
 

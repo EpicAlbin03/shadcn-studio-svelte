@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { type ColumnDef, type ColumnSizingState, getCoreRowModel } from '@tanstack/table-core';
+	import { getCoreRowModel, type ColumnDef, type ColumnSizingState } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Payment = {
 		id: string;

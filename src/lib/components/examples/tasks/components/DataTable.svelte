@@ -1,45 +1,45 @@
 <script lang="ts">
+	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
+	import ArrowUpIcon from '@lucide/svelte/icons/arrow-up';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import ChevronsLeftIcon from '@lucide/svelte/icons/chevrons-left';
+	import ChevronsRightIcon from '@lucide/svelte/icons/chevrons-right';
+	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
+	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+	import EyeOffIcon from '@lucide/svelte/icons/eye-off';
 	import {
-		type ColumnDef,
-		type ColumnFiltersState,
-		type PaginationState,
-		type Row,
-		type RowSelectionState,
-		type SortingState,
-		type VisibilityState,
-		type Table as TableType,
 		getCoreRowModel,
 		getFacetedRowModel,
 		getFacetedUniqueValues,
 		getFilteredRowModel,
 		getPaginationRowModel,
 		getSortedRowModel,
-		type Column
+		type Column,
+		type ColumnDef,
+		type ColumnFiltersState,
+		type PaginationState,
+		type Row,
+		type RowSelectionState,
+		type SortingState,
+		type Table as TableType,
+		type VisibilityState
 	} from '@tanstack/table-core';
-	import DataTableToolbar from './DataTableToolbar.svelte';
-	import { createSvelteTable } from '$lib/components/ui/data-table/data-table.svelte.js';
-	import FlexRender from '$lib/components/ui/data-table/flex-render.svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-	import { labels, priorities, statuses } from '../data/data.js';
-	import { taskSchema, type Task } from '../data/schemas.js';
-	import { renderComponent, renderSnippet } from '$lib/components/ui/data-table/render-helpers.js';
-	import Checkbox from '$lib/components/ui/checkbox/checkbox.svelte';
 	import { createRawSnippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
-	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
-	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
-	import ChevronsLeftIcon from '@lucide/svelte/icons/chevrons-left';
-	import ChevronsRightIcon from '@lucide/svelte/icons/chevrons-right';
-	import ArrowUpIcon from '@lucide/svelte/icons/arrow-up';
-	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
-	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
-	import EyeOffIcon from '@lucide/svelte/icons/eye-off';
+	import Checkbox from '$lib/components/ui/checkbox/checkbox.svelte';
+	import { createSvelteTable } from '$lib/components/ui/data-table/data-table.svelte.js';
+	import FlexRender from '$lib/components/ui/data-table/flex-render.svelte';
+	import { renderComponent, renderSnippet } from '$lib/components/ui/data-table/render-helpers.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Select from '$lib/components/ui/select/index.js';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils';
+	import { labels, priorities, statuses } from '../data/data.js';
+	import { taskSchema, type Task } from '../data/schemas.js';
+	import DataTableToolbar from './DataTableToolbar.svelte';
 
 	let { data }: { data: Task[] } = $props();
 

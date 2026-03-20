@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { SpinnerSVG } from '$lib/assets/svg';
-	import type { ComponentProps } from '$lib/types/components';
 	import CircleXIcon from '@lucide/svelte/icons/circle-x';
 	import type { Component as ComponentType } from 'svelte';
+	import { SpinnerSVG } from '$lib/assets/svg';
+	import type { ComponentProps } from '$lib/types/components';
 
 	type Props = { componentName: ComponentProps['name'] };
 

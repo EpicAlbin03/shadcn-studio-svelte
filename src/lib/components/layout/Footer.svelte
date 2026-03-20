@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Logo from '$lib/components/layout/Logo.svelte';
-	import Github from '$lib/assets/svg/Github.svelte';
 	import Discord from '$lib/assets/svg/Discord.svelte';
+	import Github from '$lib/assets/svg/Github.svelte';
 	import X from '$lib/assets/svg/X.svelte';
+	import Logo from '$lib/components/layout/Logo.svelte';
 </script>
 
 <footer class="flex w-full flex-col">

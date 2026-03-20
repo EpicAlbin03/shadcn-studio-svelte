@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { CircleIcon } from '@lucide/svelte';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { cn } from '$lib/utils';
-	import { CircleIcon } from '@lucide/svelte';
 
 	const statuses = [
 		{

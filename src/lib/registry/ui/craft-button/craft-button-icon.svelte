@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils';
 	import type { Snippet } from 'svelte';
+	import { cn } from '$lib/utils';
 	import { CraftButtonContext } from './craft-button.svelte';
 
 	export type CraftButtonIconProps = {

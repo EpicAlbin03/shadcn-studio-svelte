@@ -5,7 +5,9 @@ import type { EntryGenerator, PageServerLoad } from './$types.js';
 export const prerender = true;
 
 export const entries: EntryGenerator = () => {
-	const categoryEntries = registryCategories.filter((c) => !c.hidden).map(({ slug }) => ({ category: slug }));
+	const categoryEntries = registryCategories
+		.filter((c) => !c.hidden)
+		.map(({ slug }) => ({ category: slug }));
 	if (NEW_BLOCKS.length > 0) {
 		categoryEntries.unshift({ category: 'new' });
 	}

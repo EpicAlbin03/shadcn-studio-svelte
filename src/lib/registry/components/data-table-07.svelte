@@ -1,25 +1,25 @@
 <script lang="ts">
 	import {
-		type Column,
-		type ColumnDef,
-		type ColumnPinningState,
-		getCoreRowModel
-	} from '@tanstack/table-core';
-	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
-	import {
-		FlexRender,
-		createSvelteTable,
-		renderSnippet
-	} from '$lib/components/ui/data-table/index.js';
-	import { Button } from '$lib/components/ui/button';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
-	import {
 		ArrowLeftFromLineIcon,
 		ArrowRightFromLineIcon,
 		EllipsisIcon,
 		PinOffIcon
 	} from '@lucide/svelte';
+	import {
+		getCoreRowModel,
+		type Column,
+		type ColumnDef,
+		type ColumnPinningState
+	} from '@tanstack/table-core';
+	import { createRawSnippet } from 'svelte';
+	import { Button } from '$lib/components/ui/button';
+	import {
+		createSvelteTable,
+		FlexRender,
+		renderSnippet
+	} from '$lib/components/ui/data-table/index.js';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Product = {
 		productId: number;

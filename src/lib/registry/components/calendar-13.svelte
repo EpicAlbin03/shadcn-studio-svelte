@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import CalendarDay from '$lib/components/ui/calendar/calendar-day.svelte';
-	import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 
 	let value = $state<CalendarDate | undefined>(today(getLocalTimeZone()));
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SidebarFoorter from '$lib/registry/components/dashboard-footer-01-comp.svelte';
 	import * as Card from '$lib/components/ui/card';
 	import * as Sidebar from '$lib/components/ui/sidebar';
+	import SidebarFoorter from '$lib/registry/components/dashboard-footer-01-comp.svelte';
 </script>
 
 <div class="flex min-h-dvh w-full">

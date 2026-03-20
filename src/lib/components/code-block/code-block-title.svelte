@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { CodeBlockContext } from './code-block.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import { getIconForLanguageExtension } from '$lib/utils/icons';
 	import CopyCode from '$lib/components/copy-code.svelte';
+	import * as Select from '$lib/components/ui/select/index.js';
 	import { cn } from '$lib/utils';
+	import { getIconForLanguageExtension } from '$lib/utils/icons';
+	import { CodeBlockContext } from './code-block.svelte';
 
 	const ctx = CodeBlockContext.get();
 	const file = $derived(ctx.files.find((f) => f.target === ctx.activeFile));

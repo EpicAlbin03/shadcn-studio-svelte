@@ -1,14 +1,14 @@
-import Root, { type MotionTabsProps, motionTabsContext } from './motion-tabs.svelte';
+import HighlightItem, { type MotionHighlightItemProps } from './motion-highlight-item.svelte';
+import Highlight, {
+	motionHighlightContext,
+	type MotionHighlightContext,
+	type MotionHighlightProps
+} from './motion-highlight.svelte';
+import Content, { type MotionTabsContentProps } from './motion-tabs-content.svelte';
+import Contents, { type MotionTabsContentsProps } from './motion-tabs-contents.svelte';
 import List, { type MotionTabsListProps } from './motion-tabs-list.svelte';
 import Trigger, { type MotionTabsTriggerProps } from './motion-tabs-trigger.svelte';
-import Contents, { type MotionTabsContentsProps } from './motion-tabs-contents.svelte';
-import Content, { type MotionTabsContentProps } from './motion-tabs-content.svelte';
-import Highlight, {
-	type MotionHighlightProps,
-	type MotionHighlightContext,
-	motionHighlightContext
-} from './motion-highlight.svelte';
-import HighlightItem, { type MotionHighlightItemProps } from './motion-highlight-item.svelte';
+import Root, { motionTabsContext, type MotionTabsProps } from './motion-tabs.svelte';
 
 export {
 	Root,

@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { DotIcon } from '@lucide/svelte';
 	import * as InputOTP from '$lib/components/ui/input-otp/index.js';
 	import Label from '$lib/components/ui/label/label.svelte';
-	import { DotIcon } from '@lucide/svelte';
 
 	const id = $props.id();
 </script>

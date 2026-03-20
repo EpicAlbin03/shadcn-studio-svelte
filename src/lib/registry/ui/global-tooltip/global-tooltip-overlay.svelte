@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { motion, AnimatePresence } from 'motion-sv';
 	import { Tooltip as TooltipPrimitive } from 'bits-ui';
+	import { AnimatePresence, motion } from 'motion-sv';
+	import GlobalTooltipArrow from './global-tooltip-arrow.svelte';
 	import { globalTooltipContext } from './global-tooltip-provider.svelte';
 	import { getTooltipPosition } from './types.js';
-	import GlobalTooltipArrow from './global-tooltip-arrow.svelte';
 
 	const ctx = globalTooltipContext.get();
 

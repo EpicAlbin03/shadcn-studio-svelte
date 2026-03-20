@@ -23,6 +23,7 @@
 		"@dnd-kit-svelte/utilities": "^0.0.11",
 		"@eslint/compat": "^2.0.3",
 		"@eslint/js": "^10.0.1",
+		"@ianvs/prettier-plugin-sort-imports": "^4.7.1",
 		"@internationalized/date": "^3.12.0",
 		"@lucide/svelte": "^0.577.0",
 		"@shadcn-svelte/registry": "^0.0.1",

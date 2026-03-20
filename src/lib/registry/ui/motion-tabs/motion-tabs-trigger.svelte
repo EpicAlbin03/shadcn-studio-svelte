@@ -2,8 +2,8 @@
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
-	import { motionTabsContext } from './motion-tabs.svelte';
 	import MotionHighlightItem from './motion-highlight-item.svelte';
+	import { motionTabsContext } from './motion-tabs.svelte';
 
 	export type MotionTabsTriggerProps = HTMLButtonAttributes & {
 		value: string;

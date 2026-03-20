@@ -1,10 +1,10 @@
 <script lang="ts">
-	import PagesContent from '$lib/components/layout/PagesContent.svelte';
-	import Header from '$lib/components/layout/Header.svelte';
-	import Footer from '$lib/components/layout/Footer.svelte';
-	import { AppSidebar, CustomSidebarTrigger } from '$lib/components/layout/sidebar';
 	import type { Snippet } from 'svelte';
 	import DocsToc, { type TableOfContents } from '$lib/components/docs/docs-toc.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
+	import PagesContent from '$lib/components/layout/PagesContent.svelte';
+	import { AppSidebar, CustomSidebarTrigger } from '$lib/components/layout/sidebar';
 
 	type Props = {
 		children?: Snippet;

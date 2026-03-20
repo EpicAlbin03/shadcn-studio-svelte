@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { MediaQuery } from 'svelte/reactivity';
 	import {
 		ChevronRightIcon,
 		Component,
@@ -10,6 +9,8 @@
 		PaintbrushVertical,
 		X
 	} from '@lucide/svelte';
+	import { MediaQuery } from 'svelte/reactivity';
+	import Logo from '$lib/components/layout/Logo.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import {
 		Collapsible,
@@ -18,11 +19,10 @@
 	} from '$lib/components/ui/collapsible';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Sidebar from '$lib/components/ui/sidebar';
-	import { CustomSidebarMenuItem, CustomSidebarMenuSubItem } from '.';
-	import Logo from '$lib/components/layout/Logo.svelte';
-	import { cn } from '$lib/utils';
 	import { categories } from '$lib/config/components.svelte';
+	import { cn } from '$lib/utils';
 	import { gettingStartedPages } from '$lib/utils/pages';
+	import { CustomSidebarMenuItem, CustomSidebarMenuSubItem } from '.';
 
 	const breakpoint = new MediaQuery('(max-width: 1023px)', false);
 	let isBreakpointReached = $derived(breakpoint.current);

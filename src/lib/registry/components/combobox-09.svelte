@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { CheckIcon, ChevronDownIcon } from '@lucide/svelte';
+	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { tick } from 'svelte';
 
 	const countries = [
 		{ value: '1', label: 'India', flag: '/img/flags/india.webp' },

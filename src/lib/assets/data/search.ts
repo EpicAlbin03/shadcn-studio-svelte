@@ -1,4 +1,4 @@
-import { File, Circle } from '@lucide/svelte';
+import { Circle, File } from '@lucide/svelte';
 import { categories } from '$lib/config/components.svelte';
 import { registryCategories } from '$lib/registry/registry-categories';
 

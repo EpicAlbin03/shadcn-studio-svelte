@@ -1,15 +1,15 @@
 import path from 'node:path';
-import { z } from 'zod/v4';
 import { registryItemFileSchema, registryItemSchema } from '@shadcn-svelte/registry';
-import componentsConfig from '../../../../components.json';
+import { z } from 'zod/v4';
 import { highlightCode } from '$lib/components/ui/code';
+import { blockMeta } from '$lib/registry/registry-block-meta.js';
 import {
-	transformImportPaths,
 	transformBlockRelativeImports,
+	transformImportPaths,
 	transformTargetPath
 } from '$lib/registry/registry-utils';
-import { blockMeta } from '$lib/registry/registry-block-meta.js';
 import { generateCssFromMeta } from '$lib/utils/generate-css-from-meta.js';
+import componentsConfig from '../../../../components.json';
 
 const highlightedCodeBlockSchema = registryItemSchema.pick({
 	name: true,

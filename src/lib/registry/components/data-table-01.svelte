@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { type ColumnDef, type RowSelectionState, getCoreRowModel } from '@tanstack/table-core';
+	import { getCoreRowModel, type ColumnDef, type RowSelectionState } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
-	import * as Table from '$lib/components/ui/table/index.js';
+	import { Checkbox } from '$lib/components/ui/checkbox';
 	import {
-		FlexRender,
 		createSvelteTable,
+		FlexRender,
 		renderComponent,
 		renderSnippet
 	} from '$lib/components/ui/data-table/index.js';
-	import { Checkbox } from '$lib/components/ui/checkbox';
+	import * as Table from '$lib/components/ui/table/index.js';
 
 	type Payment = {
 		id: string;

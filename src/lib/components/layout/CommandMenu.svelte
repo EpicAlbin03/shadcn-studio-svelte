@@ -1,10 +1,10 @@
 <script lang="ts">
+	import { Component, LayoutPanelTop, Palette, Search, Sparkles } from '@lucide/svelte';
 	import { MediaQuery } from 'svelte/reactivity';
 	import { goto } from '$app/navigation';
-	import { Search, Palette, Component, Sparkles, LayoutPanelTop } from '@lucide/svelte';
+	import { searchData } from '$lib/assets/data/search';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command';
-	import { searchData } from '$lib/assets/data/search';
 
 	let open = $state(false);
 	let search = $state('');

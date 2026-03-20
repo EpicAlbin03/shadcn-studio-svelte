@@ -1,7 +1,7 @@
 <script lang="ts" module>
+	import { type Icon as IconType } from '@lucide/svelte';
 	import * as Card from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
-	import { type Icon as IconType } from '@lucide/svelte';
 
 	export type StatisticsCardData = {
 		icon: typeof IconType;

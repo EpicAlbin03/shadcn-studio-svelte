@@ -1,10 +1,9 @@
 <script lang="ts">
+	import type { Icon } from '@tabler/icons-svelte';
 	import DotsIcon from '@tabler/icons-svelte/icons/dots';
 	import FolderIcon from '@tabler/icons-svelte/icons/folder';
 	import Share3Icon from '@tabler/icons-svelte/icons/share-3';
 	import TrashIcon from '@tabler/icons-svelte/icons/trash';
-	import type { Icon } from '@tabler/icons-svelte';
-
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 

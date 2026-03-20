@@ -1,15 +1,15 @@
 <script lang="ts">
-	import CalendarIcon from '@lucide/svelte/icons/calendar';
-	import * as Chart from '$lib/components/ui/chart/index.js';
-	import * as Card from '$lib/components/ui/card/index.js';
-	import * as Popover from '$lib/components/ui/popover/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import { BarChart, Highlight, type ChartContextValue } from 'layerchart';
-	import RangeCalendar from '$lib/components/ui/range-calendar/range-calendar.svelte';
-	import type { DateRange } from 'bits-ui';
 	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
+	import type { DateRange } from 'bits-ui';
 	import { scaleBand } from 'd3-scale';
+	import { BarChart, Highlight, type ChartContextValue } from 'layerchart';
 	import { cubicInOut } from 'svelte/easing';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
+	import * as Chart from '$lib/components/ui/chart/index.js';
+	import * as Popover from '$lib/components/ui/popover/index.js';
+	import RangeCalendar from '$lib/components/ui/range-calendar/range-calendar.svelte';
 
 	let value = $state<DateRange | undefined>({
 		start: new CalendarDate(2025, 1, 1),

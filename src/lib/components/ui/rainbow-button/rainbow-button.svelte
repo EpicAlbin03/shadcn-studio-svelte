@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import { cn, type WithElementRef } from '$lib/utils';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
+	import { cn, type WithElementRef } from '$lib/utils';
 
 	export type RainbowButtonProps = WithElementRef<HTMLButtonAttributes>;
 </script>

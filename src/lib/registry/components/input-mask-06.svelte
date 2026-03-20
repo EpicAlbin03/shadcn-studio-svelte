@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { CreditCardIcon } from '@lucide/svelte';
+	import Cleave from 'cleave.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import Cleave from 'cleave.js';
 
 	const id = $props.id();
 
