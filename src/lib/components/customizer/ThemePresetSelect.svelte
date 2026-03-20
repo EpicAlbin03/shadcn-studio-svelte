@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Dices } from '@lucide/svelte';
+	import DicesIcon from '@lucide/svelte/icons/dices';
 	import { toast } from 'svelte-sonner';
 	import {
 		defaultTheme,
@@ -75,7 +75,7 @@
 		<div class="flex items-center gap-2">
 			<CssImportDialog />
 			<Button variant="outline" onclick={randomize} class="cursor-pointer">
-				<Dices class="size-4" />
+				<DicesIcon class="size-4" />
 				Random
 			</Button>
 		</div>

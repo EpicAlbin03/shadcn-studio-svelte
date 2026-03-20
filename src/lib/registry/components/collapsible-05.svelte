@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronDownIcon, StarIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';

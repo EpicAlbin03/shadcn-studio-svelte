@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { DownloadIcon, FileSpreadsheetIcon, FileTextIcon } from '@lucide/svelte';
+	import DownloadIcon from '@lucide/svelte/icons/download';
+	import FileSpreadsheetIcon from '@lucide/svelte/icons/file-spreadsheet';
+	import FileTextIcon from '@lucide/svelte/icons/file-text';
 	import type { ColumnDef, ColumnFiltersState, RowSelectionState } from '@tanstack/table-core';
 	import { getCoreRowModel, getFilteredRowModel, getSortedRowModel } from '@tanstack/table-core';
 	import Papa from 'papaparse';

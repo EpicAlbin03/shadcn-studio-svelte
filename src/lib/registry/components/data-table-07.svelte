@@ -1,10 +1,8 @@
 <script lang="ts">
-	import {
-		ArrowLeftFromLineIcon,
-		ArrowRightFromLineIcon,
-		EllipsisIcon,
-		PinOffIcon
-	} from '@lucide/svelte';
+	import ArrowLeftFromLineIcon from '@lucide/svelte/icons/arrow-left-from-line';
+	import ArrowRightFromLineIcon from '@lucide/svelte/icons/arrow-right-from-line';
+	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+	import PinOffIcon from '@lucide/svelte/icons/pin-off';
 	import {
 		getCoreRowModel,
 		type Column,

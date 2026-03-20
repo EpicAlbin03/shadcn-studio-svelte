@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HomeIcon } from '@lucide/svelte';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 

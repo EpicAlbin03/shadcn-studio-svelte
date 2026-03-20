@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CheckIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 

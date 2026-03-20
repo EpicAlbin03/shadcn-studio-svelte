@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FilmIcon } from '@lucide/svelte';
+	import FilmIcon from '@lucide/svelte/icons/film';
 	import { Label } from '$lib/components/ui/label';
 	import { SelectNative } from '$lib/components/ui/select-native';
 

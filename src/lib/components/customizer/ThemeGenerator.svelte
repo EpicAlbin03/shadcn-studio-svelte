@@ -1,7 +1,6 @@
 <script lang="ts">
-	import 'shepherd.js/dist/css/shepherd.css';
-	import './shepherd.css';
-	import { Palette, X } from '@lucide/svelte';
+	import PaletteIcon from '@lucide/svelte/icons/palette';
+	import XIcon from '@lucide/svelte/icons/x';
 	import Shepherd from 'shepherd.js';
 	import { onMount } from 'svelte';
 	import { offset } from 'svelte-floating-ui/dom';
@@ -77,7 +76,7 @@
 				aria-label="Theme generator"
 				data-tour="theme-generator"
 			>
-				<Palette class="h-4 w-4" />
+				<PaletteIcon class="h-4 w-4" />
 			</RainbowButton>
 		{/snippet}
 	</Sheet.Trigger>
@@ -94,7 +93,7 @@
 			<Sheet.Close
 				class="flex size-7 cursor-pointer items-center justify-center rounded transition-colors hover:bg-muted"
 			>
-				<X class="size-4" />
+				<XIcon class="size-4" />
 			</Sheet.Close>
 		</Sheet.Header>
 		<ThemeControlPanel />

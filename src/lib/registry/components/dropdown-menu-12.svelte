@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { CircleHelp, DollarSign, Receipt, Settings, User } from '@lucide/svelte';
+	import CircleHelpIcon from '@lucide/svelte/icons/circle-help';
+	import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+	import ReceiptIcon from '@lucide/svelte/icons/receipt';
+	import SettingsIcon from '@lucide/svelte/icons/settings';
+	import UserIcon from '@lucide/svelte/icons/user';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 </script>
@@ -11,26 +15,26 @@
 		{/snippet}
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="w-56">
-		<DropdownMenu.Label>User Profile</DropdownMenu.Label>
+		<DropdownMenu.Label>UserIcon Profile</DropdownMenu.Label>
 		<DropdownMenu.Group>
 			<DropdownMenu.Item>
-				<User />
+				<UserIcon />
 				Profile
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				<Settings />
-				Settings
+				<SettingsIcon />
+				SettingsIcon
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				<Receipt />
+				<ReceiptIcon />
 				Billing Plans
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				<DollarSign />
+				<DollarSignIcon />
 				Pricing
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				<CircleHelp />
+				<CircleHelpIcon />
 				FAQ
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>

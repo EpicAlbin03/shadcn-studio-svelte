@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { HeadsetIcon, PackageIcon, RefreshCwIcon } from '@lucide/svelte';
+	import HeadsetIcon from '@lucide/svelte/icons/headset';
+	import PackageIcon from '@lucide/svelte/icons/package';
+	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
 
 	const items = [

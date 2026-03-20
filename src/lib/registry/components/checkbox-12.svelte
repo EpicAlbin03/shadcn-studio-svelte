@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CircleCheckIcon, MinusIcon } from '@lucide/svelte';
+	import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
+	import MinusIcon from '@lucide/svelte/icons/minus';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 </script>
 

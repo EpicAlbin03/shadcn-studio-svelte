@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MailCheckIcon } from '@lucide/svelte';
+	import MailCheckIcon from '@lucide/svelte/icons/mail-check';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 </script>

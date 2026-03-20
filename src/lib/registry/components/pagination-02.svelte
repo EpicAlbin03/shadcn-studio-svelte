@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import * as Pagination from '$lib/components/ui/pagination/index.js';
 </script>

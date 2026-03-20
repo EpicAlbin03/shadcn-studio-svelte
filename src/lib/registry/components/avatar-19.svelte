@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PlusIcon } from '@lucide/svelte';
+	import PlusIcon from '@lucide/svelte/icons/plus';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 

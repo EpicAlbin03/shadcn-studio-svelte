@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StarIcon } from '@lucide/svelte';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 </script>

@@ -1,12 +1,10 @@
 <script lang="ts">
-	import {
-		LockKeyholeIcon,
-		SearchIcon,
-		ShieldBanIcon,
-		SmartphoneIcon,
-		StarIcon,
-		SwatchBookIcon
-	} from '@lucide/svelte';
+	import LockKeyholeIcon from '@lucide/svelte/icons/lock-keyhole';
+	import SearchIcon from '@lucide/svelte/icons/search';
+	import ShieldBanIcon from '@lucide/svelte/icons/shield-ban';
+	import SmartphoneIcon from '@lucide/svelte/icons/smartphone';
+	import StarIcon from '@lucide/svelte/icons/star';
+	import SwatchBookIcon from '@lucide/svelte/icons/swatch-book';
 	import Features from './components/features-01.svelte';
 
 	const featuresList = [

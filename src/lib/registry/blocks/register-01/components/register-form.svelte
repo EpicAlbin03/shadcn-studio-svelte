@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { EyeIcon, EyeOffIcon } from '@lucide/svelte';
+	import EyeIcon from '@lucide/svelte/icons/eye';
+	import EyeOffIcon from '@lucide/svelte/icons/eye-off';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Field from '$lib/components/ui/field/index.js';

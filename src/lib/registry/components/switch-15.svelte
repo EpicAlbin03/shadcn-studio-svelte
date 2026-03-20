@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DatabaseIcon } from '@lucide/svelte';
+	import DatabaseIcon from '@lucide/svelte/icons/database';
 	import { Label } from '$lib/components/ui/label';
 	import { Switch } from '$lib/components/ui/switch';
 

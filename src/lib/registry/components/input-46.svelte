@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import EyeIcon from '@lucide/svelte/icons/eye';
+	import EyeOffIcon from '@lucide/svelte/icons/eye-off';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronDown, HomeIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
@@ -29,7 +30,7 @@
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger class="flex items-center gap-1">
 						Add Document
-						<ChevronDown class="size-4" />
+						<ChevronDownIcon class="size-4" />
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content align="start">
 						<DropdownMenu.Item>Documentation</DropdownMenu.Item>

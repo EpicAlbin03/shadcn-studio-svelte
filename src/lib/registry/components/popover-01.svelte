@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StarIcon } from '@lucide/svelte';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';

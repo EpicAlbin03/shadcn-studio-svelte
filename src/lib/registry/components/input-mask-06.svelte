@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CreditCardIcon } from '@lucide/svelte';
+	import CreditCardIcon from '@lucide/svelte/icons/credit-card';
 	import Cleave from 'cleave.js';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';

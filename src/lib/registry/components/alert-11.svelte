@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserCheckIcon } from '@lucide/svelte';
+	import UserCheckIcon from '@lucide/svelte/icons/user-check';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 

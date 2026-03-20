@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CircleXIcon } from '@lucide/svelte';
+	import CircleXIcon from '@lucide/svelte/icons/circle-x';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';

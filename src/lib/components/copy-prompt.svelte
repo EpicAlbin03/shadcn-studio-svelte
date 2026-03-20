@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SparklesIcon } from '@lucide/svelte';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
 	import { CopyButton, type CopyButtonProps } from '$lib/components/ui/copy-button';
 	import { cn } from '$lib/utils';
 

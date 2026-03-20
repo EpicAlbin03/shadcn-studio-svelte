@@ -13,16 +13,16 @@
 
 	const formSchema = z.object({
 		method: z
-			.enum(
-				paymentMethods.map((m) => m.value),
-				'You must accept the terms and conditions.'
-			)
+			.enum(paymentMethods.map((m) => m.value) as [string, ...string[]], {
+				error: 'You must accept the terms and conditions.'
+			})
 			.default('')
 	});
 </script>
 
 <script lang="ts">
-	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { defaults, superForm } from 'sveltekit-superforms';

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CheckIcon, CopyIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import CopyIcon from '@lucide/svelte/icons/copy';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import * as Popover from '$lib/components/ui/popover/index.js';

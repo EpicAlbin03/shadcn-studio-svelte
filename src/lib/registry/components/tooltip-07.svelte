@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { InfoIcon } from '@lucide/svelte';
+	import InfoIcon from '@lucide/svelte/icons/info';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>

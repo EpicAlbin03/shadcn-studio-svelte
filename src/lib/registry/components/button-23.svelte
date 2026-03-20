@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SaveIcon } from '@lucide/svelte';
+	import SaveIcon from '@lucide/svelte/icons/save';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

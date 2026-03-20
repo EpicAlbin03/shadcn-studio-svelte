@@ -1,5 +1,7 @@
 <script lang="ts" module>
-	import { ChevronLeftIcon, ChevronRightIcon, EllipsisVerticalIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import EllipsisVerticalIcon from '@lucide/svelte/icons/ellipsis-vertical';
 	import type { ColumnDef, PaginationState } from '@tanstack/table-core';
 	import {
 		getCoreRowModel,

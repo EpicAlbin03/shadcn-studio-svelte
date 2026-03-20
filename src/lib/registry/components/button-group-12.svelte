@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { BoxIcon, ChartBarBigIcon, SettingsIcon } from '@lucide/svelte';
+	import BoxIcon from '@lucide/svelte/icons/box';
+	import ChartBarBigIcon from '@lucide/svelte/icons/chart-bar-big';
+	import SettingsIcon from '@lucide/svelte/icons/settings';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

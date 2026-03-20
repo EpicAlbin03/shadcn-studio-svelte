@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ArrowRightIcon, CircleAlertIcon } from '@lucide/svelte';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import { Button } from '$lib/components/ui/button';
 </script>

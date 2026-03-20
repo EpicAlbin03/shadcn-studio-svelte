@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { XIcon } from '@lucide/svelte';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { Badge } from '$lib/components/ui/badge';
 
 	let isActive = $state(true);

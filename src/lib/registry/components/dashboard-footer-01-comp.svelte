@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from '@lucide/svelte';
+	import FacebookIcon from '@lucide/svelte/icons/facebook';
+	import InstagramIcon from '@lucide/svelte/icons/instagram';
+	import LinkedinIcon from '@lucide/svelte/icons/linkedin';
+	import TwitterIcon from '@lucide/svelte/icons/twitter';
 </script>
 
 <footer>

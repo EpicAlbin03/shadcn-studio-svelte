@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TruckIcon } from '@lucide/svelte';
+	import TruckIcon from '@lucide/svelte/icons/truck';
 </script>
 
 <div class="flex items-center gap-2">

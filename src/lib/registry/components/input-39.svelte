@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { LoaderCircleIcon, SearchIcon } from '@lucide/svelte';
+	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 

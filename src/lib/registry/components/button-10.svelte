@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TrashIcon } from '@lucide/svelte';
+	import TrashIcon from '@lucide/svelte/icons/trash';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

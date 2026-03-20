@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { CircleIcon } from '@lucide/svelte';
+	import CircleIcon from '@lucide/svelte/icons/circle';
 	import { RadioGroup as RadioGroupPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
 	import { AnimatePresence, motion, type Transition } from 'motion-sv';
 	import { cn } from '$lib/utils';

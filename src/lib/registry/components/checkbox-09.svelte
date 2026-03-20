@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { AppleIcon, CherryIcon, GrapeIcon } from '@lucide/svelte';
+	import AppleIcon from '@lucide/svelte/icons/apple';
+	import CherryIcon from '@lucide/svelte/icons/cherry';
+	import GrapeIcon from '@lucide/svelte/icons/grape';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';
 

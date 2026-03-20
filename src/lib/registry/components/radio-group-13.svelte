@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CrownIcon, UserIcon } from '@lucide/svelte';
+	import CrownIcon from '@lucide/svelte/icons/crown';
+	import UserIcon from '@lucide/svelte/icons/user';
 	import { Label } from '$lib/components/ui/label';
 	import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group';
 

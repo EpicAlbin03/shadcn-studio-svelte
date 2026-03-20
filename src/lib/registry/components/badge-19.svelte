@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AlertCircleIcon } from '@lucide/svelte';
+	import AlertCircleIcon from '@lucide/svelte/icons/alert-circle';
 	import { Badge } from '$lib/components/ui/badge';
 </script>
 

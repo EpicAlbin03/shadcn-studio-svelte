@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { motion } from 'motion-sv';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';

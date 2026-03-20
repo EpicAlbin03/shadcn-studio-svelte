@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { BellIcon, CircleIcon } from '@lucide/svelte';
+	import BellIcon from '@lucide/svelte/icons/bell';
+	import CircleIcon from '@lucide/svelte/icons/circle';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';

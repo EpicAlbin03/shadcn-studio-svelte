@@ -1,5 +1,6 @@
 <script lang="ts" module>
-	import { StarIcon, type Icon as IconType } from '@lucide/svelte';
+	import { type Icon as IconType } from '@lucide/svelte';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { tv, type VariantProps } from 'tailwind-variants';
 	import { cn, type WithElementRef } from '$lib/utils';

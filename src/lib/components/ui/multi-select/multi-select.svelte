@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { XIcon } from '@lucide/svelte';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { Command as CommandPrimitive } from 'bits-ui';
 	import { Debounced } from 'runed';
 	import * as Command from '$lib/components/ui/command';

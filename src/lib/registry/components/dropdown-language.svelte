@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LanguagesIcon } from '@lucide/svelte';
+	import LanguagesIcon from '@lucide/svelte/icons/languages';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UploadIcon } from '@lucide/svelte';
+	import UploadIcon from '@lucide/svelte/icons/upload';
 	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 	import { Button } from '$lib/components/ui/button';
 </script>

@@ -1,14 +1,12 @@
 <script lang="ts">
-	import {
-		ChevronRightIcon,
-		Component,
-		Figma,
-		File,
-		Flame,
-		LayoutPanelTop,
-		PaintbrushVertical,
-		X
-	} from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import ComponentIcon from '@lucide/svelte/icons/component';
+	import FigmaIcon from '@lucide/svelte/icons/figma';
+	import FileIcon from '@lucide/svelte/icons/file';
+	import FlameIcon from '@lucide/svelte/icons/flame';
+	import LayoutPanelTopIcon from '@lucide/svelte/icons/layout-panel-top';
+	import PaintbrushVerticalIcon from '@lucide/svelte/icons/paintbrush-vertical';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { MediaQuery } from 'svelte/reactivity';
 	import Logo from '$lib/components/layout/Logo.svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -46,7 +44,7 @@
 				class="size-7 cursor-pointer"
 				onclick={() => setOpenMobile(false)}
 			>
-				<X class="size-5" />
+				<XIcon class="size-5" />
 				<span class="sr-only">Close</span>
 			</Button>
 		</Sidebar.Header>
@@ -58,20 +56,20 @@
 			>
 				<Sidebar.Menu class="gap-2.5">
 					<CustomSidebarMenuItem href="/components">
-						<Component class="size-5!" />
+						<ComponentIcon class="size-5!" />
 						Components
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/theme-generator">
-						<PaintbrushVertical class="size-5!" />
+						<PaintbrushVerticalIcon class="size-5!" />
 						Theme Generator
 						<Sidebar.MenuBadge
 							class="static gap-0.5 rounded-full bg-destructive/10 px-2 py-0.5 font-normal text-destructive"
 						>
-							<Flame class="size-4" /> Hot
+							<FlameIcon class="size-4" /> Hot
 						</Sidebar.MenuBadge>
 					</CustomSidebarMenuItem>
 					<CustomSidebarMenuItem href="/blocks">
-						<LayoutPanelTop class="size-5!" />
+						<LayoutPanelTopIcon class="size-5!" />
 						Blocks
 						<!-- <Sidebar.MenuBadge
 							class="static rounded-full border-transparent bg-primary px-2 py-0.5 font-normal text-primary-foreground [a&]:hover:bg-primary/90"

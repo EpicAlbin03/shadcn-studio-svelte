@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ShieldCheckIcon, ShieldXIcon } from '@lucide/svelte';
+	import ShieldCheckIcon from '@lucide/svelte/icons/shield-check';
+	import ShieldXIcon from '@lucide/svelte/icons/shield-x';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

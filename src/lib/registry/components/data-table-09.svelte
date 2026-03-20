@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronDownIcon, ChevronUpIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 	import {
 		getCoreRowModel,
 		getExpandedRowModel,

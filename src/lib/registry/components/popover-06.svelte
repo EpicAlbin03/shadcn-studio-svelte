@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DownloadIcon } from '@lucide/svelte';
+	import DownloadIcon from '@lucide/svelte/icons/download';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Progress } from '$lib/components/ui/progress';

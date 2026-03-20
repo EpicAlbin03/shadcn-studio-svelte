@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronDownIcon, CreditCardIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import CreditCardIcon from '@lucide/svelte/icons/credit-card';
 	import Cleave from 'cleave.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';

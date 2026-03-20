@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CircleCheckIcon } from '@lucide/svelte';
+	import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
 
 	type Feature = {
 		title: string;

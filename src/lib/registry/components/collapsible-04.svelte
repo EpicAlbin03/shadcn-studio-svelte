@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ChevronRightIcon, PanelsTopLeftIcon, PlusIcon, UserIcon } from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import PanelsTopLeftIcon from '@lucide/svelte/icons/panels-top-left';
+	import PlusIcon from '@lucide/svelte/icons/plus';
+	import UserIcon from '@lucide/svelte/icons/user';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';

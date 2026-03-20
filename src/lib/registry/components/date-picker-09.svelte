@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Clock8Icon } from '@lucide/svelte';
+	import Clock8Icon from '@lucide/svelte/icons/clock8';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 

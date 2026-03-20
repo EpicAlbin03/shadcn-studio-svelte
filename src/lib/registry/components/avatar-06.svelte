@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HomeIcon } from '@lucide/svelte';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 

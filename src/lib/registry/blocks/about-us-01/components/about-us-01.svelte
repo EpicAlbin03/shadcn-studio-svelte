@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ArrowRightIcon, type Icon as IconType } from '@lucide/svelte';
+	import { type Icon as IconType } from '@lucide/svelte';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import { Button } from '$lib/components/ui/button';
 
 	type StatItem = {

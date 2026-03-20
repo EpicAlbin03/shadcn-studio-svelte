@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { AlertCircle, Moon, RotateCcw, Sun, Trash2, TriangleAlert } from '@lucide/svelte';
+	import AlertCircleIcon from '@lucide/svelte/icons/alert-circle';
+	import MoonIcon from '@lucide/svelte/icons/moon';
+	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+	import SunIcon from '@lucide/svelte/icons/sun';
+	import Trash2Icon from '@lucide/svelte/icons/trash2';
+	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
 	import { mode as _mode } from 'mode-watcher';
 	import {
 		DEFAULT_FONT_MONO,
@@ -99,7 +104,7 @@
 				size="lg"
 				onclick={() => userConfig.resetActiveTheme()}
 			>
-				<RotateCcw class="h-4 w-4" />
+				<RotateCcwIcon class="h-4 w-4" />
 				Reset
 			</Button>
 		</div>
@@ -117,7 +122,7 @@
 					aria-label="Toggle light"
 					class="cursor-pointer rounded-md border px-4 py-2 hover:text-foreground"
 				>
-					<Sun class="size-4" />
+					<SunIcon class="size-4" />
 					<span>Light</span>
 				</ToggleGroup.Item>
 				<ToggleGroup.Item
@@ -125,7 +130,7 @@
 					aria-label="Toggle dark"
 					class="cursor-pointer rounded-md border px-4 py-2 hover:text-foreground"
 				>
-					<Moon class="size-4" />
+					<MoonIcon class="size-4" />
 					<span>Dark</span>
 				</ToggleGroup.Item>
 			</ToggleGroup.Root>
@@ -146,7 +151,7 @@
 							class="flex-1 cursor-pointer gap-2"
 							disabled={activeTheme.name in presetThemesMap}
 						>
-							<Trash2 class="h-2 w-2" />
+							<Trash2Icon class="h-2 w-2" />
 							Delete
 						</Button>
 					{/snippet}
@@ -154,7 +159,7 @@
 				<AlertDialog.Content>
 					<AlertDialog.Header>
 						<div class="flex items-center gap-2 text-center">
-							<TriangleAlert class="text-destructive" />
+							<TriangleAlertIcon class="text-destructive" />
 							<AlertDialog.Title>Confirm Theme Deletion</AlertDialog.Title>
 						</div>
 						<AlertDialog.Description>
@@ -241,7 +246,7 @@
 				</div>
 
 				<Alert.Root class="mt-6">
-					<AlertCircle class="size-4" />
+					<AlertCircleIcon class="size-4" />
 					<Alert.Description class="block">
 						To use custom fonts, embed them in your project. See
 						<a

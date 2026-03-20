@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ExternalLinkIcon } from '@lucide/svelte';
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CircleFadingPlus } from '@lucide/svelte';
+	import CircleFadingPlusIcon from '@lucide/svelte/icons/circle-fading-plus';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 </script>
@@ -10,7 +10,7 @@
 	</Card.Header>
 	<Card.Content class="grid gap-4 sm:grid-cols-2">
 		<div class="flex items-center gap-4">
-			<CircleFadingPlus />
+			<CircleFadingPlusIcon />
 			<span class="text-sm font-semibold">Invite Member </span>
 		</div>
 		<div class="flex items-center gap-4">

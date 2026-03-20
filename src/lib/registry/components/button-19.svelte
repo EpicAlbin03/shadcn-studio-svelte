@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ShareIcon } from '@lucide/svelte';
+	import ShareIcon from '@lucide/svelte/icons/share';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

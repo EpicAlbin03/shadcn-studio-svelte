@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { CopyIcon, SquarePenIcon, Trash2Icon } from '@lucide/svelte';
+	import CopyIcon from '@lucide/svelte/icons/copy';
+	import SquarePenIcon from '@lucide/svelte/icons/square-pen';
+	import Trash2Icon from '@lucide/svelte/icons/trash2';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

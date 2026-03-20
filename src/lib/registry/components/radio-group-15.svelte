@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CircleIcon } from '@lucide/svelte';
+	import CircleIcon from '@lucide/svelte/icons/circle';
 	import { RadioGroup as RadioGroupPrimitive } from 'bits-ui';
 	import { Label } from '$lib/components/ui/label';
 </script>

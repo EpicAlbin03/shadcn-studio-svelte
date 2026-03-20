@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { CalendarX2Icon, TriangleAlertIcon, TruckIcon } from '@lucide/svelte';
+	import CalendarX2Icon from '@lucide/svelte/icons/calendar-x2';
+	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
+	import TruckIcon from '@lucide/svelte/icons/truck';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import type { StatisticsCardData } from '$lib/registry/components/statistics-01-comp.svelte';
 	import type { EarningData } from '$lib/registry/components/widget-01-comp.svelte';

@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { GuitarIcon, HeadphonesIcon, MicVocalIcon, MusicIcon } from '@lucide/svelte';
+	import GuitarIcon from '@lucide/svelte/icons/guitar';
+	import HeadphonesIcon from '@lucide/svelte/icons/headphones';
+	import MicVocalIcon from '@lucide/svelte/icons/mic-vocal';
+	import MusicIcon from '@lucide/svelte/icons/music';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 

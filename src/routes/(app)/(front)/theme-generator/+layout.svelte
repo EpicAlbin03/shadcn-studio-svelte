@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { PlusIcon, Sparkles } from '@lucide/svelte';
+	import PlusIcon from '@lucide/svelte/icons/plus';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
 	import { faqs } from '$lib/assets/data/faqs';
 	import { features } from '$lib/assets/data/features';
@@ -21,7 +22,7 @@
 	<section class="pb-12 sm:pb-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
-				<Sparkles class="size-4" />
+				<SparklesIcon class="size-4" />
 				Visual Theme Generator
 			</Badge>
 			<h1 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
@@ -38,7 +39,7 @@
 	<section id="features" class="py-12 sm:py-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
-				<Sparkles class="size-4" />
+				<SparklesIcon class="size-4" />
 				Features
 			</Badge>
 			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
@@ -67,7 +68,7 @@
 	<section id="faq" class="py-12 sm:py-20">
 		<div class="mb-12 flex flex-col items-center justify-center gap-4">
 			<Badge variant="outline" class="rounded-full px-3 py-1.5 text-sm shadow-md">
-				<Sparkles class="size-4" />
+				<SparklesIcon class="size-4" />
 				FAQ
 			</Badge>
 			<h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">

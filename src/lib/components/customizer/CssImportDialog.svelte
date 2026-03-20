@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { AlertCircle, FileCode } from '@lucide/svelte';
+	import AlertCircleIcon from '@lucide/svelte/icons/alert-circle';
+	import FileCodeIcon from '@lucide/svelte/icons/file-code';
 	import { toast } from 'svelte-sonner';
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import { Button } from '$lib/components/ui/button';
@@ -92,7 +93,7 @@
 	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" class="cursor-pointer">
-				<FileCode class="size-4" />
+				<FileCodeIcon class="size-4" />
 				Import
 			</Button>
 		{/snippet}
@@ -108,7 +109,7 @@
 
 		{#if error}
 			<Alert variant="destructive" class="mb-4">
-				<AlertCircle class="mr-2 h-4 w-4" />
+				<AlertCircleIcon class="mr-2 h-4 w-4" />
 				<AlertDescription>{error}</AlertDescription>
 			</Alert>
 		{/if}

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronRightIcon, MapPinIcon } from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import MapPinIcon from '@lucide/svelte/icons/map-pin';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PlusIcon } from '@lucide/svelte';
+	import PlusIcon from '@lucide/svelte/icons/plus';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
 	import { introFaqs } from '$lib/assets/data/faqs';
 	import {

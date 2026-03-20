@@ -1,31 +1,35 @@
 <script lang="ts">
-	import { ChevronDown, ChevronsDown, ChevronsUp, ChevronUp, Equal } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
+	import ChevronsDownIcon from '@lucide/svelte/icons/chevrons-down';
+	import ChevronsUpIcon from '@lucide/svelte/icons/chevrons-up';
+	import EqualIcon from '@lucide/svelte/icons/equal';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
-			icon: ChevronsUp,
+			icon: ChevronsUpIcon,
 			color: 'text-destructive',
 			priority: 'Highest'
 		},
 		{
-			icon: ChevronUp,
+			icon: ChevronUpIcon,
 			color: 'text-destructive/60',
 			priority: 'High'
 		},
 		{
-			icon: Equal,
+			icon: EqualIcon,
 			color: 'text-amber-600 dark:text-amber-400',
 			priority: 'Medium'
 		},
 		{
-			icon: ChevronDown,
+			icon: ChevronDownIcon,
 			color: 'text-green-600/60 dark:text-green-400/60',
 			priority: 'Low'
 		},
 		{
-			icon: ChevronsDown,
+			icon: ChevronsDownIcon,
 			color: 'text-green-600 dark:text-green-400',
 			priority: 'Lowest'
 		}

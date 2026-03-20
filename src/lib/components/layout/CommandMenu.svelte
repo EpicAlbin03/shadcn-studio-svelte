@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { Component, LayoutPanelTop, Palette, Search, Sparkles } from '@lucide/svelte';
+	import ComponentIcon from '@lucide/svelte/icons/component';
+	import LayoutPanelTopIcon from '@lucide/svelte/icons/layout-panel-top';
+	import PaletteIcon from '@lucide/svelte/icons/palette';
+	import SearchIcon from '@lucide/svelte/icons/search';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
 	import { MediaQuery } from 'svelte/reactivity';
 	import { goto } from '$app/navigation';
 	import { searchData } from '$lib/assets/data/search';
@@ -43,9 +47,9 @@
 	onclick={() => (open = true)}
 	{...isBreakpointReached && { size: 'icon' }}
 >
-	<Search class="size-4" />
-	<span class="inline-flex max-xl:hidden">Search...</span>
-	<span class="sr-only">Search</span>
+	<SearchIcon class="size-4" />
+	<span class="inline-flex max-xl:hidden">SearchIcon...</span>
+	<span class="sr-only">SearchIcon</span>
 	<kbd
 		class="pointer-events-none absolute top-1.75 right-1.5 flex h-5 items-center gap-1 rounded border bg-muted px-1.5 text-xs font-medium select-none max-xl:hidden"
 	>
@@ -76,19 +80,19 @@
 		{:else}
 			<Command.Group heading="Suggestions">
 				<Command.Item onSelect={() => runCommand(() => goto('/theme-generator'))}>
-					<Palette />
+					<PaletteIcon />
 					<span>Theme Generator</span>
 				</Command.Item>
 				<Command.Item onSelect={() => runCommand(() => goto('/components'))}>
-					<Component />
+					<ComponentIcon />
 					<span>Components</span>
 				</Command.Item>
 				<Command.Item onSelect={() => runCommand(() => goto('/blocks'))}>
-					<LayoutPanelTop />
+					<LayoutPanelTopIcon />
 					<span>Blocks</span>
 				</Command.Item>
 				<Command.Item onSelect={() => runCommand(() => goto('/docs/getting-started/introduction'))}>
-					<Sparkles />
+					<SparklesIcon />
 					<span>Introduction</span>
 				</Command.Item>
 			</Command.Group>

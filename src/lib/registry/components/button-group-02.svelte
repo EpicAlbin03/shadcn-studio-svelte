@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HeartIcon } from '@lucide/svelte';
+	import HeartIcon from '@lucide/svelte/icons/heart';
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 

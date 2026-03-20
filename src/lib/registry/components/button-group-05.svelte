@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { DribbbleIcon, FacebookIcon, InstagramIcon, TwitchIcon } from '@lucide/svelte';
+	import DribbbleIcon from '@lucide/svelte/icons/dribbble';
+	import FacebookIcon from '@lucide/svelte/icons/facebook';
+	import InstagramIcon from '@lucide/svelte/icons/instagram';
+	import TwitchIcon from '@lucide/svelte/icons/twitch';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

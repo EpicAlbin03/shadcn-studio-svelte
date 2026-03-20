@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ShieldAlertIcon } from '@lucide/svelte';
+	import ShieldAlertIcon from '@lucide/svelte/icons/shield-alert';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PlusCircleIcon } from '@lucide/svelte';
+	import PlusCircleIcon from '@lucide/svelte/icons/plus-circle';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 

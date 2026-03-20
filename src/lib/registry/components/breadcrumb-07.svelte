@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ChevronsRightIcon, FolderIcon, FolderOpenIcon, HomeIcon } from '@lucide/svelte';
+	import ChevronsRightIcon from '@lucide/svelte/icons/chevrons-right';
+	import FolderIcon from '@lucide/svelte/icons/folder';
+	import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 

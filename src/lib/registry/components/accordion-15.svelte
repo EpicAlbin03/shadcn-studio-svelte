@@ -1,11 +1,9 @@
 <script lang="ts">
-	import {
-		ChevronDownIcon,
-		HeadsetIcon,
-		PackageIcon,
-		PlusIcon,
-		RefreshCwIcon
-	} from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import HeadsetIcon from '@lucide/svelte/icons/headset';
+	import PackageIcon from '@lucide/svelte/icons/package';
+	import PlusIcon from '@lucide/svelte/icons/plus';
+	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 	import { Accordion as AccordionPrimitive } from 'bits-ui';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';

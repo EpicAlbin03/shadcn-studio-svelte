@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { MinusIcon, PlusIcon } from '@lucide/svelte';
+	import MinusIcon from '@lucide/svelte/icons/minus';
+	import PlusIcon from '@lucide/svelte/icons/plus';
 	import { onDestroy } from 'svelte';
 	import { Label } from '$lib/components/ui/label';
 

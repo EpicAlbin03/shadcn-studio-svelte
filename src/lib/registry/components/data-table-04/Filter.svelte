@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SearchIcon } from '@lucide/svelte';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import type { Column } from '@tanstack/table-core';
 	import type { Item } from '$lib/components/shadcn-studio/data-table/data-table-04.svelte';
 	import { Input } from '$lib/components/ui/input';

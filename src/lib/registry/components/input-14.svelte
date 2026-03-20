@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserIcon } from '@lucide/svelte';
+	import UserIcon from '@lucide/svelte/icons/user';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 

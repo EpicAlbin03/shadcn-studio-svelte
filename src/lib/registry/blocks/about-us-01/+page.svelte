@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { MedalIcon, SparklesIcon, StarIcon, TargetIcon } from '@lucide/svelte';
+	import MedalIcon from '@lucide/svelte/icons/medal';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
+	import StarIcon from '@lucide/svelte/icons/star';
+	import TargetIcon from '@lucide/svelte/icons/target';
 	import AboutUs from './components/about-us-01.svelte';
 
 	const stats = [

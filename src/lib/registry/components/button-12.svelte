@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ZapIcon } from '@lucide/svelte';
+	import ZapIcon from '@lucide/svelte/icons/zap';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

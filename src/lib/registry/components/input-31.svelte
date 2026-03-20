@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SendHorizontalIcon } from '@lucide/svelte';
+	import SendHorizontalIcon from '@lucide/svelte/icons/send-horizontal';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';

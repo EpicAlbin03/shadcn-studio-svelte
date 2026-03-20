@@ -1,26 +1,30 @@
 <script lang="ts">
-	import { AlignJustify, Heading1, Heading2, Pencil, TextSearch } from '@lucide/svelte';
+	import AlignJustifyIcon from '@lucide/svelte/icons/align-justify';
+	import Heading1Icon from '@lucide/svelte/icons/heading1';
+	import Heading2Icon from '@lucide/svelte/icons/heading2';
+	import PencilIcon from '@lucide/svelte/icons/pencil';
+	import TextSearchIcon from '@lucide/svelte/icons/text-search';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
-			icon: Heading1,
+			icon: Heading1Icon,
 			property: 'Heading 1',
 			description: 'big section or hero heading'
 		},
 		{
-			icon: Heading2,
+			icon: Heading2Icon,
 			property: 'Heading 2',
 			description: 'Sub section heading'
 		},
 		{
-			icon: AlignJustify,
+			icon: AlignJustifyIcon,
 			property: 'Align justify',
 			description: 'text will fill all area'
 		},
 		{
-			icon: TextSearch,
+			icon: TextSearchIcon,
 			property: 'Text search',
 			description: 'find any text'
 		}
@@ -31,7 +35,7 @@
 	<DropdownMenu.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="ghost" size="icon" class="rounded-full">
-				<Pencil />
+				<PencilIcon />
 				<span class="sr-only">Edit menu</span>
 			</Button>
 		{/snippet}

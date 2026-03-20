@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { FlipHorizontalIcon, FlipVerticalIcon } from '@lucide/svelte';
+	import FlipHorizontalIcon from '@lucide/svelte/icons/flip-horizontal';
+	import FlipVerticalIcon from '@lucide/svelte/icons/flip-vertical';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

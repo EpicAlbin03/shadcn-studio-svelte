@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowUp } from '@lucide/svelte';
+	import ArrowUpIcon from '@lucide/svelte/icons/arrow-up';
 	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
@@ -32,6 +32,6 @@
 	})}
 	onclick={scrollToTop}
 >
-	<ArrowUp class="size-4" />
+	<ArrowUpIcon class="size-4" />
 	<span class="sr-only">Scroll to top</span>
 </Button>

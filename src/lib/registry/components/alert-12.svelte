@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserRoundXIcon } from '@lucide/svelte';
+	import UserRoundXIcon from '@lucide/svelte/icons/user-round-x';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 </script>
 

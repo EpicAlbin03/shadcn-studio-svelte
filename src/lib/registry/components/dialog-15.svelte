@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { UserPlusIcon } from '@lucide/svelte';
+	import UserPlusIcon from '@lucide/svelte/icons/user-plus';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';

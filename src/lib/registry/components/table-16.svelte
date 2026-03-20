@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { ArchiveIcon, PencilIcon, Trash2Icon } from '@lucide/svelte';
+	import ArchiveIcon from '@lucide/svelte/icons/archive';
+	import PencilIcon from '@lucide/svelte/icons/pencil';
+	import Trash2Icon from '@lucide/svelte/icons/trash2';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';

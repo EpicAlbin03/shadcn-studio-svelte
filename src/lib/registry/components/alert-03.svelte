@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CircleAlertIcon, XIcon } from '@lucide/svelte';
+	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
+	import XIcon from '@lucide/svelte/icons/x';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 
 	let isActive = $state(true);

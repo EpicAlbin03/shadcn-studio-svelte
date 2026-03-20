@@ -2,7 +2,9 @@
 	import { z } from 'zod/v4';
 
 	const formSchema = z.object({
-		dob: z.string().refine((v) => v, { error: 'A date of birth is required.' })
+		dob: z.string().refine((v) => v.length > 0, {
+			error: 'Please select your date of birth.'
+		})
 	});
 </script>
 
@@ -15,7 +17,7 @@
 		today,
 		type DateValue
 	} from '@internationalized/date';
-	import { CalendarIcon } from '@lucide/svelte';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import { tick } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { defaults, superForm } from 'sveltekit-superforms';

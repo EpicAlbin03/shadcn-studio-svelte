@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileWarningIcon } from '@lucide/svelte';
+	import FileWarningIcon from '@lucide/svelte/icons/file-warning';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>

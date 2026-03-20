@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DotIcon } from '@lucide/svelte';
+	import DotIcon from '@lucide/svelte/icons/dot';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 

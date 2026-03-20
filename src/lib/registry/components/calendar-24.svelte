@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
-	import { CircleCheck } from '@lucide/svelte';
+	import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import * as Card from '$lib/components/ui/card/index.js';
@@ -47,7 +47,7 @@
 	<Card.Footer class="flex flex-col gap-4 border-t px-6 py-5! md:flex-row">
 		<div class="flex items-center gap-2 text-sm">
 			{#if value && selectedTime}
-				<CircleCheck class="size-5 stroke-green-600 dark:stroke-green-400" />
+				<CircleCheckIcon class="size-5 stroke-green-600 dark:stroke-green-400" />
 				<span>
 					Your meeting is booked for
 					<span class="font-medium">

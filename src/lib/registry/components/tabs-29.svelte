@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { BookIcon, GiftIcon, HeartIcon } from '@lucide/svelte';
+	import BookIcon from '@lucide/svelte/icons/book';
+	import GiftIcon from '@lucide/svelte/icons/gift';
+	import HeartIcon from '@lucide/svelte/icons/heart';
 	import { motion } from 'motion-sv';
 	import { watch } from 'runed';
 	import * as Tabs from '$lib/components/ui/tabs';

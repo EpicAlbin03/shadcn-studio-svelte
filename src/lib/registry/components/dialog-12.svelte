@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CheckIcon, MailIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import MailIcon from '@lucide/svelte/icons/mail';
 	import { untrack } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';

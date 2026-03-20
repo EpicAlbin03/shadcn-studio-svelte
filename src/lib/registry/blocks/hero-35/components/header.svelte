@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { MailIcon, MenuIcon } from '@lucide/svelte';
+	import MailIcon from '@lucide/svelte/icons/mail';
+	import MenuIcon from '@lucide/svelte/icons/menu';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import InkLogo from '$lib/registry/lib/assets/svg/ink-logo.svelte';

@@ -1,17 +1,15 @@
 <script lang="ts">
-	import {
-		BookTextIcon,
-		CalendarDaysIcon,
-		HeartPlusIcon,
-		HomeIcon,
-		LayoutPanelTopIcon,
-		LogInIcon,
-		LogOutIcon,
-		MailIcon,
-		MessageSquareTextIcon,
-		PanelTopIcon,
-		ShoppingCartIcon
-	} from '@lucide/svelte';
+	import BookTextIcon from '@lucide/svelte/icons/book-text';
+	import CalendarDaysIcon from '@lucide/svelte/icons/calendar-days';
+	import HeartPlusIcon from '@lucide/svelte/icons/heart-plus';
+	import HomeIcon from '@lucide/svelte/icons/home';
+	import LayoutPanelTopIcon from '@lucide/svelte/icons/layout-panel-top';
+	import LogInIcon from '@lucide/svelte/icons/log-in';
+	import LogOutIcon from '@lucide/svelte/icons/log-out';
+	import MailIcon from '@lucide/svelte/icons/mail';
+	import MessageSquareTextIcon from '@lucide/svelte/icons/message-square-text';
+	import PanelTopIcon from '@lucide/svelte/icons/panel-top';
+	import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
 	import { Button } from '$lib/components/ui/button';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import type { NavigationItem } from './NavigationMenu.svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ShoppingCartIcon } from '@lucide/svelte';
+	import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Badge } from '$lib/components/ui/badge';
 </script>

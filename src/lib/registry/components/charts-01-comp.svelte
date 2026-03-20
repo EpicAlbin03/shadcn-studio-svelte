@@ -1,12 +1,10 @@
 <script lang="ts">
-	import {
-		BadgePercentIcon,
-		ChartNoAxesCombinedIcon,
-		CirclePercentIcon,
-		DollarSignIcon,
-		ShoppingBagIcon,
-		TrendingUpIcon
-	} from '@lucide/svelte';
+	import BadgePercentIcon from '@lucide/svelte/icons/badge-percent';
+	import ChartNoAxesCombinedIcon from '@lucide/svelte/icons/chart-no-axes-combined';
+	import CirclePercentIcon from '@lucide/svelte/icons/circle-percent';
+	import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+	import ShoppingBagIcon from '@lucide/svelte/icons/shopping-bag';
+	import TrendingUpIcon from '@lucide/svelte/icons/trending-up';
 	import { scaleBand } from 'd3-scale';
 	import { BarChart, PieChart, Text, type ChartContextValue } from 'layerchart';
 	import { cubicInOut } from 'svelte/easing';

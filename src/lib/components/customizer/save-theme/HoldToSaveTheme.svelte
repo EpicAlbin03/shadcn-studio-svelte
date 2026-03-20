@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hand } from '@lucide/svelte';
+	import HandIcon from '@lucide/svelte/icons/hand';
 	import { toast } from 'svelte-sonner';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
 	import { Button } from '$lib/components/ui/button';
@@ -102,7 +102,7 @@
 	ontouchstart={handleHoldStart}
 	ontouchend={handleHoldEnd}
 >
-	<Hand class="h-4 w-4" />
+	<HandIcon class="h-4 w-4" />
 	Hold to save theme
 	{#if isHolding}
 		<div class="water-rise-animation absolute inset-0 bg-primary/20"></div>

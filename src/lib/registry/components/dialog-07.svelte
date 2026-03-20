@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronLeftIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';

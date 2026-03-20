@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Menu } from '@lucide/svelte';
+	import MenuIcon from '@lucide/svelte/icons/menu';
 	import { Button } from '$lib/components/ui/button';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 </script>
@@ -10,8 +10,8 @@
 			<NavigationMenu.Trigger>
 				{#snippet child({ props })}
 					<Button {...props} variant="outline" size="icon" class="lg:hidden">
-						<Menu class="size-5" />
-						<span class="sr-only">Menu</span>
+						<MenuIcon class="size-5" />
+						<span class="sr-only">MenuIcon</span>
 					</Button>
 				{/snippet}
 			</NavigationMenu.Trigger>

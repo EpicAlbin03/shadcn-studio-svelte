@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { ChartPieIcon, CodeIcon, PaletteIcon } from '@lucide/svelte';
+	import ChartPieIcon from '@lucide/svelte/icons/chart-pie';
+	import CodeIcon from '@lucide/svelte/icons/code';
+	import PaletteIcon from '@lucide/svelte/icons/palette';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MessageCircleIcon } from '@lucide/svelte';
+	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { Textarea } from '$lib/components/ui/textarea';

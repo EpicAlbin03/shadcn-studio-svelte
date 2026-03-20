@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TriangleAlertIcon } from '@lucide/svelte';
+	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
 	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { MicIcon, SearchIcon } from '@lucide/svelte';
+	import MicIcon from '@lucide/svelte/icons/mic';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';

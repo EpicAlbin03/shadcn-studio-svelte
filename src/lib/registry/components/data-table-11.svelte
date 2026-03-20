@@ -1,10 +1,8 @@
 <script lang="ts">
-	import {
-		ChevronDownIcon,
-		ChevronLeftIcon,
-		ChevronRightIcon,
-		ChevronUpIcon
-	} from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 	import type {
 		ColumnDef,
 		PaginationState,

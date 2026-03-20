@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronUpIcon } from '@lucide/svelte';
+	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';

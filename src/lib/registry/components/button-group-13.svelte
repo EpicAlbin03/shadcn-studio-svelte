@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { ArchiveIcon, InboxIcon, SendHorizontal } from '@lucide/svelte';
+	import ArchiveIcon from '@lucide/svelte/icons/archive';
+	import InboxIcon from '@lucide/svelte/icons/inbox';
+	import SendHorizontalIcon from '@lucide/svelte/icons/send-horizontal';
 	import { RippleButton } from '$lib/registry/ui/ripple-button';
 </script>
 
@@ -13,7 +15,7 @@
 		Archived
 	</RippleButton>
 	<RippleButton variant="outline" class="rounded-none rounded-e-md shadow-none focus-visible:z-10">
-		<SendHorizontal />
+		<SendHorizontalIcon />
 		Sent
 	</RippleButton>
 </div>

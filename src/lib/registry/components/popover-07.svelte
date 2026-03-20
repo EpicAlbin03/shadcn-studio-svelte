@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileWarningIcon } from '@lucide/svelte';
+	import FileWarningIcon from '@lucide/svelte/icons/file-warning';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 </script>

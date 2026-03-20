@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Copy } from '@lucide/svelte';
+	import CopyIcon from '@lucide/svelte/icons/copy';
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
 	import { CodeBlock } from '$lib/components/code-block';
 	import { Button } from '$lib/components/ui/button';
@@ -48,8 +48,8 @@
 	<Dialog.Trigger>
 		{#snippet child({ props })}
 			<Button {...props} variant="outline" class="flex-1 cursor-pointer gap-2" size="lg">
-				<Copy class="h-4 w-4" />
-				Copy
+				<CopyIcon class="h-4 w-4" />
+				CopyIcon
 			</Button>
 		{/snippet}
 	</Dialog.Trigger>
@@ -68,7 +68,7 @@
 		<Dialog.Header>
 			<Dialog.Title class="text-left">Theme Variables</Dialog.Title>
 			<Dialog.Description>
-				Copy these CSS variables to use your theme in other projects.
+				CopyIcon these CSS variables to use your theme in other projects.
 			</Dialog.Description>
 		</Dialog.Header>
 

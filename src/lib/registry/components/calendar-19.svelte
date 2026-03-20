@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CalendarDate, DateFormatter, getLocalTimeZone, today } from '@internationalized/date';
-	import { CalendarIcon } from '@lucide/svelte';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import { Button } from '$lib/components/ui/button';
 	import { Calendar } from '$lib/components/ui/calendar';
 	import * as Card from '$lib/components/ui/card/index.js';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StarIcon } from '@lucide/svelte';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import { Badge } from '$lib/components/ui/badge';
 </script>
 

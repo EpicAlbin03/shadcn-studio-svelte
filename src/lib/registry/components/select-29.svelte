@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CircleIcon } from '@lucide/svelte';
+	import CircleIcon from '@lucide/svelte/icons/circle';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { cn } from '$lib/utils';

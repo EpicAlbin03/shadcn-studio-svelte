@@ -15,7 +15,8 @@
 </script>
 
 <script lang="ts">
-	import { ChevronRightIcon, CircleSmallIcon } from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import CircleSmallIcon from '@lucide/svelte/icons/circle-small';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import NavigationMenu from './NavigationMenu.svelte';
 

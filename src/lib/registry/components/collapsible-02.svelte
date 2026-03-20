@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ChevronRightIcon, FileIcon, FolderIcon, FolderOpenIcon } from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import FileIcon from '@lucide/svelte/icons/file';
+	import FolderIcon from '@lucide/svelte/icons/folder';
+	import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 
 	type FileTreeItem = {

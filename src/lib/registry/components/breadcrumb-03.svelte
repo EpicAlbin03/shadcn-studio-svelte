@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ChevronsRightIcon, FileIcon, FolderIcon, HomeIcon } from '@lucide/svelte';
+	import ChevronsRightIcon from '@lucide/svelte/icons/chevrons-right';
+	import FileIcon from '@lucide/svelte/icons/file';
+	import FolderIcon from '@lucide/svelte/icons/folder';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 </script>
 

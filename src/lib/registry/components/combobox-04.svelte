@@ -1,17 +1,15 @@
 <script lang="ts">
-	import {
-		ChevronsUpDownIcon,
-		DollarSignIcon,
-		FactoryIcon,
-		FilmIcon,
-		HospitalIcon,
-		HotelIcon,
-		MonitorIcon,
-		ScaleIcon,
-		SchoolIcon,
-		TractorIcon,
-		ZapIcon
-	} from '@lucide/svelte';
+	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
+	import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+	import FactoryIcon from '@lucide/svelte/icons/factory';
+	import FilmIcon from '@lucide/svelte/icons/film';
+	import HospitalIcon from '@lucide/svelte/icons/hospital';
+	import HotelIcon from '@lucide/svelte/icons/hotel';
+	import MonitorIcon from '@lucide/svelte/icons/monitor';
+	import ScaleIcon from '@lucide/svelte/icons/scale';
+	import SchoolIcon from '@lucide/svelte/icons/school';
+	import TractorIcon from '@lucide/svelte/icons/tractor';
+	import ZapIcon from '@lucide/svelte/icons/zap';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command/index.js';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Check } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 				{#if selectedUser.id === user.id}
-					<Check class="ml-auto" />
+					<CheckIcon class="ml-auto" />
 				{/if}
 			</DropdownMenu.Item>
 		{/each}

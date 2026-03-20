@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRightIcon } from '@lucide/svelte';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import { badgeVariants } from '$lib/components/ui/badge';
 </script>
 

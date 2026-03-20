@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CalendarClockIcon, MenuIcon } from '@lucide/svelte';
+	import CalendarClockIcon from '@lucide/svelte/icons/calendar-clock';
+	import MenuIcon from '@lucide/svelte/icons/menu';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import BistroLogo from '$lib/registry/lib/assets/svg/bistro-logo.svelte';

@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ChevronDownIcon, Columns3Icon, RefreshCcwIcon, SearchIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import Columns3Icon from '@lucide/svelte/icons/columns3';
+	import RefreshCcwIcon from '@lucide/svelte/icons/refresh-ccw';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import {
 		getCoreRowModel,
 		type ColumnDef,

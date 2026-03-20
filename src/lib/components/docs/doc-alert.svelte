@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CircleAlertIcon, TriangleAlertIcon } from '@lucide/svelte';
+	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
+	import TriangleAlertIcon from '@lucide/svelte/icons/triangle-alert';
 	import type { Snippet } from 'svelte';
 	import { tv, type VariantProps } from 'tailwind-variants';
 	import * as Alert from '$lib/components/ui/alert/index.js';

@@ -1,27 +1,31 @@
 <script lang="ts">
-	import { Bell, CreditCard, LogOut, Settings, User } from '@lucide/svelte';
+	import BellIcon from '@lucide/svelte/icons/bell';
+	import CreditCardIcon from '@lucide/svelte/icons/credit-card';
+	import LogOutIcon from '@lucide/svelte/icons/log-out';
+	import SettingsIcon from '@lucide/svelte/icons/settings';
+	import UserIcon from '@lucide/svelte/icons/user';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 
 	const listItems = [
 		{
-			icon: User,
+			icon: UserIcon,
 			property: 'Profile'
 		},
 		{
-			icon: Settings,
-			property: 'Settings'
+			icon: SettingsIcon,
+			property: 'SettingsIcon'
 		},
 		{
-			icon: CreditCard,
+			icon: CreditCardIcon,
 			property: 'Billing'
 		},
 		{
-			icon: Bell,
+			icon: BellIcon,
 			property: 'Notifications'
 		},
 		{
-			icon: LogOut,
+			icon: LogOutIcon,
 			property: 'Sign Out'
 		}
 	];

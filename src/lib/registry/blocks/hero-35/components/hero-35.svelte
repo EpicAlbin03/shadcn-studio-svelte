@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ArrowUpRightIcon, CalendarDaysIcon } from '@lucide/svelte';
+	import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
+	import CalendarDaysIcon from '@lucide/svelte/icons/calendar-days';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';

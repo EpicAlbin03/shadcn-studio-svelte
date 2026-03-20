@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BadgeCheckIcon } from '@lucide/svelte';
+	import BadgeCheckIcon from '@lucide/svelte/icons/badge-check';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 </script>
 

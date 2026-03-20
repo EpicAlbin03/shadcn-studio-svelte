@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { CircleCheckIcon, DollarSignIcon, MessageSquareTextIcon } from '@lucide/svelte';
+	import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
+	import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
+	import MessageSquareTextIcon from '@lucide/svelte/icons/message-square-text';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';

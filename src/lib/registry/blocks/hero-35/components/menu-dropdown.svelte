@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { Icon as IconType } from '@lucide/svelte';
-	import { ChevronRightIcon, CircleSmallIcon } from '@lucide/svelte';
+	import { type Icon as IconType } from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import CircleSmallIcon from '@lucide/svelte/icons/circle-small';
 	import type { Snippet } from 'svelte';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';

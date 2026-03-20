@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeftIcon } from '@lucide/svelte';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

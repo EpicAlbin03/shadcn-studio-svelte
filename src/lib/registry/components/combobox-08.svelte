@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CheckIcon, ChevronsUpDownIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';

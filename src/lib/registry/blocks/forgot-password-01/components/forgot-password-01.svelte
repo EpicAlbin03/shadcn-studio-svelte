@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronLeftIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
 	import * as Card from '$lib/components/ui/card';
 	import Logo from '$lib/registry/components/logo.svelte';
 	import AuthBackgroundShape from '$lib/registry/lib/assets/svg/auth-background-shape.svelte';

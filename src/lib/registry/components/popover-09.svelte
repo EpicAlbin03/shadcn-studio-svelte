@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FunnelPlusIcon } from '@lucide/svelte';
+	import FunnelPlusIcon from '@lucide/svelte/icons/funnel-plus';
 	import { Button } from '$lib/components/ui/button';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';

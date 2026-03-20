@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HeartIcon } from '@lucide/svelte';
+	import HeartIcon from '@lucide/svelte/icons/heart';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card/index.js';

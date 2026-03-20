@@ -1,13 +1,11 @@
 <script lang="ts">
-	import {
-		BadgeCheckIcon,
-		EllipsisIcon,
-		HeartIcon,
-		MessageCircleIcon,
-		RepeatIcon,
-		SendIcon,
-		UserPlusIcon
-	} from '@lucide/svelte';
+	import BadgeCheckIcon from '@lucide/svelte/icons/badge-check';
+	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
+	import HeartIcon from '@lucide/svelte/icons/heart';
+	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
+	import RepeatIcon from '@lucide/svelte/icons/repeat';
+	import SendIcon from '@lucide/svelte/icons/send';
+	import UserPlusIcon from '@lucide/svelte/icons/user-plus';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card/index.js';

@@ -1,11 +1,9 @@
 <script lang="ts">
-	import {
-		CopyIcon,
-		CropIcon,
-		EllipsisVerticalIcon,
-		MousePointerIcon,
-		SquareIcon
-	} from '@lucide/svelte';
+	import CopyIcon from '@lucide/svelte/icons/copy';
+	import CropIcon from '@lucide/svelte/icons/crop';
+	import EllipsisVerticalIcon from '@lucide/svelte/icons/ellipsis-vertical';
+	import MousePointerIcon from '@lucide/svelte/icons/mouse-pointer';
+	import SquareIcon from '@lucide/svelte/icons/square';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>

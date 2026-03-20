@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BookmarkIcon } from '@lucide/svelte';
+	import BookmarkIcon from '@lucide/svelte/icons/bookmark';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { MinusIcon } from '@lucide/svelte';
+	import MinusIcon from '@lucide/svelte/icons/minus';
 	import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 	import { motion } from 'motion-sv';
 	import { cn, type WithoutChildrenOrChild } from '$lib/utils';

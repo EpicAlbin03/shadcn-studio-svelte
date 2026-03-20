@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CheckCircleIcon } from '@lucide/svelte';
+	import CheckCircleIcon from '@lucide/svelte/icons/check-circle';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 

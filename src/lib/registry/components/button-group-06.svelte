@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ZoomInIcon, ZoomOutIcon } from '@lucide/svelte';
+	import ZoomInIcon from '@lucide/svelte/icons/zoom-in';
+	import ZoomOutIcon from '@lucide/svelte/icons/zoom-out';
 	import { Button } from '$lib/components/ui/button';
 
 	let zoom = $state(95);

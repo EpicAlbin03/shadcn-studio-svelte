@@ -1,4 +1,4 @@
-import { FileIcon } from '@lucide/svelte';
+import FileIcon from '@lucide/svelte/icons/file';
 import { CSSSVG, JSONSVG, SVELTESVG, TypeScriptSVG } from '$lib/assets/svg';
 
 export function getIconForLanguageExtension(language: string) {

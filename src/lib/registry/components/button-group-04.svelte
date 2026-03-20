@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { PauseIcon, PlayIcon, SkipBackIcon, SkipForwardIcon } from '@lucide/svelte';
+	import PauseIcon from '@lucide/svelte/icons/pause';
+	import PlayIcon from '@lucide/svelte/icons/play';
+	import SkipBackIcon from '@lucide/svelte/icons/skip-back';
+	import SkipForwardIcon from '@lucide/svelte/icons/skip-forward';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>

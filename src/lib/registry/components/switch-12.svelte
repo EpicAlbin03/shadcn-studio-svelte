@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CheckIcon, XIcon } from '@lucide/svelte';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { Switch } from '$lib/components/ui/switch';
 
 	let checked = $state(true);

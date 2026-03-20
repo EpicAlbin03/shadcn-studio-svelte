@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { MenuIcon, SearchIcon } from '@lucide/svelte';
+	import MenuIcon from '@lucide/svelte/icons/menu';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Button } from '$lib/components/ui/button';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import Logo from '$lib/registry/components/logo.svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileQuestionIcon } from '@lucide/svelte';
+	import FileQuestionIcon from '@lucide/svelte/icons/file-question';
 	import { Button } from '$lib/components/ui/button';
 	import { HoverCard, HoverCardContent, HoverCardTrigger } from '$lib/components/ui/hover-card';
 </script>

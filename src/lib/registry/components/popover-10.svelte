@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { LoaderCircleIcon, SearchIcon } from '@lucide/svelte';
+	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
+	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Debounced } from 'runed';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button';

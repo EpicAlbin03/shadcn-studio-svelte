@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowUpRightIcon } from '@lucide/svelte';
+	import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
 	import * as CraftButton from '$lib/registry/ui/craft-button';
 </script>
 

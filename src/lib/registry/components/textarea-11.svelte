@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HomeIcon } from '@lucide/svelte';
+	import HomeIcon from '@lucide/svelte/icons/home';
 	import { Label } from '$lib/components/ui/label';
 	import { Textarea } from '$lib/components/ui/textarea';
 

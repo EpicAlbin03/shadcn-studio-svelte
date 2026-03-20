@@ -1,12 +1,10 @@
 <script lang="ts">
-	import {
-		ChevronRightIcon,
-		CircleSmallIcon,
-		LogOutIcon,
-		SettingsIcon,
-		UserIcon,
-		UsersIcon
-	} from '@lucide/svelte';
+	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+	import CircleSmallIcon from '@lucide/svelte/icons/circle-small';
+	import LogOutIcon from '@lucide/svelte/icons/log-out';
+	import SettingsIcon from '@lucide/svelte/icons/settings';
+	import UserIcon from '@lucide/svelte/icons/user';
+	import UsersIcon from '@lucide/svelte/icons/users';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';

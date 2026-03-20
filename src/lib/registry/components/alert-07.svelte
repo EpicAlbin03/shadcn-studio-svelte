@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { UploadIcon, XIcon } from '@lucide/svelte';
+	import UploadIcon from '@lucide/svelte/icons/upload';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { onMount } from 'svelte';
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import { Button } from '$lib/components/ui/button';

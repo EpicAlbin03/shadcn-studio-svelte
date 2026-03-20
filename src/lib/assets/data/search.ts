@@ -1,4 +1,5 @@
-import { Circle, File } from '@lucide/svelte';
+import CircleIcon from '@lucide/svelte/icons/circle';
+import FileIcon from '@lucide/svelte/icons/file';
 import { categories } from '$lib/config/components.svelte';
 import { registryCategories } from '$lib/registry/registry-categories';
 
@@ -17,22 +18,22 @@ export const searchData: SearchData[] = [
 		title: 'Links',
 		data: [
 			{
-				icon: File,
+				icon: FileIcon,
 				name: 'Theme Generator',
 				href: '/theme-generator'
 			},
 			{
-				icon: File,
+				icon: FileIcon,
 				name: 'Docs',
 				href: '/docs'
 			},
 			{
-				icon: File,
+				icon: FileIcon,
 				name: 'Components',
 				href: '/components'
 			},
 			{
-				icon: File,
+				icon: FileIcon,
 				name: 'Blocks',
 				href: '/blocks'
 			}
@@ -42,12 +43,12 @@ export const searchData: SearchData[] = [
 		title: 'Getting Started',
 		data: [
 			{
-				icon: Circle,
+				icon: CircleIcon,
 				name: 'Introduction',
 				href: '/docs/getting-started/introduction'
 			},
 			{
-				icon: Circle,
+				icon: CircleIcon,
 				name: 'How to use Shadcn CLI',
 				href: '/docs/getting-started/how-to-use-shadcn-cli'
 			}
@@ -57,7 +58,7 @@ export const searchData: SearchData[] = [
 		title: 'Components',
 		data: [
 			...categories.map((category) => ({
-				icon: Circle,
+				icon: CircleIcon,
 				name: category.name,
 				href: `/docs/components/${category.slug}`
 			}))
@@ -67,7 +68,7 @@ export const searchData: SearchData[] = [
 		title: 'Block Categories',
 		data: [
 			...registryCategories.map((category) => ({
-				icon: Circle,
+				icon: CircleIcon,
 				name: category.name,
 				href: `/blocks/${category.slug}`
 			}))
@@ -78,7 +79,7 @@ export const searchData: SearchData[] = [
 		data: [
 			...registryCategories.flatMap((category) =>
 				category.blocks.map((block) => ({
-					icon: Circle,
+					icon: CircleIcon,
 					name: block,
 					href: `/blocks/${category.slug}#${block}`
 				}))

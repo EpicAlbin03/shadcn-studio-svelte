@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { FacebookIcon, GithubIcon, InstagramIcon, TwitterIcon } from '@lucide/svelte';
+	import FacebookIcon from '@lucide/svelte/icons/facebook';
+	import GithubIcon from '@lucide/svelte/icons/github';
+	import InstagramIcon from '@lucide/svelte/icons/instagram';
+	import TwitterIcon from '@lucide/svelte/icons/twitter';
 	import * as Card from '$lib/components/ui/card';
 	import { Separator } from '$lib/components/ui/separator';
 

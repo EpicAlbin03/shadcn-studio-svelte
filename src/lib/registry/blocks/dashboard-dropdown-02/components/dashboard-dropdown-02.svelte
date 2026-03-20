@@ -1,13 +1,11 @@
 <script lang="ts">
-	import {
-		CirclePlusIcon,
-		CreditCardIcon,
-		LogOutIcon,
-		SettingsIcon,
-		SquarePenIcon,
-		UserIcon,
-		UsersIcon
-	} from '@lucide/svelte';
+	import CirclePlusIcon from '@lucide/svelte/icons/circle-plus';
+	import CreditCardIcon from '@lucide/svelte/icons/credit-card';
+	import LogOutIcon from '@lucide/svelte/icons/log-out';
+	import SettingsIcon from '@lucide/svelte/icons/settings';
+	import SquarePenIcon from '@lucide/svelte/icons/square-pen';
+	import UserIcon from '@lucide/svelte/icons/user';
+	import UsersIcon from '@lucide/svelte/icons/users';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 

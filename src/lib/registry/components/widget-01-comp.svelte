@@ -1,5 +1,7 @@
 <script lang="ts" module>
-	import { ChevronDownIcon, ChevronUpIcon, EllipsisVerticalIcon } from '@lucide/svelte';
+	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
+	import EllipsisVerticalIcon from '@lucide/svelte/icons/ellipsis-vertical';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';

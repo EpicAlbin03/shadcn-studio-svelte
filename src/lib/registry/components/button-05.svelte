@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Redo2Icon, Undo2Icon } from '@lucide/svelte';
+	import Redo2Icon from '@lucide/svelte/icons/redo2';
+	import Undo2Icon from '@lucide/svelte/icons/undo2';
 	import { Button } from '$lib/components/ui/button';
 </script>
 

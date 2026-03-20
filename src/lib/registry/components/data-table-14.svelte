@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GripVerticalIcon } from '@lucide/svelte';
+	import GripVerticalIcon from '@lucide/svelte/icons/grip-vertical';
 	import { getCoreRowModel, type ColumnDef } from '@tanstack/table-core';
 	import { createRawSnippet } from 'svelte';
 	import { Button } from '$lib/components/ui/button';

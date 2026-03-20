@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { getLocalTimeZone, type CalendarDate } from '@internationalized/date';
-	import { CalendarIcon } from '@lucide/svelte';
+	import { type CalendarDate } from '@internationalized/date';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+	import getLocalTimeZoneIcon from '@lucide/svelte/icons/get-local-time-zone';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Calendar from '$lib/components/ui/calendar/calendar.svelte';
 	import { Label } from '$lib/components/ui/label/index.js';
@@ -20,7 +21,7 @@
 				<Button {...props} variant="outline" class="w-full justify-between font-normal">
 					<span class="flex items-center">
 						<CalendarIcon class="mr-2 h-4 w-4" />
-						{value ? value.toDate(getLocalTimeZone()).toLocaleDateString() : 'Pick a date'}
+						{value ? value.toDate(getLocalTimeZoneIcon()).toLocaleDateString() : 'Pick a date'}
 					</span>
 					<ChevronDownIcon />
 				</Button>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DollarSignIcon } from '@lucide/svelte';
+	import DollarSignIcon from '@lucide/svelte/icons/dollar-sign';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover/index.js';
