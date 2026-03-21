@@ -49,7 +49,7 @@
 							? registeredEmails.find((email) => email.value === $formData.registeredEmail)?.label
 							: 'Enter your registered email'}
 					</Select.Trigger>
-					<Select.Content>
+					<Select.Content class="p-1">
 						{#each registeredEmails as { value, label } (value)}
 							<Select.Item {value} {label} />
 						{/each}

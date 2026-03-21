@@ -86,7 +86,7 @@
 									? issues.find((issue) => issue.value === $formData.issue)?.label
 									: 'Issue you are facing'}
 							</Select.Trigger>
-							<Select.Content>
+							<Select.Content class="p-1">
 								{#each issues as { value, label } (value)}
 									<Select.Item {value} {label} />
 								{/each}
