@@ -8,29 +8,29 @@
 
 	let { componentName, ...props }: Props = $props();
 
-	async function loadComponent(): Promise<ComponentType | null> {
-		if (!componentName) {
+	async function loadComponent(name: string): Promise<ComponentType | null> {
+		if (!name) {
 			return null;
 		}
 
 		try {
-			const module = await import(`$lib/registry/components/${componentName}.svelte`);
+			const module = await import(`$lib/registry/components/${name}.svelte`);
 			return module.default;
 		} catch (error) {
 			try {
-				const module = await import(
-					`$lib/registry/components/${componentName}/${componentName}.svelte`
-				);
+				const module = await import(`$lib/registry/components/${name}/${name}.svelte`);
 				return module.default;
 			} catch (folderError) {
-				console.error(`Failed to load component ${componentName}: ${error}`);
-				throw new Error(`Failed to load component ${componentName}`, { cause: folderError });
+				console.error(`Failed to load component ${name}: ${error}`);
+				throw new Error(`Failed to load component ${name}`, { cause: folderError });
 			}
 		}
 	}
+
+	const componentPromise = $derived(loadComponent(componentName));
 </script>
 
-{#await loadComponent()}
+{#await componentPromise}
 	<div class="flex h-full flex-col items-center justify-center">
 		<SpinnerSVG class="size-10 animate-spin" />
 	</div>

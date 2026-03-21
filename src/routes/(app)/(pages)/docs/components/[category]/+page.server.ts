@@ -24,9 +24,12 @@ export const load: PageServerLoad = async ({ params }) => {
 	const highlightedCodeBlocks = await loadHighlightedCodeBlocks(
 		components.map((comp) => comp.name)
 	);
+	const highlightedCodeBlockByName = new Map(
+		highlightedCodeBlocks.map((block) => [block.name, block] as const)
+	);
 
 	const componentsData: ComponentProps[] = components.flatMap((comp) => {
-		const codeBlock = highlightedCodeBlocks.find((block) => block.name === comp.name);
+		const codeBlock = highlightedCodeBlockByName.get(comp.name);
 
 		if (!codeBlock?.files) {
 			return [];
