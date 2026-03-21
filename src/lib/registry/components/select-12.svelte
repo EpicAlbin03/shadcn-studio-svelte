@@ -19,9 +19,9 @@
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Select with icon</Label>
 	<Select.Root type="single" bind:value>
-		<Select.Trigger {id} class="relative w-full ps-9">
+		<Select.Trigger {id} class="relative w-full pl-9">
 			<div
-				class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center justify-center ps-3 text-muted-foreground/80 group-has-[select[disabled]]:opacity-50"
+				class="pointer-events-none absolute inset-y-0 inset-s-0 flex w-9 items-center justify-center text-muted-foreground/80 group-has-[select[disabled]]:opacity-50"
 			>
 				<FilmIcon size={16} aria-hidden="true" />
 			</div>
