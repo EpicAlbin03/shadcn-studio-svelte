@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -84,6 +83,11 @@
 					<Command.Group>
 						{#each formattedTimezones as timezone (timezone.value)}
 							<Command.Item
+								class={cn(
+									value === timezone.value
+										? '[&>.cn-command-item-indicator]:opacity-100'
+										: '[&>.cn-command-item-indicator]:opacity-0'
+								)}
 								value={timezone.value}
 								onSelect={() => {
 									value = timezone.value;
@@ -91,9 +95,6 @@
 								}}
 							>
 								<span class="truncate">{timezone.label}</span>
-								{#if value === timezone.value}
-									<CheckIcon size={16} class="ml-auto" />
-								{/if}
 							</Command.Item>
 						{/each}
 					</Command.Group>

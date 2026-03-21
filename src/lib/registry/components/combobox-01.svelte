@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -69,6 +68,11 @@
 				<Command.Group>
 					{#each frameworks as framework (framework.value)}
 						<Command.Item
+							class={cn(
+								value === framework.value
+									? '[&>.cn-command-item-indicator]:opacity-100'
+									: '[&>.cn-command-item-indicator]:opacity-0'
+							)}
 							value={framework.value}
 							onSelect={() => {
 								value = framework.value;
@@ -76,9 +80,6 @@
 							}}
 						>
 							{framework.label}
-							<CheckIcon
-								class={cn('ml-auto', value === framework.value ? 'opacity-100' : 'opacity-0')}
-							/>
 						</Command.Item>
 					{/each}
 				</Command.Group>

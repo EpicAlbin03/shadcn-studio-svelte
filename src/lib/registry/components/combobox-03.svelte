@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -77,18 +76,20 @@
 						<Command.Group heading={group.category}>
 							{#each group.items as item (item.value)}
 								<Command.Item
+									class={cn(
+										item.disabled && 'cursor-not-allowed opacity-50',
+										value === item.value
+											? '[&>.cn-command-item-indicator]:opacity-100'
+											: '[&>.cn-command-item-indicator]:opacity-0'
+									)}
 									value={item.value}
 									onSelect={() => {
 										value = item.value;
 										closeAndFocusTrigger();
 									}}
-									class={cn(item.disabled && 'cursor-not-allowed opacity-50')}
 									disabled={item.disabled}
 								>
 									{item.value}
-									{#if value === item.value}
-										<CheckIcon size={16} class="ml-auto" />
-									{/if}
 								</Command.Item>
 							{/each}
 						</Command.Group>

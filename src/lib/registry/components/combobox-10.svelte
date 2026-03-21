@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { Badge } from '$lib/components/ui/badge';
@@ -7,6 +6,7 @@
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { cn } from '$lib/utils';
 
 	const frameworks = [
 		{ value: 'react', label: 'React' },
@@ -89,13 +89,15 @@
 					<Command.Group>
 						{#each frameworks as framework (framework.value)}
 							<Command.Item
+								class={cn(
+									values.includes(framework.value)
+										? '[&>.cn-command-item-indicator]:opacity-100'
+										: '[&>.cn-command-item-indicator]:opacity-0'
+								)}
 								value={framework.value}
 								onSelect={() => toggleSelection(framework.value)}
 							>
 								<span class="truncate">{framework.label}</span>
-								{#if values.includes(framework.value)}
-									<CheckIcon size={16} class="ml-auto" />
-								{/if}
 							</Command.Item>
 						{/each}
 					</Command.Group>

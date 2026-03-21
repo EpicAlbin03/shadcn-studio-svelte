@@ -76,6 +76,7 @@
 					<Command.Group>
 						{#each frameworks as framework (framework.value)}
 							<Command.Item
+								class={cn('[&>.cn-command-item-indicator]:hidden')}
 								value={framework.value}
 								onSelect={() => {
 									value = framework.value;

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { cn } from '$lib/utils';
 
 	const items = [
 		{
@@ -76,6 +76,11 @@
 						<Command.Group heading={group.continent}>
 							{#each group.items as item (item.value)}
 								<Command.Item
+									class={cn(
+										value === item.value
+											? '[&>.cn-command-item-indicator]:opacity-100'
+											: '[&>.cn-command-item-indicator]:opacity-0'
+									)}
 									value={item.value}
 									onSelect={() => {
 										value = item.value;
@@ -83,9 +88,6 @@
 									}}
 								>
 									{item.value}
-									{#if value === item.value}
-										<CheckIcon size={16} class="ml-auto" />
-									{/if}
 								</Command.Item>
 							{/each}
 						</Command.Group>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { tick } from 'svelte';
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
@@ -7,6 +6,7 @@
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { cn } from '$lib/utils';
 
 	const users = [
 		{
@@ -114,6 +114,11 @@
 					<Command.Group>
 						{#each users as user (user.name)}
 							<Command.Item
+								class={cn(
+									value === user.name
+										? '[&>.cn-command-item-indicator]:opacity-100'
+										: '[&>.cn-command-item-indicator]:opacity-0'
+								)}
 								value={user.name}
 								onSelect={() => {
 									value = user.name;
@@ -130,9 +135,6 @@
 										<span class="text-sm text-muted-foreground">{user.email}</span>
 									</span>
 								</span>
-								{#if value === user.name}
-									<CheckIcon size={16} class="ml-auto" />
-								{/if}
 							</Command.Item>
 						{/each}
 					</Command.Group>

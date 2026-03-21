@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import { tick } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Command from '$lib/components/ui/command/index.js';
 	import { Label } from '$lib/components/ui/label';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import { cn } from '$lib/utils';
 
 	const countries = [
 		{ value: '1', label: 'India', flag: '/img/flags/india.webp' },
@@ -70,6 +70,11 @@
 					<Command.Empty>No country found.</Command.Empty>
 					{#each countries as country (country.value)}
 						<Command.Item
+							class={cn(
+								value === country.label
+									? '[&>.cn-command-item-indicator]:opacity-100'
+									: '[&>.cn-command-item-indicator]:opacity-0'
+							)}
 							value={country.label}
 							onSelect={() => {
 								value = country.label;
@@ -78,9 +83,6 @@
 						>
 							<img src={country.flag} alt="{country.label} flag" class="h-4 w-5" />
 							{country.label}
-							{#if value === country.value}
-								<CheckIcon size={16} class="ml-auto" />
-							{/if}
 						</Command.Item>
 					{/each}
 				</Command.List>

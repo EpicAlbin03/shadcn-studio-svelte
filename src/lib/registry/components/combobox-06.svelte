@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import PlusIcon from '@lucide/svelte/icons/plus';
 	import { tick } from 'svelte';
@@ -82,6 +81,11 @@
 					<Command.Group>
 						{#each universities as university (university.value)}
 							<Command.Item
+								class={cn(
+									value === university.value
+										? '[&>.cn-command-item-indicator]:opacity-100'
+										: '[&>.cn-command-item-indicator]:opacity-0'
+								)}
 								value={university.value}
 								onSelect={() => {
 									value = university.value;
@@ -89,9 +93,6 @@
 								}}
 							>
 								{university.label}
-								{#if value === university.value}
-									<CheckIcon size={16} class="ml-auto" />
-								{/if}
 							</Command.Item>
 						{/each}
 					</Command.Group>
