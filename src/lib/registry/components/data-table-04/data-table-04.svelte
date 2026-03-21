@@ -8,6 +8,8 @@
 		availability: 'In Stock' | 'Out of Stock' | 'Limited';
 		rating: number;
 	};
+
+	export type ColumnMeta = { filterVariant?: 'range' | 'select' };
 </script>
 
 <script lang="ts">
@@ -32,7 +34,7 @@
 	} from '$lib/components/ui/data-table/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils';
-	import Filter from './Filter.svelte';
+	import Filter from './filter.svelte';
 
 	const items: Item[] = [
 		{

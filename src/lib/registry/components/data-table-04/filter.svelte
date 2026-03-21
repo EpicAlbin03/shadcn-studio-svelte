@@ -1,10 +1,10 @@
 <script lang="ts">
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import type { Column } from '@tanstack/table-core';
-	import type { Item } from '$lib/components/shadcn-studio/data-table/data-table-04.svelte';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import * as Select from '$lib/components/ui/select/index.js';
+	import type { ColumnMeta, Item } from './data-table-04.svelte';
 
 	type Props = { column: Column<Item, unknown> };
 
@@ -13,9 +13,10 @@
 	const id = $props.id();
 
 	const columnFilterValue = $derived(column.getFilterValue());
-	// @ts-ignore
-	const { filterVariant } = column.columnDef.meta ?? {};
-	const columnHeader = typeof column.columnDef.header === 'string' ? column.columnDef.header : '';
+	const { filterVariant } = $derived((column.columnDef.meta ?? {}) as ColumnMeta);
+	const columnHeader = $derived(
+		typeof column.columnDef.header === 'string' ? column.columnDef.header : ''
+	);
 
 	const sortedUniqueValues = $derived.by(() => {
 		if (filterVariant === 'range') return [];
@@ -79,7 +80,7 @@
 			<Select.Trigger id="{id}-select" class="w-full">
 				{(columnFilterValue ?? 'All') as string}
 			</Select.Trigger>
-			<Select.Content>
+			<Select.Content class="p-1">
 				<Select.Item value="all">All</Select.Item>
 				{#each sortedUniqueValues as value (String(value))}
 					<Select.Item value={String(value)}>
