@@ -282,7 +282,7 @@
 									? newUser.status.charAt(0).toUpperCase() + newUser.status.slice(1)
 									: 'Select status'}
 							</Select.Trigger>
-							<Select.Content>
+							<Select.Content class="p-1">
 								<Select.Item value="pending">Pending</Select.Item>
 								<Select.Item value="processing">Processing</Select.Item>
 								<Select.Item value="success">Success</Select.Item>
