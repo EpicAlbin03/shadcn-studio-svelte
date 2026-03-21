@@ -1,29 +1,33 @@
 <script lang="ts">
-	import CircleIcon from '@lucide/svelte/icons/circle';
-	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
-	import { cn, type WithoutChild } from '$lib/utils/index.js';
+	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
+	import { cn, type WithoutChild } from "$lib/utils/index.js";
+	import CheckIcon from '@lucide/svelte/icons/check';
 
 	let {
 		ref = $bindable(null),
 		class: className,
+		inset,
 		children: childrenProp,
 		...restProps
-	}: WithoutChild<ContextMenuPrimitive.RadioItemProps> = $props();
+	}: WithoutChild<ContextMenuPrimitive.RadioItemProps> & {
+		inset?: boolean;
+	} = $props();
 </script>
 
 <ContextMenuPrimitive.RadioItem
 	bind:ref
 	data-slot="context-menu-radio-item"
+	data-inset={inset}
 	class={cn(
-		"relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-highlighted:bg-accent data-highlighted:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+		"focus:bg-accent focus:text-accent-foreground gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm data-inset:pl-8 [&_svg:not([class*='size-'])]:size-4 relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
 		className
 	)}
 	{...restProps}
 >
 	{#snippet children({ checked })}
-		<span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
+		<span class="absolute right-2 pointer-events-none">
 			{#if checked}
-				<CircleIcon class="size-2 fill-current" />
+				<CheckIcon  />
 			{/if}
 		</span>
 		{@render childrenProp?.({ checked })}

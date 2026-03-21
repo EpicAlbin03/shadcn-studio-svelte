@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Pagination as PaginationPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils/index.js';
+	import { Pagination as PaginationPrimitive } from "bits-ui";
+
+	import { cn } from "$lib/utils/index.js";
 
 	let {
 		ref = $bindable(null),
@@ -19,9 +20,9 @@
 	role="navigation"
 	aria-label="pagination"
 	data-slot="pagination"
-	class={cn('mx-auto flex w-full justify-center', className)}
 	{count}
 	{perPage}
 	{siblingCount}
+	class={cn("cn-pagination mx-auto flex w-full justify-center", className)}
 	{...restProps}
 />

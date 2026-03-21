@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn, type WithElementRef } from '$lib/utils/index.js';
+	import { type WithElementRef, cn } from "$lib/utils/index.js";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	let {
 		ref = $bindable(null),
@@ -10,6 +10,6 @@
 	}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();
 </script>
 
-<div {...restProps} bind:this={ref} class={cn('flex flex-col', className)}>
+<div {...restProps} bind:this={ref} class={cn("flex w-full flex-col gap-4", className)}>
 	{@render children?.()}
 </div>

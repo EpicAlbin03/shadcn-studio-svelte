@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Drawer as DrawerPrimitive } from 'vaul-svelte';
-	import { cn } from '$lib/utils/index.js';
+	import { Drawer as DrawerPrimitive } from "vaul-svelte";
+	import { cn } from "$lib/utils/index.js";
 
 	let {
 		ref = $bindable(null),
@@ -12,9 +12,6 @@
 <DrawerPrimitive.Overlay
 	bind:ref
 	data-slot="drawer-overlay"
-	class={cn(
-		'fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0',
-		className
-	)}
+	class={cn("data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 bg-black/10 supports-backdrop-filter:backdrop-blur-xs fixed inset-0 z-50", className)}
 	{...restProps}
 />

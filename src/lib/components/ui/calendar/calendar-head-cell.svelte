@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Calendar as CalendarPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils/index.js';
+	import { Calendar as CalendarPrimitive } from "bits-ui";
+	import { cn } from "$lib/utils/index.js";
 
 	let {
 		ref = $bindable(null),
@@ -12,7 +12,7 @@
 <CalendarPrimitive.HeadCell
 	bind:ref
 	class={cn(
-		'w-(--cell-size) rounded-md text-[0.8rem] font-normal text-muted-foreground',
+		"text-muted-foreground w-(--cell-size) rounded-md text-[0.8rem] font-normal",
 		className
 	)}
 	{...restProps}
