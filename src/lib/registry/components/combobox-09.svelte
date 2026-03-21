@@ -68,23 +68,25 @@
 				<Command.Input placeholder="Search country..." />
 				<Command.List>
 					<Command.Empty>No country found.</Command.Empty>
-					{#each countries as country (country.value)}
-						<Command.Item
-							class={cn(
-								value === country.label
-									? '[&>.cn-command-item-indicator]:opacity-100'
-									: '[&>.cn-command-item-indicator]:opacity-0'
-							)}
-							value={country.label}
-							onSelect={() => {
-								value = country.label;
-								closeAndFocusTrigger();
-							}}
-						>
-							<img src={country.flag} alt="{country.label} flag" class="h-4 w-5" />
-							{country.label}
-						</Command.Item>
-					{/each}
+					<Command.Group>
+						{#each countries as country (country.value)}
+							<Command.Item
+								class={cn(
+									value === country.label
+										? '[&>.cn-command-item-indicator]:opacity-100'
+										: '[&>.cn-command-item-indicator]:opacity-0'
+								)}
+								value={country.label}
+								onSelect={() => {
+									value = country.label;
+									closeAndFocusTrigger();
+								}}
+							>
+								<img src={country.flag} alt="{country.label} flag" class="h-4 w-5" />
+								{country.label}
+							</Command.Item>
+						{/each}
+					</Command.Group>
 				</Command.List>
 			</Command.Root>
 		</Popover.Content>
