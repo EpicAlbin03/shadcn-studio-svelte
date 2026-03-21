@@ -5,7 +5,7 @@
 </script>
 
 <div class="relative w-fit">
-	<Avatar.Root class="size-9 rounded-sm">
+	<Avatar.Root class="size-9 rounded-sm after:border-0">
 		<Avatar.Fallback class="rounded-sm">
 			<ShoppingCartIcon class="size-5" />
 		</Avatar.Fallback>
