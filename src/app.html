@@ -38,6 +38,81 @@
 					return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 				}
 
+				function normalizeColor(value) {
+					if (typeof value !== 'string') return value;
+
+					const trimmed = value.trim();
+
+					if (
+						trimmed.startsWith('oklch(') ||
+						trimmed.startsWith('hsl(') ||
+						trimmed.startsWith('rgb(') ||
+						trimmed.startsWith('#') ||
+						trimmed.startsWith('color(') ||
+						trimmed.startsWith('var(')
+					) {
+						return trimmed;
+					}
+
+					if (
+						/^[-+]?\d*\.?\d+(?:\s+[-+]?\d*\.?\d+){2}(?:\s*\/\s*[-+]?\d*\.?\d+%?)?$/.test(trimmed)
+					) {
+						return `oklch(${trimmed})`;
+					}
+
+					return trimmed;
+				}
+
+				function applyShadowVariables(root, modeStyles) {
+					const shadowColor = normalizeColor(modeStyles['shadow-color'] || 'hsl(0 0% 0%)');
+					const offsetX = modeStyles['shadow-offset-x'] || '0px';
+					const offsetY = modeStyles['shadow-offset-y'] || '1px';
+					const blur = modeStyles['shadow-blur'] || '2px';
+					const spread = modeStyles['shadow-spread'] || '0px';
+					const opacity = parseFloat(modeStyles['shadow-opacity'] || '0.1');
+
+					const createColorWithOpacity = (baseOpacity) => {
+						const finalOpacity = (opacity * baseOpacity).toFixed(2);
+
+						if (shadowColor.startsWith('oklch(')) {
+							const values = shadowColor.match(/oklch\((.*?)\)/)?.[1] || '0 0 0';
+							return `oklch(${values} / ${finalOpacity})`;
+						}
+
+						if (shadowColor.startsWith('hsl(')) {
+							const values = shadowColor.match(/hsl\((.*?)\)/)?.[1] || '0 0% 0%';
+							return `hsl(${values} / ${finalOpacity})`;
+						}
+
+						if (shadowColor.startsWith('rgb(')) {
+							const values = shadowColor.match(/rgb\((.*?)\)/)?.[1] || '0 0 0';
+							return `rgb(${values} / ${finalOpacity})`;
+						}
+
+						return shadowColor;
+					};
+
+					const secondLayer = (fixedOffsetY, fixedBlur) => {
+						const spread2 = `${parseFloat(String(spread).replace('px', '') || '0') - 1}px`;
+						return `${offsetX} ${fixedOffsetY} ${fixedBlur} ${spread2} ${createColorWithOpacity(1)}`;
+					};
+
+					const shadowMap = {
+						'shadow-2xs': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(0.5)}`,
+						'shadow-xs': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(0.5)}`,
+						'shadow-sm': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(1)}, ${secondLayer('1px', '2px')}`,
+						shadow: `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(1)}, ${secondLayer('1px', '2px')}`,
+						'shadow-md': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(1)}, ${secondLayer('2px', '4px')}`,
+						'shadow-lg': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(1)}, ${secondLayer('4px', '6px')}`,
+						'shadow-xl': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(1)}, ${secondLayer('8px', '10px')}`,
+						'shadow-2xl': `${offsetX} ${offsetY} ${blur} ${spread} ${createColorWithOpacity(2.5)}`
+					};
+
+					Object.entries(shadowMap).forEach(([name, value]) => {
+						root.style.setProperty(`--${name}`, value);
+					});
+				}
+
 				// Parse cookie
 				const cookieMap = {};
 				document.cookie.split(';').forEach((pair) => {
@@ -72,10 +147,11 @@
 					const modeStyles = themeStyles[mode] || {};
 					Object.entries(modeStyles).forEach(([key, value]) => {
 						if (typeof value === 'string' && !COMMON_STYLES.includes(key)) {
-							// Simple conversion to oklch (assumes value is already in correct format)
-							root.style.setProperty('--' + key, value);
+							root.style.setProperty('--' + key, normalizeColor(value));
 						}
 					});
+
+					applyShadowVariables(root, modeStyles);
 				} catch (e) {
 					console.error('Error applying theme:', e);
 				}
