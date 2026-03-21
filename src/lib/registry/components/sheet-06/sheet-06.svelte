@@ -12,8 +12,8 @@
 	import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
 	import { Button } from '$lib/components/ui/button';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
-	import type { NavigationItem } from './NavigationMenu.svelte';
-	import NavigationMenu from './NavigationMenu.svelte';
+	import type { NavigationItem } from './navigation-menu.svelte';
+	import NavigationMenu from './navigation-menu.svelte';
 
 	const navigationMenu: NavigationItem[] = [
 		{

@@ -37,8 +37,8 @@
 	import { createRawSnippet } from 'svelte';
 	import { createSvelteTable, renderSnippet } from '$lib/components/ui/data-table/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import DragAlongCell from './DragAlongCell.svelte';
-	import DraggableTableHeader from './DraggableTableHeader.svelte';
+	import DragAlongCell from './drag-along-cell.svelte';
+	import DraggableTableHeader from './draggable-table-header.svelte';
 
 	const data: Employee[] = [
 		{

@@ -2,9 +2,9 @@
 	import { useSortable } from '@dnd-kit-svelte/sortable';
 	import { CSS } from '@dnd-kit-svelte/utilities';
 	import type { Cell } from '@tanstack/table-core';
-	import type { Employee } from '$lib/components/shadcn-studio/data-table/data-table-08.svelte';
 	import { FlexRender } from '$lib/components/ui/data-table';
 	import * as Table from '$lib/components/ui/table/index.js';
+	import type { Employee } from './data-table-08.svelte';
 
 	type Props = { cell: Cell<Employee, unknown> };
 

@@ -18,7 +18,7 @@
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import CircleSmallIcon from '@lucide/svelte/icons/circle-small';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
-	import NavigationMenu from './NavigationMenu.svelte';
+	import NavigationMenu from './navigation-menu.svelte';
 
 	type Props = { level: number; item: NavigationItem };
 
