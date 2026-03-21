@@ -46,9 +46,9 @@
 				}
 			>
 				<Select.Trigger id="select-page" class="w-fit whitespace-nowrap" aria-label="Select page">
-					{`Page ${page}` || 'Select page'}
+					Page {page}
 				</Select.Trigger>
-				<Select.Content>
+				<Select.Content class="p-1">
 					{#each Array.from({ length: totalPages }, (_, i) => i + 1) as item}
 						<Select.Item value={String(item)}>
 							Page {item}
