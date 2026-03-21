@@ -70,7 +70,9 @@
 					{#if item.newMessages}
 						<div class="flex flex-col items-end gap-1">
 							<span class="text-xs text-muted-foreground">{item.time}</span>
-							<Badge class="h-5 min-w-5 rounded-full bg-green-600 px-1 dark:bg-green-400">
+							<Badge
+								class="h-5 min-w-5 rounded-full bg-green-600 px-1 text-primary-foreground! dark:bg-green-400"
+							>
 								{item.newMessages}
 							</Badge>
 						</div>
