@@ -12,7 +12,7 @@
 		{/snippet}
 	</Dialog.Trigger>
 	<Dialog.Content class="sm:max-w-lg">
-		<Dialog.Header class="text-center">
+		<Dialog.Header>
 			<Dialog.Title class="text-xl">Subscribe blog for latest updates</Dialog.Title>
 			<Dialog.Description class="text-base">
 				Subscribe to our blog to stay updated with the latest posts and news. Simply enter your

@@ -53,7 +53,7 @@
 		{/snippet}
 	</Dialog.Trigger>
 	<Dialog.Content class="sm:max-w-lg">
-		<Dialog.Header class="text-center">
+		<Dialog.Header>
 			<Dialog.Title class="text-xl">Invite new members</Dialog.Title>
 		</Dialog.Header>
 		<form class="flex gap-4 max-sm:flex-col">

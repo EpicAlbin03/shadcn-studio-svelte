@@ -11,7 +11,7 @@
 	</Dialog.Trigger>
 	<Dialog.Content class="gap-0 p-0 sm:max-h-[min(600px,80vh)] sm:max-w-md">
 		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b px-6 py-4">Terms and Condition</Dialog.Title>
+			<Dialog.Title class="border-b px-6 py-6">Terms and Condition</Dialog.Title>
 			<div class="px-6 py-4 text-sm text-muted-foreground">
 				<ol class="flex list-decimal flex-col gap-2 pl-4">
 					<li>

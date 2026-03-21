@@ -13,7 +13,7 @@
 	</Dialog.Trigger>
 	<Dialog.Content class="flex max-h-[min(600px,80vh)] flex-col gap-0 p-0 sm:max-w-md">
 		<Dialog.Header class="contents space-y-0 text-left">
-			<Dialog.Title class="border-b px-6 py-4">Product Information</Dialog.Title>
+			<Dialog.Title class="border-b px-6 py-6">Product Information</Dialog.Title>
 			<ScrollArea class="flex max-h-full flex-col overflow-hidden" tabindex={0}>
 				<Dialog.Description>
 					<div class="p-6">

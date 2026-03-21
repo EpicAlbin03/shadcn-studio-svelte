@@ -19,7 +19,9 @@
 			>
 				<TriangleAlertIcon class="size-6 text-destructive" />
 			</div>
-			<AlertDialog.Title>Are you absolutely sure you want to delete?</AlertDialog.Title>
+			<AlertDialog.Title class="mx-auto">
+				Are you absolutely sure you want to delete?
+			</AlertDialog.Title>
 			<AlertDialog.Description class="text-center">
 				This action cannot be undone. This will permanently delete your account and remove your data
 				from our servers.
