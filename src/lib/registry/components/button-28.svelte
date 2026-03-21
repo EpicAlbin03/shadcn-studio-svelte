@@ -17,22 +17,21 @@
 	}
 </script>
 
-<Button
-	variant="outline"
-	class="relative disabled:opacity-100"
-	onclick={handleCopy}
-	disabled={copied}
->
-	<span class={cn('transition-all', copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0')}>
-		<CheckIcon class="stroke-green-600 dark:stroke-green-400" />
-	</span>
-	<span
-		class={cn(
-			'absolute inset-s-4 transition-all',
-			copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
-		)}
-	>
-		<CopyIcon />
+<Button variant="outline" class="disabled:opacity-100" onclick={handleCopy} disabled={copied}>
+	<span class="relative size-4 shrink-0">
+		<CheckIcon
+			class={cn(
+				'absolute inset-0 size-4 transition-all',
+				copied ? 'scale-100 opacity-100' : 'scale-0 opacity-0',
+				'stroke-green-600 dark:stroke-green-400'
+			)}
+		/>
+		<CopyIcon
+			class={cn(
+				'absolute inset-0 size-4 transition-all',
+				copied ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+			)}
+		/>
 	</span>
 	{copied ? 'Copied!' : 'Copy'}
 </Button>
