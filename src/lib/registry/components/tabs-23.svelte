@@ -28,8 +28,8 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs value="explore" class="flex-row">
-		<TabsList class="h-full flex-col gap-1.5">
+	<Tabs value="explore" orientation="vertical">
+		<TabsList class="gap-1.5">
 			{#each tabs as tab (tab.value)}
 				<TabsTrigger
 					value={tab.value}

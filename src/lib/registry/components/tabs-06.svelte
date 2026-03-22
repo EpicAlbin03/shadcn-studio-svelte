@@ -29,9 +29,12 @@
 
 <div class="w-full max-w-md">
 	<Tabs value="explore" class="gap-4">
-		<TabsList class="h-full">
+		<TabsList class="h-full group-data-[orientation=horizontal]/tabs:h-auto">
 			{#each tabs as tab (tab.value)}
-				<TabsTrigger value={tab.value} class="flex flex-col items-center gap-1 px-2.5 sm:px-3">
+				<TabsTrigger
+					value={tab.value}
+					class="flex flex-col items-center gap-1 px-2.5 group-data-[orientation=horizontal]/tabs:h-auto sm:px-3"
+				>
 					<Badge class="h-5 min-w-5 rounded-full px-1 tabular-nums">{tab.count}</Badge>
 					{tab.name}
 				</TabsTrigger>

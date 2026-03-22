@@ -30,8 +30,8 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs value="explore" class="flex-row">
-		<TabsList class="h-full flex-col">
+	<Tabs value="explore" orientation="vertical">
+		<TabsList>
 			{#each tabs as { icon: Icon, name, value } (value)}
 				<TabsTrigger {value} class="flex w-full items-center justify-start gap-1.5 px-2.5 sm:px-3">
 					<Icon />

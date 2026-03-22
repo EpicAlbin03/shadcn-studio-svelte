@@ -31,9 +31,12 @@
 
 <div class="w-full max-w-md">
 	<Tabs value="explore" class="gap-4">
-		<TabsList class="h-full">
+		<TabsList class="h-full group-data-[orientation=horizontal]/tabs:h-auto">
 			{#each tabs as { icon: Icon, name, value } (value)}
-				<TabsTrigger {value} class="flex flex-col items-center gap-1 px-2.5 sm:px-3">
+				<TabsTrigger
+					{value}
+					class="flex flex-col items-center gap-1 px-2.5 group-data-[orientation=horizontal]/tabs:h-auto sm:px-3"
+				>
 					<Icon />
 					{name}
 				</TabsTrigger>

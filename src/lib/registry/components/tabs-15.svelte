@@ -24,8 +24,8 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs value="explore" class="flex-row">
-		<TabsList class="h-full flex-col">
+	<Tabs value="explore" orientation="vertical">
+		<TabsList>
 			{#each tabs as tab (tab.value)}
 				<TabsTrigger value={tab.value} class="w-full">
 					{tab.name}

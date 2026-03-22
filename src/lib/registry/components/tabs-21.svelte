@@ -31,8 +31,8 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs value="explore" class="flex-row gap-4">
-		<TabsList class="h-full flex-col gap-2">
+	<Tabs value="explore" orientation="vertical" class="gap-4">
+		<TabsList class="gap-2">
 			{#each tabs as { icon: Icon, name, value } (value)}
 				<Tooltip.Root>
 					<Tooltip.Trigger>

@@ -24,12 +24,12 @@
 </script>
 
 <div class="w-full max-w-md">
-	<Tabs value="explore" class="flex-row">
-		<TabsList class="h-full flex-col rounded-none border-l bg-background p-0">
+	<Tabs value="explore" orientation="vertical">
+		<TabsList class="rounded-none border-l bg-background p-0">
 			{#each tabs as tab (tab.value)}
 				<TabsTrigger
 					value={tab.value}
-					class="h-full w-full justify-start rounded-none border-l-3 border-transparent bg-background data-[state=active]:border-primary data-[state=active]:shadow-none dark:data-[state=active]:border-primary"
+					class="w-full justify-start rounded-none border-l-3 border-transparent bg-background data-active:border-primary data-active:shadow-none dark:data-active:border-primary"
 				>
 					{tab.name}
 				</TabsTrigger>
