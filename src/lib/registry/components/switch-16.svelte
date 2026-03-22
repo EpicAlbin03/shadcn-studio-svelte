@@ -6,11 +6,11 @@
 </script>
 
 <div
-	class="relative flex w-full items-start gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-[state=checked]:border-primary/50"
+	class="relative flex w-full items-start gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-checked:border-primary/50"
 >
 	<Switch
 		{id}
-		class="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2.5 data-[state=checked]:[&_span]:rtl:-translate-x-2.5"
+		class="order-1 after:absolute after:inset-0 data-[size=default]:h-4 data-[size=default]:w-6 data-[size=default]:[&_span]:size-3 data-[size=default]:[&_span]:data-checked:translate-x-2.5 rtl:data-[size=default]:[&_span]:data-checked:-translate-x-2.5"
 		aria-describedby="{id}-description"
 	/>
 	<div class="flex grow gap-3">

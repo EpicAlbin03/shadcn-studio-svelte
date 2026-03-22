@@ -6,10 +6,10 @@
 	<Switch aria-label="Small switch" />
 	<Switch
 		aria-label="Medium switch"
-		class="h-6 w-10 [&_span]:size-5 data-[state=checked]:[&_span]:translate-x-4.5 data-[state=checked]:[&_span]:rtl:-translate-x-4.5"
+		class="data-[size=default]:h-6 data-[size=default]:w-10 data-[size=default]:[&_span]:size-5 data-[size=default]:[&_span]:data-checked:translate-x-4.5 rtl:data-[size=default]:[&_span]:data-checked:-translate-x-4.5"
 	/>
 	<Switch
 		aria-label="Large switch"
-		class="h-7 w-12 [&_span]:size-6 data-[state=checked]:[&_span]:translate-x-5.5 data-[state=checked]:[&_span]:rtl:-translate-x-5.5"
+		class="data-[size=default]:h-7 data-[size=default]:w-12 data-[size=default]:[&_span]:size-6 data-[size=default]:[&_span]:data-checked:translate-x-5.5 rtl:data-[size=default]:[&_span]:data-checked:-translate-x-5.5"
 	/>
 </div>
