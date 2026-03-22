@@ -7,12 +7,12 @@
 
 <RadioGroup class="w-full max-w-96 gap-2" value="1">
 	<div
-		class="relative w-full rounded-md border border-input p-3 shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-[state=checked]:border-primary/50"
+		class="relative w-full rounded-md border border-input p-3 shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-checked:border-primary/50"
 	>
 		<RadioGroupItem
 			value="1"
 			id="{id}-1"
-			class="sr-only"
+			class="sr-only absolute"
 			aria-label="plan-radio-basic"
 			aria-describedby="{id}-1-description"
 		/>
@@ -32,12 +32,12 @@
 	</div>
 
 	<div
-		class="relative w-full rounded-md border border-input p-3 shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-[state=checked]:border-primary/50"
+		class="relative w-full rounded-md border border-input p-3 shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-checked:border-primary/50"
 	>
 		<RadioGroupItem
 			value="2"
 			id="{id}-2"
-			class="sr-only"
+			class="sr-only absolute"
 			aria-label="plan-radio-premium"
 			aria-describedby="{id}-2-description"
 		/>

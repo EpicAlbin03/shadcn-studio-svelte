@@ -8,7 +8,7 @@
 		<RadioGroupItem
 			value="light"
 			id="theme-light"
-			class="text-primary-foreground data-[state=checked]:border-primary data-[state=checked]:bg-primary! data-[state=checked]:[&_svg]:fill-primary-foreground"
+			class="text-primary-foreground data-checked:border-primary data-checked:bg-primary! data-checked:[&_svg]:fill-primary-foreground"
 		/>
 		<Label for="theme-light">Light Theme</Label>
 	</div>
@@ -16,7 +16,7 @@
 		<RadioGroupItem
 			value="dark"
 			id="theme-dark"
-			class="text-primary-foreground data-[state=checked]:border-primary data-[state=checked]:bg-primary! data-[state=checked]:[&_svg]:fill-primary-foreground"
+			class="text-primary-foreground data-checked:border-primary data-checked:bg-primary! data-checked:[&_svg]:fill-primary-foreground"
 		/>
 		<Label for="theme-dark">Dark Theme</Label>
 	</div>
@@ -24,7 +24,7 @@
 		<RadioGroupItem
 			value="system"
 			id="theme-system"
-			class="text-primary-foreground data-[state=checked]:border-primary data-[state=checked]:bg-primary! data-[state=checked]:[&_svg]:fill-primary-foreground"
+			class="text-primary-foreground data-checked:border-primary data-checked:bg-primary! data-checked:[&_svg]:fill-primary-foreground"
 		/>
 		<Label for="theme-system">System Default</Label>
 	</div>

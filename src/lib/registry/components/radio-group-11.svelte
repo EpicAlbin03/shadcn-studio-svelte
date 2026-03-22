@@ -7,8 +7,9 @@
 
 <RadioGroup class="w-full max-w-96 gap-2" value="1">
 	<div
-		class="relative flex w-full items-center gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-[state=checked]:border-primary/50"
+		class="relative flex w-full items-center gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-checked:border-primary/50"
 	>
+		<label for="{id}-1" class="absolute inset-0 z-10 cursor-pointer"></label>
 		<RadioGroupItem
 			value="1"
 			id="{id}-1"
@@ -27,8 +28,9 @@
 	</div>
 
 	<div
-		class="relative flex w-full items-center gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-[state=checked]:border-primary/50"
+		class="relative flex w-full items-center gap-2 rounded-md border border-input p-4 shadow-xs outline-none has-data-checked:border-primary/50"
 	>
+		<label for="{id}-2" class="absolute inset-0 z-10 cursor-pointer"></label>
 		<RadioGroupItem
 			value="2"
 			id="{id}-2"

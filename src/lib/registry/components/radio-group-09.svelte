@@ -15,8 +15,9 @@
 <RadioGroup class="w-full max-w-96 gap-0 -space-y-px rounded-md shadow-xs" value="2">
 	{#each items as item (`${id}-${item.value}`)}
 		<div
-			class="relative flex flex-col gap-4 border border-input p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent"
+			class="relative flex flex-col gap-4 border border-input p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-checked:z-10 has-data-checked:border-primary/50 has-data-checked:bg-accent"
 		>
+			<label for="{id}-{item.value}" class="absolute inset-0 z-10"></label>
 			<div class="flex items-center justify-between">
 				<div class="flex items-center gap-2">
 					<RadioGroupItem

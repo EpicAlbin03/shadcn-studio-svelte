@@ -17,12 +17,12 @@
 	<RadioGroup class="grid grid-cols-3 gap-2" value="1">
 		{#each items as item (`${id}-${item.value}`)}
 			<label
-				class="relative flex flex-col items-center gap-3 rounded-md border border-input px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50 has-data-[state=checked]:border-primary/80"
+				class="relative flex flex-col items-center gap-3 rounded-md border border-input px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 has-data-checked:border-primary/80 has-data-disabled:cursor-not-allowed has-data-disabled:opacity-50"
 			>
 				<RadioGroupItem
 					id="{id}-{item.value}"
 					value={item.value}
-					class="sr-only after:absolute after:inset-0"
+					class="sr-only absolute after:absolute after:inset-0"
 					aria-label="size-radio-{item.value}"
 					disabled={item.disabled}
 				/>

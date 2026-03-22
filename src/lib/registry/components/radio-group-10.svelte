@@ -15,15 +15,16 @@
 <RadioGroup class="w-full max-w-96 gap-0 space-y-2 rounded-md *:rounded-full" value="2">
 	{#each items as item (`${id}-${item.value}`)}
 		<div
-			class="relative flex flex-col gap-4 border border-input p-4 outline-none has-data-[state=checked]:z-10 has-data-[state=checked]:bg-primary has-data-[state=checked]:text-primary-foreground"
+			class="relative flex flex-col gap-4 border border-input p-4 outline-none has-data-checked:z-10 has-data-checked:bg-primary has-data-checked:text-primary-foreground"
 		>
+			<label for="{id}-{item.value}" class="absolute inset-0 z-10 cursor-pointer"></label>
 			<div class="group flex items-center justify-between">
 				<div class="flex items-center gap-2">
 					<RadioGroupItem
 						id="{id}-{item.value}"
 						value={item.value}
 						aria-label="plan-radio-{item.value}"
-						class="bg-accent text-primary after:absolute after:inset-0 data-[state=checked]:border-primary-foreground data-[state=checked]:bg-primary-foreground! data-[state=checked]:[&_svg]:fill-primary"
+						class="bg-accent text-primary after:absolute after:inset-0 data-checked:border-primary-foreground data-checked:bg-primary-foreground! data-checked:[&_svg]:fill-primary"
 						aria-describedby="{id}-{item.value}-price"
 					/>
 					<Label class="inline-flex items-center" for="{id}-{item.value}">
