@@ -1,43 +1,52 @@
 <script lang="ts">
-	import Cleave from 'cleave.js';
+	import { DefaultDateDelimiter, formatDate, registerCursorTracker } from 'cleave-zen';
+	import type { Attachment } from 'svelte/attachments';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 
 	const id = $props.id();
 
-	let inputRef = $state<HTMLInputElement>(null!);
-
-	$effect(() => {
-		if (!inputRef) return;
-
-		const cleave = new Cleave(inputRef, {
-			date: true,
-			datePattern: ['m', 'y']
+	const expiryAttachment: Attachment<HTMLInputElement> = (input) => {
+		const unregisterCursorTracker = registerCursorTracker({
+			delimiter: DefaultDateDelimiter,
+			input
 		});
 
-		return () => cleave.destroy();
-	});
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatDate(target.value, {
+				datePattern: ['m', 'y']
+			});
+		};
+
+		input.addEventListener('input', handleInput);
+
+		return () => {
+			input.removeEventListener('input', handleInput);
+			unregisterCursorTracker();
+		};
+	};
 </script>
 
 <div class="w-full max-w-xs space-y-2">
 	<Label for={id}>Expiry date</Label>
 	<Input
 		{id}
-		bind:ref={inputRef}
 		type="text"
 		placeholder="MM/YY"
 		autocomplete="cc-exp"
 		class="peer pe-11"
+		{@attach expiryAttachment}
 	/>
 	<p class="text-xs text-muted-foreground">
 		Built with
 		<a
 			class="underline hover:text-foreground"
-			href="https://github.com/nosir/cleave.js"
+			href="https://github.com/nosir/cleave-zen"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			cleave.js
+			cleave-zen
 		</a>
 	</p>
 </div>

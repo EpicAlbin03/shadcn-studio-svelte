@@ -1,43 +1,45 @@
 <script lang="ts">
-	import Cleave from 'cleave.js';
+	import { formatGeneral } from 'cleave-zen';
+	import type { Attachment } from 'svelte/attachments';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 
 	const id = $props.id();
 
-	let inputRef = $state<HTMLInputElement>(null!);
+	const cvcAttachment: Attachment<HTMLInputElement> = (input) => {
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatGeneral(target.value, {
+				blocks: [4],
+				numericOnly: true
+			});
+		};
 
-	$effect(() => {
-		if (!inputRef) return;
+		input.addEventListener('input', handleInput);
 
-		const cleave = new Cleave(inputRef, {
-			blocks: [4],
-			numericOnly: true
-		});
-
-		return () => cleave.destroy();
-	});
+		return () => input.removeEventListener('input', handleInput);
+	};
 </script>
 
 <div class="w-full max-w-xs space-y-2">
-	<Label for={id}>CVC code</Label>
+	<Label for={id}>Code</Label>
 	<Input
 		{id}
-		bind:ref={inputRef}
 		type="text"
 		placeholder="CVC"
 		autocomplete="cc-csc"
 		class="peer pe-11"
+		{@attach cvcAttachment}
 	/>
 	<p class="text-xs text-muted-foreground">
 		Built with
 		<a
 			class="underline hover:text-foreground"
-			href="https://github.com/nosir/cleave.js"
+			href="https://github.com/nosir/cleave-zen"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			cleave.js
+			cleave-zen
 		</a>
 	</p>
 </div>
