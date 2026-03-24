@@ -13,9 +13,7 @@
 		toggle: Component;
 	};
 
-	let { toggle }: Props = $props();
-
-	let Toggle = $state(toggle);
+	let { toggle: Toggle }: Props = $props();
 </script>
 
 <header

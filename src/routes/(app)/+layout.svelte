@@ -5,7 +5,8 @@
 
 	let { children, data } = $props();
 
-	const userConfig = UserConfigContext.set(new UserConfig(data.userSettings));
+	// svelte-ignore state_referenced_locally
+	UserConfigContext.set(new UserConfig(data.userSettings));
 
 	afterNavigate(async ({ to }) => {
 		if (to?.url.hash) {
