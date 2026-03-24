@@ -728,8 +728,8 @@
 			},
 			links: [{ label: 'shadcn-svelte', href: 'https://shadcn-svelte.com/docs/components/input' }],
 			components: [
-				{ name: 'input-mask-01' },
-				{ name: 'input-mask-02' },
+				{ name: 'input-mask-01', underConstruction: true },
+				{ name: 'input-mask-02', underConstruction: true },
 				{ name: 'input-mask-03' },
 				{ name: 'input-mask-04' },
 				{ name: 'input-mask-05' },

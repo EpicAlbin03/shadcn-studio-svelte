@@ -1,4 +1,8 @@
-<script lang="ts">
+<script>
+	import UnderConstruction from '$lib/components/under-construction.svelte';
+</script>
+
+<!-- <script lang="ts">
 	import Inputmask from 'inputmask';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
@@ -34,4 +38,6 @@
 			inputmask
 		</a>
 	</p>
-</div>
+</div> -->
+
+<UnderConstruction />
