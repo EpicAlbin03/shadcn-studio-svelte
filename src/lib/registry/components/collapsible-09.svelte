@@ -1,7 +1,15 @@
 <script lang="ts">
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import CreditCardIcon from '@lucide/svelte/icons/credit-card';
-	import Cleave from 'cleave.js';
+	import {
+		DefaultCreditCardDelimiter,
+		DefaultDateDelimiter,
+		formatCreditCard,
+		formatDate,
+		formatGeneral,
+		registerCursorTracker
+	} from 'cleave-zen';
+	import type { Attachment } from 'svelte/attachments';
 	import { Button } from '$lib/components/ui/button';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import { Input } from '$lib/components/ui/input';
@@ -28,31 +36,59 @@
 		{ value: '3', label: 'Overnight', description: 'Tomorrow', price: '$10.00' }
 	];
 
-	let cardNumberRef = $state<HTMLInputElement>(null!);
-	let expiryDateRef = $state<HTMLInputElement>(null!);
-	let cvcRef = $state<HTMLInputElement>(null!);
+	const cardNumberAttachment: Attachment<HTMLInputElement> = (input) => {
+		const unregisterCursorTracker = registerCursorTracker({
+			delimiter: DefaultCreditCardDelimiter,
+			input
+		});
 
-	$effect(() => {
-		if (!cardNumberRef || !expiryDateRef || !cvcRef) return;
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatCreditCard(target.value);
+		};
 
-		const cardNumberCleave = new Cleave(cardNumberRef, {
-			creditCard: true
-		});
-		const expiryDateCleave = new Cleave(expiryDateRef, {
-			date: true,
-			datePattern: ['m', 'y']
-		});
-		const cvcCleave = new Cleave(cvcRef, {
-			blocks: [4],
-			numericOnly: true
-		});
+		input.addEventListener('input', handleInput);
 
 		return () => {
-			cardNumberCleave.destroy();
-			expiryDateCleave.destroy();
-			cvcCleave.destroy();
+			input.removeEventListener('input', handleInput);
+			unregisterCursorTracker();
 		};
-	});
+	};
+
+	const expiryAttachment: Attachment<HTMLInputElement> = (input) => {
+		const unregisterCursorTracker = registerCursorTracker({
+			delimiter: DefaultDateDelimiter,
+			input
+		});
+
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatDate(target.value, {
+				datePattern: ['m', 'y']
+			});
+		};
+
+		input.addEventListener('input', handleInput);
+
+		return () => {
+			input.removeEventListener('input', handleInput);
+			unregisterCursorTracker();
+		};
+	};
+
+	const cvcAttachment: Attachment<HTMLInputElement> = (input) => {
+		const handleInput = (event: Event) => {
+			const target = event.target as HTMLInputElement;
+			target.value = formatGeneral(target.value, {
+				blocks: [4],
+				numericOnly: true
+			});
+		};
+
+		input.addEventListener('input', handleInput);
+
+		return () => input.removeEventListener('input', handleInput);
+	};
 </script>
 
 <div class="w-full space-y-3">
@@ -190,11 +226,11 @@
 						<div class="relative focus-within:z-1">
 							<Input
 								id="number-{id}"
-								bind:ref={cardNumberRef}
 								type="text"
 								placeholder="Card number"
 								autocomplete="cc-number"
 								class="peer rounded-b-none pe-9 shadow-none"
+								{@attach cardNumberAttachment}
 							/>
 							<div
 								class="pointer-events-none absolute inset-y-0 inset-e-0 flex items-center justify-center pe-3 text-muted-foreground peer-disabled:opacity-50"
@@ -207,21 +243,21 @@
 							<div class="min-w-0 flex-1 focus-within:z-1">
 								<Input
 									id="expiry-{id}"
-									bind:ref={expiryDateRef}
 									type="text"
 									placeholder="MM/YY"
 									autocomplete="cc-exp"
 									class="rounded-e-none rounded-t-none shadow-none"
+									{@attach expiryAttachment}
 								/>
 							</div>
 							<div class="-ms-px min-w-0 flex-1 focus-within:z-1">
 								<Input
 									id="cvc-{id}"
-									bind:ref={cvcRef}
 									type="text"
 									placeholder="CVC"
 									autocomplete="cc-csc"
 									class="rounded-s-none rounded-t-none shadow-none"
+									{@attach cvcAttachment}
 								/>
 							</div>
 						</div>
@@ -234,11 +270,11 @@
 		Built with
 		<a
 			class="underline hover:text-foreground"
-			href="https://github.com/nosir/cleave.js"
+			href="https://github.com/nosir/cleave-zen"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			cleave.js
+			cleave-zen
 		</a>
 	</p>
 </div>
