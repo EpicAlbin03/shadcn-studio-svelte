@@ -23,33 +23,38 @@
 
 <MetaData {title} {description} />
 
-<div class="flex flex-1 flex-col space-y-4 p-6 sm:mb-20 sm:space-y-8 sm:p-8">
-	<div class="flex flex-col items-start space-y-3">
-		<h1 class="text-2xl font-bold sm:text-3xl">{category.name}</h1>
-		<p class="text-muted-foreground">
-			Elevate your UI with a growing collection of {normalComponents.length} Shadcn {category.name.toLowerCase()}
-			components, built using shadcn-svelte and TailwindCSS.
-		</p>
-	</div>
-	<div class="flex items-center space-x-2">
-		{#each category.links || [] as link (link.href)}
-			<Badge href={link.href} variant="secondary" target="_blank" rel="noreferrer">
-				{link.label}
-				<ExternalLinkIcon />
-			</Badge>
-		{/each}
-	</div>
-	{@render category.note?.()}
-	<ComponentsGrid components={normalComponents} breakpoints={category.breakpoints} />
-	{#if category.hasAnimation}
-		<div id="animated-variants" class="flex flex-col items-start space-y-3 pt-24">
-			<h2 class="text-2xl font-bold sm:text-3xl">Animated {category.name}</h2>
+{#key category.slug}
+	<div class="flex flex-1 flex-col space-y-4 p-6 sm:mb-20 sm:space-y-8 sm:p-8">
+		<div class="flex flex-col items-start space-y-3">
+			<h1 class="text-2xl font-bold sm:text-3xl">{category.name}</h1>
 			<p class="text-muted-foreground">
-				Enhance your UI with {animatedComponents.length}
-				animated {category.name.toLowerCase()} components, built using shadcn-svelte, TailwindCSS, and
-				motion-svelte.
+				Elevate your UI with a growing collection of {normalComponents.length} Shadcn {category.name.toLowerCase()}
+				components, built using shadcn-svelte and TailwindCSS.
 			</p>
 		</div>
-		<ComponentsGrid components={animatedComponents} breakpoints={category.animation?.breakpoints} />
-	{/if}
-</div>
+		<div class="flex items-center space-x-2">
+			{#each category.links || [] as link (link.href)}
+				<Badge href={link.href} variant="secondary" target="_blank" rel="noreferrer">
+					{link.label}
+					<ExternalLinkIcon />
+				</Badge>
+			{/each}
+		</div>
+		{@render category.note?.()}
+		<ComponentsGrid components={normalComponents} breakpoints={category.breakpoints} />
+		{#if category.hasAnimation}
+			<div id="animated-variants" class="flex flex-col items-start space-y-3 pt-24">
+				<h2 class="text-2xl font-bold sm:text-3xl">Animated {category.name}</h2>
+				<p class="text-muted-foreground">
+					Enhance your UI with {animatedComponents.length}
+					animated {category.name.toLowerCase()} components, built using shadcn-svelte, TailwindCSS, and
+					motion-svelte.
+				</p>
+			</div>
+			<ComponentsGrid
+				components={animatedComponents}
+				breakpoints={category.animation?.breakpoints}
+			/>
+		{/if}
+	</div>
+{/key}
