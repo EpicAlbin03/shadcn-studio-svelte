@@ -17,7 +17,7 @@
 	} from '$lib/components/ui/collapsible';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Sidebar from '$lib/components/ui/sidebar';
-	import { categories } from '$lib/config/components.svelte';
+	import { categories } from '$lib/registry/components.svelte';
 	import { cn } from '$lib/utils';
 	import { gettingStartedPages } from '$lib/utils/pages';
 	import { CustomSidebarMenuItem, CustomSidebarMenuSubItem } from '.';

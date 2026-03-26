@@ -1,5 +1,5 @@
 import type { Transport } from '@sveltejs/kit';
-import { categories } from '$lib/config/components.svelte';
+import { categories } from '$lib/registry/components.svelte';
 
 export const transport: Transport = {
 	ComponentCategory: {

@@ -3,7 +3,6 @@ import {
 	loadHighlightedCodeBlock,
 	loadHighlightedCodeBlocks
 } from '$lib/server/registry/highlighted-code-blocks.js';
-import { BLOCKS_QUERY_DELIMITER } from '$lib/utils/blocks';
 import type { RequestHandler } from './$types.js';
 
 function normalizeItemNames(itemNames: string[]): string[] {
@@ -26,8 +25,8 @@ function normalizeItemNames(itemNames: string[]): string[] {
 function parseItemParam(itemParam?: string): string[] | null {
 	if (!itemParam) return null;
 
-	if (itemParam.includes(BLOCKS_QUERY_DELIMITER)) {
-		return itemParam.split(BLOCKS_QUERY_DELIMITER);
+	if (itemParam.includes('+')) {
+		return itemParam.split('+');
 	}
 
 	if (itemParam.includes(',')) {

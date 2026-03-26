@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { categories, getCategory, type ComponentCategory } from '$lib/config/components.svelte';
+import { categories, getCategory, type ComponentCategory } from '$lib/registry/components.svelte';
 import { loadHighlightedCodeBlocks } from '$lib/server/registry/highlighted-code-blocks';
 import type { ComponentProps } from '$lib/types/components';
 import type { EntryGenerator, PageServerLoad } from './$types';

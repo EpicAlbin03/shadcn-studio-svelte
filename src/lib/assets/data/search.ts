@@ -1,6 +1,6 @@
 import CircleIcon from '@lucide/svelte/icons/circle';
 import FileIcon from '@lucide/svelte/icons/file';
-import { categories } from '$lib/config/components.svelte';
+import { categories } from '$lib/registry/components.svelte';
 import { registryCategories } from '$lib/registry/registry-categories';
 
 type SearchData = {

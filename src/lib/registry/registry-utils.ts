@@ -6,7 +6,7 @@ export type FileTree = {
 	children?: FileTree[];
 };
 
-type ComponentAliases = {
+export type ComponentAliases = {
 	ui: string;
 	utils: string;
 	components: string;

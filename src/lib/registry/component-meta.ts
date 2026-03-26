@@ -1,13 +1,6 @@
-export type ComponentMeta = {
-	cssVars?: {
-		theme?: Record<string, string>;
-		light?: Record<string, string>;
-		dark?: Record<string, string>;
-	};
-	css?: Record<string, string | Record<string, string | Record<string, string>>>;
-};
+import type { ComponentCSS } from './components.types';
 
-export const componentMeta: Record<string, ComponentMeta> = {
+export const componentMeta: Record<string, ComponentCSS> = {
 	'button-46': {
 		cssVars: {
 			theme: {
@@ -28,15 +21,6 @@ export const componentMeta: Record<string, ComponentMeta> = {
 					'box-shadow': '0 0 0 0 transparent',
 					transform: 'scale(1)'
 				}
-			}
-		}
-	},
-	'button-55': {
-		css: {
-			'@property --button-angle': {
-				syntax: '<angle>',
-				inherits: 'false',
-				'initial-value': '-75deg'
 			}
 		}
 	}
