@@ -34,24 +34,9 @@
 	} from '$lib/assets/svg';
 	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import { componentMeta } from './component-meta';
-	import type {
-		ComponentCategory as BaseComponentCategory,
-		ComponentSection
-	} from './components.types';
+	import type { ComponentCategory } from './components.types';
 
-	type LegacyAnimation = {
-		badge?: string;
-		breakpoints?: ComponentSection['breakpoints'];
-	};
-
-	type ComponentCategory = BaseComponentCategory & {
-		badge?: string;
-		isComingSoon?: boolean;
-		hasAnimation?: boolean;
-		animation?: LegacyAnimation;
-	};
-
-	export const categories: ComponentCategory[] = [
+	export const categories = [
 		{
 			slug: 'accordion',
 			svg: AccordionSVG,
@@ -238,15 +223,6 @@
 		{
 			slug: 'button',
 			svg: ButtonSVG,
-			badge: '+8 New',
-			hasAnimation: true,
-			animation: {
-				badge: '+8 New',
-				breakpoints: {
-					md: 2,
-					xl: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -299,7 +275,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2,
 						xl: 3
@@ -330,12 +306,6 @@
 		{
 			slug: 'button-group',
 			svg: ButtonGroupSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -361,7 +331,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2
 					},
@@ -419,12 +389,6 @@
 		{
 			slug: 'card',
 			svg: CardSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -452,7 +416,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2
 					},
@@ -463,13 +427,6 @@
 		{
 			slug: 'checkbox',
 			svg: CheckboxSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2,
-					xl: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -500,7 +457,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2,
 						xl: 3
@@ -512,12 +469,6 @@
 		{
 			slug: 'collapsible',
 			svg: CollapsibleSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					xl: 2
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -543,7 +494,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						xl: 2
 					},
@@ -554,13 +505,6 @@
 		{
 			slug: 'combobox',
 			svg: ComboboxSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2,
-					xl: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -586,7 +530,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2,
 						xl: 3
@@ -663,12 +607,6 @@
 		{
 			slug: 'dialog',
 			svg: DialogSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					sm: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -705,7 +643,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						sm: 3
 					},
@@ -716,13 +654,6 @@
 		{
 			slug: 'dropdown-menu',
 			svg: DropdownSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					sm: 2,
-					md: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -754,7 +685,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						sm: 2,
 						md: 3
@@ -942,13 +873,6 @@
 		{
 			slug: 'popover',
 			svg: PopoverSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					sm: 2,
-					xl: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -975,7 +899,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						sm: 2,
 						xl: 3
@@ -987,12 +911,6 @@
 		{
 			slug: 'radio-group',
 			svg: RadioGroupSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -1022,7 +940,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2
 					},
@@ -1033,13 +951,6 @@
 		{
 			slug: 'select',
 			svg: SelectSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					md: 2,
-					xl: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -1090,7 +1001,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						md: 2,
 						xl: 3
@@ -1166,13 +1077,6 @@
 		{
 			slug: 'switch',
 			svg: SwitchSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					sm: 2,
-					md: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -1205,7 +1109,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						sm: 2,
 						md: 3
@@ -1247,13 +1151,6 @@
 		{
 			slug: 'tabs',
 			svg: TabsSVG,
-
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					xl: 2
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -1293,7 +1190,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						xl: 2
 					},
@@ -1342,13 +1239,6 @@
 		{
 			slug: 'tooltip',
 			svg: TooltipSVG,
-			hasAnimation: true,
-			animation: {
-				breakpoints: {
-					sm: 2,
-					lg: 3
-				}
-			},
 			sections: [
 				{
 					links: [
@@ -1378,7 +1268,7 @@
 					]
 				},
 				{
-					slug: 'animated-variants',
+					slug: 'animated',
 					breakpoints: {
 						sm: 2,
 						lg: 3
@@ -1386,83 +1276,8 @@
 					components: [{ slug: 'tooltip-16' }, { slug: 'tooltip-17' }]
 				}
 			]
-		},
-		{
-			slug: 'carousel',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'chart',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'command',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'context-menu',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'drawer',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'menubar',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'navigation-menu',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'progress',
-			isComingSoon: true,
-			sections: []
-		},
-
-		{
-			slug: 'separator',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'sidebar',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'skeleton',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'slider',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'toggle',
-			isComingSoon: true,
-			sections: []
-		},
-		{
-			slug: 'toggle-group',
-			isComingSoon: true,
-			sections: []
 		}
-	];
-
-	export function getCategory(slug: string): ComponentCategory | undefined {
-		return categories.find((category) => category.slug === slug);
-	}
+	] satisfies ComponentCategory[];
 </script>
 
 {#snippet formNote()}

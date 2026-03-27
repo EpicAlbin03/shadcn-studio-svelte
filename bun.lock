@@ -63,7 +63,7 @@
         "prettier-plugin-tailwindcss": "^0.7.2",
         "rimraf": "^6.1.3",
         "runed": "^0.37.1",
-        "shadcn-svelte": "^1.2.1",
+        "shadcn-svelte": "^1.2.4",
         "shepherd.js": "^15.2.1",
         "shiki": "^4.0.2",
         "super-sitemap": "^1.0.7",
@@ -912,7 +912,7 @@
 
     "set-cookie-parser": ["set-cookie-parser@3.0.1", "", {}, "sha512-n7Z7dXZhJbwuAHhNzkTti6Aw9QDDjZtm3JTpTGATIdNzdQz5GuFs22w90BcvF4INfnrL5xrX3oGsuqO5Dx3A1Q=="],
 
-    "shadcn-svelte": ["shadcn-svelte@1.2.1", "", { "dependencies": { "commander": "^14.0.0", "node-fetch-native": "^1.6.4", "postcss": "^8.5.5", "tailwind-merge": "^3.0.0" }, "peerDependencies": { "svelte": "^5.0.0" }, "bin": { "shadcn-svelte": "dist/index.mjs" } }, "sha512-tKciZXy4X3u88+YPESqPU+EEtQPTRWVGkLDdAmSM6HiYemfzH1qxoxjTCFC7xIGOfXgVVsdNTgo1wfHv4uFesQ=="],
+    "shadcn-svelte": ["shadcn-svelte@1.2.4", "", { "dependencies": { "commander": "^14.0.0", "node-fetch-native": "^1.6.4", "postcss": "^8.5.5", "tailwind-merge": "^3.0.0" }, "peerDependencies": { "svelte": "^5.0.0" }, "bin": { "shadcn-svelte": "dist/index.mjs" } }, "sha512-8lL1dbhXaXjFhMhl2Byf5Y6ze+tZXlpAcheFyWHUzf85z9Ez/m4wfgpH5zJ6ut3NmdTsGoO9VhdZgOiKFDlRrA=="],
 
     "shebang-command": ["shebang-command@2.0.0", "", { "dependencies": { "shebang-regex": "^3.0.0" } }, "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="],
 
