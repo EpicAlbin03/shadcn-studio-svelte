@@ -2,7 +2,7 @@
 	import { mode as _mode } from 'mode-watcher';
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme';
+	import type { ThemeStyleProps } from '$lib/types/theme.types';
 	import ColorSwatch from './ColorSwatch.svelte';
 
 	const userConfig = UserConfigContext.get();

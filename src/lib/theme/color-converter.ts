@@ -1,6 +1,5 @@
 import chroma from 'chroma-js';
-
-export type ColorFormat = 'hsl' | 'rgb' | 'oklch' | 'hex';
+import type { ColorFormat } from '$lib/config/user-config.svelte';
 
 const formatNumber = (num: number, precision = 2) => {
 	return Number.isInteger(num) ? num.toString() : num.toFixed(precision);

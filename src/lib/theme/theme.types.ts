@@ -55,17 +55,10 @@ export const themeStylesSchema = z.object({
 
 export type ThemeStyles = z.infer<typeof themeStylesSchema>;
 
-export const themeMetadataSchema = z.object({
-	badge: z.string().optional()
-});
-
-export type ThemeMetadata = z.infer<typeof themeMetadataSchema>;
-
 export const themeSchema = z.object({
 	name: z.string(),
 	label: z.string(),
-	cssVars: themeStylesSchema,
-	meta: themeMetadataSchema.optional()
+	cssVars: themeStylesSchema
 });
 
 export type Theme = z.infer<typeof themeSchema>;

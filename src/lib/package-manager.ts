@@ -3,7 +3,6 @@ import { resolveCommand } from 'package-manager-detector/commands';
 
 // order shown in pm-block
 export const PACKAGE_MANAGERS: Agent[] = ['bun', 'pnpm', 'npm', 'yarn'] as const;
-export type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
 export type PackageManagerCommand = Command | 'create' | undefined;
 

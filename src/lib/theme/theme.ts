@@ -1,7 +1,7 @@
 import { mode } from 'mode-watcher';
-import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
 import { colorFormatter } from './color-converter';
 import { setShadowVariables } from './shadows';
+import type { ThemeStyleProps, ThemeStyles } from './theme.types';
 
 export const COMMON_STYLES = [
 	'font-sans',

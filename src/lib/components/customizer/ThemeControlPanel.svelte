@@ -20,7 +20,7 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme';
+	import type { ThemeStyleProps } from '$lib/types/theme.types';
 	import { setMode } from '$lib/utils/mode';
 	import {
 		getAppliedThemeFont,

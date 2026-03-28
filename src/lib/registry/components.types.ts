@@ -1,10 +1,6 @@
-import type { CssVars } from '@shadcn-svelte/registry';
+import type { CssSchema, CssVars } from '@shadcn-svelte/registry';
 import type { Component, Snippet } from 'svelte';
 import type { SVGAttributes } from 'svelte/elements';
-
-type CssSchema = {
-	[x: string]: string | CssSchema;
-};
 
 /**
  * Theme and CSS definitions for the registry item.

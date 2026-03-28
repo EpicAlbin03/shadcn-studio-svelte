@@ -4,7 +4,7 @@
 	import { presetThemesMap } from '$lib/assets/data/preset-themes';
 	import { Button } from '$lib/components/ui/button';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyles } from '$lib/types/theme';
+	import type { ThemeStyles } from '$lib/types/theme.types';
 	import SaveThemeDialog from './SaveThemeDialog.svelte';
 
 	const userConfig = UserConfigContext.get();

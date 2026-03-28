@@ -2,13 +2,13 @@ import path from 'node:path';
 import { registryItemFileSchema, registryItemSchema } from '@shadcn-svelte/registry';
 import { z } from 'zod/v4';
 import { highlightCode } from '$lib/components/ui/code';
-import { blockMeta } from '$lib/registry/registry-block-meta.js';
+import { blocks } from '$lib/registry/blocks';
 import {
 	transformBlockRelativeImports,
 	transformImportPaths,
 	transformTargetPath
 } from '$lib/registry/registry-utils';
-import { generateCssFromMeta } from '$lib/utils/generate-css-from-meta.js';
+import { generateCssFromMeta } from '$lib/theme/generate-css-from-meta';
 import componentsConfig from '../../../../components.json';
 
 const highlightedCodeBlockSchema = registryItemSchema.pick({
@@ -79,7 +79,7 @@ export async function loadHighlightedCodeBlock(itemName: string, visited = new S
 
 	const { default: mod } = await import(`../../../__registry__/json/${itemName}.json`);
 	const item = registryItemSchema.parse(mod);
-	const meta = blockMeta[item.name as keyof typeof blockMeta];
+	const meta = blocks[item.name as keyof typeof blocks];
 	const files = item.files.map(async (file) => {
 		const lang = path.extname(file.target).slice(1);
 
@@ -121,7 +121,6 @@ export async function loadHighlightedCodeBlock(itemName: string, visited = new S
 	return highlightedCodeBlockWithFilesSchema.parse({
 		...item,
 		files: allFiles,
-		description: meta?.description,
 		meta
 	});
 }

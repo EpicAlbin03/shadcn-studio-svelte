@@ -1,9 +1,5 @@
-import { blocks } from '../../__registry__/blocks.js';
-
-export type BlockSlug = (typeof blocks)[number];
-
-export const FEATURED_BLOCKS: BlockSlug[] = ['hero-01', 'dashboard-shell-01', 'product-list-01'];
-export const NEW_BLOCKS: BlockSlug[] = [
+export const FEATURED_BLOCKS: string[] = ['hero-01', 'dashboard-shell-01', 'product-list-01'];
+export const NEW_BLOCKS: string[] = [
 	'hero-41',
 	'hero-35',
 	'cta-10',
@@ -16,7 +12,7 @@ export const NEW_BLOCKS: BlockSlug[] = [
 ];
 
 export type Block = {
-	slug: BlockSlug;
+	slug: string;
 	name: string;
 	iframeHeight?: string;
 	class?: string;
@@ -115,3 +111,5 @@ export const blockCategories = [
 		blocks: []
 	}
 ] satisfies BlockCategory[];
+
+export const blocks = blockCategories.flatMap((category) => category.blocks);

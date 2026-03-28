@@ -7,7 +7,7 @@
 		parseUserSettings,
 		USER_SETTINGS_COOKIE_NAME
 	} from '$lib/config/user-config.svelte';
-	import type { ThemeStyles } from '$lib/types/theme';
+	import type { ThemeStyles } from '$lib/types/theme.types.js';
 	import { cn } from '$lib/utils';
 	import { applyThemeStyles } from '$lib/utils/theme';
 	import type { PageProps } from './$types.js';

@@ -11,7 +11,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
+	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme.types';
 	import { cn } from '$lib/utils';
 	import CssImportDialog from './CssImportDialog.svelte';
 

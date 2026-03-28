@@ -1,11 +1,10 @@
-type CssVars = {
-	theme?: Record<string, string>;
-	light?: Record<string, string>;
-	dark?: Record<string, string>;
-};
+import type { CssSchema, CssVars } from '@shadcn-svelte/registry';
 
-type CssValue = string | Record<string, string | Record<string, string>>;
-type CssObject = Record<string, CssValue>;
+type CssObject = Record<string, CssSchema>;
+
+function isStringRecord(value: CssSchema): value is Record<string, string> {
+	return Object.values(value).every((v) => typeof v === 'string');
+}
 
 function formatCssObject(obj: Record<string, string>, indent: string): string {
 	return Object.entries(obj)
@@ -13,7 +12,7 @@ function formatCssObject(obj: Record<string, string>, indent: string): string {
 		.join('\n');
 }
 
-function formatCssRule(key: string, value: CssValue, indent = ''): string {
+function formatCssRule(key: string, value: CssSchema, indent = ''): string {
 	if (typeof value === 'string') {
 		return `${indent}${key}: ${value};`;
 	}
@@ -25,7 +24,11 @@ function formatCssRule(key: string, value: CssValue, indent = ''): string {
 		const innerContent = Object.entries(value)
 			.map(([innerKey, innerValue]) => {
 				if (typeof innerValue === 'object') {
-					return `${indent}  ${innerKey} {\n${formatCssObject(innerValue, indent + '    ')}\n${indent}  }`;
+					if (isStringRecord(innerValue)) {
+						return `${indent}  ${innerKey} {\n${formatCssObject(innerValue, indent + '    ')}\n${indent}  }`;
+					}
+
+					return formatCssRule(innerKey, innerValue, `${indent}  `);
 				}
 				return `${indent}  ${innerKey}: ${innerValue};`;
 			})
@@ -34,7 +37,19 @@ function formatCssRule(key: string, value: CssValue, indent = ''): string {
 	}
 
 	// Simple object with key-value pairs
-	return `${indent}${key} {\n${formatCssObject(value as Record<string, string>, indent + '  ')}\n${indent}}`;
+	if (isStringRecord(value)) {
+		return `${indent}${key} {\n${formatCssObject(value, indent + '  ')}\n${indent}}`;
+	}
+
+	const nestedContent = Object.entries(value)
+		.map(([innerKey, innerValue]) =>
+			typeof innerValue === 'string'
+				? `${indent}  ${innerKey}: ${innerValue};`
+				: formatCssRule(innerKey, innerValue, `${indent}  `)
+		)
+		.join('\n');
+
+	return `${indent}${key} {\n${nestedContent}\n${indent}}`;
 }
 
 export function generateCssFromMeta(cssVars?: CssVars, css?: CssObject): string | null {

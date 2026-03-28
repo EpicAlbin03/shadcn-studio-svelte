@@ -1,8 +1,9 @@
 import { PUBLIC_URL } from '$lib/config/site-config';
 import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
+import type { PackageManager } from './config/user-config.svelte';
 import { getCommand } from './package-manager';
 
-function getInstallCommand(packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun', componentName: string) {
+function getInstallCommand(packageManager: PackageManager, componentName: string) {
 	const cmd = getCommand(
 		packageManager,
 		'execute',
@@ -28,7 +29,7 @@ function getSourceCode(source?: HighlightedCodeBlock) {
 }
 
 export function getCopyPromptText(
-	packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun',
+	packageManager: PackageManager,
 	componentName: string,
 	categorySlug: string,
 	source?: HighlightedCodeBlock,

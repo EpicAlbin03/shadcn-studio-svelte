@@ -1,6 +1,6 @@
-import type { ThemeStyleProps } from '$lib/types/theme';
-import type { ColorFormat } from './color-converter';
+import type { ColorFormat } from '$lib/config/user-config.svelte';
 import { colorFormatter } from './color-converter';
+import type { ThemeStyleProps } from './theme.types';
 
 export const getShadowMap = (styles: ThemeStyleProps, colorFormat: ColorFormat = 'oklch') => {
 	const shadowColor = styles['shadow-color'] || 'hsl(0 0% 0%)';

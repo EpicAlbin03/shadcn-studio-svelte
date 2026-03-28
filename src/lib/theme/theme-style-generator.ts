@@ -4,12 +4,12 @@ import {
 	DEFAULT_FONT_SERIF,
 	defaultTheme
 } from '$lib/assets/data/preset-themes';
-import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme';
+import type { ColorFormat } from '$lib/config/user-config.svelte';
 import { colorFormatter } from './color-converter';
-import type { ColorFormat } from './color-converter';
 import { getShadowMap } from './shadows';
+import type { ThemeStyleProps, ThemeStyles } from './theme.types';
 
-type ThemeType = {
+type ThemeStylesNonPartial = {
 	light: ThemeStyleProps;
 	dark: ThemeStyleProps;
 };
@@ -53,7 +53,7 @@ export const generateThemeCode = (
 
 	const formatColor = (color: string) => colorFormatter(color, colorFormat);
 
-	const themeStyles = styles as ThemeType;
+	const themeStyles = styles as ThemeStylesNonPartial;
 
 	const rootVars = `:root {
   --background: ${formatColor(themeStyles.light.background)};

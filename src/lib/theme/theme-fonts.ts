@@ -1,4 +1,4 @@
-import type { ThemeStyleProps } from '$lib/types/theme';
+import type { ThemeStyleProps } from './theme.types';
 
 const sansSerifFontNames = [
 	'Inter',

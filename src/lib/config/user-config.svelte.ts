@@ -1,9 +1,9 @@
+import deepEqual from 'deep-equal';
 import { Context, PersistedState } from 'runed';
 import { z } from 'zod/v4';
 import { defaultTheme } from '$lib/assets/data/preset-themes';
-import { themeSchema, type Theme } from '$lib/types/theme';
-import { deepEqual } from '$lib/utils/deep-equal';
-import { applyThemeStyles } from '$lib/utils/theme';
+import { applyThemeStyles } from '$lib/theme/theme';
+import { themeSchema, type Theme } from '$lib/theme/theme.types';
 
 export const USER_SETTINGS_COOKIE_NAME = 'scnstudio_user_config';
 export const MODE_STORAGE_KEY = 'mode-watcher-mode';

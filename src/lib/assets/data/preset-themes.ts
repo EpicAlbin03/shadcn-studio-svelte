@@ -1,4 +1,4 @@
-import type { Theme } from '$lib/types/theme';
+import type { Theme } from '$lib/theme/theme.types.ts';
 
 export const DEFAULT_FONT_SANS =
 	"'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";

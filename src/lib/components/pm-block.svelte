@@ -1,11 +1,11 @@
 <script lang="ts">
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
-	import type { Command } from 'package-manager-detector';
+	import type { Agent, Command } from 'package-manager-detector';
 	import CopyCode from '$lib/components/copy-code.svelte';
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
+	import { getCommand, PACKAGE_MANAGERS } from '$lib/package-manager.js';
 	import { cn } from '$lib/utils';
-	import { getCommand, PACKAGE_MANAGERS, type PackageManager } from '$lib/utils/package-manager.js';
 
 	const {
 		type,
@@ -18,7 +18,7 @@
 	const userConfig = UserConfigContext.get();
 	const activePackageManager = $derived(userConfig.settings.packageManager);
 
-	function getCommandText(packageManager: PackageManager) {
+	function getCommandText(packageManager: Agent) {
 		const cmd = getCommand(packageManager, type, command);
 		return `${cmd.command} ${cmd.args.join(' ')}`.trim();
 	}
