@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { minimatch } from 'minimatch';
 import { defineConfig } from 'vite';
 import packageJson from './package.json' with { type: 'json' };
+import transformLucideImports from "vite-plugin-transform-lucide-imports";
 
 // don't build when we're running `vite preview`
 if (!process.argv.includes('preview')) {
@@ -22,6 +23,7 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
+		transformLucideImports(),
 		{
 			name: 'registry-builder',
 			enforce: 'pre',
