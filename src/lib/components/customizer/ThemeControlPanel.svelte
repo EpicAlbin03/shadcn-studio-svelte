@@ -20,14 +20,14 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyleProps } from '$lib/types/theme.types';
-	import { setMode } from '$lib/utils/mode';
+	import { setMode } from '$lib/theme/mode';
 	import {
 		getAppliedThemeFont,
 		monoFonts,
 		sansSerifFonts,
 		serifFonts
-	} from '$lib/utils/theme-fonts';
+	} from '$lib/theme/theme-fonts';
+	import type { ThemeStyleProps } from '$lib/theme/theme.types';
 	import ThemeColorPanel from './color-panel/ThemeColorPanel.svelte';
 	import HoldToSaveTheme from './save-theme/HoldToSaveTheme.svelte';
 	import ShadowControl from './ShadowControl.svelte';

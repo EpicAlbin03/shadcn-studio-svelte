@@ -8,7 +8,7 @@
 	import * as Select from '$lib/components/ui/select';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { generateThemeCode } from '$lib/utils/theme-style-generator';
+	import { generateThemeCode } from '$lib/theme/theme-style-generator';
 	import PmAddComp from '../pm-add-comp.svelte';
 	import PmBlock from '../pm-block.svelte';
 

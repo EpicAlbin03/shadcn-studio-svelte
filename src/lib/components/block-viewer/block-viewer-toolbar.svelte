@@ -15,10 +15,10 @@
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import { PUBLIC_URL } from '$lib/config/site-config';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
+	import { getCopyPromptText } from '$lib/copy-prompt';
+	import { getCommand } from '$lib/package-manager';
+	import { NEW_BLOCKS } from '$lib/registry/blocks';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
-	import { NEW_BLOCKS } from '$lib/utils/blocks';
-	import { getCopyPromptText } from '$lib/utils/copy-prompt';
-	import { getCommand } from '$lib/utils/package-manager.js';
 	import { BlockViewerContext } from './block-viewer.svelte';
 
 	const ctx = BlockViewerContext.get();

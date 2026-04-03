@@ -11,8 +11,8 @@
 		parseCssInput,
 		parseLetterSpacing,
 		parseShadowVariables
-	} from '$lib/utils/parse-css-input';
-	import { carryCommon } from '$lib/utils/theme';
+	} from '$lib/theme/parse-css-input';
+	import { carryCommon } from '$lib/theme/theme';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);

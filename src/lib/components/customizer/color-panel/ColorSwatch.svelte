@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Input from '$lib/components/ui/input/input.svelte';
-	import { colorFormatter } from '$lib/utils/color-converter';
+	import { colorFormatter } from '$lib/theme/color-converter';
 	import DebouncedInput from './DebouncedInput.svelte';
 
 	type Props = {

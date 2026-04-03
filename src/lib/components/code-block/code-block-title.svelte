@@ -1,8 +1,8 @@
 <script lang="ts">
 	import CopyCode from '$lib/components/copy-code.svelte';
 	import * as Select from '$lib/components/ui/select/index.js';
+	import { getIconForLanguageExtension } from '$lib/icons';
 	import { cn } from '$lib/utils';
-	import { getIconForLanguageExtension } from '$lib/utils/icons';
 	import { CodeBlockContext } from './code-block.svelte';
 
 	const ctx = CodeBlockContext.get();

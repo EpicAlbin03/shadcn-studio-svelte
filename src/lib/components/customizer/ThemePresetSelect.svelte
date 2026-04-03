@@ -11,13 +11,13 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Select from '$lib/components/ui/select';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import type { ThemeStyleProps, ThemeStyles } from '$lib/types/theme.types';
+	import type { ThemeStyleProps, ThemeStyles } from '$lib/theme/theme.types';
 	import { cn } from '$lib/utils';
 	import CssImportDialog from './CssImportDialog.svelte';
 
 	const userConfig = UserConfigContext.get();
 	const activeTheme = $derived(userConfig.settings.activeTheme);
-	const colorFormat = $derived(userConfig.settings.colorFormat);
+	// const colorFormat = $derived(userConfig.settings.colorFormat);
 	const savedThemes = $derived(userConfig.savedThemes);
 
 	const label = $derived.by(() => {
@@ -30,18 +30,20 @@
 		}
 	});
 
+	// TODO: Make sure we don't need the badges
 	const orderedPresets = $derived.by(() => {
 		// First get all preset entries
 		const allPresets = Object.values(presetThemesMap);
 
 		// Separate presets with badges and those without
-		const presetsWithBadges = allPresets.filter((preset) => preset?.meta?.badge);
-		const presetsWithoutBadges = allPresets.filter((preset) => !preset?.meta?.badge);
+		// const presetsWithBadges = allPresets.filter((preset) => preset?.meta?.badge);
+		// const presetsWithoutBadges = allPresets.filter((preset) => !preset?.meta?.badge);
+		const presetsWithoutBadges = allPresets;
 
 		// Sort each group alphabetically by label
-		presetsWithBadges.sort((a, b) =>
-			a.label.localeCompare(b.label, undefined, { sensitivity: 'base' })
-		);
+		// presetsWithBadges.sort((a, b) =>
+		// 	a.label.localeCompare(b.label, undefined, { sensitivity: 'base' })
+		// );
 		presetsWithoutBadges.sort((a, b) =>
 			a.label.localeCompare(b.label, undefined, { sensitivity: 'base' })
 		);
@@ -49,7 +51,7 @@
 		// Always keep 'default' as the first item in the list without badges
 		return [
 			defaultTheme,
-			...presetsWithBadges,
+			// ...presetsWithBadges,
 			...presetsWithoutBadges.filter((preset) => preset.name !== 'default')
 		];
 	});
@@ -132,7 +134,7 @@
 			<Select.Group>
 				<Select.Label>Pre-built Themes</Select.Label>
 				{#each orderedPresets as theme}
-					{@const badge = theme.meta?.badge}
+					<!-- {@const badge = theme.meta?.badge} -->
 					<Select.Item value={theme.name} class="flex items-center gap-3">
 						<!-- Theme Color Grid Icon -->
 						<div class="flex items-center">
@@ -159,7 +161,7 @@
 						</div>
 						<div class="flex items-center gap-2">
 							<span>{theme.label}</span>
-							{#if badge}
+							<!-- {#if badge}
 								<Badge
 									variant={badge === 'New' ? 'default' : 'outline'}
 									class={cn('rounded-full', {
@@ -168,7 +170,7 @@
 								>
 									{badge}
 								</Badge>
-							{/if}
+							{/if} -->
 						</div>
 					</Select.Item>
 				{/each}
