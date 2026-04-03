@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { ComponentCard, ComponentDetails, ComponentLoader } from '$lib/components/component';
-	import type { ComponentProps } from '$lib/types/components';
+	import type { ComponentProps } from '$lib/registry/components';
 	import { cn } from '$lib/utils';
 
 	type Props = {
@@ -58,12 +58,12 @@
 					'border-e-0': (index + 1) % columns === 0,
 					'border-e border-dashed': length % columns !== 0 && index === length - 1
 				},
-				component?.className
+				component?.class
 					?.split(' ')
 					.filter((word) => word.includes('col-span-') || word.includes('border-e-'))
 			)}
 		>
-			<ComponentCard componentName={component.name} class={component?.className}>
+			<ComponentCard componentName={component.name} class={component?.class}>
 				<ComponentLoader componentName={component.name} />
 				<!-- {#if component.files.content} -->
 				<ComponentDetails {component} />

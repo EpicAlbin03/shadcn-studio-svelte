@@ -1,16 +1,14 @@
 import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
-import { registryCategories } from '$lib/registry/registry-categories';
+import { blockCategories, NEW_BLOCKS } from '$lib/registry/blocks';
 import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
-import { NEW_BLOCKS } from '$lib/utils/blocks';
 import type { EntryGenerator, PageLoad } from './$types.js';
 
 export const prerender = true;
 
 export const entries: EntryGenerator = () => {
-	const categoryEntries = registryCategories
-		.filter((c) => !c.hidden)
-		.map(({ slug }) => ({ category: slug }));
+	const categoryEntries = blockCategories
+		.map(({ id }) => ({ category: id }));
 	if (NEW_BLOCKS.length > 0) {
 		categoryEntries.unshift({ category: 'new' });
 	}
@@ -21,6 +19,7 @@ type Item = HighlightedCodeBlock & {
 	component?: Promise<Component>;
 };
 
+// TODO: Improve this stuff
 export const load: PageLoad = async ({ params, data, fetch }) => {
 	const category = params.category;
 

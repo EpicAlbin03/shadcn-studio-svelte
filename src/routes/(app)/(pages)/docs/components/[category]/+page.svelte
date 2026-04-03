@@ -13,6 +13,7 @@
 	const animatedComponents = $derived(components.filter((component) => component.isAnimated));
 	const category = $derived(data.category);
 
+	// TODO: Do I need this?
 	ComponentCategoryContext.set(() => category);
 
 	const title = $derived(`Shadcn ${category.name}`);

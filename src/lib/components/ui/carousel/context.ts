@@ -1,4 +1,4 @@
-import type { WithElementRef } from "$lib/utils/index.js";
+import type { WithElementRef } from "$lib/utils.js";
 import type {
 	EmblaCarouselSvelteType,
 	default as emblaCarouselSvelte,
@@ -10,8 +10,8 @@ export type CarouselAPI =
 	NonNullable<NonNullable<EmblaCarouselSvelteType["$$_attributes"]>["on:emblaInit"]> extends (
 		evt: CustomEvent<infer CarouselAPI>
 	) => void
-		? CarouselAPI
-		: never;
+	? CarouselAPI
+	: never;
 
 type EmblaCarouselConfig = NonNullable<Parameters<typeof emblaCarouselSvelte>[1]>;
 

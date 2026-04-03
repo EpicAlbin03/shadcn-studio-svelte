@@ -1,8 +1,8 @@
 <script lang="ts">
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import ComponentIcon from '@lucide/svelte/icons/component';
-	import FigmaIcon from '@lucide/svelte/icons/figma';
-	import FileIcon from '@lucide/svelte/icons/file';
+	// import FigmaIcon from '@lucide/svelte/icons/figma';
+	// import FileIcon from '@lucide/svelte/icons/file';
 	import FlameIcon from '@lucide/svelte/icons/flame';
 	import LayoutPanelTopIcon from '@lucide/svelte/icons/layout-panel-top';
 	import PaintbrushVerticalIcon from '@lucide/svelte/icons/paintbrush-vertical';
@@ -17,9 +17,9 @@
 	} from '$lib/components/ui/collapsible';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Sidebar from '$lib/components/ui/sidebar';
-	import { categories } from '$lib/registry/components.svelte';
+	import { gettingStartedPages } from '$lib/pages';
+	import { componentCategories } from '$lib/registry/components';
 	import { cn } from '$lib/utils';
-	import { gettingStartedPages } from '$lib/utils/pages';
 	import { CustomSidebarMenuItem, CustomSidebarMenuSubItem } from '.';
 
 	const breakpoint = new MediaQuery('(max-width: 1023px)', false);
@@ -132,23 +132,24 @@
 							</CollapsibleTrigger>
 							<CollapsibleContent>
 								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
-									{#each categories.filter((category) => category.hasAnimation) as category (category.slug)}
+									{#each componentCategories.filter((category) => category.hasAnimation) as category (category.id)}
 										<CustomSidebarMenuSubItem
-											{...category.isComingSoon
+											{...category.comingSoon
 												? { href: '/', onClick: (e) => e.preventDefault() }
 												: {
-														href: `/docs/components/${category.slug}#animated-variants`
+														href: `/docs/components/${category.id}#animated-variants`
 													}}
 										>
 											{category.name}
-											{#if category.isComingSoon}
+											{#if category.comingSoon}
 												<Sidebar.MenuBadge
 													class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 												>
 													Coming Soon
 												</Sidebar.MenuBadge>
 											{/if}
-											{#if category.animation?.badge}
+											<!-- TODO: Do I want this? -->
+											<!-- {#if category.animation?.badge}
 												<Sidebar.MenuBadge
 													class={cn(
 														'static rounded-full bg-primary px-2 py-0.5 font-normal text-primary-foreground',
@@ -158,7 +159,7 @@
 												>
 													{category.animation.badge}
 												</Sidebar.MenuBadge>
-											{/if}
+											{/if} -->
 										</CustomSidebarMenuSubItem>
 									{/each}
 								</Sidebar.MenuSub>
@@ -188,14 +189,14 @@
 							</CollapsibleTrigger>
 							<CollapsibleContent>
 								<Sidebar.MenuSub class="mx-3 gap-0 border-0 p-0 lg:mx-4">
-									{#each categories as category (category.slug)}
+									{#each componentCategories as category (category.id)}
 										<CustomSidebarMenuSubItem
-											{...category.isComingSoon
+											{...category.comingSoon
 												? { href: '/', onClick: (e) => e.preventDefault() }
-												: { href: `/docs/components/${category.slug}` }}
+												: { href: `/docs/components/${category.id}` }}
 										>
 											{category.name}
-											{#if category.isComingSoon}
+											{#if category.comingSoon}
 												<Sidebar.MenuBadge
 													class="static rounded-full bg-muted px-2 py-0.5 font-normal text-muted-foreground"
 												>

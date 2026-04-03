@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MoreComponentsSVG } from '$lib/assets/svg';
 	import MetaData from '$lib/components/MetaData.svelte';
-	import { categories } from '$lib/registry/components.svelte';
+	import { componentCategories } from '$lib/registry/components';
 
 	const title = 'Shadcn Components';
 	const description =
@@ -19,10 +19,10 @@
 		</p>
 	</div>
 	<div class="grid w-full gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 xl:grid-cols-4">
-		{#each categories.filter((category) => !category.isComingSoon) as category (category.slug)}
+		{#each componentCategories as category (category.id)}
 			{@const Icon = category.svg}
 			<div class="group overflow-hidden rounded-xl border">
-				<a href="/docs/components/{category.slug}">
+				<a href="/docs/components/{category.id}">
 					<div
 						class="relative flex h-52 items-center justify-center border-b bg-primary/4.5 dark:bg-transparent"
 					>
@@ -36,7 +36,8 @@
 					<div class="flex flex-col gap-0.5 p-4 text-center">
 						<h2 class="text-lg font-medium">{category.name}</h2>
 						<p class="text-sm text-muted-foreground">
-							{`${category.components.length} ${category.components.length === 1 ? 'Component' : 'Components'}`}
+							{category.components.length}
+							{category.components.length === 1 ? 'Component' : 'Components'}
 						</p>
 					</div>
 				</a>

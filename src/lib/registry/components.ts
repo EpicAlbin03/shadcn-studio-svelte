@@ -66,6 +66,7 @@ export type ComponentCategory = {
 	badge?: string;
 	note?: Component;
 	comingSoon?: boolean;
+	hasAnimation?: boolean;
 };
 
 function defineCategories(categories: ComponentCategory[]) {
@@ -76,7 +77,8 @@ function defineCategories(categories: ComponentCategory[]) {
 		breakpoints: {
 			xs: 1,
 			...category.breakpoints
-		}
+		},
+		hasAnimation: category.components.some((component) => component.isAnimated)
 	})).filter((category) => !category.comingSoon);
 }
 
@@ -1206,4 +1208,4 @@ export const componentCategories = defineCategories([
 		components: [],
 		comingSoon: true
 	}
-]);
+] satisfies ComponentCategory[]);

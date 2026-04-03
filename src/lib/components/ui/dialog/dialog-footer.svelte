@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from "$lib/utils/index.js";
-	import type { HTMLAttributes } from "svelte/elements";
-	import { Dialog as DialogPrimitive } from "bits-ui";
-	import { Button } from "$lib/components/ui/button/index.js";
+	import { Dialog as DialogPrimitive } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { cn, type WithElementRef } from '$lib/utils.js';
 
 	let {
 		ref = $bindable(null),
@@ -18,7 +18,7 @@
 <div
 	bind:this={ref}
 	data-slot="dialog-footer"
-	class={cn("gap-2 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end", className)}
+	class={cn('flex flex-col-reverse gap-2 gap-2 sm:flex-row sm:justify-end', className)}
 	{...restProps}
 >
 	{@render children?.()}

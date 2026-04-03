@@ -13,7 +13,7 @@ export const NEW_BLOCKS: string[] = [
 
 export type Block = {
 	id: string;
-	name: string;
+	name?: string;
 	description?: string;
 	iframeHeight?: string;
 	class?: string;
@@ -119,6 +119,6 @@ export const blockCategories = defineCategories([
 		hidden: true,
 		blocks: []
 	}
-]);
+] satisfies BlockCategory[]);
 
 export const blocks = blockCategories.flatMap((category) => category.blocks);

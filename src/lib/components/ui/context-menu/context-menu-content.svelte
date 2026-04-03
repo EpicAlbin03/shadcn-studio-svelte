@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils/index.js";
-	import ContextMenuPortal from "./context-menu-portal.svelte";
-	import type { ComponentProps } from "svelte";
-	import type { WithoutChildrenOrChild } from "$lib/utils/index.js";
+	import { ContextMenu as ContextMenuPrimitive } from 'bits-ui';
+	import type { ComponentProps } from 'svelte';
+	import { cn } from '$lib/utils.js';
+	import type { WithoutChildrenOrChild } from '$lib/utils.js';
+	import ContextMenuPortal from './context-menu-portal.svelte';
 
 	let {
 		ref = $bindable(null),
@@ -20,7 +20,7 @@
 		bind:ref
 		data-slot="context-menu-content"
 		class={cn(
-			"data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ring-foreground/10 bg-popover text-popover-foreground min-w-36 rounded-md p-1 shadow-md ring-1 duration-100 z-50 overflow-x-hidden overflow-y-auto outline-none",
+			'z-50 min-w-36 overflow-x-hidden overflow-y-auto rounded-md bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
 			className
 		)}
 		{...restProps}

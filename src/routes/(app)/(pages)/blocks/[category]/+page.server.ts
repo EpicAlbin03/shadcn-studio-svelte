@@ -1,13 +1,11 @@
-import { registryCategories } from '$lib/registry/registry-categories';
-import { NEW_BLOCKS } from '$lib/utils/blocks';
+import { blockCategories, NEW_BLOCKS } from '$lib/registry/blocks';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
 
 export const prerender = true;
 
 export const entries: EntryGenerator = () => {
-	const categoryEntries = registryCategories
-		.filter((c) => !c.hidden)
-		.map(({ slug }) => ({ category: slug }));
+	const categoryEntries = blockCategories
+		.map(({ id }) => ({ category: id }));
 	if (NEW_BLOCKS.length > 0) {
 		categoryEntries.unshift({ category: 'new' });
 	}
@@ -16,7 +14,7 @@ export const entries: EntryGenerator = () => {
 
 export const load: PageServerLoad = async () => {
 	const categoryMap = Object.fromEntries(
-		registryCategories.map((category) => [category.slug, category.blocks])
+		blockCategories.map((category) => [category.id, category.blocks])
 	);
 
 	return {

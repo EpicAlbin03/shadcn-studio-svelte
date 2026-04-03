@@ -1,6 +1,6 @@
 import { defineConfig } from './scripts/build-registry';
 import { themesPlugin } from './scripts/themes-plugin';
-import { componentMeta } from './src/lib/config/component-meta.js';
+import { componentMeta } from './src/lib/registry/component-meta.js';
 
 export default defineConfig({
 	name: 'shadcn-studio-svelte',

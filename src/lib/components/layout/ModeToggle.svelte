@@ -3,7 +3,7 @@
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import { Button } from '$lib/components/ui/button';
 	import { UserConfigContext } from '$lib/config/user-config.svelte';
-	import { toggleMode } from '$lib/utils/mode';
+	import { toggleMode } from '$lib/theme/mode';
 
 	const userConfig = UserConfigContext.get();
 </script>

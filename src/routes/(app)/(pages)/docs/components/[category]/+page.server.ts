@@ -1,22 +1,22 @@
 import { error } from '@sveltejs/kit';
-import { categories, getCategory, type ComponentCategory } from '$lib/registry/components.svelte';
+import { componentCategories, type ComponentCategory } from '$lib/registry/components';
 import { loadHighlightedCodeBlocks } from '$lib/server/registry/highlighted-code-blocks';
 import type { ComponentProps } from '$lib/types/components';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
+// TODO: Fix
 export const prerender = true;
 
 export const entries: EntryGenerator = () =>
-	categories
-		.filter((category) => !category.isComingSoon)
+	componentCategories
 		.map((category) => ({
-			category: category.slug
+			category: category.id
 		}));
 
 export const load: PageServerLoad = async ({ params }) => {
-	const category = getCategory(params.category);
+	const category = componentCategories.find((category) => category.id === params.category);
 
-	if (!category || category.isComingSoon) {
+	if (!category || category.comingSoon) {
 		throw error(404, 'Component category not found');
 	}
 

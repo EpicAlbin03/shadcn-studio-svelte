@@ -1,13 +1,14 @@
 <script lang="ts">
 	import BlocksNav from '$lib/components/blocks-nav.svelte';
 	import FrontLayout from '$lib/components/layout/FrontLayout.svelte';
-	import PageActions from '$lib/components/layout/page-header/page-actions.svelte';
+	// import PageActions from '$lib/components/layout/page-header/page-actions.svelte';
 	import PageHeaderDescription from '$lib/components/layout/page-header/page-header-description.svelte';
 	import PageHeaderHeading from '$lib/components/layout/page-header/page-header-heading.svelte';
 	import PageHeader from '$lib/components/layout/page-header/page-header.svelte';
 	import PageNav from '$lib/components/layout/page-nav.svelte';
 	import MetaData from '$lib/components/MetaData.svelte';
-	import { Button } from '$lib/components/ui/button/index.js';
+
+	// import { Button } from '$lib/components/ui/button/index.js';
 
 	let { children } = $props();
 
@@ -22,6 +23,7 @@
 	<PageHeader>
 		<PageHeaderHeading>{title}</PageHeaderHeading>
 		<PageHeaderDescription>{description}</PageHeaderDescription>
+		<!-- TODO: Come back to this -->
 		<!-- <PageActions>
 			<Button href="#blocks" size="sm">Browse Blocks</Button>
 			<Button href="/docs/blocks" variant="ghost" size="sm">Add a block</Button>

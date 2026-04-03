@@ -1,5 +1,5 @@
 import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
-import { FEATURED_BLOCKS } from '$lib/utils/blocks.js';
+import { FEATURED_BLOCKS } from '$lib/registry/blocks';
 import type { PageLoad } from './$types.js';
 
 export const prerender = true;
@@ -12,6 +12,7 @@ export const load: PageLoad = async ({ fetch }) => {
 
 	const result = await Promise.all(loadItems);
 
+	// TODO: does this need to be sorted?
 	return {
 		blocks: result.sort((a, b) => FEATURED_BLOCKS.indexOf(a.name) - FEATURED_BLOCKS.indexOf(b.name))
 	};

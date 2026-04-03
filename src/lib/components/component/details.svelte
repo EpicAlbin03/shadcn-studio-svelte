@@ -8,11 +8,11 @@
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { UserConfigContext } from '$lib/config/user-config.svelte.js';
+	import { getCopyPromptText } from '$lib/copy-prompt';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import type { ComponentProps } from '$lib/registry/components';
 	import type { HighlightedCodeBlock } from '$lib/server/registry/highlighted-code-blocks';
-	import type { ComponentProps } from '$lib/types/components';
 	import { ComponentCategoryContext } from '$lib/utils/components';
-	import { getCopyPromptText } from '$lib/utils/copy-prompt';
 
 	type Props = { component: ComponentProps };
 

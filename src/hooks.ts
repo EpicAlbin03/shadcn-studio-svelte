@@ -1,5 +1,5 @@
 import type { Transport } from '@sveltejs/kit';
-import { categories } from '$lib/registry/components.svelte';
+import { componentCategories } from '$lib/registry/components';
 
 export const transport: Transport = {
 	ComponentCategory: {
@@ -19,7 +19,7 @@ export const transport: Transport = {
 		},
 		decode: ({ slug }) => {
 			// Decode by finding the category in the categories array
-			const category = categories.find((cat) => cat.slug === slug);
+			const category = componentCategories.find((category) => category.id === slug);
 			if (!category) {
 				throw new Error(`Category with slug "${slug}" not found`);
 			}

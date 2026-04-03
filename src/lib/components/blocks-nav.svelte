@@ -1,21 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
-	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { registryCategories } from '$lib/registry/registry-categories';
-	import { FEATURED_BLOCKS, NEW_BLOCKS } from '$lib/utils/blocks';
+	import { blockCategories, FEATURED_BLOCKS, NEW_BLOCKS } from '$lib/registry/blocks';
 </script>
 
 {#snippet BlocksNavLink({
 	category,
 	isActive
 }: {
-	category: (typeof registryCategories)[number];
+	category: (typeof blockCategories)[number];
 	isActive: boolean;
 })}
 	{#if !category.hidden}
 		<a
-			href="/blocks/{category.slug}"
+			href="/blocks/{category.id}"
 			class="flex h-7 items-center justify-center truncate px-4 text-center text-base font-medium text-muted-foreground transition-colors hover:text-primary data-[active=true]:text-primary"
 			data-active={isActive}
 		>
@@ -24,21 +22,31 @@
 	{/if}
 {/snippet}
 
+<!-- TODO: Check this -->
 <div class="relative overflow-hidden">
 	<ScrollArea class="max-w-none" orientation="both" scrollbarXClasses="invisible">
 		<div class="flex items-center">
 			{@render BlocksNavLink({
-				category: { name: 'Featured', slug: '', hidden: false, blocks: FEATURED_BLOCKS },
+				category: {
+					name: 'Featured',
+					id: '',
+					blocks: FEATURED_BLOCKS.map((block) => ({ id: block }))
+				},
 				isActive: page.url.pathname === '/blocks'
 			})}
 			{@render BlocksNavLink({
-				category: { name: 'New', slug: 'new', hidden: NEW_BLOCKS.length === 0, blocks: NEW_BLOCKS },
+				category: {
+					name: 'New',
+					id: 'new',
+					hidden: NEW_BLOCKS.length === 0,
+					blocks: NEW_BLOCKS.map((block) => ({ id: block }))
+				},
 				isActive: page.url.pathname === '/blocks/new'
 			})}
-			{#each registryCategories as category (category.slug)}
+			{#each blockCategories as category (category.id)}
 				{@render BlocksNavLink({
 					category,
-					isActive: page.url.pathname === `/blocks/${category.slug}`
+					isActive: page.url.pathname === `/blocks/${category.id}`
 				})}
 			{/each}
 		</div>
