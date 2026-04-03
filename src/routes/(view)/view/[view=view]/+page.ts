@@ -1,25 +1,20 @@
 import { error } from '@sveltejs/kit';
-import type { Component } from 'svelte';
-import { blockMeta } from '$lib/registry/registry-block-meta';
-import { blocks } from '../../../../__registry__/blocks.js';
+import { blocks } from '$lib/registry/blocks';
+import { blocks as blockIds } from '../../../../__registry__/blocks.js';
 import type { EntryGenerator } from './$types.js';
+import type { Component } from 'svelte';
+import type { PageLoadEvent } from './$types';
 
 export const prerender = true;
 
-export const entries: EntryGenerator = () => blocks.map((view) => ({ view }));
+export const entries: EntryGenerator = () => blockIds.map((view) => ({ view }));
 
-export async function load({ params }) {
-	let comp: { default: Component } | undefined;
+export async function load({ params }: PageLoadEvent) {
+	const blockComponent = await import(`../../../../lib/registry/blocks/${params.view}/+page.svelte`) as { default: Component } | undefined;
+	if (!blockComponent) error(404, 'Block not found');
 
-	if (params.view.startsWith('demo-') || params.view.startsWith('calendar-')) {
-		comp = await import(`../../../../lib/registry/blocks/${params.view}.svelte`);
-	} else {
-		comp = await import(`../../../../lib/registry/blocks/${params.view}/+page.svelte`);
-	}
+	const blockData = blocks.find((block) => block.id === params.view)
+	if (!blockData) error(404, 'Block data not found');
 
-	if (!comp) error(404, 'Block not found');
-
-	const meta = blockMeta[params.view as keyof typeof blockMeta];
-
-	return { component: comp.default, meta: { ...meta, name: params.view } };
+	return { blockComponent: blockComponent.default, blockData };
 }

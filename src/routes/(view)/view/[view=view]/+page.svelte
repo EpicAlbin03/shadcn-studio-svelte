@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import MetaData from '$lib/components/MetaData.svelte';
 	import {
@@ -7,16 +6,14 @@
 		parseUserSettings,
 		USER_SETTINGS_COOKIE_NAME
 	} from '$lib/config/user-config.svelte';
-	import type { ThemeStyles } from '$lib/types/theme.types.js';
+	import { applyThemeStyles } from '$lib/theme/theme.js';
+	import type { ThemeStyles } from '$lib/theme/theme.types.js';
 	import { cn } from '$lib/utils';
-	import { applyThemeStyles } from '$lib/utils/theme';
 	import type { PageProps } from './$types.js';
 
-	// import { useResizeObserver } from 'runed';
-	// import { RESIZE_MESSAGE, REQUEST_RESIZE_MESSAGE } from '$lib/utils/blocks';
-
 	let { data }: PageProps = $props();
-	let viewContainer = $state<HTMLDivElement | null>(null);
+	const BlockComponent = $derived(data.blockComponent);
+	const blockData = $derived(data.blockData);
 
 	const getStoredThemeStyles = (): ThemeStyles | null => {
 		const cookieEntry = document.cookie
@@ -48,52 +45,15 @@
 		}
 	};
 
-	// const handleMessage = (event: MessageEvent<{ type: string; name: string }>) => {
-	// 	if (event.origin !== window.location.origin) return;
-	// 	if (event.data?.type !== REQUEST_RESIZE_MESSAGE) return;
-	// 	if (event.data.name !== data.meta.name) return;
-	// 	if (!viewContainer) return;
-	// 	postHeight(viewContainer.getBoundingClientRect().height);
-	// };
-
-	// const postHeight = (height: number) => {
-	// 	if (!height || height < 0) return;
-
-	// 	const nextHeight = Math.ceil(height);
-	// 	window.parent?.postMessage(
-	// 		{
-	// 			type: RESIZE_MESSAGE,
-	// 			name: data.meta.name,
-	// 			height: nextHeight
-	// 		},
-	// 		window.location.origin
-	// 	);
-	// };
-
-	// if (browser) {
-	// 	useResizeObserver(
-	// 		() => viewContainer,
-	// 		([entry]) => {
-	// 			if (entry) {
-	// 				postHeight(entry.contentRect.height);
-	// 			}
-	// 		}
-	// 	);
-	// }
-
 	onMount(() => {
 		applyStoredTheme();
-		// if (viewContainer) {
-		// 	postHeight(viewContainer.getBoundingClientRect().height);
-		// }
 	});
 </script>
 
-<!-- <svelte:window onstorage={handleStorage} onmessage={handleMessage} /> -->
 <svelte:window onstorage={handleStorage} />
 
-<MetaData title={data.meta.name} description={data.meta.description} ogType="article" />
+<MetaData title={blockData.name} description={blockData.description} ogType="article" />
 
-<div class={cn('bg-background', data.meta?.className)} bind:this={viewContainer}>
-	<data.component />
+<div class={cn('bg-background', blockData.class)}>
+	<BlockComponent />
 </div>

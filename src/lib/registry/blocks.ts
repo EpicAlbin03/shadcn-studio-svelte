@@ -14,6 +14,7 @@ export const NEW_BLOCKS: string[] = [
 export type Block = {
 	id: string;
 	name: string;
+	description?: string;
 	iframeHeight?: string;
 	class?: string;
 };
