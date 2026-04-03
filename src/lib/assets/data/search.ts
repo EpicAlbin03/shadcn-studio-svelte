@@ -1,7 +1,7 @@
 import CircleIcon from '@lucide/svelte/icons/circle';
 import FileIcon from '@lucide/svelte/icons/file';
-import { categories } from '$lib/registry/components.svelte';
-import { registryCategories } from '$lib/registry/registry-categories';
+import { componentCategories } from '$lib/registry/components';
+import { blockCategories } from '$lib/registry/blocks';
 
 type SearchData = {
 	title: string;
@@ -57,31 +57,31 @@ export const searchData: SearchData[] = [
 	{
 		title: 'Components',
 		data: [
-			...categories.map((category) => ({
+			...componentCategories.map((category) => ({
 				icon: CircleIcon,
 				name: category.name,
-				href: `/docs/components/${category.slug}`
+				href: `/docs/components/${category.id}`
 			}))
 		]
 	},
 	{
 		title: 'Block Categories',
 		data: [
-			...registryCategories.map((category) => ({
+			...blockCategories.map((category) => ({
 				icon: CircleIcon,
 				name: category.name,
-				href: `/blocks/${category.slug}`
+				href: `/blocks/${category.id}`
 			}))
 		]
 	},
 	{
 		title: 'Blocks',
 		data: [
-			...registryCategories.flatMap((category) =>
+			...blockCategories.flatMap((category) =>
 				category.blocks.map((block) => ({
 					icon: CircleIcon,
-					name: block,
-					href: `/blocks/${category.slug}#${block}`
+					name: block.name,
+					href: `/blocks/${category.id}#${block.id}`
 				}))
 			)
 		]

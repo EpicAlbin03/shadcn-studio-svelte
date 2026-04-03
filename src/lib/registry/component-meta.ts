@@ -1,4 +1,4 @@
-import type { ComponentMeta } from './components.types';
+import type { ComponentMeta } from './components';
 
 export const componentMeta: Record<string, ComponentMeta> = {
 	'button-46': {

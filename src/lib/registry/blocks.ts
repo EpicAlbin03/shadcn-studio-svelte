@@ -25,7 +25,15 @@ export type BlockCategory = {
 	blocks: Block[];
 };
 
-export const blockCategories = [
+function defineCategories(categories: BlockCategory[]) {
+	// Apply defaults
+	return categories.map((category) => ({
+		...category,
+		name: category.name ?? category.id,
+	}));
+}
+
+export const blockCategories = defineCategories([
 	{
 		id: 'marketing',
 		name: 'Marketing',
@@ -110,6 +118,6 @@ export const blockCategories = [
 		hidden: true,
 		blocks: []
 	}
-] satisfies BlockCategory[];
+]);
 
 export const blocks = blockCategories.flatMap((category) => category.blocks);
