@@ -1,4 +1,4 @@
-import deepEqual from 'deep-equal';
+import { dequal } from 'dequal';
 import { Context, PersistedState } from 'runed';
 import { z } from 'zod/v4';
 import { defaultTheme } from '$lib/assets/data/preset-themes';
@@ -90,7 +90,7 @@ export class UserConfig {
 	}
 
 	hasThemeChanged(): boolean {
-		return !deepEqual(this.#settings.activeTheme.cssVars, defaultTheme.cssVars);
+		return !dequal(this.#settings.activeTheme.cssVars, defaultTheme.cssVars);
 	}
 
 	addSavedTheme(theme: Theme): void {
