@@ -31,7 +31,7 @@ function defineCategories(categories: BlockCategory[]) {
 	return categories.map((category) => ({
 		...category,
 		name: category.name ?? category.id,
-	}));
+	})).filter((category) => !category.hidden);
 }
 
 export const blockCategories = defineCategories([

@@ -77,7 +77,7 @@ function defineCategories(categories: ComponentCategory[]) {
 			xs: 1,
 			...category.breakpoints
 		}
-	}));
+	})).filter((category) => !category.comingSoon);
 }
 
 export const componentCategories = defineCategories([
