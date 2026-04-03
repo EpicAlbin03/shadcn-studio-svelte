@@ -1,6 +1,6 @@
-import type { ComponentCSS } from './components.types';
+import type { ComponentMeta } from './components.types';
 
-export const componentMeta: Record<string, ComponentCSS> = {
+export const componentMeta: Record<string, ComponentMeta> = {
 	'button-46': {
 		cssVars: {
 			theme: {
